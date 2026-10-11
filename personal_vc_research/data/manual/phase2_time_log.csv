@@ -1,0 +1,19 @@
+task,offering_id,start_utc,end_utc,kind,notes
+source_access_probe,ALL,2026-10-11T15:04:09Z,,analyst,
+source_access_probe,ALL,,2026-10-11T15:05:47Z,analyst,registries+sites+EDGAR FTS
+republic_core_car_review,ALL,2026-10-11T15:05:47Z,,analyst,
+janover_security_trace,RCF-1805526-020-26437,2026-10-11T15:09:29Z,,analyst,
+janover_security_trace,RCF-1805526-020-26437,,2026-10-11T15:11:25Z,analyst,424B4 primary+resale; 10-K probes
+registry_lookups,ALL,2026-10-11T15:11:25Z,,analyst,
+registry_lookups,ALL,,2026-10-11T15:14:18Z,analyst,DE captcha; CA imperva 429; NY empty; FL 403; OC search disallowed; 4 web searches
+targeted_audit_render,PILOT,2026-10-11T15:14:18Z,,analyst,
+targeted_audit_render,PILOT,,2026-10-11T15:15:37Z,analyst,6 rendered pages viewed
+republic_core_car_review,ALL,,2026-10-11T15:15:37Z,analyst,"4 Republic Core/Note filings parsed (2023 C; 2024/2025/2026 C-AR)"
+web_evidence_capture,PILOT,2026-10-11T15:15:57Z,,analyst,
+web_evidence_capture,PILOT,,2026-10-11T15:17:51Z,analyst,6 pages captured; 5 searches
+janover_trace_writeup,RCF-1805526-020-26437,2026-10-11T15:17:51Z,,analyst,
+janover_trace_writeup,RCF-1805526-020-26437,,2026-10-11T15:20:16Z,analyst,
+targeted_audit_writeup,PILOT,2026-10-11T15:20:16Z,,analyst,
+targeted_audit_writeup,PILOT,,2026-10-11T15:20:23Z,analyst,
+republic_core_sample_coverage,ALL40,2026-10-11T15:22:32Z,,analyst,name match only
+republic_core_sample_coverage,ALL40,,2026-10-11T15:23:15Z,analyst,name match only

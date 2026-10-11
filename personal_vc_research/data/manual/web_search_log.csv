@@ -7,3 +7,8 @@ RCF-1783004-020-25792,2,WebSearch,2026-10-11,"""SkyHi"" flight subscription 2021
 RCF-1769923-020-26464,1,WebSearch,2026-10-11,"""People First"" Shantanu Rana workplace conflict startup acquired OR shut down",Republic blog interview only; no status found,no
 RCF-1769923-020-26464,2,WebSearch,2026-10-11,"""People First RH"" OR ""peoplefirstrh"" 2022 OR 2023 company",CB Insights profile pages (unclaimed); no 2022+ status,no
 RCF-1805526-020-26437,1,WebSearch,2026-10-11,"Janover IPO prospectus ""Crowd SAFE"" converted Republic investors",Pointed to Janover 10-K FY2023/FY2024 SAFE-conversion disclosures; verified via SEC document probes (not search snippets),via SEC filings
+RCF-1783004-020-25792,3,WebSearch,2026-10-11,"""SkyHi Travel, Inc."" Delaware OR California corporation status","aggregators only (CB Insights, Gust, filingflow); no registry record",no
+RCF-1745458-020-24457,2,WebSearch,2026-10-11,"""Hemster, Inc."" OR ""(Re)vive"" Allison Lee Delaware corporation name change Revive",Entrepreneur article again; no registry/legal-name evidence,no
+RCF-1745458-020-24457,3,WebSearch,2026-10-11,"""(Re)vive"" ""formerly Hemster"" OR ""Hemster"" returns repair Allison Lee 2024","no linking evidence; unrelated ""Revive"" entities",no
+RCF-1769923-020-26464,3,WebSearch,2026-10-11,"""People First RH, Inc."" status dissolved OR active Delaware New York",no registry match; unrelated UK/KY/NY entities,no
+RCF-1758964-020-25095,3,WebSearch,2026-10-11,"""Up Sonder, Inc."" California statement of information OR opencorporates",no registry record; unrelated Sonder entities,no

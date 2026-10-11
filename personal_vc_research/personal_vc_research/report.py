@@ -246,5 +246,130 @@ def cmd_report(cfg: Config, args) -> int:
     if assess.exists():
         lines.append("\n" + assess.read_text())
     (rd / "pilot_feasibility.md").write_text("\n".join(lines))
+    if (td / "phase1_offerings_pilot_snapshot.csv").exists():
+        (rd / "outcome_recovery.md").write_text(outcome_recovery_report(cfg))
+        print(f"wrote {rd / 'outcome_recovery.md'}")
     print(f"wrote {rd / 'pilot_feasibility.md'} and manual_review_queue.csv ({len(q)} items)")
     return 0
+
+
+# ---------------------------------------------------------------------------------------------
+# Phase 2: outcome-recovery report
+# ---------------------------------------------------------------------------------------------
+COVERAGE_FIELDS = [
+    ("financial", ["revenue", "net_income", "total_assets", "cash_and_equivalents"]),
+    ("offering_terms", ["target_offering_amount", "maximum_offering_amount", "offering_deadline", "price_per_security",
+                        "minimum_investment", "employees"]),
+    ("contract", ["valuation_cap", "discount_rate", "cap_basis", "conversion_trigger", "liquidity_event_treatment",
+                  "company_repurchase_right", "dissolution_treatment"]),
+    ("company", ["fiscal_year_end_most_recent", "prior_securities_outstanding", "date_incorporation"]),
+    ("founder", ["officers_directors_listed", "founder_count_labelled", "prior_ventures_documented", "prior_exits_documented"]),
+]
+
+
+def field_coverage(facts: pd.DataFrame) -> pd.DataFrame:
+    """One cell per (field, offering): S = structured filing field eligible at decision; V = manual, verified on
+    rendered page or native text; O = manual from OCR not visually verified; '-' = missing/not extracted."""
+    offs = sorted(facts["offering_id"].unique())
+    rows = []
+    for group, names in COVERAGE_FIELDS:
+        for n in names:
+            row = {"group": group, "field": n}
+            for o in offs:
+                x = facts[(facts["offering_id"] == o) & (facts["fact_name"] == n) & (facts["missing"] == "False")
+                          & (facts["eligible_at_decision"] == "True")]
+                if not len(x):
+                    cell = "-"
+                elif (x["extraction_method"] == "structured_field").any():
+                    cell = "S"
+                elif x["verification_status"].isin(["verified_rendered_page", "native_text_read"]).any():
+                    cell = "V"
+                else:
+                    cell = "O"
+                row[o.split("-")[1]] = cell
+            rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def outcome_recovery_report(cfg: Config) -> str:
+    td, rd = cfg.path("tables_dir"), cfg.path("reports_dir")
+    before = _read(td / "phase1_offerings_pilot_snapshot.csv")
+    after = _read(td / "offerings_pilot.csv")
+    ev = _read(td / "outcome_events_pilot.csv")
+    pay = _read(td / "payout_evidence_pilot.csv")
+    facts = _read(td / "facts_pilot.csv")
+    tl = _read(cfg.path("manual_dir") / "phase2_time_log.csv")
+    jt = _read(cfg.path("manual_dir") / "janover_security_trace.csv")
+    tc = _read(rd / "phase2_targeted_high_impact_checks.csv")
+    out = ["# Outcome-recovery experiment — 5 pilot offerings (phase 2)\n",
+           f"Frozen sample unchanged (seed {cfg.seed}); outcome cutoff {cfg['study']['outcome_cutoff_utc']}. "
+           "Source tiers are kept separate: **SEC-issuer** (the company's own filings), **SEC-platform** (Republic's "
+           "SEC-filed claims about its 2% commission holdings), **external** (company websites, press, observations).\n"]
+    out.append("## 1. Before vs after, per company\n")
+    rows = []
+    for _, a in after.iterrows():
+        b = before[before["offering_id"] == a["offering_id"]]
+        b = b.iloc[0] if len(b) else {}
+        eo = ev[ev["offering_id"] == a["offering_id"]]
+        plat = a.get("platform_status_marks", "")
+        po = pay[pay["offering_id"] == a["offering_id"]]
+        rows.append({
+            "company": a["issuer_legal_name_at_offering"],
+            "BEFORE: last observation (phase 1; SEC + 2 Hemster press items)": b.get("last_observation_date", "") if len(b) else "",
+            "AFTER: last SEC-issuer obs.": a["last_observation_sec_issuer"],
+            "AFTER: last SEC-platform obs.": a["last_observation_sec_platform"],
+            "AFTER: last external obs.": a["last_observation_external"] or "-",
+            "operating evidence (SEC-issuer / external)": f"{a['last_operating_evidence_sec_issuer'] or '-'} / {a['last_operating_evidence_external'] or '-'}",
+            "legal status": "unknown — registries not accessible",
+            "Republic marks (as-of year)": plat,
+            "platform mark conflicts SEC": a["platform_mark_conflicts_with_sec_evidence"],
+            "payout visibility": "; ".join(sorted(set(po["evidence_type"]))),
+            "summary BEFORE → AFTER": f"{b.get('outcome_status_summary', '') if len(b) else ''} → {a['outcome_status_summary']}",
+        })
+    out.append(_md(pd.DataFrame(rows)))
+    out.append("\nRepublic legend (verbatim, SEC filings by Republic Core LLC / Republic Note): `*` = \"to Republic "
+               "Crowd-Invest's knowledge the issuer is insolvent, dormant, or has dissolved and [it] does not expect to "
+               "receive any cash proceeds\"; `+` = \"security has converted due to a qualifying equity financing, liquidity "
+               "event ... but [it] has not realized cash proceeds\"; numbered notes = liquidation at stated cents on the dollar. "
+               "These are platform claims about Republic's own commission securities, not registry facts.\n")
+    out.append("## 2. Event counts by source tier (pilot, after phase 2)\n")
+    from .outcomes import source_tier
+    ev2 = ev.copy()
+    ev2["tier"] = ev2["evidence_strength"].map(source_tier)
+    b_ev = _read(td / "phase1_outcome_events_pilot_snapshot.csv")
+    t = ev2.groupby("tier").size().reset_index(name="events_after")
+    t["events_before"] = t["tier"].map(b_ev.assign(tier=b_ev["evidence_strength"].map(source_tier)).groupby("tier").size()).fillna(0).astype(int)
+    out.append(_md(t))
+    out.append("\n## 3. Field coverage by offering (historical, eligible at decision date)\n")
+    out.append("`S` structured filing field · `V` manual, verified (rendered page or native text) · `O` manual from OCR, "
+               "not visually verified · `-` missing / not extracted. 404 stored fact rows are **not** 404 independent "
+               "observations: they repeat fields across the initial Form C and pre-decision amendments, and include "
+               "post-decision rows that are excluded from features.\n")
+    out.append(_md(field_coverage(facts)))
+    out.append("\n## 4. Janover security reconstruction (2020 Republic Crowd SAFE)\n")
+    out.append(_md(jt[["level", "event_or_as_of", "claim", "status", "notes"]]))
+    out.append("\nLevels: 1 issuer-wide aggregate conversions · 2 shares attributable to the Republic offering · "
+               "3 shares per original dollar · 4 legal/practical tradability · 5 actual investor cash proceeds. "
+               "**Stopped at level 1**: the conversion class pools the Republic SAFEs with a $50,000 non-Republic SAFE and "
+               "the disclosed amounts conflict, so no proportional allocation was made. No price history was retrieved; "
+               "no hypothetical liquidation was computed.\n")
+    out.append("## 5. Targeted high-impact checks (separate from the random audit)\n")
+    out.append(_md(tc))
+    out.append("\n## 6. Time and source yield\n")
+    if len(tl):
+        tl2 = tl.copy()
+        starts = tl2[tl2["start_utc"] != ""].groupby("task")["start_utc"].min()
+        ends = tl2[tl2["end_utc"] != ""].groupby("task")["end_utc"].max()
+        tt = pd.DataFrame({"start": starts, "end": ends}).dropna()
+        tt["agent_minutes_measured"] = ((pd.to_datetime(tt["end"]) - pd.to_datetime(tt["start"])).dt.total_seconds() / 60).round(1)
+        out.append(_md(tt.reset_index()))
+        out.append(f"\nMeasured agent wall-clock for the experiment: **{tt['agent_minutes_measured'].sum():.0f} minutes** "
+                   "(container clock; excludes report writing). This is not analyst time; see the assessment for a labelled "
+                   "analyst-equivalent estimate.\n")
+    ys = _read(cfg.path("manual_dir") / "phase2_source_yield.csv")
+    if len(ys):
+        out.append(_md(ys))
+    assess = cfg.root / "docs" / "outcome_recovery_assessment.md"
+    if assess.exists():
+        out.append("\n" + assess.read_text())
+    return "\n".join(out)

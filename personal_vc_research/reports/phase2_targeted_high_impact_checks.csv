@@ -1,0 +1,20 @@
+claim,offering_id,evidence_checked,result,note
+liquidity_event_treatment,RCF-1758964-020-25095,p69 rendered,verified,investor election; default = automatic conversion (wording corrected)
+liquidity_event_treatment,RCF-1783004-020-25792,p67 rendered,verified,same; wording corrected
+liquidity_event_treatment,RCF-1745458-020-24457,p31 rendered (memorandum summary),verified_summary_only,at Purchaser option; default not stated; instrument not located
+liquidity_event_treatment,RCF-1769923-020-26464,p62 native text,verified_native,default = conversion if no cash election
+liquidity_event_treatment,RCF-1805526-020-26437,p64 native text,verified_native,default = conversion if no cash election
+company_repurchase_right,RCF-1758964-020-25095,p29 rendered,verified,none
+company_repurchase_right,RCF-1783004-020-25792,p27 rendered,verified,none
+company_repurchase_right,RCF-1745458-020-24457,p33 rendered,verified,none
+company_repurchase_right,RCF-1769923-020-26464,p31 native,verified_native,none
+company_repurchase_right,RCF-1805526-020-26437,p27 native,verified_native,none
+conversion_trigger,RCF-1758964-020-25095,p27 rendered,verified,">$1M equity financing, company option"
+conversion_trigger,RCF-1783004-020-25792,p25 rendered,verified,">$1M, company option"
+conversion_trigger,RCF-1745458-020-24457,p30 rendered (phase 1),verified,">$1M, company option"
+valuation_cap/discount,RCF-1758964-020-25095,p68 rendered (phase 1),verified,$6M / 20%
+valuation_cap/discount,RCF-1783004-020-25792,p66 rendered (phase 1),verified,$10M / 20%
+valuation_cap/discount,RCF-1745458-020-24457,p30 rendered (phase 1),verified,$5M via Safe Price / none stated
+janover_conversion_numbers,RCF-1805526-020-26437,"cached 10-K FY2023, 10-K FY2024, 424B4, resale 424B4 (exact-string search)",verified_documents,"218,772 / $668,898; 75,207 / $176,326; 5,358 / $14,734; 165,861; 20,733; 1-for-6.82 and 1-for-8 splits; $779,334 and $50,000 SAFE all present verbatim; amounts conflict with each other (see trace)"
+janover_pooling,RCF-1805526-020-26437,resale 424B4 description of capital stock,verified_documents,"2020/2021 SAFE class includes one $50,000 non-Republic SAFE -> Republic attribution not separable"
+payout_calculation,ALL,all pilot offerings,not_applicable,no payout calculation performed; no investor cash flows exist to check

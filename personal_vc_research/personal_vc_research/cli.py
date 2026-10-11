@@ -153,7 +153,7 @@ def cmd_screen(cfg: Config, args) -> int:
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="personal_vc_research")
-    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "screen", "report"])
+    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "screen", "import", "report"])
     p.add_argument("--config", default="config.yaml")
     p.add_argument("--refreeze", action="store_true", help="discover: overwrite a frozen frame")
     p.add_argument("--batch", default="", help="ocr: plan batch id to run")
@@ -165,6 +165,9 @@ def main(argv=None) -> int:
             return cmd_discover(cfg, args)
         if args.command == "sample":
             return cmd_sample(cfg, args)
+        if args.command == "import":
+            from .imports import cmd_import
+            return cmd_import(cfg, args)
         if args.command == "screen":
             return cmd_screen(cfg, args)
         if args.command == "ocr":

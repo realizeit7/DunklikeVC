@@ -44,10 +44,26 @@ def classify_filing(form: str, file_number: str, offering_file_number: str) -> t
     return FORM_RULES.get(form, ("", "", ""))
 
 
+SEC_ISSUER = {"filing_evidence", "issuer_reported_financials", "sec_index"}
+SEC_PLATFORM = {"platform_claim_in_sec_filing"}
+OPERATING_TYPES = {"operating_activity_reported", "operating_activity_independent_report", "periodic_report_10k",
+                   "operating_activity_company_claim"}
+
+
+def source_tier(strength: str) -> str:
+    """sec_issuer | sec_platform | external — kept separate in every summary."""
+    if strength in SEC_ISSUER:
+        return "sec_issuer"
+    if strength in SEC_PLATFORM:
+        return "sec_platform"
+    return "external"
+
+
 TERMINAL_PRIORITY = [
     ("dissolution_confirmed", "confirmed_dissolution"),
     ("acquisition_reported", "acquisition_reported_payout_unknown"),
     ("ipo_prospectus_final", "listed_via_ipo_payout_unknown"),
+    ("platform_reports_insolvent_dormant_or_dissolved", "platform_claims_insolvent_dormant_or_dissolved"),
 ]
 
 
@@ -56,7 +72,7 @@ def summarize_outcomes(events: list[dict], cutoff: str) -> dict:
     types = {e["event_type"] for e in events}
     dated = [e for e in events if e.get("publication_date")]
     last_obs = max((e["publication_date"] for e in dated if e["publication_date"] <= cutoff), default="")
-    ops = [e for e in events if e["event_type"] in ("operating_activity_reported", "operating_activity_independent_report")]
+    ops = [e for e in events if e["event_type"] in OPERATING_TYPES]
     last_ops = max((e["publication_date"] for e in ops if e["publication_date"]), default="")
     status = "no_post_offering_evidence_found_within_budget"
     for et, label in TERMINAL_PRIORITY:
@@ -77,8 +93,25 @@ def summarize_outcomes(events: list[dict], cutoff: str) -> dict:
     if last_obs:
         gap_years = round((dt.date.fromisoformat(cutoff) - dt.date.fromisoformat(last_obs)).days / 365.25, 2)
     lost = bool(gap_years != "" and gap_years > 3 and status not in ("confirmed_dissolution",))
+    def last(evs, tier):
+        ds = [e["publication_date"] for e in evs if e.get("publication_date") and e["publication_date"] <= cutoff
+              and source_tier(e.get("evidence_strength", "")) == tier]
+        return max(ds, default="")
+    plat = [e for e in events if e["event_type"].startswith("platform_reports")]
+    conflict = bool(plat and any(e["event_type"] == "platform_reports_insolvent_dormant_or_dissolved" for e in plat)
+                    and any(e["event_type"] in ("periodic_report_10k", "ipo_prospectus_final") and
+                            e["publication_date"] >= "2025-01-01" for e in events))
     return {
         "outcome_status_summary": status,
+        "last_observation_sec_issuer": last(events, "sec_issuer"),
+        "last_observation_sec_platform": last(events, "sec_platform"),
+        "last_observation_external": last(events, "external"),
+        "last_operating_evidence_sec_issuer": last(ops, "sec_issuer"),
+        "last_operating_evidence_external": last(ops, "external"),
+        "platform_status_marks": "; ".join(f"{e['event_date'][:4]}:{e['event_type'].replace('platform_reports_', '').replace('platform_lists_holding_', '')}"
+                                           for e in sorted(plat + [x for x in events if x["event_type"] == "platform_lists_holding_no_status_mark"],
+                                                           key=lambda x: x["event_date"])),
+        "platform_mark_conflicts_with_sec_evidence": conflict,
         "n_events_total": len(events),
         "n_annual_reports_filed": sum(e["event_type"] == "annual_report_filed" for e in events),
         "n_follow_on_financing_filings": sum(e["event_type"] in (

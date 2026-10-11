@@ -2,6 +2,19 @@
 
 Five offerings test the workflow; nothing below is a statistical estimate.
 
+> **Phase-2 clarifications (2026-10-11).** (a) Contract evidence: **four** underlying Crowd SAFE instruments were
+> read (Up Sonder, SkyHi, People First RH, Janover); **one** offering (Hemster) is an interpretation of the
+> offering-memorandum summary only. (b) Day-30 availability is **inferred** from filings for 5/5 and **directly
+> verified for 0/5**. (c) Phase-1 outcomes were **not** SEC-only: 54 outcome events came from SEC filings and **2
+> from external press articles about Hemster**. Those two were captured in phase 1 only as WebFetch summaries
+> (model-processed text, no stored page) and were used in the outcome tables. Their raw HTML, with embedded
+> publication dates, was preserved in phase 2. "SEC-only" in earlier text was inaccurate. (d) The 403 (now 404)
+> fact rows are **not** independent observations: they repeat cover-page fields across the initial Form C and
+> pre-decision amendments and include post-decision rows. See the field-coverage-by-offering matrix in
+> `reports/outcome_recovery.md`. (e) Phase 2 corrected the liquidity-event term: the investor elects cash or
+> conversion, and **conversion is the default if no election is made**. Phase 2 also verified the remaining
+> high-impact contract terms on rendered pages.
+
 ### Q1. Can we reconstruct what was publicly available at the decision date (initial Form C + 30 days)?
 
 **Mostly yes for SEC-filed content, with three caveats.**
@@ -38,14 +51,15 @@ Five offerings test the workflow; nothing below is a statistical estimate.
   * Discounts: none stated (Hemster), 20%, 20%, 10%, 10%.
   * Conversion: at the **company's option** on an equity financing over $1M ($2M for Janover).
   * Caps are on a pre-money basis that excludes SAFEs and convertible notes.
-  * Liquidity event: cash-out of the purchase amount or conversion, pro rata among cash-out holders if funds
-    fall short.
+  * Liquidity event: the investor elects cash equal to the purchase amount or conversion; **conversion is the default
+    if no election is made** (instrument text, 4/5); pro rata among cash-out holders if funds fall short.
   * No company repurchase right, and no voting rights.
-* The instrument text itself was read for 4/5. Hemster's form of SAFE was not found among the pages processed,
-  so its terms come from the memorandum summary only.
-* Cap and discount were checked against the rendered page for the three OCR'd documents. 42 OCR-derived facts
-  remain "OCR read, not visually verified"; the 14 of them that are contract terms are in the manual review
-  queue.
+* **Four underlying SAFE contracts were read** (Up Sonder, SkyHi, People First RH, Janover). **One offering
+  (Hemster) is interpreted from its memorandum summary only**, because its form of SAFE was not found among the
+  pages processed.
+* Cap, discount, conversion trigger, liquidity-event treatment and repurchase rights were checked against the
+  rendered page for all three OCR'd documents; the phase-2 targeted checks covered the last of these. Native-text
+  documents were read directly. OCR-derived company and founder facts remain "OCR read, not visually verified".
 * **The limit: interpreting the contract is not the same as valuing it.** What a Crowd SAFE holder receives
   depends on the terms of the *next* round (price, preferences, whether the company converts at all), and those
   are not public for private rounds. Form D gives only aggregate amounts.
@@ -67,9 +81,12 @@ Five offerings test the workflow; nothing below is a statistical estimate.
 * **After a C-TR the SEC trail usually ends.** 3/5 have no observation since 2020–2023: SkyHi (last
   2020-05-19), Up Sonder (2022-05-02) and People First (2023-02-09). Their status is *unknown*, not failed and
   not operating.
-* Bounded web searches (2 per company at most) added independent post-offering evidence for 1/5. Hemster
-  rebranded as (Re)vive in 2024; legal-entity continuity is not confirmed.
-* An SEC-only run therefore under-observes later company updates. Republic investor updates were not accessible.
+* **SEC-supported vs externally supported.** All the counts above are SEC-supported. External evidence in phase 1:
+  2 press articles about Hemster only (a $4M round in 2019; a rebrand to (Re)vive in 2024). The legal-entity
+  continuity is press-reported, not registry-verified.
+* With SEC filings plus bounded web search, later company updates are under-observed. Republic investor updates
+  were not accessible. See `reports/outcome_recovery.md` for the phase-2 additions: Republic's own SEC-filed
+  holdings marks and company websites.
 
 ### Q4. Can we find investor-specific payout evidence?
 

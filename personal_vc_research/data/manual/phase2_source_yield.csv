@@ -1,0 +1,10 @@
+source,companies_attempted,companies_with_new_dated_evidence,yield,access_barrier
+"Republic Core / Republic Note SEC filings (holdings tables, 4 as-of dates 2022-2025)",5,5,"dated platform rows for 5/5; informative status marks for 3/5 (SkyHi *, Hemster +, Janover * conflicting); capital-raised figures for 5/5",none
+"Issuer SEC filings beyond phase 1 (Janover 424B4 x2, 10-K x2)",1,1,security-class conversion detail; class pooling; tradability registration,none
+EDGAR full-text search for later mentions (2021-2026),5,2 (via Republic Core),"found Republic Core link; ""Up Sonder"" hit in a SPAC S-1 was a name collision (not used)",none
+"State business registries (DE, CA, NY, FL) and OpenCorporates",5,0,none,"DE CAPTCHA; CA Imperva block (HTTP 429); NY empty reply; FL HTTP 403; OpenCorporates search disallowed by robots.txt, API needs key"
+Company websites (raw HTML captured),5,2,Up Sonder dated posts to 2026-10-05; People First newest post 2020-10-27,hemster.com domain-sale redirect then 403; flyskyhi.com TLS failure (not bypassed); Janover n/a
+Press articles (raw HTML captured with embedded datePublished),1,1,Hemster: 2019-10-17 $4M round; 2024-11-12 rebrand to (Re)vive (press-reported link only),none
+Web searches this phase,5,0,no new evidence (budget now 3/offering for 4 companies),search results were aggregator profiles / unrelated entities
+Wayback Machine,2 attempts,0,none,connection reset by egress proxy
+Republic campaign/update pages,0 (not attempted again),0,none,Cloudflare challenge; user-import pathway prepared instead

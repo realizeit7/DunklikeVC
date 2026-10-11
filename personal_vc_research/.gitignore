@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *_UNFROZEN.csv
+
+# User-provided browser evidence: raw files and investor-only items stay local
+data/user_imports/files/
+data/user_imports/private/

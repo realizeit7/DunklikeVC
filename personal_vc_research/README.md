@@ -29,7 +29,8 @@ python -m personal_vc_research ocr      --config config.yaml [--batch N]   # pla
 python -m personal_vc_research collect  --config config.yaml --only pilot  # or --only all / comma-separated ids
 python -m personal_vc_research audit    --config config.yaml --only pilot  # second-pass audit (or --only audit)
 python -m personal_vc_research screen   --config config.yaml   # native-text quality screen of all 40 Form Cs
-python -m personal_vc_research report   --config config.yaml   # reports/pilot_feasibility.md + manual_review_queue.csv
+python -m personal_vc_research import   --config config.yaml   # validate user-provided browser evidence (data/user_imports/)
+python -m personal_vc_research report   --config config.yaml   # pilot_feasibility.md, outcome_recovery.md, manual_review_queue.csv
 pytest -q
 ```
 
@@ -62,7 +63,11 @@ requests. To rebuild the cache, run the commands above; the manifest lists every
 | `data/tables/ocr_log.csv` | per-page OCR status, batch, rationale and seconds |
 | `data/tables/form_c_text_screening.csv` | native-text quality of all 40 sampled Form C documents |
 | `reports/` | `pilot_feasibility.md`, `pilot_second_pass_audit.csv`, `manual_review_queue.csv`, `handoff.md` |
-| `tests/` | invariant tests on **synthetic** fixtures only |
+| `data/manual/` (phase 2) | `phase2_time_log.csv`, `phase2_source_yield.csv`, `janover_security_trace.csv`, Republic holdings marks in `outcome_evidence_manual.csv` |
+| `data/user_imports/` | optional user-captured evidence: public register (committed), raw files and investor-only items (gitignored) |
+| `reports/outcome_recovery.md` | phase-2 before/after outcome report, field coverage by offering, recommendations A/B |
+| `reports/phase2_targeted_high_impact_checks.csv` | targeted checks (separate from the random audit) |
+| `tests/` | invariant tests on **synthetic** fixtures only (they verify logic, not real-data accuracy) |
 
 Facts record their economic period, public-availability date and retrieval date separately, together with
 `eligible_at_decision`, `source_id` and a page or field locator. Missing values are rows with a `missing_reason`,
@@ -74,7 +79,7 @@ never 0.
   * SEC EDGAR and DERA data were the only fully accessible primary sources.
   * Unreachable from this environment: `republic.com` (Cloudflare challenge), the Wayback Machine (connection
     reset by the egress proxy), Kingscrowd (HTTP 403), and Springer full text (login wall).
-  * The run therefore under-observes platform-side company updates and investor distributions.
+  * The run therefore under-observes platform-side company updates and investor distributions. Phase 1 used SEC filings plus 2 press articles (Hemster). Phase 2 added Republic's own SEC-filed holdings marks and company websites (`reports/outcome_recovery.md`).
 * **Frame completeness.** DERA and EDGAR full-text search agree (244/245, with one explained mismatch). That is
   reconciliation within EDGAR, not proof that every Republic-hosted offering is included. See
   `docs/frame_notes.md`.
@@ -84,7 +89,12 @@ never 0.
 * **Returns.** No real return was calculated. No investor cash flow was documented for any pilot offering.
   `returns.py` is exercised only on labelled synthetic fixtures.
 * **Second pass.** The audit was run by the same agent that extracted the facts, so it is not independent
-  validation.
+  validation. Real-data accuracy evidence = `reports/pilot_second_pass_audit.csv` (random/pilot audit) +
+  `reports/phase2_targeted_high_impact_checks.csv` (targeted). Synthetic tests (`pytest`) verify logic only.
+  For any full-40 expansion, audit the frozen random set in `data/sample/sample_freeze.json` without replacement.
+* **Evidence preservation.** Raw cached sources are not in git. The exported evidence archive (see
+  `exports/` from the phase-2 handoff) keeps the documents behind every manually verified fact; do not assume a
+  re-download reproduces the same bytes (web pages and platform tables change).
 * **Process disclosure.** In the first session, a command to fetch all 40 sampled Form C PDFs for text screening
   was rejected by the user. The retrieval manifest nevertheless shows 31 distinct PDF URLs were downloaded
   (00:36–00:43 UTC) before the process stopped. They were kept in the cache, and later reused only after the user

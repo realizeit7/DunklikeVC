@@ -415,6 +415,20 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
                   publication_date=r["publication_date"], strength=r["evidence_strength"], source_id=sid,
                   locator=r["locator"], details=r["details"], attribution=r["attribution_level"])
 
+    # -- user-provided public imports (outcome evidence; historical features only if verified) ----------
+    ui = manual.get("user_imports", pd.DataFrame())
+    if len(ui):
+        for _, r in ui[(ui["offering_id"] == oid) & (ui["validation_errors"] == "")].iterrows():
+            sid = ctx.source(r["url_or_document_identity"], "user_provided_capture",
+                             pub=r["displayed_publication_or_update_date"], issuer_cik=cik,
+                             note=f"captured {r['capture_date_utc']}; sha256 {r['file_sha256']}; "
+                                  f"timing verified={r['publication_timing_independently_verified']}")
+            event(ctx, oid, cik, f"user_import_{r['evidence_type']}",
+                  event_date=r["displayed_publication_or_update_date"],
+                  date_basis="displayed date" + ("" if str(r["historical_feature_eligible"]) == "True" else " (not independently verified)"),
+                  publication_date=r["displayed_publication_or_update_date"], strength="user_provided_capture",
+                  source_id=sid, locator=r["evidence_locator"], details=r["summary"], attribution="offering")
+
     # -- payout / return status ---------------------------------------------------------------------------
     pay = [p for p in ctx.payout if p["offering_id"] == oid]
     cash = [p for p in pay if p["is_cash_distribution"]]
@@ -505,6 +519,8 @@ def cmd_collect(cfg: Config, args) -> int:
     manual = {"facts": load_manual(cfg, "pilot_manual_facts.csv"),
               "outcomes": load_manual(cfg, "outcome_evidence_manual.csv"),
               "probes": load_manual(cfg, "document_probes.csv")}
+    uip = cfg.path("tables_dir") / "user_imports_public.csv"
+    manual["user_imports"] = pd.read_csv(uip, dtype=str, keep_default_na=False) if uip.exists() else pd.DataFrame()
     ctx = Ctx(cfg, f)
     offs = []
     started = utcnow_iso()

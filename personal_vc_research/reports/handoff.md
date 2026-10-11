@@ -28,7 +28,7 @@
 |---|---|
 | Point-in-time Form C content (terms, cover financials, officers, statements) | 5/5 recoverable; 3/5 need OCR |
 | Day-30 availability | 5/5 inferred open from filings; 0/5 verified (no archived campaign page) |
-| Contract key terms | 5/5 (instrument text 4/5; Hemster from summary only) |
+| Contract key terms | 5/5 offerings: 4 underlying SAFE instruments read; 1 (Hemster) from offering summary only |
 | Founder facts (dated 3-year roles from Form C) | 5/5 officers listed; prior exits 0/5 (not a Form C field) |
 | Completion amount (C-U) | 5/5 |
 | Later business events (SEC) | 5/5 have some; 3/5 unobserved for over 3 years after a C-TR |
@@ -78,7 +78,7 @@ pytest -q
 > 3. Business events are traceable for 1–3 years:
 >    * C-U closing amounts 5/5, C-ARs 4/5, Form Ds 4/5, C-TRs 4/5 (one states 227.202(b)(2)), and one Nasdaq IPO.
 >    * After a C-TR the SEC trail ends: 3/5 are unobserved for more than 3 years, so their status is unknown.
->    * Bounded web search added evidence for 1/5.
+>    * External evidence: 2 Hemster press articles (bounded web search); all other outcome evidence is SEC-supported.
 > 4. Investor payout evidence:
 >    * Janover (1/5) reported pooled SAFE-to-common conversions in its 10-Ks: 218,772 shares in Oct 2022, then
 >      165,861 shares at the July 2023 IPO (20,733 after a 1:8 reverse split).
@@ -96,3 +96,6 @@ pytest -q
 > * (b) Can the user view Republic campaign and update pages in their own browser, so that dated snapshots can be
 >   recorded manually?
 > * (c) Should the second-pass audit set be the frozen random 5 (`sample_freeze.json`) when expanding?
+
+
+_Phase 2 (outcome recovery) supersedes parts of this handoff: see `reports/outcome_recovery.md` and `reports/phase2_handoff.md`._
