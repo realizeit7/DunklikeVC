@@ -9,6 +9,7 @@ from __future__ import annotations
 import concurrent.futures as cf
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -19,7 +20,9 @@ import pypdfium2
 
 
 def text_quality(text: str) -> float:
-    """Share of non-space characters that are ASCII letters/digits/common punctuation."""
+    """Share of non-space characters that are ASCII letters/digits/common punctuation.
+    pdfminer '(cid:NN)' placeholders (unmapped glyphs) count as unreadable."""
+    text = re.sub(r"\(cid:\d+\)", "\u0000", text)
     chars = [c for c in text if not c.isspace()]
     if not chars:
         return 0.0
@@ -40,7 +43,10 @@ def _pdftotext_pages(path: Path) -> list[str]:
 
 
 def _tesseract(png: str) -> str:
-    out = subprocess.run(["tesseract", png, "stdout", "--psm", "3"], capture_output=True, timeout=300)
+    # OMP_THREAD_LIMIT=1: without it parallel tesseract processes oversubscribe OpenMP threads and
+    # stall (first attempt: 300 s timeouts on page 1 of two documents, ~21 min lost, zero pages).
+    out = subprocess.run(["tesseract", png, "stdout", "--psm", "3"], capture_output=True, timeout=300,
+                         env={**os.environ, "OMP_THREAD_LIMIT": "1"})
     return out.stdout.decode("utf-8", errors="replace")
 
 

@@ -24,7 +24,7 @@ class CashFlow:
 
 @dataclass
 class ReturnResult:
-    status: str                       # realized | partial | not_computable
+    status: str                       # realized | partial | outstanding_unknown | not_computable
     paid_in: float | None = None
     distributed: float | None = None
     dpi: float | None = None          # distributed / paid-in
@@ -97,6 +97,10 @@ def compute_return(flows: list[CashFlow], position_closed: bool, residual_value:
     paid_in = -sum(f.amount for f in flows if f.kind == "contribution")
     fees = -sum(f.amount for f in flows if f.kind == "fee")
     dist = sum(f.amount for f in flows if f.kind == "distribution")
+    if not position_closed and not any(f.kind == "distribution" for f in flows):
+        # Outstanding/unknown position: never report a zero-return observation.
+        return ReturnResult(status="outstanding_unknown", paid_in=paid_in,
+                            notes=["no documented distributions and position not closed: outcome unknown, not zero"])
     res = ReturnResult(status="partial", paid_in=paid_in, distributed=dist)
     res.fee_basis = "net_of_documented_fees" if fees_documented else "before_unknown_fees"
     basis = paid_in + (fees if fees_documented else 0.0)

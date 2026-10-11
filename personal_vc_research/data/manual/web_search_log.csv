@@ -1,0 +1,9 @@
+offering_id,search_no,tool,date_utc,query,result,used_as_evidence
+RCF-1745458-020-24457,1,WebSearch,2026-10-11,Hemster tailoring startup Allison Lee acquired OR shut down OR closed,No acquisition/shutdown found; rebrand to (Re)vive (Entrepreneur 2024); $4M post-seed 2019 (FashionUnited). Both pages then fetched.,yes (2 pages fetched)
+RCF-1758964-020-25095,1,WebSearch,2026-10-11,Up Sonder drone company Derek Waleko 2023 OR 2024 OR 2025,Only 2017-2019 coverage; nothing post-2021,no
+RCF-1758964-020-25095,2,WebSearch,2026-10-11,"""Up Sonder"" OR ""UpSonder"" drone 2022 shut down OR acquired OR ""C-TR""","Profiles only (CB Insights, Gust, VC Backed); no 2022+ status",no
+RCF-1783004-020-25792,1,WebSearch,2026-10-11,SkyHi Travel Rama Poola airline subscription company status,Launch-era coverage 2018-2020; no shutdown/acquisition found,no
+RCF-1783004-020-25792,2,WebSearch,2026-10-11,"""SkyHi"" flight subscription 2021 OR 2022 shutdown OR ""ceased operations"" OR pivot",No 2021-2022 status found,no
+RCF-1769923-020-26464,1,WebSearch,2026-10-11,"""People First"" Shantanu Rana workplace conflict startup acquired OR shut down",Republic blog interview only; no status found,no
+RCF-1769923-020-26464,2,WebSearch,2026-10-11,"""People First RH"" OR ""peoplefirstrh"" 2022 OR 2023 company",CB Insights profile pages (unclaimed); no 2022+ status,no
+RCF-1805526-020-26437,1,WebSearch,2026-10-11,"Janover IPO prospectus ""Crowd SAFE"" converted Republic investors",Pointed to Janover 10-K FY2023/FY2024 SAFE-conversion disclosures; verified via SEC document probes (not search snippets),via SEC filings

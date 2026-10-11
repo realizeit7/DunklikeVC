@@ -82,11 +82,36 @@ def cmd_sample(cfg: Config, args) -> int:
     return 0
 
 
+def cmd_ocr(cfg: Config, args) -> int:
+    """Run targeted OCR batches from the recorded page plan (data/manual/ocr_page_plan.csv)."""
+    from . import pages
+    o = cfg["ocr"]
+    plan = pd.read_csv(cfg.root / o["plan_file"], dtype=str, keep_default_na=False)
+    if args.batch:
+        plan = plan[plan["batch"] == args.batch]
+    man = {}
+    for line in open(cfg.path("manifest")):
+        rec = json.loads(line)
+        man[rec["url"]] = rec
+    docs = {u: {"path": str(cfg.root / man[u]["cache_path"]), "sha256": man[u]["sha256"]}
+            for u in plan["doc_url"].unique()}
+    rows = pages.run_plan(plan.to_dict("records"), docs, cfg.root / "data/cache/pages",
+                          cfg.path("tables_dir") / "ocr_log.csv", int(o["max_pages_per_offering"]),
+                          float(o["max_total_seconds"]), int(o["max_pages_per_batch"]))
+    df = pd.DataFrame(rows)
+    if len(df):
+        print(df.groupby(["offering_id", "status"]).agg(pages=("page", "count"), seconds=("seconds", "sum")))
+    else:
+        print("nothing to do (all planned pages cached)")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="personal_vc_research")
-    p.add_argument("command", choices=["discover", "sample", "collect", "audit", "report"])
+    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "report"])
     p.add_argument("--config", default="config.yaml")
     p.add_argument("--refreeze", action="store_true", help="discover: overwrite a frozen frame")
+    p.add_argument("--batch", default="", help="ocr: plan batch id to run")
     p.add_argument("--only", default="", help="collect: comma-separated offering_ids or 'pilot'")
     args = p.parse_args(argv)
     cfg = Config.load(args.config)
@@ -95,6 +120,8 @@ def main(argv=None) -> int:
             return cmd_discover(cfg, args)
         if args.command == "sample":
             return cmd_sample(cfg, args)
+        if args.command == "ocr":
+            return cmd_ocr(cfg, args)
         if args.command == "collect":
             from .collect import cmd_collect
             return cmd_collect(cfg, args)

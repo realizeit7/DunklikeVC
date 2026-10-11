@@ -151,6 +151,8 @@ def build_frame(tables: dict[str, pd.DataFrame], cfg: Config) -> tuple[pd.DataFr
                 f"{a}({t},{c})" for a, t, c in zip(foreign["ACCESSION_NUMBER"], foreign["SUBMISSION_TYPE"], foreign["COMPANYNAME"])),
         })
     fr = pd.DataFrame(rows)
+    if fr.empty:
+        return pd.DataFrame(columns=FRAME_COLUMNS), ev, m.iloc[0:0]
 
     # Same-day duplicate filings: same CIK, same filing date, one withdrawn the same day while
     # a sibling is not withdrawn -> filing error, not a distinct round.

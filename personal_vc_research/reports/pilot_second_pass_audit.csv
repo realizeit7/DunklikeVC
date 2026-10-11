@@ -1,0 +1,86 @@
+offering_id,check,value_a,value_b,source_a,source_b,match
+RCF-1745458-020-24457,xml_vs_dera:offeringAmount,50000.0,50000.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:maximumOfferingAmount,1070000.0,1070000.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:deadlineDate,2018-12-31,2018-12-31,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:currentEmployees,0.0,0.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:revenueMostRecentFiscalYear,21677.0,21677.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:netIncomeMostRecentFiscalYear,-27989.0,-27989.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:totalAssetMostRecentFiscalYear,1912.0,1912.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:cashEquiMostRecentFiscalYear,375.0,375.0,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:securityOfferedType,Other,Other,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:commissionCik,0001672732,0001672732,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,xml_vs_dera:commissionFileNumber,007-00046,007-00046,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1745458-020-24457,issuer_cik_xml_vs_frame,0001745458,0001745458,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,frozen_sample,True
+RCF-1745458-020-24457,intermediary_sec_file_number_xml_vs_frame,007-00046,007-00046,https://www.sec.gov/Archives/edgar/data/1745458/000174545818000001/primary_doc.xml,frozen_sample,True
+RCF-1745458-020-24457,manual_vs_structured:employees_stated_in_memorandum~employees,0,0,Form C PDF (manual),DERA initial Form C,True
+RCF-1745458-020-24457,amendment_text_deadline_vs_structured_deadline,2018-11-26,2018-12-31,C/A NATUREOFAMENDMENT 2018-11-19,DERA DEADLINEDATE same C/A,False
+RCF-1745458-020-24457,manual_fact_verification_status:ocr_read_not_visually_verified,16,,,,
+RCF-1745458-020-24457,manual_fact_verification_status:verified_rendered_page,4,,,,
+RCF-1758964-020-25095,xml_vs_dera:offeringAmount,25000.0,25000.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:maximumOfferingAmount,1070000.0,1070000.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:deadlineDate,2019-04-18,2019-04-18,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:currentEmployees,0.0,0.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:revenueMostRecentFiscalYear,25704.0,25704.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:netIncomeMostRecentFiscalYear,199509.0,199509.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:totalAssetMostRecentFiscalYear,12184.0,12184.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:cashEquiMostRecentFiscalYear,10139.0,10139.0,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:securityOfferedType,Other,Other,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:commissionCik,0001751525,0001751525,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,xml_vs_dera:commissionFileNumber,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1758964-020-25095,issuer_cik_xml_vs_frame,0001758964,0001758964,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,frozen_sample,True
+RCF-1758964-020-25095,intermediary_sec_file_number_xml_vs_frame,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1758964/000175896419000001/primary_doc.xml,frozen_sample,True
+RCF-1758964-020-25095,manual_vs_structured:employees_stated_in_memorandum~employees,0,0,Form C PDF (manual),DERA initial Form C,True
+RCF-1758964-020-25095,amendment_text_deadline_vs_structured_deadline,2019-04-30,2019-04-30,C/A NATUREOFAMENDMENT 2019-01-23,DERA DEADLINEDATE same C/A,True
+RCF-1758964-020-25095,amendment_text_deadline_vs_structured_deadline,2019-07-31,2019-07-31,C/A NATUREOFAMENDMENT 2019-04-29,DERA DEADLINEDATE same C/A,True
+RCF-1758964-020-25095,manual_fact_verification_status:ocr_read_not_visually_verified,14,,,,
+RCF-1758964-020-25095,manual_fact_verification_status:verified_rendered_page,4,,,,
+RCF-1783004-020-25792,xml_vs_dera:offeringAmount,25000.0,25000.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:maximumOfferingAmount,1070000.0,1070000.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:deadlineDate,2020-01-30,2020-01-30,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:currentEmployees,4.0,4.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:revenueMostRecentFiscalYear,256648.0,256648.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:netIncomeMostRecentFiscalYear,-528733.0,-528733.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:totalAssetMostRecentFiscalYear,31535.0,31535.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:cashEquiMostRecentFiscalYear,31535.0,31535.0,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:securityOfferedType,Other,Other,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:commissionCik,0001751525,0001751525,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,xml_vs_dera:commissionFileNumber,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1783004-020-25792,issuer_cik_xml_vs_frame,0001783004,0001783004,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,frozen_sample,True
+RCF-1783004-020-25792,intermediary_sec_file_number_xml_vs_frame,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1783004/000178300419000001/primary_doc.xml,frozen_sample,True
+RCF-1783004-020-25792,manual_vs_structured:employees_stated_in_memorandum~employees,4,4,Form C PDF (manual),DERA initial Form C,True
+RCF-1783004-020-25792,manual_vs_structured:revenue_fs~revenue,256648,256648,Form C PDF (manual),DERA initial Form C,True
+RCF-1783004-020-25792,manual_vs_structured:net_income_fs~net_income,-528733,-528733,Form C PDF (manual),DERA initial Form C,True
+RCF-1783004-020-25792,manual_fact_verification_status:ocr_read_not_visually_verified,12,,,,
+RCF-1783004-020-25792,manual_fact_verification_status:verified_rendered_page,7,,,,
+RCF-1769923-020-26464,xml_vs_dera:offeringAmount,25000.0,25000.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:maximumOfferingAmount,1070000.0,1070000.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:deadlineDate,2020-08-31,2020-08-31,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:currentEmployees,3.0,3.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:revenueMostRecentFiscalYear,1050.0,1050.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:netIncomeMostRecentFiscalYear,-398101.0,-398101.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:totalAssetMostRecentFiscalYear,38958.0,38958.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:cashEquiMostRecentFiscalYear,38908.0,38908.0,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:securityOfferedType,Other,Other,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:commissionCik,0001751525,0001751525,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,xml_vs_dera:commissionFileNumber,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,DERA FORM_C row,True
+RCF-1769923-020-26464,issuer_cik_xml_vs_frame,0001769923,0001769923,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,frozen_sample,True
+RCF-1769923-020-26464,intermediary_sec_file_number_xml_vs_frame,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1769923/000176992320000003/primary_doc.xml,frozen_sample,True
+RCF-1769923-020-26464,manual_vs_structured:employees_stated_in_memorandum~employees,3,3,Form C PDF (manual),DERA initial Form C,True
+RCF-1769923-020-26464,manual_fact_verification_status:native_text_read,17,,,,
+RCF-1805526-020-26437,xml_vs_dera:offeringAmount,25000.0,25000.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:maximumOfferingAmount,1070000.0,1070000.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:deadlineDate,2020-08-28,2020-08-28,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:currentEmployees,0.0,0.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:revenueMostRecentFiscalYear,531210.0,531210.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:netIncomeMostRecentFiscalYear,92801.0,92801.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:totalAssetMostRecentFiscalYear,19446.0,19446.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:cashEquiMostRecentFiscalYear,19446.0,19446.0,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:securityOfferedType,Other,Other,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:commissionCik,0001751525,0001751525,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,xml_vs_dera:commissionFileNumber,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,DERA FORM_C row,True
+RCF-1805526-020-26437,issuer_cik_xml_vs_frame,0001805526,0001805526,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,frozen_sample,True
+RCF-1805526-020-26437,intermediary_sec_file_number_xml_vs_frame,007-00167,007-00167,https://www.sec.gov/Archives/edgar/data/1805526/000180552620000001/primary_doc.xml,frozen_sample,True
+RCF-1805526-020-26437,manual_vs_structured:employees_stated_in_memorandum~employees,0,0,Form C PDF (manual),DERA initial Form C,True
+RCF-1805526-020-26437,minimum_investment_changed_by_amendment,250,"(a) reduce the minimum individual investment amount per investor, (b) provide information regarding an intermediate close of the Offering, and (c) provide information on new videos posted to the Compa",Form C PDF (manual),C/A published 2020-11-13,False
+RCF-1805526-020-26437,amendment_text_deadline_vs_structured_deadline,2020-12-31,2020-12-31,C/A NATUREOFAMENDMENT 2020-08-24,DERA DEADLINEDATE same C/A,True
+RCF-1805526-020-26437,manual_fact_verification_status:native_text_read,19,,,,

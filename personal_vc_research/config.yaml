@@ -65,6 +65,13 @@ collection:
   # Max targeted outcome web searches per offering (performed manually; logged in data/manual/).
   max_outcome_searches_per_offering: 3
 
+ocr:
+  # Resource limits for the pilot, not claims of document coverage.
+  max_pages_per_offering: 30
+  max_total_seconds: 3600        # 60 minutes of OCR processing for the pilot
+  max_pages_per_batch: 10
+  plan_file: data/manual/ocr_page_plan.csv
+
 paths:
   cache_dir: data/cache
   manifest: data/manifests/retrieval_manifest.jsonl
