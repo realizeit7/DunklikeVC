@@ -48,14 +48,11 @@ def pilot_rows(cfg: Config) -> tuple[pd.DataFrame, dict]:
         oid = o["offering_id"]
         fo = facts[facts["offering_id"] == oid]
         # document/page coverage
-        pdf = man.get(o["form_c_pdf_url"], {})
-        npages = readable = 0
-        if pdf.get("sha256"):
-            nj = cfg.root / "data/cache/pages" / pdf["sha256"] / "native.json"
-            if nj.exists():
-                pages = json.loads(nj.read_text())
-                npages = len(pages)
-                readable = sum(p["quality"] >= 0.75 for p in pages)
+        # page counts from the committed screening table (reproducible without the raw-document cache)
+        scr = _read(td / "form_c_text_screening.csv")
+        srow = scr[scr["offering_id"] == oid] if len(scr) else scr
+        npages = int(float(srow["n_pages"].iloc[0])) if len(srow) else 0
+        readable = int(float(srow["native_readable_pages"].iloc[0])) if len(srow) else 0
         oc = ocr[(ocr["offering_id"] == oid) & (ocr["status"] == "ocr_done")] if len(ocr) else pd.DataFrame()
         ocr_pages = len(oc)
         ocr_secs = round(sum(float(x) for x in oc["seconds"]), 1) if len(oc) else 0.0
