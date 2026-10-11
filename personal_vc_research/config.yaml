@@ -1,0 +1,75 @@
+# Personal VC Research — First Run (data feasibility study) — frozen configuration.
+# Paths are relative to this file's directory.
+
+study:
+  run_id: first_run_v0_1
+  # Frozen to the run's UTC start date (session began 2026-10-10 ~23:35 UTC).
+  # No event published after this date is treated as observable.
+  outcome_cutoff_utc: "2026-10-10"
+  cohort_years: [2018, 2019, 2020]
+  random_seed: 42
+  sample_size: 40
+  per_year_allocation: {2018: 13, 2019: 13, 2020: 14}
+  pilot_size: 5
+  audit_size: 5
+
+decision_rule:
+  # Decision time = initial Form C filing date + N calendar days.
+  days_after_initial_filing: 30
+  # Do not move the decision time if the offering already closed or availability is unknown.
+  allow_shift: false
+
+platform:
+  name: Republic (US Reg CF)
+  # Matched against the intermediary block of each Form C (COMPANYNAME / COMMISSIONCIK / COMMISSIONFILENUMBER).
+  # The CIK list is the evidence-backed result of `discover`; patterns are only used to find candidates.
+  intermediary_name_patterns: ["opendeal", "republic"]
+  # Verified from Form C intermediary blocks (data/frame/intermediary_evidence.csv):
+  #   0001672732 OpenDeal Inc. (dba Republic), funding portal file 007-00046, CRD 283874
+  #   0001751525 OpenDeal Portal LLC (dba Republic), funding portal file 007-00167, CRD 283874
+  intermediary_ciks: ["0001672732", "0001751525"]
+  exclude_name_patterns: ["seedrs", "republic europe"]
+
+security_filter:
+  include_classes: [equity, safe, convertible_note]
+  exclude_classes: [crypto_token, revenue_share, pure_debt, fund_or_spv, real_estate, other_unclassified]
+  # Hand-reviewed classifications (accession of the initial Form C). Each needs document evidence.
+  overrides:
+    - accession: "0001762000-19-000001"
+      security_class: pure_debt
+      evidence: "Mitte Corp. Form C PDF (formcmittecorp.pdf): 'Crowd SDA' note, 10% simple interest, 5-year maturity, 1.50X minimum return multiple; no conversion feature. Pure lending/revenue-like debt."
+
+sources:
+  dera_base_url: "https://www.sec.gov/files/dera/data/crowdfunding-offerings-data-sets/"
+  # Quarters loaded for frame + amendment/outcome linking (inclusive). Quarters ending after cutoff are skipped.
+  dera_first_quarter: "2017q1"
+  dera_last_quarter: "2026q3"
+  sec_user_agent_env: SEC_USER_AGENT   # e.g. "personal_vc_research your.name@example.com" — required by SEC
+
+http:
+  requests_per_second_by_host:
+    www.sec.gov: 4
+    data.sec.gov: 4
+    efts.sec.gov: 2
+    default: 1
+  max_retries: 3
+  backoff_seconds: [2, 4, 8]
+  timeout_seconds: 60
+  # Hard cap of network (non-cache) requests per CLI invocation.
+  request_budget_per_command: 1500
+
+collection:
+  # Max relevant documents fetched per offering (excludes lightweight index records:
+  # EDGAR index.json and data.sec.gov submissions JSON).
+  max_documents_per_offering: 10
+  # Max targeted outcome web searches per offering (performed manually; logged in data/manual/).
+  max_outcome_searches_per_offering: 3
+
+paths:
+  cache_dir: data/cache
+  manifest: data/manifests/retrieval_manifest.jsonl
+  frame_dir: data/frame
+  sample_dir: data/sample
+  tables_dir: data/tables
+  manual_dir: data/manual
+  reports_dir: reports

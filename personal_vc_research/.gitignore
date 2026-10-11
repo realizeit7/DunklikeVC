@@ -1,0 +1,6 @@
+# Raw downloaded documents / OCR text (reproducible via the retrieval manifest; large)
+data/cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+*_UNFROZEN.csv
