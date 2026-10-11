@@ -106,9 +106,54 @@ def cmd_ocr(cfg: Config, args) -> int:
     return 0
 
 
+def cmd_screen(cfg: Config, args) -> int:
+    """Native-text (no OCR) quality screening of every sampled offering's original Form C PDF."""
+    import re
+    import time
+    from . import pages
+    f = Fetcher(cfg)
+    s = pd.read_csv(cfg.path("sample_dir") / "frozen_sample.csv", dtype=str, keep_default_na=False)
+    rows = []
+    for _, r in s.sort_values("collection_order", key=lambda x: x.astype(int)).iterrows():
+        t0 = time.monotonic()
+        cik, acc = str(int(r["issuer_cik"])), r["initial_accession"].replace("-", "")
+        base = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/"
+        idx = json.loads(f.get(base + "index.json", "edgar_index").text())["directory"]["item"]
+        pdfs = sorted([i for i in idx if i["name"].lower().endswith(".pdf")], key=lambda i: -int(i["size"] or 0))
+        rec = {"offering_id": r["offering_id"], "legal_name": r["legal_name"], "is_pilot": r["is_pilot"],
+               "n_pdf_attachments": len(pdfs), "pdf": pdfs[0]["name"] if pdfs else ""}
+        if pdfs:
+            # Some filings split the Form C into several PDF attachments: screen all and aggregate.
+            nat, sizes, cached = [], 0, True
+            for att in pdfs:
+                res = f.get(base + att["name"], "form_c_attachment")
+                nat.extend(pages.native_pages(res.path, res.sha256, cfg.root / "data/cache/pages"))
+                sizes += res.path.stat().st_size
+                cached = cached and res.from_cache
+            q = [p["quality"] for p in nat]
+            readable = sum(x >= pages.READABLE for x in q)
+            text = " ".join(re.sub(r"\(cid:\d+\)", "", p["text"]) for p in nat if p["quality"] >= pages.READABLE)
+            cap = re.search(r"Valuation Cap\W{0,12}(?:is\W{0,6})?\$\s?([\d,]+)", text)
+            rec.update({"pdf": ";".join(a["name"] for a in pdfs), "n_pages": len(q), "native_readable_pages": readable,
+                        "share_readable": round(readable / len(q), 2) if q else 0,
+                        "text_layer_class": ("native_readable" if q and readable / len(q) >= 0.8 else
+                                             "partially_readable" if readable / max(len(q), 1) >= 0.3 else
+                                             "garbled_requires_ocr"),
+                        "valuation_cap_found_natively": cap.group(1) if cap else "",
+                        "directors_section_found_natively": bool(re.search(r"DIRECTORS|MANAGERS AND OFFICERS", text)),
+                        "pdf_bytes": sizes, "fetched_from_cache": cached})
+        rec["seconds"] = round(time.monotonic() - t0, 1)
+        rows.append(rec)
+        print(rec["offering_id"], rec.get("text_layer_class"), rec.get("share_readable"), rec["seconds"])
+    out = pd.DataFrame(rows)
+    out.to_csv(cfg.path("tables_dir") / "form_c_text_screening.csv", index=False)
+    print(out.groupby("text_layer_class").size(), f"network_requests={f.network_requests}")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="personal_vc_research")
-    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "report"])
+    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "screen", "report"])
     p.add_argument("--config", default="config.yaml")
     p.add_argument("--refreeze", action="store_true", help="discover: overwrite a frozen frame")
     p.add_argument("--batch", default="", help="ocr: plan batch id to run")
@@ -120,6 +165,8 @@ def main(argv=None) -> int:
             return cmd_discover(cfg, args)
         if args.command == "sample":
             return cmd_sample(cfg, args)
+        if args.command == "screen":
+            return cmd_screen(cfg, args)
         if args.command == "ocr":
             return cmd_ocr(cfg, args)
         if args.command == "collect":

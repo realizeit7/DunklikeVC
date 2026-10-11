@@ -1,0 +1,32 @@
+offering_id,scope,issue,priority
+RCF-1736388-020-24160,frame,"filings under same file number name another intermediary: 0001665160-20-000548(C/A,StartEngine Capital, LLC) 0001665160-20-000792(C/A,StartEngine Capital, LLC) 0001665160-20-001037(C/A,StartEngine Capital, LLC) 0001665160-20-001202(C/A,StartEngine Capital, L",high
+RCF-1762000-020-25062,frame,confirm security terms from offering document,medium
+RCF-1783580-020-25817,frame,issuer name suggests fund/project/crypto vehicle; confirm operating business and non-token security,high
+RCF-1808208-020-26792,frame,issuer name suggests fund/project/crypto vehicle; confirm operating business and non-token security,high
+RCF-1821120-020-26786,frame,LLC units: confirm operating business (not single-asset/project vehicle),high
+RCF-1823771-020-27342,frame,LLC units: confirm operating business (not single-asset/project vehicle),high
+RCF-1829993-020-27141,frame,LLC units: confirm operating business (not single-asset/project vehicle),high
+RCF-1758964-020-25095,pilot_fact,verify OCR contract term 'cap_basis' against rendered page page 71,medium
+RCF-1758964-020-25095,pilot_fact,verify OCR contract term 'conversion_trigger' against rendered page page 27,medium
+RCF-1758964-020-25095,pilot_fact,verify OCR contract term 'liquidity_event_treatment' against rendered page page 28,medium
+RCF-1758964-020-25095,pilot_fact,verify OCR contract term 'company_repurchase_right' against rendered page page 29,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'security_instrument' against rendered page page 29,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'form_of_security_located' against rendered page ,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'liquidity_event_treatment' against rendered page page 31,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'dissolution_treatment' against rendered page page 31,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'company_repurchase_right' against rendered page page 33,medium
+RCF-1745458-020-24457,pilot_fact,verify OCR contract term 'voting_rights' against rendered page page 32,medium
+RCF-1783004-020-25792,pilot_fact,verify OCR contract term 'cap_basis' against rendered page page 69,medium
+RCF-1783004-020-25792,pilot_fact,verify OCR contract term 'conversion_trigger' against rendered page page 25,medium
+RCF-1783004-020-25792,pilot_fact,verify OCR contract term 'liquidity_event_treatment' against rendered page page 67,medium
+RCF-1783004-020-25792,pilot_fact,verify OCR contract term 'company_repurchase_right' against rendered page page 27,medium
+RCF-1745458-020-24457,audit_discrepancy,amendment_text_deadline_vs_structured_deadline: 2018-11-26 vs 2018-12-31,high
+RCF-1805526-020-26437,audit_discrepancy,"minimum_investment_changed_by_amendment: 250 vs (a) reduce the minimum individual investment amount per investor, (b) provide information regarding an intermediate clos",high
+RCF-1758964-020-25095,outcome,C-TR without stated reason; business status unknown,medium
+RCF-1805526-020-26437,outcome,C-TR without stated reason; business status unknown,medium
+RCF-1783004-020-25792,outcome,C-TR without stated reason; business status unknown,medium
+RCF-1758964-020-25095,outcome,no observation since 2022-05-02 (>3y): status unknown,medium
+RCF-1745458-020-24457,outcome,offering reported closed but no Form C-AR ever filed (reporting non-compliance?),medium
+RCF-1783004-020-25792,outcome,no observation since 2020-05-19 (>3y): status unknown,medium
+RCF-1769923-020-26464,outcome,no observation since 2023-02-09 (>3y): status unknown,medium
+RCF-1805526-020-26437,payout,SAFE conversion reported at pooled level; per-round/per-investor shares and basis not traceable,high

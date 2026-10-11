@@ -1,0 +1,41 @@
+offering_id,legal_name,is_pilot,n_pdf_attachments,pdf,n_pages,native_readable_pages,share_readable,text_layer_class,valuation_cap_found_natively,directors_section_found_natively,pdf_bytes,fetched_from_cache,seconds
+RCF-1758964-020-25095,"Up Sonder, LLC",True,1,formc.pdf,80,0,0.0,garbled_requires_ocr,,False,14117016,True,0.0
+RCF-1745458-020-24457,"Hemster, Inc.",True,1,formc.pdf,59,0,0.0,garbled_requires_ocr,,False,21070258,True,0.0
+RCF-1805526-020-26437,Janover Ventures LLC,True,1,FormC1.pdf,79,60,0.76,partially_readable,"20,000,000",True,10479969,True,0.0
+RCF-1783004-020-25792,"SkyHi Travel, Inc.",True,1,formcskyhifinal.pdf,82,0,0.0,garbled_requires_ocr,,False,11916237,True,0.0
+RCF-1769923-020-26464,"People First RH, Inc.",True,1,FormC.pdf,75,60,0.8,native_readable,"6,000,000",True,7277949,True,0.0
+RCF-1829993-020-27141,Smart Vylon LLC,False,1,nectartulum4.pdf,158,0,0.0,garbled_requires_ocr,,False,15811472,True,0.0
+RCF-1831785-020-27310,Organic Amazon Corp.,False,1,acaitogoformc.pdf,78,0,0.0,garbled_requires_ocr,,False,29641285,True,0.0
+RCF-1779032-020-25461,Salsa God LLC,False,5,ExhibitD.pdf;offeringStatement.pdf;ExhibitE.pdf;ExhibitC.pdf;ExhibitF.pdf,74,74,1.0,native_readable,"6,000,000",False,1818385,False,9.6
+RCF-1700943-020-26045,"Plei, Inc.",False,5,pleifinancials.pdf;pleicampaign.pdf;pleiformc.pdf;pleisafe.pdf;pleivid.pdf,106,93,0.88,native_readable,"10,000,000",True,3934149,False,8.1
+RCF-1745727-020-24708,FOCUSMATE INC,False,1,formc.pdf,85,0,0.0,garbled_requires_ocr,,False,20273454,True,0.0
+RCF-1803592-020-26471,"GrapeStars International, Inc.",False,1,grapestarsfromc.pdf,100,63,0.63,partially_readable,,True,3383639,True,0.0
+RCF-1777204-020-25609,"HelloAva, Inc.",False,1,helloavaformc.pdf,91,90,0.99,native_readable,"15,000,000",True,1534641,True,0.0
+RCF-1823771-020-27342,Grove Biomedical LLC,False,1,grovebiomedformc.pdf,131,0,0.0,garbled_requires_ocr,,False,46608548,True,0.0
+RCF-1785176-020-25681,Layali LLC,False,5,exhibitd.pdf;exhibitclayali.pdf;layaliformcfinal.pdf;exhibite.pdf;exhibitf.pdf,75,75,1.0,native_readable,"2,500,000",True,11787590,False,7.7
+RCF-1580960-020-23980,"Pigeonly, Inc.",False,1,formc.pdf,72,0,0.0,garbled_requires_ocr,,False,28229470,True,0.0
+RCF-1721392-020-23930,"SmarterD,Inc.",False,1,smarterdformcf.pdf,53,0,0.0,garbled_requires_ocr,,False,5961755,True,0.0
+RCF-1811508-020-26895,"popshop, Inc.",False,1,psformc2.pdf,93,0,0.0,garbled_requires_ocr,,False,20513920,True,0.0
+RCF-1804659-020-26476,"Gesture US, Inc.",False,1,FormC.pdf,79,57,0.72,partially_readable,"10,000,000",True,14807697,True,0.0
+RCF-1789922-020-25689,"Aavrani, Inc.",False,5,aavranicampaign.pdf;aavraniformc.pdf;aavranisafe.pdf;aavranifinancial.pdf;aavranitransc.pdf,64,64,1.0,native_readable,"5,000,000",True,7860670,False,6.9
+RCF-1817694-020-27277,"UpChoose, PBC",False,1,upchooseformc.pdf,100,100,1.0,native_readable,"8,000,000",True,17332058,True,0.0
+RCF-1731540-020-24027,"WolfPack Systems, Inc",False,1,formc.pdf,72,0,0.0,garbled_requires_ocr,,False,34913696,True,0.0
+RCF-1660945-020-23944,"Harvest Fresh Foods, PBC",False,1,everytableformc.pdf,113,0,0.0,garbled_requires_ocr,,False,65154449,True,0.0
+RCF-1581437-020-25645,"DIGITAL DREAM LABS, LLC",False,1,formc.pdf,94,0,0.0,garbled_requires_ocr,,False,13528004,True,0.0
+RCF-1734260-020-24528,Indemnis Inc,False,1,indemnisincformc.pdf,83,83,1.0,native_readable,"25,000,000",True,1556647,True,0.0
+RCF-1783580-020-25817,Ember Fund LLC,False,4,emberfundexhibitd.pdf;eemberfundformcexhibitc.pdf;emberformc.pdf;emberfundexhibitf.pdf,91,81,0.89,native_readable,"5,000,000",True,7518897,False,7.3
+RCF-1811504-020-26743,"Tomo Technologies, Inc.",False,1,GoBeFormC.pdf,77,63,0.82,native_readable,"4,000,000",True,22789807,True,0.0
+RCF-1735090-020-24306,"Crowdfind, Inc.",False,1,crowdfindformc.pdf,86,0,0.0,garbled_requires_ocr,,False,32198746,True,0.0
+RCF-1790042-020-25815,Lieu Ltd,False,1,thelieuformc.pdf,81,81,1.0,native_readable,"3,000,000",True,7263745,True,0.0
+RCF-1783015-020-25612,Soar Robotics Inc.,False,5,CampaignPage.pdf;SRFinancials.pdf;SoarRoboticsFormC.pdf;SoarRoboticsCrowdSAFE.pdf;SoarRoboticsVideoTranscript.pdf,80,69,0.86,native_readable,"7,000,000",True,6823728,False,10.0
+RCF-1739119-020-24514,YOURVIRTUALSIM INC,False,1,formc.pdf,69,0,0.0,garbled_requires_ocr,,False,44509225,True,0.0
+RCF-1722137-020-25885,Upshift Inc.,False,1,formc.pdf,90,0,0.0,garbled_requires_ocr,,False,42406652,True,0.0
+RCF-1816011-020-26718,"Levered Learning, Inc.",False,1,finalformcleveredlearning.pdf,97,0,0.0,garbled_requires_ocr,,False,19359354,True,0.0
+RCF-1785115-020-26052,Boring Life Inc,False,1,boringlifeformc.pdf,94,94,1.0,native_readable,"3,500,000",True,9136725,True,0.0
+RCF-1796106-020-27292,"Genius Juice, LLC",False,1,geniusjuiceformc.pdf,88,0,0.0,garbled_requires_ocr,,False,15936087,True,0.0
+RCF-1735360-020-24220,"Parlay App, Inc.",False,1,parlayformc.pdf,69,0,0.0,garbled_requires_ocr,,False,41965341,True,0.0
+RCF-1675773-020-24340,RadioPublic PBC,False,1,formcedgarizedmondayfinal.pdf,76,0,0.0,garbled_requires_ocr,,False,21984254,True,0.0
+RCF-1792508-020-25880,"Linen Mobile, Inc.",False,1,Linenmobileformc.pdf,92,91,0.99,native_readable,"19,800,000",True,3778876,True,0.0
+RCF-1767762-020-25346,Bounty0x Inc.,False,1,formcbountyxo.pdf,78,75,0.96,native_readable,"5,000,000",True,1390748,True,0.0
+RCF-1726542-020-24492,AVOKE INC,False,1,formc.pdf,92,0,0.0,garbled_requires_ocr,,False,9373114,True,0.0
+RCF-1758128-020-24986,BX SPACES LLC,False,1,formc.pdf,124,0,0.0,garbled_requires_ocr,,False,24850353,True,0.0
