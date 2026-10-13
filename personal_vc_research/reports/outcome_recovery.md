@@ -97,7 +97,7 @@ Levels: 1 issuer-wide aggregate conversions · 2 shares attributable to the Repu
 | valuation_cap/discount | RCF-1745458-020-24457 | p30 rendered (phase 1) | verified | $5M via Safe Price / none stated |
 | janover_conversion_numbers | RCF-1805526-020-26437 | cached 10-K FY2023, 10-K FY2024, 424B4, resale 424B4 (exact-string search) | verified_documents | 218,772 / $668,898; 75,207 / $176,326; 5,358 / $14,734; 165,861; 20,733; 1-for-6.82 and 1-for-8 splits; $779,334 and $50,000 SAFE all present verbatim; amounts conflict with each other (see trace) |
 | janover_pooling | RCF-1805526-020-26437 | resale 424B4 description of capital stock | verified_documents | 2020/2021 SAFE class includes one $50,000 non-Republic SAFE -> Republic attribution not separable |
-| payout_calculation | ALL | all pilot offerings | not_applicable | no payout calculation performed; no investor cash flows exist to check |
+| payout_calculation | ALL | all pilot offerings | not_applicable | no payout calculation performed; no investor cash flows were recovered from accessible sources |
 
 
 ## 6. Time and source yield

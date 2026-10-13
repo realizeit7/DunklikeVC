@@ -1,0 +1,41 @@
+offering_id,legal_name,cohort_year,strict_label,strict_reason,sensitivity_labels,conflicts,business_outcome_denominator
+RCF-1758964-020-25095,"Up Sonder, LLC",2019,unresolved,recent operating evidence only (not a terminal outcome),operating_claim_recent,,True
+RCF-1745458-020-24457,"Hemster, Inc.",2018,unresolved,conflicting sources,platform_claim_converted_no_cash;operating_claim_recent;conflicted,platform mark disappears in later filing (instability; not a reversal),True
+RCF-1805526-020-26437,Janover Ventures LLC,2020,listed_public,424B4 + 8-A12B,operating_claim_recent;conflicted,platform '*' vs SEC listing/reporting evidence,True
+RCF-1783004-020-25792,"SkyHi Travel, Inc.",2019,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1769923-020-26464,"People First RH, Inc.",2020,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1829993-020-27141,Smart Vylon LLC,2020,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1831785-020-27310,Organic Amazon Corp.,2020,offering_withdrawn,Form C-W; no completion report,unobserved_gt_3y,,False
+RCF-1779032-020-25461,Salsa God LLC,2019,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1700943-020-26045,"Plei, Inc.",2020,unresolved,recent operating evidence only (not a terminal outcome),operating_claim_recent,,True
+RCF-1745727-020-24708,FOCUSMATE INC,2018,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1803592-020-26471,"GrapeStars International, Inc.",2020,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1777204-020-25609,"HelloAva, Inc.",2019,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1823771-020-27342,Grove Biomedical LLC,2020,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1785176-020-25681,Layali LLC,2019,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1580960-020-23980,"Pigeonly, Inc.",2018,unresolved,insolvency proceeding reported (not dissolution),platform_claim_insolvent_dormant_or_dissolved;insolvency_proceeding_reported,,True
+RCF-1721392-020-23930,"SmarterD,Inc.",2018,offering_withdrawn,Form C-W; no completion report,unobserved_gt_3y,,False
+RCF-1811508-020-26895,"popshop, Inc.",2020,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1804659-020-26476,"Gesture US, Inc.",2020,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1789922-020-25689,"Aavrani, Inc.",2019,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1817694-020-27277,"UpChoose, PBC",2020,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1731540-020-24027,"WolfPack Systems, Inc",2018,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1660945-020-23944,"Harvest Fresh Foods, PBC",2018,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1581437-020-25645,"DIGITAL DREAM LABS, LLC",2019,unresolved,conflicting sources,conflicted,external report names a differently-suffixed entity (identity uncertain),True
+RCF-1734260-020-24528,Indemnis Inc,2018,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1783580-020-25817,Ember Fund LLC,2019,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1811504-020-26743,"Tomo Technologies, Inc.",2020,unresolved,recent operating evidence only (not a terminal outcome),operating_claim_recent,,True
+RCF-1735090-020-24306,"Crowdfind, Inc.",2018,unresolved,no terminal evidence,unobserved_gt_3y,,True
+RCF-1790042-020-25815,Lieu Ltd,2019,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1783015-020-25612,Soar Robotics Inc.,2019,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1739119-020-24514,YOURVIRTUALSIM INC,2018,unresolved,reporting terminated; no later dated evidence,platform_claim_holding_disposed,,True
+RCF-1722137-020-25885,Upshift Inc.,2019,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1816011-020-26718,"Levered Learning, Inc.",2020,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1785115-020-26052,Boring Life Inc,2020,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1796106-020-27292,"Genius Juice, LLC",2020,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved;closure_claim_weak,,True
+RCF-1735360-020-24220,"Parlay App, Inc.",2018,unresolved,platform adverse claim only,platform_claim_insolvent_dormant_or_dissolved,,True
+RCF-1675773-020-24340,RadioPublic PBC,2018,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1792508-020-25880,"Linen Mobile, Inc.",2019,operational_closure_documented,company announcement + independent report (legal dissolution not established),platform_claim_adverse_issuer_level_only,,True
+RCF-1767762-020-25346,Bounty0x Inc.,2019,unresolved,reporting terminated; no later dated evidence,unobserved_gt_3y,,True
+RCF-1726542-020-24492,AVOKE INC,2018,offering_withdrawn,Form C-W; no completion report,unobserved_gt_3y,,False
+RCF-1758128-020-24986,BX SPACES LLC,2018,offering_withdrawn,Form C-W; no completion report,unobserved_gt_3y,,False

@@ -1,0 +1,37 @@
+offering_id,legal_name,website,http_status,retrieved_utc,sha256,title,parked_or_for_sale,latest_displayed_date,n_dates,footer_year,text_len,name_on_page,status
+RCF-1580960-020-23980,"Pigeonly, Inc.",https://www.pigeon.ly,200,2026-10-13T01:00:38+00:00,edeec84dc3471337f24c0c24be0fa1e7c91afba775b654fefff4bb74b0bb563c,Inmate Communication Made Easy | Pigeonly,False,,0.0,,3010.0,True,live_undated
+RCF-1660945-020-23944,"Harvest Fresh Foods, PBC",https://www.everytable.com,200,2026-10-13T01:00:39+00:00,28a3782a205ad1ec81e786b9e41d4718286d62134aff4286223070ce9a56ff05,"Fresh, Healthy Prepared Meals | Everytable",False,,0.0,2026,11685.0,False,live_undated
+RCF-1675773-020-24340,RadioPublic PBC,https://radiopublic.com/,-1,2026-10-13T01:00:42+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1721392-020-23930,"SmarterD,Inc.",https://www.smarterd.com,200,2026-10-13T01:00:43+00:00,c3ebefad29b69f88aa261840d8234785edff0baab26da68c469586d919b2c2e6,SmarterD | AI-Powered Data Convergence Platform,False,,0.0,,10887.0,False,live_undated
+RCF-1726542-020-24492,AVOKE INC,https://www.avokelife.com,-1,2026-10-13T01:00:46+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1731540-020-24027,"WolfPack Systems, Inc",https://www.wolfpack.run,404,2026-10-13T01:00:47+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1734260-020-24528,Indemnis Inc,https://www.indemnis.com,404,2026-10-13T01:00:47+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1735090-020-24306,"Crowdfind, Inc.",https://crowdfind.com/,200,2026-10-13T01:00:49+00:00,57fd3ffefc2dea2858aaec15e353984ae3ebc7e75bd5c2a809a79d9c0c78ca1e,Pixit Workflow Management Software,False,,0.0,,4522.0,False,live_undated
+RCF-1735360-020-24220,"Parlay App, Inc.",https://parlay.ai,403,2026-10-13T01:00:50+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1739119-020-24514,YOURVIRTUALSIM INC,http://www.ring4.com,200,2026-10-13T01:00:51+00:00,cdfdd1b58f4ff44adbf82fa66ceea2affd7f89f86fce91e282f59bf48131d8ce,Shared Business Phone Number for Teams | Ring4 — $24/mo | Ring4,False,,0.0,2026,11594.0,False,live_undated
+RCF-1745727-020-24708,FOCUSMATE INC,https://www.focusmate.com/,200,2026-10-13T01:00:51+00:00,7ee9ee7b974e274446dd0e5fc7bc9ff73ad0525a72cb845b0ef45c4e37e83ad5,Focusmate—Virtual body doubling for getting anything done,False,,0.0,2026,6025.0,True,live_undated
+RCF-1758128-020-24986,BX SPACES LLC,https://www.bxspaces.com,200,2026-10-13T01:00:53+00:00,28271a13034a19bc0fffbacabb2f42d74aec5b14353f26c26665cb8b657eb494,b[x] Spaces - Coworking Spaces For Creatives in Brooklyn,False,,0.0,2021,1394.0,False,live_undated
+RCF-1581437-020-25645,"DIGITAL DREAM LABS, LLC",https://www.digitaldreamlabs.com/,200,2026-10-13T01:00:55+00:00,ae4dcc6e7182d77737bb3ba2e1e6d92f351ada0afc2fdc248c857319617ab983,Anki Vector 2.0 | AI Home Robot Companion – ANKI,False,,0.0,2026,7855.0,True,live_undated
+RCF-1722137-020-25885,Upshift Inc.,http://upshiftcars.com,202,2026-10-13T01:00:55+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1767762-020-25346,Bounty0x Inc.,https://bounty0x.io/,200,2026-10-13T01:00:56+00:00,baff05696d29031f65ae6a034d83e96c4c76b5a34bbc5be1d398ccf6e9c3a030,Bounty0x - Earning Crypto Made Simple,False,,0.0,2020,5045.0,True,live_undated
+RCF-1777204-020-25609,"HelloAva, Inc.",https://www.helloava.co,-1,2026-10-13T01:01:00+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1779032-020-25461,Salsa God LLC,https://www.salsagod.com,-1,2026-10-13T01:01:03+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1783015-020-25612,Soar Robotics Inc.,https://www.soarrobotics.com/,404,2026-10-13T01:01:04+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1783580-020-25817,Ember Fund LLC,https://emberfund.io,200,2026-10-13T01:01:04+00:00,d0075970dba9fa45c3dc54e36ee8d1267f14e33d9fa64c6635cee539b0dc3bf6,"Ember – Free games, free Sats, real prizes",False,,0.0,2026,2817.0,True,live_undated
+RCF-1785176-020-25681,Layali LLC,https://layali.us/,522,2026-10-13T01:01:24+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1789922-020-25689,"Aavrani, Inc.",http://aavrani.com,200,2026-10-13T01:01:25+00:00,f7c4f38294250158d413f368eaaf2077960cc9d1baa2a8ffa331ca99b1f1065f,,False,,0.0,2024,10181.0,True,live_undated
+RCF-1790042-020-25815,Lieu Ltd,https://www.thelieu.com/,403,2026-10-13T01:01:26+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1792508-020-25880,"Linen Mobile, Inc.",https://linen.app,200,2026-10-13T01:01:28+00:00,4883da3c5ddb7f70bd87e7494affa5393b0f6917d01fd8a9b46aca21d89c859b,"Linen Wallet on X: &quot;🛑 [IMPORTANT ANNOUNCEMENT] 🛑
+We made the tough decision",False,2023-11-30,8.0,2026,5497.0,True,live_dated_content
+RCF-1700943-020-26045,"Plei, Inc.",http://plei.app,200,2026-10-13T01:01:29+00:00,bb4a21bb5eee736223a2b859d3ef2519b12a8e329f5942dccf72a0966be42575,Play More Soccer with Plei | Find &amp; Join Pickup Games Near You,False,,0.0,2026,7130.0,True,live_undated
+RCF-1785115-020-26052,Boring Life Inc,http://www.aboringlife.com,200,2026-10-13T01:01:30+00:00,c530b807413b83887989da31579d72d7b0b870ef06c11b2d9695e72153f57731,ABoringLife.com is for sale | HugeDomains,True,,0.0,2026,5891.0,True,parked_or_for_sale
+RCF-1796106-020-27292,"Genius Juice, LLC",https://www.geniusjuice.com,-1,2026-10-13T01:01:33+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1803592-020-26471,"GrapeStars International, Inc.",http://www.grapestars.com,-1,2026-10-13T01:01:37+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1804659-020-26476,"Gesture US, Inc.",https://www.yourgesture.com,-1,2026-10-13T01:01:39+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1811504-020-26743,"Tomo Technologies, Inc.",https://www.gobekids.co,200,2026-10-13T01:01:40+00:00,27572c14db4153f81b693df061bc10172b5220dd6b9366eb18e99512be7b020c,GoBe Snack Spinner,False,,0.0,2026,8077.0,False,live_undated
+RCF-1811508-020-26895,"popshop, Inc.",https://www.popshop.com,403,2026-10-13T01:01:40+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1816011-020-26718,"Levered Learning, Inc.",https://www.levered.com,200,2026-10-13T01:01:41+00:00,da8b65417cf8b84b3de2d77c07b0a11da1416b7bba02a39625b6505a5846c079,An Individualized and Adaptive Online Math Program for Elementary Classrooms,False,2023-08-25,4.0,2026,5340.0,True,live_dated_content
+RCF-1817694-020-27277,"UpChoose, PBC",https://www.upchoose.com/,200,2026-10-13T01:01:42+00:00,c6498c70a930d7068b12c163c1b5fe841500c50577e8ca35ec90d843e5abb417,Baby Clothing Made Easy and Sustainable | UpChoose,False,,0.0,2024,10296.0,True,live_undated
+RCF-1823771-020-27342,Grove Biomedical LLC,https://www.onecanopy.com,200,2026-10-13T01:01:43+00:00,3d020fbbf03df4a044154c6342a8509290baabb6098c0399cae92bfac6349b31,System Down — Recovery Control,False,,0.0,,500.0,False,live_undated
+RCF-1829993-020-27141,Smart Vylon LLC,https://www.nectartulum.com,-1,2026-10-13T01:01:45+00:00,,,,,,,,,unreachable_or_blocked
+RCF-1831785-020-27310,Organic Amazon Corp.,https://acaitogo.com,200,2026-10-13T01:01:46+00:00,6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023,,False,,0.0,,1.0,False,live_undated

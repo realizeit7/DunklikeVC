@@ -1,0 +1,56 @@
+offering_id,legal_name,check,second_pass_value,pipeline_value,agree,method
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_C-AR,3,3,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_C-TR,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_C-W,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_form_d,2,2,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_later_form_c,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:n_other_round_c_u,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",sec:last_sec_filing,2023-06-26,2023-06-26,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1580960-020-23980,"Pigeonly, Inc.",republic:Pigeonly:2022-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1580960-020-23980,"Pigeonly, Inc.",republic:Pigeonly:2023-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1580960-020-23980,"Pigeonly, Inc.",republic:Pigeonly:2024-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1580960-020-23980,"Pigeonly, Inc.",republic:Pigeonly:2025-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_C-AR,2,2,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_C-TR,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_C-W,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_form_d,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_later_form_c,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:n_other_round_c_u,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",sec:last_sec_filing,2020-06-04,2020-06-04,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1735090-020-24306,"Crowdfind, Inc.",republic:Crowdfind:2022-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1735090-020-24306,"Crowdfind, Inc.",republic:Crowdfind:2023-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1735090-020-24306,"Crowdfind, Inc.",republic:Crowdfind:2024-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1735090-020-24306,"Crowdfind, Inc.",republic:Crowdfind:2025-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785115-020-26052,Boring Life Inc,sec:n_C-AR,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:n_C-TR,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:n_C-W,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:n_form_d,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:n_later_form_c,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:n_other_round_c_u,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,sec:last_sec_filing,2020-08-03,2020-08-03,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785115-020-26052,Boring Life Inc,republic:A Boring Life:2022-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785115-020-26052,Boring Life Inc,republic:A Boring Life:2023-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785115-020-26052,Boring Life Inc,republic:A Boring Life:2024-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785115-020-26052,Boring Life Inc,republic:A Boring Life:2025-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785176-020-25681,Layali LLC,sec:n_C-AR,2,2,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:n_C-TR,1,1,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:n_C-W,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:n_form_d,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:n_later_form_c,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:n_other_round_c_u,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,sec:last_sec_filing,2021-05-06,2021-05-06,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1785176-020-25681,Layali LLC,republic:Layali:2022-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785176-020-25681,Layali LLC,republic:Layali:2023-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785176-020-25681,Layali LLC,republic:Layali:2024-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1785176-020-25681,Layali LLC,republic:Layali:2025-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_C-AR,2,2,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_C-TR,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_C-W,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_form_d,0,0,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_later_form_c,1,1,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:n_other_round_c_u,2,2,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",sec:last_sec_filing,2023-03-10,2023-03-10,True,EDGAR submissions JSON (filings.recent) <= cutoff
+RCF-1796106-020-27292,"Genius Juice, LLC",republic:Genius Juice:2022-12-31,no mark,no mark,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1796106-020-27292,"Genius Juice, LLC",republic:Genius Juice:2023-12-31,not listed,not listed,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1796106-020-27292,"Genius Juice, LLC",republic:Genius Juice:2024-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital
+RCF-1796106-020-27292,"Genius Juice, LLC",republic:Genius Juice:2025-12-31,*,*,True,pdftotext -layout (poppler) line search by label + capital

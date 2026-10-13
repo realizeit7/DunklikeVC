@@ -202,16 +202,20 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
 
     # -- original Form C documents ---------------------------------------------------------------
     acc_path = acc0.replace("-", "")
-    idx = ctx.f.get(f"{SEC}/{cik_i}/{acc_path}/index.json", "edgar_index")
-    items = json.loads(idx.text())["directory"]["item"]
-    xml_res = ctx.fetch_doc(oid, f"{SEC}/{cik_i}/{acc_path}/primary_doc.xml", "form_c_xml")
-    sid_xml = ctx.source(xml_res.url, "sec_filing_structured", "C", acc0, off["initial_filing_date"], xml_res, cik)
-    xml = parse_form_c_xml(xml_res.text()) if xml_res and xml_res.ok else {}
-    pdfs = sorted([i for i in items if i["name"].lower().endswith(".pdf")], key=lambda i: -int(i["size"] or 0))
-    pdf_url = f"{SEC}/{cik_i}/{acc_path}/{pdfs[0]['name']}" if pdfs else ""
-    pdf_res = ctx.fetch_doc(oid, pdf_url, "form_c_attachment") if pdf_url else None
-    sid_pdf = ctx.source(pdf_url, "sec_filing_document", "C", acc0, off["initial_filing_date"], pdf_res, cik,
-                         note="Form C offering memorandum PDF (issuer statements + reviewed financials)") if pdf_url else ""
+    OO = bool(manual.get("outcomes_only"))  # outcome-first pass: no historical documents or features
+    xml_res, xml, pdf_url = None, {}, ""
+    if not OO:
+        idx = ctx.f.get(f"{SEC}/{cik_i}/{acc_path}/index.json", "edgar_index")
+        items = json.loads(idx.text())["directory"]["item"]
+        xml_res = ctx.fetch_doc(oid, f"{SEC}/{cik_i}/{acc_path}/primary_doc.xml", "form_c_xml")
+        ctx.source(xml_res.url, "sec_filing_structured", "C", acc0, off["initial_filing_date"], xml_res, cik)
+        xml = parse_form_c_xml(xml_res.text()) if xml_res and xml_res.ok else {}
+        pdfs = sorted([i for i in items if i["name"].lower().endswith(".pdf")], key=lambda i: -int(i["size"] or 0))
+        pdf_url = f"{SEC}/{cik_i}/{acc_path}/{pdfs[0]['name']}" if pdfs else ""
+        pdf_res = ctx.fetch_doc(oid, pdf_url, "form_c_attachment") if pdf_url else None
+        if pdf_url:
+            ctx.source(pdf_url, "sec_filing_document", "C", acc0, off["initial_filing_date"], pdf_res, cik,
+                       note="Form C offering memorandum PDF (issuer statements + reviewed financials)")
 
     # -- DERA structured rows for this offering / issuer ---------------------------------------------
     m = dtabs["m"]
@@ -227,7 +231,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
                           note="SEC DERA crowdfunding data set row (structured extract of the filing XML)")
 
     # Historical facts from the initial Form C and C/As (eligibility by filing date)
-    for _, r in off_rows[off_rows["SUBMISSION_TYPE"].isin(["C", "C/A"])].iterrows():
+    for _, r in (off_rows.iloc[0:0] if OO else off_rows[off_rows["SUBMISSION_TYPE"].isin(["C", "C/A"])]).iterrows():
         sid = dera_source(r)
         pub = r["FILING_DATE"].isoformat()
         tag = "initial_form_c" if r["ACCESSION_NUMBER"] == acc0 else "form_c_amendment"
@@ -250,7 +254,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
                  method="structured_field", missing_reason="nature of amendment blank")
     # Company facts from the initial Form C
     r0 = off_rows[off_rows["ACCESSION_NUMBER"] == acc0]
-    if len(r0):
+    if len(r0) and not OO:
         r0 = r0.iloc[0]
         sid = dera_source(r0)
         for col, name in [("DATEINCORPORATION", "date_incorporation"), ("LEGALSTATUSFORM", "legal_status"),
@@ -261,7 +265,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
 
     # Prior Form D filings available before the decision date (historical financing context)
     for r in rows:
-        if r["form"] in ("D", "D/A") and r["filing_date"] <= dec:
+        if r["form"] in ("D", "D/A") and r["filing_date"] <= dec and not OO:
             url = f"{SEC}/{cik_i}/{r['accession'].replace('-', '')}/primary_doc.xml"
             res = ctx.fetch_doc(oid, url, "form_d")
             if res is None or not res.ok:
@@ -275,7 +279,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
 
     # -- manual facts (provenance-backed analyst extraction) ------------------------------------------
     mf = manual["facts"]
-    if len(mf):
+    if len(mf) and not OO:
         for _, r in mf[mf["offering_id"] == oid].iterrows():
             url = r["doc_url"]
             res = ctx.f.cached(url)
@@ -317,7 +321,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
         sid = dera_source(r)
         txt = r["PROGRESSUPDATE"]
         amts = [_num(a) for a in MONEY.findall(txt)]
-        final = bool(re.search(r"closed|conclusion|successfully (raised|completed|received)|ended", txt, re.I))
+        final = bool(re.search(r"closed|conclusion|successful(ly)?\b|completed|ended|total amount sold|raised approximately", txt, re.I))
         if final and amts:
             amount_reported, completion_note, completion_date = amts[0], txt, r["FILING_DATE"].isoformat()
         event(ctx, oid, cik, "offering_completion_reported" if final else "progress_update",
@@ -455,7 +459,7 @@ def collect_offering(ctx: Ctx, off: pd.Series, dtabs: dict, manual: dict) -> dic
         "completion_report_date": completion_date, "completion_text": completion_note,
         "n_amendments_total": int((off_rows["SUBMISSION_TYPE"] == "C/A").sum()),
         "n_amendments_before_decision": int((pre["SUBMISSION_TYPE"] == "C/A").sum()),
-        "form_c_pdf_url": pdf_url, "form_c_xml_url": xml_res.url if xml_res else "",
+        "form_c_pdf_url": pdf_url, "form_c_xml_url": xml_res.url if xml_res else "", "collection_mode": "outcomes_only" if OO else "full",
         "xml_offering_amount": xml.get("offeringAmount", ""), "xml_deadline": xml.get("deadlineDate", ""),
         **summ,
         "followup_years_from_decision": round((dt.date.fromisoformat(cutoff) - dt.date.fromisoformat(dec)).days / 365.25, 2),
@@ -520,6 +524,7 @@ def cmd_collect(cfg: Config, args) -> int:
               "outcomes": load_manual(cfg, "outcome_evidence_manual.csv"),
               "probes": load_manual(cfg, "document_probes.csv")}
     uip = cfg.path("tables_dir") / "user_imports_public.csv"
+    manual["outcomes_only"] = bool(getattr(args, "outcomes_only", False))
     manual["user_imports"] = pd.read_csv(uip, dtype=str, keep_default_na=False) if uip.exists() else pd.DataFrame()
     ctx = Ctx(cfg, f)
     offs = []
@@ -532,7 +537,7 @@ def cmd_collect(cfg: Config, args) -> int:
             print(f"BUDGET EXHAUSTED at {off['offering_id']}: {exc}")
             break
     td = cfg.path("tables_dir")
-    suffix = "_pilot" if args.only == "pilot" else ""
+    suffix = "_pilot" if args.only == "pilot" else ("_outcomes40" if manual["outcomes_only"] else "")
     pd.DataFrame(offs).to_csv(td / f"offerings{suffix}.csv", index=False)
     pd.DataFrame(ctx.facts).to_csv(td / f"facts{suffix}.csv", index=False)
     pd.DataFrame(list(ctx.sources.values())).to_csv(td / f"sources{suffix}.csv", index=False)

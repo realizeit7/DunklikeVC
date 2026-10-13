@@ -21,7 +21,7 @@
 * Detailed extraction for the 35 non-pilot offerings (screening only).
 * The 5-offering audit set designated in `sample_freeze.json` (the pilot was audited instead).
 * `reports/first_run.md` for all 40.
-* Any real return calculation: no qualifying cash flows exist.
+* Any real return calculation: no qualifying cash flows were recovered from accessible sources.
 
 ## Recoverable / not recoverable (pilot evidence)
 | Layer | Pilot result |
@@ -83,7 +83,7 @@ pytest -q
 >    * Janover (1/5) reported pooled SAFE-to-common conversions in its 10-Ks: 218,772 shares in Oct 2022, then
 >      165,861 shares at the July 2023 IPO (20,733 after a 1:8 reverse split).
 >    * The other 4/5 have none found (unknown, not zero).
->    * No investor cash flows were found, and no real return was computed.
+>    * No investor cash flows were recovered from accessible sources, and no real return was computed.
 >
 > **Recommendation:** option 2, modify collection before expanding, and scope the expansion to business outcomes.
 > * Changes needed: automated page targeting and verification for garbled PDFs, and one free non-SEC status source

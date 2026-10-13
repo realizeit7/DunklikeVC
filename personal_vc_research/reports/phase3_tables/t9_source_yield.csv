@@ -1,0 +1,6 @@
+source,attempted (offerings or searches),yielding usable dated evidence,note
+EDGAR submissions/index (issuer filings),40,33,automated; 0 network requests on re-run (cached)
+"Republic holdings tables (4 SEC filings, 2,184 rows)",40,12,status marks/notes on offering-level holdings
+Company websites (35 non-pilot),35,2,live_undated=16; unreachable_or_blocked=16; live_dated_content=2; parked_or_for_sale=1
+Selective web searches (phase 3),11,3,searches -> items used
+State registries,4,0,all blocked

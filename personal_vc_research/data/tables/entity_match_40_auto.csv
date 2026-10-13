@@ -1,0 +1,73 @@
+offering_id,legal_name,match_class,series_key,listed_label,issuance_month,window,name_evidence,date_in_window,amount_ratio,years_listed,marks_by_year,association_level,website_stem
+RCF-1758964-020-25095,"Up Sonder, LLC",exact,upsonder|2019-08,Up Sonder,2019-08,2019-01..2019-11,exact_name,True,0.991,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,upsonder
+RCF-1745458-020-24457,"Hemster, Inc.",exact,hemster|2018-11,Hemster,2018-11,2018-07..2019-02,exact_name,True,0.996,2022;2023;2024;2025,2022:+;2023:-;2024:-;2025:-,offering,hemster
+RCF-1805526-020-26437,Janover Ventures LLC,exact,janoverventures|2020-12,Janover Ventures,2020-12,2020-05..2021-03,exact_name,True,0.862,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:*,offering,janover
+RCF-1783004-020-25792,"SkyHi Travel, Inc.",ambiguous,skyhi|2020-04,SkyHi,2020-04,2019-10..2020-06,prefix_only,True,0.922,2023;2024;2025,2023:*;2024:*;2025:*,issuer_or_none,flyskyhi
+RCF-1783004-020-25792,"SkyHi Travel, Inc.",ambiguous,skyhi|2020-05,SkyHI,2020-05,2019-10..2020-06,prefix_only,True,0.922,2022,2022:-,issuer_or_none,flyskyhi
+RCF-1769923-020-26464,"People First RH, Inc.",exact,peoplefirstrh|2020-09,People First RH,2020-09,2020-05..2020-12,exact_name,True,0.991,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,peoplefirstrh
+RCF-1829993-020-27141,Smart Vylon LLC,corroborated_alias,nectartulum|2021-03,Nectar Tulum,2021-03,2020-11..2021-06,website_domain_stem,True,0.696,2023;2024;2025,2023:-;2024:-;2025:-,offering,nectartulum
+RCF-1829993-020-27141,Smart Vylon LLC,ambiguous,nectartulum|2021-08,Nectar Tulum,2021-08,2020-11..2021-06,website_domain_stem,False,0.696,2022,2022:-,issuer_or_none,nectartulum
+RCF-1829993-020-27141,Smart Vylon LLC,ambiguous,smartsoda|2020-12,Smart Soda,2020-12,2020-11..2021-06,prefix_only,True,0.315,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,nectartulum
+RCF-1829993-020-27141,Smart Vylon LLC,ambiguous,smartsoda|2021-02,Smart Soda,2021-02,2020-11..2021-06,prefix_only,True,0.315,2022,2022:-,issuer_or_none,nectartulum
+RCF-1829993-020-27141,Smart Vylon LLC,ambiguous,smartsoda|2025-04,Smart Soda,2025-04,2020-11..2021-06,prefix_only,False,0.141,2025,2025:-,issuer_or_none,nectartulum
+RCF-1829993-020-27141,Smart Vylon LLC,ambiguous,smartyields|2019-04,Smart Yields,2019-04,2020-11..2021-06,prefix_only,False,0.138,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,issuer_or_none,nectartulum
+RCF-1831785-020-27310,Organic Amazon Corp.,unmatched,,,,2020-12..2021-07,,,,,,none,acaitogo
+RCF-1779032-020-25461,Salsa God LLC,exact,salsagod|2020-02,Salsa God,2020-02,2019-06..2020-05,exact_name,True,0.994,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,salsagod
+RCF-1700943-020-26045,"Plei, Inc.",exact,plei|2020-03,Plei,2020-03,2020-01..2020-10,exact_name,True,1.0,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,plei
+RCF-1700943-020-26045,"Plei, Inc.",ambiguous,plei|2023-12,Plei,2023-12,2020-01..2020-10,exact_name,False,8.048,2023,2023:-,issuer_or_none,plei
+RCF-1700943-020-26045,"Plei, Inc.",ambiguous,plei|2024-01,Plei,2024-01,2020-01..2020-10,exact_name,False,8.048,2024;2025,2024:-;2025:-,issuer_or_none,plei
+RCF-1745727-020-24708,FOCUSMATE INC,exact,focusmate|2019-01,Focusmate,2019-01,2018-09..2019-04,exact_name,True,,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,focusmate
+RCF-1803592-020-26471,"GrapeStars International, Inc.",exact,grapestars|2020-09,GrapeStars,2020-09,2020-06..2020-12,exact_name,True,0.961,2022,2022:-,offering,grapestars
+RCF-1803592-020-26471,"GrapeStars International, Inc.",exact,grapestars|2020-12,GrapeStars,2020-12,2020-06..2020-12,exact_name,True,0.961,2023;2024;2025,2023:*;2024:*;2025:*,offering,grapestars
+RCF-1777204-020-25609,"HelloAva, Inc.",exact,helloava|2020-03,HelloAva,2020-03,2019-09..2020-06,exact_name,True,0.99,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,helloava
+RCF-1777204-020-25609,"HelloAva, Inc.",ambiguous,hellosubs|2023-11,HelloSubs,2023-11,2019-09..2020-06,prefix_only,False,0.516,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,helloava
+RCF-1777204-020-25609,"HelloAva, Inc.",ambiguous,hellowoofycom|2020-04,HelloWoofy.com,2020-04,2019-09..2020-06,prefix_only,True,1.931,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,helloava
+RCF-1777204-020-25609,"HelloAva, Inc.",ambiguous,hellowoofycom|2020-12,HelloWoofy.com,2020-12,2019-09..2020-06,prefix_only,False,0.931,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,helloava
+RCF-1777204-020-25609,"HelloAva, Inc.",ambiguous,hellowoofycom|2021-01,HelloWoofy.com,2021-01,2019-09..2020-06,prefix_only,False,0.931,2022,2022:-,issuer_or_none,helloava
+RCF-1777204-020-25609,"HelloAva, Inc.",ambiguous,hellowoofy|2020-06,HelloWoofy,2020-06,2019-09..2020-06,prefix_only,True,1.931,2022,2022:*,issuer_or_none,helloava
+RCF-1823771-020-27342,Grove Biomedical LLC,unmatched,,,,2020-12..2021-10,,,,,,none,onecanopy
+RCF-1785176-020-25681,Layali LLC,exact,layali|2020-04,Layali,2020-04,2019-09..2020-07,exact_name,True,0.996,2022,2022:*,offering,layali
+RCF-1785176-020-25681,Layali LLC,exact,layali|2020-05,Layali,2020-05,2019-09..2020-07,exact_name,True,0.996,2023;2024;2025,2023:*;2024:*;2025:*,offering,layali
+RCF-1580960-020-23980,"Pigeonly, Inc.",exact,pigeonly|2018-04,Pigeonly,2018-04,2018-02..2018-08,exact_name,True,1.0,2022;2023;2024;2025,2022:-;2023:-;2024:*;2025:*,offering,pigeon
+RCF-1721392-020-23930,"SmarterD,Inc.",ambiguous,smartsoda|2020-12,Smart Soda,2020-12,2018-01..2018-06,prefix_only,False,,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,smarterd
+RCF-1721392-020-23930,"SmarterD,Inc.",ambiguous,smartsoda|2021-02,Smart Soda,2021-02,2018-01..2018-06,prefix_only,False,,2022,2022:-,issuer_or_none,smarterd
+RCF-1721392-020-23930,"SmarterD,Inc.",ambiguous,smartsoda|2025-04,Smart Soda,2025-04,2018-01..2018-06,prefix_only,False,,2025,2025:-,issuer_or_none,smarterd
+RCF-1721392-020-23930,"SmarterD,Inc.",ambiguous,smartyields|2019-04,Smart Yields,2019-04,2018-01..2018-06,prefix_only,False,,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,issuer_or_none,smarterd
+RCF-1811508-020-26895,"popshop, Inc.",ambiguous,popshop|2021-05,Popshop,2021-05,2020-09..2021-03,exact_name,False,,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,popshop
+RCF-1811508-020-26895,"popshop, Inc.",ambiguous,popshop|2021-07,Popshop,2021-07,2020-09..2021-03,exact_name,False,,2022,2022:-,issuer_or_none,popshop
+RCF-1804659-020-26476,"Gesture US, Inc.",ambiguous,gesture|2020-10,Gesture,2020-10,2020-06..2021-02,prefix_only,True,0.439,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,yourgesture
+RCF-1804659-020-26476,"Gesture US, Inc.",ambiguous,gesture|2021-02,Gesture,2021-02,2020-06..2021-02,prefix_only,True,0.439,2022,2022:-,issuer_or_none,yourgesture
+RCF-1789922-020-25689,"Aavrani, Inc.",exact,aavrani|2019-12,Aavrani,2019-12,2019-10..2020-03,exact_name,True,1.001,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,aavrani
+RCF-1789922-020-25689,"Aavrani, Inc.",ambiguous,aavrani|2021-12,Aavrani,2021-12,2019-10..2020-03,exact_name,False,0.185,2023;2024;2025,2023:-;2024:-;2025:-,issuer_or_none,aavrani
+RCF-1789922-020-25689,"Aavrani, Inc.",ambiguous,aavrani|2022-01,Aavrani,2022-01,2019-10..2020-03,exact_name,False,0.185,2022,2022:-,issuer_or_none,aavrani
+RCF-1817694-020-27277,"UpChoose, PBC",exact,upchoose|2021-05,UpChoose,2021-05,2020-12..2021-07,exact_name,True,,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,upchoose
+RCF-1731540-020-24027,"WolfPack Systems, Inc",exact,wolfpack|2018-06,WolfPack,2018-06,2018-03..2018-09,exact_name,True,,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,wolfpack
+RCF-1660945-020-23944,"Harvest Fresh Foods, PBC",exact,everytable|2018-04,Everytable,2018-04,2018-01..2018-07,exact_name,True,0.971,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,everytable
+RCF-1581437-020-25645,"DIGITAL DREAM LABS, LLC",exact,digitaldream|2020-01,Digital Dream Labs,2020-01,2019-09..2020-04,exact_name,True,0.991,2022;2024;2025,2022:-;2024:-;2025:-,offering,digitaldreamlabs
+RCF-1734260-020-24528,Indemnis Inc,exact,indemnis|2018-11,Indemnis,2018-11,2018-07..2019-02,exact_name,True,0.989,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,indemnis
+RCF-1783580-020-25817,Ember Fund LLC,exact,emberfund|2020-03,Ember Fund,2020-03,2019-11..2020-06,exact_name,True,0.969,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,emberfund
+RCF-1783580-020-25817,Ember Fund LLC,ambiguous,emberfund|2022-07,Ember Fund,2022-07,2019-11..2020-06,exact_name,False,7.935,2024;2025,2024:-;2025:-,issuer_or_none,emberfund
+RCF-1811504-020-26743,"Tomo Technologies, Inc.",unmatched,,,,2020-08..2021-02,,,,,,none,gobekids
+RCF-1735090-020-24306,"Crowdfind, Inc.",exact,crowdfind|2018-07,Crowdfind,2018-07,2018-05..2018-10,exact_name,True,,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,crowdfind
+RCF-1790042-020-25815,Lieu Ltd,exact,lieu|2020-04,The Lieu,2020-04,2019-11..2020-07,exact_name,True,0.995,2022,2022:*,offering,thelieu
+RCF-1790042-020-25815,Lieu Ltd,exact,lieu|2020-05,The Lieu,2020-05,2019-11..2020-07,exact_name,True,0.995,2023;2024;2025,2023:*;2024:*;2025:*,offering,thelieu
+RCF-1783015-020-25612,Soar Robotics Inc.,exact,soarrobotics|2020-03,Soar Robotics,2020-03,2019-09..2020-06,exact_name,True,1.0,2022;2024;2025,2022:-;2024:-;2025:-,offering,soarrobotics
+RCF-1739119-020-24514,YOURVIRTUALSIM INC,corroborated_alias,ring4|2018-11,Ring4⁶,2018-11,2018-07..2019-02,website_domain_stem,True,0.916,2022,2022:-,offering,ring4
+RCF-1739119-020-24514,YOURVIRTUALSIM INC,corroborated_alias,ring4|2018-12,Ring4,2018-12,2018-07..2019-02,website_domain_stem,True,0.916,2023;2024;2025,2023:-(14);2024:-(14);2025:-(14),offering,ring4
+RCF-1722137-020-25885,Upshift Inc.,exact,upshift|2021-01,Upshift,2021-01,2019-11..2021-04,exact_name,True,0.989,2023;2024;2025,2023:-;2024:-;2025:-,offering,upshiftcars
+RCF-1722137-020-25885,Upshift Inc.,ambiguous,upshift|2021-09,Upshift,2021-09,2019-11..2021-04,exact_name,False,0.988,2022,2022:-,issuer_or_none,upshiftcars
+RCF-1722137-020-25885,Upshift Inc.,ambiguous,upshift|2022-11,Upshift,2022-11,2019-11..2021-04,exact_name,False,0.238,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,issuer_or_none,upshiftcars
+RCF-1816011-020-26718,"Levered Learning, Inc.",exact,leveredlearning|2020-12,Levered Learning,2020-12,2020-07..2021-03,exact_name,True,0.991,2023;2024;2025,2023:-;2024:-;2025:-,offering,levered
+RCF-1816011-020-26718,"Levered Learning, Inc.",exact,leveredlearning|2021-01,Levered Learning,2021-01,2020-07..2021-03,exact_name,True,0.991,2022,2022:-,offering,levered
+RCF-1785115-020-26052,Boring Life Inc,corroborated_alias,aboringlife|2020-07,A Boring Life,2020-07,2020-01..2020-11,website_domain_stem,True,1.0,2022,2022:*,offering,aboringlife
+RCF-1785115-020-26052,Boring Life Inc,corroborated_alias,aboringlife|2020-08,A Boring Life,2020-08,2020-01..2020-11,website_domain_stem,True,1.0,2023;2024;2025,2023:*;2024:*;2025:*,offering,aboringlife
+RCF-1796106-020-27292,"Genius Juice, LLC",exact,geniusjuice|2021-09,Genius Juice,2021-09,2020-12..2021-12,exact_name,True,0.991,2024;2025,2024:*;2025:*,offering,geniusjuice
+RCF-1796106-020-27292,"Genius Juice, LLC",exact,geniusjuice|2021-11,Genius Juice,2021-11,2020-12..2021-12,exact_name,True,0.991,2022,2022:-,offering,geniusjuice
+RCF-1796106-020-27292,"Genius Juice, LLC",ambiguous,geniusjuice|2023-03,Genius Juice,2023-03,2020-12..2021-12,exact_name,False,0.029,2023;2024;2025,2023:-;2024:*;2025:*,issuer_or_none,geniusjuice
+RCF-1735360-020-24220,"Parlay App, Inc.",exact,parlay|2018-08,Parlay,2018-08,2018-04..2018-11,exact_name,True,0.987,2022;2023;2024;2025,2022:-;2023:-;2024:*;2025:*,offering,parlay
+RCF-1675773-020-24340,RadioPublic PBC,exact,radiopublic|2018-09,RadioPublic,2018-09,2018-06..2018-12,exact_name,True,0.98,2022,2022:-,offering,radiopublic
+RCF-1792508-020-25880,"Linen Mobile, Inc.",ambiguous,linen|2021-07,Linen,2021-07,2019-11..2021-06,website_domain_stem,False,32.0,2022,2022:-,issuer_or_none,linen
+RCF-1792508-020-25880,"Linen Mobile, Inc.",ambiguous,linen|2022-03,Linen,2022-03,2019-11..2021-06,website_domain_stem,False,187.24,2022;2024;2025,2022:-;2024:*;2025:*,issuer_or_none,linen
+RCF-1767762-020-25346,Bounty0x Inc.,exact,bounty0x|2020-04,Bounty0x,2020-04,2019-05..2020-08,exact_name,True,0.972,2022;2023;2024;2025,2022:-;2023:-;2024:-;2025:-,offering,bounty0x
+RCF-1726542-020-24492,AVOKE INC,unmatched,,,,2018-07..2018-12,,,,,,none,avokelife
+RCF-1758128-020-24986,BX SPACES LLC,unmatched,,,,2018-12..2019-06,,,,,,none,bxspaces

@@ -37,7 +37,11 @@ def classify_filing(form: str, file_number: str, offering_file_number: str) -> t
     """Map an issuer filing to an outcome event type. Returns ('', '', '') for ignored forms."""
     if form == "C" and file_number == offering_file_number:
         return "", "", ""  # the offering itself
-    if form in ("C/A", "C-U") and file_number != offering_file_number:
+    if form == "C-U" and file_number != offering_file_number:
+        # phase-3 audit correction: another Reg CF round's progress/completion report is a dated issuer observation
+        return ("other_reg_cf_offering_progress_reported", "filing_evidence",
+                "Form C-U for another Reg CF offering of the issuer (progress/completion of that round; not proof of funds received).")
+    if form == "C/A" and file_number != offering_file_number:
         return "", "", ""  # belongs to another offering; its own C is the event
     if form == "C-U":
         return "", "", ""  # handled from DERA progress text
@@ -67,8 +71,20 @@ TERMINAL_PRIORITY = [
 ]
 
 
+def _d(x: str) -> str:
+    """Normalize partial dates conservatively: YYYY -> YYYY-01-01, YYYY-MM -> YYYY-MM-01."""
+    x = str(x or "").strip()
+    if len(x) == 4:
+        return x + "-01-01"
+    if len(x) == 7:
+        return x + "-01"
+    return x[:10]
+
+
 def summarize_outcomes(events: list[dict], cutoff: str) -> dict:
     """Summarize an event history without collapsing it into success/failure."""
+    events = [{**e, "publication_date": _d(e.get("publication_date", "")), "event_date": _d(e.get("event_date", ""))}
+              for e in events]
     types = {e["event_type"] for e in events}
     dated = [e for e in events if e.get("publication_date")]
     last_obs = max((e["publication_date"] for e in dated if e["publication_date"] <= cutoff), default="")

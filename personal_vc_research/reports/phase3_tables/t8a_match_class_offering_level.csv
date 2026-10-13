@@ -1,0 +1,7 @@
+best match class (rejected = candidate rejected on review),association used,offerings
+ambiguous,ambiguous,1
+corroborated_alias,issuer_level_only,1
+corroborated_alias,offering_level,6
+exact,offering_level,28
+rejected,unmatched,1
+unmatched,unmatched,3

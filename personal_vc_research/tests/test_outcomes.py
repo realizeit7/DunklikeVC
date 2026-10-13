@@ -27,6 +27,8 @@ def test_form_d_is_notice_not_proof_of_raise():
 def test_other_offering_amendments_ignored_but_new_form_c_is_follow_on():
     assert classify_filing("C/A", "020-9", "020-1")[0] == ""
     assert classify_filing("C", "020-9", "020-1")[0] == "follow_on_reg_cf_offering_filed"
+    assert classify_filing("C-U", "020-9", "020-1")[0] == "other_reg_cf_offering_progress_reported"
+    assert classify_filing("C-U", "020-1", "020-1")[0] == ""
     assert classify_filing("C", "020-1", "020-1")[0] == ""
 
 

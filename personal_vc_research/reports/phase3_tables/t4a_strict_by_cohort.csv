@@ -1,0 +1,11 @@
+strict label — reason,2018,2019,2020,all
+listed_public — 424B4 + 8-A12B,0,0,1,1
+offering_withdrawn — Form C-W; no completion report,3,0,1,4
+operational_closure_documented — company announcement + independent report (legal dissolution not established),0,1,0,1
+unresolved — conflicting sources,1,1,0,2
+unresolved — insolvency proceeding reported (not dissolution),1,0,0,1
+unresolved — no terminal evidence,2,2,3,7
+unresolved — platform adverse claim only,1,3,4,8
+unresolved — recent operating evidence only (not a terminal outcome),0,1,2,3
+unresolved — reporting terminated; no later dated evidence,5,5,3,13
+all,13,13,14,40

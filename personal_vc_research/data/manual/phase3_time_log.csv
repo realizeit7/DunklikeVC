@@ -1,0 +1,21 @@
+task,scope,start_utc,end_utc,units,notes
+republic_disclosure_validation,ALL,2026-10-13T00:50:26Z,,,
+janover_contradiction_check,RCF-1805526-020-26437,2026-10-13T00:55:39Z,,,
+janover_contradiction_check,RCF-1805526-020-26437,,2026-10-13T00:56:08Z,1 render + coords,parse/match verified; unresolved source inconsistency
+republic_disclosure_validation,ALL,,2026-10-13T00:56:08Z,4 filings 2184 rows,legends verbatim
+outcomes_collect_40,ALL40,2026-10-13T00:56:31Z,,,
+outcomes_collect_40,ALL40,,2026-10-13T00:57:06Z,40 offerings 87 requests,
+entity_matching,ALL40,2026-10-13T00:57:41Z,,,
+entity_matching,ALL40,,2026-10-13T01:00:04Z,72 candidate series reviewed,auto + manual
+alias_review_and_rules,ALL40,2026-10-13T01:00:04Z,,,
+alias_review_and_rules,ALL40,,2026-10-13T01:00:36Z,,rules doc written before application
+website_checks,35,2026-10-13T01:00:36Z,,,
+website_checks,35,,2026-10-13T01:02:15Z,35 sites,raw HTML cached
+edgar_fts_leads,35,2026-10-13T01:02:15Z,,,
+web_searches_and_capture,35,2026-10-13T01:03:39Z,,11 searches,
+web_searches_and_capture,35,,2026-10-13T01:04:35Z,11 searches 5 pages,evidence rows written
+adjudication_build,ALL40,2026-10-13T01:06:15Z,,,
+adjudication_build,ALL40,,2026-10-13T01:08:00Z,40 offerings,approximate end (not logged at the time)
+targeted_and_random_audit,ALL40,2026-10-13T01:08:00Z,2026-10-13T01:16:24Z,11 targeted checks; 5x11 random checks,includes corrections C3-C8 and re-runs (holdings parse ~4 min compute)
+report_writing,ALL40,2026-10-13T01:16:24Z,,,
+report_writing,ALL40,,2026-10-13T01:21:59Z,report + tables + handoff,

@@ -1,0 +1,7 @@
+field,missing,denominator,cause
+legal_status,40,40,"state registries blocked from this environment (DE CAPTCHA, CA bot protection, NY/FL refused); no user import"
+last_operating_evidence_date,12,40,"no C-AR with revenue, no 10-K, no dated company/independent item found"
+Republic holding at offering level,6,40,"4 withdrawn offerings (no issuance), 1 issuer-level only (Linen), 1 ambiguous (Gesture)"
+investor_distributions,38,40,no issuer filing or investor document; platform notes describe Republic's holding
+acquisition_or_listing,39,40,absence of a filing/report is not evidence of no event
+archived campaign pages / platform updates,40,40,republic.com behind Cloudflare challenge; Wayback blocked by proxy

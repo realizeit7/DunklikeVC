@@ -12,3 +12,14 @@ RCF-1745458-020-24457,2,WebSearch,2026-10-11,"""Hemster, Inc."" OR ""(Re)vive"" 
 RCF-1745458-020-24457,3,WebSearch,2026-10-11,"""(Re)vive"" ""formerly Hemster"" OR ""Hemster"" returns repair Allison Lee 2024","no linking evidence; unrelated ""Revive"" entities",no
 RCF-1769923-020-26464,3,WebSearch,2026-10-11,"""People First RH, Inc."" status dissolved OR active Delaware New York",no registry match; unrelated UK/KY/NY entities,no
 RCF-1758964-020-25095,3,WebSearch,2026-10-11,"""Up Sonder, Inc."" California statement of information OR opencorporates",no registry record; unrelated Sonder entities,no
+RCF-1580960-020-23980,1,WebSearch,2026-10-13,Pigeonly inmate communication company shut down OR acquired OR closed,Chapter 11 reported (PLN 2025-01-15); Utah DOC contract ended 2026-01-31,yes (page captured)
+RCF-1785176-020-25681,1,WebSearch,2026-10-13,Layali LLC Republic crowdfunding company status closed OR acquired,Republic page snippet only (campaign closed 2020-04-21); no status,no
+RCF-1790042-020-25815,1,WebSearch,2026-10-13,"""The Lieu"" Lieu Ltd company shut down OR closed OR acquired",no relevant result,no
+RCF-1803592-020-26471,1,WebSearch,2026-10-13,GrapeStars wine company closed OR acquired OR shut down,profile only; no status,no
+RCF-1796106-020-27292,1,WebSearch,2026-10-13,"""Genius Juice"" coconut smoothie company closed OR bankruptcy OR acquired",aggregator: shut down; low-quality page claims 2024-03-01,weak (sensitivity)
+RCF-1735360-020-24220,1,WebSearch,2026-10-13,"""Parlay"" sports social app Parlay App Inc shut down OR acquired","name collisions (Parler, ParlayPlay)",no
+RCF-1785115-020-26052,1,WebSearch,2026-10-13,"""A Boring Life"" plant-based protein company closed OR shut down",no relevant result,no
+RCF-1823771-020-27342,1,WebSearch,2026-10-13,Canopy Grove Biomedical onecanopy CBD company closed OR shut down OR acquired,"Form C/A only (N95 respirator ""Canopy""); no status",no
+RCF-1792508-020-25880,1,WebSearch,2026-10-13,Linen Wallet shut down wind down return capital to investors 2023,TechFlow/ChainCatcher corroborate wind-down announcement,yes (page captured)
+RCF-1581437-020-25645,1,WebSearch,2026-10-13,Digital Dream Labs Anki Vector company status 2025 lawsuit OR shut down,Wikipedia: PA AG suit 2024,yes (secondary)
+RCF-1581437-020-25645,2,WebSearch,2026-10-13,"Pennsylvania Attorney General lawsuit ""Digital Dream Labs"" 2024","AG press release + complaint indexed (Digital Dream Labs, Inc.); press URL 404 on fetch",identity uncertain

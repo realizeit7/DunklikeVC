@@ -34,7 +34,7 @@ Company websites added dated activity for Up Sonder (posts through 2026-10-05) a
 newest content is from 2020. All registries were blocked from this environment.
 
 For Janover, the 2020 Republic SAFE can be traced only to issuer-wide pooled conversions (level 1): the class
-includes a $50,000 non-Republic SAFE and the disclosed amounts conflict. No investor cash flows exist for any
+includes a $50,000 non-Republic SAFE and the disclosed amounts conflict. No investor cash flows were recovered from accessible sources for any
 pilot offering.
 
 ## Decisions

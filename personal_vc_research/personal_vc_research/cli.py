@@ -153,9 +153,11 @@ def cmd_screen(cfg: Config, args) -> int:
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="personal_vc_research")
-    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "screen", "import", "report"])
+    p.add_argument("command", choices=["discover", "sample", "ocr", "collect", "audit", "screen", "import", "holdings", "adjudicate", "audit-p3", "report-p3", "report"])
     p.add_argument("--config", default="config.yaml")
     p.add_argument("--refreeze", action="store_true", help="discover: overwrite a frozen frame")
+    p.add_argument("--outcomes-only", action="store_true",
+                   help="collect: outcome evidence only (no Form C documents, no historical features)")
     p.add_argument("--batch", default="", help="ocr: plan batch id to run")
     p.add_argument("--only", default="", help="collect: comma-separated offering_ids or 'pilot'")
     args = p.parse_args(argv)
@@ -165,6 +167,18 @@ def main(argv=None) -> int:
             return cmd_discover(cfg, args)
         if args.command == "sample":
             return cmd_sample(cfg, args)
+        if args.command == "report-p3":
+            from .phase3_report import cmd_report_p3
+            return cmd_report_p3(cfg, args)
+        if args.command == "audit-p3":
+            from .phase3_audit import cmd_audit_p3
+            return cmd_audit_p3(cfg, args)
+        if args.command == "adjudicate":
+            from .adjudicate import cmd_adjudicate
+            return cmd_adjudicate(cfg, args)
+        if args.command == "holdings":
+            from .republic_holdings import cmd_holdings
+            return cmd_holdings(cfg, args)
         if args.command == "import":
             from .imports import cmd_import
             return cmd_import(cfg, args)
