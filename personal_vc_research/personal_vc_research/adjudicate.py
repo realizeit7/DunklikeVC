@@ -61,13 +61,15 @@ def series_status(cc):
         if star:
             first = star[0]
             prev = [y for y, m, _ in yrs if y < first and "*" not in m]
-            interval = f"({prev[-1] if prev else 'unknown'}, {first}]"
+            # window in which the MARK first appeared in Republic's lists; NOT the underlying event date
+            # (an earlier unmarked row does not establish that the event had not yet occurred)
+            interval = f"({prev[-1] if prev else 'none listed'}, {first}]"
         else:
             interval = ""
         disappeared = bool(star and any("*" not in m for y, m, _ in yrs if y > star[0])) or \
                       bool(plus and any("+" not in m for y, m, _ in yrs if y > plus[0]))
         out.append({"series": sid, "years": ";".join(y[:4] for y, _, _ in yrs), "star_first_as_of": star[0] if star else "",
-                    "star_interval": interval, "plus_years": ";".join(p[:4] for p in plus),
+                    "star_first_report_window": interval, "plus_years": ";".join(p[:4] for p in plus),
                     "footnotes": ";".join(f"{y[:4]}:({f})" for y, f in fns), "mark_disappeared": disappeared,
                     "listed_last_as_of": yrs[-1][0]})
     return out
@@ -215,7 +217,7 @@ def build(cfg: Config) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
                  for r in co.itertuples() if re.match(r"Issuer (conducted a tender offer|elected to repurchase)", r.footnote_text_verbatim)])
                 or "none recovered from accessible sources",
             "last_listed_platform_unmarked_or_marked": c["filing_public_date"].max() if len(c) else "",
-            "platform_status_offering_level": "; ".join(f"* first as-of {s['star_first_as_of']} interval {s['star_interval']}" for s in star_o),
+            "platform_status_offering_level": "; ".join(f"* first reported as-of {s['star_first_as_of']} (mark first-appearance window {s['star_first_report_window']}; underlying event date unknown, may precede it)" for s in star_o),
             "platform_status_issuer_level_only": "; ".join(f"* first as-of {s['star_first_as_of']}" for s in star_i),
             "republic_series_offering_level": len(so), "republic_series_issuer_level": len(si),
             "republic_rows_offering_level": len(co), "entity_match_best": (

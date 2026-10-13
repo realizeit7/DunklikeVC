@@ -1,0 +1,5 @@
+task,scope,start_utc,end_utc,units,notes
+phase4_start,ALL,2026-10-13T10:33:30Z,,,
+alt_data_assessment,routes A-C,2026-10-13T10:34:21Z,,,
+alt_data_assessment,routes A-C,,2026-10-13T10:36:47Z,10 web searches; 6 fetch attempts (4 blocked 403/525); 3 SEC documents,public documentation only; no accounts/purchases/outreach
+phase4_docs,ALL,,2026-10-13T10:38:44Z,memo + statistical review + corrections,end of phase 4

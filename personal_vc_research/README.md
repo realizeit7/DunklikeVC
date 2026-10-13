@@ -1,5 +1,10 @@
 # personal_vc_research — Republic Reg CF 2018–2020 data-feasibility study
 
+> **Status: closed (phase 4, 2026-10-13).** The study is closed and quantitative return modeling is parked. See
+> `reports/phase4_decision_memo.md`, `docs/statistical_interpretation_review.md` (projections withdrawn;
+> observed counts only) and `data/manual/phase4_alt_data_sources.csv`. The frozen frame, sample, evidence,
+> corrections and the commands below are retained for reproducibility.
+
 A small, reproducible pipeline that asks one question: can we reconstruct what a small investor could know and buy
 on Republic (US Reg CF) at a fixed decision date, and connect it to later outcomes and investor cash flows?
 This is a **feasibility study**. It is not a trading system or recommender, and it trains no model.

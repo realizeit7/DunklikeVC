@@ -86,12 +86,12 @@ def _claims(rows):
     return pd.DataFrame([{"series_id": "S", "holdings_as_of": a, "mark": m, "footnote_no": f} for a, m, f in rows])
 
 
-def test_star_interval_and_instability():
+def test_star_first_report_window_and_instability():
     s = series_status(_claims([("2022-12-31", "", ""), ("2023-12-31", "", ""), ("2024-12-31", "*", ""),
                                ("2025-12-31", "*", "")]))[0]
-    assert s["star_interval"] == "(2023-12-31, 2024-12-31]" and not s["mark_disappeared"]
+    assert s["star_first_report_window"] == "(2023-12-31, 2024-12-31]" and not s["mark_disappeared"]
     first_listed_marked = series_status(_claims([("2023-12-31", "*", "")]))[0]
-    assert first_listed_marked["star_interval"] == "(unknown, 2023-12-31]"
+    assert first_listed_marked["star_first_report_window"] == "(none listed, 2023-12-31]"
     gone = series_status(_claims([("2022-12-31", "+", ""), ("2023-12-31", "", "")]))[0]
     assert gone["mark_disappeared"] and gone["plus_years"] == "2022"
 

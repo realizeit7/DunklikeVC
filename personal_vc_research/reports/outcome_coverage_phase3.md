@@ -1,5 +1,17 @@
 # Phase 3 — Outcome coverage and label validation (40 frozen offerings)
 
+> **Phase-4 corrections (2026-10-13).** See `docs/statistical_interpretation_review.md` and
+> `reports/phase4_decision_memo.md`. Corrected in place below:
+> 1. The full-frame projections (about 11 strict events; about 50 `*` events) and their Wilson intervals are
+>    **withdrawn**. They were unweighted despite year-stratified sampling, and they describe ascertainment by
+>    this collection route, not outcome frequency. Only observed counts are retained.
+> 2. A `*` "interval" brackets the **first appearance of the mark** in Republic's lists, not the underlying
+>    event, which may be earlier.
+> 3. The "36 completed" offerings are **issuer-reported closes** (Form C-U). For the 4 withdrawn offerings,
+>    whether commitments were ever received remains unknown.
+> 4. The phase-3 recommendations (registry lookups, full-frame expansion) are superseded by the phase-4 decision
+>    to close the study.
+
 Scope: an outcome-first pass over the frozen 40-offering sample (seed 42, 13/13/14), with outcome cutoff
 2026-10-10. The frame, sample and earlier evidence are unchanged:
 * The pilot tables are byte-identical to the phase-2 commit.
@@ -40,8 +52,9 @@ its own denominator.
     * 2023+ uses "(n)" after the name, with notes reading "The securities were liquidated, resulting in an
       approximate cash payout of N cents on the dollar to be contributed to the Republic Note dividend pool."
     * The numbering is independent between the two layouts.
-* **Timing.** The holdings as-of date is **not** the event date. A `*` is dated as an interval:
-  (last as-of date without the mark, first as-of date with it].
+* **Timing.** The holdings as-of date is **not** the event date. For a `*`, only the **first appearance of the
+  mark** can be dated, within (last as-of date listed unmarked, first as-of date marked]. The underlying event
+  may precede that window by any amount; an earlier unmarked row does not show the event had not occurred.
 * **Inconsistencies observed:**
   * Issuance dates differ across filings for 12 of the offering-level series (e.g. Canopy: 3/16/2022 in 2022,
     2021-07 later).
@@ -160,7 +173,7 @@ its own denominator.
     * 8 are unresolved because the platform claim stands alone.
     * Pigeonly is unresolved: a Chapter 11 filing was reported, and Chapter 11 is not dissolution.
     * Janover is listed; this is the conflicting pair.
-  * The `*` interval starts:
+  * Window in which the `*` mark first appeared (not the event date):
     * already marked on the first list (2022): Layali, Lieu, Boring Life
     * (2022, 2023]: SkyHi, GrapeStars
     * (2023, 2024]: Grove/Canopy, Pigeonly, Parlay
@@ -302,21 +315,18 @@ as human time).
   * The `*` cannot separate insolvent from dormant from dissolved, and it dates Republic's knowledge, not the
     event.
 * **Sample size.** 40 offerings cannot establish predictive performance in any case.
-* **Next step.** The cheapest step that could change the picture is **user registry imports** for the 36
-  completed issuers: about 2 minutes each, roughly 1.2 h of the user's time, via `data/user_imports/`.
+* **Next step (superseded by the phase-4 decision to close the study).** The cheapest step that could change the
+  picture was **user registry imports** for the 36 issuers with an issuer-reported close: about 2 minutes each, roughly 1.2 h of the user's time, via `data/user_imports/`.
   * Registry status is the only admissible route to `dissolved_or_liquidated_documented` that is not blocked in
     principle.
   * The import pipeline already applies such records to legal-status fields only.
-* **Full-frame expansion, only if registry imports convert a meaningful number of unresolved offerings.** The
-  frame has 224 eligible offerings; the 184 not yet sampled would need the same outcome-first pass:
-  * **Cost:** about 10 analyst-minutes per offering, roughly 31 h, plus about 3 h fixed, so **about 34 h**, plus
-    about 6 h of user registry lookups.
-  * **Expected usable events in the full frame (about 202 completed offerings):**
-    * Strict definitive events: about **11** (from 2/36; 95% Wilson interval 1.5–18%, i.e. about 3–37).
-    * Platform `*` sensitivity events: about 50 (9/36; interval 14–41%, i.e. 28–83). As a cross-check, the
-      2025-12-31 table marks 26 of the 165 rows with 2018–2020 issuance dates.
-  * Even the optimistic end is too few, and too heterogeneous, for predictive modeling. The value of expansion
-    would be descriptive (outcome base rates with explicit uncertainty), not predictive.
+* **Full-frame expansion: not recommended (superseded in phase 4).** The phase-3 projections of events in the
+  224-offering frame, and their intervals, are withdrawn (`docs/statistical_interpretation_review.md`):
+  * They were unweighted despite year-stratified sampling.
+  * With 0–1 events per stratum, no interval is defensible.
+  * They measured ascertainment by this collection route, not outcome frequency.
+  * Observed counts only: strict definitive labels 0/10, 1/13 and 1/13 in the 2018, 2019 and 2020 cohorts, among
+    offerings with an issuer-reported close. These are not population base rates.
 
 ### B — Investor-return modeling
 
