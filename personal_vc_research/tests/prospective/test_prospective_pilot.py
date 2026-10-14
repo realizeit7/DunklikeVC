@@ -312,3 +312,28 @@ def test_term_candidates_do_not_cross_lines():
     from prospective.extract import text_terms
     f, _ = text_terms(["Valuation cap of $15,000,000\nMaterial Terms"])   # regression: 'M' of the next line
     assert [x["value"] for x in f] == ["15,000,000"] and f[0]["verification_status"] == "text_regex_unreviewed"
+
+
+def test_restore_round_trip_keeps_nulls(ctx, tmp_path):
+    oid = add_offering(ctx)
+    d = ctx.record_document(url="x", source_type="sec_primary_xml", offering_id=oid, data=b"x")
+    collect._add_facts(ctx, oid, d, form_c_facts(parse_xml(form_c_xml(revenue=None))), ctx.now())
+    outputs.export_public(ctx)
+    cfg = yaml.safe_load((ctx.tmp / "config.yaml").read_text())
+    cfg["paths"]["db"] = "data/restored.sqlite"
+    (ctx.tmp / "config2.yaml").write_text(yaml.safe_dump(cfg))
+    c2 = Ctx(ctx.tmp / "config2.yaml", "restore", now=ctx.now(), offline=True)
+    outputs.restore_from_exports(c2)
+    q = "SELECT field, value, financial_period, verification_status FROM facts ORDER BY fact_id"
+    assert ctx.con.execute(q).fetchall() == c2.con.execute(q).fetchall()
+    assert c2.con.execute("SELECT COUNT(*) FROM facts WHERE value IS NULL").fetchone()[0] > 0
+
+
+def test_fresh_database_resumes_scan_from_pilot_start(ctx, monkeypatch):
+    import datetime as dt
+    start_clock(ctx, "2030-01-01T05:00:00+00:00")
+    seen = []
+    monkeypatch.setattr(discover, "scan_days", lambda c, days, clock, startup: seen.extend(days) or {})
+    set_now(ctx, "2030-01-20T00:00:00+00:00")
+    discover.cmd_discover(ctx)
+    assert seen[0] == dt.date(2030, 1, 1) and seen[-1] == dt.date(2030, 1, 20)   # no silently skipped days

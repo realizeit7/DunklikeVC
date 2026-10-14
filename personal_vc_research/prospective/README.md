@@ -48,7 +48,8 @@ database, and it can never be reset or backdated.
 | `python -m prospective forecast-add ID --event "..." --kind disclosure --horizon-months 12 --probability 0.3 --resolution-rule "..." --reporting-lag-days 60 --missing-evidence "remains unresolved" --forecaster me` | Optional 6- or 12-month milestone forecast; also `forecast-revise`, `forecast-resolve` |
 | `python -m prospective log-effort --minutes 45 --activity weekly_review --date 2026-10-19` | Records user time |
 | `python -m prospective report-weekly` / `report-monthly` | Markdown reports in `reports/` |
-| `python -m prospective export` / `status` | Public-only CSV exports in `data/exports/` / current state |
+| `python -m prospective export` / `status` | Public-only CSV exports in `data/exports/` (NULL written as `\N`) / current state |
+| `python -m prospective restore` | Rebuilds an **empty** database from the committed exports and `pilot_clock.json` (for example, on a new machine). Snapshot blobs and private rows are not in git; missing blobs are counted |
 
 ## One weekly review (target: at most 6 hours of user time per week)
 
@@ -92,6 +93,11 @@ CRON_TZ=America/New_York
 machine that keeps `data/pilot.sqlite` and `data/blobs/`; a cloud container is reclaimed after inactivity.
 
 **Back up `data/` regularly.** Blobs are not in git.
+
+To move to a new machine:
+1. Check out the branch and run `python -m prospective restore`.
+2. Copy `data/blobs/` from the backup, if you have it.
+3. Run `run`. With no scan history it resumes the daily-index scan from the pilot start date, so no day is skipped.
 
 ## Data integrity rules (enforced in code, tested on synthetic fixtures)
 

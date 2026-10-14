@@ -179,6 +179,9 @@ EXPORT_TABLES = ["runs", "gaps", "index_days", "discovery_ledger", "offerings", 
                  "effort_log", "pilot_clock"]
 
 
+NULL = "\\N"   # explicit NULL marker: a missing value must not round-trip as an empty string or 0
+
+
 def export_public(ctx: Ctx) -> dict:
     """Write CSVs of every table, excluding private documents and anything derived from them."""
     d = ctx.root / ctx.cfg.raw["paths"]["exports_dir"]
@@ -196,6 +199,38 @@ def export_public(ctx: Ctx) -> dict:
         with open(d / f"{t}.csv", "w", newline="") as fh:
             w = csv.writer(fh)
             w.writerow(cols)
-            w.writerows([tuple(r) for r in rows])
+            w.writerows([tuple(NULL if v is None else v for v in r) for r in rows])
         counts[t] = len(rows)
+    return counts
+
+
+def restore_from_exports(ctx: Ctx) -> dict:
+    """Rebuild an EMPTY database from the committed public CSV exports (e.g. on a new machine).
+
+    Snapshot bytes are not in git: restored document rows keep their sha256 and URL, and missing blobs are reported.
+    Private rows were never exported and cannot be restored from git.
+    """
+    if ctx.con.execute("SELECT COUNT(*) FROM documents").fetchone()[0] or ctx.con.execute("SELECT COUNT(*) FROM offerings").fetchone()[0]:
+        raise RuntimeError("database is not empty; restore only into a fresh database")
+    d = ctx.root / ctx.cfg.raw["paths"]["exports_dir"]
+    counts = {}
+    for t in EXPORT_TABLES:
+        f = d / f"{t}.csv"
+        if not f.exists():
+            continue
+        rows = list(csv.DictReader(open(f)))
+        if t == "runs":
+            rows = [r for r in rows if r["run_id"] != ctx.run_id]
+        if t == "pilot_clock":
+            if ctx.con.execute("SELECT COUNT(*) FROM pilot_clock").fetchone()[0]:
+                continue   # already restored from pilot_clock.json
+        for r in rows:
+            cols = list(r)
+            vals = [None if v == NULL else v for v in r.values()]
+            ctx.con.execute(f"INSERT OR IGNORE INTO {t}({', '.join(cols)}) VALUES ({', '.join('?' * len(cols))})", vals)
+        counts[t] = len(rows)
+    missing = [r[0] for r in ctx.con.execute("SELECT blob_path FROM documents WHERE blob_path IS NOT NULL")
+               if not (ctx.root / r[0]).exists()]
+    ctx.con.commit()
+    counts["documents_with_missing_blob"] = len(missing)
     return counts

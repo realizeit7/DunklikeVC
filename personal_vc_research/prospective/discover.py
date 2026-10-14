@@ -214,7 +214,8 @@ def cmd_discover(ctx: Ctx) -> dict:
                                                          (ctx.run_id,)).fetchone()[0]}
     else:
         done = ctx.con.execute("SELECT MAX(day) FROM index_days").fetchone()[0]
-        first = dt.date.fromisoformat(done) + dt.timedelta(days=1) if done else today
+        # with no scan history (e.g. a fresh database on a new machine) resume from the pilot start, never skip days
+        first = dt.date.fromisoformat(done) + dt.timedelta(days=1) if done else dt.date.fromisoformat(clock["pilot_start_utc"][:10])
         first = min(first, today - dt.timedelta(days=3))   # days whose index was pending are re-checked
         days = [first + dt.timedelta(days=i) for i in range((today - first).days + 1)]
         provisional = clock

@@ -68,7 +68,7 @@ The checks re-read the stored snapshot bytes and compared them with the database
 
 ## Tests
 
-* `pytest tests/prospective`: **14 passed**. They use synthetic fixtures with a fake EDGAR; they verify logic, not
+* `pytest tests/prospective`: **16 passed**. They use synthetic fixtures with a fake EDGAR; they verify logic, not
   live accuracy. They cover:
   * late evidence leakage (trigger plus packet cutoff), and a retrospective reconstruction kept separate;
   * append-only snapshots, decisions and clock, with shared blobs and no overwrite;
@@ -81,8 +81,12 @@ The checks re-read the stored snapshot bytes and compared them with the database
   * a clock that is never reset;
   * private imports excluded from exports and git;
   * AI drafts never becoming selections;
-  * the regex regression.
-* Full repository suite: see the handoff.
+  * the regex regression;
+  * an exact export/restore round-trip that keeps NULLs;
+  * a fresh database resuming the scan from the pilot start.
+* Full repository suite: **68 passed** (52 historical + 16 prospective).
+* **Live restore check.** The committed exports were restored into a scratch database. Offerings, documents, facts
+  and the ledger are row-for-row identical to the live database.
 
 ## What requires future scheduling or user input
 

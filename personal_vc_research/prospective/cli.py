@@ -74,6 +74,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("report-weekly")
     sub.add_parser("report-monthly")
     sub.add_parser("export")
+    sub.add_parser("restore", help="rebuild an empty database from the committed public CSV exports")
     sub.add_parser("status")
     a = p.parse_args(argv)
 
@@ -148,6 +149,9 @@ def dispatch(ctx: Ctx, a) -> dict:
         return {"report": str(outputs.weekly_report(ctx))}
     if a.cmd == "report-monthly":
         return {"report": str(outputs.monthly_report(ctx))}
+    if a.cmd == "restore":
+        get_clock(ctx)
+        return outputs.restore_from_exports(ctx)
     if a.cmd == "export":
         return outputs.export_public(ctx)
     if a.cmd == "status":
