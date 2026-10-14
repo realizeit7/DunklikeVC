@@ -1,0 +1,1 @@
+prediction_id,offering_id,decision_id,created_utc,forecaster,target_event,event_kind,horizon_months,deadline_utc,probability,resolution_rule,reporting_lag_days,missing_evidence_treatment,permitted_evidence,revises_prediction_id

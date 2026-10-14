@@ -1,0 +1,10 @@
+{
+  "captured": 6,
+  "documents": 18,
+  "facts": 292,
+  "pending_after_batch": 0
+}
+
+real	6m40.809s
+user	5m39.930s
+sys	0m43.103s

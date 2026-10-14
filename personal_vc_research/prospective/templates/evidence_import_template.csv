@@ -1,0 +1,4 @@
+offering_id,file,url,source_type,visibility,claimed_publication_date,captured_utc,description
+RCF-0000000-020-00000,captures/example_campaign_page.pdf,https://republic.com/example,campaign_page,public,2026-10-20,2026-10-21T14:05:00Z,Campaign page saved from my browser (displayed date 2026-10-20)
+RCF-0000000-020-00000,captures/example_update.pdf,https://republic.com/example/updates,company_update,public,2026-11-02,2026-11-03T09:00:00Z,Company update #3
+RCF-0000000-020-00000,private_notice.pdf,,investor_notice,private,2027-05-01,2027-05-02T10:00:00Z,Conversion notice (investor-only; stored outside git; excluded from exports)

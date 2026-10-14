@@ -1,0 +1,70 @@
+# DunklikeVC — Prospective Research Pilot v1.0 configuration.
+# Paths are relative to this file. Changing this file changes config_sha recorded on every run.
+
+pilot:
+  name: prospective_pilot_v1
+  duration_days: 90
+  timezone: America/New_York
+  # Pilot start is set ONCE by the first successful live discovery run and written to pilot_clock.json.
+
+platform:
+  name: Republic (US Reg CF)
+  # Verified intermediary identifiers (historical study, data/frame/intermediary_evidence.csv):
+  #   0001672732 OpenDeal Inc. (dba Republic), funding-portal file 007-00046, CRD 283874
+  #   0001751525 OpenDeal Portal LLC (dba Republic), funding-portal file 007-00167, CRD 283874
+  intermediary_ciks: ["0001672732", "0001751525"]
+  intermediary_file_numbers: ["007-00046", "007-00167"]
+  exclude_name_patterns: ["seedrs", "republic europe"]
+  # One probe per run at most; a block is recorded and the page is not retried for block_cooldown_days.
+  public_page_probe_url: "https://republic.com/companies"
+  block_cooldown_days: 7
+
+security_filter:
+  include_classes: [equity, safe, convertible_note]
+  exclude_classes: [crypto_token, revenue_share, pure_debt, fund_or_spv, real_estate, other_unclassified]
+
+discovery:
+  # Source of record: EDGAR daily form index (every Form C of the day) + each initial Form C's XML
+  # intermediary block. A day is "complete" only when its index file was retrieved.
+  first_run_lookback_days: 7          # complete daily-index scan before the pilot start (for the watchlist)
+  # Optional, explicitly left-truncated watchlist: older Republic Form Cs found by EDGAR full-text search.
+  watchlist_fts_lookback_days: 120
+  watchlist_enabled: true
+
+capture:
+  max_documents_per_filing: 12
+  max_bytes_per_document: 30000000
+  initial_batch_size: 10              # bounded first capture
+  ocr_enabled: false                  # targeted OCR is off by default; text-layer failures are logged as gaps
+  ocr_max_pages_per_offering: 5
+
+schedule:
+  change_check_days_open_or_unknown: 7
+  followup_days_after_close: 30
+  review_queue_size: 3                # detailed reviews per weekly queue
+  review_queue_rule: oldest_unreviewed_first
+
+paths:
+  db: data/pilot.sqlite               # local state (gitignored: may hold private import metadata)
+  blobs_dir: data/blobs               # content-addressed snapshots (gitignored; back up separately)
+  private_dir: data/imports/private   # private user evidence (gitignored)
+  public_imports_dir: data/imports/public
+  exports_dir: data/exports           # public-only CSV exports (committed)
+  packets_dir: reports/packets
+  reports_dir: reports
+  cache_dir: data/cache               # HTTP cache used by the reused Fetcher (gitignored)
+  manifest: data/manifests/retrieval_manifest.jsonl
+
+sources:
+  sec_user_agent_env: SEC_USER_AGENT
+
+http:
+  requests_per_second_by_host:
+    www.sec.gov: 4
+    data.sec.gov: 4
+    efts.sec.gov: 2
+    default: 1
+  max_retries: 2
+  backoff_seconds: [2, 4]
+  timeout_seconds: 60
+  request_budget_per_command: 800

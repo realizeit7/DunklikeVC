@@ -8,3 +8,13 @@ __pycache__/
 # User-provided browser evidence: raw files and investor-only items stay local
 data/user_imports/files/
 data/user_imports/private/
+
+# Prospective pilot: local state, content-addressed snapshots, HTTP cache and private user evidence stay out of git.
+# Public-only CSV exports (prospective/data/exports/) and pilot_clock.json are committed.
+prospective/data/pilot.sqlite
+prospective/data/pilot.sqlite-journal
+prospective/data/blobs/
+prospective/data/cache/
+prospective/data/imports/private/
+prospective/data/manifests/
+!prospective/data/exports/

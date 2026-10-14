@@ -5,6 +5,9 @@
 > observed counts only) and `data/manual/phase4_alt_data_sources.csv`. The frozen frame, sample, evidence,
 > corrections and the commands below are retained for reproducibility.
 
+> **Prospective pilot (v1.0, started 2026-10-14):** a separate 90-day data-collection and workflow pilot lives in
+> `prospective/` (see `prospective/README.md`). It does not modify any file of this historical study.
+
 A small, reproducible pipeline that asks one question: can we reconstruct what a small investor could know and buy
 on Republic (US Reg CF) at a fixed decision date, and connect it to later outcomes and investor cash flows?
 This is a **feasibility study**. It is not a trading system or recommender, and it trains no model.

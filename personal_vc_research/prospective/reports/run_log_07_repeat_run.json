@@ -1,0 +1,43 @@
+{
+  "discover": {
+    "days_complete": 0,
+    "days_pending": 2,
+    "form_c_seen": 0,
+    "republic_new": 0
+  },
+  "capture": {
+    "captured": 0,
+    "documents": 0,
+    "facts": 0,
+    "pending_after_batch": 0
+  },
+  "followup": {
+    "due": 0,
+    "checked_ok": 0,
+    "failed": 0,
+    "new_events": 0,
+    "platform_probe": "blocked (HTTP 403)"
+  },
+  "export": {
+    "runs": 9,
+    "gaps": 2,
+    "index_days": 6,
+    "discovery_ledger": 10,
+    "offerings": 10,
+    "offering_status_log": 6,
+    "documents": 18,
+    "facts": 298,
+    "decisions": 0,
+    "decision_evidence": 0,
+    "predictions": 0,
+    "prediction_resolutions": 0,
+    "events": 0,
+    "review_queue_log": 3,
+    "effort_log": 0,
+    "pilot_clock": 6
+  }
+}
+
+real	0m2.486s
+user	0m1.048s
+sys	0m0.134s

@@ -1,0 +1,3 @@
+offering_id,status,analyst,user_confirmed,reasons,counterarguments,unresolved_questions,draft_recommendation,paper_amount_usd,packet
+RCF-0000000-020-00000,pass,user,true,"Revenue tiny relative to cap; contract not yet read","Fast-growing niche; strong founder domain experience","Valuation basis (pre/post-money)?",,,reports/packets/RCF-0000000-020-00000_<cutoff>_prospective.md
+RCF-0000000-020-00000,unreviewed,claude-draft,false,"Draft only","","","defer (draft — not a user decision)",,
