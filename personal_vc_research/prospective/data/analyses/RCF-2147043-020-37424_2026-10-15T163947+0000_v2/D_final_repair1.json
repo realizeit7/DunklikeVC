@@ -1,0 +1,278 @@
+{
+ "criteria": [
+  {
+   "criterion_id": "BT1_customer_and_revenue_model",
+   "result": "pass",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A27",
+    "A28",
+    "A18"
+   ],
+   "counter_claim_ids": [
+    "B6",
+    "C6"
+   ],
+   "reason_ko": "소비자(온라인 직판)와 도매·소매 유통업체가 포장 식품(쿠키, 가루 믹스)을 건별로 구매하는 구조이며, 검토된 재무제표상 FY2025 매출이 $459,216입니다. 다만 재무제표 주석에 서비스 예약 관련 문구가 섞여 있어 채널별 매출 비중은 확인되지 않습니다.",
+   "what_would_change_ko": "채널별(직판·도매·아마존) 매출과 주요 고객 집중도, 소매업체 계약 자료가 있으면 더 명확해집니다. 주석의 부적합한 문구가 정정되어야 신뢰도가 올라갑니다."
+  },
+  {
+   "criterion_id": "BT2_demand_evidence",
+   "result": "pass",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A18",
+    "B2",
+    "A28"
+   ],
+   "counter_claim_ids": [
+    "A32",
+    "A24",
+    "B8"
+   ],
+   "reason_ko": "검토(감사 아님) 받은 매출이 FY2024 $347,602에서 FY2025 $459,216으로 약 32% 늘어, 수요가 최소한 매출로 일부 확인됩니다. '월 $100K 런레이트'나 '1800개 매장' 주장은 기간과 근거가 없는 발행사 주장이라 근거로 쓰지 않았습니다.",
+   "what_would_change_ko": "2026년 중간 재무제표, 소매업체 발주서·계약, 재구매율 등 사용 데이터가 있으면 평가가 강해집니다. 매출 대비 매출원가가 계속 높다면 수요의 질에 대한 평가는 약해질 수 있습니다."
+  },
+  {
+   "criterion_id": "BT3_competition",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A29",
+    "A27"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "Aliea's, Tate's Bake Shop, Dr. Schar, Udi's 등 경쟁사는 명시되어 있으나 차별화는 글루텐프리·비건 등 제품 속성 수준에 그치고, 가격·시장점유율·전환 근거가 없습니다. 차별화가 입증되지 않아 판단을 보류합니다.",
+   "what_would_change_ko": "경쟁사 대비 가격, 마진, 소매 선반 점유, 재구매 데이터 등 구체적 차별화 증거가 있으면 통과로 바뀔 수 있습니다."
+  },
+  {
+   "criterion_id": "BT4_financial_condition_and_funding",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_adverse_fact"
+   ],
+   "claim_ids": [
+    "A22",
+    "A24",
+    "A25",
+    "A20",
+    "A26",
+    "A19"
+   ],
+   "counter_claim_ids": [
+    "A21",
+    "C10"
+   ],
+   "reason_ko": "2025-12-31 기준 검토된 재무제표에 going-concern(계속기업 불확실성) 문단이 있고, FY2025 순손실 $896,217·영업현금유출 $960,595, 주주결손 $(3,507,862)가 기재되어 있습니다. 발행사가 밝힌 2026-06-30 현금 $654,000과 '약 5개월 런웨이'도 미검토 수치이며 이번 모집 목표 $75,000으로는 부족해 보입니다.",
+   "what_would_change_ko": "2026년 중간 재무제표로 현금과 시장성 증권을 합친 현재 유동성이 확인되고, 확정된 추가 자금조달이나 매출총이익 개선이 문서로 입증되면 결과가 바뀔 수 있습니다."
+  },
+  {
+   "criterion_id": "BT5_team_evidence",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A16",
+    "A30",
+    "B11"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "창업자 겸 CEO 1인이 2017년부터 사업을 운영했다는 발행사 약력이 있으나 독립적으로 검증되지 않았고, 식품 제조·유통 운영 경력은 문서에 없습니다. 직원은 2명이고 자문위원 명단도 없어 팀 증거는 부족하지만 부정적 사실로 확정되지는 않습니다.",
+   "what_would_change_ko": "추가 경영진·이사·자문위원의 이름과 경력, 소매 입점·생산 운영 이력에 대한 제3자 확인 자료가 있으면 달라질 수 있습니다."
+  },
+  {
+   "criterion_id": "PC1_security_cash_path",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A9",
+    "A10",
+    "A13",
+    "A12",
+    "B9"
+   ],
+   "counter_claim_ids": [
+    "A15"
+   ],
+   "reason_ko": "이 SAFE는 별도의 $1,000,000 이상 지분 투자 라운드가 있어야 전환되며, 발행사는 그런 거래가 없을 수도 있고 전환 의무도 없다고 밝힙니다. 청산·해산 시 현금 청구권은 부채와 채권자보다 후순위이고 기존 SAFE와 같은 순위이며, 상환 청구나 채무불이행 조항도 없습니다.",
+   "what_would_change_ko": "$1M 이상의 우선주 라운드 체결 또는 인수·상장 계획에 대한 구체적 문서, 그리고 채권자 우선순위(EIDL 전자산 담보 등)가 명확해지면 재평가할 수 있습니다."
+  },
+  {
+   "criterion_id": "PC2_price_vs_path_to_value",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A4",
+    "A9",
+    "B12",
+    "B3"
+   ],
+   "counter_claim_ids": [
+    "C3",
+    "C1"
+   ],
+   "reason_ko": "가격은 '임의(arbitrary)'로 정해졌다고 공시되어 있고, $15,000,000 밸류에이션 캡은 FY2025 매출의 약 32.7배이지만 비교 가능한 자료가 팩에 없어 고평가라고 단정할 수 없습니다. 2022년 기존 SAFE도 같은 캡이고 기존 SAFE의 전환 조건(할인 등)이 불명확해 가치 경로 판단은 보류합니다.",
+   "what_would_change_ko": "기존 SAFE의 전체 조건과 완전희석 주식수, 향후 라운드의 예상 밸류에이션, 수익성 개선 경로를 보여주는 자료가 있으면 판단할 수 있습니다."
+  },
+  {
+   "criterion_id": "PC3_investor_rights_and_dilution",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A11",
+    "A35",
+    "C14",
+    "C8",
+    "C1",
+    "A15"
+   ],
+   "counter_claim_ids": [
+    "A12"
+   ],
+   "reason_ko": "SAFE 양식상 계약 변경은 CEO('Lead')의 지시로만 가능하고 CEO가 의결권 대리인 역할도 하며, 분쟁은 발행사 소재지 인근 중재로 해결되고 수탁계약이 SAFE보다 우선합니다. 또한 반희석 보호가 없고 기존 SAFE가 발행사 추산 완전희석 지분 25.36%를 차지합니다(의결권 부재만을 근거로 하지 않았습니다).",
+   "what_would_change_ko": "투자자에게 불리한 변경을 제한하는 조항, 정보 제공 의무, 확정된 수탁 수수료와 수탁기관 명칭 정정, 기존 SAFE 전환 조건 공개가 있으면 재평가될 수 있습니다."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "B4의 34%는 달러 대비 캡 비율이지 지분율이 아니며, 발행사가 제시한 완전희석 지분(보통주 74.64%, 기존 SAFE 25.36%, 본 모집분 및 중개인 1.5% 제외)이 더 적절한 희석 지표입니다(C1). 산출 근거는 제시되지 않은 발행사 주장으로 표시했고 PC3에 반영했습니다."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "'최대 모집액도 작다'는 표현은 과장입니다. 최대 $1,000,000은 FY2025 영업현금유출의 약 1.04배(C13)이며 수수료 차감 전 금액이고, 목표액 $75,000만 작습니다. 최대액 달성 여부도 불명입니다."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "기존 SAFE의 conversion_terms_disclosed는 '부분'이 맞습니다. 캡만 확인되고 할인·MFN은 팩에 없으며, 주석(C4)은 지분 투자 시 전환하지 않고 유지할 수도 있다고 하여 본 SAFE와 다릅니다. 기존 SAFE의 주식수는 도출할 수 없어 PC2를 unknown으로 두었습니다."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "청산 순위가 SAFE 양식, Form C 위험요소, 검토 주석 세 곳에서 다르게 기술됩니다(C5). 운영 문서는 SAFE 양식(부채 후순위, 기존 SAFE·우선주와 동순위, 보통주 우선)이며, EIDL 전자산 담보와의 관계는 문서에 없어 PC1 판단에 이 불확실성을 반영했습니다."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "Wayflyer 데이터는 단순한 날짜 차이가 아닙니다. 주석상 2025-12-31 잔액 $31,795·만기 2026-02-28인데 Form C는 $51,000·만기 2027-02-28이며 '월 지급/주당 $1,989' 표현이 모순됩니다(C2). 신규 차입 또는 수정의 가능성을 질문 사항으로 두되 오류 확정은 아닙니다."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "기존 2022년 SAFE도 동일한 $15M 캡이어서 캡이 2022년 이후 변하지 않았다는 사실(C3)을 추가합니다. 이는 사실일 뿐 가격 판단이 아니며 비교 자료가 없어 PC2는 unknown입니다."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "주석 문구의 부적합성(B6, C6)을 '관리 소홀 가능성'이라는 분석적 추론으로 낮춰 표현하고, 정정 공시를 요청해야 할 사항으로 둡니다. 공급업체·관세 위험은 Form C 위험요소 17~19쪽 기반이며 별도 claim으로 연결되지 않은 점을 인정합니다. BT1에서 반대 근거로만 사용했습니다."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "Form C는 '중대한 자본지출 계획 없음'이라 하면서 보도자료는 수직계열화를 핵심 자금 용도로 제시하여 충돌합니다(C7). 계획·비용·시기가 미공개이므로 사용처 불확실성으로만 기록하며 별도 평가 항목의 결정 근거로 쓰지 않았습니다."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "수수료·최소투자 항목은 투자자 측 수수료가 미확정이므로 '부분'으로 하향합니다. 수탁계약의 수수료표는 공란이고 수탁계약이 SAFE보다 우선하며 수탁기관 명칭도 문서 간 불일치합니다(C8, A35). PC3의 근거에 반영했습니다."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "보도자료의 '캠페인 진행 중'과 같은 문서의 '청약 권유 없음' 면책 문구가 충돌하고(C9), 독립 확인이 없어 모집 가능 여부는 미확인으로 유지합니다. 법 위반 여부는 판단하지 않으며, 예측에서도 발행사·플랫폼 자료로만 확인하도록 했습니다."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "going-concern 주석은 현금 $116,414만 유동자산으로 보지만 대차대조표에는 시장성 증권 $1,397,792도 있고 2025년에 약 $758,853을 인출했습니다(C10). 2026-06-30 현금 $654,000은 미검토이며 증권과의 관계가 불명입니다. 현재 런웨이는 계산하지 않았고, 발행사 진술 자체가 5개월이라는 점(C11)만 BT4 fail의 보조 근거로 쓰고 핵심 근거는 going-concern 문단과 손실 수치로 했습니다."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "매출원가에 배송·운송·풀필먼트·창고비가 포함되어 있어 총손실을 생산 마진으로 해석할 수 없습니다(C12). 'unit economics'라는 표현은 철회하고 채널·SKU별 마진이 없다고만 서술합니다."
+  },
+  {
+   "issue_index": 12,
+   "accepted": true,
+   "response": "A34는 인용이 p.2의 환불 규칙만 뒷받침하며 기한 연장·최대액 증액은 p.23에 있습니다. A13의 '의무 없음'도 p.24 문구를 근거로 합니다. 지원 확인 단계에서 부분 지지로 처리하고, 이 판단들에는 사용하지 않았습니다."
+  },
+  {
+   "issue_index": 13,
+   "accepted": true,
+   "response": "AAA 중재 조항(우드리지 NJ 15마일 이내)과 CEO가 단독으로 개정을 지시하는 구조를 PC3에 추가했습니다(C14). 집행 가능성과 실질 효과는 법률 문제라 팩 범위를 넘으며 단정하지 않았습니다."
+  },
+  {
+   "issue_index": 14,
+   "accepted": true,
+   "response": "본 SAFE 모집 자체는 전환 트리거가 아닌 것으로 보이나(B9) 이는 카운슬 확인이 필요한 해석입니다. 발행사는 인가 투자자 대상 별도 증권 발행도 가능하다고 했으며, 전환은 $1M 이상 지분 라운드에만 해당하고 시기·가능성은 팩에 없다고 PC1에 반영했습니다."
+  }
+ ],
+ "forecasts": [
+  {
+   "event_kind": "disclosure",
+   "target_type": "issuer_announces",
+   "event": "Mightylicious Inc or its Republic deal page publicly reports that investment commitments in the Series 2026 SAFE offering have reached or exceeded the $75,000 Target Offering Amount",
+   "target_scope": "Mightylicious Inc, Reg CF offering via OpenDeal Portal LLC dba Republic, SEC file no. 020-37424, United States; threshold: commitments at or above $75,000",
+   "deadline_date": "2026-12-18",
+   "reporting_lag_days": 14,
+   "allowed_evidence": [
+    "Form C-U or Form C/A filed on SEC EDGAR",
+    "Republic deal page (republic.com/mightylicious) status update",
+    "Issuer press release or investor email"
+   ],
+   "probability": 0.7,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The $75,000 target is small relative to the $1,000,000 maximum, and the issuer says it has a prior investor base and an active campaign (issuer press release, unverified). Offsetting this, the offering's availability is unconfirmed, the issuer's own materials are inconsistent about whether it is live, and a going-concern paragraph may deter investors.",
+   "assumptions": [
+    "The campaign is actually open on Republic",
+    "No material change forces reconfirmation that stalls commitments",
+    "Issuer or platform publicly posts progress"
+   ],
+   "unknown_treatment": "If no public report is found by the deadline plus the reporting lag, resolve as unknown, not false.",
+   "cancellation_treatment": "If the offering is cancelled, withdrawn (Form C-W) or the issuer dissolves before reaching the target, this event resolves false only if no earlier announcement of reaching the target exists; an earlier true announcement stays true.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A5",
+    "A34",
+    "B13",
+    "A24"
+   ]
+  },
+  {
+   "event_kind": "disclosure",
+   "target_type": "issuer_announces",
+   "event": "Mightylicious Inc files a Form C-W withdrawing the Series 2026 SAFE offering",
+   "target_scope": "Mightylicious Inc, Reg CF offering via OpenDeal Portal LLC dba Republic, SEC file no. 020-37424, filed on SEC EDGAR",
+   "deadline_date": "2026-12-18",
+   "reporting_lag_days": 7,
+   "allowed_evidence": [
+    "Form C-W on SEC EDGAR",
+    "Republic deal page status"
+   ],
+   "probability": 0.07,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "Issuers rarely withdraw when the target is small and the company states the proceeds are essential to operations. The unconfirmed availability, going-concern language and inconsistent testing-the-waters disclaimers leave some chance of withdrawal or restructuring.",
+   "assumptions": [
+    "No regulatory or platform action halts the offering",
+    "The issuer does not replace the offering with a new Form C"
+   ],
+   "unknown_treatment": "If EDGAR filings cannot be checked, resolve as unknown, not false.",
+   "cancellation_treatment": "A Form C-W filing is the event itself and resolves true; a deadline lapse without reaching the target, with funds returned, is not a Form C-W and does not count unless a Form C-W is filed.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A34",
+    "A26",
+    "B13",
+    "A24"
+   ]
+  }
+ ]
+}

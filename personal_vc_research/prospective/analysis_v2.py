@@ -59,6 +59,10 @@ ENGLISH_RUN = re.compile(r"(?:\b[A-Za-z][A-Za-z'’-]+\b[\s,;:]+){8,}")
 
 
 VALIDATOR_VERSION = "v2_validator_0_2"
+PIPELINE_VERSION = "analysis_v2_pipeline_0_2"
+# 0_2 (2026-10-15, after analysis 11): a stage-F (Korean summary) failure after the repair cap no longer marks the
+# whole run analysis_failed. The F output is still rejected, so the brief shows no summary. 0_1 discarded a valid
+# A-E assessment because the summary was 241 words against a 250-word floor.
 # 0_2 (2026-10-15, after analysis 10): English terms inside parentheses, which the prompt explicitly allows (e.g.
 # "희석방지권(anti-dilution rights)"), no longer count toward the Latin-character ratio. 0_1 counted them and forced
 # a needless repair round on a short Korean note in analysis 10, stage E. The English-passage rule is unchanged.
@@ -237,12 +241,13 @@ def register_v2(ctx: Ctx, version_id: str, description: str, development_offerin
     ctx.con.commit()
 
 
-def run_v2(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, note: str = "") -> dict:
+def run_v2(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, note: str = "",
+           repair_override: int | None = None, register_forecasts: bool = True) -> dict:
     v = ctx.con.execute("SELECT * FROM analyst_versions WHERE version_id=?", (version_id,)).fetchone()
     if v is None:
         raise ValueError(f"analyst version {version_id} is not registered")
     settings = json.loads(v["settings"] or "{}")
-    cap = int(settings.get("repair_rounds", 0))
+    cap = int(settings.get("repair_rounds", 0)) if repair_override is None else repair_override
     pack, pack_sha = load_pack(ctx, pack_id)
     if pack["offering"]["offering_id"] != offering_id:
         raise ValueError("pack belongs to another offering")
@@ -254,6 +259,7 @@ def run_v2(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
     usage: list[dict] = []
     ctxd: dict = {"calcs": {}}
     errors: list[str] = []
+    presentation_errors: list[str] = []
     res = None
 
     def attempt(stage: str, label: str, payload: str):
@@ -288,16 +294,25 @@ def run_v2(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
                 outputs[stage] = out2
             errs = validate_stage(stage, pack, outputs, ctxd)
             usage.append(_usage_row(stage, f"repair{rnd}", meta2, errs))
+        if errs and stage == "F_brief_ko":
+            # pipeline 0_2: the Korean summary is presentation. Its failure is recorded, the invalid output is kept on
+            # disk but not shown, and the assessment computed from validated stages A-E stands.
+            presentation_errors = errs
+            outputs[stage] = None
+            break
         if errs:
             errors = errs
             break
         if stage == "A_extraction":
             claims, by_id, valid, _ = claims_checks(pack, outputs, [])
-            for k in calc.implied_equity(outputs["A_extraction"]["valuation_inputs"], by_id, valid):
+            for k in calc.implied_equity(outputs["A_extraction"]["valuation_inputs"], by_id, valid,
+                                         pack["offering"].get("security_class") or ""):
                 ctxd["calcs"][k["calc_id"]] = k
     finished = ctx.now()
     if errors:
         res = _assess(ctx, offering_id, pack, outputs, ctxd, errors)
+    ctxd["presentation_errors"] = presentation_errors
+    ctxd["register_forecasts"] = register_forecasts
     return _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finished, outputs, usage, ctxd, errors,
                   res, out_dir, note)
 
@@ -361,7 +376,8 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
          ";".join(models) or None, None, v["settings"], started, finished, legacy,
          "development" if offering_id in dev else "evaluation", str(out_dir.relative_to(ctx.root)),
          hashlib.sha256(combined.encode()).hexdigest(), json.dumps(errors), cost,
-         json.dumps({"pipeline": "analysis_v2", "validator": VALIDATOR_VERSION, "legacy_status_note": "status column = screening_policy_v1 mapping; "
+         json.dumps({"pipeline": "analysis_v2", "pipeline_version": PIPELINE_VERSION, "validator": VALIDATOR_VERSION,
+                     "presentation_errors": ctxd.get("presentation_errors", []), "legacy_status_note": "status column = screening_policy_v1 mapping; "
                      "v2.1 dimensions in table assessments", "critical": critical, "note": note,
                      "cost_label": COST_LABEL}, ensure_ascii=False)))
     aid = cur.lastrowid
@@ -421,7 +437,7 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
                          u["output_tokens"], u["cache_read_tokens"], u["cache_creation_tokens"], u["cost_estimate_usd"],
                          COST_LABEL, u["outcome"], u["n_errors"]))
     n_fc = 0
-    if not errors:
+    if not errors and ctxd.get("register_forecasts", True):
         for f in outputs["D_final"]["forecasts"]:
             months = max(1, round((parse_utc(f["deadline_date"]) - parse_utc(pack["cutoff_utc"])).days / 30.4375))
             pid = journal.add_forecast(ctx, offering_id, f["event"], f["event_kind"], months, f["probability"],
@@ -442,8 +458,52 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
     return {"analysis_id": aid, "legacy_status": legacy, "assessment": res["assessment"],
             "evidence_completeness": res["evidence_completeness"], "operational_readiness": res["operational_readiness"],
             "budget_status": res["budget_status"], "decisive": res["decisive"], "unresolved": res["unresolved"],
-            "n_errors": len(errors), "errors": errors[:15], "forecasts": n_fc, "models": models, "cost_estimate_usd": round(cost, 4),
+            "n_errors": len(errors), "errors": errors[:15], "presentation_errors": ctxd.get("presentation_errors", []), "forecasts": n_fc, "models": models, "cost_estimate_usd": round(cost, 4),
             "usage": usage, "output_dir": str(out_dir)}
+
+
+class StoredV2Adapter:
+    """Replays the FINAL stored outputs of an earlier v2 run (no LLM call), e.g. after a pipeline fix. Labelled; the
+    original run is never modified."""
+    name = "replay_of_stored_v2_outputs"
+
+    def __init__(self, outputs: dict, source_analysis_id: int, model: str):
+        self.outputs, self.source, self.model = outputs, source_analysis_id, model
+
+    def run(self, stage, system_prompt, payload, schema):
+        return self.outputs.get(stage), {"model_reported": self.model, "cost_usd": 0.0, "seconds": 0,
+                                         "replayed_from_analysis": self.source}
+
+
+def replay(ctx: Ctx, analysis_id: int, note: str = "") -> dict:
+    a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (analysis_id,)).fetchone()
+    comb = json.loads((ctx.root / a["output_path"] / "combined.json").read_text())
+    ad = StoredV2Adapter(comb["outputs"], analysis_id, a["model_reported"] or "")
+    # the same outputs must never register the same forecasts twice
+    already = ctx.con.execute("SELECT COUNT(*) FROM prediction_meta m JOIN analysis_runs r USING(analysis_id) WHERE "
+                              "r.analysis_id=? OR r.notes LIKE ?", (analysis_id, f'%replay of analysis {analysis_id} %')).fetchone()[0]
+    return run_v2(ctx, a["offering_id"], a["pack_id"], ad, a["version_id"], repair_override=0, register_forecasts=not already,
+                  note=f"replay of analysis {analysis_id} final outputs under {PIPELINE_VERSION}; no LLM call. {note}")
+
+
+def recalc(ctx: Ctx, analysis_id: int) -> list[dict]:
+    """Recompute deterministic calculations for a stored run with the CURRENT calculator. New rows carry the new
+    calculator_version; earlier rows stay."""
+    a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (analysis_id,)).fetchone()
+    comb = json.loads((ctx.root / a["output_path"] / "combined.json").read_text())
+    pack, _ = load_pack(ctx, a["pack_id"])
+    _, by_id, valid, _ = claims_checks(pack, comb["outputs"], [])
+    ks = calc.implied_equity(comb["outputs"]["A_extraction"]["valuation_inputs"], by_id, valid,
+                             pack["offering"].get("security_class") or "")
+    for k in ks:
+        ctx.con.execute("INSERT INTO calculations(analysis_id, pack_id, calc_type, formula, inputs, assumptions, included_instruments, "
+                        "excluded_instruments, units, result_value, result_kind, withheld_reason, calculator_version, created_utc) "
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (analysis_id, a["pack_id"], f"{k['calc_id']}:{k['calc_type']}", k["formula"], json.dumps(k["inputs"]),
+                         json.dumps(k["assumptions"]), json.dumps(k["included_instruments"]), json.dumps(k["excluded_instruments"]),
+                         k["units"], k["result_value"], k["result_kind"], k["withheld_reason"], k["calculator_version"], ctx.now()))
+    ctx.con.commit()
+    return ks
 
 
 def reassess(ctx: Ctx, analysis_id: int, note: str = "") -> dict:

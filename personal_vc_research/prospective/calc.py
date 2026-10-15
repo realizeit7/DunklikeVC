@@ -15,7 +15,12 @@ Rules
 """
 from __future__ import annotations
 
-CALCULATOR_VERSION = "calculator_v1"
+CALCULATOR_VERSION = "calculator_v1_1"
+# v1_1 (2026-10-15, analysis 12): no per-share implied equity for SAFEs or convertible notes. The "price" there is a
+# purchase unit ($1.00), not a share price, and v1 multiplied it by common shares ($1,000,000 "equity" for
+# Mightylicious). For such securities the valuation cap is a contract term and is not converted into an equity value.
+# Also withheld: offered units of a different class than the issued shares.
+NON_SHARE_SECURITIES = {"safe", "convertible_note"}
 
 
 def _cit(claims: dict, cid: str) -> list:
@@ -27,7 +32,7 @@ def _inp(name, value, unit, as_of, cid, claims):
     return {"name": name, "value": value, "unit": unit, "as_of": as_of, "claim_id": cid, "citations": _cit(claims, cid)}
 
 
-def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set) -> list[dict]:
+def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set, security_class: str = "") -> list[dict]:
     """Returns calculation records K1.. (pre-money, post-money min/max, fully diluted)."""
     vi = valuation_inputs or {}
     out: list[dict] = []
@@ -53,6 +58,11 @@ def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set) -
                     "assumptions": (assumptions or []) + base_assumptions, "included_instruments": included or [],
                     "excluded_instruments": excl if excl is not None else excluded, "calculator_version": CALCULATOR_VERSION})
 
+    if security_class in NON_SHARE_SECURITIES:
+        rec("implied_pre_money_equity", "price_per_share * issued_shares", [], None, "withheld",
+            f"security is a {security_class}: the offering price is a purchase unit, not a share price; the valuation cap "
+            "is a contract term (see the contract claims), not a computed equity value")
+        return out
     if price is None or pcid not in valid_claim_ids:
         rec("implied_pre_money_equity", "price_per_share * issued_shares", [], None, "withheld",
             "price per share missing or not supported by a valid citation")
@@ -76,6 +86,11 @@ def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set) -
     rec("implied_pre_money_equity", "price_per_share * issued_shares", [p_in, s_in], round(pre, 2), kind,
         assumptions=conflict_note, included=included)
     for label, o in (("minimum", omin), ("maximum", omax)):
+        if o is not None and o["share_class"].strip().lower() != latest["share_class"].strip().lower():
+            rec(f"implied_post_money_equity_at_offering_{label}", "price_per_share * (issued_shares + offered_shares)",
+                [p_in, s_in], None, "withheld", f"offered class '{o['share_class']}' differs from issued class "
+                f"'{latest['share_class']}'; units are not additive")
+            continue
         if o is None:
             rec(f"implied_post_money_equity_at_offering_{label}", "price_per_share * (issued_shares + offered_shares)",
                 [p_in, s_in], None, "withheld", f"offered {label} share count not cited")

@@ -1,0 +1,566 @@
+{
+ "issues": [
+  {
+   "issue_type": "missing_fact",
+   "target": "B4 / B3 / price_and_terms: dilution from existing SAFEs",
+   "explanation": "B4 expresses existing SAFE principal as 34% of the $15M cap. That is a ratio of dollars to the cap, not an ownership share, and it can be misread as dilution. The Form C capitalization tables give the issuer's own fully diluted split (common 74.64%, SAFEs 25.36%, assuming conversion before this Offering). That is a better-sourced dilution figure and B omitted it. It is an issuer-stated figure, and its derivation is not shown. It does not include this Offering's SAFEs or the 1.5% intermediary securities.",
+   "claim_ids": [
+    "B4",
+    "B3",
+    "A15",
+    "C1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "economics_and_funding: 'Even the maximum is small against the FY2025 cash burn'",
+   "explanation": "The $1,000,000 maximum is about 1.04x the FY2025 operating cash outflow of $960,595 (C13), before intermediary fees and the $5,000 onboarding fee. It is not 'small' against that figure. The target of $75,000 is small. The statement should say that only the target is small. At the maximum, gross proceeds roughly match one year of FY2025 outflow. Whether the maximum is reached is unknown.",
+   "claim_ids": [
+    "C13",
+    "A5",
+    "A25"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A15 / valuation_inputs: existing SAFE conversion_terms_disclosed=true",
+   "explanation": "The A-stage input flags the existing SAFEs as 'conversion_terms_disclosed: true', but only the $15M cap is cited. The reviewed note says that for existing Crowd SAFEs the company 'may elect either to continue the instrument without conversion' on an Equity Financing (C4). This differs from the automatic conversion in this Offering's form. Discount, MFN and the actual existing-SAFE form are not in the pack. The flag should read partial. The existing SAFEs' share count cannot be derived from the pack.",
+   "claim_ids": [
+    "A15",
+    "C4",
+    "C1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A10 / security_path_to_proceeds: liquidation priority",
+   "explanation": "Three documents describe priority differently: the SAFE form (junior to debt, on par with other SAFEs and preferred, senior to common), the Form C risk factor (payment only after creditors and more senior holders including preferred are paid in full), and the reviewed note (equal priority with common equity on dissolution) (C5). B recorded only the note conflict. The SAFE form is the operative text, but the conflict should be weighed. No waterfall or intercreditor terms are stated for the all-asset EIDL lien.",
+   "claim_ids": [
+    "A10",
+    "C5",
+    "A17"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B5 / A17: debt reconciliation",
+   "explanation": "B5 says the amounts 'differ by date and Wayflyer status'. The pack shows more than that. The note table shows a Wayflyer balance of $31,795 at 2025-12-31 with maturity 02/28/2026. The Form C shows $51,000 outstanding with maturity February 28, 2027, and describes '1% per month' with 'Monthly payment of $1,989 per week'. The balance has risen and the maturity has moved. The note says no subsequent events needed disclosure through issuance (report dated 2026-07-23). Either a new advance or a modification happened and is undisclosed, or the Form C figure is wrong. Terms are internally inconsistent (monthly vs weekly). Request an explanation. This is not proof of misstatement.",
+   "claim_ids": [
+    "B5",
+    "A17",
+    "C2"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "PC2 price_and_terms: cap history",
+   "explanation": "B notes the cap is 32.7x FY2025 revenue (B12) but does not mention that the existing 2022 SAFEs carry the same $15,000,000 cap (C3). The cap therefore has not moved since 2022, while FY2024 and FY2025 revenue were $347,602 and $459,216. Investors from 2022 and this Offering share the cap but not necessarily other terms. This is a fact, not a verdict on price. No comparables are in the pack.",
+   "claim_ids": [
+    "B12",
+    "C3",
+    "A18"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B6 boilerplate finding and execution_risks (6)",
+   "explanation": "B6 found service-booking boilerplate in the receivables note. The Business section shows more of the same: 'institution integrations', 'institutional deployment' and 'white-label customer integration' (C6), plus risk factors on 'product candidates' (A28). These fit another business model. The 'lower confidence in care' reading is an analyst inference. It should be stated as such, with a request for corrected disclosure. It is not proof of misstatement. Execution risk item (4), which cites suppliers, co-packers and tariffs, has no claim ids. The risk-factor text is on p.17-19 and should be tied to claims.",
+   "claim_ids": [
+    "B6",
+    "C6",
+    "A28"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B7 use of proceeds: vertical integration",
+   "explanation": "B7 notes that the press release names vertical integration as 'a core use of proceeds' and that the Form C table lacks it. The Form C also says the issuer 'does not intend to make any material capital expenditures in the near future' (C7). Completing vertical integration would normally involve spend, and none is quantified. The two statements conflict, and the plan, cost and timing are undisclosed.",
+   "claim_ids": [
+    "B7",
+    "C7",
+    "A31"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "minimum_investment_and_fees critical item: status 'confirmed_with_citation'",
+   "explanation": "Critical item status is overstated. The pack's own checklist marks fees as missing, and A7 admits investor-side fees are not stated. Investors must open a custody account (C8). The custodial agreement's fee schedule is blank, says the Client pays fees, and sets payment terms. The SAFE says the Custody Account Agreement takes precedence over the SAFE where they conflict. The investor's cost of holding is therefore unknown. Also, the custodian name differs between documents (A35). Downgrade to partial.",
+   "claim_ids": [
+    "A6",
+    "A7",
+    "A35",
+    "C8"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B13 availability / press release",
+   "explanation": "B13 notes the press release (2026-09-24) precedes the Form C signature (2026-09-28). The same release says the campaign is 'now live' yet carries a disclaimer that 'No offer to buy or sell securities is being made' (C9). These are internally inconsistent. The Form C also warns some testing-the-waters communications 'may not have included proper disclaimers'. I do not find a violation; that is a legal question. It lowers the weight of the 'live' claim. Availability stays unverified.",
+   "claim_ids": [
+    "B13",
+    "A32",
+    "C9"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A21 / A25 / A26 / economics_and_funding: liquidity",
+   "explanation": "The going-concern note counts only 'liquid assets in cash of $116,414'. The balance sheet also shows $1,397,792 in marketable securities, mostly municipal bonds (C10). B cites both but does not point out this tension in the reviewed note. The 2025 cash flow was funded in part by drawing down the portfolio. The $654,000 at 2026-06-30 is unreviewed. Its relation to the portfolio is unexplained. Read literally, the issuer's own '5 months' from 2026-06-30 ends before the 2026-12-18 deadline (C11). That is a reading of a stale issuer statement, not a computed current runway. No interim statements are provided.",
+   "claim_ids": [
+    "A21",
+    "A25",
+    "A26",
+    "C10",
+    "C11"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B1/A19 gross-loss framing as 'unit economics'",
+   "explanation": "Cost of goods sold per the note includes shipping, freight-out, fulfillment (Amazon, Shopify, Walmart) and warehousing (C12). The gross loss is therefore not a pure production margin. 'Unit economics not yet shown to be positive' is fair, but the gross loss cannot be tied to production cost. Vertical integration may not address fulfillment cost. Channel and SKU margins are missing.",
+   "claim_ids": [
+    "A19",
+    "B1",
+    "B7",
+    "C12"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A34 citation coverage",
+   "explanation": "A34 says the issuer may extend the deadline or raise the maximum, but the cited p.2 passage supports only the no-sale and refund rule. Extension and increase rights are on p.23. Partial support. Also, A13 'under no obligation to convert except on a qualified financing' relies on p.24 (cited in B9), not p.25.",
+   "claim_ids": [
+    "A34",
+    "A13",
+    "B9"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "PC3 investor rights: dispute and amendment provisions",
+   "explanation": "A35 covers CEO control of amendments. It omits that disputes go to binding AAA arbitration seated within 15 miles of Wood-Ridge, NJ (C14). Together with a Lead who is the issuer's CEO and who both amends terms and votes as proxy, investor remedies are narrow. Enforceability and practical effect are legal questions beyond the pack.",
+   "claim_ids": [
+    "A35",
+    "A11",
+    "C14"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B9 conversion path inference",
+   "explanation": "B9 says this SAFE offering does not by itself trigger conversion. This is a plausible reading of the 'Equity Financing' definition, which excludes SAFEs and notes, and B flags it for counsel. Form C p.34 says the issuer may also raise capital via stock, SAFEs or notes from accredited investors outside this Offering. Only a priced round of at least $1,000,000 would convert this SAFE. Its timing and likelihood are not in the pack.",
+   "claim_ids": [
+    "B9",
+    "A9",
+    "A13"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C capitalization tables give the issuer's own fully diluted split, assuming conversion of convertible securities before this Offering: common stock 74.64% and existing SAFEs 25.36%. The percentage figures sit on the lines just below the quoted labels, which are the nearest verbatim single-line quotes. The tables exclude this Offering's SAFEs and the intermediary's 1.5% securities. The derivation is not shown.",
+   "claim_type": "financial",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 31,
+     "quote": "such security on a fully diluted basis (assuming"
+    },
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Percentage ownership of the Issuer by the holders of"
+    }
+   ],
+   "financial_period": "as of Form C date (2026-09-28)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A14",
+    "A15"
+   ],
+   "contradictions": "B4 expresses SAFE principal as 34.0% of the cap, which is a different measure from the issuer's 25.36% ownership figure."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "Wayflyer loan data conflict across the Form C and the reviewed notes. The note table shows a balance of $31,795 at 2025-12-31, while the Form C shows $51,000 outstanding with maturity February 28, 2027 and a payment described as 'Monthly payment of $1,989 per week'. The note states no subsequent events required disclosure.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "$ 31,795 $ - $ 31,795"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Amount Outstanding $51,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Monthly payment of $1,989 per week"
+    },
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "issued and determined that there were no events requiring adjustment to, or disclosure in, the financial statements."
+    }
+   ],
+   "financial_period": "2025-12-31 vs Form C date 2026-09-28",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "contradictions": "The balance increased and the maturity moved between the reviewed statements and the Form C; the pack gives no explanation."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The reviewed note's SAFE table lists existing SAFEs from multiple investors borrowed in 2022 with a $15,000,000 valuation cap, the same cap as this Offering's Series 2026 SAFE.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "investors 2022 $ 15,000,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 55,
+     "quote": "The “Pre-Money Valuation Cap” is $15,000,000."
+    }
+   ],
+   "financial_period": "2022 issuance; statements at 2025-12-31",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A15",
+    "A9"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "For existing Crowd SAFEs, the reviewed note says that on an Equity Financing the company 'may elect either to continue the instrument without conversion' or convert. This differs from the automatic conversion in this Offering's SAFE form. The existing SAFE instruments themselves are not in the pack.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "If there is Equity Financing before the termination of the Crowd SAFE, the Company may elect either to continue"
+    }
+   ],
+   "financial_period": "note to statements at 2025-12-31",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A15"
+   ],
+   "contradictions": "The Series 2026 form (p.55) says the issuer shall issue shares on an Equity Financing."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "Priority on dissolution is described three ways: the SAFE form (on par with other SAFEs and preferred, senior to common), a Form C risk factor (distributions only after creditors and more senior holders including preferred are paid in full), and a reviewed note (equal priority to holders of common equity).",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 56,
+     "quote": "(ii) On par with payments for other SAFEs, whether this Series or otherwise, and/or"
+    },
+    {
+     "doc_id": 6,
+     "page": 26,
+     "quote": "distributions once all of the creditors and more senior security holders, including any holders of preferred stock, have"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "equal priority to holders of common equity and other instruments with similar liquidation rights, subject to any"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A10"
+   ],
+   "contradictions": "The three descriptions are not mutually consistent; the operative SAFE form is an unsigned template."
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The Business section's strategy paragraph refers to 'initial institution integrations', 'institutional deployment' and 'white-label customer integration'. This language does not match a cookie and baking-mix business and appears to be non-tailored text.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "The Company’s near-term strategic priority is to complete initial institution integrations and scale its infrastructure to"
+    },
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "capital raise, are expected to support product development, retail and institutional growth, white-label customer"
+    }
+   ],
+   "financial_period": "Form C dated 2026-09-28",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27",
+    "A28",
+    "B6"
+   ],
+   "contradictions": "Revenue recognition note (p.48) describes packaged food sales through DTC, wholesale and retail."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The Form C says the issuer does not intend to make material capital expenditures in the near future, while the issuer's press release names completing vertical integration of the supply chain as a core use of proceeds.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "The Issuer does not intend to make any material capital expenditures in the near future."
+    },
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "A core use of proceeds will go toward completing the vertical integration of"
+    }
+   ],
+   "financial_period": "Form C 2026-09-28; press release 2026-09-24",
+   "calculation": null,
+   "basis_claim_ids": [
+    "B7",
+    "A31"
+   ],
+   "contradictions": "The Form C use-of-proceeds table has no vertical integration category and no cost estimate."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "Investors must set up (or already hold) an account with the custodian to receive Securities. The SAFE says the Custody Account Agreement takes precedence over the SAFE if they conflict. The custodial agreement's fee schedule leaves amounts blank and says the Client pays fees. Investor-side custody costs are therefore not determinable from the pack.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 9,
+     "quote": "Securities from this Offering, Investors will be required to establish, or verify that they already have, an account with"
+    },
+    {
+     "doc_id": 6,
+     "page": 62,
+     "quote": "Agreement contradict this instrument, the Custody Account Agreement shall be provided precedence."
+    },
+    {
+     "doc_id": 6,
+     "page": 93,
+     "quote": "The Onboarding Fee will be $___________."
+    },
+    {
+     "doc_id": 6,
+     "page": 96,
+     "quote": "6. Payment Terms. Client shall pay such fees and expenses to Custodian within 7 days after the date"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A35",
+    "A7"
+   ],
+   "contradictions": "Exhibit C is an unsigned, partly blank BitGo template naming BitGo Trust Company, Inc., whereas the Form C names BitGo Bank & Trust, National Association."
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The press release dated 2026-09-24 says the Republic campaign is 'now live', yet its disclaimer says 'No offer to buy or sell securities is being made.' The Form C was signed on 2026-09-28.",
+   "claim_type": "availability",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 129,
+     "quote": "[Wood-bridge, NJ ] — [SEPT. 24, 2026] — MIGHTYLICIOUS Gluten Free, makers of"
+    },
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "Investors can participate in the MIGHTYLICIOUS Gluten Free campaign now live on"
+    },
+    {
+     "doc_id": 6,
+     "page": 131,
+     "quote": "Disclaimer: No offer to buy or sell securities is being made. No money is being solicited and if"
+    },
+    {
+     "doc_id": 6,
+     "page": 38,
+     "quote": "September 28, 2026"
+    }
+   ],
+   "financial_period": "2026-09-24 to 2026-09-28",
+   "calculation": null,
+   "basis_claim_ids": [
+    "B13"
+   ],
+   "contradictions": "The statements within one communication conflict; the pack has no independent confirmation that the offering is open."
+  },
+  {
+   "claim_id": "C10",
+   "claim_text": "The going-concern note cites only cash of $116,414 as 'liquid assets', whereas the balance sheet at 2025-12-31 also holds marketable securities of $1,397,792 (down from $2,302,274 a year earlier), with withdrawals of about $758,853 during 2025 per the investments note.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "operating loss of $933,836, an operating cash outflow of $960,595 and liquid assets in cash of $116,414, which"
+    },
+    {
+     "doc_id": 6,
+     "page": 50,
+     "quote": "with aggregate fair values of $1,397,792 and $2,302,274, respectively. The investment portfolio consisted"
+    },
+    {
+     "doc_id": 6,
+     "page": 50,
+     "quote": "investment portfolio totaling approximately $758,853 and $760,924, respectively. Investments are carried at fair"
+    }
+   ],
+   "financial_period": "as of and for the year ended 2025-12-31",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A21",
+    "A25"
+   ],
+   "contradictions": "The cash flow statement text on p.46 is garbled, and the proceeds figure there appears to differ from $758,853; do not rely on either as an exact reconciliation."
+  },
+  {
+   "claim_id": "C11",
+   "claim_text": "The issuer's stated 'approximately 5 months of runway' is dated 2026-06-30 and is an unreviewed issuer calculation (cash divided by average monthly net loss). Read literally, that horizon ends around late November 2026, before the 2026-12-18 offering deadline. This is a reading of a stale statement, not a computed current runway; the intervening cash movement is unknown.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "As of June 30, 2026, the Issuer had an aggregate of $654,000 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "approximately 5 months of runway. Runway is calculated by dividing cash-on-hand by average monthly net loss (if"
+    }
+   ],
+   "financial_period": "as of 2026-06-30 (about 3.5 months before cutoff)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A26"
+   ],
+   "contradictions": "No interim statements; the relation to Dec 2025 cash plus securities is unexplained."
+  },
+  {
+   "claim_id": "C12",
+   "claim_text": "Cost of goods sold per the reviewed note includes shipping and packaging, freight-out, fulfillment (Amazon, Shopify, Walmart channels) and warehousing, so the reported gross loss is not a pure production margin.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 48,
+     "quote": "Cost of sales includes the cost of goods sold for wholesale products, shipping and packaging costs, freight-out"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A19",
+    "B1"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C13",
+   "claim_text": "The maximum offering of $1,000,000 is about 1.04 times the FY2025 operating cash outflow of $960,595. This is gross of intermediary fees (up to $54,000 at the maximum per the use-of-proceeds table) and the $5,000 onboarding fee, and the maximum may not be reached.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>1000000.00"
+    },
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "operating loss of $933,836, an operating cash outflow of $960,595 and liquid assets in cash of $116,414, which"
+    }
+   ],
+   "financial_period": "FY2025 outflow vs. maximum offering",
+   "calculation": {
+    "formula": "maximum_offering / fy2025_operating_cash_outflow",
+    "inputs": [
+     {
+      "name": "maximum_offering",
+      "value": 1000000,
+      "claim_id": "A5"
+     },
+     {
+      "name": "fy2025_operating_cash_outflow",
+      "value": 960595,
+      "claim_id": "A25"
+     }
+    ],
+    "result": 1.041
+   },
+   "basis_claim_ids": [
+    "A5",
+    "A25"
+   ],
+   "contradictions": "B's 'small against the FY2025 cash burn' fits only the target amount."
+  },
+  {
+   "claim_id": "C14",
+   "claim_text": "Under the SAFE form, disputes go to binding AAA arbitration with the place of arbitration within 15 miles of Wood-Ridge, New Jersey, and the CEO ('Lead') alone directs amendments to the SAFE.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 66,
+     "quote": "Rules. The place of arbitration shall be within 15 miles of Wood-Ridge, New Jersey. Except as may be"
+    },
+    {
+     "doc_id": 6,
+     "page": 65,
+     "quote": "(c) Any provision of this SAFE may be amended, waived or modified only at the direction of"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A35"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

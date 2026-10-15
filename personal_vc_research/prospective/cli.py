@@ -134,6 +134,11 @@ def main(argv: list[str] | None = None) -> int:
     tg.add_argument("--offering", required=True)
     tg.add_argument("--cutoff", required=True, help="evidence cutoff for the new pack (documents observed by then)")
     tg.add_argument("--cap", type=int, default=60)
+    rp = sub.add_parser("replay-v2", help="re-run the v2 pipeline on a stored run's final outputs (new run, no LLM call)")
+    rp.add_argument("analysis_id", type=int)
+    rp.add_argument("--note", default="")
+    rc = sub.add_parser("recalc", help="recompute deterministic calculations for a stored run with the current calculator")
+    rc.add_argument("analysis_id", type=int)
     ra = sub.add_parser("reassess", help="re-run the current assessment classifier on a stored v2 run (new row, no LLM call)")
     ra.add_argument("analysis_id", type=int)
     ra.add_argument("--note", default="")
@@ -338,6 +343,15 @@ def dispatch(ctx: Ctx, a) -> dict:
         p = packs.build_pack(ctx, a.offering, a.cutoff, ocr_overrides={a.document_id: t})
         return {"pack_id": p["pack_id"], "selected_pages": t["selected"], "unprocessed_pages": len(t["unprocessed"]),
                 "gaps": p["gaps"]}
+    if a.cmd == "replay-v2":
+        from . import analysis_v2
+        r = analysis_v2.replay(ctx, a.analysis_id, a.note)
+        r.pop("usage", None)
+        return r
+    if a.cmd == "recalc":
+        from . import analysis_v2
+        return [{k: x[k] for k in ("calc_id", "calc_type", "result_value", "result_kind", "withheld_reason")}
+                for x in analysis_v2.recalc(ctx, a.analysis_id)]
     if a.cmd == "reassess":
         from . import analysis_v2
         return analysis_v2.reassess(ctx, a.analysis_id, a.note)

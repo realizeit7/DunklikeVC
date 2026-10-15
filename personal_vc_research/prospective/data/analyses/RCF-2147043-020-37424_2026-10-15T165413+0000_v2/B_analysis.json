@@ -1,0 +1,498 @@
+{
+ "additional_claims": [
+  {
+   "basis_claim_ids": [
+    "A18"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<revenuePriorFiscalYear>347602.00"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<costGoodsSoldPriorFiscalYear>464671.00"
+    }
+   ],
+   "claim_id": "B1",
+   "claim_text": "FY2024 cost of goods sold ($464,671) exceeded FY2024 revenue ($347,602), implying a gross loss of $117,069 (347,602 minus 464,671); COGS exceeded revenue in both FY2024 and FY2025.",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "document_supported_fact",
+   "financial_period": "FY2024 (year ended 2024-12-31)"
+  },
+  {
+   "basis_claim_ids": [
+    "A18"
+   ],
+   "calculation": {
+    "formula": "(revenue_current - revenue_prior) / revenue_prior",
+    "inputs": [
+     {
+      "claim_id": "A18",
+      "name": "revenue_current",
+      "value": 459216
+     },
+     {
+      "claim_id": "A18",
+      "name": "revenue_prior",
+      "value": 347602
+     }
+    ],
+    "result": 0.321097
+   },
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>459216.00"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<revenuePriorFiscalYear>347602.00"
+    }
+   ],
+   "claim_id": "B2",
+   "claim_text": "Revenue grew about 32.1% from FY2024 ($347,602) to FY2025 ($459,216).",
+   "claim_type": "traction",
+   "contradictions": "Figures are from reviewed, not audited, statements.",
+   "evidence_status": "calculation",
+   "financial_period": "FY2025 vs FY2024"
+  },
+  {
+   "basis_claim_ids": [
+    "A9",
+    "A14"
+   ],
+   "calculation": {
+    "formula": "pre_money_cap / issued_shares",
+    "inputs": [
+     {
+      "claim_id": "A9",
+      "name": "pre_money_cap",
+      "value": 15000000
+     },
+     {
+      "claim_id": "A14",
+      "name": "issued_shares",
+      "value": 1000000
+     }
+    ],
+    "result": 15
+   },
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 31,
+     "quote": "As of the date of this Form C, 1,000,000 shares of Common Stock are issued and outstanding."
+    },
+    {
+     "doc_id": 6,
+     "page": 55,
+     "quote": "The “Pre-Money Valuation Cap” is $15,000,000."
+    }
+   ],
+   "claim_id": "B3",
+   "claim_text": "The $15,000,000 pre-money cap divided by 1,000,000 issued common shares implies a cap price of about $15 per share, before existing SAFEs and any options (none listed in the cited capitalization). This is arithmetic, not a valuation opinion.",
+   "claim_type": "financial",
+   "contradictions": "The actual conversion price depends on Fully Diluted Capitalization at the time of the Equity Financing, which is not known.",
+   "evidence_status": "calculation",
+   "financial_period": "as of Form C date (2026-09-28)"
+  },
+  {
+   "basis_claim_ids": [
+    "A15",
+    "A9"
+   ],
+   "calculation": {
+    "formula": "existing_safe_principal / pre_money_cap",
+    "inputs": [
+     {
+      "claim_id": "A15",
+      "name": "existing_safe_principal",
+      "value": 5096791
+     },
+     {
+      "claim_id": "A9",
+      "name": "pre_money_cap",
+      "value": 15000000
+     }
+    ],
+    "result": 0.33978607
+   },
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Principal Amount Outstanding $5,096,791*"
+    },
+    {
+     "doc_id": 6,
+     "page": 55,
+     "quote": "The “Pre-Money Valuation Cap” is $15,000,000."
+    }
+   ],
+   "claim_id": "B4",
+   "claim_text": "Existing SAFE principal ($5,096,791) is about 34.0% of the $15,000,000 cap, so conversion of existing SAFEs at the cap would add a large share count on top of the 1,000,000 outstanding shares.",
+   "claim_type": "financial",
+   "contradictions": "The pack does not detail the existing SAFEs' other terms (discount, MFN), so actual conversion share counts are unknown.",
+   "evidence_status": "calculation",
+   "financial_period": "as of Form C date (2026-09-28)"
+  },
+  {
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "calculation": {
+    "formula": "eidl + wayflyer + ceo_loans",
+    "inputs": [
+     {
+      "claim_id": "A17",
+      "name": "eidl",
+      "value": 80000
+     },
+     {
+      "claim_id": "A17",
+      "name": "wayflyer",
+      "value": 51000
+     },
+     {
+      "claim_id": "A17",
+      "name": "ceo_loans",
+      "value": 8475
+     }
+    ],
+    "result": 139475
+   },
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Amount Outstanding $80,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Amount Outstanding $51,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Amount Outstanding $8,475"
+    }
+   ],
+   "claim_id": "B5",
+   "claim_text": "Disclosed debt in the Form C totals $139,475 (EIDL $80,000 + Wayflyer $51,000 + CEO loans $8,475) as of the Form C date. Only the EIDL loan is stated as secured (all assets).",
+   "claim_type": "financial",
+   "contradictions": "The 2025-12-31 balance sheet shows total loans and notes of about $115,993 plus $8,475 related-party loans, so amounts differ by date and Wayflyer status.",
+   "evidence_status": "calculation",
+   "financial_period": "as of Form C date (2026-09-28)"
+  },
+  {
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 47,
+     "quote": "The Company’s customers are primarily individual consumers who prepay for services at the time of booking"
+    },
+    {
+     "doc_id": 6,
+     "page": 48,
+     "quote": "The Company primarily generates revenue through the sale of packaged food products, including gluten-free"
+    }
+   ],
+   "claim_id": "B6",
+   "claim_text": "The reviewed notes describe customers as individuals who 'prepay for services at the time of booking' through a website or mobile application, which does not fit a packaged-cookie business and suggests boilerplate not tailored to the company.",
+   "claim_type": "risk",
+   "contradictions": "Revenue-recognition note describes packaged food sales, while the receivables note describes service bookings.",
+   "evidence_status": "analyst_inference",
+   "financial_period": "FY2025 notes"
+  },
+  {
+   "basis_claim_ids": [
+    "A31"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "A core use of proceeds will go toward completing the vertical integration of"
+    },
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "(2) Promotional and Brand Building: These proceeds will be used for promotional and brand building activities,"
+    }
+   ],
+   "claim_id": "B7",
+   "claim_text": "The issuer's press release names vertical integration of the supply chain to reduce COGS and onboarding key executives as uses of the raise, but the Form C use-of-proceeds table lists only intermediary fees, retail launches/inventory, promotions and operations; the plan and its cost are not specified in the Form C.",
+   "claim_type": "use_of_proceeds",
+   "contradictions": "Form C use-of-proceeds categories do not mention vertical integration or executive hiring.",
+   "evidence_status": "issuer_claim",
+   "financial_period": "press release dated 2026-09-24"
+  },
+  {
+   "basis_claim_ids": [
+    "A32"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "Our increased run rate has also accelerated our cash"
+    },
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "2026 Q4 launches include Wakefern and Wegmans"
+    }
+   ],
+   "claim_id": "B8",
+   "claim_text": "The issuer's testing-the-waters email says its increased run rate 'accelerated our cash burn' and that the new campaign will help fund pending Wakefern and Wegmans launches, i.e. growth is consuming cash.",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "issuer_claim",
+   "financial_period": "undated, approx. 2026"
+  },
+  {
+   "basis_claim_ids": [
+    "A9",
+    "A13"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 57,
+     "quote": "“Equity Financing” shall mean the next sale (or series of related sales) by the Issuer of its Capital"
+    },
+    {
+     "doc_id": 6,
+     "page": 24,
+     "quote": "Except for a qualified financing, the Issuer is under no obligation to convert the"
+    }
+   ],
+   "claim_id": "B9",
+   "claim_text": "The SAFE's Equity Financing is defined as a sale of Capital Stock for gross proceeds of at least $1,000,000, excluding conversions of SAFEs or notes. Raising money through this SAFE offering does not by itself appear to be such a sale, so conversion depends on a separate future priced stock round.",
+   "claim_type": "security_terms",
+   "contradictions": "Legal interpretation should be confirmed with counsel.",
+   "evidence_status": "analyst_inference",
+   "financial_period": ""
+  },
+  {
+   "basis_claim_ids": [
+    "A4",
+    "A9",
+    "A14"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 9,
+     "quote": "The price of the Securities was determined arbitrarily, does not necessarily bear any relationship to the Issuer’s asset"
+    }
+   ],
+   "claim_id": "B10",
+   "claim_text": "K1 and K2 multiply the $1.00 SAFE purchase unit by share counts (1,000,000 outstanding common shares, plus 75,000 offered units for K2); because the SAFE is not a share and the $15,000,000 cap is the operative pricing term, these figures ($1,000,000 and $1,075,000) are not meaningful valuations and should not be compared to the cap.",
+   "claim_type": "security_terms",
+   "contradictions": "",
+   "evidence_status": "analyst_inference",
+   "financial_period": ""
+  },
+  {
+   "basis_claim_ids": [
+    "A16",
+    "A30"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "These proceeds will be used to build out the Issuer’s infrastructure. Currently, our CEO handles"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Carolyn Haeler 1,000,000 shares of Common Stock 100%"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<currentEmployees>2.00"
+    }
+   ],
+   "claim_id": "B11",
+   "claim_text": "The company relies on one officer: the CEO handles a wide range of administrative and operational functions, she owns 100% of voting shares, and the company has 2 employees.",
+   "claim_type": "team",
+   "contradictions": "",
+   "evidence_status": "issuer_claim",
+   "financial_period": "as of Form C date"
+  },
+  {
+   "basis_claim_ids": [
+    "A9",
+    "A18"
+   ],
+   "calculation": {
+    "formula": "cap_usd / revenue_usd",
+    "inputs": [
+     {
+      "claim_id": "A9",
+      "name": "cap_usd",
+      "value": 15000000
+     },
+     {
+      "claim_id": "A18",
+      "name": "revenue_usd",
+      "value": 459216
+     }
+    ],
+    "result": 32.664
+   },
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>459216.00"
+    },
+    {
+     "doc_id": 6,
+     "page": 55,
+     "quote": "The “Pre-Money Valuation Cap” is $15,000,000."
+    }
+   ],
+   "claim_id": "B12",
+   "claim_text": "The $15,000,000 cap is about 32.7 times FY2025 revenue of $459,216 (arithmetic only; no comparables are in the pack and the ratio is not a valuation conclusion).",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "calculation",
+   "financial_period": "FY2025 revenue"
+  },
+  {
+   "basis_claim_ids": [
+    "A34"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "Investors can participate in the MIGHTYLICIOUS Gluten Free campaign now live on"
+    }
+   ],
+   "claim_id": "B13",
+   "claim_text": "The issuer's press release (dated 2026-09-24, before the 2026-09-28 Form C filing date) says the Republic campaign is 'now live'; this is an issuer statement and is not independently confirmed.",
+   "claim_type": "availability",
+   "contradictions": "The pack's platform check found availability unknown, and a press release dated before the Form C filing is not proof of acceptance of funds.",
+   "evidence_status": "issuer_claim",
+   "financial_period": "press release dated 2026-09-24"
+  }
+ ],
+ "business_model": {
+  "assessment": "Mightylicious sells packaged gluten-free/vegan cookies, flour blends and brownie mix through direct-to-consumer online, wholesale and retail channels [A27, A28]. Payers are consumers and retailers/wholesale customers, buying one-time per order; no subscription or contract revenue is documented. Revenue is $459,216 in FY2025, up about 32% from $347,602 in FY2024 [A18, B2]. Cost of goods sold exceeded revenue in both years (gross loss of $29,477 in FY2025 [A19] and $117,069 in FY2024 [B1]), so unit economics are not yet shown to be positive. The issuer says vertical integration should lower COGS [B7], but no cost, timeline or evidence is given. The Form C does not split revenue by channel or customer. The reviewed notes contain boilerplate that does not fit a cookie business (customers 'prepay for services at the time of booking') [B6], which lowers confidence in the care taken with the statements.",
+  "claim_ids": [
+   "A18",
+   "A19",
+   "A27",
+   "A28",
+   "B1",
+   "B2",
+   "B6",
+   "B7"
+  ]
+ },
+ "competition": {
+  "assessment": "The issuer names four competitors: Aliea's, Tate's Bake Shop, Dr. Schar and Udi's, and says it competes with many large and small companies, including well-known global competitors [A29]. Differentiation is limited to product attributes (gluten-free, vegan, kosher, Non-GMO, taste, Gen X/Millennial target) [A27]. The pack gives no market share, pricing, margin comparison or customer-switching evidence. Risk factors name shelf-space competition, retailers' negotiating power and better-resourced competitors [A29]. Two trademarks are registered, but no patent or other durable moat is documented. Competitive position is therefore asserted, not demonstrated.",
+  "claim_ids": [
+   "A27",
+   "A29"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "Documented demand is real but modest: reviewed revenue of $459,216 (FY2025) and $347,602 (FY2024) [A18]. The reviewed statements are not audited and sales are not tied to named contracts [A24]. Stronger traction statements ('$100K MoM run rate', '1800 doors in over 49 states', Kroger/Giant/HEB/HyVee, Amazon +355% YoY) appear only in an undated testing-the-waters email, with no basis or period [A32]. They are not reconciled to FY2025 revenue of $459,216, so they are issuer assertions only. The email also says the higher run rate 'accelerated our cash burn' [B8]. Retailer contracts, purchase orders, channel revenue and any 2026 interim financials are missing from the pack. Wakefern and Wegmans launches are described as pending or Q4 2026 plans, not completed events [A32].",
+  "claim_ids": [
+   "A18",
+   "A24",
+   "A32",
+   "B8"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "Reviewed FY2025 figures (year ended 2025-12-31, about 9.5 months before the cutoff): net loss $896,217, operating cash outflow $960,595, cash $116,414 plus $1,397,792 in marketable securities at that date [A20, A25, A21]. Total liabilities were $5,354,602, mostly SAFEs carried at $5,007,597 [A22, A23], leaving a stockholders' deficit of $(3,507,862). The accountant's report includes a going-concern paragraph [A24]. The issuer states $654,000 in cash and equivalents at 2026-06-30 and about 5 months of runway; this is an unreviewed issuer figure whose relationship to the Dec 2025 cash and securities is unexplained [A26]. I do not compute a current runway from these mismatched figures. Disclosed debt totals $139,475 (EIDL $80,000 secured by all assets, Wayflyer $51,000, CEO loans $8,475) [A17, B5]. The offering raises $75,000 minimum and $1,000,000 maximum [A5], and the issuer calls the proceeds 'essential to our operations' [A26]. Even the maximum is small against the FY2025 cash burn, and the issuer plans further capital raises [A26]. Intermediary fees and the onboarding fee reduce net proceeds [A7].",
+  "claim_ids": [
+   "A5",
+   "A7",
+   "A17",
+   "A20",
+   "A21",
+   "A22",
+   "A23",
+   "A24",
+   "A25",
+   "A26",
+   "B5"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "Key risks: (1) continued losses, with COGS above revenue and a going-concern paragraph [A19, A24]; (2) dependence on a sole officer, with 2 employees and the CEO handling a wide range of administrative and operational functions [A30, B11]; (3) retail-expansion risks, with Wakefern/Wegmans launches pending and new retail growth needing working capital [A32]; (4) heavy reliance on third-party suppliers, co-packers and retailers, and exposure to commodity and tariff costs, per risk factors; (5) the proceeds plan differs between Form C and press release (vertical integration and executive hiring appear only in the press release) [B7]; (6) disclosure quality issues: boilerplate in the notes [B6], unreconciled traction claims [A32], a custodian-name mismatch [A35], and testing-the-waters materials that the issuer says 'may not have included proper disclaimers'. Availability is unverified: the platform page was not reachable, and the press release describing the campaign as live comes from the issuer [B13].",
+  "claim_ids": [
+   "A19",
+   "A24",
+   "A30",
+   "A32",
+   "A35",
+   "B6",
+   "B7",
+   "B11",
+   "B13"
+  ]
+ },
+ "is_pre_revenue": false,
+ "price_and_terms": {
+  "assessment": "The SAFE is sold at $1.00 per unit of purchase amount; the price is described as 'arbitrary', which is a disclosure rather than proof of mis-pricing [A4]. The operative reference is the $15,000,000 pre-money valuation cap [A9]. The cap sits against 1,000,000 outstanding shares, an implied cap price of $15 per share before SAFEs [B3]. The cap is about 32.7x FY2025 revenue (arithmetic only, with no comparables in the pack) [B12]. There is no discount in the cited terms. Existing SAFEs with principal of $5,096,791 also carry a $15,000,000 cap, and equal about 34% of the cap [A15, B4]. They convert on top of this offering because SAFEs are excluded from the denominator [A9]. K1 and K2 ($1,000,000 and $1,075,000) simply multiply the $1.00 SAFE unit price by share counts; the $1.00 is a purchase-amount unit, not a share price. These figures are not a valuation of the company and should not be read as such [B10]. K3 and K4 are withheld. Investor-side fees are not stated in the cited text. The Form C 'greater of' conversion wording differs from the SAFE form's Equity Financing Price definition [A9]. The SAFE form should govern.",
+  "claim_ids": [
+   "A4",
+   "A9",
+   "A15",
+   "B3",
+   "B4",
+   "B10",
+   "B12"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is a Crowd SAFE held through a custodian/nominee; investors hold a beneficial interest only [A35]. Routes to cash are separate questions. (a) Conversion: it happens only on an Equity Financing, defined as the next sale of Capital Stock for at least $1,000,000 gross cash; the SAFE sale itself is not a sale of Capital Stock, so this offering does not appear to trigger conversion [A9, B9]. The issuer discloses it may never conduct one and is under no obligation to convert otherwise [A13]. (b) Liquidity Event (IPO, direct listing, change of control) or Dissolution: a cash-out right exists, but it is junior to debt and creditor claims, on par with other SAFEs/preferred, and senior to common; payment is limited to available funds [A10]. The notes' description of dissolution priority differs [A10]. Existing SAFEs of $5,096,791 share this pari passu class [A15]. The EIDL loan has all-asset collateral [A17]. No waterfall beyond the SAFE form language is stated. (c) Transfer: a one-year Reg CF restriction applies, plus opinion-of-counsel and no-competitor limits; a legal ability to transfer does not mean a buyer exists [A12]. (d) No voting, information or anti-dilution rights [A11]. The CEO ('Lead') controls amendments and acts as proxy [A35]. No public market exists or is contemplated.",
+  "claim_ids": [
+   "A9",
+   "A10",
+   "A11",
+   "A12",
+   "A13",
+   "A15",
+   "A17",
+   "A35",
+   "B9"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "The only documented officer and director is founder-CEO Carolyn Haeler, who owns 100% of the 1,000,000 outstanding common shares [A16]. Her issuer-provided bio: Yale MBA, finance roles (J.P. Morgan asset management, a hedge fund, IBM supply-chain consulting), and founder of the business in 2017, with cookies on sale at Whole Foods by January 2018 [A30]. This shows 8+ years of operating the business, but it is self-reported and not independently verified. Her documented background is in finance and consulting, and no prior food-industry operating or manufacturing role is documented in the pack. The company has 2 employees [A30]. Advisors are mentioned without names [A30]. The press release says key executives will be hired with part of the raise [B7]; no named hires exist. Single-person dependence is the main team finding [B11].",
+  "claim_ids": [
+   "A16",
+   "A30",
+   "B7",
+   "B11"
+  ]
+ }
+}

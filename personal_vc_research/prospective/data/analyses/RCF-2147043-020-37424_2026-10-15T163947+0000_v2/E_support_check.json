@@ -1,0 +1,215 @@
+{
+ "judgment_label": "model_judgment_not_verification",
+ "checks": [
+  {
+   "claim_id": "A22",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Statements are labeled UNAUDITED (accountant-reviewed only). The $5,007,597 SAFE balance is carried as a liability, which is why the deficit is large.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "None found. 1,846,740 - 5,354,602 = -3,507,862, which matches the stated deficit.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "2025-12-31 재무상태표의 총자산·총부채·자본총계 수치가 그대로 확인됩니다. 다만 감사가 아닌 검토(review) 수준의 미감사 재무제표이고, 부채 대부분이 SAFE 장부가액이라는 점을 함께 봐야 합니다."
+  },
+  {
+   "claim_id": "A24",
+   "passage_supports": "yes",
+   "omitted_qualifications": "A review gives only limited assurance and is substantially less in scope than an audit. The going-concern doubt is described as 'the Company has stated', with management's plans in Note 11.",
+   "evidence_type": "third_party_source",
+   "conflicts": "None found. Page 20 also says no internal-control testing was done and outside evidence was not used.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "검토 보고서(2026-07-23)와 계속기업 불확실성 문단, 감사 아님이 두 페이지에서 모두 확인됩니다. 검토는 제한적 확신만 제공한다는 점은 유의해야 합니다."
+  },
+  {
+   "claim_id": "A25",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The note also states an operating loss of $933,836 and year-end cash of $116,414, described as less than a year of reserves. The figure comes from reviewed (not audited) statements, and the note's wording is somewhat garbled.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "None found. The operating loss ($933,836) differs from the net loss ($896,217), which is a different measure, not a conflict.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "주석 11에 영업현금유출 $960,595가 명시되어 있습니다. 검토 수준의 수치이며 같은 주석의 영업손실·현금 수치와 함께 읽어야 합니다."
+  },
+  {
+   "claim_id": "A20",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Figures are from reviewed, not audited, statements. The Form C XML does not give a period label beyond 'MostRecentFiscalYear'.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "None found. The accumulated deficit change on the balance sheet (3,507,862 - 2,611,645) equals 896,217.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "Form C XML의 순손실 태그가 FY2025 -896,217, FY2024 -622,749로 일치합니다. 재무제표 누적적자 증가분과도 맞습니다."
+  },
+  {
+   "claim_id": "A26",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The passage does not say whether the $654,000 includes marketable securities. It does not say what period the 'average monthly net loss' covers or whether the figure is reviewed. The claim's 'not reviewed or audited' is the analyst's inference; the passage is silent on it.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Dec 2025 cash was $116,414 plus $1,397,792 marketable securities. How $654,000 relates to those figures is unexplained, and no interim statements are in the pack.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "2026-06-30 현금 $654,000과 약 5개월 런웨이는 발행사 진술로 확인되지만, 증권 포함 여부와 순손실 산정 기간이 불명확하고 미검토 여부는 문서가 말하지 않아 추론입니다."
+  },
+  {
+   "claim_id": "A19",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Page 48 says cost of sales also includes shipping, packaging, freight-out, fulfillment (Amazon/Shopify/Walmart) and warehousing, so the 'gross loss' is on the issuer's cost-of-sales definition, not just ingredient and production cost. Reviewed, not audited.",
+   "evidence_type": "calculation",
+   "conflicts": "None found. 459,216 - 488,693 = -29,477 is correct.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "COGS $488,693이 XML에서 확인되고 매출 $459,216(A18)과의 차이 -$29,477 계산도 맞습니다. 다만 COGS에 배송·물류비가 포함되어 있어 순수 제품 원가 손실로 해석하면 안 됩니다."
+  },
+  {
+   "claim_id": "A9",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Form C p.11 words it as the 'greater of' two quotients, while the SAFE (p.57) defines 'Equity Financing Price' by a pre-money-versus-cap test. The SAFE Price for pre-money above the cap is not on the cited pages. The SAFE definition excludes conversions of SAFEs/notes and requires a principal purpose of raising capital. Existing SAFEs and notes are excluded from the fully diluted base by their terms. The SAFE form should govern over the Form C summary.",
+   "evidence_type": "contract_text",
+   "conflicts": "Wording differs between Form C p.11 and SAFE p.57. P.25 says the issuer has 'ultimate discretion' over conversion on a future financing, which sits uneasily with 'automatically'.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "$1,000,000 이상 지분 투자 시 자동 전환과 $15,000,000 상한 구조는 확인됩니다. 그러나 Form C 요약과 SAFE 본문의 문구 차이, 전환가 정의의 일부가 인용 페이지에 없는 점이 남아 있습니다."
+  },
+  {
+   "claim_id": "A10",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Text says the SAFE is 'intended to operate like' non-participating preferred. The priorities apply to the Cash-Out Amount; the Conversion Amount right ranks on par with common and below the claims in clauses (i)-(ii). Convertible notes rank ahead only to the extent not converted.",
+   "evidence_type": "contract_text",
+   "conflicts": "P.13 says the Securities have no stated return or liquidation preference. The claim itself flags a financial-statement note (p.51) describing equal priority with common; that page was not provided here.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "SAFE 본문 1(d)는 현금 청산권이 채무보다 후순위이고 다른 SAFE·우선주와 동순위, 보통주보다 선순위라고 명시합니다. 다만 '의도됨' 표현, 전환금액 권리의 순위, 다른 페이지의 상충 문구가 빠져 있습니다."
+  },
+  {
+   "claim_id": "A13",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The cited p.25 supports the 'may never undergo an Equity Financing or Liquidity Event / hold indefinitely' part. The 'no obligation to convert except on a qualified financing' wording is on p.24, not the cited page. P.25 instead says the issuer has 'ultimate discretion' on conversion and investors cannot demand it.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "P.25 'ultimate discretion' on conversion conflicts with automatic conversion in A9 and with 'except for a qualified financing' on p.24.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "무기한 보유 가능성은 인용 페이지에서 확인됩니다. 그러나 '적격 금융 외에는 전환 의무 없음'은 다른 페이지(p.24) 문구이고, 인용 페이지는 오히려 발행사의 재량을 언급해 자동 전환과 어긋납니다."
+  },
+  {
+   "claim_id": "A12",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Transferees must sign an Omnibus Nominee Trust Agreement. The SAFE (p.65) requires issuer consent for assignment except to affiliates. A 180-day IPO lock-up applies. Resale may also need coordination with the custodian, since the investor holds only a beneficial interest.",
+   "evidence_type": "contract_text",
+   "conflicts": "None found.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "1년 양도 제한과 예외 4가지, 변호사 의견서·경쟁사 양도 금지, '매수자가 있다는 보장 없음'이 p.13에 모두 있습니다. 명의신탁 계약서 서명 등 추가 조건은 빠져 있습니다."
+  },
+  {
+   "claim_id": "B9",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The definition requires a sale of 'Capital Stock' after the SAFE date for at least $1,000,000 cash with the 'principal purpose of raising capital'. It does not say the round must be 'priced'. Conversion is not the only path: Liquidity and Dissolution Events trigger payments. P.25 also says the issuer has discretion over conversion.",
+   "evidence_type": "inference",
+   "conflicts": "No direct conflict. The reading that a SAFE sale is not a Capital Stock sale is analyst inference and needs counsel confirmation.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "Equity Financing 정의(자본주 매각, $1,000,000 이상, SAFE·전환사채 전환 제외)는 확인됩니다. 본 SAFE 모집 자체가 해당하지 않는다는 결론은 합리적 추론이지만 '가격이 정해진' 라운드라는 표현은 문서에 없고 법률 확인이 필요합니다."
+  },
+  {
+   "claim_id": "A11",
+   "passage_supports": "yes",
+   "omitted_qualifications": "P.13 and p.25 add 'unless otherwise provided for by the Issuer' on voting. A custodian and the Lead (CEO) exercise voting control over the securities. The information-rights statement refers to rights 'required by law' (an annual Form C-AR).",
+   "evidence_type": "contract_text",
+   "conflicts": "None found. Common stock carries 1 vote per share (p.31), but that applies to common, not the SAFE.",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "전환 후에도 의결권 없음, 희석방지 권리 없음, 법정 외 정보·열람권 없음이 인용 페이지에서 확인됩니다. '발행사가 달리 정하지 않는 한'이라는 단서와 CEO(Lead)가 의결권을 행사하는 구조를 함께 봐야 합니다."
+  },
+  {
+   "claim_id": "A35",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Cited p.9 and p.65 support the custodian as legal record holder, beneficial-interest holding and CEO-directed amendments. The proxy role is not stated on those pages (it appears on p.13 and p.24). The Lead must act in good faith and fair dealing. Legal title sits in a trust held by the nominee.",
+   "evidence_type": "contract_text",
+   "conflicts": "The Form C names BitGo Bank & Trust, N.A., while Exhibits C and D name BitGo Trust Company, Inc., as the claim itself notes.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "수탁기관이 법적 명의자이고 투자자는 수익적 지분만 가지며 SAFE 수정이 CEO(Lead) 지시로만 가능하다는 점은 확인됩니다. 대리 의결(proxy) 역할은 인용 페이지에 없고, 수탁기관 명칭 불일치도 있습니다."
+  },
+  {
+   "claim_id": "C14",
+   "passage_supports": "yes",
+   "omitted_qualifications": "One arbitrator, a confidentiality clause, Delaware governing law, and the Lead's duty to act in good faith and fair dealing. Nothing in the cited text requires investor consent to amendments.",
+   "evidence_type": "contract_text",
+   "conflicts": "None found.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "AAA 구속력 있는 중재, 중재지 Wood-Ridge 15마일 이내, 수정은 CEO(Lead) 지시로만 가능하다는 문구가 확인됩니다."
+  },
+  {
+   "claim_id": "C8",
+   "passage_supports": "yes",
+   "omitted_qualifications": "'Client' is not identified in the template (the investor or the issuer is not established). Fees cover digital-asset storage, NFT and staking. The custodian may liquidate account assets to cover unpaid fees. Late payments bear interest. The exhibit is an unsigned template.",
+   "evidence_type": "contract_text",
+   "conflicts": "Custodian entity names differ between the Form C and Exhibit C, as noted in the claim.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "계좌 개설 요건, 수탁계약 우선 조항, 비어 있는 수수료 금액, 고객 부담 문구가 각 페이지에서 확인됩니다. '고객'이 투자자인지 발행사인지 불명확해 비용을 알 수 없다는 결론은 타당합니다."
+  },
+  {
+   "claim_id": "C1",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The 74.64% and 25.36% figures are on lines adjacent to the cited labels and are labeled 'assuming conversion prior to the Offering'. The tables do not explicitly state exclusion of this Offering's SAFEs or the intermediary's 1.5% compensation securities; that is inferred from 'prior to the Offering'. The derivation is not shown. The $99,937 Crowd SAFEs are part of the existing SAFE total.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "The $5,096,791 SAFE principal over the $15,000,000 cap is about 34%, which does not match 25.36%; the derivation is unexplained.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "기존 보통주 74.64%, 기존 SAFE 25.36%는 발행사 표에서 확인됩니다. 그러나 이번 모집분과 중개업체 1.5% 증권이 제외된다는 점은 표에 명시되지 않은 추론이며 산출 근거도 없습니다."
+  },
+  {
+   "claim_id": "A15",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The table gives one 'valuation cap of $15,000,000' without saying whether it is pre- or post-money. Other terms of the existing SAFEs (discount, MFN, priority) are not shown.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Balance sheet SAFE liability at 2025-12-31 is $5,007,597 versus $5,096,791 principal at the Form C date. The difference may reflect later issuance or carrying value, and is not explained.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "기존 SAFE 원금 $5,096,791, 상한 $15,000,000, 중개업체 보유 $99,937이 p.32에서 확인됩니다. 다른 전환 조건은 표에 없다는 점이 청구문에도 정확히 반영되어 있습니다."
+  },
+  {
+   "claim_id": "A27",
+   "passage_supports": "yes",
+   "omitted_qualifications": "This is the issuer's own description. The text names no retail customers, volumes or contracts, and calls the cookies 'homemade' with 'fresh ingredients'.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "None found.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "글루텐프리 쿠키(비건 옵션), 가루 믹스, 브라우니 믹스와 도매·직접판매 채널이 발행사 설명으로 확인됩니다. 발행사 주장이며 구체적 고객·계약은 없습니다."
+  },
+  {
+   "claim_id": "A28",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The note supports packaged food sales through online DTC, wholesale and retail channels, with point-in-time recognition. 'One-time product sales' is the analyst's gloss: point-in-time recognition does not show whether purchases repeat or whether there are recurring or subscription sales.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "The claim itself flags risk-factor wording about 'lack of revenues' and 'product candidates', which sits oddly with reported revenue. That page was not provided here.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "포장 식품을 온라인·도매·소매로 판매해 수익을 인식한다는 점은 확인됩니다. '일회성 판매'라는 표현은 문서에 없는 해석입니다."
+  },
+  {
+   "claim_id": "A18",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Figures are from reviewed, not audited, statements. The XML tags are labeled only 'MostRecentFiscalYear' and 'PriorFiscalYear'; the year mapping comes from the financial statements.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "None found.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "Form C XML 태그에서 매출 $459,216(최근 회계연도), $347,602(직전)가 확인됩니다. 검토 수준의 미감사 수치입니다."
+  },
+  {
+   "claim_id": "B2",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Based on reviewed, not audited, figures. Growth in revenue is not growth in margin (FY2025 cost of goods exceeded revenue).",
+   "evidence_type": "calculation",
+   "conflicts": "None found. (459,216 - 347,602) / 347,602 = 0.3211, matching 32.1%.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "입력값(XML 매출 두 값)과 계산 32.1%가 정확합니다. 미감사 수치이고 매출 증가가 수익성 개선을 뜻하지는 않습니다."
+  }
+ ]
+}

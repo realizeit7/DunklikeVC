@@ -372,3 +372,28 @@ def test_manual_import_example_and_private_or_secret_material_exclusion(ctx):
     # an import made now can never enter an earlier pack
     p2 = packs.build_pack(ctx, "O1", "2030-01-05T00:00:00+00:00")
     assert all(d["source_type"] != "user_import" for d in json.loads(Path(p2["path"]).read_text())["documents"])
+
+
+def test_summary_failure_does_not_erase_a_valid_assessment_and_replay_needs_no_llm(ctx):
+    p, d = setup_offering(ctx)
+    o = v2_outputs(d)
+    set_fail(o, "PC3_investor_rights_and_dilution", ["documented_contract_term"], ["A9"])
+    r, ad = run(ctx, o, p, broken_stage="F_brief_ko")
+    assert ad.calls.count("F_brief_ko") == 2                                # original + 1 repair (cap), then stop
+    assert r["assessment"] == "fails_current_screen" and r["n_errors"] == 0 and r["presentation_errors"]
+    b = build_brief_v2(ctx, r["analysis_id"], out_dir=ctx.tmp / "b").read_text()
+    assert "요약을 표시하지 않습니다" in b and "PC3_investor_rights_and_dilution" in b
+    rp = analysis_v2.replay(ctx, r["analysis_id"])
+    assert rp["assessment"] == r["assessment"] and rp["cost_estimate_usd"] == 0 and rp["analysis_id"] != r["analysis_id"]
+    assert rp["forecasts"] == 0                       # source run already registered its forecasts: no duplicates
+
+
+def test_no_per_share_equity_for_safes_or_mismatched_classes():
+    claims = {"P": {"citations": [{"doc_id": 1, "page": 1}]}, "S": {"citations": [{"doc_id": 1, "page": 2}]}}
+    vi = {"price_per_share_usd": 1.0, "price_claim_id": "P", "convertible_instruments": [], "note": "",
+          "share_counts": [{"kind": "issued_outstanding", "share_class": "Common Stock", "value": 1e6, "as_of": "", "claim_id": "S"},
+                           {"kind": "offered_minimum", "share_class": "SAFE units", "value": 75000, "as_of": "", "claim_id": "S"}]}
+    k = calc.implied_equity(vi, claims, {"P", "S"}, "safe")
+    assert len(k) == 1 and k[0]["result_kind"] == "withheld" and "purchase unit" in k[0]["withheld_reason"]
+    k2 = calc.implied_equity(vi, claims, {"P", "S"}, "equity")
+    assert k2[1]["result_kind"] == "withheld" and "not additive" in k2[1]["withheld_reason"]

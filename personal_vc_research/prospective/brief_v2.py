@@ -36,13 +36,32 @@ def _q(ctx, sql, *a):
     return [dict(r) for r in ctx.con.execute(sql, a)]
 
 
+def _latest_calcs(ctx, analysis_id: int) -> dict:
+    rows = _q(ctx, "SELECT * FROM calculations WHERE analysis_id=? ORDER BY calc_id", analysis_id)
+    if not rows:
+        return {}
+    latest = max(r["calculator_version"] for r in rows)
+    out = {}
+    for r in rows:
+        if r["calculator_version"] != latest:
+            continue
+        cid, ctype = r["calc_type"].split(":", 1)
+        out[cid] = {"calc_id": cid, "calc_type": ctype, "formula": r["formula"], "inputs": json.loads(r["inputs"]),
+                    "assumptions": json.loads(r["assumptions"] or "[]"), "included_instruments": json.loads(r["included_instruments"] or "[]"),
+                    "excluded_instruments": json.loads(r["excluded_instruments"] or "[]"), "units": r["units"],
+                    "result_value": r["result_value"], "result_kind": r["result_kind"], "withheld_reason": r["withheld_reason"],
+                    "calculator_version": r["calculator_version"]}
+    return out
+
+
 def build_brief_v2(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> Path:
     a = _q(ctx, "SELECT * FROM analysis_runs WHERE analysis_id=?", analysis_id)[0]
     asm = _q(ctx, "SELECT * FROM assessments WHERE analysis_id=? ORDER BY assessment_id DESC", analysis_id)[0]
     o = _q(ctx, "SELECT * FROM offerings WHERE offering_id=?", a["offering_id"])[0]
     v = _q(ctx, "SELECT * FROM analyst_versions WHERE version_id=?", a["version_id"])[0]
     comb = json.loads((ctx.root / a["output_path"] / "combined.json").read_text())
-    outs, calcs = comb["outputs"], comb.get("calcs") or {}
+    outs = comb["outputs"]
+    calcs = _latest_calcs(ctx, analysis_id) or comb.get("calcs") or {}
     pack, _ = load_pack(ctx, a["pack_id"])
     crit = _q(ctx, "SELECT * FROM criterion_results WHERE analysis_id=? ORDER BY row_id", analysis_id)
     checks = _q(ctx, "SELECT * FROM support_checks WHERE analysis_id=? ORDER BY row_id", analysis_id)
@@ -77,7 +96,12 @@ def build_brief_v2(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
             L += ["**중요한 누락 정보**", ""] + [f"- {x}" for x in f["material_missing_ko"]] + [""]
         L += ["**결론을 바꿀 수 있는 것**", ""] + [f"- {x}" for x in f["what_would_change_ko"]] + [""]
     else:
-        L += ["요약이 생성되지 않았습니다(분석이 완료되지 않음). 아래 다음 조치를 보세요.", ""]
+        if asm["assessment"] == "analysis_failed":
+            L += ["요약이 생성되지 않았습니다(분석이 완료되지 않음). 아래 다음 조치를 보세요.", ""]
+        else:
+            L += ["한국어 요약 단계가 검증을 통과하지 못해 요약을 표시하지 않습니다. 위 판단은 검증을 통과한 A~E 단계 결과로 "
+                  "코드가 계산한 것입니다. 기준별 이유는 부록 A에 있습니다.", ""]
+            L += ["**결정적 이유**", ""] + ([f"- {x}" for x in json.loads(asm["reasons"])] or ["- 없음(결정적 탈락 기준 없음)"]) + [""]
     L += ["**다음 조치**", ""] + [f"{i}. {x}" for i, x in enumerate(actions, 1)] + [""]
     if f.get("terms_explained_ko"):
         L += ["**용어 풀이**", ""] + [f"- **{t['term']}**: {t['explanation_ko']}" for t in f["terms_explained_ko"]] + [""]
@@ -96,7 +120,7 @@ def build_brief_v2(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
               f"- 탈락 근거 유형: {', '.join(d.get('failure_grounds', [])) or '해당 없음'}",
               f"- 결론을 바꿀 수 있는 것: {d.get('what_would_change_ko', '')}",
               f"- 검증 메모: {'; '.join(json.loads(c['validator_notes'] or '[]'))}", ""]
-    L += ["## 부록 B. 결정적 계산 (코드 계산, calculator_v1)", "",
+    L += [f"## 부록 B. 결정적 계산 (코드 계산, {next(iter(calcs.values()))['calculator_version'] if calcs else '-'})", "",
           "내재 기업가치(implied equity value)는 공모 가격 × 주식 수의 산술입니다. 가치 평가 의견이 아니며 비교 기업은 쓰지 않았습니다.", ""]
     for k in calcs.values():
         L += [f"### {k['calc_id']} — {k['calc_type']} ({k['result_kind']})", "",
