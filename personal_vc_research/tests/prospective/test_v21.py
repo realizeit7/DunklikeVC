@@ -189,7 +189,10 @@ def test_operational_unknown_is_separate_from_assessment(ctx):
                     "'https://republic.com/companies','HTTP 403')")
     r2, _ = run(ctx, v2_outputs(d, fees_confirmed=True), p)
     assert r2["assessment"] == "passes_current_screen" and r2["operational_readiness"] == "availability_unknown"
-    assert r2["budget_status"] == "eligible"
+    # classifier v2_1_1: fees found in the filing are not the investor's fee; 'eligible' needs a user-confirmed investor fee
+    assert r2["budget_status"] == "incomplete_cost_information"
+    assert assess._budget({"result": "pass"}, {"minimum_investment_and_fees": "confirmed"}, investor_fee_confirmed=True) == "eligible"
+    assert assess._budget({"result": "fail"}, {"minimum_investment_and_fees": "confirmed"}, True) == "ineligible"
     acts = assess.next_actions({**r2, "criteria": [], "extraction_gaps": []}, {"new_filings_since_cutoff": ""})
     assert any("실행 차단" in a for a in acts)
 
@@ -286,6 +289,15 @@ def test_forecast_event_vs_announcement_and_no_or_compounds(ctx):
     o["D_final"]["forecasts"][0]["event"] = "The offering closes at or above $75,000"
     errs = analysis_v2.validate_stage("D_final", packs.load_pack(ctx, p["pack_id"])[0], o, {})
     assert not any("joins alternatives" in e for e in errs)
+
+
+def test_reassess_adds_a_new_row_and_keeps_the_original(ctx):
+    p, d = setup_offering(ctx)
+    r, _ = run(ctx, v2_outputs(d), p)
+    before = [dict(x) for x in ctx.con.execute("SELECT * FROM assessments WHERE analysis_id=?", (r["analysis_id"],))]
+    analysis_v2.reassess(ctx, r["analysis_id"], "test")
+    after = [dict(x) for x in ctx.con.execute("SELECT * FROM assessments WHERE analysis_id=? ORDER BY assessment_id", (r["analysis_id"],))]
+    assert len(after) == 2 and after[0] == before[0] and "reassessment without LLM call" in after[1]["notes"]
 
 
 def test_old_forecasts_and_analyses_are_preserved(ctx):

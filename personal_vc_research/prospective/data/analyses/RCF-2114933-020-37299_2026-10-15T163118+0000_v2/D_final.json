@@ -1,0 +1,314 @@
+{
+ "criteria": [
+  {
+   "criterion_id": "BT1_customer_and_revenue_model",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A26",
+    "A23",
+    "A13"
+   ],
+   "counter_claim_ids": [
+    "C8",
+    "C11"
+   ],
+   "reason_ko": "계획된 수익모델(회사 40%·제공자 35%·유통사 25%, 연 $120,000 가정)은 있으나 모두 발행사 추정이며 실제 지불 주체(환자·보험·클리닉)는 특정되지 않았고 매출은 0입니다.",
+   "what_would_change_ko": "지불 주체와 보험·상환 경로, 클리닉·유통사와의 체결된 계약이나 의향서가 제시되면 판단이 달라집니다."
+  },
+  {
+   "criterion_id": "BT2_demand_evidence",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A13",
+    "A24",
+    "A25",
+    "A23"
+   ],
+   "counter_claim_ids": [
+    "C5",
+    "B3"
+   ],
+   "reason_ko": "매출·계약·사용 실적이 없고 마우스 실험(p=0.008)만 발행사 설명으로 제시되며 표본 수·설계·대조군·평가변수가 없습니다. 사전 단계라는 이유만으로 불합격 처리하지 않고 판단 보류합니다.",
+   "what_would_change_ko": "마우스 연구의 상세 설계와 독립적·공개된 보고서, IRB 승인, FDA IND 제출·발효, 첫 투약 문서, 또는 클리닉 계약이 있으면 달라집니다."
+  },
+  {
+   "criterion_id": "BT3_competition",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A27",
+    "A28"
+   ],
+   "counter_claim_ids": [
+    "C4",
+    "C12"
+   ],
+   "reason_ko": "비약물·면역 기반이라는 차별점은 서술되지만 경쟁사 없음 주장은 독립 출처가 없고, ALS 임상 107건 등 위협도 구체적 프로그램 없이 일반적으로만 언급됩니다. 특허 소유권 기록도 팩에 없습니다.",
+   "what_would_change_ko": "독립 출처의 경쟁 프로그램 비교, 특허 출원·양도 기록과 청구항 범위 확인이 있으면 달라집니다."
+  },
+  {
+   "criterion_id": "BT4_financial_condition_and_funding",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_adverse_fact"
+   ],
+   "claim_ids": [
+    "A13",
+    "A15",
+    "A18",
+    "A21",
+    "A22"
+   ],
+   "counter_claim_ids": [
+    "A17",
+    "C3"
+   ],
+   "reason_ko": "2025-12-31 감사 재무제표상 현금 $19,213, 총부채 $268,348(창업자 대여 $199,875 포함), 매출 0이며 발행사 위험요소에 계속기업 의문이 명시되어 있습니다. 2026-06-18 현금 $160,487은 발행사 단독 수치로 실질 런웨이는 계산할 수 없습니다.",
+   "what_would_change_ko": "월별 지출 내역과 최신 검증된 현금, 창업자 대여금 상환 조건, 구속력 있는 추가 자금 약정, 계속기업 관련 감사 의견 설명이 있으면 달라집니다."
+  },
+  {
+   "criterion_id": "BT5_team_evidence",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A30"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "창업자는 신경과학 박사이며 2020년 12월부터 회사를 이끌었으나 임상시험·FDA 규제·의료기기 상업화의 문서화된 이력은 팩에 없습니다. 임시 CFO와 CTO는 비교적 최근 합류했습니다.",
+   "what_would_change_ko": "경영진과 자문진의 임상·규제·기기 상업화 수행 이력, 외부 연구 파트너 계약 문서가 있으면 달라집니다."
+  },
+  {
+   "criterion_id": "PC1_security_cash_path",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A7",
+    "A9",
+    "A31",
+    "A32",
+    "A8",
+    "A21"
+   ],
+   "counter_claim_ids": [
+    "A19"
+   ],
+   "reason_ko": "보통주는 배당 약속·환매권·상장이 없고, 1년 양도제한과 이후 수탁기관·경쟁사 양도 금지 등 제한이 있으며 시장 형성도 보장되지 않습니다. 후속 Reg A 전환은 발행사의 '관심'일 뿐 보장이 없습니다.",
+   "what_would_change_ko": "헌장상 배당·청산 조건, 구속력 있는 유동성 경로(상장·인수·전환 계약), 실제 매수자나 2차 거래 수단의 존재가 문서로 확인되면 달라집니다."
+  },
+  {
+   "criterion_id": "PC2_price_vs_path_to_value",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A3",
+    "B1",
+    "K1",
+    "K3",
+    "A10"
+   ],
+   "counter_claim_ids": [
+    "A13",
+    "K4"
+   ],
+   "reason_ko": "$1.00 가격은 '임의' 결정이라는 공시일 뿐 고평가의 증거는 아닙니다. 발행주식 75,000,001주 기준 내재가치 약 $75.0M(K1)은 산술 결과이며, 이 주식 수는 감사 대차대조표(1주)와 불일치하고 K4는 전환 조건 미공개로 산출되지 않았습니다.",
+   "what_would_change_ko": "주식 수 조정 근거(2026-06-25 이사회 추인 세부), 전환사채의 전환가격·상한·할인, 독립적 가치평가 자료가 있으면 달라집니다."
+  },
+  {
+   "criterion_id": "PC3_investor_rights_and_dilution",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A7",
+    "A8",
+    "A19",
+    "A31",
+    "A11",
+    "B2"
+   ],
+   "counter_claim_ids": [
+    "A5"
+   ],
+   "reason_ko": "투자자는 10년간 취소 불가능한 의결권 위임을 집행의장에게 하고, 희석방지 권리가 없으며, 전환 조건이 미공개인 전환사채 2건과 중개인 2% 증권이 희석 요인입니다. 창업자가 투자 전 의결권 100%를 보유합니다.",
+   "what_would_change_ko": "위임 조건의 완화나 종료, 전환사채의 구체적 전환가격·상한, 헌장상 주주 권리·정보권, 지분율 표(풀 다일루티드) 문서가 있으면 달라집니다."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "수용. 75,000,001주는 Form C 서술에서 나왔고 감사 대차대조표는 1주입니다. K1~K3는 불확실성을 물려받으며 K2·K3는 중개인 2% 증권을 반영하지 않습니다. PC2는 unknown으로 두고 이를 근거로 fail하지 않습니다."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "수용. '유동성 사건' 정의가 Form C와 감사 주석(지배권 변경·사모 대체 금융·자본재편)에서 다르고 전환가격이 수치로 없어 희석을 정량화할 수 없습니다. 이는 PC3의 희석 원천으로 기재하되 fail의 결정적 근거는 의결권 위임·희석방지 부재 등 계약 조건입니다. '선순위 채무' 표현은 발행사 문구일 뿐 상환 순서는 해석하지 않습니다."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "수용. Form C XML의 장기부채 0과 감사 재무제표의 비유동 전환사채 $50,704는 불일치합니다. 분류 차이일 수 있어 단독 근거로 쓰지 않고 BT4의 해명 요청 항목으로 둡니다."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "수용. 위험요소의 계속기업 의문과 감사 주석 4의 경영진 견해는 다릅니다. 감사가 이를 해소했다고 보지 않으며, BT4 fail은 위험요소 공시와 재무수치를 근거로 하고 감사 보고서에 단락이 없다는 점은 근거로 삼지 않습니다."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "수용. '유일한 후기 단계 비약물 해법'이라는 주장은 마우스 단계 증거와 긴장 관계이며 독립 출처가 없습니다. BT3는 unknown으로 두고 구체적 경쟁 프로그램이 언급되지 않은 점을 부족한 증거로 기록합니다."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "수용. p=0.008을 '1% 미만 확률로 우연'이라고 해석한 것은 발행사의 해석이며 표본 수·설계·대조·평가변수가 없습니다. 효능 증거로 쓰지 않으며 BT2는 unknown입니다."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "수용. 2026년 시작 가능 시점은 자금 조달을 조건으로 한 계획이고, 기기 조달·IRB·FDA·투약은 팩에 문서화되어 있지 않습니다. 목표 금액에서 임상시험 $30,000만 배정된 점도 긴장 요소입니다. 예측 확률을 낮게 두는 근거로 사용합니다."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "수용. 연 $120,000 가격, 25~45% 침투율, 80% 이상 마진은 규제 승인·상환경로·제조 계약이 없는 발행사 가정입니다. 수요 근거로 쓰지 않으며 BT1·BT2는 unknown입니다. 가격이 승인 약물의 약 2/3라는 주장은 리루졸 연 $276~$360과 맞지 않습니다."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "수용. 이전 전환사채 발행이 증권법을 지키지 않았을 수 있고 청약철회권 부여 시 이번 모집 자금이 쓰일 수 있다는 위험요소가 있습니다. 구체적 청구는 팩에 없어 fail 근거로 삼지 않고 PC3·BT4의 추가 확인 사항으로 둡니다."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "수용. 창업자 대여금 $199,875에는 이자·만기 명시가 없고 자금 사용 표에도 상환 항목이 없습니다. 상환 가능성은 팩에서 확인되지 않으므로 이해상충 질문으로 남기며 BT4 판단의 부수 근거로만 씁니다."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "수용. 특허가 회사 소유로 기재되어 있으나 위험요소는 소유권·양도 문서 결함 가능성을 말하고 양도 기록이 팩에 없습니다. 특허가 SELtx를 포괄하는지 확인되지 않아 BT3 판단 근거로 삼지 않습니다."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "수용. 6개월 런웨이는 평균 월 순손실 산식의 발행사 수치이며 기간이 명시되지 않았고 FY2025 순손실 $56,126과 비교하기 어렵습니다. 현금이 2026-06-12 전환사채 이후 수치라는 점은 추정입니다. 현재 런웨이를 계산하지 않습니다."
+  },
+  {
+   "issue_index": 12,
+   "accepted": true,
+   "response": "수용. 락업 기간은 Form C 180일, 청약계약 270일 이상으로 다릅니다. 구속력 있는 문서는 청약계약으로 보이나 헌장이 없어 확정할 수 없습니다. PC1에서는 보조 사항으로만 다룹니다."
+  },
+  {
+   "issue_index": 13,
+   "accepted": true,
+   "response": "수용. 현금흐름표는 전환사채 수입 $50,704를 투자활동으로 분류하고 재무활동은 0입니다. 표시 이상 사례이며 오류 증거는 아닙니다. 소진율 분석 신뢰도를 낮추는 요소로만 반영합니다."
+  },
+  {
+   "issue_index": 14,
+   "accepted": true,
+   "response": "수용. A9의 시장 형성 보장 없음 문구는 11페이지에 있고 24페이지는 Reg A 문구입니다. 위험요소 '자금 부족 가능성'은 13페이지, 연구 파트너는 25페이지가 출처입니다. 최종 판단에서는 올바른 출처에 근거해 해석합니다."
+  }
+ ],
+ "forecasts": [
+  {
+   "event_kind": "disclosure",
+   "target_type": "issuer_announces",
+   "event": "Hope-Neuron Therapeutx reports that its Regulation Crowdfunding offering reached the $75,000 target and had at least one closing",
+   "target_scope": "Hope-Neuron Therapeutx, Inc., Reg CF offering file no. 020-37299, US, at least one closing with proceeds released to the issuer",
+   "deadline_date": "2026-12-31",
+   "reporting_lag_days": 30,
+   "allowed_evidence": [
+    "Form C-U",
+    "Form C-AR",
+    "Form C/A",
+    "Republic deal page",
+    "SEC EDGAR filing by the issuer"
+   ],
+   "probability": 0.35,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The target is only $75,000 and the Form C XML deadline is 2026-11-27, but the pack does not show that the offering is live, its launch date or any commitments. The pack reports no closing to date. The mouse-only evidence, the 10-year proxy and the going-concern warning argue against strong demand. The probability is a judgment, not a base rate.",
+   "assumptions": [
+    "The offering is live on Republic",
+    "The deadline is not extended beyond 2026-12-31",
+    "Reporting occurs within 30 days"
+   ],
+   "unknown_treatment": "If no filing or platform report is found by the deadline plus lag, the result is unknown and not false.",
+   "cancellation_treatment": "If the offering is cancelled, withdrawn (Form C-W) or the issuer dissolves before a closing, the event is false for this definition; a cancellation after a closing does not reverse it.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A4",
+    "A3",
+    "A18",
+    "A7"
+   ]
+  },
+  {
+   "event_kind": "business",
+   "target_type": "independently_corroborated",
+   "event": "Hope-Neuron Therapeutx receives IRB approval for a human ALS trial of SELtx",
+   "target_scope": "Hope-Neuron Therapeutx, Inc., human ALS trial of SELtx, any US IRB, approval granted (not an IND, FDA clearance or dosing)",
+   "deadline_date": "2026-12-31",
+   "reporting_lag_days": 45,
+   "allowed_evidence": [
+    "Clinical trial registry entry",
+    "Letter or statement from the IRB or clinical site",
+    "Third-party news report"
+   ],
+   "probability": 0.07,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The Form C lists the IRB trial as a planned step that depends on funding, and the pack shows no device procurement or IRB submission. Funding at the target would allocate only $30,000 to clinical trials. IRB approval is distinct from an FDA IND and first dosing, and neither is assumed here.",
+   "assumptions": [
+    "No IRB approval existed before the 2026-10-14 cutoff",
+    "Funding is not yet sufficient"
+   ],
+   "unknown_treatment": "Absent independent confirmation by the deadline plus lag, the result is unknown and not false.",
+   "cancellation_treatment": "Offering cancellation or withdrawal does not make the event false by itself; dissolution of the issuer before approval makes it false.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A24",
+    "B3",
+    "A29",
+    "A23"
+   ]
+  },
+  {
+   "event_kind": "disclosure",
+   "target_type": "issuer_announces",
+   "event": "Hope-Neuron Therapeutx publicly reports the conversion of either outstanding convertible promissory note into equity",
+   "target_scope": "Hope-Neuron Therapeutx, Inc., the $60,000 (2025-07-22) or $150,000 (2026-06-12) note, conversion completed; US",
+   "deadline_date": "2026-12-31",
+   "reporting_lag_days": 30,
+   "allowed_evidence": [
+    "Form C-U",
+    "Form C-AR",
+    "Form C/A",
+    "Issuer press release",
+    "Republic deal page"
+   ],
+   "probability": 0.03,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The Form C says the notes convert only on a liquidity event and cannot convert before a Reg A or similar follow-on event. The pack shows no such event is imminent.",
+   "assumptions": [
+    "A Reg A offering has not been qualified by the cutoff",
+    "No change of control is planned"
+   ],
+   "unknown_treatment": "If no report is found by the deadline plus lag, the result is unknown and not false.",
+   "cancellation_treatment": "Cancellation of this Reg CF offering has no direct effect on this event; dissolution of the issuer before conversion makes it false.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A19",
+    "A32",
+    "A21"
+   ]
+  }
+ ]
+}

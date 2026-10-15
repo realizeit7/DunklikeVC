@@ -58,15 +58,22 @@ THRESHOLD_OR = re.compile(r"\b(at or above|at or below|or more|or greater|or les
 ENGLISH_RUN = re.compile(r"(?:\b[A-Za-z][A-Za-z'’-]+\b[\s,;:]+){8,}")
 
 
+VALIDATOR_VERSION = "v2_validator_0_2"
+# 0_2 (2026-10-15, after analysis 10): English terms inside parentheses, which the prompt explicitly allows (e.g.
+# "희석방지권(anti-dilution rights)"), no longer count toward the Latin-character ratio. 0_1 counted them and forced
+# a needless repair round on a short Korean note in analysis 10, stage E. The English-passage rule is unchanged.
+
+
 def korean_errors(where: str, txt: str, min_words: int | None = None, max_words: int | None = None) -> list[str]:
     errs = []
+    bare = re.sub(r"\([^)]*\)", " ", txt)
     hangul = len(re.findall(r"[가-힣]", txt))
-    latin = len(re.findall(r"[A-Za-z]", txt))
+    latin = len(re.findall(r"[A-Za-z]", bare))
     if txt.strip() and hangul == 0:
         errs.append(f"{where}: must be written in Korean")
     elif latin > 0.35 * (hangul + latin):
         errs.append(f"{where}: too much English text ({latin} Latin vs {hangul} Hangul characters); write in Korean")
-    m = ENGLISH_RUN.search(re.sub(r"\([^)]*\)", " ", txt))
+    m = ENGLISH_RUN.search(bare)
     if m:
         errs.append(f"{where}: contains an English passage outside parentheses: {m.group(0)[:60]!r}")
     n = len(txt.split())
@@ -354,7 +361,7 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
          ";".join(models) or None, None, v["settings"], started, finished, legacy,
          "development" if offering_id in dev else "evaluation", str(out_dir.relative_to(ctx.root)),
          hashlib.sha256(combined.encode()).hexdigest(), json.dumps(errors), cost,
-         json.dumps({"pipeline": "analysis_v2", "legacy_status_note": "status column = screening_policy_v1 mapping; "
+         json.dumps({"pipeline": "analysis_v2", "validator": VALIDATOR_VERSION, "legacy_status_note": "status column = screening_policy_v1 mapping; "
                      "v2.1 dimensions in table assessments", "critical": critical, "note": note,
                      "cost_label": COST_LABEL}, ensure_ascii=False)))
     aid = cur.lastrowid
@@ -437,6 +444,26 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
             "budget_status": res["budget_status"], "decisive": res["decisive"], "unresolved": res["unresolved"],
             "n_errors": len(errors), "errors": errors[:15], "forecasts": n_fc, "models": models, "cost_estimate_usd": round(cost, 4),
             "usage": usage, "output_dir": str(out_dir)}
+
+
+def reassess(ctx: Ctx, analysis_id: int, note: str = "") -> dict:
+    """Re-run the CURRENT classifier on a stored v2 run's outputs (no LLM call). Inserts a new assessments row; the
+    earlier row, criterion results and forecasts are untouched."""
+    a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (analysis_id,)).fetchone()
+    comb = json.loads((ctx.root / a["output_path"] / "combined.json").read_text())
+    pack, _ = load_pack(ctx, a["pack_id"])
+    errors = json.loads(a["validation_errors"] or "[]")
+    res = _assess(ctx, a["offering_id"], pack, comb["outputs"], {"calcs": comb.get("calcs") or {}}, errors)
+    fresh = assess.freshness(ctx, a["offering_id"], a["finished_utc"], pack, comb["outputs"] if not errors else None)
+    ctx.con.execute("INSERT INTO assessments(analysis_id, classifier_version, policy_version, created_utc, assessment, "
+                    "evidence_completeness, operational_readiness, budget_status, decisive_criteria, reasons, unresolved_criteria, "
+                    "freshness, notes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (analysis_id, assess.CLASSIFIER_VERSION, assess.PROPOSED_POLICY, ctx.now(), res["assessment"],
+                     res["evidence_completeness"], res["operational_readiness"], res["budget_status"], json.dumps(res["decisive"]),
+                     json.dumps(res["reasons"], ensure_ascii=False), json.dumps(res["unresolved"]),
+                     json.dumps(fresh, ensure_ascii=False), f"reassessment without LLM call; legacy policy-v1 status: {a['status']}; {note}"))
+    ctx.con.commit()
+    return {k: res[k] for k in ("assessment", "evidence_completeness", "operational_readiness", "budget_status", "decisive")}
 
 
 def forecast_lineage(ctx: Ctx, original_id: int, relation: str, reason: str, successor_id: int | None = None) -> int:

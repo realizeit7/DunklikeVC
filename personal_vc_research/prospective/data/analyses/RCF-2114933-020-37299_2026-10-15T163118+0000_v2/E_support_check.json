@@ -1,0 +1,135 @@
+{
+ "judgment_label": "model_judgment_not_verification",
+ "checks": [
+  {
+   "claim_id": "A13",
+   "passage_supports": "yes",
+   "omitted_qualifications": "These are issuer-reported Form C fields. The XML does not label the fiscal-year end; the 2025-12-31 date comes from the balance sheet. The XML shows no audit assurance.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "The XML reports short-term and long-term debt of $0.00. The audited balance sheet shows convertible notes of $50,704 and a related-party payable of $199,875. This does not affect the three figures in the claim.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "Form C XML에 매출 0.00, 순손실 -56,126, 현금 19,213이 그대로 나와 있어 주장과 일치합니다. 다만 발행사가 제출한 양식 값이며, XML의 부채 0 표기는 감사된 재무상태표와 달라 별도 확인이 필요합니다."
+  },
+  {
+   "claim_id": "A15",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Total liabilities also include a convertible note of $50,704 (net of discount), accounts payable of $13,480 and accrued expenses of $4,289. The related-party payable fell from $212,261 in 2024. The 'founder' link comes from page 36, not page 45.",
+   "evidence_type": "audited_financial_statement",
+   "conflicts": "The Form C XML reports debt of $0.00, but the audited balance sheet shows a convertible note and a related-party payable.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "감사된 재무상태표(2025-12-31)에서 총부채 268,348, 특수관계인 채무 199,875, 총자산 19,213이 확인되고, 36쪽에서 창업자 자금 지원과 이자율·만기 미지정이 확인됩니다. 주장은 인용 내용과 일치합니다."
+  },
+  {
+   "claim_id": "A18",
+   "passage_supports": "yes",
+   "omitted_qualifications": "This is the issuer's own risk-factor wording, and the accumulated deficit is described as 'approximately $249,000'. The passage does not say the auditor made the going-concern finding. Nothing in it quantifies how long cash will last.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "위험요인 문단에 누적결손 약 $249,000, 매출 없음, 계속기업 불확실성(substantial doubt)이 명시되어 있어 주장과 일치합니다. 발행사 스스로의 위험 고지이며 감사인 의견은 아닙니다."
+  },
+  {
+   "claim_id": "A21",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The 'senior debt obligation' wording is qualified by 'in certain scenarios'. The $150,000 note converts for principal plus interest plus an extra $50,000 (page 34). The amortization schedule is not described beyond the rate. The 4.13% note dates from June 2026 and is not on the 2025-12-31 balance sheet.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "The Form C XML reports debt of $0.00 for FY2025, while the balance sheet carries the $60,000 note net of discount. This is a timing or classification question.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "이자율 4.19%·4.13%, 만기, 담보 없음, 원금은 34~35쪽 표와 일치합니다. 다만 '선순위 채무(certain scenarios)'라는 한정 표현과, $150,000 노트 전환 시 추가 $50,000가 더해진다는 조건이 빠져 있어 부분 지지로 판단합니다."
+  },
+  {
+   "claim_id": "A22",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The terms of the contemplated note are not finalized. The text only says they are 'expected to be substantially similar' to the existing notes. It does not say whether the MOU is binding. The counterparty is an unnamed prospective investor.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "2026-05-04 MOU, $50,000 전환사채 구조, 'Form C 작성 시점까지 발행되지 않음'이 모두 해당 문단에 있습니다. 조건 미확정이라는 점은 주장에 이미 '계획' 수준으로 반영되어 있습니다."
+  },
+  {
+   "claim_id": "A7",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The 10 years run from each investor's accepted subscription date, and the proxy holder is 'Ronald Lane or his successor' as Executive Chairman. The proxy covers all securities the investor holds, including those held through the custodian.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "10쪽에 투자자가 10년간 철회 불가 의결권 위임(proxy)을 업무집행 의장에게 부여하고 실질 의결권 행사는 그에게 있다고 명시되어 있습니다. 주장과 일치합니다."
+  },
+  {
+   "claim_id": "A9",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The cited page 10 text cuts off in the middle of the list of one-year-restriction exceptions. The cited page 24 sentence is about a possible Reg A conversion, not about market development. Nothing in the cited passages mentions an opinion-of-counsel requirement, a competitor bar or lock-ups. Custodian and transfer-agent procedures appear on page 23, which is not cited. The Form C says there 'is not now and likely will not ever be a public market', which is stronger than 'no assurance'.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "1년 전송 제한은 10쪽에서 확인되지만, 변호사 의견서·경쟁사 양도 금지·락업은 인용된 쪽에 없고 24쪽 인용문도 Reg A 전환 불확실성에 관한 문장입니다. 세부 제한 내용은 인용 근거가 부족해 부분 지지로 판단합니다."
+  },
+  {
+   "claim_id": "A31",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The passage says investors 'may not be' direct record holders and 'may hold only' beneficial interests or securities entitlements, and that securities are 'expected to be' issued in book-entry form. The claim states this as certain. The custodian is not named as BitGo Bank & Trust on the cited page.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "23쪽은 수탁기관을 통한 보유와 '직접 명부 등재 주주가 아닐 수 있음'을 설명하지만, 'may'를 확정적으로 바꿨고 BitGo라는 명칭은 인용된 쪽에 없습니다. 부분 지지입니다."
+  },
+  {
+   "claim_id": "A32",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The passage gives no timeline, size, price or conversion mechanics for the Reg A offering. The phrase 'in which the Investor would be converted into' is garbled. A Reg A offering would be a capital raise, not an assured listing or liquidity event.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Page 24 also says 'There is not now and likely will not ever be a public market for the Securities'. This is not a direct conflict, but it limits what a Reg A route would imply.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "24쪽에 '후속 Reg A 공모에 대한 의향(stated interest)'과 '성공적으로 이루어진다는 보장 없음'이 그대로 있어 주장과 일치합니다. 일정·조건은 제시되지 않았습니다."
+  },
+  {
+   "claim_id": "A8",
+   "passage_supports": "yes",
+   "omitted_qualifications": "none material. The same point appears on page 32: 'None - The Common Stock has no contractual antidilution protections.'",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "10쪽에 증권에 희석방지권(anti-dilution rights)이 없다고 명시되어 있어 주장과 일치합니다."
+  },
+  {
+   "claim_id": "A19",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The page 25 risk factor says conversion could be triggered by 'a financing transaction or ... a liquidity event', which is wider than 'only on a liquidity event'. Page 33 says conversion cannot occur before a Reg A or similar follow-on liquidity event. The 'Liquidity Event' and 'Conversion Price' definitions are not shown in the cited text. The statement that no numeric price or cap exists is an absence claim that the cited pages cannot establish.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Page 25 mentions a 'financing transaction' trigger, which is in tension with 'only a liquidity event' on page 32. The claim's own contradiction field also notes that the audit note lists other triggers.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "노트 금액·발행일, Reg CF 공모로는 전환되지 않는다는 점, 'Conversion Price' 표현은 확인됩니다. 그러나 25쪽은 '자금조달 거래 또는 유동성 이벤트'가 전환을 촉발할 수 있다고 하여 '유동성 이벤트에서만 전환'과 어긋나며, 전환가격 수치 부재는 인용 쪽만으로 입증되지 않습니다."
+  },
+  {
+   "claim_id": "A11",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The figure is as of the Form C date. The audited 2025-12-31 balance sheet shows only 1 share outstanding. Page 36 explains that 75,000,000 shares were ratified on June 25, 2026. The table covers holders of 20% or more only.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "The audited balance sheet shows 1 share at 2025-12-31, but page 36 explains the later ratified issuance. This is a timing difference, not a conflict.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "35쪽 소유 표에 Ronald Lane 75,000,001주, 의결권 100.0%가 나와 있어 주장과 일치합니다. 이는 Form C 작성 시점 기준이며 2025-12-31 감사 재무제표에는 1주만 표시됩니다."
+  },
+  {
+   "claim_id": "B2",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The proxy runs 10 years from each investor's accepted subscription date, and this is not shown on the two cited quotes alone (it comes from the basis claim A7). The cited page 25 sentence supports the existence of the notes and the dilution if they convert. The 'undisclosed conversion price' is an absence claim, and no cited page shows that the price is undisclosed elsewhere. The dilution size cannot be computed.",
+   "evidence_type": "inference",
+   "conflicts": "Page 25 says conversion may follow a financing transaction or liquidity event, while page 32 says liquidity event only. This leaves the timing of dilution unclear.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "희석방지권 부재와 전환사채로 인한 희석 가능성은 인용문으로 확인되고, 의결권 위임은 기초 주장 A7이 뒷받침합니다. 다만 '전환가격 미공개'는 부재에 근거한 추론이고 희석 시점·규모도 알 수 없어 부분 지지로 봅니다. '가치가 나쁘다는 증거는 아님'이라는 단서는 적절합니다."
+  }
+ ]
+}

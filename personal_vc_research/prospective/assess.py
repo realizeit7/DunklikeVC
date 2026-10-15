@@ -21,7 +21,11 @@ import json
 from .core import Ctx, iso, parse_utc
 from .llm.schemas_v2 import CRITERIA, NON_DECISIVE_GROUNDS
 
-CLASSIFIER_VERSION = "assessment_classifier_v2_1"
+CLASSIFIER_VERSION = "assessment_classifier_v2_1_1"
+# v2_1_1 (2026-10-15, manual spot check of analysis 10): budget status 'eligible' now also needs an investor-fee
+# confirmation from the user. In v2_1 the model marked `minimum_investment_and_fees` confirmed from the
+# issuer-paid intermediary fee (claim A6), which says nothing about what the investor pays. Investor fees are shown
+# at checkout, not in the filing, so before an approval the status is `incomplete_cost_information`.
 PROPOSED_POLICY = "screening_policy_v1_1_proposed_unacknowledged"
 OPERATIONAL_ITEMS = {"closing_or_availability_evidence", "minimum_investment_and_fees"}
 
@@ -61,10 +65,10 @@ def criterion_final(c: dict, by_id: dict, valid_cited: set, calcs: dict, checks:
 
 
 def evaluate(errors: list[str], outputs: dict, critical: dict, by_id: dict, valid_cited: set, calcs: dict,
-             pack: dict, offering: dict, availability: dict, budget: dict) -> dict:
+             pack: dict, offering: dict, availability: dict, budget: dict, investor_fee_confirmed: bool = False) -> dict:
     if errors:
         return {"assessment": "analysis_failed", "evidence_completeness": "extraction_incomplete",
-                "operational_readiness": _operational(offering, availability), "budget_status": _budget(budget, critical),
+                "operational_readiness": _operational(offering, availability), "budget_status": _budget(budget, critical, investor_fee_confirmed),
                 "criteria": [], "decisive": [], "unresolved": list(CRITERIA),
                 "reasons": [f"분석 출력이 기계적 검증을 통과하지 못했습니다(오류 {len(errors)}건). 회사의 미공개가 아니라 분석 미완료입니다."]}
     checks = {ch["claim_id"]: ch for ch in (outputs.get("E_support_check") or {}).get("checks", [])}
@@ -95,8 +99,8 @@ def evaluate(errors: list[str], outputs: dict, critical: dict, by_id: dict, vali
     else:
         completeness = "sufficient_for_current_conclusion"
     return {"assessment": assessment, "evidence_completeness": completeness,
-            "operational_readiness": _operational(offering, availability), "budget_status": _budget(budget, critical),
-            "criteria": rows, "decisive": [r["criterion_id"] for r in fails], "unresolved": unresolved,
+            "operational_readiness": _operational(offering, availability),
+            "budget_status": _budget(budget, critical, investor_fee_confirmed), "criteria": rows, "decisive": [r["criterion_id"] for r in fails], "unresolved": unresolved,
             "substantive_missing": substantive_missing, "extraction_gaps": [g["detail"] for g in pack.get("gaps", [])],
             "reasons": [f"{r['criterion_id']}: {r['reason_ko']}" for r in fails]}
 
@@ -111,10 +115,10 @@ def _operational(o: dict, availability: dict) -> str:
     return "not_checked"
 
 
-def _budget(budget: dict, critical: dict) -> str:
+def _budget(budget: dict, critical: dict, investor_fee_confirmed: bool = False) -> str:
     if budget.get("result") == "fail":
         return "ineligible"
-    if critical.get("minimum_investment_and_fees") != "confirmed":
+    if critical.get("minimum_investment_and_fees") != "confirmed" or not investor_fee_confirmed:
         return "incomplete_cost_information"
     return "eligible"
 

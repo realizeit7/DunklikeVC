@@ -46,7 +46,7 @@ def build_brief_v2(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
     pack, _ = load_pack(ctx, a["pack_id"])
     crit = _q(ctx, "SELECT * FROM criterion_results WHERE analysis_id=? ORDER BY row_id", analysis_id)
     checks = _q(ctx, "SELECT * FROM support_checks WHERE analysis_id=? ORDER BY row_id", analysis_id)
-    human = [c for c in checks if c["checker"].startswith("human")]
+    human = [c for c in checks if not c["checker"].startswith("model:")]
     fresh_now = assess.freshness(ctx, a["offering_id"], a["finished_utc"], pack, outs if outs.get("A_extraction") else None)
     res = {"assessment": asm["assessment"], "evidence_completeness": asm["evidence_completeness"],
            "operational_readiness": asm["operational_readiness"], "budget_status": asm["budget_status"],
@@ -114,14 +114,15 @@ def build_brief_v2(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
     L += ["## 부록 C. 근거 지지 점검", "",
           "**모델 판단(model judgment)이며 검증이 아닙니다.** 인용문이 실제로 존재하는지는 기계적으로 확인했습니다. 아래는 그 인용문이 "
           "주장을 실제로 뒷받침하는지에 대한 모델의 판단입니다.", ""]
-    for c in [c for c in checks if not c["checker"].startswith("human")]:
+    for c in [c for c in checks if c["checker"].startswith("model:")]:
         L += [f"- **{c['claim_id']}**: {c['verdict']} (지지 {c['passage_supports']}, 과장 {c['overstatement']}, 증거 유형 "
               f"{c['evidence_type']}). {c['note']}"
               + (f" 누락된 단서: {c['omitted_qualifications']}" if c["omitted_qualifications"] else "")
               + (f" 상충: {c['conflicts']}" if c["conflicts"] else "")]
     if human:
-        L += ["", "**사람이 원문과 대조한 점검(manual spot check)**", ""]
-        L += [f"- **{c['claim_id']}** ({c['checker']}): {c['verdict']} — {c['note']}" for c in human]
+        L += ["", "**원문 페이지와 직접 대조한 점검(manual spot check, 파이프라인 밖에서 수행)**", ""]
+        L += [f"- **{c['claim_id']}** ({c['checker']}; {c['judgment_label']}): {c['verdict']}, 과장 {c['overstatement']} — {c['note']}"
+              + (f" 누락된 단서: {c['omitted_qualifications']}" if c["omitted_qualifications"] else "") for c in human]
     L += ["", "## 부록 D. 최신성", ""]
     fz = fresh_now
     L += [f"- 기준 시각: {fz['as_of']}; 분석 완료 {fz['analysis_finished_utc']} (경과 {fz['analysis_age_days']}일)",

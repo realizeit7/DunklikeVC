@@ -1,0 +1,453 @@
+{
+ "issues": [
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A10 / B1 / K1-K3 share count and implied equity value",
+   "explanation": "The 75,000,001 share count comes from the Form C narrative. It is labelled document_supported_fact, but the audited 2025-12-31 balance sheet shows 1 share issued and 1 share authorized. The Form C says the board ratified a 'prior issuance' of 75,000,000 founder shares on 2026-06-25, but not when they were issued or for what consideration. The share count is undated, so the status is closer to issuer_claim. K1-K3 inherit this uncertainty. K2 and K3 also omit the intermediary's 2% securities, which the Form C says add to shares outstanding after the offering. The implied $75M-$80M figures are arithmetic on an arbitrary price. They are not a valuation, and the share base is not corroborated by the audited statements.",
+   "claim_ids": [
+    "A10",
+    "B1",
+    "K1",
+    "K2",
+    "K3",
+    "A6"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A19 / A21 convertible note terms and dilution",
+   "explanation": "The Form C says the notes convert only on a 'Liquidity Event' that cannot occur before a Reg A or similar event. The audit note lists change of control, private replacement financing or recapitalization as triggers. A21 reports the 4.19% coupon but omits that the $60,000 note was issued at a $10,000 discount, with an 8.41% effective rate (C9). The numeric conversion price is not shown. The $150,000 note converts principal plus interest plus an extra $50,000, and a further $50,000 note is contemplated. Dilution to this offering's investors therefore cannot be quantified. The 'senior debt' wording is the Form C's own, and no waterfall is stated.",
+   "claim_ids": [
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "C9",
+    "B2"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Form C XML debt fields versus audited balance sheet",
+   "explanation": "The Form C XML reports long-term debt of $0.00 for FY2025. The audited balance sheet shows $50,704 of non-current convertible notes and $199,875 payable to a related party. This may reflect classification choices in the XML. The pack does not explain it, and A/B did not flag it.",
+   "claim_ids": [
+    "C2",
+    "A15",
+    "A13"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A18 going-concern risk factor versus audit note",
+   "explanation": "The Form C risk factor says there is 'substantial doubt' about going concern. Note 4 of the audited statements says management believes its efforts will provide the necessary resources. The pack text of the auditor's report (pages 43-44) contains no explicit going-concern paragraph. That absence is not itself a finding, and an audit does not validate the business. The mismatch should be raised with the issuer. B should not imply that the audit confirms or resolves the going-concern issue.",
+   "claim_ids": [
+    "A18",
+    "C3",
+    "A14"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A27 / B competition: 'only later-stage non-pharma solution'",
+   "explanation": "The Form C calls the issuer 'the only later-stage non-pharma solution' and says it has 'no peer' competitor. It also says SELtx has been given only to mice and is not available for human use. These statements are in tension, and they are issuer assertions with no independent source. The Form C elsewhere cites 107 active ALS clinical trials and 50+ drugs in development. B names these threats only generally and does not name any specific competing program. The BT3 differentiation evidence is thin.",
+   "claim_ids": [
+    "A27",
+    "C4",
+    "A23"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A25 mouse-study statistic",
+   "explanation": "The Form C reads a p-value of 0.008 as meaning 'less than 1%' probability that the results occurred by random chance. A p-value does not mean that. The sample size, design, controls, endpoint and blinding are missing. The study is described only by the issuer, and no independent or published report is in the pack. The statistic should not be treated as evidence of efficacy.",
+   "claim_ids": [
+    "A25",
+    "C5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B3 / A24 / A29 timeline and funding adequacy",
+   "explanation": "The Form C says human steps 'could commence in 2026', conditional on funding. It also says human use could begin in the second half of 2026. As of the 2026-10-14 cutoff, the pack documents no device procurement, IRB approval, FDA step or dosing. The pitch transcript described 2025 as the year of scaling up for human trials, which suggests slippage. The pack does not confirm this. At the $75,000 target, the table allocates $30,000 to clinical trials and $7,000 to equipment, against 'delivery of two' devices at both the target and the $5M maximum ($635,050). This is a tension in the use-of-proceeds table. The Form C itself says the raise may not be enough. Planned steps are not progress.",
+   "claim_ids": [
+    "A24",
+    "A29",
+    "B3",
+    "C7",
+    "C10"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "A26 revenue projections and pricing comparison",
+   "explanation": "The projections assume a $120,000 annual price, 25-45% penetration of about 34,000 patients over a three-year ramp, and 80%+ gross margins. They assume no regulatory approval, no reimbursement pathway, and 'adequate equipment manufacturing resources' despite small equipment budgets. The statement that the price is 'about 2/3rds' of approved drugs is inconsistent with riluzole's stated annual cost of $276-$360. These are issuer projections. Payers are not identified. They should not be used as demand evidence.",
+   "claim_ids": [
+    "A26",
+    "C8",
+    "C11",
+    "B3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Prior convertible offering compliance and rescission risk",
+   "explanation": "The Form C risk factor says the issuer 'may not have complied' with securities laws in its prior convertible offering. A rescission demand could be paid from the proceeds of this offering. A and B did not carry this risk forward. The pack gives no detail on how the notes were sold.",
+   "claim_ids": [
+    "C6",
+    "A19"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Related-party payable and use of proceeds",
+   "explanation": "$199,875 is owed to the founder, with no stated interest or maturity, and it is classified as a current liability. The use-of-proceeds table lists no repayment. The pack does not say whether proceeds could repay it, or what the founder's compensation is. The financial statements say the founder 'intends' to keep supporting funding, which is not a binding commitment. This is a conflict-of-interest question for the issuer.",
+   "claim_ids": [
+    "A15",
+    "A29",
+    "A11"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A28 patents described as company-owned",
+   "explanation": "The Form C lists three patents as 'company-owned'. Its risk factors say the issuer may not own or have sufficient rights to IP material to its business and that prior assignments may be undocumented. The pack has no assignment, filing or maintenance records. The issuer was incorporated in 2025, but the Form C refers to a decade of research. The chain of title is unclear. Whether the patents cover SELtx is not shown.",
+   "claim_ids": [
+    "A28",
+    "C12"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A17 runway claim",
+   "explanation": "The Form C says cash was $160,487.20 on 2026-06-18, with 'approximately six months of runway' by dividing cash by 'average monthly net loss'. The period behind that average is not stated. Six months looks inconsistent with FY2025 net loss of $56,126 unless spending is expected to rise sharply. Most of the cash may come from the $150,000 note of 2026-06-12, which is an inference. A and B correctly avoid computing a current runway. A reader should know the issuer's figure is unverified and its basis is missing.",
+   "claim_ids": [
+    "A17",
+    "A13",
+    "A19"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A9 lock-up terms",
+   "explanation": "The Form C says lock-ups run up to 180 days. The subscription agreement's market stand-off allows up to 270 days plus extensions. The operative contract appears to be the subscription agreement, and the Charter is not in the pack. A9 does not flag the difference.",
+   "claim_ids": [
+    "A9",
+    "C1"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Financial statement presentation (cash flow)",
+   "explanation": "The cash flow statement shows $50,704 of convertible note proceeds under investing activities and nothing under financing. The note's initial carrying amount was $50,000, so $704 of the $50,704 is non-cash accretion. The pack does not reconcile this to the $4,670 interest expense. This is a presentation anomaly and not proof of misstatement. It weakens confidence in the statements as a source for burn analysis.",
+   "claim_ids": [
+    "C9",
+    "A15"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Citation basis in A9 and B",
+   "explanation": "A9 cites the Reg A sentence (page 24) for 'no assurance a market will develop'. That statement is on page 11. B's 'raise may not be enough' is attributed to A29, but its source is the page 13 risk factor. B's 'research partners run studies' is attributed to A30, but its source is page 25. These are citation-basis drifts and not new facts.",
+   "claim_ids": [
+    "A9",
+    "A29",
+    "A30"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C says lock-up restrictions after an IPO run up to 180 days, while the subscription agreement's market stand-off says the period shall not exceed 270 days plus extensions.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "lending, offering, pledging, selling or otherwise transferring the Securities for a period of up to 180 days following"
+    },
+    {
+     "doc_id": 9,
+     "page": 60,
+     "quote": "In no event, however, shall such period exceed two hundred seventy (270) days plus such additional period as may"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A9"
+   ],
+   "contradictions": "The two documents give different maximum lock-up periods. The Charter is not in the pack."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The Form C XML reports long-term debt of $0.00 for FY2025, while the audited balance sheet at 2025-12-31 shows $50,704 of non-current liabilities (convertible notes, net of discount).",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<longTermDebtMostRecentFiscalYear>0.00</longTermDebtMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "TotalNon-current Liabilities 50,704 -"
+    }
+   ],
+   "financial_period": "as of 2025-12-31",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A13",
+    "A15"
+   ],
+   "contradictions": "The XML debt fields conflict with the balance sheet. Classification may explain it, but the pack does not say so."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The Form C risk factor states substantial doubt about going concern, while Note 4 of the audited statements says management believes its efforts will provide the resources to support operations.",
+   "claim_type": "risk",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Our financial condition raises substantial doubt about our ability to continue as a going concern."
+    },
+    {
+     "doc_id": 9,
+     "page": 51,
+     "quote": "provide the necessary resources to support ongoing operations."
+    }
+   ],
+   "financial_period": "as of 2025-12-31 and Form C date (2026)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A18"
+   ],
+   "contradictions": "The risk factor and Note 4 conclusions differ. The pack text of the auditor's report has no explicit going-concern paragraph, and no finding should be inferred from that."
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "The issuer calls itself 'the only later-stage non-pharma solution' in ALS, while also stating that SELtx therapy is not yet available for human use and has only been given to mice.",
+   "claim_type": "competition",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "HOPE-Neuron is in a unique position in the ALS space, because it is the only later-stage non-pharma solution in a"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "therapy is not yet available for human use."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27",
+    "A23"
+   ],
+   "contradictions": "'Later-stage' sits uneasily with the mouse-only evidence. No independent source is in the pack."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The Form C states that a p-value of 0.008 'indicates a low probability (less than 1%) that the observed results occurred by random chance'. This is the issuer's reading and gives no sample size, design, controls or endpoint.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "This indicates a low probability (less than 1%) that the observed results occurred by random chance."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25"
+   ],
+   "contradictions": "The interpretation of the p-value is the issuer's and is not independently supported. The same document says human effects are unknown."
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The Form C risk factors say the issuer conducted a previous convertible offering and may not have complied with all relevant state and federal securities laws, which could lead to rescission rights.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "The Issuer has conducted a previous convertible offering and may not have complied with all relevant state and federal"
+    }
+   ],
+   "financial_period": "as of Form C date (2026)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "The pack does not describe how the notes were sold or whether any claim exists."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The use-of-proceeds table allocates $7,000 to equipment at the $75,000 target and $635,050 at the $5M maximum, and the Form C says equipment covers delivery of two SELtx devices.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment 9.3% $7,000 12.70% $635,050"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment covers final engineering and the delivery of two"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A29"
+   ],
+   "contradictions": "The same description of two devices accompanies very different budgets. The Form C says the figures are estimates."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "The Form C says SELtx annual therapy will be about 2/3rds of the price of currently approved drugs, while it lists riluzole at $276-$360 per year (generic).",
+   "claim_type": "market",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "annual therapy will be about 2/3rds"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "$276-$360 depending on the formulation."
+    }
+   ],
+   "financial_period": "projection",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A26",
+    "A27"
+   ],
+   "contradictions": "The comparison holds for the higher-priced drugs listed but not for riluzole."
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The cash flow statement shows $50,704 of convertible note proceeds under investing activities, while Note 5 says the $60,000 note was issued at a $10,000 discount with an initial carrying amount of $50,000.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 48,
+     "quote": "Net cash used in investing activities 50,704 -"
+    },
+    {
+     "doc_id": 9,
+     "page": 52,
+     "quote": "The note was issued at discount of $10,000, resulting in an initial carrying amount of"
+    }
+   ],
+   "financial_period": "FY ended 2025-12-31",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A15",
+    "A19"
+   ],
+   "contradictions": "Classification and the $704 difference are not explained in the pack."
+  },
+  {
+   "claim_id": "C10",
+   "claim_text": "The pitch transcript describes 2025 as the year to scale up for human trials and getting in front of the FDA in 2026, while the Form C lists device procurement and the IRB trial as steps still planned.",
+   "claim_type": "traction",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 66,
+     "quote": "for 2025 is scaling up to get ready for human trials. And the ultimate goal, get in front of the"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "At this stage in the development pipeline, with sufficient funding (see use of funds), all of these steps could"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A24",
+    "B3"
+   ],
+   "contradictions": "The transcript is a deal-page narration and its authorship is not stated. Possible timeline slippage is an inference, not a documented fact."
+  },
+  {
+   "claim_id": "C11",
+   "claim_text": "The projections assume 25%, 35% and 45% penetration of about 34,000 U.S. ALS patients, and the issuer says it believes it has adequate equipment manufacturing resources to reach those estimates over a three-year ramp-up.",
+   "claim_type": "market",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "it has adequate equipment manufacturing resources to achieve these estimates over a three-year ramp-up time horizon."
+    },
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "U.S. ALS Patients 25% 35% 45%"
+    }
+   ],
+   "financial_period": "projection",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A26"
+   ],
+   "contradictions": "No regulatory approval, reimbursement pathway or manufacturing contract is in the pack."
+  },
+  {
+   "claim_id": "C12",
+   "claim_text": "The Form C risk factors say the issuer may not own, or may not have sufficient rights to use, certain intellectual property that is material to its business.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 19,
+     "quote": "The Issuer may not own, or may not have sufficient rights to use, certain intellectual property that is material to its"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "The Form C separately lists three patents as company-owned (A28). No assignment records are in the pack."
+  }
+ ]
+}

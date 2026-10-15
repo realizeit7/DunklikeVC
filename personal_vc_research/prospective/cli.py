@@ -134,6 +134,9 @@ def main(argv: list[str] | None = None) -> int:
     tg.add_argument("--offering", required=True)
     tg.add_argument("--cutoff", required=True, help="evidence cutoff for the new pack (documents observed by then)")
     tg.add_argument("--cap", type=int, default=60)
+    ra = sub.add_parser("reassess", help="re-run the current assessment classifier on a stored v2 run (new row, no LLM call)")
+    ra.add_argument("analysis_id", type=int)
+    ra.add_argument("--note", default="")
     fl = sub.add_parser("forecast-flag", help="record a separate lineage note on a forecast (the original is never changed)")
     fl.add_argument("prediction_id", type=int)
     fl.add_argument("--relation", choices=["redefined_by", "split_into", "flagged_compound", "superseded_definition"], required=True)
@@ -147,6 +150,7 @@ def main(argv: list[str] | None = None) -> int:
     hs.add_argument("--omitted", default="")
     hs.add_argument("--note", required=True)
     hs.add_argument("--checker", default="human:analyst")
+    hs.add_argument("--label", default="human_spot_check_against_source_page")
     # ---- v2: approvals and ledger ------------------------------------------------------------------------------
     ap = sub.add_parser("approve", help="USER approval for manual investment (explicit amount; reserves budget if executable)")
     ap.add_argument("offering")
@@ -334,6 +338,9 @@ def dispatch(ctx: Ctx, a) -> dict:
         p = packs.build_pack(ctx, a.offering, a.cutoff, ocr_overrides={a.document_id: t})
         return {"pack_id": p["pack_id"], "selected_pages": t["selected"], "unprocessed_pages": len(t["unprocessed"]),
                 "gaps": p["gaps"]}
+    if a.cmd == "reassess":
+        from . import analysis_v2
+        return analysis_v2.reassess(ctx, a.analysis_id, a.note)
     if a.cmd == "forecast-flag":
         from . import analysis_v2
         return {"lineage_id": analysis_v2.forecast_lineage(ctx, a.prediction_id, a.relation, a.reason, a.successor)}
@@ -341,7 +348,7 @@ def dispatch(ctx: Ctx, a) -> dict:
         ctx.con.execute("INSERT INTO support_checks(analysis_id, claim_id, checker, judgment_label, citation_exists, passage_supports, "
                         "omitted_qualifications, evidence_type, conflicts, overstatement, verdict, note, checked_utc) "
                         "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                        (a.analysis_id, a.claim_id, a.checker, "human_spot_check_against_source_page", 1,
+                        (a.analysis_id, a.claim_id, a.checker, a.label, 1,
                          {"supported": "yes", "partially_supported": "partly"}.get(a.verdict, "no"), a.omitted, "",
                          "", a.overstatement, a.verdict, a.note, ctx.now()))
         ctx.con.commit()
