@@ -52,6 +52,9 @@ paths:
   exports_dir: data/exports           # public-only CSV exports (committed)
   packets_dir: reports/packets
   reports_dir: reports
+  backups_dir: data/backups           # automatic pre-migration backups (gitignored)
+  packs_dir: data/packs               # frozen evidence packs (public SEC text; committed; hash-checked)
+  analyses_dir: data/analyses         # raw LLM stage outputs (committed; needed for version comparisons)
   cache_dir: data/cache               # HTTP cache used by the reused Fetcher (gitignored)
   manifest: data/manifests/retrieval_manifest.jsonl
 

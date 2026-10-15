@@ -146,13 +146,13 @@ BEGIN SELECT RAISE(ABORT, 'evidence observed after the decision evidence cutoff 
 """
 
 
-def connect(path: str | Path) -> sqlite3.Connection:
+def connect(path: str | Path, backup_dir: str | Path | None = None) -> sqlite3.Connection:
+    """Open the database and apply pending versioned migrations (backing up an existing database first)."""
+    from .migrations import migrate
     con = sqlite3.connect(str(path))
     con.row_factory = sqlite3.Row
     con.execute("PRAGMA foreign_keys = ON")
-    con.executescript(SCHEMA)
-    con.executescript(TRIGGERS)
-    con.commit()
+    migrate(con, path, backup_dir)
     return con
 
 

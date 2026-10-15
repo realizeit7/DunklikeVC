@@ -1,0 +1,16 @@
+{
+ "returncode": 0,
+ "seconds": 149.4,
+ "stderr": "",
+ "is_error": false,
+ "model_reported": "claude-sonnet-5-5",
+ "models_used": [
+  "claude-haiku-5-5",
+  "claude-sonnet-5-5"
+ ],
+ "provider_reported": "firstParty",
+ "cost_usd": 0.9326514,
+ "num_turns": 2,
+ "permission_denials": [],
+ "subtype": "success"
+}

@@ -39,7 +39,7 @@ class Ctx:
     def __init__(self, config_path: str | Path, command: str, now: str | None = None, offline: bool = False):
         self.cfg = Config.load(config_path)
         self.root = self.cfg.root
-        self.con = db.connect(self.cfg.path("db"))
+        self.con = db.connect(self.cfg.path("db"), self.cfg.root / self.cfg.raw["paths"].get("backups_dir", "data/backups"))
         self.fetcher = None if offline else Fetcher(self.cfg)
         self._now = now
         self.run_id = f"{command}-{dt.datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}-{uuid.uuid4().hex[:6]}"

@@ -1,0 +1,241 @@
+{
+ "issues": [
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A2/A12/A18: reported financial fields vs. incorporation date",
+   "explanation": "The Form C gives an incorporation date of 02-10-2026 and signatures dated 09-16-2026. It also reports a prior-fiscal-year net loss (-$23,115) and prior-year total assets of $0. A completed 'prior fiscal year' is hard to square with an entity formed about seven months before filing. A and B flag this, but A18 and B still describe the company as 'newly formed' and give its financial figures as if they were reliable. The pack cannot say which is wrong: the incorporation date, the fiscal-year labels, a predecessor or short-period reporting, or a data-entry error. Until the dated statements are read, the Form C financial fields should be treated as low-reliability. They should not be used as support for any gate.",
+   "claim_ids": [
+    "A2",
+    "A12",
+    "A18",
+    "C1",
+    "C5"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A9/B2/B3: intermediary fees",
+   "explanation": "The fee field is cut off mid-sentence ('non-refundable $15,000 u'). A9 and B2 describe it as a fee already paid, as if the meaning were known. It may be a separate payment on top of the $15,000 minimum, or it may be credited against it. If it is additional, issuer-side fees at the target could be about 40% of the target rather than 20% (C2). Separately, B3's calculation lists only the units input. The ~$34,800 cash-fee figure is not backed by a calculation block, and the 6% tier's base ('funds raised') is itself ambiguous. Treat the 20% and $34,800 figures as illustrative only. Net proceeds to the issuer are unknown.",
+   "claim_ids": [
+    "A9",
+    "B2",
+    "B3",
+    "C2"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B economics_and_funding: 'the raise would be its first operating capital'",
+   "explanation": "Nothing in the pack shows that this is the company's first capital. The prior-year loss of $23,115 coexists with $0 assets and $0 debt, so someone funded those expenses. The source is not shown (member contributions, an affiliate, or an accounting entry) (C4). Likewise, 'operated by its managers only' (A13) and 'these managers are the whole organization' (B team_evidence) go beyond the 0-employee field. Contractors, affiliates or a parent entity may do the work. Drop both statements or label them as inference.",
+   "claim_ids": [
+    "A13",
+    "B1",
+    "C4"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B execution_risks: raise range vs. team history",
+   "explanation": "B says a maximum raise gives the company 'far more to deploy than the known team history supports'. B also says a target-only raise 'may be underfunded'. Team history is entirely unknown (A14), and use of proceeds and the budget are unknown. Neither statement can be evaluated. They sound like findings but are speculation. The only supported point is the 9.07x spread between target and maximum (B1).",
+   "claim_ids": [
+    "A14",
+    "B1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B security_path_to_proceeds: general statements",
+   "explanation": "The claims that LLC units are typically hard to resell, that managers may control distribution timing, and that tax reporting consequences may apply come from general knowledge. They are not in the pack. B labels them as general, which is right, but they are not evidence about THIS security. They must not be used for or against a gate. The only pack-based fact is that the security is 'Other/Units' (A4). Whether the units carry distribution rights, voting rights or transferability is unknown.",
+   "claim_ids": [
+    "A4",
+    "B6"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A12: nature of $226,885 total assets",
+   "explanation": "Cash and receivables are $0, and there is no debt. The $226,885 is therefore some other asset. It could be capitalized software, intangible assets, contributed property or an entry error. This is one of the few facts that could change the view of the company, because the asset base is the only sign of work done. It is also what a pre-money valuation would need to be compared against. The pack cannot resolve it. 'Non-cash' is derived by elimination from the cash and receivable fields.",
+   "claim_ids": [
+    "A12",
+    "A11"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "critical_items: security_type marked confirmed_with_citation; A5 'not a Crowd SAFE'",
+   "explanation": "The Form C says 'Other/Units', which confirms only the form field. The unit class, rights and the pack's 'equity' label are unspecified. Marking security_type as fully confirmed is generous. It is better described as 'partly confirmed: label only'. The statement in A5 that this is 'a priced unit offering, not a Crowd SAFE' rests on the price field and the word 'Units', with no contract text. It is probably right but unverified. Without the unit count outstanding or a cap table, the implied valuation and the percentage ownership that $0.35 buys cannot be computed.",
+   "claim_ids": [
+    "A4",
+    "A5",
+    "A17"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A3/A8/A15: uncited statements",
+   "explanation": "The initial acceptance date (2026-09-16) and 'no closing reported' come from pack metadata (offering record), not from a quoted page. A15 is marked document_supported_fact with no citation. These are acceptable as pack-metadata statements, but the status labels should say so. Availability stays unknown, and a platform page was not reachable.",
+   "claim_ids": [
+    "A3",
+    "A8",
+    "A15"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Gate readiness for stage D",
+   "explanation": "Five of the seven critical items are not confirmed (operative contract, price/cap/conversion terms, minimum investment and fees, financial statements and dates, availability). evidence_sufficiency therefore cannot be 'pass'. Business_thesis and price_and_contract should be 'unknown', not 'fail'. The cause is that the only substantive document (about 61.7 MB) was not parsed, not that adverse evidence was found. Stage D should not read absence of text as proof of a weak business. The one adverse item that does have evidence is the unexplained fiscal-year inconsistency (C1).",
+   "claim_ids": [
+    "A15",
+    "A16",
+    "A17",
+    "C3"
+   ],
+   "severity": "medium"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C reports a prior-fiscal-year net loss of -$23,115 for an entity whose stated incorporation date is 02-10-2026 and whose signatures are dated 09-16-2026. The pack gives no fiscal-year end dates, no predecessor-entity statement and no explanation. The mismatch could come from a short period, a predecessor business, mislabelled fiscal years or data-entry error. The pack cannot say which. The financial fields are therefore low-reliability until the dated statements are read.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<dateIncorporation>02-10-2026</dateIncorporation>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<netIncomePriorFiscalYear>-23115.00</netIncomePriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Prior fiscal year (end date not stated in pack); filing dated 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2",
+    "A12"
+   ],
+   "contradictions": "Incorporation date vs. existence of a completed prior fiscal year with a reported loss."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The fee field ends mid-sentence after 'non-refundable $15,000 u'. If this $15,000 is an additional payment on top of the $15,000 minimum cash fee, issuer-side intermediary cash fees at the $74,999.75 target would be about 40% of the target. This is an illustrative upper scenario, not an established fact. The pack does not say whether the two amounts are separate or overlapping.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "Additionally, the Issuer has paid a non-refundable $15,000 u"
+    }
+   ],
+   "financial_period": "Offering target; filing dated 2026-09-16",
+   "calculation": {
+    "formula": "(min_fee + paid_fee) / target_amount",
+    "inputs": [
+     {
+      "name": "min_fee",
+      "value": 15000,
+      "claim_id": "A9"
+     },
+     {
+      "name": "paid_fee",
+      "value": 15000,
+      "claim_id": "A9"
+     },
+     {
+      "name": "target_amount",
+      "value": 74999.75,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 0.4000005
+   },
+   "basis_claim_ids": [
+    "A6",
+    "A9",
+    "B2"
+   ],
+   "contradictions": "B2 treats the paid fee as already known; the text is truncated."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "Gate readiness: evidence_sufficiency cannot be 'pass', because five of seven critical items are not confirmed in the pack. The reason is an unparsed source document (about 61.7 MB), not adverse findings. Business_thesis and price_and_contract are better rated 'unknown' than 'fail'.",
+   "claim_type": "other",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A15",
+    "A16",
+    "A17"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "The Form C reports a prior-year net loss of $23,115 alongside $0 prior-year total assets and $0 prior-year short-term debt. Whoever paid those expenses is not shown (for example member contributions or affiliate payments). B's statement that the raise would be the company's 'first operating capital' is therefore unsupported.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<totalAssetPriorFiscalYear>0.00</totalAssetPriorFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<shortTermDebtPriorFiscalYear>0.00</shortTermDebtPriorFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<netIncomePriorFiscalYear>-23115.00</netIncomePriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Prior fiscal year (end date not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A12",
+    "A13"
+   ],
+   "contradictions": "Conflicts with the 'first operating capital' remark in B economics_and_funding."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The incorporation date 02-10-2026 can only be read as MM-DD-YYYY (10 February 2026). Read as DD-MM-YYYY it would be 2 October 2026, which is after the 09-16-2026 signature dates in the same filing. This supports A2's presumption, so the entity is about eight months old at the cutoff. The date is still issuer-reported.",
+   "claim_type": "identity",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<dateIncorporation>02-10-2026</dateIncorporation>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<signatureDate>09-16-2026</signatureDate>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

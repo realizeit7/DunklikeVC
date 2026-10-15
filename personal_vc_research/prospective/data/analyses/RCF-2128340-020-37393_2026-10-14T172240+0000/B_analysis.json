@@ -1,0 +1,204 @@
+{
+ "business_model": {
+  "assessment": "The pack does not describe what TradeFunded LLC sells, who pays, or how it would earn money. It has no business description, no product description and no use of proceeds. The Form C shows $0 revenue in both reported fiscal years [A12], 0 employees [A15] and $0 cash [A13]. The only business-model facts are an issuer website address and a Delaware LLC form [A1, A2]. The unparsed tradef.pdf might contain a description, but it was not reviewed. A business model cannot be assessed from this material [B3].",
+  "claim_ids": [
+   "A1",
+   "A2",
+   "A12",
+   "A15",
+   "A18",
+   "B3"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "There is no demand evidence in the pack. There are no customers, users, pilots, letters of intent, waitlists or revenue [A12]. The company is pre-revenue, so revenue is not required. Even so, stage-appropriate evidence such as a product, early users or a documented team record is absent from the reviewed material [A18]. Whether it exists elsewhere is unknown.",
+  "claim_ids": [
+   "A12",
+   "A18"
+  ]
+ },
+ "competition": {
+  "assessment": "The pack has no market or competitor information and no description of the business. No competition assessment is possible, and none is attempted from outside knowledge.",
+  "claim_ids": [
+   "A18",
+   "B3"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "The Form C reports $0 cash, $226,885 of total assets whose nature is not described, and no debt, all for the most recent fiscal year [A13, A14]. The fiscal year-end date is not stated, so I cannot judge how old these figures are or compute a runway. The prior-year loss of $23,115 does not obviously fit a 02-10-2026 incorporation date [A2, A14]. The company has no cash on its reported balance sheet, so this raise appears to be its main source of cash, but that is an inference because use of proceeds is not in the pack. The target is $74,999.75 and the maximum is $679,999.95 [A6, A8]. At the maximum, that is about 1,942,857 units [B1]. The intermediary's minimum cash fee of $15,000 would be about 20% of the target amount, although the fee text is truncated [A10, B2]. If the offering raises only the target, a large share of proceeds would go to fees. The intermediary also receives units equal to 2% of units sold [A11]. Additional funding needs are unknown.",
+  "claim_ids": [
+   "A2",
+   "A6",
+   "A8",
+   "A10",
+   "A11",
+   "A13",
+   "A14",
+   "B1",
+   "B2"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "The main risks I can document are these. (1) The entity was incorporated 02-10-2026 and has no reported operating history [A2, A12]. (2) It has 0 employees and $0 cash [A13, A15]. (3) Three Manager Representatives signed, but there are no biographies, so I cannot judge whether the team can execute [A16]. (4) The reported financials look internally unusual and are unexplained [A2, A14]. (5) The price is 'Arbitrary', with no valuation basis [A5, B4]. (6) The operative contract was not reviewed [A4]. These are mostly evidence gaps, not proven problems.",
+  "claim_ids": [
+   "A2",
+   "A4",
+   "A5",
+   "A12",
+   "A13",
+   "A14",
+   "A15",
+   "A16",
+   "B4"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "The pack documents only names and titles. Christopher Price signed as Chief Executive Officer. Ryan Masten, Christopher Price and David Lojko signed as Manager Representatives [A16]. The Form C reports 0 current employees [A15]. There is no documented prior experience or execution history, so team quality cannot be assessed. This is a missing-evidence finding, not a negative finding.",
+  "claim_ids": [
+   "A15",
+   "A16"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is described only as 'Other: Units' of an LLC [A4]. The rights attached to the units are not in the pack: distributions, voting, transfer limits, information rights, and any buy-back or exit provisions. An investor could receive cash in three ways. (a) The LLC makes distributions to unit holders, which requires profits or cash and a contract that provides for them. (b) The company is sold or liquidated and unit holders are paid. (c) Units are resold to another buyer. What usually prevents this is that the company has no revenue [A12]. Small private LLC units are typically hard to resell and may carry transfer restrictions, but the actual restrictions are not in the pack. A pre-revenue company may also never produce distributions. The intermediary receives 2% of the units sold, which is a small dilution [A11, B5]. Because the operating agreement is unread, I cannot say whether investors would have voting rights, whether managers could issue more units, or whether the LLC's tax treatment would produce tax reporting obligations for investors. I will not guess at these terms. For this security, a cash return depends on events that the pack does not evidence.",
+  "claim_ids": [
+   "A4",
+   "A11",
+   "A12",
+   "B5"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "The price is $0.35 per unit, determined 'Arbitrary', so it is not set by a stated valuation formula [A5]. The target is 214,285 units for $74,999.75, which checks out arithmetically [A6, A7]. The maximum is $679,999.95, with oversubscriptions accepted first-come, first-served [A8]. The offering deadline is 12-15-2026 [A9]. Total units outstanding are not in the pack, so I cannot compute an implied valuation or the percentage that an investor would own [B4]. No valuation cap or discount applies, because this is priced equity-style units rather than a convertible. The minimum investment and investor-level fees are not in the pack. Issuer-paid intermediary compensation is a cash fee of the greater of $15,000 or a tiered amount, plus units equal to 2% of units sold [A10, A11]. Price and terms cannot be judged as fair or unfair without the capitalization table and the operating agreement.",
+  "claim_ids": [
+   "A5",
+   "A6",
+   "A7",
+   "A8",
+   "A9",
+   "A10",
+   "A11",
+   "B4"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "At the maximum offering amount and the $0.35 price, the number of units that would be sold is about 1,942,857.",
+   "claim_type": "security_terms",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "",
+   "calculation": {
+    "formula": "maximum_amount / price",
+    "inputs": [
+     {
+      "name": "maximum_amount",
+      "value": 679999.95,
+      "claim_id": "A8"
+     },
+     {
+      "name": "price",
+      "value": 0.35,
+      "claim_id": "A5"
+     }
+    ],
+    "result": 1942857
+   },
+   "basis_claim_ids": [
+    "A5",
+    "A8"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "The intermediary's minimum cash fee of $15,000 is about 20% of the target offering amount. The tiered percentage is 0% up to $100,000, so at the target the greater-of rule gives the $15,000 floor. The fee text in the Form C is truncated, so other payments may exist.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Offering terms, Form C filed 2026-09-16",
+   "calculation": {
+    "formula": "minimum_fee / target_amount",
+    "inputs": [
+     {
+      "name": "minimum_fee",
+      "value": 15000,
+      "claim_id": "A10"
+     },
+     {
+      "name": "target_amount",
+      "value": 74999.75,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 0.2000006667
+   },
+   "basis_claim_ids": [
+    "A6",
+    "A10"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "The pack contains no description of what the company does, who its customers are or how it would earn revenue, so business quality cannot be assessed from the reviewed material. This is an evidence gap and not a negative finding about the company.",
+   "claim_type": "other",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A12",
+    "A18"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "The price of $0.35 is labelled 'Arbitrary', and total units outstanding are not in the pack. An implied pre-money valuation and the percentage ownership an investor would receive therefore cannot be calculated.",
+   "claim_type": "security_terms",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A5"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "The pack does not establish how investors would receive cash from these units. The company has no revenue, no cash on its reported balance sheet, and no operating agreement in the pack that describes distributions, exit or transfer rights. A return would depend on future events (profits distributed, a sale or a resale) that the pack does not evidence.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<cashEquiMostRecentFiscalYear>0.00</cashEquiMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>0.00</revenueMostRecentFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent fiscal year (end date not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A4",
+    "A12",
+    "A13"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

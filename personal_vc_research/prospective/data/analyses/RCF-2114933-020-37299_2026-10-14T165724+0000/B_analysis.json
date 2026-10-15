@@ -1,0 +1,228 @@
+{
+ "business_model": {
+  "assessment": "The company is pre-revenue and pre-clinical (A22). It plans a device-enabled blood-conditioning therapy (SELtx) for ALS, delivered at outpatient sites, with revenue split 40% issuer / 35% provider / 25% distributor at a projected $120,000 annual price (A25). None of this is evidenced beyond issuer statements: there are no pricing, payer, partner, distributor or manufacturer agreements in the pack. The model depends on several steps that have not happened. These are human trials, FDA clearance or approval (no IND or IRB approval is documented, A24), a third-party device network, and reimbursement. The 80%+ gross margin and penetration figures (25-45%) are illustrative projections. The projection table also uses 34,000 patients rather than the 34,720 cited (A25). Stage-appropriate evidence is limited to one mouse study reported by the issuer (A23) and patents claimed but unverified (A27).",
+  "claim_ids": [
+   "A22",
+   "A23",
+   "A24",
+   "A25",
+   "A27"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "There is no customer, patient or partner demand evidence, which is expected at this stage. The only efficacy evidence is an undated proof-of-concept study in transgenic ALS mice at Indiana University School of Medicine. It is reported only by the issuer, with a claimed p=0.008, and the report, protocol and sample size are not in the pack (A23). The issuer itself says it does not know whether the mouse results will translate to humans (A22). The unmet need in ALS is described using issuer-cited figures (A25). Need is not the same as evidence that this therapy works or that payers would pay $120,000 a year. The pack has no independent corroboration.",
+  "claim_ids": [
+   "A22",
+   "A23",
+   "A25"
+  ]
+ },
+ "competition": {
+  "assessment": "The issuer says it has no peer with similar technology (A26). It also lists three approved ALS drugs, 50+ drugs in development and 107 active ALS trials, and warns that another program's success could hurt commercialization (A26). Competition is therefore broad even if the device approach is distinctive. Defensibility rests on patents. The Form C lists patents titled 'Gas treatment delivery systems and methods' but also says IP ownership or assignments may be unclear and that future filings are needed (A27). Patent status and fit with the SELtx process were not verified. The claim of being 'the only later-stage non-pharma solution' is unsupported by anything independent.",
+  "claim_ids": [
+   "A26",
+   "A27"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "FY2025 (ended 12/31/2025, about 9.5 months before cutoff, so not stale): revenue $0, net loss $56,126, cash $19,213 (A15). The balance sheet shows liabilities of $268,348 and a stockholders' deficit of $(249,135) (A16). Funding to date came from the founder (a $199,875 payable with no stated interest or maturity) and two convertible notes of $60,000 and $150,000 (A16, A20). The issuer reported $160,487 cash on 2026-06-18 (unaudited) and claimed about six months of runway (A19). That cash is consistent with the June 2026 $150,000 note, and the runway implies a far higher burn than FY2025 loss. I did not recompute current runway. The $75,000 target would net about $60,000 after the $15,000 minimum fee (A7), and the issuer says the target may not sustain its plan (A28). The proceeds would be small against $409,875 of debt-like claims (B2). Large funding is needed for human trials, and the $5M maximum would still be small for a therapy approval program.",
+  "claim_ids": [
+   "A7",
+   "A15",
+   "A16",
+   "A19",
+   "A20",
+   "A28",
+   "B2"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "Main risks: (1) scientific translation from mice to humans is unproven (A22); (2) regulatory path with no documented FDA contact, IND or IRB approval, while the issuer says steps 'could commence in 2026' (A24); (3) financing risk, with the issuer stating going-concern substantial doubt (A18) even though the auditor's report text shows no such paragraph (A17); (4) reliance on third-party manufacturers, clinics and distributors (A26); (5) IP ownership uncertainty (A27); (6) possible past securities-law non-compliance on the earlier convertible offering, with rescission risk (A31); and (7) late capitalization, since 75,000,000 founder shares were ratified only in June 2026 and the audited balance sheet shows 1 share (A8). The planned 2026 timeline looks optimistic given the cutoff of 2026-10-14 and no documented approvals.",
+  "claim_ids": [
+   "A8",
+   "A17",
+   "A18",
+   "A22",
+   "A24",
+   "A26",
+   "A27",
+   "A31"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "Documented experience: the founder/CEO has a PhD in Neurosciences (1973) and has led the company since 2020. The VP of business development has an MBA and consulting work. The interim CFO has been in role since July 2025 and the CTO since November 2025 (A29). The pack documents no prior drug or device approval, clinical-trial execution or medical-device manufacturing history for these officers. Several roles are recent or interim. The company reports 5 employees and operates virtually (A30). The company relies on outside research and clinical partners, such as Indiana University and Barrow's ALS clinic, but no agreements are in the pack (A24). So team evidence for executing a human trial and regulatory process is thin.",
+  "claim_ids": [
+   "A24",
+   "A29",
+   "A30"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "Investors buy common stock held through a custodian (A12). Cash could come only from an acquisition, IPO, a Reg A conversion or later private resale, and each depends on trial success and further financing (A34). Barriers: no dividends expected and only at board discretion; no repurchase right; a one-year resale restriction; no public market; lock-up up to 270 days under the subscription agreement (A13, A14). Investors give the founder a 10-year irrevocable proxy over their votes, so they cannot influence a sale or financing (A11, B3). The convertible notes are described as senior debt and would convert on a liquidity event, diluting investors (A20, B2). The notes' conversion price is undisclosed. Investors have no information rights beyond those required by law (A13). The issuer's 'stated interest' in a Reg A offering gives no assurance of conversion or liquidity (A32).",
+  "claim_ids": [
+   "A11",
+   "A12",
+   "A13",
+   "A14",
+   "A20",
+   "A32",
+   "A34",
+   "B2",
+   "B3"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "Analysed separately from business quality. Common stock at $1.00 per share, with the price set 'arbitrarily' (A3). Arithmetic only: $1.00 times 75,000,001 existing founder shares gives about $75 million implied pre-offering equity value (A9). That figure is not a valuation opinion, but it contrasts with no revenue, no human data, a $(249,135) stockholders' deficit at 12/31/2025 and $19,213 cash then (A15, A16). At the $5M maximum, investors would own about 6.2% after the offering, including the 2% intermediary shares (B1). At the target they would own about 0.1% (B1). Terms are unfavorable for minority holders. There is no cap or discount, no anti-dilution, no information rights and no voting power (A11, A13). Existing notes may convert at undisclosed terms (A20). The $500 minimum and the issuer-paid fees are known (A5, A6), but investor-side fees are not found in the pack. The certificate of incorporation and bylaws, which govern dividends and liquidation preference, are also not in the pack. Availability is unverified (A33).",
+  "claim_ids": [
+   "A3",
+   "A5",
+   "A6",
+   "A9",
+   "A11",
+   "A13",
+   "A15",
+   "A16",
+   "A20",
+   "A33",
+   "B1"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "Arithmetic only: if the $5,000,000 maximum sells (5,000,000 shares) plus 2% intermediary shares, investors would hold about 6.2% of shares outstanding. At the $75,000 target the figure is about 0.1% (75,000 / 75,076,501 = 0.0999%). Excludes note conversion.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 53,
+     "quote": "The Company is offering to both accredited and non-accredited investors up to 5,000,000 shares of its"
+    },
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Ronald Howard Lane* 75,000,001Common Shares 100.0%"
+    },
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    }
+   ],
+   "financial_period": "Offer terms July 2026; maximum-raise scenario",
+   "calculation": {
+    "formula": "max_shares / (existing_shares + max_shares + max_shares * fee_pct)",
+    "inputs": [
+     {
+      "name": "max_shares",
+      "value": 5000000,
+      "claim_id": "A10"
+     },
+     {
+      "name": "existing_shares",
+      "value": 75000001,
+      "claim_id": "A8"
+     },
+     {
+      "name": "fee_pct",
+      "value": 0.02,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 0.062422
+   },
+   "basis_claim_ids": [
+    "A6",
+    "A8",
+    "A10"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "Arithmetic only: the two convertible notes' principal ($60,000 + $150,000) plus the founder-related payable at 12/31/2025 ($199,875) total $409,875, more than five times the $75,000 target. The $150,000 note also converts with an extra $50,000 amount (A20), and the notes are described as senior debt. Mixed dates: notes at filing, payable at 12/31/2025. This is not a recovery analysis.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 25,
+     "quote": "In addition, the Issuer has two outstanding convertible securities with principal amounts of $60,000 and $150,000,"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Payabletorelatedparty 199,875 212,261"
+    },
+    {
+     "doc_id": 9,
+     "page": 34,
+     "quote": "represents a senior debt obligation of the Issuer that must"
+    }
+   ],
+   "financial_period": "Notes as of Form C date (July 2026); payable as of 12/31/2025",
+   "calculation": {
+    "formula": "note_a + note_b + related_payable",
+    "inputs": [
+     {
+      "name": "note_a",
+      "value": 60000,
+      "claim_id": "A20"
+     },
+     {
+      "name": "note_b",
+      "value": 150000,
+      "claim_id": "A20"
+     },
+     {
+      "name": "related_payable",
+      "value": 199875,
+      "claim_id": "A16"
+     }
+    ],
+    "result": 409875
+   },
+   "basis_claim_ids": [
+    "A16",
+    "A20"
+   ],
+   "contradictions": "Form C XML reports 0 long-term debt (A15)."
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "Control is concentrated: the founder holds 100% of voting equity and would also vote all investor shares for 10 years via the proxy. Investors therefore have no practical say in financings, a sale or charter changes, and the amendment clause (majority of voting power of the Securities) is of limited use because the proxy holder would vote those shares.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A8",
+    "A10",
+    "A11"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "The therapy timeline in the Form C is optimistic against the evidence in the pack: the issuer says human use 'could begin in the second half of 2026', but the pack documents no approvals, and the cutoff is 2026-10-14. This is a judgment from absence of documents in the pack, not a finding that none exist.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "HOPE-Neuron’s SELtx™ therapy is not yet available for human use."
+    }
+   ],
+   "financial_period": "As of 2026-10-14 cutoff",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A24"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

@@ -1,0 +1,283 @@
+{
+ "business_model": {
+  "assessment": "Hope-Neuron is a pre-revenue, preclinical medical-device-enabled therapy company [A22]. Its product, SELtx, would draw about 300 mL of a patient's blood, treat it in a proprietary device, and reinfuse it. The company says it would do this as a 30-minute outpatient procedure. It has so far been used only in ALS transgenic mice [A22]. The planned model is recurring, per-patient therapy revenue shared with clinics and distributors: 40% to the company, 35% to the provider and 25% to the distributor. At a projected $120,000 annual price the company would keep about $48,000 per patient [A25, B3]. The payers would be patients, insurers and similar parties. The pack contains no payer, reimbursement or pricing evidence. The company also plans to partner for device placement and relies on third-party manufacturers [A25]. The 80%+ gross margin claim and the $408M–$734M revenue scenarios are management projections and depend on a human trial, FDA clearance or approval and reimbursement. None of these has been shown in the pack [A25, B1]. In plain terms, this is an early scientific bet and not yet a business with customers.",
+  "claim_ids": [
+   "A22",
+   "A25",
+   "A26",
+   "B1",
+   "B3"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "There is no commercial demand evidence. Revenue is $0 in FY2025 and FY2024 [A15]. No customers, letters of intent, clinic agreements or reimbursement information are in the pack. Barrow Neurological Institute is named only as a planned trial partner [A22, A31]. The unmet medical need in ALS is described by the issuer, citing registry and ALS-organization data that the pack does not corroborate [A24]. The only scientific evidence is an issuer-described proof-of-concept mouse study at Indiana University School of Medicine, reported with p=0.008 [A23]. The pack has no study report, sample size, controls, peer review or date. The text describing the study is also truncated on page 26 [A23]. The issuer says it does not know whether mouse results will translate to humans [A23]. For a pre-revenue company, appropriate stage evidence would be reproducible preclinical data, regulatory interaction and funded trial plans. Only the first is partly claimed, and it is unverified [B1].",
+  "claim_ids": [
+   "A15",
+   "A22",
+   "A23",
+   "A24",
+   "A31",
+   "B1"
+  ]
+ },
+ "competition": {
+  "assessment": "The issuer says it is the 'only later-stage non-pharma solution' and has no peer with similar technology [A26]. This is an unverified issuer claim. 'Later-stage' conflicts with a therapy tested only in mice [A22, A26]. The pack itself cites competing activity: 107 active ALS interventional trials, 50+ ALS drugs in development, and three approved drugs, including Radicava and Qalsody at roughly $171k–$185k a year [A24, A26]. The issuer warns that another program's success could hurt commercialization [A26]. The pack contains no independent competitor analysis or freedom-to-operate review. The issuer lists company-owned patents (US 11471579, US 12667645, Japan), but chain of title is not documented. The risk factors also admit the company may not own or have sufficient rights to certain IP, and that patent protection is uncertain [A27]. The 'no peer' claim should be treated as unverified.",
+  "claim_ids": [
+   "A22",
+   "A24",
+   "A26",
+   "A27"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "Financials are small and show dependence on outside funding. FY2025 (year ended 12/31/2025, about 9.5 months before the cutoff, so not stale): revenue $0, net loss $56,126, cash $19,213, total liabilities $268,348, stockholders' deficit $(249,135) [A15, A16]. Liabilities include $199,875 owed to the founder and $50,704 of convertible notes [A16, A20]. A further $150,000 convertible note was issued 6/12/2026 [A14]. The issuer reports $160,487.20 of cash at 6/18/2026 (about 4 months before the cutoff, unaudited) and claims about six months of runway. The basis is not shown, so no current runway is computed here [A18]. Notes: the two outstanding convertible notes ($60,000 + $150,000 = $210,000 face) are 2.8 times the $75,000 target [B4]. Investors would be funding a company that has already used debt that ranks ahead of common equity [A14]. At the target, 20% of proceeds ($15,000) goes to intermediary fees and $30,000 to clinical trials [A21, B5]. This is far below what a human ALS trial plus devices would plausibly need, but the pack gives no trial cost estimate [A21]. Even the $5,000,000 maximum allocates about $2.18M to trials and $635,050 to equipment [A21]. The company states the proceeds are essential to operations and that it may need more capital, so further financing and dilution are likely [A19, A10]. The company states substantial doubt about going concern in the Form C, but the auditor's report in the pack has no going-concern paragraph [A17, A19].",
+  "claim_ids": [
+   "A10",
+   "A14",
+   "A15",
+   "A16",
+   "A17",
+   "A18",
+   "A19",
+   "A20",
+   "A21",
+   "B4",
+   "B5"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "The main risks are scientific, regulatory, financial and governance risks. (1) Scientific: translation from mice to humans is unproven, and the issuer concedes this [A23]. (2) Regulatory: the therapy is subject to FDA approval, and the pack shows no FDA communications, IND or device-classification work. FDA consulting is budgeted at only $2,000 at the target [A21, A22]. (3) Timeline: the Form C says human use could begin in the second half of 2026 'with sufficient funding'. The pack has no evidence on whether this occurred or whether the offering is funded [A31, B1]. (4) Capital: the target raise is very small relative to the stated plan, and a going-concern doubt is stated [A19, B4]. (5) IP and third-party reliance: unverified patent ownership, reliance on contract manufacturers and research partners, and no agreements shown [A27]. (6) Disclosure quality: inconsistencies include XML long-term debt of $0 versus $50,704 of notes on the balance sheet, 75M founder shares 'ratified' in June 2026 versus 1 share audited, differing lock-up lengths, and conflicting statements about when the notes convert [A12, A14, A15, A11]. (7) Securities compliance: the issuer discloses a previous convertible offering that may not have complied with securities laws, with possible rescission exposure [A29].",
+  "claim_ids": [
+   "A11",
+   "A12",
+   "A14",
+   "A15",
+   "A19",
+   "A21",
+   "A22",
+   "A23",
+   "A27",
+   "A29",
+   "A31",
+   "B1",
+   "B4"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "Assessed on documented experience only. The founder/CEO Ronald Lane lists a PhD in Neurosciences (1973) and has led the company since December 2020, responsible for strategy, clinical studies and product development [A28]. The VP of Business Development, interim CFO and CTO list consulting backgrounds in shareholder development, interim CFO work and IT/AI [A28]. The pack documents no prior medical-device development, FDA submissions, clinical-trial management or prior company exits for management. The company says it uses contract research partners and FDA consultants, but names no clinical, regulatory or scientific advisors beyond the Indiana lab and Barrow plans [A22, A28]. This is not evidence of incompetence. It means relevant execution capability is undocumented and the key-person dependence on the founder is high, with no key-person insurance [A28, B6].",
+  "claim_ids": [
+   "A22",
+   "A28",
+   "B6"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is plain common stock, not a SAFE or note. There is no cap, discount, conversion or redemption right in the offered security [A3, A10]. Ways an investor could receive cash: (a) a sale of the company or another liquidity event, where proceeds would go to common holders only after debt and the founder payable [A14, A20, A30]; (b) reselling shares after the one-year Reg CF restriction, but no market exists or is expected [A11]; (c) dividends, which are at board discretion with no guarantee, and none are indicated [A10]; (d) a hoped-for follow-on Reg A offering into which investors would be 'converted', with no assurance [A30]. Things that usually prevent cash: no trading market, no repurchase right, shares held through a custodian as a securities entitlement, and no information rights beyond law [A9, A10]. Also, every investor grants a 10-year irrevocable proxy to Ronald Lane over all votes and written consents, so investors cannot vote on a sale, financing or charter change [A8]. Because Lane holds 100% of current shares, public investors would remain a minority with no vote even at the maximum raise [B2]. Anti-dilution protection is absent [A10]. The charter, which may set liquidation or dividend rights, is not in the pack [A10]. Most outcomes for a company at this stage involve either dilution or a loss, but the pack contains no base-rate data, so that is not quantified here.",
+  "claim_ids": [
+   "A3",
+   "A8",
+   "A9",
+   "A10",
+   "A11",
+   "A14",
+   "A20",
+   "A30",
+   "B2"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "Judged separately from business quality. Price is $1.00 per share, set 'arbitrarily' with no relationship to asset value, net worth or revenue [A7]. On 75,000,001 shares this implies roughly $75.0M pre-money on basic shares [A13]. This is the price investors pay, set by the issuer, not a valuation tested by an independent investor or price discovery. The company has a stockholders' deficit of $(249,135) and $0 revenue [A16], and its therapy has been used only in mice [A22]. The pack contains no comparable valuations, so whether $75M is reasonable cannot be assessed; it should be treated as unsupported. The Form C valuation section mentions a 'valuation cap', but no cap exists in common stock, so that reads as boilerplate [A3]. Control and rights terms are weak: irrevocable 10-year proxy, custodian structure, no information rights, no anti-dilution, and issuer may change purchase limits at its sole discretion [A5, A8, A9, A10]. At the $5M maximum, investors would hold about 6.25% of shares before the intermediary's 2% shares, with votes held by the Executive Chairman [B2]. The intermediary takes at least $15,000 in cash (20% of the target) plus a $7,500 onboarding fee and 2% in securities [A6, B5]. Lock-up terms conflict (180 versus 270 days) [A11]. Existing convertible notes ($210,000 face, with $50,000 extra conversion on the second) would convert at an undisclosed price on a 'liquidity event' and dilute investors [A14]. Minimum investment is $500 [A5]. Investor-side fees are not stated in the pack [A6].",
+  "claim_ids": [
+   "A3",
+   "A5",
+   "A6",
+   "A7",
+   "A8",
+   "A9",
+   "A10",
+   "A11",
+   "A13",
+   "A14",
+   "A16",
+   "A22",
+   "B2",
+   "B5"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "Stage-appropriate evidence is thin. For a pre-revenue, preclinical device-therapy company, the only scientific evidence in the pack is an issuer-described mouse study. The pack has no study report, no regulatory filings or FDA correspondence, no signed trial-site agreements and no independent review.",
+   "claim_type": "traction",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "As of Form C dated 2026-07-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A22",
+    "A23",
+    "A31"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "If the maximum of 5,000,000 shares were sold, public investors would hold about 6.25% of shares (ignoring the intermediary's 2% shares and the convertible notes). The founder's 75,000,001 shares would remain about 93.75%, and the investors' votes would be held by the Executive Chairman under the proxy.",
+   "claim_type": "security_terms",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Form C dated 2026-07-30",
+   "calculation": {
+    "formula": "max_shares / (founder_shares + max_shares)",
+    "inputs": [
+     {
+      "name": "max_shares",
+      "value": 5000000,
+      "claim_id": "A3"
+     },
+     {
+      "name": "founder_shares",
+      "value": 75000001,
+      "claim_id": "A12"
+     }
+    ],
+    "result": 0.0625
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A8",
+    "A12"
+   ],
+   "contradictions": "Maximum of 5,000,000 shares follows from $5,000,000 at $1.00 (A3). The result rounds 0.06249999 to 0.0625."
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "The projected per-patient company share is $48,000 (40% of the projected $120,000 annual price). This is a management projection that depends on FDA approval, reimbursement and a partner network, none of which is shown.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "With a projected initial annual therapy price of $120,000"
+    }
+   ],
+   "financial_period": "Projection; no dates",
+   "calculation": {
+    "formula": "price * company_share",
+    "inputs": [
+     {
+      "name": "price",
+      "value": 120000,
+      "claim_id": "A25"
+     },
+     {
+      "name": "company_share",
+      "value": 0.4,
+      "claim_id": "A25"
+     }
+    ],
+    "result": 48000
+   },
+   "basis_claim_ids": [
+    "A25"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "The two convertible notes outstanding ($60,000 and $150,000 face) total $210,000, which is 2.8 times the $75,000 target offering amount. These notes are senior debt that mature in 2030 and 2031, so a small raise would add little relative to existing obligations (plus a $199,875 founder payable at 12/31/2025).",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Notes dated 2025-07-22 and 2026-06-12; target per Form C 2026-07-30",
+   "calculation": {
+    "formula": "(note_one + note_two) / target",
+    "inputs": [
+     {
+      "name": "note_one",
+      "value": 60000,
+      "claim_id": "A14"
+     },
+     {
+      "name": "note_two",
+      "value": 150000,
+      "claim_id": "A14"
+     },
+     {
+      "name": "target",
+      "value": 75000,
+      "claim_id": "A3"
+     }
+    ],
+    "result": 2.8
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A14",
+    "A20"
+   ],
+   "contradictions": "The first note was issued at a $10,000 discount per the audited statements (A14)."
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "At the $75,000 target, the intermediary cash fee of $15,000 is 20% of the amount raised (before the $7,500 onboarding fee already paid and the 2% securities compensation). The issuer's use-of-proceeds table states 20.0%, consistent with this arithmetic.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Intermediary Fees 20.0% $15,000 5.88% $294,000"
+    }
+   ],
+   "financial_period": "Forward-looking, Form C dated 2026-07-30",
+   "calculation": {
+    "formula": "fee / target",
+    "inputs": [
+     {
+      "name": "fee",
+      "value": 15000,
+      "claim_id": "A6"
+     },
+     {
+      "name": "target",
+      "value": 75000,
+      "claim_id": "A3"
+     }
+    ],
+    "result": 0.2
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A6",
+    "A21"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "Governance concentration: one person (the founder) is CEO, Executive Chairman, 100% holder of current shares, the creditor on a $199,875 related-party payable, and the proxy holder over all investor votes. The use-of-proceeds table does not mention repaying the founder payable, and the issuer has broad discretion over proceeds.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "The Issuer's management may have broad discretion in how the Issuer uses the net proceeds of the Offering."
+    }
+   ],
+   "financial_period": "As of Form C dated 2026-07-30; payable at 12/31/2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A8",
+    "A12",
+    "A20",
+    "A21",
+    "A28"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

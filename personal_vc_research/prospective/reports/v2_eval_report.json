@@ -1,0 +1,137 @@
+{
+  "track1_extraction_and_citations": {
+    "automatic_validation": [
+      {
+        "status": "analysis_failed",
+        "version_id": "analyst_v1_1",
+        "split": "evaluation",
+        "n": 2
+      },
+      {
+        "status": "analysis_failed",
+        "version_id": "analyst_v1_baseline",
+        "split": "evaluation",
+        "n": 4
+      },
+      {
+        "status": "needs_information",
+        "version_id": "analyst_v1_1",
+        "split": "development",
+        "n": 1
+      },
+      {
+        "status": "needs_information",
+        "version_id": "analyst_v1_1",
+        "split": "evaluation",
+        "n": 1
+      },
+      {
+        "status": "needs_information",
+        "version_id": "analyst_v1_baseline",
+        "split": "evaluation",
+        "n": 1
+      }
+    ],
+    "spot_checks": [
+      {
+        "result": "quote_found",
+        "method": "independent_extractor_recheck",
+        "n": 153
+      },
+      {
+        "result": "quote_found_whitespace_insensitive",
+        "method": "independent_extractor_recheck",
+        "n": 7
+      },
+      {
+        "result": "quote_not_found",
+        "method": "independent_extractor_recheck",
+        "n": 3
+      },
+      {
+        "result": "supported",
+        "method": "reviewer_semantic",
+        "n": 2
+      },
+      {
+        "result": "supported_details_beyond_quote",
+        "method": "reviewer_semantic",
+        "n": 5
+      }
+    ]
+  },
+  "track2_forecasting": {
+    "analyst_v1_baseline": {
+      "n_original": 2,
+      "n_resolved": 0,
+      "n_unresolved": 2,
+      "brier": null,
+      "note": "conditional on observed resolution; may be biased",
+      "resolved_issuer_clusters": 0,
+      "verdict": "insufficient evidence"
+    },
+    "analyst_v1_1": {
+      "n_original": 2,
+      "n_resolved": 0,
+      "n_unresolved": 2,
+      "brier": null,
+      "note": "conditional on observed resolution; may be biased",
+      "resolved_issuer_clusters": 0,
+      "verdict": "insufficient evidence"
+    }
+  },
+  "track3_research_screen_behavior": [
+    {
+      "status": "analysis_failed",
+      "version_id": "analyst_v1_1",
+      "split": "evaluation",
+      "n": 2
+    },
+    {
+      "status": "analysis_failed",
+      "version_id": "analyst_v1_baseline",
+      "split": "evaluation",
+      "n": 4
+    },
+    {
+      "status": "needs_information",
+      "version_id": "analyst_v1_1",
+      "split": "development",
+      "n": 1
+    },
+    {
+      "status": "needs_information",
+      "version_id": "analyst_v1_1",
+      "split": "evaluation",
+      "n": 1
+    },
+    {
+      "status": "needs_information",
+      "version_id": "analyst_v1_baseline",
+      "split": "evaluation",
+      "n": 1
+    }
+  ],
+  "track4_user_selection_behavior": [
+    {
+      "ai_status": "analysis_failed",
+      "user_action": "no_user_action",
+      "n": 6
+    },
+    {
+      "ai_status": "needs_information",
+      "user_action": "no_user_action",
+      "n": 3
+    }
+  ],
+  "track5_actual_investment_outcomes": {
+    "positions": 0,
+    "realized": 0,
+    "note": "insufficient evidence"
+  },
+  "caveats": [
+    "forecast accuracy is not investment profitability",
+    "investors may receive private updates unavailable for non-investments: visibility differs",
+    "AI-passed, AI-failed, needs-information, approved, passed and unreviewed offerings follow the same schedule"
+  ]
+}

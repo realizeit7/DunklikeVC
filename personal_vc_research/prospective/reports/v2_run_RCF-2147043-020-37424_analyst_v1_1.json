@@ -1,0 +1,23 @@
+{
+  "pack_id": "PACK-RCF-2147043-020-37424-7e1d749b1f6d",
+  "analysis_id": 5,
+  "status": "analysis_failed",
+  "errors": [
+    "B_analysis: schema: {'formula': 'rev2024 - cogs2024', 'inputs': [{'name': 'rev2024', 'value': 347602, 'claim_id': 'A21'}, {'name': 'cogs2024', 'value': 464671, 'claim_id': 'B14'}], at additional_claims/2/calculation",
+    "B_analysis: schema: {'formula': 'ad2025 / rev2025', 'inputs': [{'name': 'ad2025', 'value': 426385, 'claim_id': 'B13'}, {'name': 'rev2025', 'value': 459216, 'claim_id': 'A21'}], 're at additional_claims/3/calculation",
+    "B_analysis: schema: {'formula': '(cap + existing_safes) / rev2025', 'inputs': [{'name': 'cap', 'value': 15000000, 'claim_id': 'A10'}, {'name': 'existing_safes', 'value': 5096791, ' at additional_claims/7/calculation",
+    "B_analysis: schema: {'formula': 'target / outflow2025', 'inputs': [{'name': 'target', 'value': 75000, 'claim_id': 'A4'}, {'name': 'outflow2025', 'value': 960595, 'claim_id': 'A29'} at additional_claims/12/calculation"
+  ],
+  "n_errors": 4,
+  "critical": {},
+  "forecasts": 0,
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "cost_usd": 5.9193,
+  "output_dir": "/home/user/DunklikeVC/personal_vc_research/prospective/data/analyses/RCF-2147043-020-37424_2026-10-14T171158+0000"
+}
+
+real	10m41.497s
+user	0m25.587s
+sys	0m6.009s

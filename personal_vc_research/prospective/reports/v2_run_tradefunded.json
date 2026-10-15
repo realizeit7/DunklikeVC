@@ -1,0 +1,28 @@
+{
+  "pack_id": "PACK-RCF-2128340-020-37393-cc5d6fad73e3",
+  "analysis_id": 1,
+  "status": "analysis_failed",
+  "errors": [
+    "A15: status document_supported_fact requires at least one valid citation"
+  ],
+  "n_errors": 1,
+  "critical": {
+    "issuer_and_offering_identity": "confirmed",
+    "security_type": "confirmed",
+    "operative_contract": "not_confirmed",
+    "price_cap_and_conversion_terms": "not_confirmed",
+    "minimum_investment_and_fees": "not_confirmed",
+    "financial_statements_and_dates": "not_confirmed",
+    "closing_or_availability_evidence": "non_blocking_unknown"
+  },
+  "forecasts": 0,
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "cost_usd": 0.639,
+  "output_dir": "/home/user/DunklikeVC/personal_vc_research/prospective/data/analyses/RCF-2128340-020-37393_2026-10-14T164645+0000"
+}
+
+real	3m2.800s
+user	0m12.382s
+sys	0m2.423s

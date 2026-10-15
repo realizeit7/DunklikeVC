@@ -1,0 +1,28 @@
+# Investment budget policy — version 1 (user-established; changing any value requires a new version file).
+# The annual limit is a CEILING, not a spending target. No borrowing, leverage or automatic reinvestment.
+version: budget_policy_v1
+currency: USD
+annual_committed_limit_cents: 1200000        # USD 12,000 per budget period
+issuer_lifetime_committed_limit_cents: 120000 # USD 1,200 per underlying issuer, lifetime (fixed dollar limit = 10% of the
+                                              # annual budget; NOT a 10%-of-current-portfolio weight rule)
+fees_count_toward_limits: true               # direct investor-paid transaction fees count toward both limits
+timezone: America/New_York
+budget_period:
+  anchor: first_actual_investment_effective_date   # not installation, analysis, or paper decisions
+  length: 1 calendar year; consecutive anniversaries of the anchor date
+  leap_day_rule: "an anchor of Feb 29 has anniversaries on Feb 28 in non-leap years (period ends the day before)"
+  pre_start_bucket: "before the first actual investment, active reservations are checked against the annual limit in a 'pre_start' bucket"
+reservations:
+  default_expiry_days: 14
+  pending_counts_in_current_period: true     # conservative rollover: an unsettled reservation counts against the period
+                                             # in which any new commitment is checked; it settles into the period of
+                                             # its investment's effective date; it is never counted twice
+  expired_reservations_release: true         # an expired, unexecuted approval no longer reserves budget
+refunds:
+  restore: refunded_eligible_cost_only       # a verified refund restores only what was actually refunded
+  attribution: original_investment_period    # never creates extra current-period capacity
+not_restoring_budget: [cash_distribution, sale_proceeds, write_off_observed, security_conversion, corporate_action]
+sale_fees: "reduce sale proceeds; not counted as committed investment cost"
+issuer_aggregation: "rounds, securities, brands and SPVs for the same underlying issuer share one issuer_key (user-confirmed)"
+default_investment_size: null                # no default: every approval must state an explicit amount
+policy_override: "budget limits cannot be overridden at approval time; only a new policy version can change them"

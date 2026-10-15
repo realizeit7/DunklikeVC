@@ -1,0 +1,26 @@
+{
+  "pack_id": "PACK-RCF-2114933-020-37299-893511c4af2b",
+  "analysis_id": 2,
+  "status": "needs_information",
+  "errors": [],
+  "n_errors": 0,
+  "critical": {
+    "issuer_and_offering_identity": "confirmed",
+    "security_type": "confirmed",
+    "operative_contract": "confirmed",
+    "price_cap_and_conversion_terms": "not_confirmed",
+    "minimum_investment_and_fees": "confirmed",
+    "financial_statements_and_dates": "confirmed",
+    "closing_or_availability_evidence": "non_blocking_unknown"
+  },
+  "forecasts": 2,
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "cost_usd": 2.4045,
+  "output_dir": "/home/user/DunklikeVC/personal_vc_research/prospective/data/analyses/RCF-2114933-020-37299_2026-10-14T165101+0000"
+}
+
+real	6m23.261s
+user	0m14.709s
+sys	0m2.686s

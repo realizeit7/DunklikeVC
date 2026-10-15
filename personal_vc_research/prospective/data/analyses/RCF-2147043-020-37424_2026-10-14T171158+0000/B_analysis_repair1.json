@@ -1,0 +1,442 @@
+{
+ "is_pre_revenue": false,
+ "business_model": {
+  "assessment": "Mightylicious is an operating consumer-packaged-goods company, so it is not pre-revenue. It sells gluten-free and vegan cookies, flour blends and brownie mix to retailers/wholesale and directly to consumers online [A33, A21]. FY2025 (Dec 31, 2025, not stale) revenue was $459,216, but cost of goods sold was higher than revenue in both FY2025 and FY2024, so each sale currently loses money before overhead [A24, B1]. FY2025 advertising and promotion alone nearly equalled revenue [B2]. The company's stated route to better economics is scale and vertical integration of the supply chain, which is an issuer plan with no cost evidence in the pack [A39]. The reviewed notes contain boilerplate that does not match the business, such as customers who prepay 'at the time of booking', which lowers confidence in how carefully the statements were prepared [B10].",
+  "claim_ids": [
+   "A21",
+   "A24",
+   "A33",
+   "A39",
+   "B1",
+   "B2",
+   "B10",
+   "B13",
+   "B14"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "Reviewed revenue grew about 32% from FY2024 to FY2025 [A22]. The company raised $5M from 4,365 investors in 2022 and is now returning to those investors [A41, A40]. The stronger traction claims, such as 1800 doors, Kroger/HEB/HyVee and a $100K monthly run rate, appear only in an issuer email and press release. They are unverified, and the run rate is well above FY2025 average monthly revenue of about $38K [A40]. The email also says the higher run rate has 'accelerated our cash burn' [B4]. There is no data on repeat purchase, retailer sell-through, customer concentration or channel mix. Demand is therefore only partly evidenced.",
+  "claim_ids": [
+   "A22",
+   "A40",
+   "A41",
+   "B4"
+  ]
+ },
+ "competition": {
+  "assessment": "The Form C names Aliea's, Tate's Bake Shop, Dr. Schar and Udi's as key competitors and says many rivals have significantly greater resources [A34, B9]. The Form C also warns of intense competition for shelf space and retailer-imposed discounts and allowances [B9]. The pack gives no market size, market share or evidence of differentiation beyond the issuer's own product and certification claims. Two trademarks are listed, but no other moat is documented. The competitive position is unproven.",
+  "claim_ids": [
+   "A34",
+   "B9"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "FY2025 figures: operating loss $933,836 and operating cash outflow $960,595 on $459,216 of revenue [B3]. The burn was funded by drawing down a securities portfolio left over from the 2022 SAFE raise. Marketable securities fell from $2.30M to $1.40M during 2025 [B3, A25]. Reviewer going-concern language is present [A29]. The issuer says it had $654,000 in cash and equivalents at June 30, 2026 (unreviewed, composition unknown), about 5 months of runway on its own basis [A30]. That figure is not comparable with the Dec 2025 data, so no current runway is computed here. The $75K target equals roughly four weeks of FY2025 operating cash outflow, and the $1M maximum equals roughly one year before fees, so the company will probably need to raise again [B12]. Fees reduce net proceeds (minimum $12,000 plus a $5,000 onboarding fee) [A8]. Existing debt is small: an $80K SBA loan secured on all assets, a $51K Wayflyer loan at 1% per month and CEO loans [A31]. The larger liability is about $5.1M of existing SAFEs [A20, A26]. The statements are reviewed, not audited [A28].",
+  "claim_ids": [
+   "A8",
+   "A20",
+   "A25",
+   "A26",
+   "A28",
+   "A29",
+   "A30",
+   "A31",
+   "B3",
+   "B12"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "(1) Going-concern doubt and a roughly $1M annual operating burn [A29, B3]. (2) Negative gross margin, meaning growth may deepen losses unless unit costs fall [B1]. (3) Retail dependence on shelf space, slotting and allowances, plus supplier, tariff and commodity exposure [B9, A33]. (4) A two-person company where the CEO handles many functions [A37]. (5) The use-of-proceeds table in the Form C differs from the press release, which stresses vertical integration and executive hiring [A38, A39]. (6) Disclosed testing-the-waters disclaimer gaps and a 'live' press release dated before the Form C signature [A42, A43]. (7) Contract inconsistencies: two different BitGo entities are named, and the Form C and notes describe issuer discretion on conversion while the SAFE text says 'shall' [A18, A19].",
+  "claim_ids": [
+   "A18",
+   "A19",
+   "A29",
+   "A33",
+   "A37",
+   "A38",
+   "A39",
+   "A42",
+   "A43",
+   "B1",
+   "B3",
+   "B9"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "The only officer and director is the founder and CEO, who owns 100% of the common stock [A36]. Her documented history, as written by the issuer, is a Yale finance MBA, six years in asset management at J.P. Morgan, hedge-fund investor relations, supply-chain consulting, and about nine years running this brand since 2017, including getting products onto Whole Foods shelves by January 2018 [A35]. That shows she has operated and kept the company going. The pack does not document food-manufacturing or large-scale CPG operating experience, a named finance lead or a named advisory board. The company has two employees [A37]. Key-person dependence is high [B11]. This is issuer-written, uncorroborated information.",
+  "claim_ids": [
+   "A35",
+   "A36",
+   "A37",
+   "B11"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "A Crowd SAFE pays only on defined events. (a) Equity Financing: a sale of stock raising at least $1M cash converts the SAFE into that round's shares. The round is not required to happen, and the Form C says the issuer has discretion over conversion [A11, A19]. (b) Liquidity Event or Dissolution: the holder gets the greater of the purchase amount or the as-converted value, but only from funds legally available, behind creditors (including the secured SBA lender), on par with about $5.1M of other SAFEs, and ahead of common stock [A13, B7]. A small, loss-making company that sells for little would leave little for SAFE holders after debt [B7]. There is no repayment right, dividend or default remedy, the company cannot be forced to repurchase, and there is no voting or information right beyond the legally required reports [A14, A15, A16, A44]. Title sits with a custodian, which adds an account-opening step and a template agreement that is still unsigned and shows a blank fee schedule [A17, A18]. Shares received would likely be a class issued to this offering's investors, which the Form C says can carry different rights from new-money investors [A44]. Practically, cash to investors depends on a later priced round, an acquisition, or an IPO. The pack gives no base rates for any of these.",
+  "claim_ids": [
+   "A11",
+   "A13",
+   "A14",
+   "A15",
+   "A16",
+   "A17",
+   "A18",
+   "A19",
+   "A44",
+   "B7"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "Terms are separate from business quality. The cap is a single $15,000,000 pre-money valuation cap with no discount and no tiered cap seen in the SAFE text, and the Form C says the price is arbitrary [A10, A6]. The cap is the same as the 2022 SAFEs, so new investors get no price improvement over investors who bought four years earlier [A20]. Because the cap denominator excludes all SAFEs, the effective valuation is higher than $15M: the Form C's 25.36% for existing SAFE holders matches 5,096,791/(15,000,000+5,096,791), which indicates the cap works like an amount to which SAFE dollars are added [B5]. On that basis, the cap plus existing SAFEs is about $20.1M, or about 43.8 times FY2025 revenue [B6]. If the maximum is raised, a $1M investor group would hold about 4.7% under the stated simplifying assumptions [B5]. The intermediary also receives 1.5% in securities and holds $99,937 of outstanding Crowd SAFEs, which is a conflict to weigh [A9]. Other terms that favour the issuer: the CEO as 'Lead' can amend or waive provisions, there are no voting rights, the issuer may extend the deadline or raise the maximum, and there are disclosed mismatches in the custodian entity and in conversion mandatory-versus-discretionary language [A14, A5, A18, A19]. Investor-side fees are not confirmed in the pack [A8].",
+  "claim_ids": [
+   "A5",
+   "A6",
+   "A8",
+   "A9",
+   "A10",
+   "A14",
+   "A18",
+   "A19",
+   "A20",
+   "B5",
+   "B6"
+  ]
+ },
+ "additional_claims": [
+  {
+   "claim_id": "B13",
+   "claim_text": "FY2025 advertising and promotional expense was $426,385 (FY2024: $436,085), included in sales and marketing expenses.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 49,
+     "quote": "amounted to $426,385 and $436,085, which is included in"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024 (Dec 31 year-ends)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B14",
+   "claim_text": "FY2024 cost of goods sold was $464,671, per the Form C XML (reviewed statements, issuer-reported).",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<costGoodsSoldPriorFiscalYear>464671.00"
+    }
+   ],
+   "financial_period": "FY2024 (Dec 31, 2024)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B1",
+   "claim_text": "FY2024 cost of goods sold also exceeded revenue (gross loss about $117,069), so negative gross margin is persistent across both reviewed years rather than a one-year event.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<costGoodsSoldPriorFiscalYear>464671.00"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<revenuePriorFiscalYear>347602.00"
+    }
+   ],
+   "financial_period": "FY2024 (Dec 31, 2024)",
+   "calculation": {
+    "formula": "rev2024 - cogs2024",
+    "inputs": [
+     {
+      "name": "rev2024",
+      "value": 347602,
+      "claim_id": "A21"
+     },
+     {
+      "name": "cogs2024",
+      "value": 464671,
+      "claim_id": "B14"
+     }
+    ],
+    "result": -117069
+   },
+   "basis_claim_ids": [
+    "A21",
+    "A24",
+    "B14"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "FY2025 advertising and promotional expense of $426,385 was about 93% of FY2025 revenue, so growth appears to be bought with heavy marketing spend. Whether this spend is repeatable or scalable is unknown.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 49,
+     "quote": "amounted to $426,385 and $436,085, which is included in"
+    }
+   ],
+   "financial_period": "FY2025 (Dec 31, 2025)",
+   "calculation": {
+    "formula": "ad2025 / rev2025",
+    "inputs": [
+     {
+      "name": "ad2025",
+      "value": 426385,
+      "claim_id": "B13"
+     },
+     {
+      "name": "rev2025",
+      "value": 459216,
+      "claim_id": "A21"
+     }
+    ],
+    "result": 0.9285
+   },
+   "basis_claim_ids": [
+    "A21",
+    "B13"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "Note 11 reports a FY2025 operating loss of $933,836 and operating cash outflow of $960,595. The portfolio of marketable securities (left over from earlier SAFE money) funded the burn: withdrawals of about $758,853 in 2025, and marketable securities fell from $2,302,274 to $1,397,792.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "operating loss of $933,836, an operating cash outflow of $960,595"
+    },
+    {
+     "doc_id": 6,
+     "page": 50,
+     "quote": "investment portfolio totaling approximately $758,853 and $760,924, respectively."
+    },
+    {
+     "doc_id": 6,
+     "page": 43,
+     "quote": "Marketable Securities 1 ,397,792 2,302,274"
+    }
+   ],
+   "financial_period": "FY2025 (Dec 31, 2025)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "The issuer's own email says its higher run rate 'accelerated our cash burn' and that the new campaign will fund pending Wakefern and Wegmans launches and Amazon growth. This is an issuer statement that the raise is needed to fund growth losses.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "Our increased run rate has also accelerated our cash"
+    }
+   ],
+   "financial_period": "Undated email, around Sep 2026",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A40"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "Illustrative scenario, not an expected return: if a later priced round occurs above the cap, the common share count is 1,000,000, there are no options or other dilution, the existing SAFEs convert at the same cap, and the offering raises the $1,000,000 maximum, then this offering's SAFEs would hold about 4.7% of the post-conversion company. The Form C's 25.36% for existing SAFE holders is consistent with the same method. The scenario excludes new-round dilution, the intermediary's 1.5% securities and any option pool.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 59,
+     "quote": "“SAFE Price” means the price per unit equal to (x) the Pre-Money Valuation Cap, divided by (y)"
+    }
+   ],
+   "financial_period": "Illustrative, as of Form C date",
+   "calculation": {
+    "formula": "raise / (cap + existing_safes + raise)",
+    "inputs": [
+     {
+      "name": "raise",
+      "value": 1000000,
+      "claim_id": "A4"
+     },
+     {
+      "name": "cap",
+      "value": 15000000,
+      "claim_id": "A10"
+     },
+     {
+      "name": "existing_safes",
+      "value": 5096791,
+      "claim_id": "A20"
+     }
+    ],
+    "result": 0.0474
+   },
+   "basis_claim_ids": [
+    "A4",
+    "A10",
+    "A11",
+    "A20"
+   ],
+   "contradictions": "The calculation is the analyst's reading of the formula and has not been legally reviewed."
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "The $15M cap plus existing SAFE principal gives about $20.1M. This is about 43.8 times FY2025 revenue. This ratio is not a valuation, since the Form C says the price is arbitrary. It indicates the cap is not low relative to current sales.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Cap and SAFEs as of Form C date vs FY2025 revenue",
+   "calculation": {
+    "formula": "(cap + existing_safes) / rev2025",
+    "inputs": [
+     {
+      "name": "cap",
+      "value": 15000000,
+      "claim_id": "A10"
+     },
+     {
+      "name": "existing_safes",
+      "value": 5096791,
+      "claim_id": "A20"
+     },
+     {
+      "name": "rev2025",
+      "value": 459216,
+      "claim_id": "A21"
+     }
+    ],
+    "result": 43.76
+   },
+   "basis_claim_ids": [
+    "A10",
+    "A20",
+    "A21",
+    "B5"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B7",
+   "claim_text": "In a sale or wind-down, SAFE holders rank behind creditors, which includes an SBA loan secured by all assets, and share pro rata with roughly $5.1M of other SAFEs. For a company with a stockholders' deficit of $(3.5)M and negative gross margin, the cash-out right is weak unless a buyer pays materially more than liabilities.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "As of Dec 31, 2025 and Form C date",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A13",
+    "A20",
+    "A26",
+    "A31",
+    "B1"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B9",
+   "claim_text": "The Form C states that many competitors have significantly greater financial, manufacturing, marketing and management resources and that retailers can negotiate discounts and allowances because shelf space is scarce.",
+   "claim_type": "competition",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 18,
+     "quote": "many of our competitors have significantly greater financial, manufacturing, marketing, management and other"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A34"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B10",
+   "claim_text": "Note 2 of the reviewed statements describes customers as individual consumers who prepay for services at booking through a website or mobile application, which does not fit a company selling packaged cookies through retail and wholesale. The statements appear to contain template text and call into question the care of preparation. Reviewer sign-off still carries only limited assurance.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 47,
+     "quote": "The Company’s customers are primarily individual consumers who prepay for services at the time of"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024 notes",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A28",
+    "A33"
+   ],
+   "contradictions": "Conflicts with the Form C description of retail and wholesale sales [A33]."
+  },
+  {
+   "claim_id": "B11",
+   "claim_text": "Team assessment on documented history only: one officer, 100% control of common stock, two employees, and no documented CFO, operations head or named advisors in the pack. This is a key-person concentration.",
+   "claim_type": "team",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "As of Form C date",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A35",
+    "A36",
+    "A37"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B12",
+   "claim_text": "Scale of the raise versus burn: the $75,000 target is about 4 weeks of FY2025 operating cash outflow (about 0.078 of a year); the $1,000,000 maximum, before fees, is about 1.04 years. FY2025 burn is a historical basis and may differ now, so this is not a runway forecast.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "FY2025 operating cash outflow basis",
+   "calculation": {
+    "formula": "target / outflow2025",
+    "inputs": [
+     {
+      "name": "target",
+      "value": 75000,
+      "claim_id": "A4"
+     },
+     {
+      "name": "outflow2025",
+      "value": 960595,
+      "claim_id": "A29"
+     }
+    ],
+    "result": 0.0781
+   },
+   "basis_claim_ids": [
+    "A4",
+    "A29",
+    "B3"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

@@ -176,7 +176,11 @@ def monthly_report(ctx: Ctx, end_utc: str | None = None) -> Path:
 # ---- exports -----------------------------------------------------------------------------------------
 EXPORT_TABLES = ["runs", "gaps", "index_days", "discovery_ledger", "offerings", "offering_status_log", "documents", "facts",
                  "decisions", "decision_evidence", "predictions", "prediction_resolutions", "events", "review_queue_log",
-                 "effort_log", "pilot_clock"]
+                 "effort_log", "pilot_clock",
+                 # v2 research tables (public-safe). Approvals, ledger, issuer groups and acknowledgments are PERSONAL
+                 # and are never exported.
+                 "evidence_packs", "analyst_versions", "analysis_runs", "analysis_claims", "analysis_gates", "prediction_meta",
+                 "citation_checks"]
 
 
 NULL = "\\N"   # explicit NULL marker: a missing value must not round-trip as an empty string or 0

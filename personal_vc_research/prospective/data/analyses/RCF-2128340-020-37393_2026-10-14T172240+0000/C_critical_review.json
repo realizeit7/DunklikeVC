@@ -1,0 +1,244 @@
+{
+ "issues": [
+  {
+   "issue_type": "missing_fact",
+   "target": "Operative contract and unparsed tradef.pdf (critical items operative_contract, price_cap_and_conversion_terms, minimum_investment_and_fees)",
+   "explanation": "Unit rights, minimum investment, business description and use of proceeds probably sit in the unparsed 61.7 MB attachment. Without it nothing in A or B can say what a unit entitles an investor to. evidence_sufficiency cannot pass. A and B handled the gap correctly, but it limits every other conclusion.",
+   "claim_ids": [
+    "A4",
+    "A5",
+    "B5"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B price_and_terms: 'No valuation cap or discount applies, because this is priced equity-style units rather than a convertible.'",
+   "explanation": "The Form C types the security as 'Other: Units' and gives no rights. The 'equity' label comes from the pack classification, not contract text. Units could carry caps, preferences, conversion or revenue-share features. The statement should be 'none is evidenced in the pack'. The security_type item is confirmed only as to the Form C label, not the economic nature.",
+   "claim_ids": [
+    "A4",
+    "A5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B2 and economics_and_funding: the $15,000 minimum fee is about 20% of target, so 'a large share of proceeds would go to fees'",
+   "explanation": "The compensation text is truncated at 'the Issuer has paid a non-refundable $15,000 u'. The past tense suggests some $15,000 may already have been paid, so it may not come out of offering proceeds or may overlap the greater-of fee. A10 reads it as a future additional payment, which the text does not establish. The 20% is arithmetic on a floor, not a confirmed share of proceeds.",
+   "claim_ids": [
+    "A10",
+    "B2",
+    "C2"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A2, A12, A13, A14: reported fiscal years versus the 02-10-2026 incorporation date",
+   "explanation": "A prior-year loss of $23,115 and $226,885 of assets in the latest year are hard to square with an entity formed 02-10-2026. Possible explanations include a predecessor, a contributed asset, or a data entry problem, and the pack supports none of them. Because fiscal year-end dates are unknown, staleness (over 15 months before the 2026-10-14 cutoff) cannot be determined either way. These figures should be treated as unreliable until the statements are read.",
+   "claim_ids": [
+    "A2",
+    "A12",
+    "A13",
+    "A14",
+    "C3"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A18 and B economics: present-tense statements that the company 'has $0 cash' and 'appears to have this raise as its main source of cash'",
+   "explanation": "The $0 cash figure belongs to an undated fiscal year, and the 0 employees field is not dated either. A18 states them as current facts, and A15 assigns a filing-date period the XML does not give. Current cash, runway and staffing are unknown. The 'main source of cash' point is inference without use-of-proceeds support.",
+   "claim_ids": [
+    "A13",
+    "A15",
+    "A18",
+    "C4"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A17: 'registered for sale in many US states'",
+   "explanation": "The Form C field lists jurisdictions in which the securities are to be offered. It does not show state registration. A17 also cites only CA and NY while naming TX and FL. Reword to 'the Form C lists these jurisdictions as intended offering states'. This says nothing about whether the offering is currently open.",
+   "claim_ids": [
+    "A17",
+    "C1"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A18 and B3 recorded as claims about absence",
+   "explanation": "Statements that the pack has no business description or product evidence describe the pack, not the company. Under the rules they belong in missing_information and critical-item notes, not as claims. They should not carry weight in the business_thesis gate, which should be unknown, not fail.",
+   "claim_ids": [
+    "A18",
+    "B3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B security_path_to_proceeds: 'small private LLC units are typically hard to resell'",
+   "explanation": "This is a generalization from outside the pack, with no base rate cited and no transfer restrictions evidenced. It should be labelled as a general caution, not a finding. The pack supports only the absence of documented exit or distribution terms.",
+   "claim_ids": [
+    "B5"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Team assessment (A16)",
+   "explanation": "Only names and titles are documented. The Manager Representative title suggests a manager-managed LLC, but governance, ownership by these individuals and any control over the units is not in the pack. Related-party arrangements and who contributed the $226,885 of assets are unknown.",
+   "claim_ids": [
+    "A16"
+   ],
+   "severity": "medium"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C lists many jurisdictions, including TX and FL, under the field for where the securities are to be offered. This is a list of intended offering states and does not show state registration or current availability.",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issueJurisdictionSecuritiesOffering>TX</issueJurisdictionSecuritiesOffering>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issueJurisdictionSecuritiesOffering>FL</issueJurisdictionSecuritiesOffering>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The intermediary compensation text is truncated and uses the past tense for a non-refundable $15,000 payment ('has paid'), so whether this $15,000 is already paid, additional to the greater-of fee, or funded from offering proceeds is not established.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "Additionally, the Issuer has paid a non-refundable $15,000 u"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A10"
+   ],
+   "contradictions": "A10 describes this as an additional payment; the text is cut off and does not say."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The reported fiscal years cannot be tied to the entity's life. The Form C gives an incorporation date of 02-10-2026 but also reports a prior-year net loss of $23,115 and assets in the most recent year. Year-end dates are not stated, so staleness cannot be tested.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<dateIncorporation>02-10-2026</dateIncorporation>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<netIncomePriorFiscalYear>-23115.00</netIncomePriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent and prior fiscal year (year-end dates not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2",
+    "A12",
+    "A13",
+    "A14"
+   ],
+   "contradictions": "Incorporation date versus reported prior-year loss; unexplained in the pack."
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "The $0 cash and 0 employees figures are Form C fields without a stated as-of date for cash, and no current cash balance or runway can be derived from them.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<cashEquiMostRecentFiscalYear>0.00</cashEquiMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<currentEmployees>0.00</currentEmployees>"
+    }
+   ],
+   "financial_period": "Most recent fiscal year (end date not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A13",
+    "A15"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The Form C describes the security only as type 'Other' with the description 'Units'. The pack's 'equity' classification is not stated in the Form C.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<securityOfferedOtherDesc>Units</securityOfferedOtherDesc>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A4"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The maximum offering amount is about 9.07 times the target amount, so most of any larger raise would depend on oversubscription beyond a small stated target.",
+   "claim_type": "security_terms",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Offering terms, Form C filed 2026-09-16",
+   "calculation": {
+    "formula": "maximum_amount / target_amount",
+    "inputs": [
+     {
+      "name": "maximum_amount",
+      "value": 679999.95,
+      "claim_id": "A8"
+     },
+     {
+      "name": "target_amount",
+      "value": 74999.75,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 9.0667
+   },
+   "basis_claim_ids": [
+    "A6",
+    "A8"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

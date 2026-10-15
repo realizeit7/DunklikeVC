@@ -1,0 +1,227 @@
+{
+ "gates": [
+  {
+   "gate": "evidence_sufficiency",
+   "result": "unknown",
+   "criteria_applied": [
+    "All seven critical items must be confirmed with citation for a pass.",
+    "closing_or_availability_evidence is not_found_in_pack.",
+    "minimum_investment_and_fees is only partly confirmed: investor-side custody fees are unknown and the Exhibit C fee schedule is blank (accepted from critique).",
+    "The operative-contract and conversion-terms items are cited but contain unresolved internal contradictions.",
+    "Every document in the pack is issuer-prepared; nothing is independently corroborated."
+   ],
+   "supporting_claim_ids": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A10",
+    "A11",
+    "A21",
+    "A28"
+   ],
+   "counterevidence_claim_ids": [
+    "A18",
+    "A19",
+    "A43",
+    "C1",
+    "C3",
+    "C4",
+    "A40"
+   ],
+   "uncertainty": "Availability on Republic is unverified, investor-side fees are unknown, the custodian entity is named inconsistently, and the conversion and dissolution wording differs across documents. Because a critical item is not confirmed, this gate cannot pass. 'Unknown' rather than 'fail' because the core Form C, the SAFE form and the reviewed financials are all in the pack."
+  },
+  {
+   "gate": "business_thesis",
+   "result": "unknown",
+   "criteria_applied": [
+    "Stage-appropriate evidence of real demand (the company is not pre-revenue).",
+    "Plausible path from current unit economics to a sustainable business.",
+    "Funding and going-concern position.",
+    "Team execution history documented in the pack.",
+    "Traction claims must be supported by the reviewed documents."
+   ],
+   "supporting_claim_ids": [
+    "A21",
+    "A22",
+    "C9",
+    "C7",
+    "C8",
+    "A35"
+   ],
+   "counterevidence_claim_ids": [
+    "A24",
+    "B1",
+    "A29",
+    "B3",
+    "C10",
+    "C11",
+    "A40",
+    "B10",
+    "C6",
+    "C13",
+    "A37",
+    "B11"
+   ],
+   "uncertainty": "Reviewed revenue grew about 32% (FY2025 vs FY2024), and gross loss and ad intensity both improved, but gross margin is still negative in both years and the operating loss was roughly flat. The auditor-style paragraph raises going-concern doubt, and the issuer's own runway figure implies the net target proceeds cover well under a month. The 1800-door and $100K monthly run-rate claims are unverified and conflict with reviewed FY2025 revenue (about $38K a month on average), so the demand evidence is only partial. Template-like text in the notes and the Form C reduces reliance on the figures. Scale economics and the vertical-integration plan are undocumented."
+  },
+  {
+   "gate": "price_and_contract",
+   "result": "fail",
+   "criteria_applied": [
+    "Is the valuation cap reasonable relative to documented revenue and prior investors' terms?",
+    "Are conversion mechanics clear and investor-protective?",
+    "Does the instrument give voting, information, repurchase or default rights?",
+    "Is the custody/nominee structure clear and are investor fees known?",
+    "Are conflicts of interest disclosed and manageable?"
+   ],
+   "supporting_claim_ids": [
+    "A16",
+    "A13",
+    "A44"
+   ],
+   "counterevidence_claim_ids": [
+    "A6",
+    "A10",
+    "A11",
+    "A12",
+    "A14",
+    "A15",
+    "A17",
+    "A18",
+    "A19",
+    "A9",
+    "A20",
+    "B5",
+    "B6",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "A32"
+   ],
+   "uncertainty": "The $15M cap equals the 2022 SAFE cap, with no discount or tiered cap, and the cap denominator excludes SAFEs, so the effective ownership is probably lower than investment/$15M (the B5 4.7% figure is an illustrative reading, not a stated percentage). Conversion is described as mandatory in the SAFE text but discretionary elsewhere. The CEO can amend or waive any provision, investors have no voting or information rights, and the custodian is named inconsistently. Investor custody fees are unknown. The SAFE gives no repayment or default right, and the dissolution ranking differs between the SAFE and the financial-statement note. 'Fail' reflects unfavourable and contradictory terms under the stated criteria, not a legal opinion; a final signed set of documents or clarification could change this."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "Accepted. The SAFE Price definition sits on page 59, not 57. The B5 4.7% figure is an illustrative reading (1,000,000 common shares, no options, existing SAFEs converting at the same cap) and not a stated ownership percentage. I treat A12/B5/B6 as illustrative only and do not use the 4.7% as a gate input. The scenario below repeats this caveat."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "Accepted. Form C p.11 says 'automatically convertible', SAFE 1(a) says 'shall', and the Form C risk factor and the financial-statement note describe issuer discretion (A19, C4). The conversion mechanics are contradictory, so the price_cap_and_conversion_terms and operative_contract items are cap/price-confirmed only. This is a reason the price_and_contract gate is not a pass."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "Accepted. The note (C3) says dissolution is an as-converted distribution with equal priority to common, while SAFE 1(d) ranks the cash-out claim behind creditors and ahead of common. The operative SAFE text probably controls, but the mismatch is unresolved and lowers confidence in document care. I keep A13/B7 but state the conflict."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "Accepted. minimum_investment_and_fees should be treated as only partly confirmed: the $100 minimum and issuer-paid intermediary fees are cited, but investor-side custody costs are unknown, the Exhibit C fee schedule is blank, and the Custody Account Agreement overrides the SAFE where they conflict (C1). I do not rely on this item as confirmed. Evidence_sufficiency is therefore not a pass."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "Accepted. The 2022 raise and the follow-on to existing investors are issuer statements, not independent customer demand, and a follow-on also signals a funding need (B4). The door-count and run-rate claims are unverified and conflict with reviewed FY2025 revenue (A40). Demand is rated partially evidenced only by reviewed revenue growth."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "Accepted. Ad spend fell slightly while revenue rose (C7), ad intensity fell from about 125% to 93% (C8), and gross loss margin improved from about -34% to -6% (C9). The operating loss was roughly flat (C14, C15). B2's 'bought growth' reading was one-sided. Gross margin is still negative and burn is large, so the thesis stays unknown rather than fail."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "Accepted. B12 used a historical FY2025 basis. On the issuer's own June 2026 runway statement the net target proceeds cover about 0.44 of a month (C10, C11). The $654K composition is unknown, so this is a rough indicator, not a runway forecast. Going-concern risk is sharper than B conveyed."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "Accepted. More template-like text exists: 'institution integrations', 'white-label', 'lack of revenues' (C6), plus the prepaid-services note against receivables of about 138 days of sales (C12, C13). The cause (template text or real wholesale receivables) is unknown. I lower reliance on the reviewed figures accordingly."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "Accepted. The Wayflyer balance and maturity in the Form C ($51,000, Feb 2027) differ from the year-end notes ($100,000 loan, $31,795 current, 02/28/2026) (C5). This suggests new short-term borrowing in 2026 or a data error. A31 should be read as the Form C date table only."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "Accepted. The FY2025 net loss includes a $95,533 other item whose sign was not stated, and the statement-of-operations text is garbled. The net loss growth came from non-operating items, not operations (C15). I rely on operating loss and operating cash outflow (A29, B3) and not on net-loss comparisons."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "Accepted. The Form C allows early close after 21 days once the target is met and intermediate closes at 70% drawdown (C16). The Dec 18, 2026 deadline is not a guaranteed open window, and the press release calls it a two-month campaign. Availability stays unknown."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "Accepted. Some calculation inputs cite their own claim id (A24, A27, B1, B2), so they are not independently traceable; the underlying numbers are the cited statement line items. Also, B11 should say that the Form C refers to an unnamed 'board of advisors' (A35), whose members and role are undocumented, rather than saying advisors do not exist."
+  }
+ ],
+ "briefing_ko": {
+  "summary": "Mightylicious는 글루텐 프리 쿠키와 베이킹 믹스를 만들어 마트·온라인으로 파는 미국 회사입니다. 이번에 Republic 플랫폼에서 전환 가능 증권(Crowd SAFE)을 목표 $75,000, 최대 $1,000,000 규모로 모집합니다 [A3][A4]. 매출은 늘고 있지만(FY2025 $459,216, 약 +32%) 매출원가가 매출보다 커서 판매할수록 손실이 나고, 재무제표 검토 보고서에 계속기업 불확실성 문단이 있습니다 [A21][A22][A24][A29]. 계약 문서 사이에 서로 맞지 않는 내용이 있고, 플랫폼에서 실제 투자 가능한지 확인되지 않아 추가 검토가 필요합니다 [A19][A18][A43]. 이 글은 투자 조언이 아니라 검토 여부를 정하는 데 쓰는 연구 메모입니다.",
+  "what_it_does": "창업자 겸 CEO 한 명이 이끄는 직원 2명의 소비자 식품 회사입니다 [A35][A37]. 쿠키, 밀가루 혼합물, 브라우니 믹스를 도매·소매점(슈퍼마켓 등)과 자사 온라인몰로 판매하므로 돈을 내는 쪽은 유통업체와 일반 소비자입니다 [A33]. 매출이 있는 회사라 '매출 전 단계'가 아닙니다. 경쟁사로 Tate's Bake Shop, Udi's 등이 언급되며 시장 규모 자료는 자료집에 없습니다 [A34].",
+  "strongest_evidence": "검토된 재무제표 기준으로 FY2025(2025년 12월 31일 종료, 오래된 자료 아님) 매출이 FY2024 대비 약 32% 늘었습니다 [A21][A22]. 매출총손실 비율은 약 -34%에서 -6%로 좋아졌고, 광고비는 거의 같은 수준에서 매출만 늘었습니다 [C7][C8][C9]. 창업자는 금융권 경력과 2017년부터 이 브랜드를 운영한 이력이 있습니다(회사가 직접 쓴 소개) [A35]. 다만 '1,800개 매장', '월 $100K 매출 속도' 같은 강한 주장은 회사 이메일에만 있고 검증되지 않았습니다 [A40].",
+  "failure_reasons": "첫째, 매출원가가 매출보다 커서 2년 연속 매출총손실입니다 [A24][B1]. 둘째, FY2025 영업손실 $933,836, 영업현금유출 $960,595인데 기말 현금은 $116,414이고, 부족분은 과거 SAFE 자금으로 산 투자자산을 팔아 메웠습니다 [A29][B3]. 회사는 2026년 6월 30일 현금 $654,000(미검토)으로 약 5개월 버틴다고 하는데, 이 기준이면 목표액 순수입은 한 달에도 못 미칩니다 [A30][C11]. 셋째, 재무제표 주석과 Form C에 사업과 맞지 않는 문구가 있어 자료 품질이 의심됩니다 [B10][C6][C13]. 넷째, 대표 1인 의존과 대형 경쟁사, 유통업체의 할인 압박이 있습니다 [A36][B9].",
+  "investor_proceeds_path": "이 증권은 배당이나 만기 상환이 없습니다 [A16]. 돈을 받으려면 (1) 최소 $1,000,000 이상을 모으는 우선주 등 지분 투자 유치가 일어나 지분으로 전환되고 나중에 매각되거나, (2) 회사가 인수·상장(IPO)되거나, (3) 청산될 때 남은 돈을 받아야 합니다 [A11][A13]. 청산 시에는 채권자(담보 있는 SBA 대출 포함) 뒤에 서고 기존 SAFE 약 $5.1M 보유자와 같은 순위입니다 [A13][A20][B7]. 투자 유치가 안 되면 무기한 보유할 수 있고, 의결권도 없으며 거래할 시장도 없습니다 [A14][A44].",
+  "price_and_contract": "가격은 $1.00 단위이며 회사가 '임의로' 정했다고 밝혔습니다 [A6]. 기업가치 상한(valuation cap)은 $15,000,000 하나뿐이고 할인율은 없습니다 [A10]. 이 상한은 2022년 기존 SAFE와 같아서 새 투자자에게 가격상 이점이 없습니다 [A20]. 상한 계산에서 SAFE가 제외되어 실제 지분율은 '투자금÷$15M'보다 낮을 가능성이 큽니다(예시 계산 B5는 가정에 따른 것일 뿐 실제 지분율이 아닙니다) [A12][B5]. 계약상 문제도 있습니다. 전환이 자동인지 회사 재량인지 문서마다 다르고, 보관 기관 이름이 BitGo Bank & Trust와 BitGo Trust Company로 갈리며, CEO가 계약 조항을 수정·면제할 수 있습니다 [A19][C4][A18][A14]. 투자자 쪽 보관 수수료는 확인되지 않았습니다 [C1]. 중개업체가 1.5% 증권을 받고 이미 $99,937어치 SAFE를 보유해 이해관계가 있습니다 [A9].",
+  "unknowns": "Republic 페이지의 실제 모집 현황과 마감 여부 [A43][C16], 투자자 수수료 [C1], 서명된 보관·명의신탁 계약서, 옵션 풀 등 지분 구조 상세 [A12], 6월 30일 현금 $654,000의 구성, 월별 매출·총이익 추이, 거래처 집중도, 기존 SAFE의 세부 조건, 동시 진행되는 비공개 모집 [A30]. 자료집의 모든 문서는 회사가 만든 것이라 독립적으로 확인된 내용이 없습니다.",
+  "future_evidence": "긍정적으로 바뀔 수 있는 증거: 총이익이 흑자로 전환된 월별 자료, 소매 입점·Amazon 매출의 제3자 증빙, 계약 문서 정정본(전환 방식·보관 기관 통일, 수수료 확정), 목표액 달성 확인과 추가 투자 유치. 부정적 증거: Form C-AR에서 매출 감소나 현금 소진, 모집 철회(Form C-W), 계속기업 의문 심화."
+ },
+ "forecasts": [
+  {
+   "outcome_definition": "Between 2026-10-15 and 2026-12-31, at least one additional SEC filing for this offering (Form C-U, C/A or C-W, accession under CIK 0002147043) is made public on EDGAR.",
+   "event_kind": "disclosure",
+   "horizon_months": 6,
+   "probability": 0.6,
+   "probability_label": "model_judgment_uncalibrated",
+   "probability_basis": "Reg CF issuers often file progress updates or amendments during a live offering, and this Form C already shows testing-the-waters disclaimer gaps and document inconsistencies that may be corrected. This is a judgment from the pack, not a base rate, since the pack contains none.",
+   "reporting_lag_days": 3,
+   "resolution_evidence": "EDGAR filing index for CIK 0002147043 showing a Form C-U, C/A or C-W dated within the window.",
+   "unknown_treatment": "If no such filing appears, the outcome resolves 'no'; absence is not treated as evidence that the offering or business failed. If EDGAR cannot be checked, the outcome is left unresolved.",
+   "basis_claim_ids": [
+    "A5",
+    "A42",
+    "A43",
+    "A19"
+   ]
+  },
+  {
+   "outcome_definition": "A Form C-AR for fiscal year 2026 is filed on EDGAR by 2027-06-30 and reports annual revenue above $459,216 (the FY2025 figure).",
+   "event_kind": "business",
+   "horizon_months": 12,
+   "probability": 0.6,
+   "probability_label": "model_judgment_uncalibrated",
+   "probability_basis": "FY2025 revenue grew about 32% and the issuer claims new retail launches, but the claims are unverified and the company has going-concern doubt and thin cash. Judgment only; no external base rate is available in the pack.",
+   "reporting_lag_days": 180,
+   "resolution_evidence": "Revenue line in the financial statements or Form C XML of an FY2026 Form C-AR on EDGAR.",
+   "unknown_treatment": "If no C-AR is filed by the date, the outcome is unresolved and not counted as a business miss; the missing filing is flagged as a separate disclosure gap. If the C-AR reports revenue at or below $459,216, it resolves 'no'.",
+   "basis_claim_ids": [
+    "A21",
+    "A22",
+    "A29",
+    "A40",
+    "B4"
+   ]
+  }
+ ],
+ "scenario": {
+  "label": "illustrative scenario, not an expected return",
+  "assumptions": {
+   "exit_value_usd": 50000000,
+   "dilution_pct": 40,
+   "years_to_exit": 7,
+   "other": "Offering raises the $1,000,000 maximum. Common shares 1,000,000, no options, existing SAFEs ($5,096,791) convert at the same $15M cap, and the SAFE Price is read as cap divided by common shares so SAFE dollars add to the denominator. Result 1,000,000/(15,000,000+5,096,791+1,000,000) is about 4.7%. Ignores the intermediary's 1.5% securities, debts, liquidation preferences, taxes and the possibility of no conversion at all."
+  },
+  "explanation_ko": "단순 가정만으로 계산한 예시이며 기대 수익이 아닙니다. 최대 $1,000,000이 모이고 [A4], 기존 SAFE $5,096,791이 같은 상한으로 전환된다고 가정하면 [A20][A10] 이번 모집 투자자 전체 지분은 약 4.7%입니다 [B5]. 이후 투자 유치로 40% 희석되면 약 2.8%이고, 7년 뒤 회사가 $50,000,000에 매각된다고 가정하면 이번 모집 투자자 전체 몫은 약 $1.42M, 즉 $10,000을 낸 투자자에게는 약 $14,000 수준입니다(부채·우선권·수수료 무시). 반대로 투자 유치나 매각이 없으면 전환 자체가 안 되거나 청산 시 거의 회수하지 못할 수 있습니다 [A44][B7]. 이 계산은 법적 검토를 거치지 않은 단순 해석입니다."
+ }
+}

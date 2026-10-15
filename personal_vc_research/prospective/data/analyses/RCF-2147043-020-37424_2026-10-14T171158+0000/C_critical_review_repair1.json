@@ -1,0 +1,586 @@
+{
+ "issues": [
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B5 citation locator and the ownership scenario",
+   "explanation": "B5 cites the SAFE Price definition on page 57. That definition is on page 59. Page 57 only has the words 'the SAFE Price.' in the Equity Financing Price definition. Citations are checked mechanically, so this must be fixed. B5's 4.7% figure also rests on an unreviewed reading: 1,000,000 common shares, no options, and existing SAFEs converting at the same cap. It is labelled illustrative, but it should not be read as a stated ownership percentage.",
+   "claim_ids": [
+    "B5",
+    "B6",
+    "A12"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Conversion mechanics: critical items operative_contract and price_cap_and_conversion_terms",
+   "explanation": "Three documents disagree on whether conversion is automatic. Form C p.11 says the SAFE is 'automatically convertible'. SAFE Section 1(a) says the issuer 'shall' issue shares. The Form C risk factor on p.25 says the issuer has 'ultimate discretion' (A19, C4). The financial-statement note says the company may continue the instrument instead of converting (A19). Stage A marked both items confirmed_with_citation and only footnoted the conflict. The cap and price are confirmed, but the conversion mechanics are contradictory. This bears directly on the price_and_contract gate.",
+   "claim_ids": [
+    "A19",
+    "C4",
+    "A11"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Cash-out and dissolution priority (A13, B7)",
+   "explanation": "A13 and B7 rely only on SAFE Section 1(d): junior to creditors, on par with other SAFEs, senior to common. The reviewed financial-statement note describes dissolution as an as-converted distribution with 'equal priority to holders of common equity'. That is a different ranking, and it appears in the statements the reviewer signed off. The operative SAFE text likely controls, but the inconsistency was not flagged and it weakens confidence in how carefully the documents were assembled.",
+   "claim_ids": [
+    "A13",
+    "B7",
+    "C3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Critical item minimum_investment_and_fees marked confirmed",
+   "explanation": "Stage A marked this item confirmed_with_citation. The pack checklist lists it as missing, because investor-side fees are unconfirmed. The BitGo fee schedule in Exhibit C is blank. The SAFE says the Custody Account Agreement overrides the SAFE if they conflict (C1). That agreement is a template built mainly for digital assets, with fees, an early-termination fee and account-closure rights that could reach investors. Whether investors pay any custody cost is unknown. Only the issuer-paid intermediary fees and the $100 minimum are confirmed. The item should be downgraded to not_found_in_pack or partial.",
+   "claim_ids": [
+    "A7",
+    "A8",
+    "A17",
+    "A18",
+    "C1",
+    "C2"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B demand_evidence: the 2022 raise and follow-on as demand",
+   "explanation": "B treats the $5M raise from 4,365 investors in 2022, and the company 'returning to those investors', as demand evidence. The 2022 figures come only from an issuer press release. A follow-on pitch to existing investors is not independent customer demand. It is also a sign that the company needs new funding. The retail-door and $100K-per-month claims are unverified and conflict with reviewed FY2025 revenue averaging about $38K a month (A40). Retailer, Amazon and consumer demand has no corroborating evidence in the pack.",
+   "claim_ids": [
+    "A40",
+    "A41",
+    "B4"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B2 'growth appears to be bought with heavy marketing' and B1 'persistent' negative gross margin",
+   "explanation": "B2's inference is not supported by the trend. Advertising and promotion fell from $436,085 in FY2024 to $426,385 in FY2025, while revenue rose 32% (C7). Ad spend as a share of revenue fell from about 125% to about 93% (C8). The gross loss also narrowed from about -34% to about -6% of revenue (C9). The business is still loss-making at the gross level and the burn is large. But B presents only the adverse reading and leaves out the improving direction. The operating loss was almost flat, at $928K versus $934K (C14, C15). The net loss widened mainly because non-operating items changed.",
+   "claim_ids": [
+    "B1",
+    "B2",
+    "A22",
+    "A24",
+    "C7",
+    "C8",
+    "C9",
+    "C14",
+    "C15"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B12 and economics_and_funding: sizing the raise against FY2025 burn",
+   "explanation": "B12 compares the raise to FY2025 operating cash outflow, which is a stale and possibly understated basis. The issuer's own runway statement (about $654K and 5 months at June 30, 2026) implies roughly $131K a month of net loss, about 1.75 times the FY2025 average monthly net loss (C10). The composition of the $654K is unknown, and the issuer's runway method is approximate. Stage A rightly did not compute a runway. Still, on the issuer's own numbers, the net target proceeds of about $58K (C11) cover well under one month. A 5-month runway from June 30 ends around the offering deadline. The going-concern risk is therefore sharper than B conveys.",
+   "claim_ids": [
+    "A30",
+    "B3",
+    "B12",
+    "C10",
+    "C11",
+    "A29"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B10 financial-statement quality and Form C template language",
+   "explanation": "B10 is limited to one note about prepaid services. There is more evidence of boilerplate. The Form C business plan mentions 'institution integrations' and 'white-label customer integration', and the risk factors mention 'lack of revenues' (C6). Accounts receivable were $174,215, about 138 days of FY2025 sales (C13). Note 2 says receivables are short-term and 'typically settled within a few days' (C12). The reviewed statements and the Form C therefore contain unexplained inconsistencies. This lowers reliance on the financial figures, which are reviewed only and carry a going-concern paragraph. B10 itself is labelled as inference, and the cause (template text or real concentration of wholesale receivables) is unknown.",
+   "claim_ids": [
+    "B10",
+    "A28",
+    "C6",
+    "C12",
+    "C13"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A31 debt listing: Wayflyer loan",
+   "explanation": "A31 repeats the Form C debt table without cross-checking the notes. The Wayflyer loan is $51,000 outstanding with a Feb 28, 2027 maturity in the Form C. The Dec 31, 2025 notes show a $100,000 original loan with a $7,500 fee and a 02/28/2026 maturity (C5). The Form C balance is higher than the year-end balance in the notes, implying new borrowing in 2026 or a data error. The 'monthly payment of $1,989 per week' wording is also internally inconsistent. This suggests continued reliance on short-term revenue-based financing, which is not disclosed.",
+   "claim_ids": [
+    "A31",
+    "C5"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Net loss composition (A23)",
+   "explanation": "A23 says the FY2025 loss 'includes' a $28,032 SAFE fair-value change and a $95,533 'other item'. It does not say whether the other item is a gain or a loss. The statement columns reconcile only if it is non-operating income that reduced the loss. The source of that income is unexplained. The net loss comparison between years is therefore not a clean measure of underlying performance (C14, C15). The statement-of-operations text in the pack is garbled, which limits mechanical verification.",
+   "claim_ids": [
+    "A23",
+    "C14",
+    "C15"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Availability: A5 and A43",
+   "explanation": "A5 treats the Dec 18, 2026 deadline as the horizon. The Form C allows early closing once the target is met after 21 days, and intermediate closings with 70% drawdown (C16). A press release calls it a 'two-month' campaign. The deadline is therefore not a guaranteed open window. No platform page confirms availability, so availability stays unknown.",
+   "claim_ids": [
+    "A5",
+    "A43",
+    "C16"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Calculation traceability and team wording",
+   "explanation": "Several calculation claims cite their own claim_id as the source of an input (A24 cogs2025, A27 noncurrent_loans, B1 cogs2024, B2 ad2025). That is circular, so the input is not traceable to a separate fact claim. Also, B11 says there are no named advisors, while the Form C refers to an unnamed 'board of advisors' (A35). The accurate statement is that advisors exist but are unnamed and undocumented.",
+   "claim_ids": [
+    "A24",
+    "A27",
+    "B1",
+    "B2",
+    "B11",
+    "A35"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The SAFE says the investor's Custody Account Agreement takes precedence over the SAFE if the two conflict. The Exhibit C fee schedule leaves the onboarding fee blank. Whether investors bear any custodian fees is not stated in the pack.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 62,
+     "quote": "Agreement contradict this instrument, the Custody Account Agreement shall be provided precedence."
+    },
+    {
+     "doc_id": 6,
+     "page": 93,
+     "quote": "The Onboarding Fee will be $___________."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Exhibit C is an unsigned template built mainly for digital assets. Its parties and fees are blank."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The investor agrees to take any action the issuer's Board considers advisable to reorganize the SAFE and any shares issued under it. Combined with the CEO-as-Lead amendment power, this gives the issuer wide unilateral control over the instrument.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 65,
+     "quote": "Board to be advisable to reorganize this instrument and any shares of Capital Stock issued pursuant to the"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A14"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The reviewed financial-statement note describes the dissolution outcome as an as-converted distribution with equal priority to common equity. SAFE Section 1(d) says the cash-out claim is junior to creditors and senior to common stock. The two descriptions do not match.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "If there is a Dissolution Event before the termination of the Crowd SAFE, the Investor is entitled to"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "equal priority to holders of common equity and other instruments with similar liquidation rights"
+    },
+    {
+     "doc_id": 6,
+     "page": 56,
+     "quote": "Junior to payment of outstanding indebtedness and creditor claims, including"
+    }
+   ],
+   "financial_period": "FY2025 notes",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A13"
+   ],
+   "contradictions": "Note on SAFE terms conflicts with Exhibit B Section 1(d)."
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "Form C p.11 states that the Securities are 'automatically convertible' on an Equity Financing. The Form C risk factor on p.25 says the issuer has ultimate discretion over conversion and investors cannot demand it. The Form C is therefore internally inconsistent.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "the Securities are automatically convertible into shares of the securities issued in said Equity Financing."
+    },
+    {
+     "doc_id": 6,
+     "page": 25,
+     "quote": "not to convert the Securities upon a future equity financing and Investors have no right to demand such conversion."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "Form C p.11 versus Form C p.25 and the financial-statement note."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The Form C lists the Wayflyer loan as $51,000 outstanding, maturing Feb 28, 2027. The Dec 31, 2025 notes list a $100,000 Wayflyer loan with a $7,500 fee, and the maturity column shows 02/28/2026. The year-end balance in the notes is $31,795 current. The Form C balance is higher than that.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Maturity Date February 28, 2027"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "W ayflyer Loan $ 100,000 $7,500 fee 07/31/2025"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "02/28/2026"
+    }
+   ],
+   "financial_period": "Dec 31, 2025 versus Form C date (2026-09-28)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A31"
+   ],
+   "contradictions": "Maturity year and outstanding balance differ between the Form C debt table and the notes. The notes table text is partly garbled."
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The Form C business plan refers to 'initial institution integrations' and 'white-label customer integration'. Risk factors refer to 'lack of revenues from sales'. None of this matches a company that already sells cookies at retail, which suggests reused template language.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "complete initial institution integrations and scale its infrastructure to"
+    },
+    {
+     "doc_id": 6,
+     "page": 14,
+     "quote": "We may have difficulty raising needed capital in the future as a result of, among other factors, our lack of revenues"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A33",
+    "B10"
+   ],
+   "contradictions": "Conflicts with the described retail and wholesale cookie business."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "Advertising and promotional expense was $436,085 in FY2024 and $426,385 in FY2025, a small decrease, while revenue rose.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 49,
+     "quote": "amounted to $426,385 and $436,085, which is included in"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Conflicts with B2's reading that growth was bought with heavier marketing."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "Advertising as a share of revenue fell from about 125% in FY2024 to about 93% in FY2025 (the FY2024 ratio is shown below). This is still a very high marketing load.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "FY2024",
+   "calculation": {
+    "formula": "ad_prior / rev_prior",
+    "inputs": [
+     {
+      "name": "ad_prior",
+      "value": 436085,
+      "claim_id": "C7"
+     },
+     {
+      "name": "rev_prior",
+      "value": 347602,
+      "claim_id": "A21"
+     }
+    ],
+    "result": 1.2546
+   },
+   "basis_claim_ids": [
+    "C7",
+    "A21",
+    "B2"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The gross loss margin improved by about 27 percentage points, from about -34% of revenue in FY2024 to about -6% in FY2025. Gross margin is still negative.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "FY2025 versus FY2024",
+   "calculation": {
+    "formula": "(gp_cur / rev_cur) - (gp_prior / rev_prior)",
+    "inputs": [
+     {
+      "name": "gp_cur",
+      "value": -29477,
+      "claim_id": "A24"
+     },
+     {
+      "name": "rev_cur",
+      "value": 459216,
+      "claim_id": "A21"
+     },
+     {
+      "name": "gp_prior",
+      "value": -117069,
+      "claim_id": "B1"
+     },
+     {
+      "name": "rev_prior",
+      "value": 347602,
+      "claim_id": "A21"
+     }
+    ],
+    "result": 0.2726
+   },
+   "basis_claim_ids": [
+    "A24",
+    "B1",
+    "A21"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C10",
+   "claim_text": "The issuer's own runway statement ($654,000 at June 30, 2026, about 5 months) implies roughly $131K of monthly net loss. That is about 1.75 times the FY2025 average monthly net loss. The issuer says 'approximately' 5 months, and the composition of the $654K is unknown, so this is only a rough indicator.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "June 30, 2026 (unreviewed) versus FY2025",
+   "calculation": {
+    "formula": "(cash_june / runway_months) / (netloss_cur / 12)",
+    "inputs": [
+     {
+      "name": "cash_june",
+      "value": 654000,
+      "claim_id": "A30"
+     },
+     {
+      "name": "runway_months",
+      "value": 5,
+      "claim_id": "A30"
+     },
+     {
+      "name": "netloss_cur",
+      "value": 896217,
+      "claim_id": "A23"
+     }
+    ],
+    "result": 1.7514
+   },
+   "basis_claim_ids": [
+    "A30",
+    "A23"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C11",
+   "claim_text": "At the $75,000 target, after the $12,000 minimum cash fee and the $5,000 onboarding fee, about $58,000 remains. That is about 0.44 of one month at the issuer-implied burn of about $130,800. Legal, accounting and other offering costs are excluded and would reduce it further. This is not a runway forecast.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Form C date versus June 2026 issuer-implied burn",
+   "calculation": {
+    "formula": "(target - fee - onboarding) / monthly_burn",
+    "inputs": [
+     {
+      "name": "target",
+      "value": 75000,
+      "claim_id": "A4"
+     },
+     {
+      "name": "fee",
+      "value": 12000,
+      "claim_id": "A8"
+     },
+     {
+      "name": "onboarding",
+      "value": 5000,
+      "claim_id": "A8"
+     },
+     {
+      "name": "monthly_burn",
+      "value": 130800,
+      "claim_id": "C10"
+     }
+    ],
+    "result": 0.4434
+   },
+   "basis_claim_ids": [
+    "A4",
+    "A8",
+    "C10"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C12",
+   "claim_text": "Accounts receivable were $174,215 at Dec 31, 2025. Note 2 describes receivables as short-term, typically settled within a few days, with customers who prepay.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<actReceivedMostRecentFiscalYear>174215.00"
+    },
+    {
+     "doc_id": 6,
+     "page": 47,
+     "quote": "transaction timing differences with payment processors and are generally short-term in nature (typically settled"
+    }
+   ],
+   "financial_period": "As of Dec 31, 2025",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The size of receivables relative to revenue conflicts with the note's description."
+  },
+  {
+   "claim_id": "C13",
+   "claim_text": "Receivables equal about 138 days of FY2025 revenue (simple year-end ratio). That is not 'a few days', which points to wholesale or retailer receivables or template note text.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "As of Dec 31, 2025 and FY2025",
+   "calculation": {
+    "formula": "(ar / rev_cur) * 365",
+    "inputs": [
+     {
+      "name": "ar",
+      "value": 174215,
+      "claim_id": "C12"
+     },
+     {
+      "name": "rev_cur",
+      "value": 459216,
+      "claim_id": "A21"
+     }
+    ],
+    "result": 138.47
+   },
+   "basis_claim_ids": [
+    "C12",
+    "A21"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C14",
+   "claim_text": "The operating loss was $933,836 in FY2025 and $928,252 in FY2024, so the operating loss was roughly flat. The net loss moved more because of non-operating items.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "operating loss of $933,836, an operating cash outflow of $960,595"
+    },
+    {
+     "doc_id": 6,
+     "page": 44,
+     "quote": "(9 2 8 ,2 5 2 )"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [
+    "B3"
+   ],
+   "contradictions": "The statement-of-operations text in the pack is garbled. The FY2024 figure was read from spaced digits."
+  },
+  {
+   "claim_id": "C15",
+   "claim_text": "The operating loss changed by only about $5.6K (a larger loss) from FY2024 to FY2025, so the FY2025 net loss increase of about $273K came from non-operating items, not from operations.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "FY2025 versus FY2024",
+   "calculation": {
+    "formula": "oploss_cur - oploss_prior",
+    "inputs": [
+     {
+      "name": "oploss_cur",
+      "value": -933836,
+      "claim_id": "C14"
+     },
+     {
+      "name": "oploss_prior",
+      "value": -928252,
+      "claim_id": "C14"
+     }
+    ],
+    "result": -5584
+   },
+   "basis_claim_ids": [
+    "C14",
+    "A23"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C16",
+   "claim_text": "The Form C lets the issuer close early once the target is reached, subject to a 21-day minimum and 5 business days' notice. So the Dec 18, 2026 deadline does not guarantee the offering stays open until then.",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 9,
+     "quote": "If the Issuer reaches the Target Offering Amount prior to the Offering Deadline, it may close the Offering early provided (i)"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A5"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

@@ -102,3 +102,45 @@ Storage is SQLite (`data/pilot.sqlite`, local and gitignored) plus content-addre
 * `templates/evidence_import_template.csv`: dated campaign pages, founder Q&A, company updates, contract documents,
   investor notices. `investor_notice` is always private.
 * `templates/decision_template.csv`: decisions (`decide-csv`).
+
+## v2 tables (migration 2; see `V2_GUIDE.md`)
+
+`schema_migrations` records each migration's version, description, script hash and the automatic backup taken
+before it. All v2 tables are append-only.
+
+**Personal tables** — never exported:
+* `policy_acknowledgments` (kind, version, sha256, statement).
+* `issuer_groups`: user-confirmed mapping of a member CIK to an `issuer_key`, so that rounds, brands and SPVs share
+  one issuer limit.
+* `approvals`: a user approval with an explicit amount, plus:
+  * the fee and its basis (`confirmed` | `upper_bound`), and the applicable terms (minimum investment, tier);
+  * the availability note, the contract document, and the analysis and pack hash;
+  * the expiry, the check results (budget, issuer, material changes, minimum, policy acknowledgment);
+  * `status` (`executable` | `incomplete` | `blocked`), the AI status at approval, and any failed conditions with the
+    override rationale;
+  * `user_confirmed`, which is always 1.
+* `ledger_events`: actual events in integer cents.
+  * `event_type` is one of: reservation_created / reservation_released, investment_submitted / investment_finalized,
+    investor_fee_paid, investment_canceled, refund_verified, security_conversion, corporate_action,
+    cash_distribution, sale_proceeds, sale_fee, write_off_observed, residual_holding_update, correction_void.
+  * Each row also has `effective_date` (New York), `observed_utc`, `amount_cents`, `fee_cents`, `quantity`,
+    `related_event_id`, `document_id` (a private document), `external_ref` (unique per type, so duplicate imports are
+    ignored), `verification_status`, and `policy_flags` (e.g. `OUT_OF_POLICY:issuer_limit`, `NO_APPROVAL`,
+    `APPROVAL_EXPIRED`).
+
+**Research tables** — public-safe, exported:
+* `evidence_packs`: pack id, cutoff, sha256, path, document ids, page count, gaps, critical checklist.
+* `analyst_versions`: prompt, schema and policy versions, requested model, settings (tools disabled, repair rounds),
+  registration time, development offerings.
+* `analysis_runs`:
+  * the pack and its hash, the versions, the adapter, and the model and provider as reported;
+  * timestamps, status (`passes_research_screen` | `fails_research_screen` | `needs_information` |
+    `analysis_failed`), and split (`development` | `evaluation`);
+  * the output path and hash, validation errors, cost, the critical-item status and the stage metadata.
+* `analysis_claims`: claim id and text, type, evidence status, citations, observed cutoff, financial period,
+  calculation inputs, contradictions.
+* `analysis_gates`: the three LLM gates plus the software budget gate, each with result, criteria, supporting and
+  counterevidence claim ids, and uncertainty.
+* `prediction_meta`: links forecasts to an analysis, pack hash, version and model. The label is always
+  `model_judgment_uncalibrated`.
+* `citation_checks`: spot checks (`independent_extractor_recheck`, `reviewer_semantic`).

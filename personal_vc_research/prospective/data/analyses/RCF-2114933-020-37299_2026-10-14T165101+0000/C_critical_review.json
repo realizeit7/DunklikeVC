@@ -1,0 +1,402 @@
+{
+ "issues": [
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A3 and critical item price_cap_and_conversion_terms",
+   "explanation": "A3 says the offered common stock has no conversion mechanic. The pack points both ways. Page 24 says the Company wants a later Reg A offering 'in which the Investor would be converted into'. The subscription agreement (page 54) refers to 'securities that may be issued upon conversion thereof'. The Form C valuation section mentions a 'valuation cap'. These look like template carry-over, but the pack does not prove that. 'No cap, discount or conversion' should be stated as 'none found in the pack'. The charter is missing, so it is unverified.",
+   "claim_ids": [
+    "A3",
+    "C1",
+    "A30"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Critical items operative_contract, price_cap_and_conversion_terms, minimum_investment_and_fees marked confirmed_with_citation",
+   "explanation": "The evidence-pack checklist lists operative_contract as present_unreviewed, price_cap_and_conversion_terms as candidate_unverified and minimum_investment_and_fees as missing. Stage A marks all three confirmed. The charter, which sets dividend and liquidation rights, is not in the pack. The conversion price of the notes is undisclosed. Investor-side fees are not stated. These should be partial or not confirmed. evidence_sufficiency should not pass in Stage D. The financial_statements item also carries unresolved conflicts (XML long-term debt of $0 against $50,704 of notes on the balance sheet).",
+   "claim_ids": [
+    "A10",
+    "A14",
+    "A15",
+    "A6",
+    "A31"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A12/A13 capitalization and implied $75M value",
+   "explanation": "The $75.0M implied equity value rests on 75,000,000 founder shares that the board 'ratified' on 2026-06-25, about five weeks before the Form C. The audited 12/31/2025 balance sheet shows only 1 share. The consideration paid, the issue date and the board approval trail are not in the pack. The share count that sets the implied valuation is therefore poorly documented. The $1.00 price is arbitrary and no comparables are given. The valuation should be treated as unsupported, and it is not shown to be reasonable or unreasonable.",
+   "claim_ids": [
+    "A12",
+    "A13",
+    "A7"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "A25/B3 market projections",
+   "explanation": "The $408M–$734M scenarios assume 25–45% penetration of all U.S. ALS patients within a three-year ramp. They also assume a $120,000 price, a partner network, reimbursement and FDA clearance, with no human data. The 80%+ gross margin claim has no cost build. The arithmetic ties to the issuer's table (C3), but the inputs are unsupported. The video also cites a $1–2B ALS market by 2028 (C4). A25 says FDA approval 'has not been sought'. The pack does not say this. It only shows no evidence of a filing.",
+   "claim_ids": [
+    "A25",
+    "B3",
+    "C3",
+    "C4"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A21/B economics_and_funding: 'far below what a human ALS trial would plausibly need'",
+   "explanation": "The pack has no trial cost estimate. The statement relies on outside intuition and breaks the evidence-pack-only rule. What the pack does show: $30,000 for clinical trials at the target, $7,000 for equipment described as covering 'delivery of two SELtx devices', and $2,000 for FDA consulting (C5). The issuer says its trial may be cheaper and faster than pharma, which is unverified. The conclusion should be restated as 'trial cost unknown; the target allocation looks small and the issuer gives no cost basis'.",
+   "claim_ids": [
+    "A21",
+    "C5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B security_path_to_proceeds: 'Most outcomes for a company at this stage involve dilution or a loss'",
+   "explanation": "The pack has no base-rate data. The statement should be removed or labelled as unquantified judgment. The pack's risk factors support only that loss of the entire investment is possible and that dilution is expected.",
+   "claim_ids": [
+    "A10",
+    "A30"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Contract terms not covered in Stage A",
+   "explanation": "Stage A omits several subscription-agreement terms. First, Section 14 lets the agreement be amended by 'majority of the voting power of the Securities'. Because the proxy holder votes investors' shares, this may mean the issuer-side proxy holder controls amendments (inference). Second, Section 7(d) separately appoints the CEO/CFO as attorney-in-fact for lock-up matters. Third, Section 6 has investors indemnify the Company and Custodian. The agreement also has a jury waiver and an exclusive Phoenix venue. These add to the weak investor-protection picture. The lock-up conflict (180 versus 270 days) is already noted in A11.",
+   "claim_ids": [
+    "C2",
+    "A8",
+    "A11"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A27 IP and B competition",
+   "explanation": "The Form C describes 'more than a decade of research', while the LLC was registered in December 2020 and the corporation in January 2025. Who invented and who holds title to the patents is not documented. Assignment records to the issuer are not in the pack. The risk factors also admit the issuer 'may not own' some material IP. 'Controls the patents and IP critical to its process' is an unverified issuer claim. The earlier-expiring patent bearing the higher number is unexplained. This could change the thesis, because the platform value depends on the IP.",
+   "claim_ids": [
+    "A27",
+    "C7"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A14 convertible notes",
+   "explanation": "Three descriptions of the conversion trigger conflict. Page 32 says conversion happens on a 'liquidity event'. Page 33 says conversion cannot occur before a Reg A or similar follow-on event. Note 5 defines a liquidity event as a change of control, private replacement financing or recapitalization. The conversion price, discount and cap are not disclosed. The $60,000 note was issued at a $10,000 discount, so the effective cost is higher than the 4.19% coupon. The second note carries an extra $50,000 conversion amount. Dilution cannot be estimated, and the stage-B treatment of the notes as 'senior debt' (the issuer's own words) needs the note documents.",
+   "claim_ids": [
+    "A14",
+    "B4"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A16 audited statements quality",
+   "explanation": "The cash-flow statement shows $50,704 of note proceeds as an investing inflow. Note 5 says the initial carrying amount was $50,000, so $704 is non-cash accretion. The classification and amount look wrong (C6). The $4,670 interest expense is not reconciled to the note terms, and my rough estimate from the stated rates is much lower (inference). The XML reports $0 debt. The auditor's report has no going-concern paragraph, while the Form C risk factor states substantial doubt. These are signals of weak financial reporting. The audit was by a small firm, and the pack has no information on it. The $150,000 note of 6/12/2026 postdates the audit report (6/11/2026), so it is outside the audited figures.",
+   "claim_ids": [
+    "A15",
+    "A16",
+    "A17",
+    "A19",
+    "C6"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Use of founder payable and related-party flows",
+   "explanation": "The founder is owed $199,875 with no interest or maturity. Management has broad discretion over proceeds, and G&A (including salaries) is budgeted. The pack does not say whether proceeds could repay the founder or pay related-party compensation. The use-of-proceeds table does not list repayment. Whether any related-party compensation exists is unknown. This is a conflict of interest worth asking about.",
+   "claim_ids": [
+    "A20",
+    "B6",
+    "A21"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "Timeline: human use in second half of 2026",
+   "explanation": "The Form C says human use could begin in 2H 2026 'with sufficient funding'. The cutoff of 2026-10-14 is already inside that window. The pack shows no IRB approval, trial-site agreement, device completion or FDA contact. The next-generation devices have not been procured. Stage B treats the timeline as 'with sufficient funding' without asking whether the target raise is sufficient. It is probably not met on schedule, but this cannot be verified from the pack.",
+   "claim_ids": [
+    "C8",
+    "B1",
+    "A31"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A23 mouse study",
+   "explanation": "The issuer reads p=0.008 as a 'less than 1%' chance the results were random and says it knows of no better ALS animal result. These are overstated and unverifiable. No sample size, endpoints, controls, blinding, replication or peer review is in the pack, and the study date is unknown. The page-26 text is truncated. Stage B correctly calls the evidence thin, but the 'p-value' wording should not be presented as strong support for the business thesis.",
+   "claim_ids": [
+    "A23",
+    "C9",
+    "B1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A31 availability",
+   "explanation": "The pack gives only the Form C deadline of 11-27-2026 (120 days after the filing date) and no platform page, progress update or closing report. Whether the offering is open, has reached the target, has had an early or intermediate closing, or has been withdrawn is unknown at the 2026-10-14 cutoff. This is non-blocking for the research screen but is a critical item that is not confirmed.",
+   "claim_ids": [
+    "A31",
+    "A4"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A26 competition and A28 team",
+   "explanation": "'Only later-stage non-pharma solution' and 'no peer' are issuer claims with no independent search. Management documented backgrounds show no clinical, regulatory or device-development execution. This is a lack of evidence and not evidence of inability. The company relies on outside research and consultants who are not named or contracted in the pack. Key-person dependence on one founder who also holds all current shares, the payable and the proxy is high (B6).",
+   "claim_ids": [
+    "A26",
+    "A28",
+    "B6"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The pack is not fully consistent that the offered common stock has no conversion element. The Form C says there is a stated interest in a later Reg A offering 'in which the Investor would be converted into'. The subscription agreement's custodian clause refers to securities 'issued upon conversion thereof'. Both look like template or aspirational language, but the pack does not show that the stock itself has no conversion feature, and the charter is absent.",
+   "claim_type": "contract_provision",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "providing unrestricted stock, and in which the Investor would be converted into"
+    },
+    {
+     "doc_id": 9,
+     "page": 54,
+     "quote": "to hold the Securities and any securities that may be issued upon conversion thereof"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A3",
+    "A30"
+   ],
+   "contradictions": "A3 states there is no conversion mechanic in the offered security; the quoted passages leave this open."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The subscription agreement allows amendment or waiver upon written consent of the majority of the voting power of the Securities. Because the Executive Chairman holds an irrevocable proxy over investors' votes, this may let him approve changes for all investors (analyst reading). Separately, each investor appoints the CEO and/or CFO as attorney-in-fact for lock-up matters and indemnifies the Company and the Custodian for breach of representations.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 61,
+     "quote": "Any provision of this Subscription Agreement may be amended, waived or"
+    },
+    {
+     "doc_id": 9,
+     "page": 60,
+     "quote": "hereby appoints the Chief Executive Officer and/or Chief Financial Officer of the"
+    },
+    {
+     "doc_id": 9,
+     "page": 59,
+     "quote": "Investor agrees to indemnify and hold harmless the Company and the Custodian and each of their respective founders,"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A8"
+   ],
+   "contradictions": "The control effect of Section 14 together with the proxy is an inference. The pack does not say how 'voting power of the Securities' is measured."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "Check of the issuer's lowest scenario: 34,000 patients at 25% penetration with about $48,000 per patient to the company gives $408M. This reproduces the issuer's figure, so the arithmetic is consistent, but every input is a management assumption.",
+   "claim_type": "market",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "Projection; undated",
+   "calculation": {
+    "formula": "patients * penetration * company_share_per_patient",
+    "inputs": [
+     {
+      "name": "patients",
+      "value": 34000,
+      "claim_id": "A25"
+     },
+     {
+      "name": "penetration",
+      "value": 0.25,
+      "claim_id": "A25"
+     },
+     {
+      "name": "company_share_per_patient",
+      "value": 48000,
+      "claim_id": "B3"
+     }
+    ],
+    "result": 408000000
+   },
+   "basis_claim_ids": [
+    "A25",
+    "B3"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "Projection assumptions are optimistic given the stage. The issuer assumes the revenue estimates are achievable over a three-year ramp. The deal-page video transcript says the ALS market could be worth $1 to almost $2 billion by 2028. No human data exist, no regulatory filing is shown, and no reimbursement evidence is given.",
+   "claim_type": "market",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "to achieve these estimates over a three-year ramp-up time horizon"
+    },
+    {
+     "doc_id": 9,
+     "page": 66,
+     "quote": "that could be worth anywhere from 1 to almost $2 billion by 2028."
+    }
+   ],
+   "financial_period": "Projection; undated",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25",
+    "A22"
+   ],
+   "contradictions": "The video's 2028 market framing is not reconciled with the Form C's statement that the therapy is not yet available for human use (A22)."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "At the $75,000 target the equipment line is $7,000, while the issuer's note says equipment covers final engineering and delivery of two SELtx devices. The pack gives no device cost, so whether $7,000 can cover this is unknown. The $635,050 equipment figure applies only at the maximum raise. Trial cost is not estimated in the pack.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment 9.3% $7,000 12.70% $635,050"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment covers final engineering and the delivery of two SELtx"
+    }
+   ],
+   "financial_period": "Forward-looking, Form C dated 2026-07-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A21"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The audited cash-flow statement lists convertible note proceeds of $50,704 under investing activities. Note 5 gives the initial carrying amount as $50,000 after a $10,000 discount, so the $704 difference is non-cash accretion and not cash received. The $4,670 interest expense is not reconciled to the note terms in the pack.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 48,
+     "quote": "Convertible notes payable, net of discount 50,704 -"
+    },
+    {
+     "doc_id": 9,
+     "page": 52,
+     "quote": "$10,000, resulting in an initial carrying amount of"
+    },
+    {
+     "doc_id": 9,
+     "page": 46,
+     "quote": "Interest Expense 4,670 -"
+    }
+   ],
+   "financial_period": "FY2025 (year ended 12/31/2025)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A16",
+    "A14"
+   ],
+   "contradictions": "The reported net change in cash of $(39) reconciles only because the $50,704 is used; the true operating outflow would be about $50,000 less accretion. This is an inference from the statements."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The Form C says the issuer 'represents the culmination of more than a decade of research' and says it was registered as an LLC in December 2020 and converted into a Delaware corporation in January 2025. The pack does not document how the earlier research and patents came to be owned by the issuer.",
+   "claim_type": "other",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 25,
+     "quote": "The issuer represents the culmination of more than a decade of research that has"
+    },
+    {
+     "doc_id": 9,
+     "page": 25,
+     "quote": "was initially registered in Wyoming on December 30, 2020 as a limited liability company."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A1",
+    "A27"
+   ],
+   "contradictions": "Page 25 says the issuer 'controls the patents and IP critical to its process', while page 19 says it may not own or have sufficient rights to certain IP."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "The Form C says human use could begin in the second half of 2026 'with sufficient funding'. The 2026-10-14 cutoff falls within that period. The pack shows no evidence that a human trial, IRB approval, a trial-site agreement or next-generation devices exist as of the cutoff.",
+   "claim_type": "traction",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "With sufficient funding and timely completion of our next-generation equipment, we believe that use in human"
+    }
+   ],
+   "financial_period": "As of cutoff 2026-10-14",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A22",
+    "A31"
+   ],
+   "contradictions": "Absence of evidence in the pack does not show the trial has not started."
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The issuer characterises its p-value of 0.008 as indicating a low probability (less than 1%) that the observed results occurred by random chance. This is the issuer's interpretation. The pack gives no sample size, endpoints, blinding or replication.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "This indicates a low probability (less than 1%) that the observed results occurred by random chance."
+    }
+   ],
+   "financial_period": "Study date not stated",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A23"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

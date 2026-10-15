@@ -1,0 +1,487 @@
+{
+ "claims": [
+  {
+   "claim_id": "A1",
+   "claim_text": "The issuer is TradeFunded LLC, a Delaware limited liability company, per its Form C filing (issuer-reported).",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<nameOfIssuer>TradeFunded LLC</nameOfIssuer>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<legalStatusForm>Limited Liability Company</legalStatusForm>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<jurisdictionOrganization>DE</jurisdictionOrganization>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A2",
+   "claim_text": "The Form C lists the issuer's date of incorporation as 02-10-2026 (about 8 months before the pack cutoff), so it is a very new entity. Website listed: www.tradefunded.com.",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<dateIncorporation>02-10-2026</dateIncorporation>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issuerWebsite>www.tradefunded.com</issuerWebsite>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The Form C reports a 'prior fiscal year' net income of -23,115, which is hard to reconcile with an entity incorporated 02-10-2026 unless the fiscal years or a predecessor are explained; the explanation is not in the pack."
+  },
+  {
+   "claim_id": "A3",
+   "claim_text": "The offering is run through intermediary OpenDeal Portal LLC (SEC file number 007-00167, CRD 283874), per the Form C.",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<companyName>OpenDeal Portal LLC</companyName>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<commissionFileNumber>007-00167</commissionFileNumber>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A4",
+   "claim_text": "The security offered is typed 'Other' with the description 'Units' (LLC units). The pack's checklist labels it 'equity', but the Form C does not say which rights the units carry (voting, distributions, transfer limits).",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<securityOfferedType>Other</securityOfferedType>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<securityOfferedOtherDesc>Units</securityOfferedOtherDesc>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A5",
+   "claim_text": "Price per unit is $0.35, with the price determination method stated as 'Arbitrary' (not set by a valuation formula).",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<price>0.35000</price>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A6",
+   "claim_text": "Units offered in the target round: 214,285. Target offering amount: $74,999.75.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<noOfSecurityOffered>214285</noOfSecurityOffered>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<offeringAmount>74999.75</offeringAmount>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A7",
+   "claim_text": "Units times price equals the stated target amount (consistency check).",
+   "claim_type": "security_terms",
+   "evidence_status": "calculation",
+   "citations": [],
+   "financial_period": "",
+   "calculation": {
+    "formula": "units * price",
+    "inputs": [
+     {
+      "name": "units",
+      "value": 214285,
+      "claim_id": "A6"
+     },
+     {
+      "name": "price",
+      "value": 0.35,
+      "claim_id": "A5"
+     }
+    ],
+    "result": 74999.75
+   },
+   "basis_claim_ids": [
+    "A5",
+    "A6"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A8",
+   "claim_text": "Oversubscriptions are accepted on a first-come, first-served basis, with a maximum offering amount of $679,999.95.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<overSubscriptionAccepted>Y</overSubscriptionAccepted>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<overSubscriptionAllocationType>First-come, first-served basis</overSubscriptionAllocationType>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>679999.95</maximumOfferingAmount>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A9",
+   "claim_text": "The offering deadline is 12-15-2026 (about two months after the pack cutoff). A future deadline does not prove the offering is currently open; availability was not verified.",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<deadlineDate>12-15-2026</deadlineDate>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A10",
+   "claim_text": "Intermediary cash compensation is the greater of $15,000 or a tiered fee: 0% on funds up to $100,000 and 6% from $100,000.01 to $5,000,000. The text is truncated in the Form C field, and an additional non-refundable $15,000 payment is mentioned but cut off.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "the Issuer will pay the Intermediary a cash fee equal to the greater of $15,000 or a tiered calculation: 0% on funds raised up to $100,000, and 6% on funds raised from $100,000.01 to $5,000,000."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A11",
+   "claim_text": "The intermediary will also receive securities equal to 2% of the total number of securities sold in the offering, which dilutes investors slightly.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "The Intermediary will also receive compensation in the form of securities equal to two percent (2%) of the total number of the securities sold in the Offering."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A12",
+   "claim_text": "Pre-revenue: the Form C reports revenue of $0.00 for the most recent fiscal year and for the prior fiscal year. Fiscal year-end dates are not stated in the XML, and no statements are in the pack.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>0.00</revenueMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenuePriorFiscalYear>0.00</revenuePriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent and prior fiscal year (year-end dates not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A13",
+   "claim_text": "Most recent fiscal year: total assets $226,885 while cash and equivalents are $0.00, so the assets are non-cash and their nature is not described in the pack. Prior fiscal year total assets were $0.00.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<totalAssetMostRecentFiscalYear>226885.00</totalAssetMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<cashEquiMostRecentFiscalYear>0.00</cashEquiMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<totalAssetPriorFiscalYear>0.00</totalAssetPriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent fiscal year (end date not stated); prior fiscal year",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A14",
+   "claim_text": "Reported net income was $0.00 for the most recent fiscal year and -$23,115.00 for the prior fiscal year. Reported short-term and long-term debt were $0.00 in both years.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<netIncomeMostRecentFiscalYear>0.00</netIncomeMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<netIncomePriorFiscalYear>-23115.00</netIncomePriorFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<shortTermDebtMostRecentFiscalYear>0.00</shortTermDebtMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<longTermDebtMostRecentFiscalYear>0.00</longTermDebtMostRecentFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent and prior fiscal year (year-end dates not stated in pack)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "A loss in the prior year followed by exactly $0 net income and $226,885 of assets in the most recent year looks internally unusual; this cannot be checked without the financial statements."
+  },
+  {
+   "claim_id": "A15",
+   "claim_text": "The Form C reports 0 current employees.",
+   "claim_type": "team",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<currentEmployees>0.00</currentEmployees>"
+    }
+   ],
+   "financial_period": "As of Form C filing, 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A16",
+   "claim_text": "Christopher Price signed as Chief Executive Officer. Ryan Masten, Christopher Price and David Lojko signed as Manager Representatives on 09-16-2026. No biographies or prior experience are in the pack, so the team's relevant experience cannot be assessed.",
+   "claim_type": "team",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issuerSignature>Christopher Price</issuerSignature>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<personSignature>Ryan Masten</personSignature>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<personSignature>David Lojko</personSignature>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A17",
+   "claim_text": "The offering is registered for sale in many US states and territories (the Form C lists jurisdictions including CA, NY, TX and FL).",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issueJurisdictionSecuritiesOffering>CA</issueJurisdictionSecuritiesOffering>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<issueJurisdictionSecuritiesOffering>NY</issueJurisdictionSecuritiesOffering>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A18",
+   "claim_text": "Because the issuer is pre-revenue, was incorporated in 2026, has $0 cash, and has no business description in the pack, the stage-appropriate evidence (product, traction, team record, use of proceeds) is entirely absent from the reviewed material.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2",
+    "A12",
+    "A13",
+    "A15"
+   ],
+   "contradictions": ""
+  }
+ ],
+ "critical_items": [
+  {
+   "item": "issuer_and_offering_identity",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A1",
+    "A2",
+    "A3",
+    "A9"
+   ],
+   "note": "The Form C XML establishes the issuer, the Delaware LLC form, the intermediary and the deadline. The issuer reported all of this itself."
+  },
+  {
+   "item": "security_type",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A4"
+   ],
+   "note": "The Form C says 'Other: Units'. The rights attached to the units are not described in the pack. The pack's checklist label 'equity' is a classification and not contract text."
+  },
+  {
+   "item": "operative_contract",
+   "status": "not_found_in_pack",
+   "claim_ids": [],
+   "note": "No operating agreement or subscription agreement is in the pack. The only attachment, tradef.pdf, was not parsed because it exceeds the size limit."
+  },
+  {
+   "item": "price_cap_and_conversion_terms",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "note": "Only the Form C price ($0.35 per unit, arbitrary) is available. No contract text on rights, valuation, conversion or repurchase is in the pack. The units are priced directly, and no cap is evidenced."
+  },
+  {
+   "item": "minimum_investment_and_fees",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A10",
+    "A11"
+   ],
+   "note": "The minimum investment is not stated. Intermediary fees paid by the issuer are in the Form C, but investor-level fees are unconfirmed."
+  },
+  {
+   "item": "financial_statements_and_dates",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A12",
+    "A13",
+    "A14"
+   ],
+   "note": "Only Form C summary fields are in the pack. No financial statements, fiscal year-end dates or accountant report are in the pack, so the statement dates cannot be cited. The prior-year loss does not obviously fit a February 2026 incorporation."
+  },
+  {
+   "item": "closing_or_availability_evidence",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A9"
+   ],
+   "note": "The platform page was not verified and no closing has been reported. The deadline of 12-15-2026 alone does not prove the offering is open."
+  }
+ ],
+ "missing_information": [
+  "Operative contract (LLC operating agreement and subscription agreement): unit rights, voting, distributions, transfer limits, information rights, repurchase rights. tradef.pdf (about 61.7 MB) was not parsed.",
+  "Business description, product, customers, revenue model and market (none in the reviewed pack).",
+  "Use of proceeds and what the $74,999.75 target and $679,999.95 maximum would fund.",
+  "Financial statements, fiscal year-end dates and accountant report; the nature of the $226,885 non-cash assets; the explanation of the prior-year net loss given the 02-10-2026 incorporation date.",
+  "Minimum investment amount and investor-level fees.",
+  "Valuation basis: the price is stated as 'Arbitrary', and the total units outstanding and the implied valuation are not in the pack.",
+  "Team biographies and relevant prior experience for Christopher Price, Ryan Masten and David Lojko.",
+  "Existing capitalization table and ownership, and related-party arrangements.",
+  "Platform page confirmation that the offering is open and any reported closings.",
+  "The remainder of the truncated intermediary compensation text (the additional non-refundable $15,000 payment)."
+ ]
+}

@@ -18,3 +18,8 @@ prospective/data/cache/
 prospective/data/imports/private/
 prospective/data/manifests/
 !prospective/data/exports/
+# v2: backups, text cache and the synthetic demo database stay local (frozen packs and raw LLM outputs ARE committed: public data, needed for evaluation)
+prospective/data/backups/
+prospective/data/text_cache/
+prospective/data/demo/
+prospective/demo_config.yaml

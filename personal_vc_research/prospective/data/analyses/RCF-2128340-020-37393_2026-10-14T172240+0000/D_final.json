@@ -1,0 +1,145 @@
+{
+ "gates": [
+  {
+   "gate": "evidence_sufficiency",
+   "result": "fail",
+   "criteria_applied": [
+    "All seven critical items confirmed with citation",
+    "Operative contract text available",
+    "Dated financial statements available"
+   ],
+   "supporting_claim_ids": [
+    "A1",
+    "A3",
+    "A4",
+    "A9"
+   ],
+   "counterevidence_claim_ids": [
+    "A2",
+    "A14",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "uncertainty": "Only the Form C XML was reviewed. The 61.7 MB tradef.pdf was not parsed and may hold the contract, business description and use of proceeds. Five of seven critical items are not confirmed (operative contract, price/conversion terms, minimum investment and fees, dated financial statements, availability). The result is therefore not a pass. It reflects the pack's limits, not a finding about the company."
+  },
+  {
+   "gate": "business_thesis",
+   "result": "unknown",
+   "criteria_applied": [
+    "Documented product, customer and revenue model",
+    "Stage-appropriate traction for a pre-revenue company",
+    "Documented team experience and execution history"
+   ],
+   "supporting_claim_ids": [
+    "A1",
+    "A2"
+   ],
+   "counterevidence_claim_ids": [
+    "A12",
+    "A15",
+    "C4"
+   ],
+   "uncertainty": "The pack has no business description, market, traction or team biographies, so the thesis cannot be evaluated. Reported $0 revenue is not disqualifying for a pre-revenue company. The absence of evidence in the pack is not treated as a negative finding about the company. Reported financials conflict with the incorporation date (C3), and that is unexplained."
+  },
+  {
+   "gate": "price_and_contract",
+   "result": "unknown",
+   "criteria_applied": [
+    "Operative contract reviewed for rights, conversion, repurchase and information terms",
+    "Valuation basis and ownership percentage computable",
+    "Fees and dilution understood"
+   ],
+   "supporting_claim_ids": [
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A10",
+    "A11"
+   ],
+   "counterevidence_claim_ids": [
+    "A4",
+    "B4",
+    "C2",
+    "C5"
+   ],
+   "uncertainty": "The price is $0.35 per unit and arbitrary. Units outstanding are not in the pack, so the implied valuation and ownership cannot be computed. Unit rights are not in the pack. The intermediary fee text is truncated. The intermediary also gets units equal to 2% of units sold. Without the operating agreement the terms cannot be judged fair or unfair."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "Accepted. The unparsed tradef.pdf may hold the contract, minimum investment, business description and use of proceeds. evidence_sufficiency is fail and the price_and_contract gate is unknown."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "Accepted. B's statement that no cap or discount applies is withdrawn. The correct statement is that no cap, discount or conversion feature is evidenced in the pack. The 'Other: Units' label (C5) does not show the economic nature of the security."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "Accepted. The fee text is truncated and in the past tense (C2). The 20% figure (B2) is arithmetic on a floor and is not a confirmed share of proceeds. The $15,000 may already have been paid or may overlap the greater-of fee. I do not rely on it."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "Accepted. The prior-year loss and the assets are hard to reconcile with the 02-10-2026 incorporation date (C3). The figures are treated as unreliable until the statements are read. Staleness cannot be tested because year-end dates are missing."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "Accepted. The $0 cash and 0 employees figures have no as-of date in the XML (C4). I make no current-cash, runway or staffing claim. The 'main source of cash' idea is only a hypothesis."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "Accepted. Per C1, the Form C lists intended offering states. It does not show state registration or that the offering is open."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "Accepted. A18 and B3 describe the pack and not the company. They are treated as missing information. They carry no weight in the gates, and business_thesis is unknown, not fail."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "Accepted. The remark that small LLC units are typically hard to resell is a general caution from outside the pack. The pack supports only the absence of documented distribution, exit and transfer terms."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "Accepted. Only names and titles are documented. Governance, ownership, related-party arrangements and the source of the $226,885 of assets are unknown. I make no team judgment."
+  }
+ ],
+ "briefing_ko": {
+  "summary": "TradeFunded LLC는 2026년 2월에 설립되었다고 신고한 델라웨어 유한책임회사(LLC)입니다. 유닛(Units)을 1유닛당 $0.35에 팔아 목표 약 $75,000, 최대 약 $680,000를 모집합니다 [A1][A2][A5][A6][A8]. 신고서에는 매출 $0의 사전 매출(pre-revenue) 단계라고만 나옵니다 [A12]. 사업 설명, 계약서, 재무제표는 검토 자료에 없어 판단이 어렵습니다. 이 글은 투자 조언이 아니며 검토 여부를 정하는 참고용입니다.",
+  "what_it_does": "사업 내용, 고객, 수익 모델은 검토한 자료에 없습니다. 홈페이지 주소(www.tradefunded.com)만 확인됩니다 [A2]. 누가 돈을 내는지 알 수 없습니다. 이는 자료의 공백이지 회사에 대한 부정적 결론이 아닙니다. 61.7MB 첨부파일(tradef.pdf)은 용량 제한으로 읽지 못했고, 거기에 설명이 있을 수 있습니다.",
+  "strongest_evidence": "약한 긍정 근거만 있습니다. 증권위원회(SEC)에 제출된 Form C가 발행인, 중개 플랫폼(OpenDeal Portal), 가격, 모집 한도, 마감일(2026-12-15)을 제시하고 [A1][A3][A5][A9], 유닛 수 × 가격이 목표금액과 맞습니다 [A7]. 다만 모두 회사가 직접 신고한 내용이고 외부 검증은 없습니다. 사전 매출 단계라서 매출 $0 자체는 감점 요인이 아닙니다.",
+  "failure_reasons": "확인된 문제라기보다 위험 신호입니다. 설립 약 8개월의 신생 법인이고 직원 0명으로 신고되었으며, 현금 $0과 총자산 $226,885(내용 불명)가 보고되었습니다 [A2][A13][A15]. 설립일(2026-02-10)과 '전년도 순손실 $23,115'는 설명 없이 맞지 않습니다 [C3]. 현금·직원 수치는 기준일이 없어 현재 상태로 단정할 수 없습니다 [C4]. 팀은 이름과 직함만 나와 경력을 평가할 수 없습니다 [A16].",
+  "investor_proceeds_path": "유닛(Units)으로 현금을 받으려면 (a) 회사가 이익을 분배하거나, (b) 회사가 매각·청산되거나, (c) 유닛을 다른 사람에게 되파는 경우가 있습니다. 어느 쪽이든 분배·양도·환매 조건이 담긴 운영계약(operating agreement)이 자료에 없어 확인할 수 없습니다 [A4][B5]. 매출이 없어 분배의 근거도 아직 없습니다 [A12]. 소규모 비상장 지분은 일반적으로 현금화가 어렵다는 점은 자료 밖의 일반적 주의사항입니다.",
+  "price_and_contract": "가격 $0.35는 '임의(Arbitrary)'로 정해졌고 평가 근거가 없습니다 [A5]. 발행 유닛 총수가 없어 기업가치와 내 지분율을 계산할 수 없습니다 [B4]. 증권 종류는 'Other: Units'로만 표시되어 권리 내용은 알 수 없습니다. 기업가치 상한(valuation cap)이나 할인 같은 조건은 자료에서 확인되지 않았을 뿐 없다고 단정할 수 없습니다 [A4][C5]. 중개사는 현금 수수료(최소 $15,000 또는 단계별 비율 중 큰 금액)와 판매 유닛의 2%를 받습니다 [A10][A11]. 수수료 문구가 잘려 있어 추가 지급 여부는 불명확합니다 [C2]. 최소 투자금액도 자료에 없습니다.",
+  "unknowns": "운영계약과 유닛의 권리, 최소 투자금액, 사업 내용, 자금 사용처, 재무제표와 회계연도 종료일, $226,885 자산의 정체, 팀 이력, 기존 지분 구조와 특수관계 거래, 현재 모집이 실제로 열려 있는지 여부 [A9][C1]. Form C의 주(state) 목록은 판매 예정 지역일 뿐 등록이나 현재 모집 중임을 뜻하지 않습니다.",
+  "future_evidence": "tradef.pdf나 플랫폼 페이지에서 운영계약, 사업·자금 사용 설명, 날짜가 명시된 재무제표가 확인되면 평가가 크게 달라질 수 있습니다. 설립일과 전년도 손실이 어떻게 맞는지 설명되는 것도 중요합니다. 팀의 검증 가능한 경력, 첫 고객이나 매출, 마감 후 Form C-U나 연차보고서(C-AR)로 실제 모집액이 확인되는 것도 변수입니다. 반대로 권리가 매우 제한적이거나 수수료·희석이 크면 평가는 나빠질 수 있습니다."
+ },
+ "forecasts": [
+  {
+   "outcome_definition": "By 2027-04-15, an amended Form C (C/A) or a progress update (C-U) is filed on EDGAR for TradeFunded LLC offering 020-37393 reporting at least one closing or the amount sold.",
+   "event_kind": "disclosure",
+   "horizon_months": 6,
+   "probability": 0.45,
+   "probability_label": "model_judgment_uncalibrated",
+   "probability_basis": "Judgment only. The offering deadline of 2026-12-15 falls within the window, and issuers sometimes file updates around closings. Closings are not evidenced in the pack, and the platform page could not be checked. No base rate from the pack is used.",
+   "reporting_lag_days": 30,
+   "resolution_evidence": "An EDGAR filing index for CIK 0002128340 showing a Form C/A or C-U filed by 2027-04-15 that states closing or sales information.",
+   "unknown_treatment": "If no such filing appears, the result is recorded as 'no disclosure observed'. It is not counted as the business failing to raise money, because the issuer may have closed without a public filing or may have filed late.",
+   "basis_claim_ids": [
+    "A9",
+    "A8"
+   ]
+  }
+ ],
+ "scenario": null
+}

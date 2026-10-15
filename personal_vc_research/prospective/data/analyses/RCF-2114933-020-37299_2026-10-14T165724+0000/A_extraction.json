@@ -1,0 +1,923 @@
+{
+ "claims": [
+  {
+   "claim_id": "A1",
+   "claim_text": "Issuer is Hope-Neuron Therapeutx, Inc., a Delaware corporation incorporated (converted from a Wyoming LLC) on 01-27-2025, based in Phoenix, AZ. Form C filed 2026-07-30 (issuer-filed).",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<nameOfIssuer>Hope- Neuron Therapeutx, Inc</nameOfIssuer>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<dateIncorporation>01-27-2025</dateIncorporation>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<jurisdictionOrganization>DE</jurisdictionOrganization>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A2",
+   "claim_text": "The offering is run through OpenDeal Portal LLC dba Republic (CIK 0001751525); deal page republic.com/hope-neuron.",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 1,
+     "quote": "OpenDeal Portal LLC dba Republic"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<commissionCik>0001751525</commissionCik>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A3",
+   "claim_text": "Security offered is Common Stock at $1.00 per share; price method is 'Arbitrary' (not tied to asset value, revenue or other objective criteria). No valuation cap, discount or conversion feature applies to the offered stock itself.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<securityOfferedType>Common Stock</securityOfferedType>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<price>1.00000</price>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    },
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Although the Securities provide certain terms, which may include a valuation cap, the Intermediary has ascribed no"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Form C valuation section boilerplate mentions a possible 'valuation cap', but no cap appears in the common-stock subscription agreement reviewed."
+  },
+  {
+   "claim_id": "A4",
+   "claim_text": "Target offering $75,000, maximum $5,000,000, oversubscriptions accepted first-come-first-served; Form C deadline 11-27-2026 (target deadline described as 120 days after launch). If the target is not reached, funds are returned.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<offeringAmount>75000.00</offeringAmount>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>5000000.00</maximumOfferingAmount>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<deadlineDate>11-27-2026</deadlineDate>"
+    },
+    {
+     "doc_id": 9,
+     "page": 2,
+     "quote": "120 days after launch"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A5",
+   "claim_text": "Minimum individual purchase is $500 and maximum $2,500,000 (subject to Reg CF limits); the issuer may change these amounts in its sole discretion and may offer different amounts in special programs.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 8,
+     "quote": "Crowdfunding, the Minimum Individual Purchase Amount is $500.00 and the Maximum Individual Purchase Amount"
+    },
+    {
+     "doc_id": 9,
+     "page": 8,
+     "quote": "is $2,500,000. The Issuer reserves the right to amend the Minimum Individual Purchase Amount and Maximum"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A6",
+   "claim_text": "Issuer pays the intermediary a cash fee of the greater of $15,000 or 6% of amounts raised above $100,000 (0% below), a $7,500 non-refundable onboarding fee already paid, and the intermediary also receives securities equal to 2% of securities sold (increasing shares outstanding). Investor-side fees are not stated.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 2,
+     "quote": "At the conclusion of the Offering, the Issuer shall pay the Intermediary a cash fee equal to the greater of (A) $15,000.00"
+    },
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A7",
+   "claim_text": "At the $75,000 target, the $15,000 minimum intermediary cash fee equals 20% of the target amount (consistent with the use-of-proceeds table).",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Intermediary Fees 20.0% $15,000 5.88% $294,000"
+    }
+   ],
+   "financial_period": "Offering terms (filed 2026-07-30)",
+   "calculation": {
+    "formula": "fee / target",
+    "inputs": [
+     {
+      "name": "fee",
+      "value": 15000,
+      "claim_id": "A6"
+     },
+     {
+      "name": "target",
+      "value": 75000,
+      "claim_id": "A4"
+     }
+    ],
+    "result": 0.2
+   },
+   "basis_claim_ids": [
+    "A4",
+    "A6"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A8",
+   "claim_text": "As of the Form C date, 75,000,001 common shares are outstanding, 100% held by founder/CEO Ronald Lane. 75,000,000 of these were ratified by the board on June 25, 2026. No preferred stock is authorized; no options, SAFEs or warrants outstanding.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Ronald Howard Lane* 75,000,001Common Shares 100.0%"
+    },
+    {
+     "doc_id": 9,
+     "page": 36,
+     "quote": "outstanding, the Issuer has 75,000,001 shares of common stock issued and outstanding as of the date of this Form C."
+    }
+   ],
+   "financial_period": "As of Form C date (July 2026)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Audited balance sheet at 12/31/2025 shows only 1 share issued and outstanding (doc 9 p45); the 75M shares were ratified after year-end, a late capitalization event."
+  },
+  {
+   "claim_id": "A9",
+   "claim_text": "Arithmetic only: $1.00 offer price times 75,000,001 existing shares gives about $75.0 million implied pre-offering equity value at the offer price. This excludes convertible notes, the 2% intermediary shares and new shares. The price is stated as arbitrary, so this is not a valuation opinion.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Ronald Howard Lane* 75,000,001Common Shares 100.0%"
+    }
+   ],
+   "financial_period": "Offer terms July 2026; shares as of Form C date",
+   "calculation": {
+    "formula": "price_per_share * shares_outstanding",
+    "inputs": [
+     {
+      "name": "price_per_share",
+      "value": 1,
+      "claim_id": "A3"
+     },
+     {
+      "name": "shares_outstanding",
+      "value": 75000001,
+      "claim_id": "A8"
+     }
+    ],
+    "result": 75000001
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A8"
+   ],
+   "contradictions": "Against this, the company had no revenue and about $19K cash at FY2025 year-end (A15)."
+  },
+  {
+   "claim_id": "A10",
+   "claim_text": "The operative contract is a Subscription Agreement (Exhibit B) for Common Stock at $1.00/share, target $75,000, max $5,000,000, first-come-first-served oversubscription. Amendments need written consent of the majority of voting power of the Securities.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 53,
+     "quote": "The Company is offering to both accredited and non-accredited investors up to 5,000,000 shares of its"
+    },
+    {
+     "doc_id": 9,
+     "page": 61,
+     "quote": "Waiver, Amendment. Any provision of this Subscription Agreement may be amended, waived or"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A11",
+   "claim_text": "Every investor irrevocably grants Ronald Lane (Executive Chairman, or successor) a proxy over all voting and written-consent rights for 10 years from subscription acceptance; investors effectively cannot vote. Lane already holds 100% of voting equity.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 54,
+     "quote": "Irrevocable Proxy. As a condition of, and in consideration for, the Company"
+    },
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "exclusively with the Executive Chairman for the duration of the proxy term. Investors should review the risk factors"
+    },
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "Currently, Ronald Lane, our Executive Chairman, will have the authority with the irrevocable proxy to direct the vote"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A8"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A12",
+   "claim_text": "Securities are expected to be held of record by a custodian (BitGo Bank & Trust, N.A.) in book-entry form; investors hold only a securities entitlement, not direct record ownership.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 9,
+     "quote": "The Securities sold in this Offering are expected to be held of record by BitGo Bank & Trust, National"
+    },
+    {
+     "doc_id": 9,
+     "page": 23,
+     "quote": "Investors will hold the Securities through a custodian and may not be direct record holders of the Securities."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A13",
+   "claim_text": "Stock carries no anti-dilution rights, no inspection or information rights beyond those required by law, and the issuer has no right to repurchase. Dividends only at board discretion per charter.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "The Securities do not have anti-dilution rights, which means that future equity issuances and other events will dilute"
+    },
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "Investors will not be entitled to any inspection or information rights other than those required by law."
+    },
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "• The Issuer does not have the right to repurchase the Securities."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A14",
+   "claim_text": "Resale is restricted for one year under Reg CF; there is no public market and none may ever develop; IPO lock-up/market stand-off provisions apply (up to 270 days in the subscription agreement).",
+   "claim_type": "risk",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "Any Securities sold pursuant to Regulation CF may not be transferred by any Investor during the one-year period"
+    },
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "be a long-term nature of this investment. There is not now and likely will not ever be a public"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Form C p11 says lock-up up to 180 days; subscription agreement p60 says up to 270 days. Minor inconsistency."
+  },
+  {
+   "claim_id": "A15",
+   "claim_text": "Pre-revenue: FY2025 (ended 12/31/2025, about 9.5 months before cutoff, not stale) revenue $0, net loss $56,126, cash and total assets $19,213; FY2024 net loss $63,474, cash $19,252. Short- and long-term debt shown as 0.00 on the Form C fields.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>0.00"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<netIncomeMostRecentFiscalYear>-56126.00"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<cashEquiMostRecentFiscalYear>19213.00"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<netIncomePriorFiscalYear>-63474.00"
+    }
+   ],
+   "financial_period": "FY2025 (12/31/2025) and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Form C XML debt fields show 0 long-term debt, while the audited balance sheet shows $50,704 of non-current convertible notes (A16)."
+  },
+  {
+   "claim_id": "A16",
+   "claim_text": "Audited balance sheet at 12/31/2025: total liabilities $268,348 (including $199,875 payable to the founder-related party with no stated interest or maturity, and $50,704 convertible notes net of discount); stockholders' deficit $(249,135).",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "TotalLiabilities 268,348 212,261"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Payabletorelatedparty 199,875 212,261"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Total Stockholders' Equity (249,135) (193,009)"
+    }
+   ],
+   "financial_period": "As of 12/31/2025 and 12/31/2024",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A17",
+   "claim_text": "Financial statements were audited by Alice.CPA LLC (report dated June 11, 2026) with an unmodified opinion statement under GAAS; the auditor is named as independent in the report text, but the report is part of the issuer's filing.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 43,
+     "page": 43,
+     "quote": "Independent Auditor's Report"
+    },
+    {
+     "doc_id": 9,
+     "page": 44,
+     "quote": "Alice.CPA LLC"
+    },
+    {
+     "doc_id": 9,
+     "page": 44,
+     "quote": "June 11, 2026"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The auditor's report text in the pack has no going-concern emphasis paragraph, although the Form C risk factors state substantial doubt (A18)."
+  },
+  {
+   "claim_id": "A18",
+   "claim_text": "The issuer states its financial condition raises substantial doubt about its ability to continue as a going concern; operations historically funded by the founder; accumulated deficit about $249,000 at 12/31/2025.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Our financial condition raises substantial doubt about our ability to continue as a going concern."
+    },
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Historically, our operations have been supported by"
+    }
+   ],
+   "financial_period": "As of 12/31/2025",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Audited Note 4 says statements are prepared on a going-concern basis and describes the loss as 'normal' for development-stage companies (doc 9 p51)."
+  },
+  {
+   "claim_id": "A19",
+   "claim_text": "As of June 18, 2026 the issuer reported $160,487.20 cash and claimed about six months of runway. This is a post-year-end, unaudited issuer figure about 4 months before the cutoff; no current runway was recomputed.",
+   "claim_type": "financial",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "As of June 18, 2026, the Issuer had an aggregate of $160,487.20 in cash and cash equivalents, leaving the Issuer with"
+    }
+   ],
+   "financial_period": "As of 2026-06-18",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Six-month runway is not reconcilable with the FY2025 net loss of $56,126 (A15), implying a much higher planned burn; monthly burn basis is not disclosed. The cash rise is consistent with the $150,000 note of June 12, 2026 (A20)."
+  },
+  {
+   "claim_id": "A20",
+   "claim_text": "Two convertible notes are outstanding: $60,000 (July 22, 2025, 4.19%, matures 2030, issued at a $10,000 discount) and $150,000 (June 12, 2026, 4.13%, matures 2031). Neither converts as a result of this offering; they convert on a 'Liquidity Event'. The $150,000 note converts principal plus interest plus $50,000. Conversion price/discount/cap are not disclosed. They would dilute offering investors.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 25,
+     "quote": "In addition, the Issuer has two outstanding convertible securities with principal amounts of $60,000 and $150,000,"
+    },
+    {
+     "doc_id": 9,
+     "page": 32,
+     "quote": "such note is convertible in connection with, or as a result of, the offering pursuant to Regulation Crowdfunding"
+    },
+    {
+     "doc_id": 9,
+     "page": 34,
+     "quote": "$50,000, together with all accrued interest thereon at"
+    },
+    {
+     "doc_id": 9,
+     "page": 52,
+     "quote": "bears interest at 4.19% per annum and a term of 5 years, maturing on July 22, 2030. The note was issued at discount of"
+    }
+   ],
+   "financial_period": "Notes dated 7/22/2025 and 6/12/2026",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Form C (p33) says the notes cannot convert before a Reg A or similar follow-on event; audited Note 5 defines liquidity events as change of control, private replacement financing or recapitalization (doc 9 p52). The pack describes the notes as senior debt."
+  },
+  {
+   "claim_id": "A21",
+   "claim_text": "On May 4, 2026 the company signed an MOU for a further $50,000 convertible note; no note had been issued under it as of the Form C.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 52,
+     "quote": "On May 4, 2026, the Company entered a Memorandum of Understanding (MOU) for $50,000 of funding structured"
+    }
+   ],
+   "financial_period": "May 2026",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A22",
+   "claim_text": "The company is pre-revenue and pre-clinical: SELtx has been tested only in transgenic ALS mice; the issuer says it does not know whether results will translate to humans.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "The Issuer is still in an early phase has no revenue, and is just beginning to implement its business plan."
+    },
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "The Issuer does not yet know if its successful results treating ALS infected mice will translate into similar positive"
+    }
+   ],
+   "financial_period": "As of July 2026",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A23",
+   "claim_text": "The issuer reports a proof-of-concept mouse study at Indiana University School of Medicine, claiming p=0.008 and improved motor function and survival. Study report, sample size and protocol are not in the pack.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 26,
+     "quote": "HOPE-Neuron conducted a proof-of-concept study at the Indiana University"
+    },
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "concept scientific study) is statistically positive, as it is more powerful than an industry 0.05 significance threshold"
+    }
+   ],
+   "financial_period": "Undated study",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A24",
+   "claim_text": "Planned milestones: more mouse dosing work, next-generation 'one button' human devices, and an IRB human ALS trial with Barrow Neurological Institute's ALS clinic; issuer says steps 'could commence in 2026' with sufficient funding. No FDA filing, IND or trial approval is documented.",
+   "claim_type": "traction",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "At this stage in the development pipeline, with sufficient funding (see use of funds), all of these steps could commence"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "HOPE-Neuron’s SELtx™ therapy is not yet available for human use."
+    }
+   ],
+   "financial_period": "Forward-looking, as of July 2026",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A22"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A25",
+   "claim_text": "Market per issuer: US ALS about 34,720 diagnosed cases; planned model splits revenue 40% issuer / 35% provider / 25% distributor, with projected $120,000 annual therapy price and illustrative 25-45% penetration scenarios. These are issuer projections with no pricing, payer or partner evidence in the pack.",
+   "claim_type": "market",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "According to the National ALS Registry, there were 34,720 diagnosed cases of ALS in the U.S. as of early 2026."
+    },
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "regard, management projects a revenue split consisting of HOPE-Neuron (40%), Provider (35%), and Distributor"
+    }
+   ],
+   "financial_period": "Projection",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Projection table uses 34,000 patients (labelled '34,00') rather than the 34,720 cited."
+  },
+  {
+   "claim_id": "A26",
+   "claim_text": "Competition: the issuer says it has no peer with similar technology, yet also cites three approved ALS drugs, 50+ drugs in development and 107 active ALS trials.",
+   "claim_type": "competition",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Currently, the Issuer has no peer company or competitor with"
+    },
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "As an indication of the importance of this disease, the ALS Association reports that there are currently 50+ drugs in"
+    },
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "According to the ALS Therapy Development Institute, there are currently 107 active interventional clinical trials for ALS, with 33"
+    }
+   ],
+   "financial_period": "As of 2026",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A27",
+   "claim_text": "IP: the Form C lists company-owned patents (US 11471579, US 12667645 and a Japan patent) titled 'Gas treatment delivery systems and methods'. Patent status and ownership are not independently verified.",
+   "claim_type": "other",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "U.S. Patent No. 11471579"
+    },
+    {
+     "doc_id": 9,
+     "page": 13,
+     "quote": "intellectual property rights potential upon which to claim and file future patent applications. The Issuer may not have"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Business section says it 'controls the patents' while risk factors speak of potential future patent filings and unclear IP ownership/assignments (doc 9 p19). The patent numbering and expiration dates were not checked."
+  },
+  {
+   "claim_id": "A28",
+   "claim_text": "Use of proceeds at the $75,000 target: intermediary fees $15,000, clinical trials $30,000, G&A $13,000, equipment $7,000, R&D $4,000, others $6,000. At the $5M maximum: clinical trials $2.18M, G&A $1.104M, equipment $635,050. Management has broad discretion, and the issuer says the target alone may not sustain its plan.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Clinical Trials 40.0% $30,000 43.60% $2,180,000"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment covers final engineering and the delivery of two SELtx™ devices."
+    },
+    {
+     "doc_id": 9,
+     "page": 13,
+     "quote": "The amount of capital the Issuer is attempting to raise in this Offering may not be enough to sustain the Issuer’s"
+    }
+   ],
+   "financial_period": "Forward-looking",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A4"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A29",
+   "claim_text": "Team: founder/CEO Ronald Lane holds a PhD in Neurosciences (1973) and has led the company since 2020; the VP business development, interim CFO (since July 2025) and CTO (since Nov 2025) are listed. The pack documents no prior drug/device approval or clinical-trial execution history for these officers.",
+   "claim_type": "team",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "PhD, Neurosciences (1973)"
+    },
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "Interim CFO (July 2025-Present)"
+    },
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "Chief Technology Officer (November 2025-"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A30",
+   "claim_text": "The issuer reports 5 current employees and says it operates virtually.",
+   "claim_type": "team",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<currentEmployees>5.00</currentEmployees>"
+    }
+   ],
+   "financial_period": "As of July 2026",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A31",
+   "claim_text": "The issuer discloses it ran a previous convertible offering and may not have complied with all securities laws, creating potential rescission or enforcement risk.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "The Issuer has conducted a previous convertible offering and may not have complied with all relevant state and federal"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Previous Offerings section (p36) lists the convertible notes as the only securities sold in the last three years."
+  },
+  {
+   "claim_id": "A32",
+   "claim_text": "The issuer reserves the right to issue preferred stock with priority over common, and states a stated interest (no assurance) in a future Reg A offering into which investors would convert.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "The Company presently intends to issue only common stock, however, while there are no plans to issue preferred"
+    },
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "offering price or at any other price. While the Company has a stated interest in conducting a subsequent Regulation A"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Capitalization section says no preferred stock is authorized."
+  },
+  {
+   "claim_id": "A33",
+   "claim_text": "Availability: Form C filed 2026-07-30 with deadline 11-27-2026; the pack's offering metadata reports no closing and platform status unverified. A future deadline is not proof that the offering is open.",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<signatureDate>07-30-2026</signatureDate>"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<deadlineDate>11-27-2026</deadlineDate>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A4"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A34",
+   "claim_text": "Cash-return path for this stock: no dividends are expected, no repurchase right, a one-year restriction, no public market, and a 10-year proxy to the founder. Investors would most plausibly realize cash only via an acquisition, IPO, Reg A conversion or later private sale, all of which depend on trial success and further financing.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A11",
+    "A13",
+    "A14",
+    "A20",
+    "A22"
+   ],
+   "contradictions": ""
+  }
+ ],
+ "critical_items": [
+  {
+   "item": "issuer_and_offering_identity",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A1",
+    "A2",
+    "A4"
+   ],
+   "note": "Issuer, intermediary, file details confirmed from Form C XML and PDF."
+  },
+  {
+   "item": "security_type",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A3",
+    "A10"
+   ],
+   "note": "Common Stock; no SAFE or note offered."
+  },
+  {
+   "item": "operative_contract",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A10",
+    "A11",
+    "A12",
+    "A13"
+   ],
+   "note": "Subscription Agreement (Exhibit B, doc 9 pp. 53-63) is in the pack and was read. Lacks the charter/bylaws, which govern dividends and liquidation preference."
+  },
+  {
+   "item": "price_cap_and_conversion_terms",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A3",
+    "A9"
+   ],
+   "note": "Price $1.00 per share, arbitrary; no cap or discount in the common-stock contract (valuation cap mention is boilerplate). Existing notes' conversion price is not disclosed (A20)."
+  },
+  {
+   "item": "minimum_investment_and_fees",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A5",
+    "A6"
+   ],
+   "note": "Minimum $500 and issuer-paid intermediary compensation are cited, but investor-side fees (e.g. platform/custody/processing) are not stated in the pack; user must confirm."
+  },
+  {
+   "item": "financial_statements_and_dates",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A15",
+    "A16",
+    "A17",
+    "A19"
+   ],
+   "note": "Audited FY2025/FY2024 statements present; Form C XML debt fields differ from the balance sheet (A15). Cash figure as of 2026-06-18 is unaudited."
+  },
+  {
+   "item": "closing_or_availability_evidence",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A33"
+   ],
+   "note": "Platform page not verified; no closing evidence; only a Form C deadline."
+  }
+ ],
+ "missing_information": [
+  "Evidence that the offering is currently open on Republic (platform page unreachable); amount raised to date or any closing.",
+  "Investor-side fees (platform, custody, processing) not stated.",
+  "Certificate of Incorporation and bylaws (govern dividends, liquidation preference, transfer).",
+  "Conversion price, discount, valuation cap and Liquidity Event definitions for the two convertible notes; the note instruments themselves.",
+  "Mouse study report, protocol and sample size; independent corroboration of science and market claims.",
+  "Evidence of patents (registrations, assignments) and of any FDA contact, IND or IRB approval.",
+  "Evidence of third-party partnerships, distributors, clinics or device manufacturers.",
+  "Monthly burn basis behind the 'six months of runway' claim; any interim financials after 12/31/2025.",
+  "Basis for ratification of 75,000,000 founder shares and treatment of the 1-share balance at year-end.",
+  "Auditor going-concern paragraph status (report text shows none) and auditor independence beyond the stated assertion.",
+  "Details of the related-party payable ($199,875) repayment terms."
+ ]
+}

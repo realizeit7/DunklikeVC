@@ -1,0 +1,253 @@
+{
+ "business_model": {
+  "assessment": "The readable pack does not say what TradeFunded LLC does, who pays it or how it would earn money [A16]. The Form C shows only a website name, tradefunded.com [A2]. The name hints at something to do with trading or funding, but that is a guess and should not be treated as a finding. The company is pre-revenue, with $0 revenue in both reported fiscal years [A11, B4]. It has no employees and is run by its managers [A13]. The only substantive offering document, tradef.pdf, was not parsed [A15]. A business model assessment is therefore not possible from this pack [B5].",
+  "claim_ids": [
+   "A2",
+   "A11",
+   "A13",
+   "A15",
+   "A16",
+   "B4",
+   "B5"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "No demand evidence is in the pack. There are no customers, users, contracts, letters of intent, waitlists or sales. Revenue is $0 in both reported years [A11]. For a pre-revenue company, stage-appropriate evidence would be product progress, pilots or customer interviews. None of that is readable, because the offering PDF was not parsed [A15]. The absence of evidence in the pack does not show that demand is absent.",
+  "claim_ids": [
+   "A11",
+   "A15",
+   "A16"
+  ]
+ },
+ "competition": {
+  "assessment": "Nothing on competitors, market size or differentiation is in the pack [A16]. I will not supply outside knowledge or market statistics. This section is unknown.",
+  "claim_ids": [
+   "A16"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "The company is pre-revenue [B4]. It reports $0 cash, $0 debt and 0 employees for the most recent fiscal year, whose end date is not stated [A11, A13]. It reports total assets of $226,885, which are non-cash and of unknown nature [A12]. Net loss was -$23,115 in the prior year and $0 in the most recent year [A12]. These figures do not fit an entity incorporated on 02-10-2026 [A2, A12]. Without dated financial statements I cannot judge staleness or compute runway. The raise ranges from a $74,999.75 target to a $679,999.95 maximum [A6, A7]. The use of proceeds is not in the pack. On the issuer-side costs, the minimum intermediary cash fee of $15,000 is about 20% of the target raise [B2]. If the full maximum is raised, the 6% tier would imply roughly $34,800, but the fee text is truncated, so this is only a rough check [A9, B3]. The intermediary also receives units equal to 2% of units sold [A10, B3]. Whether the target raise would fund any real plan is unknown. The company has no cash and no employees, so the raise would be its first operating capital.",
+  "claim_ids": [
+   "A2",
+   "A6",
+   "A7",
+   "A9",
+   "A10",
+   "A11",
+   "A12",
+   "A13",
+   "B2",
+   "B3",
+   "B4"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "Main risks I can document. (1) The entity is very new, with a 02-10-2026 incorporation date, no revenue, no cash and no employees [A2, A11, A13]. (2) The financial fields cannot be reconciled with the incorporation date and are unexplained [A12]. (3) The key offering documents are unreviewed, so the business plan and the risk factors disclosed by the issuer are unseen [A15]. (4) The raise range is wide: the maximum is about nine times the target [B1]. A company that raises only the target may be underfunded, while one that raises the maximum has far more to deploy than the known team history supports. (5) Availability of the offering is unverified [A8]. Other risks, such as regulatory exposure in the business, cannot be assessed because the business is unknown.",
+  "claim_ids": [
+   "A2",
+   "A8",
+   "A11",
+   "A12",
+   "A13",
+   "A15",
+   "B1"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "Three people signed the Form C: Christopher Price as Chief Executive Officer, and Ryan Masten, Christopher Price and David Lojko as Manager Representatives [A14]. No biographies, prior roles or execution history are in the readable pack, so the team cannot be assessed. The company has no employees, so these managers are the whole organization [A13].",
+  "claim_ids": [
+   "A13",
+   "A14"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is LLC 'Units' [A4]. It is not a Crowd SAFE, and there is no cap or conversion mechanism in the readable pack [A5]. An investor could receive cash from three routes: (1) distributions of profit from the LLC; (2) a sale or liquidation of the company, with payout under the LLC agreement; (3) a resale of units to another buyer. All of this depends on contract terms that are not readable (unit class, distribution waterfall, transfer limits, information rights, manager control) [A15, A17, B6]. What usually prevents cash: a pre-revenue company has no profit to distribute; LLC units are typically hard to resell and may be restricted by the operating agreement; managers may control distribution timing; and many early companies fail or never reach a sale. These are general considerations, not facts found in the pack. As units of an LLC, they may also carry tax reporting consequences that I cannot assess from the pack. The path to proceeds is unverified.",
+  "claim_ids": [
+   "A4",
+   "A5",
+   "A15",
+   "A17",
+   "B6"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "The price is $0.35 per unit, set by the 'Arbitrary' method, meaning no formula or independent valuation [A5]. The target of 214,285 units at $0.35 gives $74,999.75, which matches the stated target [A6, B1]. The maximum implies about 1,942,857 units [A7]. The implied valuation cannot be computed because the number of units outstanding is not in the pack, so an investor cannot tell what percentage of the company $0.35 buys. Dilution: the intermediary receives units equal to 2% of units sold, and oversubscription is first-come, first-served [A7, A10, B3]. The minimum investment, investor fees, voting and information rights, transfer limits and repurchase rights are not found [A17]. Price and terms are assessed separately from business quality: on the available evidence, neither the price nor the contract can be judged reasonable or unreasonable.",
+  "claim_ids": [
+   "A5",
+   "A6",
+   "A7",
+   "A10",
+   "A17",
+   "B1",
+   "B3"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "The stated target of $74,999.75 equals 214,285 units times $0.35. The maximum offering is about 9.07 times the target.",
+   "claim_type": "security_terms",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<noOfSecurityOffered>214285</noOfSecurityOffered>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>679999.95</maximumOfferingAmount>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<offeringAmount>74999.75</offeringAmount>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": {
+    "formula": "max_amount / target_amount",
+    "inputs": [
+     {
+      "name": "max_amount",
+      "value": 679999.95,
+      "claim_id": "A7"
+     },
+     {
+      "name": "target_amount",
+      "value": 74999.75,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 9.0667
+   },
+   "basis_claim_ids": [
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "The intermediary's $15,000 minimum cash fee is about 20% of the $74,999.75 target. The tiered calculation charges 0% up to $100,000, so the minimum fee would apply at the target. The fee text is truncated in the filing.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "the Issuer will pay the Intermediary a cash fee equal to the greater of $15,000 or a tiered calculation"
+    }
+   ],
+   "financial_period": "",
+   "calculation": {
+    "formula": "min_fee / target_amount",
+    "inputs": [
+     {
+      "name": "min_fee",
+      "value": 15000,
+      "claim_id": "A9"
+     },
+     {
+      "name": "target_amount",
+      "value": 74999.75,
+      "claim_id": "A6"
+     }
+    ],
+    "result": 0.2
+   },
+   "basis_claim_ids": [
+    "A6",
+    "A9"
+   ],
+   "contradictions": "The fee field is truncated, so the full terms (including the non-refundable fee already paid) are unknown."
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "If the maximum offering sells out, the 6% tier on the amount above $100,000 would be roughly $34,800 in cash, which exceeds the $15,000 minimum. The intermediary's 2% securities would be roughly 38,857 units. Both are rough figures because the fee text is truncated and the actual units sold are unknown.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "The Intermediary will also receive compensation in the form of securities equal to two percent (2%) of the total number of the securities sold in the Offering."
+    }
+   ],
+   "financial_period": "",
+   "calculation": {
+    "formula": "0.02 * max_units",
+    "inputs": [
+     {
+      "name": "max_units",
+      "value": 1942857,
+      "claim_id": "A7"
+     }
+    ],
+    "result": 38857.14
+   },
+   "basis_claim_ids": [
+    "A7",
+    "A9",
+    "A10"
+   ],
+   "contradictions": "The cash fee estimate (0.06 * (679999.95 - 100000) is about 34,800) rests on a truncated fee description."
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "TradeFunded LLC is a pre-revenue company. Revenue was $0.00 in both reported fiscal years. Stage-appropriate evidence (product progress, pilots, team history) is not in the readable pack.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>0.00</revenueMostRecentFiscalYear>"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenuePriorFiscalYear>0.00</revenuePriorFiscalYear>"
+    }
+   ],
+   "financial_period": "Most recent and prior fiscal years (dates not stated)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A11"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "Business quality cannot be assessed from the pack. The unparsed tradef.pdf may contain the business description, but its contents are unknown, so nothing should be inferred about the business from the name alone.",
+   "claim_type": "other",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A15",
+    "A16"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "Because the security is LLC units, any payout depends on the operating agreement, which is not readable. Whether the units carry distribution rights, voting rights or tradability is unverified. This is why the path to cash for an investor is unconfirmed.",
+   "claim_type": "contract_provision",
+   "evidence_status": "analyst_inference",
+   "citations": [],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A4",
+    "A15",
+    "A17"
+   ],
+   "contradictions": ""
+  }
+ ]
+}

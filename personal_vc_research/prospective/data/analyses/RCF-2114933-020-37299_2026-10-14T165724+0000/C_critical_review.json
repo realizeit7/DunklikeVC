@@ -1,0 +1,519 @@
+{
+ "issues": [
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A17 citation validity",
+   "explanation": "A17 cites doc_id 43 page 43. Doc 43 is not in the pack; the only documents are 8 and 9. The auditor's report is on doc 9 page 43. The citation must be corrected (C1), or the claim fails mechanical verification.",
+   "claim_ids": [
+    "A17",
+    "C1"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Critical item price_cap_and_conversion_terms marked confirmed_with_citation",
+   "explanation": "The $1.00 price and the lack of a cap in the common-stock contract are supported. The conversion price, discount and cap of the two outstanding notes are not in the pack (A20), and these set the dilution investors face. The pack checklist also lists this item as 'candidate_unverified'. The item should be treated as partially confirmed. It is not a clean confirmation, and it should not support a pass on price_and_contract.",
+   "claim_ids": [
+    "A3",
+    "A20",
+    "A9"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B economics_and_funding: $75,000 target nets about $60,000",
+   "explanation": "The use-of-proceeds table says its figures exclude legal and financial provider fees, bad-actor checks, payment processing and escrow fees (C6). The $7,500 onboarding fee was already paid (A6). Net proceeds at the target are therefore likely below $60,000. At the target, clinical trials get only $30,000 (A28). The Form C also states a $635,050 equipment plan that exists only at the maximum raise (C7). The plan is not funded at the target.",
+   "claim_ids": [
+    "A7",
+    "A28",
+    "B2",
+    "C6",
+    "C7"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A19 / B runway: six-month runway claim",
+   "explanation": "The issuer defines runway as cash divided by average monthly net loss. $160,487 and six months implies about $26.7K per month (C2). FY2025 net loss averaged about $4.7K per month (C3). The roughly 5.7-fold gap is unexplained, and the burn basis is undisclosed. The figure is an unaudited issuer statement and should not be used as support for funding adequacy.",
+   "claim_ids": [
+    "A19",
+    "A15",
+    "C2",
+    "C3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Activity vs. expense record",
+   "explanation": "The Form C claims 'extensive testing', patents and a university mouse study. The audited FY2025 income statement shows $0 R&D (FY2024 $26,836), and total G&A of only $41,405 (C4, C14). The study's date, sponsor and who paid are not shown. The company reports 5 employees (A30), but the expense base is hard to reconcile with salaried staff. Two officers are listed as independent contractors or consultants. This does not prove the claims are wrong. It means the traction claims have no financial corroboration, and the team and traction assessment is weaker than A and B imply.",
+   "claim_ids": [
+    "A23",
+    "A29",
+    "A30",
+    "C4",
+    "C14"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A23/A22: mouse study p=0.008 treated as strong traction",
+   "explanation": "The study is a single issuer-reported proof of concept. The pack has no sample size, protocol, endpoints, blinding or peer review. The issuer also misreads the p-value as a '<1% chance results occurred by random chance' (C9). The pack's page 26 text is truncated mid-sentence at the key result. Treat it as an unverified issuer claim. 'Excellent safety profile' is also asserted from mouse data only.",
+   "claim_ids": [
+    "A22",
+    "A23",
+    "C9"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A25 market and pricing claims",
+   "explanation": "The issuer says its annual price would be about 2/3 of approved drugs, but its own list includes generic riluzole at $276–$360 per year (C8). The 80%+ gross margin, 25–45% penetration and 'adequate manufacturing resources' claims have no support. They conflict with the stated reliance on third-party manufacturers (C12). The video says ALS market revenue of $1–2 billion by 2028 (C11), even though the therapy is not yet used in humans (A24). These are optimistic assumptions. B correctly called them illustrative but did not flag these specific inconsistencies.",
+   "claim_ids": [
+    "A25",
+    "A24",
+    "B4",
+    "C8",
+    "C11",
+    "C12"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B economics: '$5M maximum would still be small for a therapy approval program'",
+   "explanation": "This relies on outside knowledge of trial and approval costs, which is not in the pack. The pack only says the issuer's own plan allots $2.18M to clinical trials at the maximum (A28), and that the raise may not sustain the plan. Restate it as: the issuer itself says the funds may be insufficient. Do not state an external cost benchmark.",
+   "claim_ids": [
+    "A28"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Related-party payable and use of proceeds",
+   "explanation": "$199,875 is owed to the controlling founder, with no stated interest or maturity (A16). Management has broad discretion over proceeds (C13). The use-of-proceeds table has no repayment line, but the pack does not rule out repayment of insider claims from proceeds. Also, the 75,000,000 founder shares were ratified after the audit report date, with no stated consideration or issue date (A8). The $75M implied equity value in A9 therefore rests on shares with unexplained origin.",
+   "claim_ids": [
+    "A8",
+    "A9",
+    "A16",
+    "C13"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Subscription agreement terms omitted from A",
+   "explanation": "A did not record the jury-trial waiver, exclusive venue at the company's principal place of business, the investor indemnity of the company and custodian, or the company's right to terminate the offering at any time (C10). These matter to the price_and_contract gate and to the investor's recourse.",
+   "claim_ids": [
+    "A10",
+    "C10"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A27/A20 conflicts needing explicit weight",
+   "explanation": "IP: the Form C says the company 'controls the patents', while risk factors say ownership and assignments may be defective (A27). Notes: Form C says they cannot convert before a Reg A or similar event, while audited Note 5 lists change of control, private replacement financing or recapitalization as triggers (A20). The earlier trigger would make dilution more likely. A flagged both but B treated the notes' conversion as a single liquidity event. The cash flow statement also reports convertible note proceeds as an investing activity (C5), a classification oddity. Together with the Form C XML showing $0 debt (A15), financial data reliability is somewhat reduced.",
+   "claim_ids": [
+    "A15",
+    "A20",
+    "A27",
+    "C5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B4 and A24 timeline",
+   "explanation": "B4 rests on documents missing from the pack, which is an absence and not proof that no approvals exist. That is fair as a labelled inference. However, B did not challenge the issuer's unsupported assertion that a device-enabled therapy 'is expected to move on a faster timeline' than pharma. The pack has no FDA classification or pathway evidence. The Form C itself says the therapy depends on FDA approvals.",
+   "claim_ids": [
+    "A24",
+    "B4"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Evidence sufficiency",
+   "explanation": "Investor-side fees, the platform's current status, the charter and bylaws, the note instruments, the study report, patent records and any FDA/IRB records are not in the pack. At least two critical items are not confirmed (minimum_investment_and_fees and closing_or_availability_evidence), so evidence_sufficiency cannot be pass.",
+   "claim_ids": [
+    "A5",
+    "A6",
+    "A33"
+   ],
+   "severity": "high"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "Correction to A17: the Independent Auditor's Report (dated June 11, 2026, Alice.CPA LLC, unmodified opinion under GAAS) appears on doc 9 page 43, not on doc 43. It is part of the issuer's filing.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 43,
+     "quote": "Independent Auditor's Report"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "contradictions": "A17 cites a doc_id that is not in the pack."
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "Arithmetic only: the issuer's own runway method (cash divided by average monthly net loss) with $160,487.20 cash and about six months of runway implies an average monthly net loss of about $26.7K. This is an implied figure, not a disclosed one.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "As of June 18, 2026, the Issuer had an aggregate of $160,487.20 in cash and cash equivalents, leaving the Issuer with"
+    }
+   ],
+   "financial_period": "Cash as of 2026-06-18 (unaudited)",
+   "calculation": {
+    "formula": "cash / runway_months",
+    "inputs": [
+     {
+      "name": "cash",
+      "value": 160487.2,
+      "claim_id": "A19"
+     },
+     {
+      "name": "runway_months",
+      "value": 6,
+      "claim_id": "A19"
+     }
+    ],
+    "result": 26747.87
+   },
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "Far above the FY2025 average monthly loss (C3); basis undisclosed."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "Arithmetic only: the FY2025 net loss of $56,126 averages about $4.7K per month.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<netIncomeMostRecentFiscalYear>-56126.00"
+    }
+   ],
+   "financial_period": "FY2025 (ended 12/31/2025)",
+   "calculation": {
+    "formula": "net_loss / months_in_year",
+    "inputs": [
+     {
+      "name": "net_loss",
+      "value": 56126,
+      "claim_id": "A15"
+     },
+     {
+      "name": "months_in_year",
+      "value": 12,
+      "claim_id": "A15"
+     }
+    ],
+    "result": 4677.17
+   },
+   "basis_claim_ids": [
+    "A15"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "The audited income statement shows R&D expense of $0 in FY2025 and $26,836 in FY2024. This is thin financial evidence of development spending, against the Form C's claim of 'extensive testing' with 'patented prototype equipment'.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 46,
+     "quote": "Researchanddevelopment - 26,836"
+    },
+    {
+     "doc_id": 9,
+     "page": 26,
+     "quote": "HOPE-Neuron is not a concept company but has conducted extensive testing utilizing its patented prototype"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A23"
+   ],
+   "contradictions": "Study date and payer not stated; the study may predate FY2024 or have been paid outside the company's books. Unknown."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The audited cash flow statement reports the convertible note proceeds ($50,704, net of discount) as an investing activity and reports no financing cash flows. This is an unusual classification.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 48,
+     "quote": "Net cash used in investing activities 50,704 -"
+    },
+    {
+     "doc_id": 9,
+     "page": 48,
+     "quote": "Convertible notes payable, net of discount 50,704 -"
+    }
+   ],
+   "financial_period": "FY2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A16"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The use-of-proceeds table states that its values exclude payments to financial and legal service providers, bad-actor check fees, payment processing and escrow fees, so net proceeds are lower than the table implies.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "are not inclusive of payments to financial and legal service providers, fees associated with bad actor checks, payment"
+    }
+   ],
+   "financial_period": "Offering terms (July 2026)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "B stated target proceeds net to about $60,000 after the intermediary fee."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The Form C says the issuer plans to allocate about $635,050 to SELtx equipment, but the use-of-proceeds table shows $635,050 for equipment only at the $5M maximum; the target allocation is $7,000.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "The Issuer plans to allocate approximately $635,050 towards the purchase of"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment 9.3% $7,000 12.70% $635,050"
+    }
+   ],
+   "financial_period": "Offering terms (July 2026)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "The financial section states the $635,050 as a plan without saying it assumes the maximum raise."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "The issuer says its $120,000 annual price would be about 2/3 of the price of currently approved drugs, yet its own list shows generic riluzole at $276–$360 per year. The comparison holds only against the two high-priced drugs.",
+   "claim_type": "market",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "of the price of currently approved drugs, with the potential for industry-leading mean survival benefits (if mouse"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "$276-$360 depending on the formulation."
+    }
+   ],
+   "financial_period": "Projection",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25"
+   ],
+   "contradictions": "Internal inconsistency within the issuer's own market section."
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The issuer interprets p=0.008 as showing a 'low probability (less than 1%) that the observed results occurred by random chance'. This is a loose reading of a p-value, and it says nothing about sample size, study design or human relevance. The study report is not in the pack.",
+   "claim_type": "traction",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "This indicates a low probability (less than 1%) that the observed results occurred by random chance."
+    }
+   ],
+   "financial_period": "Undated study",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A23"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C10",
+   "claim_text": "Subscription agreement terms not previously recorded: the company may terminate the offering at any time; investors waive jury trial; proceedings go to courts at the company's principal place of business on an exclusive basis; and investors indemnify the company and custodian for breaches of their representations.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 55,
+     "quote": "terminate the Offering at any time. The Investor further understands that during and following termination of the"
+    },
+    {
+     "doc_id": 9,
+     "page": 61,
+     "quote": "THE UNDERSIGNED IRREVOCABLY WAIVES ANY AND ALL"
+    },
+    {
+     "doc_id": 9,
+     "page": 61,
+     "quote": "submission shall be exclusive unless none of such courts has lawful jurisdiction over such Proceedings."
+    },
+    {
+     "doc_id": 9,
+     "page": 59,
+     "quote": "Investor agrees to indemnify and hold harmless the Company and the Custodian and each of their respective founders,"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A10"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C11",
+   "claim_text": "The Exhibit C deal-page video transcript says the ALS market could be worth $1 to almost $2 billion by 2028. This is issuer-provided material, not independent corroboration. It sits alongside the Form C's statement that the therapy is not yet available for human use.",
+   "claim_type": "market",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 66,
+     "quote": "that could be worth anywhere from 1 to almost $2 billion by 2028. This shows the potential"
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "HOPE-Neuron’s SELtx™ therapy is not yet available for human use."
+    }
+   ],
+   "financial_period": "Projection to 2028",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25",
+    "A24"
+   ],
+   "contradictions": "No approvals or human data are documented in the pack."
+  },
+  {
+   "claim_id": "C12",
+   "claim_text": "The issuer says it has adequate equipment manufacturing resources for its three-year revenue estimates, but also lists reliance on other companies for components and services and on third-party equipment manufacturers. The use-of-proceeds equipment line covers only two devices.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "it has adequate equipment manufacturing resources to achieve these estimates over a three-year ramp-up time horizon."
+    },
+    {
+     "doc_id": 9,
+     "page": 13,
+     "quote": "We rely on other companies to provide components and services for our products."
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment covers final engineering and the delivery of two SELtx™ devices."
+    }
+   ],
+   "financial_period": "Forward-looking",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25",
+    "A28"
+   ],
+   "contradictions": "The manufacturing-capacity assertion has no supporting contract or capacity evidence in the pack."
+  },
+  {
+   "claim_id": "C13",
+   "claim_text": "The founder, who controls 100% of voting equity, is owed $199,875 under a related-party liability with no specified interest rate or maturity date, and management has broad discretion over proceeds. The pack does not say whether proceeds could repay this liability.",
+   "claim_type": "risk",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 36,
+     "quote": "operating expenses to support the initial operations. The outstanding related party liability does not have any specified"
+    },
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "The Issuer's management may have broad discretion in how the Issuer uses the net proceeds of the Offering."
+    }
+   ],
+   "financial_period": "Payable as of 12/31/2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A16",
+    "A8"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C14",
+   "claim_text": "Reported 5 employees sit alongside a small expense base: FY2025 G&A was $41,405 (total operating expenses $51,891). Two officers are described as independent contractors or consultants, and a risk factor says key persons may not devote full time. This points to a very thin operating organization. It is an inference, not a documented fact about staffing.",
+   "claim_type": "team",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 46,
+     "quote": "General and administrative 41,405 25,204"
+    },
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "Independent Contractor & Consultant – Private"
+    },
+    {
+     "doc_id": 9,
+     "page": 20,
+     "quote": "These persons may not devote their full time and attention to the"
+    }
+   ],
+   "financial_period": "FY2025; roles as of July 2026",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A29",
+    "A30"
+   ],
+   "contradictions": "Form C XML reports 5 current employees; the form does not break down paid versus unpaid roles."
+  }
+ ]
+}

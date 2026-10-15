@@ -1,0 +1,211 @@
+{
+ "gates": [
+  {
+   "gate": "evidence_sufficiency",
+   "result": "unknown",
+   "criteria_applied": [
+    "All seven critical information items must be confirmed with citations for a pass",
+    "Financial figures must carry a period and be consistent across sources",
+    "Key claims need support beyond the issuer's own statements"
+   ],
+   "supporting_claim_ids": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A10",
+    "A15",
+    "A16",
+    "C1"
+   ],
+   "counterevidence_claim_ids": [
+    "A5",
+    "A6",
+    "A19",
+    "A20",
+    "A23",
+    "A33",
+    "C5"
+   ],
+   "uncertainty": "Two critical items are not confirmed: investor-side fees and whether the offering is open. The conversion terms of the two outstanding notes are only partly confirmed. The charter and bylaws, the note instruments, the mouse study report, patent records and any FDA or IRB records are missing. The Form C XML shows $0 long-term debt while the audited balance sheet shows $50,704 of notes. The cash flow statement puts note proceeds under investing. The pack holds only issuer-prepared documents, so nothing is independently corroborated. The result is therefore not a pass. It is unknown, not fail, because the core contract and the audited statements are present."
+  },
+  {
+   "gate": "business_thesis",
+   "result": "unknown",
+   "criteria_applied": [
+    "Pre-revenue company: judge stage-appropriate evidence only, not revenue",
+    "Is there documented, non-issuer-reported evidence that the therapy works or is progressing toward human trials?",
+    "Do the documented team and funding match the plan?",
+    "Are the market and pricing assumptions internally consistent?"
+   ],
+   "supporting_claim_ids": [
+    "A22",
+    "A23",
+    "A24",
+    "A27",
+    "A29"
+   ],
+   "counterevidence_claim_ids": [
+    "A15",
+    "A18",
+    "A19",
+    "A25",
+    "A26",
+    "A30",
+    "B4",
+    "C4",
+    "C8",
+    "C9",
+    "C11",
+    "C12",
+    "C14"
+   ],
+   "uncertainty": "The only efficacy evidence is one mouse study that the issuer reports, with no sample size, protocol or report in the pack. The issuer says it does not know whether the result will translate to humans. No FDA contact, IND, IRB approval, partner agreement or payer evidence is documented. This is an absence from the pack, not proof that none exists. The team has no documented history of drug or device approval or trial execution. Audited R&D spend was $0 in FY2025 and $26,836 in FY2024. The market section has internal inconsistencies (the 2/3-of-price claim against generic riluzole, 34,000 vs 34,720 patients). The scientific idea could be valid, and nothing in the pack can confirm or refute it. For that reason this is unknown rather than pass or fail."
+  },
+  {
+   "gate": "price_and_contract",
+   "result": "fail",
+   "criteria_applied": [
+    "Is the price tied to any objective measure, and is the implied value reasonable against documented financials?",
+    "Does the security give the investor control, information, anti-dilution or a defined cash path?",
+    "Are dilution sources from existing instruments quantified?",
+    "Are fees and investor-side costs fully disclosed?"
+   ],
+   "supporting_claim_ids": [
+    "A5",
+    "A6",
+    "A10"
+   ],
+   "counterevidence_claim_ids": [
+    "A3",
+    "A9",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A20",
+    "B1",
+    "B2",
+    "B3",
+    "C10",
+    "C13"
+   ],
+   "uncertainty": "The price is stated to be arbitrary. Multiplying $1.00 by 75,000,001 founder shares gives about $75M of implied pre-offering equity. That is arithmetic, not a valuation opinion. The founder shares were ratified only in June 2026, with no stated consideration, and the audited balance sheet shows 1 share. Investors give up voting for 10 years through an irrevocable proxy to the founder, who already holds 100% of votes. They get no information rights beyond the legal minimum and no anti-dilution. They hold only a custodian-held securities entitlement. Two notes with undisclosed conversion terms (and a $50,000 add-on on one) sit ahead of the stock. The liquidation preference and dividend terms are in a charter that is not in the pack. Investor-side fees are not found. This result is a fail on contract and price terms only, separate from business quality. I cannot rule out that terms are fairer than they look, for example if the charter has favorable protections."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "Accepted. A17 cited a doc_id (43) that is not in the pack. The auditor's report is on doc 9 page 43, and C1 corrects it. A17's quote 'Independent Auditor's Report' should be read at doc 9 p43. I rely on C1, not the original A17 citation, for the audit claim."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "Accepted. I downgrade price_cap_and_conversion_terms to partially confirmed. The $1.00 price and the absence of a cap in the common-stock contract are supported (A3). The notes' conversion price, discount and cap are not in the pack (A20), and the pack checklist marks the item candidate_unverified. It is not used to support a pass on price_and_contract."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "Accepted. The 'about $60,000 net' figure in the economics section is an upper bound. The use-of-proceeds table excludes legal, financial provider, bad-actor check, processing and escrow fees (C6), and the $7,500 onboarding fee was already paid. At the target only $30,000 goes to clinical trials, and the $635,050 equipment plan exists only at the maximum raise (C7). The plan is not funded at the target."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "Accepted. The six-month runway claim implies about $26.7K of monthly loss (C2), against about $4.7K per month in FY2025 (C3). The burn basis is undisclosed. It is an unaudited issuer statement, and I do not use it as support for funding adequacy. I computed no current runway."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "Accepted. Audited R&D was $0 in FY2025 and $26,836 in FY2024, and G&A was $41,405 (C4, C14). The Form C claims extensive testing, patents and a university study, and the pack does not show who paid for the study or when it was done. This does not prove the claims wrong. It means they lack financial corroboration, so the traction and team assessments are weaker than the earlier stages implied."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "Accepted. The mouse study is an unverified issuer claim. No sample size, protocol, endpoints, blinding or peer review is in the pack, and page 26 is truncated at the key result. The issuer's reading of p=0.008 as a '<1% chance of random results' is loose (C9). 'Excellent safety profile' rests on mouse data only. I give it no weight toward a pass."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "Accepted. The issuer's 2/3-of-approved-drug-price claim conflicts with its own list showing generic riluzole at $276-$360 per year (C8). The 80%+ margin, 25-45% penetration and 'adequate manufacturing resources' statements have no support and conflict with the stated reliance on third-party manufacturers (C12). A video claim of a $1-2B ALS market by 2028 appears next to a statement that the therapy is not available for human use (C11). All are treated as optimistic issuer projections."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "Accepted. The statement that $5M would be small for an approval program used outside knowledge, so I withdraw it. What the pack supports is narrower. The issuer allots $2.18M to clinical trials at the maximum and says the raise may not sustain its plan (A28)."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "Accepted. The founder is owed $199,875, with no stated interest or maturity, and management has broad discretion over proceeds (C13). The use-of-proceeds table has no repayment line, but the pack does not rule out repayment of insider claims. The 75,000,000 founder shares were ratified after the audit report date with no stated consideration (A8). The $75M implied value in A9 therefore rests on shares of unexplained origin."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "Accepted. The jury-trial waiver, exclusive venue at the company's home courts, the investor indemnity of the company and custodian, and the company's right to terminate the offering at any time (C10) are now part of the price_and_contract gate. They limit investor recourse."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "Accepted. Two conflicts are given weight. First, the Form C says the company 'controls the patents', while its risk factors say IP ownership and assignments may be defective (A27). Second, the Form C says the notes cannot convert before a Reg A or similar event, while audited Note 5 lists change of control, private replacement financing or recapitalization as triggers (A20). The conversion trigger is therefore ambiguous, and earlier dilution is possible. The cash flow classification oddity (C5) and the $0 debt in the XML (A15) lower my confidence in the data."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "Accepted. B4 is a labelled inference from missing documents and not a finding that no approvals exist. The claim that a device-enabled therapy will move on a faster timeline than pharma is an unsupported issuer assertion. The pack has no FDA pathway or classification evidence, and the Form C itself says the therapy depends on FDA approvals (A24)."
+  },
+  {
+   "issue_index": 12,
+   "accepted": true,
+   "response": "Accepted. Investor-side fees (minimum_investment_and_fees) and platform availability (closing_or_availability_evidence) are not found in the pack. The charter and bylaws, the note instruments, the study report, patent records and any FDA or IRB records are also missing. evidence_sufficiency therefore cannot be a pass."
+  }
+ ],
+ "briefing_ko": {
+  "summary": "HOPE-Neuron은 ALS(루게릭병)를 겨냥한 혈액 처리 기기 기반 치료법(SELtx)을 개발하는 매출 없는 임상 이전 단계 회사입니다 [A22]. 보통주(Common Stock)를 주당 $1.00에 팔며, 목표 $75,000, 최대 $5,000,000입니다 [A3][A4]. 가격은 '임의(arbitrary)'로 정했다고 밝히고 있습니다. 투자자는 10년간 의결권을 창업자에게 넘기고, 정보 권리도 거의 없습니다 [A11][A13]. 근거 자료의 대부분이 회사 자체 주장이라, 이 보고서는 검토에 시간을 쓸지 판단하는 참고용이며 투자 조언이 아닙니다.",
+  "what_it_does": "환자의 혈액 약 300mL를 뽑아 장비로 처리한 뒤 다시 주입해 면역 균형을 바꾸는 외래 치료를 목표로 합니다 [A22]. 아직 사람에게 쓴 적이 없고, 인간 ALS 유전자를 넣은 쥐에서만 시험했다고 합니다 [A22][A23]. 향후 수익은 연 $120,000 치료비를 회사 40%, 병원 35%, 유통사 25%로 나누는 모델을 구상하며, 비용은 보험·환자 등이 부담하게 됩니다 [A25]. 가격, 보험 지급, 파트너 계약은 자료에 없는 회사의 예상입니다 [A25].",
+  "strongest_evidence": "회사는 쥐 실험(인디애나대 의대)에서 운동 기능과 생존이 개선됐고 p=0.008이라고 주장합니다 [A23]. 특허 3건(미국 2건, 일본 1건)을 보유한다고 합니다 [A27]. 재무제표는 외부 회계법인(Alice.CPA LLC)의 감사를 받았고 의견은 무수정입니다 [A17][C1]. 다만 이 모두는 회사가 제출한 서류 안의 내용이고, 실험 보고서·표본 수·특허 등록 기록은 자료에 없습니다 [A23][C9]. 독립적으로 확인된 증거는 없습니다.",
+  "failure_reasons": "첫째, 쥐에서의 결과가 사람에게 통할지 회사 스스로도 모른다고 합니다 [A22]. 둘째, FDA 접촉·임상 승인 기록이 자료에 없고, '2026년에 시작 가능'이라는 일정은 낙관적으로 보입니다 [A24][B4]. 셋째, 자금이 부족합니다. 2025년 현금은 $19,213, 순손실 $56,126, 주주 결손 $(249,135)이고, 회사도 계속기업 불확실성을 인정합니다 [A15][A16][A18]. 넷째, 연구개발비가 2025년 $0, 2024년 $26,836으로 활동 규모와 재무 기록이 맞지 않는 점이 있습니다 [C4][C14]. 다섯째, 목표액($75,000)으로는 임상시험에 $30,000만 배정되고 회사도 자금이 부족할 수 있다고 합니다 [A28][C7]. 특허 소유권 불확실성과 과거 증권 발행 규정 위반 가능성도 공시돼 있습니다 [A27][A31].",
+  "investor_proceeds_path": "이 주식으로 현금을 받으려면 회사 인수, 상장(IPO), Reg A 전환 후 매각, 또는 개인 간 재판매가 필요합니다 [A34]. 하지만 배당은 이사회 재량이고 기대되지 않으며, 회사의 환매 의무도 없고, 1년간 전매가 제한되며, 공개 시장도 없습니다 [A13][A14]. 투자자는 수탁기관(BitGo)을 통해 '증권 권리(securities entitlement)'만 갖습니다 [A12]. 10년간 창업자가 투자자 의결권을 대신 행사하므로 매각이나 추가 자금조달에 영향을 줄 수 없습니다 [A11][B3]. 선순위 전환사채(합계 원금 $210,000)와 창업자 채무($199,875, 2025년 말 기준)가 먼저 있습니다 [A16][A20][B2].",
+  "price_and_contract": "가격 $1.00은 임의 결정입니다 [A3]. 기존 창업자 주식 75,000,001주에 곱하면 약 $75M의 기업가치가 암시되지만, 이는 단순 계산이지 가치 평가가 아니며 매출 0원·결손 상태와 큰 괴리가 있습니다 [A9][A15][A16]. 그 주식도 2026년 6월에야 이사회가 사후 승인했고, 감사된 2025년 말 재무제표에는 1주만 나옵니다 [A8]. 최대 $5M을 모아도 투자자 지분은 약 6.2%, 목표액만 모으면 약 0.1%입니다 [B1]. 기업가치 상한·할인은 이 주식에 없습니다 [A3]. 의결권 위임, 정보 권리 없음, 희석 방지 없음, 배심재판 포기, 회사 소재지 법원 전속관할이 있습니다 [A11][A13][C10]. 전환사채의 전환 가격·상한은 비공개이고, 전환 조건도 문서 간 서로 다릅니다 [A20]. 중개사 수수료 외에 투자자 수수료는 자료에서 찾지 못했고, 최소 투자액은 $500입니다 [A5][A6]. 정관·부속정관(배당·청산 우선권 결정)도 자료에 없습니다.",
+  "unknowns": "공모가 현재 열려 있는지, 모집 실적이 얼마인지 확인되지 않았습니다 [A33]. 투자자 수수료, 정관, 전환사채 원문, 쥐 실험 보고서, 특허 등록·양도 기록, FDA·IRB 관련 기록, 파트너 계약이 없습니다. '6개월 운영 가능' 주장의 월 지출 근거도 비공개이며 [A19][C2][C3], 2025년 말 이후 재무제표도 없습니다. 창업자 채무가 공모 자금으로 상환될 수 있는지도 불분명합니다 [C13]. 이 보고서는 독립 검증이 아니라 같은 모델의 2차 검토입니다.",
+  "future_evidence": "긍정적으로 바뀔 증거: 쥐 실험 원본 보고서와 독립 전문가 검토, FDA 사전 협의나 IRB 승인 기록, 병원·장비 제조사와의 계약, 전환사채의 구체 조건 공개, 정관상 투자자 보호 조항, 의결권 위임 완화. 부정적으로 바뀔 증거: 자금 소진 공시, 창업자 채무 상환에 공모금 사용, 임상 지연, 추가 전환사채 발행으로 인한 희석. 다음 연차보고서(Form C-AR)와 Form C-U 업데이트가 확인 시점입니다."
+ },
+ "forecasts": [
+  {
+   "outcome_definition": "By 2027-04-14, a Form C-U or Form C/A filed on EDGAR by the issuer (or its Republic deal page, if later found in a retrievable pack) reports that the offering has closed with at least the $75,000 target amount sold.",
+   "event_kind": "disclosure",
+   "horizon_months": 6,
+   "probability": 0.35,
+   "probability_label": "model_judgment_uncalibrated",
+   "probability_basis": "The offering was filed 2026-07-30 and the deadline is 2026-11-27, but the pack has no closing, no amount raised and no platform status (A33). The target is low at $75,000, which favors reaching it. The $5M maximum, the proxy structure, the arbitrary $75M implied value and the weak financials may deter investors (A9, A11). This is my uncalibrated judgment.",
+   "reporting_lag_days": 30,
+   "resolution_evidence": "EDGAR filing index for CIK 0002114933 (Form C-U, C/A, or C-AR stating the amount sold) or a Republic deal-page closing notice.",
+   "unknown_treatment": "If no filing or notice is found by the date, the outcome is recorded as unresolved or not-yet-disclosed, not as the event failing. A Form C-W or a stated return of funds resolves it as not occurred.",
+   "basis_claim_ids": [
+    "A4",
+    "A33",
+    "A9",
+    "A11"
+   ]
+  },
+  {
+   "outcome_definition": "By 2027-10-14, a filing by the issuer on EDGAR (Form C-U, C-AR or a new Form C) states that an IRB or FDA approval, clearance or IND for a human SELtx trial has been obtained, or that the first human participant has been treated.",
+   "event_kind": "business",
+   "horizon_months": 12,
+   "probability": 0.12,
+   "probability_label": "model_judgment_uncalibrated",
+   "probability_basis": "The issuer says human steps could start in 2026 with sufficient funding (A24). The pack documents no FDA contact, IND, IRB approval or trial agreement, and the planned equipment and trial budget is small at the target (A28, B4, C7). Funding is limited and the team has no documented regulatory or trial track record (A29). This is my uncalibrated judgment.",
+   "reporting_lag_days": 120,
+   "resolution_evidence": "Issuer Form C-U or Form C-AR on EDGAR, or an issuer-posted update, naming the approval or first-treatment event with a date.",
+   "unknown_treatment": "If the issuer files nothing, or files only generic progress language, the outcome is unresolved (not-disclosed) and must not be counted as the event failing. An issuer that stops reporting after the first annual report is also unresolved.",
+   "basis_claim_ids": [
+    "A24",
+    "A28",
+    "A29",
+    "B4",
+    "C7"
+   ]
+  }
+ ],
+ "scenario": null
+}

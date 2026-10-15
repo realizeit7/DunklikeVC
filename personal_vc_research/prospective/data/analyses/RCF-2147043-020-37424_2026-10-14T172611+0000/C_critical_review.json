@@ -1,0 +1,537 @@
+{
+ "additional_claims": [
+  {
+   "basis_claim_ids": [
+    "A5"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 129,
+     "quote": "[SEPT. 24, 2026]"
+    },
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "Investors can participate in the MIGHTYLICIOUS Gluten Free campaign now live on"
+    },
+    {
+     "doc_id": 6,
+     "page": 38,
+     "quote": "September 28, 2026"
+    }
+   ],
+   "claim_id": "C1",
+   "claim_text": "The issuer's press release is dated Sept 24, 2026 and says the campaign is 'now live' on Republic, but the Form C was signed on Sept 28, 2026. The release is undated by any platform evidence. It does not establish that the offering is open.",
+   "claim_type": "availability",
+   "contradictions": "Release says live on Sept 24; the Form C is dated Sept 28; pack availability_status is unknown.",
+   "evidence_status": "document_supported_fact",
+   "financial_period": "Sept 2026"
+  },
+  {
+   "basis_claim_ids": [
+    "A13"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 62,
+     "quote": "and binding Custody Account Agreement. To the extent any of the provisions of such Custody Account"
+    },
+    {
+     "doc_id": 6,
+     "page": 93,
+     "quote": "The Onboarding Fee will be $___________."
+    }
+   ],
+   "claim_id": "C2",
+   "claim_text": "SAFE s.5(o) says the Custody Account Agreement takes precedence over the SAFE where they conflict. The BitGo fee schedule in Exhibit C is blank, so investor-side custody costs are unknown.",
+   "claim_type": "contract_provision",
+   "contradictions": "Custodian entity named differently in Exhibit B (BitGo Bank & Trust, N.A.) vs Exhibits C/D (BitGo Trust Company, Inc.).",
+   "evidence_status": "document_supported_fact",
+   "financial_period": ""
+  },
+  {
+   "basis_claim_ids": [
+    "A25"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "an operating cash outflow of $960,595 and liquid assets in cash of $116,414"
+    }
+   ],
+   "claim_id": "C3",
+   "claim_text": "The going-concern note states FY2025 operating cash outflow of $960,595 and cash of $116,414 (reviewed statements, year ended Dec 31, 2025).",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "document_supported_fact",
+   "financial_period": "FY2025 (ended Dec 31, 2025; not stale)"
+  },
+  {
+   "basis_claim_ids": [
+    "A4",
+    "C3"
+   ],
+   "calculation": {
+    "formula": "max_offering / opcash_outflow_2025",
+    "inputs": [
+     {
+      "claim_id": "A4",
+      "name": "max_offering",
+      "value": 1000000
+     },
+     {
+      "claim_id": "C3",
+      "name": "opcash_outflow_2025",
+      "value": 960595
+     }
+    ],
+    "result": 1.041
+   },
+   "citations": [],
+   "claim_id": "C4",
+   "claim_text": "The $1,000,000 maximum offering is about 1.04 times FY2025 operating cash outflow, before intermediary fees and any growth in burn.",
+   "claim_type": "financial",
+   "contradictions": "Burn appears to have risen in 2026 (B7, A27), so the ratio probably overstates coverage.",
+   "evidence_status": "calculation",
+   "financial_period": "Forward-looking maximum vs FY2025"
+  },
+  {
+   "basis_claim_ids": [
+    "A4",
+    "C3"
+   ],
+   "calculation": {
+    "formula": "target_offering / opcash_outflow_2025",
+    "inputs": [
+     {
+      "claim_id": "A4",
+      "name": "target_offering",
+      "value": 75000
+     },
+     {
+      "claim_id": "C3",
+      "name": "opcash_outflow_2025",
+      "value": 960595
+     }
+    ],
+    "result": 0.0781
+   },
+   "citations": [],
+   "claim_id": "C5",
+   "claim_text": "The $75,000 target is only about 8% of FY2025 operating cash outflow.",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "calculation",
+   "financial_period": "Forward-looking target vs FY2025"
+  },
+  {
+   "basis_claim_ids": [
+    "A24",
+    "A27"
+   ],
+   "calculation": {
+    "formula": "cash_dec + securities_dec - cash_jun",
+    "inputs": [
+     {
+      "claim_id": "A24",
+      "name": "cash_dec",
+      "value": 116414
+     },
+     {
+      "claim_id": "A24",
+      "name": "securities_dec",
+      "value": 1397792
+     },
+     {
+      "claim_id": "A27",
+      "name": "cash_jun",
+      "value": 654000
+     }
+    ],
+    "result": 860206
+   },
+   "citations": [],
+   "claim_id": "C6",
+   "claim_text": "If the $654,000 June 30, 2026 figure is on a like-for-like basis with Dec 2025 cash plus marketable securities, liquid assets fell by about $860K in six months. The basis is not confirmed, and this is not a runway calculation.",
+   "claim_type": "financial",
+   "contradictions": "The issuer does not say the June figure includes securities; this assumption is unverified.",
+   "evidence_status": "calculation",
+   "financial_period": "Dec 31, 2025 to June 30, 2026"
+  },
+  {
+   "basis_claim_ids": [
+    "B5",
+    "A19"
+   ],
+   "calculation": {
+    "formula": "advertising_2024 / revenue_2024",
+    "inputs": [
+     {
+      "claim_id": "B5",
+      "name": "advertising_2024",
+      "value": 436085
+     },
+     {
+      "claim_id": "A19",
+      "name": "revenue_2024",
+      "value": 347602
+     }
+    ],
+    "result": 1.2546
+   },
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 49,
+     "quote": "ended December 31, 2025, and December 31, 2024, amounted to $426,385 and $436,085, which is included in"
+    }
+   ],
+   "claim_id": "C7",
+   "claim_text": "FY2024 advertising spend was about 125% of FY2024 revenue, versus about 93% in FY2025. Advertising spend fell slightly while revenue rose.",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "calculation",
+   "financial_period": "FY2024 and FY2025"
+  },
+  {
+   "basis_claim_ids": [],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<costGoodsSoldPriorFiscalYear>464671.00"
+    }
+   ],
+   "claim_id": "C8",
+   "claim_text": "FY2024 cost of goods sold was $464,671 (reviewed; issuer-reported Form C field).",
+   "claim_type": "financial",
+   "contradictions": "",
+   "evidence_status": "document_supported_fact",
+   "financial_period": "FY2024"
+  },
+  {
+   "basis_claim_ids": [
+    "A19",
+    "C8",
+    "A22"
+   ],
+   "calculation": {
+    "formula": "revenue_2024 - cogs_2024",
+    "inputs": [
+     {
+      "claim_id": "A19",
+      "name": "revenue_2024",
+      "value": 347602
+     },
+     {
+      "claim_id": "C8",
+      "name": "cogs_2024",
+      "value": 464671
+     }
+    ],
+    "result": -117069
+   },
+   "citations": [],
+   "claim_id": "C9",
+   "claim_text": "FY2024 gross result was about -$117,069, versus about -$29,477 in FY2025, so the gross loss narrowed but remains negative.",
+   "claim_type": "financial",
+   "contradictions": "COGS includes shipping, fulfillment and warehousing (page 48).",
+   "evidence_status": "calculation",
+   "financial_period": "FY2024 vs FY2025"
+  },
+  {
+   "basis_claim_ids": [
+    "A17",
+    "A7"
+   ],
+   "calculation": {
+    "formula": "safe_principal / (safe_principal + cap)",
+    "inputs": [
+     {
+      "claim_id": "A17",
+      "name": "safe_principal",
+      "value": 5096791
+     },
+     {
+      "claim_id": "A7",
+      "name": "cap",
+      "value": 15000000
+     }
+    ],
+    "result": 0.2536
+   },
+   "citations": [],
+   "claim_id": "C10",
+   "claim_text": "The Form C's 25.36% fully diluted ownership for existing SAFEs is consistent with principal divided by (principal plus the $15M cap), a post-conversion basis. This reconciles the figure that B9 left unreconciled.",
+   "claim_type": "financial",
+   "contradictions": "Matches the stated 25.36% only approximately; the Form C does not state its method.",
+   "evidence_status": "calculation",
+   "financial_period": "As of Form C date"
+  },
+  {
+   "basis_claim_ids": [
+    "A4",
+    "A7",
+    "A10",
+    "A17"
+   ],
+   "calculation": {
+    "formula": "new_safe / (cap + existing_safe + new_safe)",
+    "inputs": [
+     {
+      "claim_id": "A4",
+      "name": "new_safe",
+      "value": 1000000
+     },
+     {
+      "claim_id": "A7",
+      "name": "cap",
+      "value": 15000000
+     },
+     {
+      "claim_id": "A17",
+      "name": "existing_safe",
+      "value": 5096791
+     }
+    ],
+    "result": 0.0474
+   },
+   "citations": [],
+   "claim_id": "C11",
+   "claim_text": "Illustrative scenario, not an expected return: if the full $1M raise and the existing $5.1M of SAFEs all converted at the cap price, this offering's SAFEs would hold about 4.7% post-conversion, versus about 6.7% on a naive $1M/$15M basis. It ignores new-round money, the option pool, the intermediary's 1.5% and the different 2022 SAFE terms described in the notes.",
+   "claim_type": "security_terms",
+   "contradictions": "Existing SAFE terms may differ (A38).",
+   "evidence_status": "calculation",
+   "financial_period": "Hypothetical future conversion"
+  },
+  {
+   "basis_claim_ids": [
+    "A29",
+    "B11"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "The Company’s near-term strategic priority is to complete initial institution integrations and scale its infrastructure to"
+    },
+    {
+     "doc_id": 6,
+     "page": 14,
+     "quote": "The Issuer is still in an early phase and we are just beginning to implement our business plan."
+    }
+   ],
+   "claim_id": "C12",
+   "claim_text": "The Form C itself contains text that does not fit a packaged-food company founded in 2017. It describes 'initial institution integrations' and says the issuer is 'just beginning to implement our business plan'. This suggests template language and adds to the reliability concern raised in B11.",
+   "claim_type": "risk",
+   "contradictions": "Other Form C sections describe cookies sold since 2018 (A33).",
+   "evidence_status": "analyst_inference",
+   "financial_period": ""
+  },
+  {
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "$ 31,795 $ - $ 31,795"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "02/28/2026"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Maturity Date February 28, 2027"
+    }
+   ],
+   "claim_id": "C13",
+   "claim_text": "Wayflyer debt differs across documents: $31,795 outstanding at Dec 31, 2025 (notes, 02/28/2026 maturity) vs $51,000 outstanding at the Form C date with a Feb 28, 2027 maturity. This may indicate new or refinanced borrowing in 2026 that the Form C does not discuss.",
+   "claim_type": "financial",
+   "contradictions": "Form C reports 'None' under material changes.",
+   "evidence_status": "analyst_inference",
+   "financial_period": "Dec 31, 2025 vs Sept 2026"
+  },
+  {
+   "basis_claim_ids": [
+    "A35"
+   ],
+   "calculation": null,
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "The proceeds of this Offering, together with any concurrent private"
+    }
+   ],
+   "claim_id": "C14",
+   "claim_text": "The Form C says proceeds are expected to be used together with any concurrent private capital raise. Its size, terms and seniority are not disclosed.",
+   "claim_type": "use_of_proceeds",
+   "contradictions": "",
+   "evidence_status": "issuer_claim",
+   "financial_period": "Forward-looking"
+  }
+ ],
+ "issues": [
+  {
+   "claim_ids": [
+    "A8",
+    "A13",
+    "A37",
+    "A38",
+    "C2"
+   ],
+   "explanation": "Exhibit B is an unsigned template with blanks. The Form C risk factor says conversion is at the issuer's discretion (A37), and the FY2025 notes describe a different SAFE model (A38). The custodian entity is named inconsistently (A13). The custody account agreement also overrides the SAFE where they conflict (C2). These items are better marked 'contradictory' or at least 'confirmed with unresolved conflicts', and this limits evidence_sufficiency.",
+   "issue_type": "contradictory_evidence",
+   "severity": "high",
+   "target": "A critical_items: operative_contract and price_cap_and_conversion_terms marked confirmed_with_citation"
+  },
+  {
+   "claim_ids": [
+    "C2",
+    "A13"
+   ],
+   "explanation": "Neither stage noted that SAFE s.5(o) gives the Custody Account Agreement precedence over the SAFE if the two conflict. The custody agreement is a digital-asset template with a blank fee schedule and South Dakota law. Investor-side custody costs, and whether any custody term could override a SAFE right, are unknown.",
+   "issue_type": "missing_fact",
+   "severity": "high",
+   "target": "A13/B price_and_terms: custody terms"
+  },
+  {
+   "claim_ids": [
+    "A5",
+    "C1"
+   ],
+   "explanation": "The press release is dated Sept 24, 2026 and says the campaign is 'now live', but the Form C was filed and signed Sept 28, 2026. The release may be draft or template text. It cannot be used as availability evidence, and it adds to doubt about the reliability of the issuer's materials. Availability stays unknown.",
+   "issue_type": "contradictory_evidence",
+   "severity": "medium",
+   "target": "A5 availability"
+  },
+  {
+   "claim_ids": [
+    "B9",
+    "A17",
+    "A10",
+    "C10",
+    "C11"
+   ],
+   "explanation": "B9 says the 25.36% was not reconciled and describes dilution loosely. The figure reconciles as existing SAFE principal divided by (principal + cap), a post-conversion basis. B9's 34% is relative to the pre-money cap. For a new investor, the cap math excludes all SAFEs, so effective post-conversion ownership at the cap is well below the headline ratio (illustratively about 4.7% for the full $1M versus 6.7% naive). This is before any new-money round, option pool or intermediary 1.5%.",
+   "issue_type": "unsupported_conclusion",
+   "severity": "medium",
+   "target": "B9/B-price_and_terms: dilution and the 25.36% figure"
+  },
+  {
+   "claim_ids": [
+    "B2",
+    "C3",
+    "C4",
+    "C5"
+   ],
+   "explanation": "B2 compares the max raise to net loss, which includes non-cash SAFE fair-value changes. Operating cash outflow of $960,595 is the better yardstick. On that basis the full $1M is about 1.04 times one year of FY2025 operating outflow before $54K+ in fees. The $75K target is only about 8% of a year. The raise therefore gives little runway unless it scales a business that is not yet profitable.",
+   "issue_type": "optimistic_assumption",
+   "severity": "medium",
+   "target": "B2 and economics_and_funding: sizing of the raise"
+  },
+  {
+   "claim_ids": [
+    "A27",
+    "A24",
+    "B7",
+    "C6"
+   ],
+   "explanation": "The $654,000 is unsupported by interim statements. On a possible like-for-like basis (Dec 2025 cash plus marketable securities), it would imply about $860K of liquid assets consumed in six months, which fits the CEO's 'accelerated cash burn' and the 5-month figure. This is only inference, not verified. A current runway cannot be computed from the pack.",
+   "issue_type": "missing_fact",
+   "severity": "medium",
+   "target": "A27 June 30, 2026 cash and runway"
+  },
+  {
+   "claim_ids": [
+    "B5",
+    "A21",
+    "C7"
+   ],
+   "explanation": "Advertising spend fell from $436,085 to $426,385 while revenue grew about 32%. Advertising was about 125% of revenue in FY2024 and about 93% in FY2025. The pack does not show that growth was bought with more promotion. Advertising intensity improved, though it is still very high. The pack cannot say what drove the growth.",
+   "issue_type": "unsupported_conclusion",
+   "severity": "low",
+   "target": "B demand_evidence and B5: 'growth could be driven by paid promotion'"
+  },
+  {
+   "claim_ids": [
+    "A22",
+    "B3",
+    "C8",
+    "C9"
+   ],
+   "explanation": "The analysis omits the trend. The gross loss narrowed from about $117K in FY2024 to about $29K in FY2025 on a COGS base that includes shipping and fulfillment. That is mildly positive evidence on unit economics, which are still negative. The vertical-integration cost plan is unsupported.",
+   "issue_type": "unsupported_conclusion",
+   "severity": "medium",
+   "target": "B3/B business_model: negative gross margin framing"
+  },
+  {
+   "claim_ids": [
+    "A31",
+    "A19"
+   ],
+   "explanation": "B suggests the figure 'may include gross or peak figures'. The pack gives no basis for that guess. The right treatment is that the run rate is undefined and uncorroborated and conflicts with FY2025 revenue. The same email says Amazon is only 'on pace for $100K+', which implies other channels carry most revenue. There is no channel split.",
+   "issue_type": "unsupported_conclusion",
+   "severity": "low",
+   "target": "B demand_evidence: speculation about the '$100K MoM run rate'"
+  },
+  {
+   "claim_ids": [
+    "B11",
+    "C12",
+    "B10"
+   ],
+   "explanation": "B11 attributes template text only to the financial statement notes. The Form C also contains text that does not fit a 2017-founded packaged-food seller. Examples are 'initial institution integrations', 'white-label customer integration' and 'just beginning to implement our business plan'. The use-of-proceeds table also differs from the press release. This lowers confidence in the document set as a whole.",
+   "issue_type": "contradictory_evidence",
+   "severity": "medium",
+   "target": "B11 template-text point is too narrow"
+  },
+  {
+   "claim_ids": [
+    "A28",
+    "C13"
+   ],
+   "explanation": "The notes show a Wayflyer balance of $31,795 at Dec 31, 2025 with a 02/28/2026 maturity. The Form C shows $51,000 outstanding with a Feb 28, 2027 maturity. The Form C also reports 'None' for material changes. Possible new or refinanced debt in 2026 is not explained, and the Form C's weekly vs monthly payment wording is inconsistent.",
+   "issue_type": "contradictory_evidence",
+   "severity": "medium",
+   "target": "Debt disclosure: Wayflyer"
+  },
+  {
+   "claim_ids": [
+    "C14",
+    "A9",
+    "A35"
+   ],
+   "explanation": "The Form C says proceeds are 'together with any concurrent private capital raise' and allows raises from accredited investors outside this offering. Terms, size and seniority are not given. Any such raise could count toward the $1M Equity Financing trigger or add dilution or senior claims.",
+   "issue_type": "missing_fact",
+   "severity": "medium",
+   "target": "Concurrent or follow-on financing"
+  },
+  {
+   "claim_ids": [
+    "A33",
+    "A34",
+    "A18",
+    "A26"
+   ],
+   "explanation": "The execution history rests only on the issuer's own bio (Whole Foods 2018). Later retail wins are unverified. The CEO is the sole signing director and the only documented officer. Advisors are unnamed and the reviewing accountant firm is not named in the pack. This is weak evidence, not neutral.",
+   "issue_type": "unsupported_conclusion",
+   "severity": "low",
+   "target": "B team_evidence: 'execution history'"
+  }
+ ]
+}
