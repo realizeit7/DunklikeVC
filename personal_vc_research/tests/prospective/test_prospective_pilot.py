@@ -290,7 +290,8 @@ def test_pilot_clock_set_once_never_reset(ctx):
 def test_private_import_excluded_from_export_and_git(ctx):
     oid = add_offering(ctx)
     (ctx.tmp / "notice.pdf").write_bytes(b"%PDF private")
-    (ctx.tmp / "page.html").write_bytes(b"<html>public</html>")
+    # v2.1: captures are screened before storage; a near-empty page would now be refused, so the fixture has content
+    (ctx.tmp / "page.html").write_bytes(b"<html><body><p>" + b"Public campaign page text. " * 20 + b"</p></body></html>")
     with open(ctx.tmp / "imp.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, ["offering_id", "file", "url", "source_type", "visibility", "claimed_publication_date",
                                 "captured_utc", "description"])
@@ -298,7 +299,7 @@ def test_private_import_excluded_from_export_and_git(ctx):
         w.writerow({"offering_id": oid, "file": "notice.pdf", "source_type": "investor_notice", "description": "conversion notice"})
         w.writerow({"offering_id": oid, "file": "page.html", "url": "https://example.invalid/c", "source_type": "campaign_page"})
     s = outputs.import_evidence(ctx, ctx.tmp / "imp.csv")
-    assert s == {"imported": 2, "private": 1, "rejected": 0}
+    assert {k: s[k] for k in ("imported", "private", "rejected")} == {"imported": 2, "private": 1, "rejected": 0}
     outputs.export_public(ctx)
     docs = list(csv.DictReader(open(ctx.root / "data/exports/documents.csv")))
     assert [d["visibility"] for d in docs] == ["public"]

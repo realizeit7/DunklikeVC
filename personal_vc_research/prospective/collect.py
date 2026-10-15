@@ -117,6 +117,14 @@ def _cu_completion(ctx: Ctx, cik: str, accession: str) -> tuple[bool, str]:
     return bool(COMPLETION.search(txt)), txt[:400]
 
 
+def _source_check(ctx: Ctx, oid: str, success: int, covers_from, covers_to, detail: str) -> None:
+    """Freshness record (v2.1). 'No new filings' may be stated only for an interval covered by a SUCCESSFUL check."""
+    if ctx.con.execute("SELECT 1 FROM sqlite_master WHERE name='source_checks'").fetchone():
+        ctx.con.execute("INSERT INTO source_checks(offering_id, source, checked_utc, success, covers_from_utc, covers_to_utc, detail) "
+                        "VALUES (?,?,?,?,?,?,?)", (oid, "sec_edgar_submissions", ctx.now(), success,
+                                                   norm_utc(covers_from) if covers_from else None, covers_to, detail))
+
+
 def check_offering(ctx: Ctx, o) -> dict:
     cik, oid, fno = o["issuer_id"], o["offering_id"], o["offering_file_number"]
     out = {"new_events": 0, "ok": True}
@@ -127,9 +135,12 @@ def check_offering(ctx: Ctx, o) -> dict:
         out["ok"] = False
         # outage stays visible; the offering is re-tried on the next run (due date unchanged)
         ctx.set_offering(oid, last_check_utc=now, last_check_ok=0)
+        _source_check(ctx, oid, 0, None, now, f"submissions JSON not retrieved (status {getattr(r, 'status', '?')})")
         return out
     rec = json.loads(r.text())["filings"]["recent"]
     observed = norm_utc(r.retrieved_at_utc)
+    _source_check(ctx, oid, 1, o["initial_filing_date"], observed,
+                  f"EDGAR submissions JSON listing {len(rec['form'])} recent filings for CIK {cik}")
     avail, closing = o["availability_status"], o["closing_status"]
     for form, fdate, fnum, acc, acc_dt in zip(rec["form"], rec["filingDate"], rec["fileNumber"], rec["accessionNumber"],
                                              rec["acceptanceDateTime"]):

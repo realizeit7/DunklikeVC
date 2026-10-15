@@ -2,6 +2,10 @@
 
 > **v2:** LLM analysis, Korean briefs, user approvals, the budget policy and the investment ledger are described in
 > [`V2_GUIDE.md`](V2_GUIDE.md).
+>
+> **v2.1** adds a Republic access assessment, user-assisted import screening, a four-dimension assessment, deterministic
+> valuation arithmetic, structured support checks, forecast definitions and a redesigned Korean brief:
+> [`V2_1_GUIDE.md`](V2_1_GUIDE.md).
 
 This is a 90-day **data-collection and workflow pilot** for Republic US Reg CF offerings. It records what was
 knowable when, and the decisions made at that time, and it follows outcomes equally for every offering.

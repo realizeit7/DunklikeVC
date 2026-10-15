@@ -13,20 +13,70 @@ PRIVATE_BY_DEFAULT = {"investor_notice"}
 
 
 # ---- manual imports ---------------------------------------------------------------------------------
+SECRET_FILE_SUFFIXES = {".har", ".cookies", ".cookie", ".sqlite", ".db", ".json"}
+SECRET_MARKERS = ["netscape http cookie file", "set-cookie:", "\"cookies\":", "authorization: bearer", "sessionid=",
+                  "_session_id=", "remember_user_token", "access_token", "refresh_token"]
+
+
+def screen_import_file(path: Path) -> dict:
+    """Checks run on a user-captured file BEFORE it is stored or extracted.
+
+    * Cookie jars, HAR files, browser databases and anything carrying session tokens are refused: cookies, credentials
+      and tokens are never evidence.
+    * HTML/text captures are classified with the access classifier: challenge, login, error and empty pages are refused.
+    * PDFs are classified on their text layer (pdftotext) when available.
+    """
+    from .access import classify_page
+    data = path.read_bytes()
+    low = data[:2_000_000].decode("utf-8", errors="ignore").lower()
+    if path.suffix.lower() in SECRET_FILE_SUFFIXES or any(m in low for m in SECRET_MARKERS):
+        return {"ok": False, "reason": "file looks like a cookie jar / HAR / token store; cookies, credentials and tokens are not evidence"}
+    text = None
+    if path.suffix.lower() in (".html", ".htm", ".txt", ".mhtml"):
+        text = data.decode("utf-8", errors="ignore")
+    elif path.suffix.lower() == ".pdf":
+        import subprocess
+        try:
+            text = subprocess.run(["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True, timeout=120).stdout
+        except (OSError, subprocess.SubprocessError):
+            text = None
+    if text is None or (path.suffix.lower() == ".pdf" and len(text.split()) < 20):
+        return {"ok": True, "reason": "not classified (binary/image capture or no text layer); review manually",
+                "classified": False}
+    cl = classify_page(200, "", "", text if path.suffix.lower() != ".pdf" else f"<html><body>{text}</body></html>")
+    if cl["result"] != "public_content":
+        return {"ok": False, "reason": f"capture is a {cl['result']} page (markers {cl['markers']}); nothing extracted",
+                "classified": True}
+    return {"ok": True, "reason": "classified as content", "classified": True, "markers": cl["markers"]}
+
+
 def import_evidence(ctx: Ctx, csv_path: Path) -> dict:
     """Import user-captured evidence listed in a CSV (templates/evidence_import_template.csv).
 
     The system observation time is the import time, never the claimed publication or capture date, so a late
-    document cannot enter an earlier decision. Private items are stored outside git and excluded from exports.
+    document cannot enter an earlier decision or evidence pack. Three dates stay separate: the visible publication
+    date (claimed_publication_date), the user's capture time (captured_utc) and the import time (observed).
+    Private items (investor-only material, or anything captured while logged in) are stored outside git and excluded
+    from exports. Challenge/login/error pages and cookie/token files are refused before anything is stored.
     """
-    stats = {"imported": 0, "private": 0, "rejected": 0}
+    stats = {"imported": 0, "private": 0, "rejected": 0, "rows": []}
     for row in csv.DictReader(open(csv_path)):
         src = (csv_path.parent / row["file"]).resolve() if row.get("file") else None
+        reason = None
         if row["source_type"] not in IMPORT_TYPES or (src and not src.exists()) or not row.get("offering_id"):
+            reason = "invalid row (source_type, file or offering_id)"
+        elif src:
+            sc = screen_import_file(src)
+            if not sc["ok"]:
+                reason = sc["reason"]
+        if reason:
             stats["rejected"] += 1
-            ctx.gap("parse_failure", row.get("url", ""), f"import row rejected: {row}")
+            stats["rows"].append({"file": row.get("file"), "status": "rejected", "reason": reason})
+            ctx.gap("parse_failure", row.get("url", ""), f"import row rejected: {reason}; file={row.get('file')}")
             continue
-        vis = "private" if row["source_type"] in PRIVATE_BY_DEFAULT or row.get("visibility") == "private" else "public"
+        logged_in = (row.get("captured_while_logged_in") or "").strip().lower() in ("yes", "y", "true", "1")
+        vis = ("private" if row["source_type"] in PRIVATE_BY_DEFAULT or row.get("visibility") == "private" or logged_in
+               else "public")
         data = src.read_bytes() if src else None
         blob = None
         if data is not None and vis == "private":
@@ -41,10 +91,12 @@ def import_evidence(ctx: Ctx, csv_path: Path) -> dict:
                             offering_id=row["offering_id"], issuer_cik=o["issuer_id"] if o else "", data=data,
                             visibility=vis, claimed_publication_date=row.get("claimed_publication_date", ""),
                             description=f"{row['source_type']}: {row.get('description', '')} "
-                                        f"(user capture time {row.get('captured_utc', 'not given')})",
+                                        f"(user capture time {row.get('captured_utc', 'not given')}; "
+                                        f"{'captured while logged in' if logged_in else 'public view'})",
                             extraction_method="user_import", blob_override=blob)
         stats["imported"] += 1
         stats["private"] += vis == "private"
+        stats["rows"].append({"file": row.get("file"), "status": "imported", "visibility": vis})
     ctx.con.commit()
     return stats
 
@@ -180,7 +232,10 @@ EXPORT_TABLES = ["runs", "gaps", "index_days", "discovery_ledger", "offerings", 
                  # v2 research tables (public-safe). Approvals, ledger, issuer groups and acknowledgments are PERSONAL
                  # and are never exported.
                  "evidence_packs", "analyst_versions", "analysis_runs", "analysis_claims", "analysis_gates", "prediction_meta",
-                 "citation_checks"]
+                 "citation_checks",
+                 # v2.1 tables (public-safe: attempt metadata and hashes only, no captured content or cookies)
+                 "access_attempts", "source_checks", "assessments", "criterion_results", "calculations", "support_checks",
+                 "forecast_definitions", "forecast_lineage", "stage_usage"]
 
 
 NULL = "\\N"   # explicit NULL marker: a missing value must not round-trip as an empty string or 0

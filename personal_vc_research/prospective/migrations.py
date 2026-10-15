@@ -3,6 +3,9 @@
 * Migration 1 is the v1 pilot schema (unchanged). A database created by v1 (without `schema_migrations`) adopts it
   as already applied.
 * Migration 2 adds the v2 tables: analysis, screening, approvals, ledger and evaluation.
+* Migration 3 (v2.1) adds: access_attempts, source_checks, assessments, criterion_results, calculations,
+  support_checks, forecast_definitions, forecast_lineage and stage_usage. Existing rows (v2 analyses, forecasts 1-5)
+  are untouched; v2.1 records reference them instead of rewriting them.
 
 Migrations only CREATE tables, triggers and indexes; they never drop or rewrite existing rows. Before any pending
 migration is applied to a database that already holds data, the file is copied with SQLite's online backup API to
@@ -89,18 +92,84 @@ CREATE TABLE IF NOT EXISTS ledger_events (
 """
 
 
-def _v2_triggers() -> str:
+V3_APPEND_ONLY = ["access_attempts", "source_checks", "assessments", "criterion_results", "calculations",
+                  "support_checks", "forecast_definitions", "forecast_lineage", "stage_usage"]
+
+V3_SQL = """
+CREATE TABLE IF NOT EXISTS access_attempts (     -- Workstream A: every platform access attempt, success or not
+  attempt_id INTEGER PRIMARY KEY AUTOINCREMENT, attempted_utc TEXT NOT NULL, url TEXT NOT NULL, method TEXT NOT NULL,
+  http_status INTEGER, final_url TEXT, result TEXT NOT NULL, content_available TEXT NOT NULL, visibility TEXT NOT NULL,
+  challenge_state TEXT NOT NULL, login_state TEXT NOT NULL, capture TEXT NOT NULL, content_sha256 TEXT,
+  n_bytes INTEGER, markers TEXT, note TEXT);
+
+CREATE TABLE IF NOT EXISTS source_checks (       -- freshness: a source counts as checked only when the check succeeded
+  check_id INTEGER PRIMARY KEY AUTOINCREMENT, offering_id TEXT, source TEXT NOT NULL, checked_utc TEXT NOT NULL,
+  success INTEGER NOT NULL CHECK (success IN (0,1)), covers_from_utc TEXT, covers_to_utc TEXT, detail TEXT);
+
+CREATE TABLE IF NOT EXISTS assessments (         -- four separate dimensions; one row per (analysis, classifier version)
+  assessment_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, classifier_version TEXT NOT NULL,
+  policy_version TEXT NOT NULL, created_utc TEXT NOT NULL,
+  assessment TEXT NOT NULL CHECK (assessment IN ('fails_current_screen','passes_current_screen','indeterminate','analysis_failed')),
+  evidence_completeness TEXT NOT NULL CHECK (evidence_completeness IN ('sufficient_for_current_conclusion','material_gaps','extraction_incomplete')),
+  operational_readiness TEXT NOT NULL CHECK (operational_readiness IN ('available_verified','availability_unknown','unavailable_or_closed','not_checked')),
+  budget_status TEXT NOT NULL CHECK (budget_status IN ('eligible','ineligible','incomplete_cost_information')),
+  decisive_criteria TEXT NOT NULL, reasons TEXT NOT NULL, unresolved_criteria TEXT, freshness TEXT, notes TEXT);
+
+CREATE TABLE IF NOT EXISTS criterion_results (
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, criterion_id TEXT NOT NULL, gate TEXT NOT NULL,
+  required INTEGER NOT NULL, model_result TEXT NOT NULL, final_result TEXT NOT NULL
+  CHECK (final_result IN ('pass','fail','unresolved')), support TEXT NOT NULL, claim_ids TEXT, reason_ko TEXT,
+  validator_notes TEXT);
+
+CREATE TABLE IF NOT EXISTS calculations (        -- deterministic, in code; provenance for every input
+  calc_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER, pack_id TEXT, calc_type TEXT NOT NULL,
+  formula TEXT NOT NULL, inputs TEXT NOT NULL, assumptions TEXT, included_instruments TEXT, excluded_instruments TEXT,
+  units TEXT NOT NULL, result_value REAL, result_kind TEXT NOT NULL CHECK (result_kind IN ('computed','illustrative','withheld')),
+  withheld_reason TEXT, calculator_version TEXT NOT NULL, created_utc TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS support_checks (      -- structured claim-support checks (model judgment or human)
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, claim_id TEXT NOT NULL, checker TEXT NOT NULL,
+  judgment_label TEXT NOT NULL, citation_exists INTEGER, passage_supports TEXT NOT NULL, omitted_qualifications TEXT,
+  evidence_type TEXT, conflicts TEXT, overstatement TEXT, verdict TEXT NOT NULL, note TEXT, checked_utc TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS forecast_definitions (-- v2.1 structured definition for a prediction row (originals untouched)
+  prediction_id INTEGER PRIMARY KEY, analysis_id INTEGER, schema_version TEXT NOT NULL,
+  target_type TEXT NOT NULL CHECK (target_type IN ('event_occurs','issuer_announces','independently_corroborated')),
+  target_scope TEXT NOT NULL, deadline_utc TEXT NOT NULL, reporting_lag_days INTEGER NOT NULL, allowed_evidence TEXT NOT NULL,
+  rationale TEXT NOT NULL, assumptions TEXT NOT NULL, unknown_treatment TEXT NOT NULL, cancellation_treatment TEXT NOT NULL,
+  early_true_allowed INTEGER NOT NULL DEFAULT 1, silence_is_false INTEGER NOT NULL DEFAULT 0 CHECK (silence_is_false = 0));
+
+CREATE TABLE IF NOT EXISTS forecast_lineage (    -- a later, separate, timestamped record; the original stays scorable
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, original_prediction_id INTEGER NOT NULL, successor_prediction_id INTEGER,
+  relation TEXT NOT NULL CHECK (relation IN ('redefined_by','split_into','flagged_compound','superseded_definition')),
+  created_utc TEXT NOT NULL, reason TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS stage_usage (
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER, run_dir TEXT NOT NULL, stage TEXT NOT NULL,
+  attempt TEXT NOT NULL, seconds REAL, input_tokens INTEGER, output_tokens INTEGER, cache_read_tokens INTEGER,
+  cache_creation_tokens INTEGER, cost_estimate_usd REAL,
+  cost_label TEXT NOT NULL DEFAULT 'cli_estimated_list_price_equivalent_not_billed', outcome TEXT, n_errors INTEGER);
+"""
+
+
+def _append_only(tables: list[str]) -> str:
     return "\n".join(
         f"""CREATE TRIGGER IF NOT EXISTS {t}_no_update BEFORE UPDATE ON {t}
             BEGIN SELECT RAISE(ABORT, '{t} is append-only'); END;
             CREATE TRIGGER IF NOT EXISTS {t}_no_delete BEFORE DELETE ON {t}
-            BEGIN SELECT RAISE(ABORT, '{t} is append-only'); END;""" for t in V2_APPEND_ONLY)
+            BEGIN SELECT RAISE(ABORT, '{t} is append-only'); END;""" for t in tables)
+
+
+def _v2_triggers() -> str:
+    return _append_only(V2_APPEND_ONLY)
 
 
 def migrations() -> list[tuple[int, str, str]]:
     from .db import SCHEMA, TRIGGERS
     return [(1, "v1 prospective pilot schema (baseline)", SCHEMA + TRIGGERS),
-            (2, "v2 LLM analyst, screening, approvals, ledger, evaluation", V2_SQL + _v2_triggers())]
+            (2, "v2 LLM analyst, screening, approvals, ledger, evaluation", V2_SQL + _v2_triggers()),
+            (3, "v2.1 access log, assessments, calculations, support checks, forecast definitions, usage",
+             V3_SQL + _append_only(V3_APPEND_ONLY))]
 
 
 def migrate(con: sqlite3.Connection, db_path: str | Path, backup_dir: str | Path | None) -> dict:

@@ -169,12 +169,15 @@ def record_decision(ctx: Ctx, oid: str, status: str, analyst: str, user_confirme
 # ---- forecasts ---------------------------------------------------------------------------------------
 def add_forecast(ctx: Ctx, oid: str, target_event: str, event_kind: str, horizon_months: int, probability: float,
                  resolution_rule: str, reporting_lag_days: int, missing_evidence_treatment: str, forecaster: str,
-                 permitted_evidence: str = "", decision_id: int | None = None, revises: int | None = None) -> int:
+                 permitted_evidence: str = "", decision_id: int | None = None, revises: int | None = None,
+                 deadline_override: str | None = None) -> int:
     now = parse_utc(ctx.now())
     if revises is not None:
         orig = ctx.con.execute("SELECT * FROM predictions WHERE prediction_id=?", (revises,)).fetchone()
         deadline = orig["deadline_utc"]          # a revision never moves the original deadline
         horizon_months = orig["horizon_months"]
+    elif deadline_override:                      # v2.1 forecasts carry an explicit deadline
+        deadline = norm_utc(deadline_override)
     else:
         deadline = iso(now + dt.timedelta(days=round(30.4375 * horizon_months)))
     cur = ctx.con.execute(

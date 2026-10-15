@@ -110,6 +110,43 @@ def main(argv: list[str] | None = None) -> int:
     rvd.add_argument("analysis_id", type=int)
     br = sub.add_parser("brief", help="Korean review brief for an analysis")
     br.add_argument("analysis_id", type=int)
+    # ---- v2.1 ---------------------------------------------------------------------------------------------------
+    r2 = sub.add_parser("analyst-register-v2", help="register an analyst-v2 pipeline version BEFORE using it")
+    r2.add_argument("version_id")
+    r2.add_argument("--description", required=True)
+    r2.add_argument("--dev-offering", action="append", default=[])
+    r2.add_argument("--repair-rounds", type=int, default=2, help="cap on targeted repair requests per stage")
+    r2.add_argument("--model")
+    a2 = sub.add_parser("analyze-v2", help="v2 pipeline (A-F, criteria, support check, computed assessment) on a frozen pack")
+    a2.add_argument("offering")
+    a2.add_argument("--version", required=True)
+    a2.add_argument("--pack", required=True)
+    a2.add_argument("--model")
+    a2.add_argument("--max-budget-usd", type=float, default=5.0)
+    a2.add_argument("--note", default="")
+    b2 = sub.add_parser("brief-v2", help="Korean brief, v2.1 layout (top summary + appendix)")
+    b2.add_argument("analysis_id", type=int)
+    ap2 = sub.add_parser("access-probe", help="ONE ordinary access attempt (logged); refused during a block cooldown")
+    ap2.add_argument("url")
+    ap2.add_argument("--method", choices=["http", "browser"], default="http")
+    tg = sub.add_parser("target-ocr", help="bounded OCR page targeting of a large/image PDF, then a NEW pack")
+    tg.add_argument("document_id", type=int)
+    tg.add_argument("--offering", required=True)
+    tg.add_argument("--cutoff", required=True, help="evidence cutoff for the new pack (documents observed by then)")
+    tg.add_argument("--cap", type=int, default=60)
+    fl = sub.add_parser("forecast-flag", help="record a separate lineage note on a forecast (the original is never changed)")
+    fl.add_argument("prediction_id", type=int)
+    fl.add_argument("--relation", choices=["redefined_by", "split_into", "flagged_compound", "superseded_definition"], required=True)
+    fl.add_argument("--reason", required=True)
+    fl.add_argument("--successor", type=int)
+    hs = sub.add_parser("support-check-manual", help="record a human spot check of one claim against the source page")
+    hs.add_argument("analysis_id", type=int)
+    hs.add_argument("claim_id")
+    hs.add_argument("--verdict", choices=["supported", "partially_supported", "not_supported"], required=True)
+    hs.add_argument("--overstatement", choices=["none", "minor", "material"], default="none")
+    hs.add_argument("--omitted", default="")
+    hs.add_argument("--note", required=True)
+    hs.add_argument("--checker", default="human:analyst")
     # ---- v2: approvals and ledger ------------------------------------------------------------------------------
     ap = sub.add_parser("approve", help="USER approval for manual investment (explicit amount; reserves budget if executable)")
     ap.add_argument("offering")
@@ -269,6 +306,46 @@ def dispatch(ctx: Ctx, a) -> dict:
     if a.cmd == "revalidate":
         from . import analysis
         return analysis.revalidate(ctx, a.analysis_id)
+    if a.cmd == "analyst-register-v2":
+        from . import analysis_v2
+        analysis_v2.register_v2(ctx, a.version_id, a.description, a.dev_offering, a.repair_rounds, a.model)
+        return {"registered": a.version_id}
+    if a.cmd == "analyze-v2":
+        from . import analysis, analysis_v2
+        r = analysis_v2.run_v2(ctx, a.offering, a.pack, analysis.ClaudeCLIAdapter(model=a.model, max_budget_usd=a.max_budget_usd),
+                               a.version, note=a.note)
+        r.pop("usage", None)
+        return r
+    if a.cmd == "brief-v2":
+        from . import brief_v2
+        return {"brief": str(brief_v2.build_brief_v2(ctx, a.analysis_id))}
+    if a.cmd == "access-probe":
+        from . import access
+        cd = access.cooldown_active(ctx, host=a.url.split("/")[2], days=int(ctx.cfg["platform"]["block_cooldown_days"]))
+        if cd:
+            return {"refused": f"block recorded {cd['attempted_utc']} ({cd['result']}) is within the cooldown; no retry"}
+        csvp = ctx.root / "reports" / "republic_access_attempts.csv"
+        fn = access.http_attempt if a.method == "http" else access.browser_attempt
+        r = fn(ctx, a.url, csvp)
+        return {k: r[k] for k in ("attempt_id", "url", "method", "http_status", "result", "challenge_state", "login_state")}
+    if a.cmd == "target-ocr":
+        from . import packs, targeted
+        t = targeted.target(ctx, a.document_id, cap=a.cap)
+        p = packs.build_pack(ctx, a.offering, a.cutoff, ocr_overrides={a.document_id: t})
+        return {"pack_id": p["pack_id"], "selected_pages": t["selected"], "unprocessed_pages": len(t["unprocessed"]),
+                "gaps": p["gaps"]}
+    if a.cmd == "forecast-flag":
+        from . import analysis_v2
+        return {"lineage_id": analysis_v2.forecast_lineage(ctx, a.prediction_id, a.relation, a.reason, a.successor)}
+    if a.cmd == "support-check-manual":
+        ctx.con.execute("INSERT INTO support_checks(analysis_id, claim_id, checker, judgment_label, citation_exists, passage_supports, "
+                        "omitted_qualifications, evidence_type, conflicts, overstatement, verdict, note, checked_utc) "
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (a.analysis_id, a.claim_id, a.checker, "human_spot_check_against_source_page", 1,
+                         {"supported": "yes", "partially_supported": "partly"}.get(a.verdict, "no"), a.omitted, "",
+                         "", a.overstatement, a.verdict, a.note, ctx.now()))
+        ctx.con.commit()
+        return {"recorded": a.claim_id}
     if a.cmd == "brief":
         from . import brief
         return {"brief": str(brief.build_brief(ctx, a.analysis_id))}

@@ -268,7 +268,7 @@ def test_migration_backup_preserves_prior_records(tmp_path):
     con.close()
     c2 = db.connect(v1, tmp_path / "backups")
     assert c2.execute("SELECT COUNT(*) FROM decisions").fetchone()[0] == 1
-    assert [r[0] for r in c2.execute("SELECT version FROM schema_migrations ORDER BY 1")] == [1, 2]
+    assert [r[0] for r in c2.execute("SELECT version FROM schema_migrations ORDER BY 1")] == [1, 2, 3]
     b = list((tmp_path / "backups").glob("*.sqlite"))
     assert len(b) == 1 and sqlite3.connect(b[0]).execute("SELECT status FROM decisions").fetchone()[0] == "pass"
     with pytest.raises(sqlite3.IntegrityError):

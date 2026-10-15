@@ -63,8 +63,24 @@ def critical_checklist(o, facts: list, docs: list[dict], gaps: list[dict]) -> di
     return cl
 
 
-def build_pack(ctx: Ctx, offering_id: str, cutoff: str | None = None) -> dict:
+def _ranges(pages: list[int]) -> str:
+    out, start, prev = [], None, None
+    for p in pages + [None]:
+        if start is None:
+            start = prev = p
+        elif p is not None and p == prev + 1:
+            prev = p
+        else:
+            out.append(f"{start}" if start == prev else f"{start}-{prev}")
+            start = prev = p
+    return ", ".join(x for x in out if x != "None")
+
+
+def build_pack(ctx: Ctx, offering_id: str, cutoff: str | None = None, ocr_overrides: dict | None = None) -> dict:
+    """ocr_overrides (v2.1): {document_id: targeted.target(...) result}. The document's text comes from the targeted
+    OCR pages; pages not processed are listed as gaps. A pack built this way has its own version label and id."""
     cutoff = norm_utc(cutoff) if cutoff else ctx.now()
+    ocr_overrides = ocr_overrides or {}
     o = ctx.con.execute("SELECT * FROM offerings WHERE offering_id=?", (offering_id,)).fetchone()
     rows = ctx.con.execute(
         "SELECT * FROM documents WHERE offering_id=? AND visibility='public' AND http_status=200 AND retrieved_utc <= ? "
@@ -84,6 +100,14 @@ def build_pack(ctx: Ctx, offering_id: str, cutoff: str | None = None) -> dict:
         if d["source_type"] == "sec_primary_xml" and p and p.exists():
             pages.append({"doc_id": d["document_id"], "page": 1, "text": p.read_text(errors="replace")})
             entry["text_status"] = "xml_included"
+        elif d["document_id"] in ocr_overrides:
+            ov = ocr_overrides[d["document_id"]]
+            entry["text_status"] = ov["method"]
+            entry["contract_marker_pages"] = [pg for pg in sorted(ov["pages"]) if CONTRACT_MARKERS.search(ov["pages"][pg])]
+            pages += [{"doc_id": d["document_id"], "page": pg, "text": ov["pages"][pg]} for pg in sorted(ov["pages"])]
+            if ov["unprocessed"]:
+                gaps.append({"doc_id": d["document_id"], "detail": f"{d['description']}: pages {_ranges(ov['unprocessed'])} of "
+                             f"{ov['n_pages']} NOT processed (bounded targeting; text not in pack)"})
         elif (d["description"] or "").lower().endswith(".pdf") and p and p.exists():
             if d["bytes"] and d["bytes"] > int(ctx.cfg["capture"]["max_bytes_per_document"]):
                 entry["text_status"] = "not_parsed_size_limit"
@@ -111,7 +135,7 @@ def build_pack(ctx: Ctx, offering_id: str, cutoff: str | None = None) -> dict:
         "SELECT fact_id, document_id AS doc_id, field, value, locator FROM facts WHERE offering_id=? AND observed_utc <= ? "
         "AND field LIKE '%_candidate' ORDER BY fact_id", (offering_id, cutoff))]
     pack = {
-        "pack_version": PACK_VERSION, "untrusted_content_notice": UNTRUSTED_NOTICE, "cutoff_utc": cutoff,
+        "pack_version": PACK_VERSION + ("_targeted_ocr" if ocr_overrides else ""), "untrusted_content_notice": UNTRUSTED_NOTICE, "cutoff_utc": cutoff,
         "offering": {k: o[k] for k in ["offering_id", "legal_name", "issuer_id", "offering_file_number", "initial_accession",
                                        "initial_filing_date", "initial_acceptance_utc", "cohort", "security_class", "deadline_date",
                                        "availability_status", "availability_evidence", "closing_status"]},
@@ -126,7 +150,7 @@ def build_pack(ctx: Ctx, offering_id: str, cutoff: str | None = None) -> dict:
     if not path.exists():
         path.write_text(body)
     ctx.con.execute("INSERT OR IGNORE INTO evidence_packs VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                    (pack_id, offering_id, PACK_VERSION, cutoff, ctx.now(), sha, str(path.relative_to(ctx.root)), json.dumps(ids),
+                    (pack_id, offering_id, pack["pack_version"], cutoff, ctx.now(), sha, str(path.relative_to(ctx.root)), json.dumps(ids),
                      len(pages), json.dumps(gaps), json.dumps(pack["critical_checklist"])))
     ctx.con.commit()
     return {"pack_id": pack_id, "sha256": sha, "path": str(path), "n_documents": len(docs), "n_pages": len(pages),

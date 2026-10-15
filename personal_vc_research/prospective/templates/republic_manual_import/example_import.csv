@@ -1,0 +1,3 @@
+offering_id,file,url,source_type,visibility,captured_while_logged_in,claimed_publication_date,captured_utc,description
+RCF-0000000-020-00000,example_campaign_page.html,https://republic.com/example,campaign_page,public,no,2026-10-20,2026-10-21T14:05:00Z,SYNTHETIC example: campaign page saved from my browser while logged out
+RCF-0000000-020-00000,example_block_page.html,https://republic.com/example,campaign_page,public,no,,2026-10-21T14:06:00Z,SYNTHETIC example: a block page (will be refused)

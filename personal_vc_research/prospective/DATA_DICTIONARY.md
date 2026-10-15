@@ -144,3 +144,23 @@ before it. All v2 tables are append-only.
 * `prediction_meta`: links forecasts to an analysis, pack hash, version and model. The label is always
   `model_judgment_uncalibrated`.
 * `citation_checks`: spot checks (`independent_extractor_recheck`, `reviewer_semantic`).
+
+## v2.1 tables (migration 3; see `V2_1_GUIDE.md`)
+
+All v2.1 tables are append-only (UPDATE/DELETE triggers abort). They reference v2 rows; they never rewrite them.
+
+| Table | One row per | Key fields |
+|---|---|---|
+| `access_attempts` | platform/website access attempt | `attempted_utc` (retrieval time), `method` (http_get_single / headless_chromium_single / wayback_availability_api_single), `http_status`, `final_url`, `result` (public_content / challenge / login_required / http_error / empty_or_script_only / network_error), `content_available`, `visibility` (public / authenticated / not_determined), `challenge_state`, `login_state`, `capture` (complete_html_snapshot / none), `content_sha256`, `markers` (JSON), `note`. Mirrored to `reports/republic_access_attempts.csv`. Cookies are never stored. |
+| `source_checks` | change check of a source | `source` (sec_edgar_submissions), `checked_utc`, `success` 0/1, `covers_from_utc`/`covers_to_utc` (interval for which "no new filings" may be stated; only when success=1) |
+| `assessments` | analysis × classifier version | `assessment`, `evidence_completeness`, `operational_readiness`, `budget_status`, `decisive_criteria`, `reasons` (Korean), `unresolved_criteria`, `freshness` (JSON snapshot), `policy_version` = `screening_policy_v1_1_proposed_unacknowledged`, `notes` (legacy v1 status) |
+| `criterion_results` | analysis × criterion (BT1–BT5, PC1–PC3) | `model_result` (pass/fail/unknown, from Stage D), `final_result` (pass/fail/unresolved, after code support rules), `support` (why), `claim_ids`, `reason_ko`, `validator_notes` |
+| `calculations` | deterministic calculation (K-id) | `calc_type` (`K1:implied_pre_money_equity`, …), `formula`, `inputs` (value, unit, as_of, claim id, citations), `assumptions`, `included_instruments`, `excluded_instruments`, `units`, `result_value`, `result_kind` (computed / illustrative / withheld), `withheld_reason`, `calculator_version` |
+| `support_checks` | claim × checker | `checker` (`model:<id>` or `human:<name>`), `judgment_label` (model_judgment_not_verification / human_spot_check_against_source_page), `citation_exists`, `passage_supports`, `omitted_qualifications`, `evidence_type`, `conflicts`, `overstatement`, `verdict` |
+| `forecast_definitions` | v2 prediction | `target_type` (event_occurs / issuer_announces / independently_corroborated), `target_scope`, `deadline_utc`, `reporting_lag_days`, `allowed_evidence`, `rationale`, `assumptions`, `unknown_treatment`, `cancellation_treatment`, `early_true_allowed`=1, `silence_is_false`=0 (CHECK) |
+| `forecast_lineage` | note about an existing prediction | `original_prediction_id`, `relation` (flagged_compound / split_into / redefined_by / superseded_definition), `successor_prediction_id`, `reason`. The original prediction stays scorable exactly as written. |
+| `stage_usage` | stage × attempt of a v2 run | `attempt` (original / repairN), `seconds`, token counts, `cost_estimate_usd`, `cost_label` = `cli_estimated_list_price_equivalent_not_billed`, `outcome`, `n_errors` |
+
+`analysis_runs.status` for v2 runs is the policy-v1 mapping, which is still the policy of record. The four
+dimensions live in `assessments`. Packs built with targeted OCR have `pack_version` = `pack_v1_targeted_ocr` and list
+the unprocessed pages as gaps.

@@ -79,6 +79,10 @@ class ClaudeCLIAdapter:
             return None, meta
         usage = d.get("modelUsage") or {}
         main = max(usage, key=lambda m: usage[m].get("outputTokens", 0)) if usage else None
+        u = d.get("usage") or {}
+        meta["usage"] = {"input_tokens": u.get("input_tokens"), "output_tokens": u.get("output_tokens"),
+                         "cache_read_tokens": u.get("cache_read_input_tokens"),
+                         "cache_creation_tokens": u.get("cache_creation_input_tokens"), "duration_ms": d.get("duration_ms")}
         meta.update({"is_error": d.get("is_error"), "model_reported": main, "models_used": list(usage),
                      "provider_reported": (usage.get(main) or {}).get("provider") if main else None,
                      "cost_usd": d.get("total_cost_usd"), "num_turns": d.get("num_turns"),
@@ -172,16 +176,9 @@ def all_claims(outputs: dict) -> list[dict]:
     return list(a.get("claims", [])) + list(b.get("additional_claims", [])) + list(c.get("additional_claims", []))
 
 
-def validate(pack: dict, outputs: dict) -> tuple[list[str], dict]:
-    errors: list[str] = []
-    for st in STAGE_ORDER:
-        if outputs.get(st) is None:
-            errors.append(f"{st}: missing output")
-            continue
-        for e in jsonschema.Draft202012Validator(STAGES[st]).iter_errors(outputs[st]):
-            errors.append(f"{st}: schema: {e.message[:160]} at {'/'.join(map(str, e.absolute_path))}")
-    if errors:
-        return errors, {}
+def claims_checks(pack: dict, outputs: dict, errors: list[str]):
+    """Shared by v1 and v2 validation: claim ids, prefixes, citations (verbatim), evidence-status rules and
+    calculations. Appends to `errors`; returns (claims, by_id, valid_cited, check_refs)."""
     pages = {(p["doc_id"], p["page"]): _norm(p["text"]) for p in pack["pages"]}
     docs = {d["doc_id"]: d for d in pack["documents"]}
     claims = all_claims(outputs)
@@ -193,7 +190,7 @@ def validate(pack: dict, outputs: dict) -> tuple[list[str], dict]:
     prefix = {"A_extraction": "A", "B_analysis": "B", "C_critical_review": "C"}
     for st, pfx in prefix.items():
         key = "claims" if st == "A_extraction" else "additional_claims"
-        for c in outputs[st].get(key, []):
+        for c in (outputs.get(st) or {}).get(key, []):
             if not c["claim_id"].startswith(pfx):
                 errors.append(f"{c['claim_id']}: claim id prefix must be {pfx} in {st}")
     valid_cited = set()
@@ -244,6 +241,20 @@ def validate(pack: dict, outputs: dict) -> tuple[list[str], dict]:
             elif forbid_unverified and by_id[r]["evidence_status"] == "unverified_assertion":
                 errors.append(f"{where}: unverified assertion {r} used as support")
 
+    return claims, by_id, valid_cited, check_refs
+
+
+def validate(pack: dict, outputs: dict) -> tuple[list[str], dict]:
+    errors: list[str] = []
+    for st in STAGE_ORDER:
+        if outputs.get(st) is None:
+            errors.append(f"{st}: missing output")
+            continue
+        for e in jsonschema.Draft202012Validator(STAGES[st]).iter_errors(outputs[st]):
+            errors.append(f"{st}: schema: {e.message[:160]} at {'/'.join(map(str, e.absolute_path))}")
+    if errors:
+        return errors, {}
+    claims, by_id, valid_cited, check_refs = claims_checks(pack, outputs, errors)
     for c in claims:
         check_refs(f"{c['claim_id']}.basis", c["basis_claim_ids"])
     for ci in outputs["A_extraction"]["critical_items"]:

@@ -1,0 +1,188 @@
+{
+ "business_model": {
+  "assessment": "Pre-revenue, device-enabled cell therapy (SELtx) for ALS. The planned model is a partner network: therapy sold through providers and distributors, with a projected revenue split of 40% company, 35% provider and 25% distributor, at a projected $120,000 annual price [A26]. Payers (patients, insurers or clinics) are not specified. Human use is not yet available and so far only mice have been treated [A23]. No customer, contract or revenue exists [A13]. The investor would hold non-voting-in-practice common stock [A2, A7].",
+  "claim_ids": [
+   "A2",
+   "A7",
+   "A13",
+   "A23",
+   "A26"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "The pack has no revenue, contracts, letters of intent or usage. FY2025 revenue was $0 [A13]. The only technical evidence is an issuer-described mouse proof-of-concept study with a cited p-value of 0.008. The Form C gives no sample size, design, controls or endpoint, and says the human effect is unknown [A25]. The pack shows no IRB approval, FDA IND submission or clearance, or first human dosing. Only a planned IRB trial is described [A24]. Market-size figures are issuer projections [A26]. Demand rests on assertion and early preclinical data.",
+  "claim_ids": [
+   "A13",
+   "A24",
+   "A25",
+   "A26"
+  ]
+ },
+ "competition": {
+  "assessment": "The issuer says it has no peer competitor with similar device-enabled technology and calls itself the only later-stage non-pharma ALS solution [A27]. It also names three approved ALS drugs and says 50+ ALS drugs are in development [A27]. These statements are issuer assertions with no independent source in the pack. The issuer's own risk factors say a competing program's success could hurt commercialization, and that patent protection is uncertain [A28]. It lists two U.S. patents and one Japanese patent as company-owned [A28]. No patent records are in the pack. Differentiation is stated (non-drug, own-immune-system approach), but threats are only partly named.",
+  "claim_ids": [
+   "A27",
+   "A28"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "At 2025-12-31 (audited), cash was $19,213 and total liabilities were $268,348. These included $199,875 owed to the founder, with no stated interest or maturity, and convertible notes carried at $50,704 [A13, A15]. FY2025 net loss was $56,126, with no revenue [A13]. Operations have been funded by the founder. The Form C carries a going-concern risk factor [A18]. A single issuer figure puts cash at $160,487.20 on 2026-06-18, with 'approximately six months of runway' [A17]. That cash follows the $150,000 note dated 2026-06-12 [A19]. A current runway cannot be computed from the pack, because the cash is dated 2026 and the expense data are for FY2025. The notes are 4.19% (matures 2030) and 4.13% (matures 2031), with no collateral [A21]. A further $50,000 note is contemplated [A22]. The $0 FY2025 R&D expense sits alongside the described mouse study and needs clarification [A16]. At the $75,000 target, 20% goes to intermediary fees and 40% to clinical trials ($30,000) [A29]. The maximum raise is $5M. Capital needs well beyond the target are likely, since the Form C itself says the raise may not be enough [A29].",
+  "claim_ids": [
+   "A13",
+   "A15",
+   "A16",
+   "A17",
+   "A18",
+   "A19",
+   "A21",
+   "A22",
+   "A29"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "Key risks: (1) mouse results may not translate to humans, and the Form C says this is unknown [A25]. (2) Regulatory steps (IRB, FDA) are all still in the future [A24]. (3) The plan relies on third-party equipment makers, clinics and distributors [A26]. (4) Patent position is early-stage [A28]. (5) The company has a thin financial base and a going-concern warning [A18]. (6) Timing of 2026 trial starts is conditional on funding [A24]. (7) The share-count record is unclear: the 2025-12-31 balance sheet shows 1 share and the Form C shows 75,000,001 after a June 2026 board ratification [A10]. (8) The pack does not show whether the offering is live [A4].",
+  "claim_ids": [
+   "A4",
+   "A10",
+   "A18",
+   "A24",
+   "A25",
+   "A26",
+   "A28"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "The founder/CEO lists a PhD in Neurosciences (1973) and has led the company since December 2020. An interim CFO has served since July 2025 and a CTO since November 2025. The Form C reports 5 employees [A30]. The listed officers' bios do not document prior clinical-trial, FDA-regulatory or medical-device commercialization history. Third-party research partners run the studies [A30]. Documented relevant execution history is limited.",
+  "claim_ids": [
+   "A30"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is common stock held through a custodian, with beneficial (securities-entitlement) ownership only [A2, A31]. Each investor grants a 10-year irrevocable proxy over voting to the Executive Chairman [A7]. Transfer is restricted for one year under Reg CF, and further limits apply afterwards (custodian and transfer-agent procedures, possible opinion of counsel, no transfer to competitors, lock-ups). The Form C says no market may develop [A9]. The issuer states an interest in a later Reg A offering into which investors would be converted, with no assurance it will happen [A32]. The pack shows no dividend promise, no redemption right and no listing. Each route is separate and unconfirmed: a later financing, a Reg A conversion, an exit, and buyer availability. Existing notes convert only on a liquidity event, and the conversion price is not given [A19]. The Form C calls the notes a senior debt obligation, but no payment waterfall is stated [A21].",
+  "claim_ids": [
+   "A2",
+   "A7",
+   "A9",
+   "A19",
+   "A21",
+   "A31",
+   "A32"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "The price is $1.00 per share, set 'arbitrarily' (a disclosure, not proof of over- or undervaluation) [A3]. Target is $75,000, maximum $5,000,000, minimum purchase $500 [A4, A5]. With 75,000,001 shares issued and outstanding, the implied pre-money equity at the offering price is about $75.0M (K1). Post-money is about $75.08M at the minimum (K2) and $80.0M at the maximum (K3). These are arithmetic on the offering price, not a valuation opinion. The founder holds 100% pre-offering [A11]. For scale: the audited FY2025 balance sheet shows total assets of $19,213 [A15], with no revenue [A13]. K4 (fully diluted) is withheld because the note conversion terms are undisclosed [A19]. The intermediary also receives 2% of the securities sold [A6], and there is no anti-dilution protection [A8]. The 75,000,000 founder shares were ratified only in June 2026, and the audited balance sheet shows 1 share [A10]. No comparables are in the pack.",
+  "claim_ids": [
+   "A3",
+   "A4",
+   "A5",
+   "A6",
+   "A8",
+   "A10",
+   "A11",
+   "A13",
+   "A15",
+   "A19",
+   "K1",
+   "K2",
+   "K3",
+   "K4"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "The implied equity value at the $1.00 offering price on 75,000,001 issued shares is about $75.0M (K1), against audited total assets of $19,213 at 2025-12-31 and zero revenue. This is arithmetic on an arbitrary price, not a verdict on valuation.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "TotalLiabilities 268,348 212,261"
+    }
+   ],
+   "financial_period": "Form C date (2026); balance sheet 2025-12-31",
+   "calculation": {
+    "formula": "price_per_share * issued_shares",
+    "inputs": [
+     {
+      "name": "price_per_share",
+      "value": 1,
+      "claim_id": "A3"
+     },
+     {
+      "name": "issued_shares",
+      "value": 75000001,
+      "claim_id": "A10"
+     }
+    ],
+    "result": 75000001
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A10",
+    "A13",
+    "A15",
+    "K1"
+   ],
+   "contradictions": "Issued share count is undated, and the audited balance sheet shows 1 share at 2025-12-31."
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "Investors in this offering have no practical vote for 10 years and no anti-dilution protection, while two convertible notes with undisclosed conversion price could later dilute them. This is a documented term, not proof of poor value.",
+   "claim_type": "contract_provision",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "The Securities do not have anti-dilution rights, which means that future equity issuances and other events will dilute"
+    },
+    {
+     "doc_id": 9,
+     "page": 25,
+     "quote": "In addition, the Issuer has two outstanding convertible securities with principal amounts of $60,000 and $150,000,"
+    }
+   ],
+   "financial_period": "as of Form C date (2026)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A7",
+    "A8",
+    "A19"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "Timing tension: the Form C says human use could begin in the second half of 2026, while the pack shows only planned steps, with no IRB approval, FDA submission or dosing documented. Funding at the $75,000 target would allocate only $30,000 to clinical trials.",
+   "claim_type": "traction",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "With sufficient funding and timely completion of our next-generation equipment, we believe that use in human"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Clinical Trials 40.0% $30,000 43.60% $2,180,000"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A24",
+    "A29"
+   ],
+   "contradictions": "The issuer's timeline is conditional on sufficient funding."
+  }
+ ]
+}
