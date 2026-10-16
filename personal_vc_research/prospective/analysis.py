@@ -87,6 +87,8 @@ class ClaudeCLIAdapter:
                      "provider_reported": (usage.get(main) or {}).get("provider") if main else None,
                      "cost_usd": d.get("total_cost_usd"), "num_turns": d.get("num_turns"),
                      "permission_denials": d.get("permission_denials"), "subtype": d.get("subtype")})
+        if d.get("is_error"):
+            meta["cli_result_text"] = str(d.get("result"))[:1500]      # v2.1: keep the CLI's own error text
         out = d.get("structured_output")
         if out is None and isinstance(d.get("result"), str):
             try:
