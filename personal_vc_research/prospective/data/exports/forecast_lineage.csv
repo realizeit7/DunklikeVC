@@ -1,0 +1,2 @@
+row_id,original_prediction_id,successor_prediction_id,relation,created_utc,reason
+1,4,\N,flagged_compound,2026-10-15T16:32:43+00:00,Joins distinct events with 'or' (IRB approval / FDA approval or clearance / IND / first human treated). These are different regulatory milestones and are not interchangeable. The original stays on record and scorable exactly as written; v2.1 forecasts must name one event each.

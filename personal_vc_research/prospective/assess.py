@@ -21,7 +21,11 @@ import json
 from .core import Ctx, iso, parse_utc
 from .llm.schemas_v2 import CRITERIA, NON_DECISIVE_GROUNDS
 
-CLASSIFIER_VERSION = "assessment_classifier_v2_1_1"
+CLASSIFIER_VERSION = "assessment_classifier_v2_1_2"
+# v2_1_2 (2026-10-16, analysis 14): extraction gaps always give `extraction_incomplete`, also for a supported failure.
+# In v2_1_1 a failure overrode gaps, so TradeFunded showed 'sufficient' although 112 pages, including most of the
+# Operating Agreement that the decisive claims reference ("except as stated in the Operating Agreement"), were never
+# read. The fail itself stands; the brief's next action asks to check the unread sections first.
 # v2_1_1 (2026-10-15, manual spot check of analysis 10): budget status 'eligible' now also needs an investor-fee
 # confirmation from the user. In v2_1 the model marked `minimum_investment_and_fees` confirmed from the
 # issuer-paid intermediary fee (claim A6), which says nothing about what the investor pays. Investor fees are shown
@@ -90,7 +94,7 @@ def evaluate(errors: list[str], outputs: dict, critical: dict, by_id: dict, vali
         assessment = "passes_current_screen"
     else:
         assessment = "indeterminate"
-    if unreadable and assessment != "fails_current_screen":
+    if unreadable:
         completeness = "extraction_incomplete"
     elif assessment == "fails_current_screen":
         completeness = "sufficient_for_current_conclusion"
@@ -193,7 +197,8 @@ def next_actions(res: dict, fresh: dict) -> list[str]:
         acts.append("추가 자료 수집은 우선순위가 낮습니다. 결정적 사유가 유지되는 한 결론은 바뀌지 않습니다.")
         acts.append("결론을 다시 보려면, 결정적 사유(" + ", ".join(res["decisive"]) + ")의 인용 원문을 직접 확인하는 것이 첫 단계입니다.")
         if comp == "extraction_incomplete":
-            acts.append("읽지 못한 문서가 있어 결정적 사유와 무관한지 확인이 필요합니다.")
+            acts.insert(0, "먼저 읽지 못한 페이지가 결정적 사유를 바꾸는지 확인하세요(예: 계약서의 미처리 페이지): " +
+                        "; ".join(res.get("extraction_gaps", [])[:2]))
         return acts
     if comp == "extraction_incomplete":
         acts.append("읽지 못한 문서(대용량·이미지 PDF 등)에서 계약서와 재무제표 페이지를 먼저 추출(OCR)하세요: " +

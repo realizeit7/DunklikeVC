@@ -1,0 +1,525 @@
+{
+ "issues": [
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B5 and A19: 'internally inconsistent' funding picture",
+   "explanation": "B5 calls the funding statements internally inconsistent, but the Form C ties them together. It says the issuer has resources for its near-term plan and is raising money to broaden participation, strengthen the balance sheet and add working-capital flexibility. It separately says the proceeds are 'essential'. That is a difference in wording and a tension, not a proven contradiction. B5's own note says it may be a framing difference. The 24-36 month runway cannot be checked because no monthly net-loss history is shown. The only reviewed loss figure covers about 2.7 months. Describe it as an unreconciled tension, not an inconsistency.",
+   "claim_ids": [
+    "B5",
+    "A19",
+    "A14"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A9 and B economics: 'zero debt' versus lender references",
+   "explanation": "The Form C reports zero debt and zero other securities. The Subscription Agreement refers to the Company's 'loan agreements' and 'existing credit facilities'. The risk factor on transfers says consent may be needed from 'potentially one or more lenders'. The use of proceeds lists 'debt service' as a possible use. Stage A noted only one of these references. They may be boilerplate, but they are three separate indications that conflict with the stated zero debt. The pack does not resolve this. Do not treat the zero-debt statement as settled.",
+   "claim_ids": [
+    "A9",
+    "C10"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Capitalization: Form C ownership table versus April 30 note",
+   "explanation": "The Form C table gives TraderSumo 1,700,000 Units, which is 17% of 10,000,000 fully diluted. The April 30 note gives TraderSumo 15.0%. If Oasis (3,000,000) and Natural Workflow (1,500,000) are right, the implied Bethlem Royal holding is 300,000 Units (3%), against 5.0% in the note. The dates differ: April 30 is before the June 18 Unit denomination. Even so, the pack gives no reconciliation. Per-holder percentages should not be relied on until reconciled.",
+   "claim_ids": [
+    "C4",
+    "C2",
+    "C3",
+    "A27"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A30 and A12: related-party payable versus zero liabilities",
+   "explanation": "Note 6 describes $10,000 of 'expenses payable' to Bethlem Royal, with $5,000 dated May 4, 2026. That date is after the April 30 balance sheet date. The balance sheet shows no liabilities, and the subsequent-events note says none. Either the amount was not a period-end liability, or the note and the balance sheet disagree. This is a question for the accountants and issuer, not a finding of misstatement.",
+   "claim_ids": [
+    "C6",
+    "A30",
+    "A12"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B8: founders' units 'even if the member stops providing services'",
+   "explanation": "B8 overstates the vesting terms. The Form C says a Vesting Member's Units are forfeited if it, or its principal service provider, voluntarily departs or is terminated for Cause before a Liquidity Event. The Units are retained on death, disability, removal without Cause or constructive termination. The 'no time-based retention' point is documented. The statement that Units are kept whenever service ends is not. Also, 'Liquidity Event' is undefined in the readable pages, so B8's incentive-alignment conclusion is speculative.",
+   "claim_ids": [
+    "B8",
+    "C9",
+    "A27"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A26 and B6: unlimited issuance without member consent",
+   "explanation": "Page 24 says there is no limit on Units that may be issued. The same Form C says securities issuances in excess of authorized amounts are a Reserved Matter needing approval of all three Managers. The Operating Agreement lets the Manager Committee update Exhibit A (the authorized and reserved Units) without Member consent. So no member consent is needed, but unanimous Manager approval is required above the 10,000,000 authorized Units. B6's 'open-ended dilution' omits this qualification. Dilution risk is real, since Managers control it, but the sources conflict on how it is capped.",
+   "claim_ids": [
+    "A26",
+    "B6",
+    "C8"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "A20: 5% Pre-Distribution Cash allocation cannot be sized",
+   "explanation": "The pack text does not define 'Pre-Distribution Cash', so the effect of the 5% allocation on investors cannot be quantified. The Manager Committee also has discretion to retain or release unpaid amounts. The April 30 note calls the same mechanism the 'Funded Trader Profit Share Pool', while the Operating Agreement calls it the 'TradeFunded Capital Funding Allocation'. The definition and the recipient's related-party relationship need clarification.",
+   "claim_ids": [
+    "A20"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A21 and A29: distribution discretion versus tax distributions",
+   "explanation": "The Form C describes distributions as at the Manager Committee's absolute and sole discretion. Section 10.4 of the Operating Agreement says the Manager Committee 'shall cause' tax distributions 'to the extent practicable'. That provision assumes pass-through taxation. The Form C says that after the July 2 election the company is taxed as a corporation, with 1099-DIV reporting and no K-1. Whether Section 10.4 applies to offering investors is unclear and is not reconciled in the readable pages. A21 is not wrong. It omits this qualification.",
+   "claim_ids": [
+    "A21",
+    "A29",
+    "C7"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A16: Form C XML financial fields",
+   "explanation": "The XML shows cash of 0.00 and net income of 0.00 for the most recent fiscal year, with total assets of 226,885. It shows net income of -23115 in the prior-year field. This pattern fits a column or period placement error: the figures match the April 30 reviewed statements. That is an inference, not proven. Stage A marked financial_statements as 'contradictory'. That is defensible for the XML. The reviewed statements are internally consistent with the cover table. Do not treat the XML cash field as evidence of zero cash.",
+   "claim_ids": [
+    "A16",
+    "A12"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "Critical item statuses: operative_contract and closing_or_availability",
+   "explanation": "Operative_contract is marked 'confirmed_with_citation'. The pack lists it as present_unreviewed. Many Operating Agreement pages (Article IV-VIII, Liquidity Event, vesting, voting and Reserved Matters) were not processed. A better status is partially readable. The closing/availability item is 'not_found_in_pack' in Stage A, while the pack records availability as unknown because the platform was unreachable. That is a verification gap, not proof of non-availability or non-disclosure.",
+   "claim_ids": [
+    "A32",
+    "A24",
+    "A23"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A18: use-of-proceeds contradiction and 'OCR-garbled' table",
+   "explanation": "Stage A says the table is garbled and cites none of its figures. The key rows are readable: intermediary fees are $15,000 at the target and $34,800 at the maximum. Working capital and liquidity reserve is 44.882% ($305,199.98) at the maximum. The statement that trading accounts are 'funded solely from operating revenue' is forward-looking, so revenue of $0 up to April 30 does not by itself contradict it. It does raise a question about where trading capital would come from. The table also excludes some offering costs that are due before closing.",
+   "claim_ids": [
+    "A18",
+    "C13"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "minimum_investment_and_fees: investor-side fees",
+   "explanation": "Stage A says no investor-side fees appear in the readable pages. The BitGo ACH terms in the pack (page 135) include a fee of up to $25 per returned transaction. Whether those terms apply to this offering is not established. The custody fee schedule is not in the readable pages. Investor-side custody and transaction fees remain unconfirmed.",
+   "claim_ids": [
+    "C11",
+    "A5",
+    "A6"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B2/K1-K3: implied equity values and PC2",
+   "explanation": "K1-K3 apply $0.35 to every issued Unit. The pack shows the Seed Investors' $250,000 over 1,000,000 Units is $0.25 per Unit, if all of it was paid by those investors. It also shows certain Founding Members received Units for no cash. So the 'implied equity value' is arithmetic on an arbitrary price and is not a measure of capital invested or of value. B2 states this, but the earlier-entry price is not mentioned. The arbitrary-price disclosure alone does not show overvaluation. No comparables or traction in the pack allow a test.",
+   "claim_ids": [
+    "B2",
+    "K1",
+    "K2",
+    "K3",
+    "C5",
+    "A3"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Team evidence (B7, A28, A33)",
+   "explanation": "The team pages are not processed. The only documented history is the CTO's CFTC consent order, as described by the issuer. The full 'CFTC Action and Consent Order' section was not read. An adverse regulatory fact is relevant but is not a full execution record. Do not form a team conclusion from this one fact. The 0-employee figure is a Form C field. It does not show who performs the work, since contractors and affiliates are possible.",
+   "claim_ids": [
+    "B7",
+    "A28",
+    "A33"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A32 and A31: citation coverage",
+   "explanation": "A32 states several provisions (deadline extension, intermediate closings) but cites only the cancellation and refund sentence. Extension and intermediate closings are in the pack on pages 9 and 23, with a 70% draw at the initial closing. A31 names BitGo and a trust arrangement, but its quote covers only the beneficial-ownership sentence. Page 8 supports the custodian and nominee. Add these citations. Also add the investor protections omitted from the rights analysis (C12), such as no additional capital calls.",
+   "claim_ids": [
+    "A32",
+    "A31",
+    "B4",
+    "C12"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C allocates 6,500,000 Units to Founding Members and 1,000,000 Units to Seed Investors, all issued and outstanding, out of 10,000,000 authorized Units.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "6,500,000 Units are allocated to Founding Members (as defined in the Operating Agreement)"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "1,000,000 Units are allocated to Seed Investors (as defined in the Operating Agreement)"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A7"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "The Form C ownership table lists Oasis Holdings, Ltd., LLC with 3,000,000 Units, TraderSumo LLC with 1,700,000 Units and Natural Workflow LLC with 1,500,000 Units.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 38,
+     "quote": "Oasis Holdings, Ltd., LLC 3,000,000 Units 40%"
+    },
+    {
+     "doc_id": 15,
+     "page": 38,
+     "quote": "TraderSumo LLC 1,700,000 Units 22.67%"
+    },
+    {
+     "doc_id": 15,
+     "page": 38,
+     "quote": "Natural Workflow LLC 1,500,000 Units 20%"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27"
+   ],
+   "contradictions": "See C3 and C4."
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The April 30, 2026 financial statement note lists TraderSumo LLC at 15.0% and Bethlem Royal Holdings LLC at 5.0% of ownership, before the June 18, 2026 Unit denomination.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 54,
+     "quote": "TraderSumo LLC 15.0%"
+    },
+    {
+     "doc_id": 15,
+     "page": 54,
+     "quote": "Bethlem Royal Holdings LLC 5.0%"
+    }
+   ],
+   "financial_period": "As of 2026-04-30 (reviewed statements)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The Form C ownership table implies different TraderSumo and Bethlem figures; see C4."
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "Founders' Units less the Oasis, TraderSumo and Natural Workflow holdings leave 300,000 Units for Bethlem Royal (3% of 10,000,000), against 5.0% in the April 30 note. TraderSumo's 1,700,000 Units are 17% of 10,000,000 against 15.0% in the note. The documents differ in date and are not reconciled in the pack.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 38,
+     "quote": "TraderSumo LLC 1,700,000 Units 22.67%"
+    },
+    {
+     "doc_id": 15,
+     "page": 54,
+     "quote": "Bethlem Royal Holdings LLC 5.0%"
+    }
+   ],
+   "financial_period": "Form C date 2026-09-16 versus 2026-04-30",
+   "calculation": {
+    "formula": "founders_units - oasis_units - tradersumo_units - natural_workflow_units",
+    "inputs": [
+     {
+      "name": "founders_units",
+      "value": 6500000,
+      "claim_id": "C1"
+     },
+     {
+      "name": "oasis_units",
+      "value": 3000000,
+      "claim_id": "C2"
+     },
+     {
+      "name": "tradersumo_units",
+      "value": 1700000,
+      "claim_id": "C2"
+     },
+     {
+      "name": "natural_workflow_units",
+      "value": 1500000,
+      "claim_id": "C2"
+     }
+    ],
+    "result": 300000
+   },
+   "basis_claim_ids": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "contradictions": "The pack contains no reconciliation. The Bethlem count of 300,000 is inferred by subtraction; Bethlem's Units are not listed directly in the readable pages."
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "If the $250,000 of SAFE-converted proceeds all came from the nine Seed Investors, their 1,000,000 Units imply about $0.25 per Unit, against the $0.35 offering price. The SAFE terms are not in the pack.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 51,
+     "quote": "Proceeds from issuance of Membership Interests (via SAFE conversion) 250,000"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "1,000,000 Units are allocated to Seed Investors (as defined in the Operating Agreement)"
+    }
+   ],
+   "financial_period": "SAFE conversion April 2026",
+   "calculation": {
+    "formula": "seed_proceeds / seed_units",
+    "inputs": [
+     {
+      "name": "seed_proceeds",
+      "value": 250000,
+      "claim_id": "A10"
+     },
+     {
+      "name": "seed_units",
+      "value": 1000000,
+      "claim_id": "C1"
+     }
+    ],
+    "result": 0.25
+   },
+   "basis_claim_ids": [
+    "A10",
+    "C1"
+   ],
+   "contradictions": "Assumes all $250,000 relates to the 1,000,000 Seed Units. The pack does not state the Seed Investment Amount per investor."
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "Note 6 describes $10,000 of expenses 'payable' to Bethlem Royal Holdings, comprising $5,000 payments dated April 16 and May 4, 2026. The balance sheet at April 30, 2026 shows no liabilities.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 55,
+     "quote": "comprised of two payments of $5,000 each on April 16, 2026 and May 4, 2026."
+    },
+    {
+     "doc_id": 15,
+     "page": 49,
+     "quote": "Total Liabilities -"
+    }
+   ],
+   "financial_period": "2026-02-10 to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A30",
+    "A12"
+   ],
+   "contradictions": "A May 4 payment falls after the April 30 balance sheet date, and subsequent events are stated as none. The classification is unexplained."
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "Operating Agreement Section 10.4 says tax distributions shall be made 'to the extent practicable' before other distributions. This sits next to the Form C statements that distributions are at the Manager Committee's sole discretion and that, after the corporate election, the Company reports on Form 1099-DIV rather than Schedule K-1.",
+   "claim_type": "contract_provision",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 86,
+     "quote": "Tax Distributions. To the extent practicable, and prior to making any other"
+    },
+    {
+     "doc_id": 15,
+     "page": 25,
+     "quote": "The Company will report distributions, if any, on Internal Revenue Service Form 1099-DIV rather than on Schedule"
+    }
+   ],
+   "financial_period": "Operating Agreement dated 2026-06-18; Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A21",
+    "A29"
+   ],
+   "contradictions": "The Form C risk factor on page 24 describes distributions as at the Manager Committee's absolute and sole discretion."
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "Under the Form C, securities issuances in excess of authorized amounts are Reserved Matters needing approval of all Managers. The Operating Agreement lets the Manager Committee update Exhibit A (authorized and reserved Units) without Member consent.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 20,
+     "quote": "and Reserved Matters, including securities issuances in excess of authorized amounts, indebtedness or guarantees in"
+    },
+    {
+     "doc_id": 15,
+     "page": 91,
+     "quote": "The Manager Committee may similarly update Exhibit A without Member consent to reflect"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A26"
+   ],
+   "contradictions": "Page 24 says there is no limit on issuance, while page 37 gives 10,000,000 authorized Units."
+  },
+  {
+   "claim_id": "C9",
+   "claim_text": "The Form C says the Units of TraderSumo, Natural Workflow and Bethlem Royal are forfeited only if the Vesting Member or its principal service provider voluntarily departs or is terminated for Cause before a Liquidity Event. Other exits (death, disability, removal without Cause, constructive termination) keep the Units.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 20,
+     "quote": "forfeited only if the applicable Vesting Member or its principal service provider voluntarily departs or is terminated"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27"
+   ],
+   "contradictions": "B8 says the Units are kept 'even if the member stops providing services', which omits the voluntary-departure and Cause forfeiture."
+  },
+  {
+   "claim_id": "C10",
+   "claim_text": "Besides the zero-debt statement, the documents mention lenders in three places: the Subscription Agreement refers to 'loan agreements' and 'existing credit facilities', the transfer risk factor refers to consent from 'potentially one or more lenders', and the use of proceeds lists 'debt service'.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 64,
+     "quote": "(iii) any consents required under the Company’s loan"
+    },
+    {
+     "doc_id": 15,
+     "page": 65,
+     "quote": "or permitted under the Company’s existing credit facilities."
+    },
+    {
+     "doc_id": 15,
+     "page": 25,
+     "quote": "consent of the Managers, all other Members, and potentially one or more lenders."
+    },
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "for general corporate purposes, debt service, or liquidity preservation."
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A9"
+   ],
+   "contradictions": "The Form C says the Issuer has zero debt outstanding as of the Form C date (page 37). The reference may be boilerplate; the pack does not say."
+  },
+  {
+   "claim_id": "C11",
+   "claim_text": "The BitGo ACH transfer terms in the pack state that BitGo may impose a fee of up to $25 for each transaction returned for insufficient funds. It is not established that these terms apply to investors in this offering. The custody fee schedule is not in the readable pages.",
+   "claim_type": "other",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 135,
+     "quote": "requested transfer again within 30 days and BitGo may separately impose a fee of up to $25 for each"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A31"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C12",
+   "claim_text": "The Subscription Agreement states the Company represents that investors in this Offering shall not be required to make additional capital contributions beyond the purchase price.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 65,
+     "quote": "Investors who purchase Securities in the Offering shall not be required to make any Additional Capital"
+    }
+   ],
+   "financial_period": "Subscription Agreement (Form C filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "C13",
+   "claim_text": "The use-of-proceeds table shows intermediary fees of $15,000 (20%) at the target and $34,800 at the maximum, and a working capital and liquidity reserve of $305,199.98 (44.882%) at the maximum. The table excludes some other offering costs.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "Intermediary Fees 20% $15,000.00 5.118%? $34,800.00"
+    },
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "Working Capital & 30% $22,499.87 44.882% $305,199.98"
+    }
+   ],
+   "financial_period": "Forward-looking, Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A18",
+    "A6"
+   ],
+   "contradictions": "The table text is OCR-extracted and the layout is imperfect; the issuer says actual allocation may vary significantly."
+  }
+ ]
+}

@@ -48,3 +48,25 @@ Like v1, this is an unvalidated research checklist. A "pass" only means "eligibl
 - Forecast definitions are structured; the originals are kept.
 - Repair is capped, and both original and repaired outputs are kept.
 - The brief layout is new.
+
+## Open questions for you (found in the v2.1 development runs; nothing changed)
+
+1. **PC1 and PC3 fail in all three development cases.** They fail mostly on features common to almost every Reg CF
+   security:
+   - transfer restriction and consent requirements;
+   - discretionary or no distributions;
+   - custodian holding;
+   - voting proxy;
+   - no anti-dilution protection;
+   - conversion that depends on a future round.
+
+   With rule 1 above, this would make nearly every offering `fails_current_screen`. Options:
+   - **(a)** judge PC1/PC3 against the standard Reg CF form, so a fail means a term worse than the norm (for
+     example, TradeFunded's 5% affiliate allocation before distributions);
+   - **(b)** make PC1/PC3 informational, not required;
+   - **(c)** keep them as they are.
+
+   See `reports/v2_1_development_cases.md`.
+2. **Fail vs unknown threshold for BT4 (financial condition).** Going-concern language and negative equity are
+   common at the pre-revenue stage. Should they be a supported failure on their own, or only together with something
+   more, such as an accountant's (not just the issuer's) going-concern paragraph?

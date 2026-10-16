@@ -1,0 +1,962 @@
+{
+ "claims": [
+  {
+   "claim_id": "A1",
+   "claim_text": "The issuer is TradeFunded LLC, a Delaware limited liability company, incorporated 02-10-2026 per the Form C XML.",
+   "claim_type": "identity",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<nameOfIssuer>TradeFunded LLC"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<jurisdictionOrganization>DE"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<dateIncorporation>02-10-2026"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A2",
+   "claim_text": "The Form C offers 'Units' with a target of $74,999.75, a maximum of $679,999.95 and an offering deadline of 12-15-2026 (Form C XML).",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<securityOfferedOtherDesc>Units"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<offeringAmount>74999.75"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>679999.95"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<deadlineDate>12-15-2026"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A3",
+   "claim_text": "The price is $0.35 per Unit, and the Form C states the price determination method is 'Arbitrary'. This is a disclosure, not proof of over- or undervaluation.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<price>0.35000"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary"
+    },
+    {
+     "doc_id": 15,
+     "page": 27,
+     "quote": "There is no present market for the Securities and we have arbitrarily set the price."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A4",
+   "claim_text": "The Form C XML lists 214285 securities offered (matching the target amount at $0.35); the Subscription Agreement states up to 1,942,857 Units are offered (matching the maximum amount at $0.35).",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<noOfSecurityOffered>214285"
+    },
+    {
+     "doc_id": 15,
+     "page": 57,
+     "quote": "accredited investors up to 1,942,857 of its Units"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2",
+    "A3"
+   ],
+   "contradictions": "The XML count (214285) reflects the target amount only; the maximum count comes from the Subscription Agreement. The two are different measures, not a conflict."
+  },
+  {
+   "claim_id": "A5",
+   "claim_text": "The Minimum Individual Purchase Amount is $350 and the Maximum Individual Purchase Amount is $149,999.85. The issuer may amend these amounts at its discretion, including for special programs.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 8,
+     "quote": "The Minimum Individual Purchase Amount is $350 and the Maximum Individual"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A6",
+   "claim_text": "The issuer pays the intermediary (OpenDeal Portal LLC / Republic) a cash fee of the greater of $15,000 or a tiered schedule (0% up to $100,000; 6% above). The intermediary also receives securities equal to 2% of the securities sold in the Offering.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 11,
+     "quote": "At the conclusion of the Offering, the Issuer shall pay the Intermediary a cash fee equal to the greater of (A) $15,000.00"
+    },
+    {
+     "doc_id": 15,
+     "page": 11,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A7",
+   "claim_text": "The issuer is authorized to issue 10,000,000 Units. As of the date of the Form C, 7,500,000 Units are issued and outstanding, representing 75% of the fully diluted Percentage Interests.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "The Issuer is authorized to issue 10,000,000 Units of which (a)"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "7,500,000 Units; provided, that such issued Units"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A8",
+   "claim_text": "Of the authorized Units, 2,000,000 are allocated to the Regulation CF Reserve and 500,000 to the Company Reserve. Neither is issued or outstanding. Reserved Units are not counted for distributions, allocations or voting until issued.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "(c) 2,000,000 Units are allocated to the Regulation CF Reserve (as defined in the"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "Operating Agreement), none of which are issued and outstanding, and (d) 500,000 Units are allocated to the Company"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A7"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A9",
+   "claim_text": "As of the Form C date, the issuer reports zero additional securities (options, SAFEs, notes, warrants) and zero debt outstanding.",
+   "claim_type": "financial",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "As of the date of this Form C, the Issuer has zero additional securities outstanding."
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "As of the date of this Form C, the Issuer has zero debt outstanding."
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The Subscription Agreement (page 64) refers to 'loan agreements' and 'existing credit facilities'. This sits in tension with zero debt and needs clarification."
+  },
+  {
+   "claim_id": "A10",
+   "claim_text": "Seed funding of $250,000 is reported as membership interests issued via SAFE conversion. The conversion occurred in April 2026, and nine Seed Investors hold 10% of issued Percentage Interests. SAFE terms (cap, discount) are not in the readable pages.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 51,
+     "quote": "Proceeds from issuance of Membership Interests (via SAFE conversion) 250,000"
+    },
+    {
+     "doc_id": 15,
+     "page": 54,
+     "quote": "the conversion of SAFEs in April 2026."
+    }
+   ],
+   "financial_period": "Inception (2026-02-10) to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A11",
+   "claim_text": "The latest financial statements (as of April 30, 2026, period from inception Feb 10, 2026) are marked unaudited and carry an accountants' REVIEW report dated May 22, 2026, which gives limited assurance only and is not an audit.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 48,
+     "quote": "A review is substantially less in scope than an audit, the objective of"
+    },
+    {
+     "doc_id": 15,
+     "page": 48,
+     "quote": "Based on our reviews, we are not aware of any material modifications that should be made to the accompanying"
+    }
+   ],
+   "financial_period": "2026-02-10 to 2026-04-30; report dated 2026-05-22",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A12",
+   "claim_text": "At April 30, 2026 the balance sheet shows total assets of $226,885 (all cash) and no liabilities. For the inception-to-April 30, 2026 period, G&A expense was $23,388 and net loss was $23,115. Statements are reviewed, not audited, and are about 5.5 months old at the 2026-10-14 cutoff.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 49,
+     "quote": "Total Assets $ 226,885"
+    },
+    {
+     "doc_id": 15,
+     "page": 49,
+     "quote": "Total Liabilities -"
+    },
+    {
+     "doc_id": 15,
+     "page": 50,
+     "quote": "General and Administrative 23,388"
+    },
+    {
+     "doc_id": 15,
+     "page": 50,
+     "quote": "Net Loss $ (23,115)"
+    }
+   ],
+   "financial_period": "As of 2026-04-30; period 2026-02-10 to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A11"
+   ],
+   "contradictions": "The Form C XML reports cash and equivalents of 0.00 for the most recent fiscal year; see A16."
+  },
+  {
+   "claim_id": "A13",
+   "claim_text": "Revenue is $0 for the period. The financial statement notes say the company has not yet commenced principal revenue-generating operations as of April 30, 2026.",
+   "claim_type": "traction",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<revenueMostRecentFiscalYear>0.00"
+    },
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "As of April 30, 2026, the Company has not yet commenced principal revenue-generating operations and"
+    }
+   ],
+   "financial_period": "2026-02-10 to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A14",
+   "claim_text": "The issuer states it had $160,037.37 in cash as of June 30, 2026 and approximately 24-36 months of runway, computed as cash divided by average monthly net loss. The June 30 figure is not in the reviewed statements, and the loss history supporting the runway estimate is not shown.",
+   "claim_type": "financial",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "As of June 30, 2026 the Issuer had an aggregate of $160,037.37 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "approximately 24-36 months of runway. Runway is calculated by dividing cash-on-hand by average monthly net loss"
+    }
+   ],
+   "financial_period": "As of 2026-06-30 (unreviewed, issuer-stated)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Cash fell from $226,885 (Apr 30) to $160,037.37 (Jun 30); see A15. The cash decline is not by itself a measure of net loss, so the runway claim cannot be verified from the pack."
+  },
+  {
+   "claim_id": "A15",
+   "claim_text": "Stated cash fell by about $66,847.63 between April 30, 2026 (reviewed balance sheet) and June 30, 2026 (issuer statement in the Form C). The two figures have different assurance levels, and the decline may include non-expense items. This is not a runway calculation.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 49,
+     "quote": "Total Assets $ 226,885"
+    },
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "As of June 30, 2026 the Issuer had an aggregate of $160,037.37 in cash and cash equivalents, leaving the Issuer with"
+    }
+   ],
+   "financial_period": "2026-04-30 to 2026-06-30",
+   "calculation": {
+    "formula": "cash_2026-04-30 - cash_2026-06-30",
+    "inputs": [
+     {
+      "name": "cash_2026-04-30",
+      "value": 226885,
+      "claim_id": "A12"
+     },
+     {
+      "name": "cash_2026-06-30",
+      "value": 160037.37,
+      "claim_id": "A14"
+     }
+    ],
+    "result": 66847.63
+   },
+   "basis_claim_ids": [
+    "A12",
+    "A14"
+   ],
+   "contradictions": "A decline of this size over two months sits in tension with a 24-36 month runway claim at $160,037.37 of cash. The composition of the decline is undisclosed."
+  },
+  {
+   "claim_id": "A16",
+   "claim_text": "The Form C XML reports cash and equivalents of 0.00 and net income of 0.00 for the most recent fiscal year, while also reporting total assets of 226885.00. The offering document's cover table shows cash of $226,885, and the balance sheet shows total assets as all cash.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<cashEquiMostRecentFiscalYear>0.00"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<totalAssetMostRecentFiscalYear>226885.00"
+    },
+    {
+     "doc_id": 15,
+     "page": 3,
+     "quote": "Cash & Cash Equivalents $226,885 N/A"
+    }
+   ],
+   "financial_period": "2026-02-10 to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A12"
+   ],
+   "contradictions": "The XML cash field (0.00) conflicts with the cover table and balance sheet cash ($226,885). It may be a data-entry or column-placement error; clarification is needed."
+  },
+  {
+   "claim_id": "A17",
+   "claim_text": "The company describes itself as a Delaware fintech that develops and operates a trader evaluation and onboarding platform for retail futures traders. It expects revenue primarily from selling simulated trading evaluation credits, and qualified candidates may be offered a place in its trading program.",
+   "claim_type": "other",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "evaluation and onboarding platform for retail futures traders. The Company expects to generate revenue primarily"
+    },
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "through the sale of simulated trading evaluation credits, through which candidates demonstrate trading skill,"
+    }
+   ],
+   "financial_period": "As of 2026-04-30 notes",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A18",
+   "claim_text": "Proceeds are intended for working capital and liquidity reserves, product and technology development and licensing, launch and community growth, and compliance and admin. The issuer says no proceeds will fund trading capital or trader accounts, which are funded solely from operating revenue.",
+   "claim_type": "use_of_proceeds",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "The Company intends to use the proceeds for working capital and liquidity reserves, product and"
+    },
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "be contributed to TRADEFUNDED Capital LLC as trading capital or used to fund trader accounts. All trading"
+    }
+   ],
+   "financial_period": "Forward-looking, Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The use-of-proceeds table is OCR-garbled; percentages and amounts are not cited here. The statement that trading accounts are funded 'solely from operating revenue' sits against reported revenue of $0 (A13)."
+  },
+  {
+   "claim_id": "A19",
+   "claim_text": "The issuer says its near-term business plan has sufficient resources, yet also says the proceeds of the Offering are essential to its operations.",
+   "claim_type": "financial",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "The Company believes it has sufficient resources to pursue its near-term business plan but is conducting this Offering"
+    },
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "The proceeds from the Offering are essential to our operations."
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A14"
+   ],
+   "contradictions": "The statements 'sufficient resources' (page 32) and 'proceeds are essential' (page 39) are in tension, as is the 24-36 month runway claim."
+  },
+  {
+   "claim_id": "A20",
+   "claim_text": "Under the Operating Agreement, 5% of the issuer's Pre-Distribution Cash is allocated first to TradeFunded Capital LLC (or another affiliate the Manager Committee approves) before any Distributable Cash goes to Members. The Manager Committee has sole discretion over timing, amount and recipient, and Members have no right to audit or claim these amounts.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 85,
+     "quote": "Pre-Distribution Cash shall be allocated for payment, contribution, or other transfer to TradeFunded"
+    },
+    {
+     "doc_id": 15,
+     "page": 20,
+     "quote": "This allocation reduces the cash available for distribution to"
+    }
+   ],
+   "financial_period": "Operating Agreement dated 2026-06-18",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The Operating Agreement (page 86, Section 11.6) lets the Manager Committee retain or release unpaid amounts to Members as Distributable Cash, so the actual flow is discretionary."
+  },
+  {
+   "claim_id": "A21",
+   "claim_text": "Distributions of Distributable Cash are made when the Manager Committee determines, in its absolute and sole discretion; none are guaranteed.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 24,
+     "quote": "determined by the Manager Committee in its absolute and sole discretion."
+    }
+   ],
+   "financial_period": "Operating Agreement dated 2026-06-18",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A22",
+   "claim_text": "During an Accelerated Return Period, 50% of the Distributable Cash otherwise going to Oasis Holdings, Ltd., LLC is redirected to Seed Investors until each has recovered 100% of its Seed Investment Amount. The Operating Agreement says this does not reduce other Members' distributions.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 85,
+     "quote": "(a) Accelerated Distribution Share. During the Accelerated Return Period (as defined below), fifty"
+    },
+    {
+     "doc_id": 15,
+     "page": 86,
+     "quote": "(e) No Impact on Other Members. The Seed Investor Accelerated Return operates solely as a"
+    }
+   ],
+   "financial_period": "Operating Agreement dated 2026-06-18",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A23",
+   "claim_text": "Investors grant an irrevocable proxy and power of attorney over voting and consent rights to the CEO or any Manager. The proxy runs until the tenth anniversary of acceptance of the subscription. Investors do not have direct voting rights.",
+   "claim_type": "contract_provision",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 59,
+     "quote": "proxies with respect thereof that will become effective prior to, the tenth anniversary of the date of this"
+    },
+    {
+     "doc_id": 15,
+     "page": 26,
+     "quote": "Investors will grant a proxy authority to act on their behalf."
+    },
+    {
+     "doc_id": 15,
+     "page": 11,
+     "quote": "Investors do not have direct voting rights with respect to the Securities, and voting"
+    }
+   ],
+   "financial_period": "Subscription Agreement (Form C filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A24",
+   "claim_text": "Beyond the one-year Regulation CF holding period, Section 12.1 of the Operating Agreement bars a Member from transferring Units without Manager Committee written consent. The Subscription Agreement says this consent may be withheld in the Manager Committee's sole and absolute discretion. The Form C says investors may be unable to transfer even after one year, and legal transferability does not mean a buyer exists.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 25,
+     "quote": "Section 12.1 of the Operating Agreement provides that a Member may not Transfer all or any portion of its Units"
+    },
+    {
+     "doc_id": 15,
+     "page": 10,
+     "quote": "Investor should be aware that although the Securities may legally be able to be transferred, there is no guarantee that"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A25",
+   "claim_text": "The Form C states there is not now and likely will not ever be a public market for the Securities, and the issuer has no right to repurchase the Securities. Only a lock-up in connection with a possible IPO is mentioned; no IPO or exit plan is described in the readable pages.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 26,
+     "quote": "You should be aware of the long-term nature of this investment. There is not now and likely will not ever be a public"
+    },
+    {
+     "doc_id": 15,
+     "page": 11,
+     "quote": "e No Repurchase Right. The Issuer does not have the right to repurchase the Securities."
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A26",
+   "claim_text": "The Manager Committee may issue additional Units with no stated limit and without member consent. The Securities have no anti-dilution rights (except as stated in the Operating Agreement).",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 24,
+     "quote": "no limit on the number of Units that the Company may issue or the number of Members that may be admitted."
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "Anti-Dilution Rights None"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "Page 37 states the authorized total is 10,000,000 Units, whereas the risk factor on page 24 says there is no limit on issuance. The Operating Agreement sections on authorized amounts and Reserved Matters were not readable."
+  },
+  {
+   "claim_id": "A27",
+   "claim_text": "Founding Members hold 65% of fully diluted Percentage Interests. Oasis Holdings, Ltd., LLC holds 3,000,000 Units (40% of voting power), and three of the four Founding Members' Units are wholly unvested until a Liquidity Event. Unvested Units carry full distribution and voting rights.",
+   "claim_type": "risk",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 75,
+     "quote": "Founding Members hold, in the aggregate, Units representing sixty-five percent (65%) of the"
+    },
+    {
+     "doc_id": 15,
+     "page": 38,
+     "quote": "Oasis Holdings, Ltd., LLC 3,000,000 Units 40%"
+    },
+    {
+     "doc_id": 15,
+     "page": 20,
+     "quote": "The Units held by three of the four Founding Members are wholly unvested until a Liquidity Event, and the vesting"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A7"
+   ],
+   "contradictions": "The definition of 'Liquidity Event' is in pages of the Operating Agreement not processed."
+  },
+  {
+   "claim_id": "A28",
+   "claim_text": "The Form C discloses a 2023 federal court consent order resolving CFTC claims against the Co-Founder/CTO (Ryan Masten) and his company Barelt Media LLC for unregistered activity in connection with a 'SignalPush' service. The order remains in effect, and the Form C says it could adversely affect the issuer's regulatory standing and relationships.",
+   "claim_type": "risk",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 21,
+     "quote": "resolving CFTC claims that Barelt Media acted as an unregistered commodity trading advisor and that Mr. Masten"
+    },
+    {
+     "doc_id": 15,
+     "page": 21,
+     "quote": "The Consent Order remains in effect, and its terms, other than the civil monetary penalty, are enforceable through"
+    }
+   ],
+   "financial_period": "2023 order; disclosed in Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The full 'CFTC Action and Consent Order' section was not in the readable pages."
+  },
+  {
+   "claim_id": "A29",
+   "claim_text": "The issuer filed Form 8832 on July 2, 2026 to be taxed as a corporation, effective Feb 10, 2026, and the IRS has not accepted it. The reviewed financial statements (April 30, 2026) say the company elected to be taxed as a partnership with no tax provision.",
+   "claim_type": "risk",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 25,
+     "quote": "The Company filed the election on July 2, 2026 and requested that it be effective as of February 10, 2026, the"
+    },
+    {
+     "doc_id": 15,
+     "page": 25,
+     "quote": "tax reporting on the basis of its own determination of its classification, without confirmation from the Internal Revenue"
+    },
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "The Company has been organized as a limited liability company and has elected to be taxed as a partnership,"
+    }
+   ],
+   "financial_period": "Election filed 2026-07-02; statements as of 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A12"
+   ],
+   "contradictions": "The financial statements describe a partnership tax status, while the Form C describes a pending corporate election. The Form C itself says statements may need revision."
+  },
+  {
+   "claim_id": "A30",
+   "claim_text": "Related party transactions: $10,000 payable to Bethlem Royal Holdings LLC (a founding member holding 5.0%) for software development and technology services, and net payments of $8,042 to Ryan Masten for expense reimbursements and operational costs.",
+   "claim_type": "financial",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 55,
+     "quote": "During the period ended April 30, 2026, the Company incurred $10,000 in expenses payable to Bethlem Royal"
+    },
+    {
+     "doc_id": 15,
+     "page": 55,
+     "quote": "totaling $8,042 for expense reimbursements and related operational costs."
+    }
+   ],
+   "financial_period": "2026-02-10 to 2026-04-30",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": "The note describes two $5,000 payments dated April 16 and May 4, 2026; the second falls after the period end of April 30, 2026. Subsequent events are stated as none."
+  },
+  {
+   "claim_id": "A31",
+   "claim_text": "Investors may never become an equity holder of record, merely a beneficial owner. A custodian/nominee (BitGo Bank & Trust, National Association) holds legal title through a trust arrangement.",
+   "claim_type": "security_terms",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 26,
+     "quote": "Investors may never become an equity holder, merely a beneficial"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A32",
+   "claim_text": "If investment commitments totaling at least the Target Offering Amount are not received by the Offering Deadline, no Securities will be sold and committed funds are returned. The issuer may also extend the deadline and conduct intermediate closings.",
+   "claim_type": "availability",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 8,
+     "quote": "no Securities will be sold in this Offering, all investment commitments will be canceled and all committed funds will"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16; deadline 2026-12-15",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A33",
+   "claim_text": "The Form C XML reports 0 current employees.",
+   "claim_type": "team",
+   "evidence_status": "document_supported_fact",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<currentEmployees>0.00"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "A34",
+   "claim_text": "The Form C states the intermediary has ascribed no pre-Offering valuation to the issuer and the Securities are priced arbitrarily.",
+   "claim_type": "security_terms",
+   "evidence_status": "issuer_claim",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "Although the Securities provide certain terms, the Intermediary has ascribed no pre-Offering valuation to the Issuer;"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A3"
+   ],
+   "contradictions": ""
+  }
+ ],
+ "critical_items": [
+  {
+   "item": "issuer_and_offering_identity",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A1",
+    "A2"
+   ],
+   "note": "Form C XML identifies TradeFunded LLC (DE LLC, incorporated 2026-02-10) and the offering terms. Offering file no. 020-37393 is in the pack's offering table."
+  },
+  {
+   "item": "security_type",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A2",
+    "A7",
+    "A24"
+   ],
+   "note": "The security is LLC 'Units' (membership interests held beneficially via a custodian/nominee). It is not a SAFE or note."
+  },
+  {
+   "item": "operative_contract",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A23",
+    "A24",
+    "A31"
+   ],
+   "note": "The Subscription Agreement is readable (pages 57-69). Only parts of the Operating Agreement are readable; many pages of the 172-page PDF were not processed, including the Liquidity Event definition, Article V vesting and voting sections."
+  },
+  {
+   "item": "price_cap_and_conversion_terms",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A3",
+    "A4"
+   ],
+   "note": "Price $0.35 per Unit is cited. There is no valuation cap or conversion mechanism, since this is direct equity. The price is stated to be arbitrary, with no pre-Offering valuation ascribed."
+  },
+  {
+   "item": "minimum_investment_and_fees",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A5",
+    "A6"
+   ],
+   "note": "Minimum individual purchase is $350; the maximum is $149,999.85. Intermediary fees are paid by the issuer. Any investor-side fees (e.g., custodian) are not confirmed in the readable pages and must be checked on the platform."
+  },
+  {
+   "item": "financial_statements_and_dates",
+   "status": "contradictory",
+   "claim_ids": [
+    "A11",
+    "A12",
+    "A14",
+    "A16"
+   ],
+   "note": "Reviewed (not audited) statements as of 2026-04-30 are readable. The Form C XML cash field (0.00) conflicts with the balance sheet cash ($226,885). The June 30 cash figure is unreviewed and the runway claim is unsupported."
+  },
+  {
+   "item": "closing_or_availability_evidence",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A32"
+   ],
+   "note": "Pack shows no closing reported and platform availability unverified (Republic pages not accessible). A future deadline of 2026-12-15 is not proof the offering is open."
+  }
+ ],
+ "missing_information": [
+  "Pages 1-2, 4-7, 12-19, 22, 28-31, 33-36, 40-46 and many later pages of tradef.pdf were not processed. This leaves business description, competition, team biographies, the CFTC Action section, most risk factors and the Previous Offerings section unseen.",
+  "No team biographies or documented execution history for the founders or managers are in the readable pages.",
+  "No competitor names or differentiation statements in the readable pages.",
+  "No customer, contract, usage or pilot data. Revenue is $0 and the company says it has not commenced principal revenue-generating operations.",
+  "The use-of-proceeds table is OCR-garbled, so amounts and percentages by category cannot be cited reliably.",
+  "Basis for the 24-36 month runway claim (monthly net loss history, post-April 2026 expense data) and June 30, 2026 cash support. No financial statements after April 30, 2026.",
+  "Definition of 'Liquidity Event', vesting provisions and voting provisions in the Operating Agreement (pages not processed).",
+  "SAFE terms (cap, discount) and the identity and amounts of the nine Seed Investors.",
+  "Explanation of the 'loan agreements' and 'existing credit facilities' references in the Subscription Agreement versus the stated zero debt.",
+  "Status of the IRS Form 8832 election and whether the financial statements will be restated.",
+  "Platform availability and investor-side fees (e.g., custody fees); the Republic page was not accessible.",
+  "Details of the 'TradeFunded Capital LLC' subsidiary (98% owned) financials, trading activity and how funded trader payouts work."
+ ],
+ "valuation_inputs": {
+  "price_per_share_usd": 0.35,
+  "price_claim_id": "A3",
+  "share_counts": [
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Units",
+    "value": 7500000,
+    "as_of": "2026-09-16",
+    "claim_id": "A7"
+   },
+   {
+    "kind": "authorized",
+    "share_class": "Units",
+    "value": 10000000,
+    "as_of": "2026-09-16",
+    "claim_id": "A7"
+   },
+   {
+    "kind": "offered_minimum",
+    "share_class": "Units",
+    "value": 214285,
+    "as_of": "",
+    "claim_id": "A4"
+   },
+   {
+    "kind": "offered_maximum",
+    "share_class": "Units",
+    "value": 1942857,
+    "as_of": "",
+    "claim_id": "A4"
+   },
+   {
+    "kind": "reserved_or_options",
+    "share_class": "Units (Regulation CF Reserve)",
+    "value": 2000000,
+    "as_of": "2026-09-16",
+    "claim_id": "A8"
+   },
+   {
+    "kind": "reserved_or_options",
+    "share_class": "Units (Company Reserve)",
+    "value": 500000,
+    "as_of": "2026-09-16",
+    "claim_id": "A8"
+   }
+  ],
+  "convertible_instruments": [
+   {
+    "instrument": "SAFEs (converted to Units in April 2026)",
+    "principal_usd": 250000,
+    "conversion_terms_disclosed": false,
+    "claim_ids": [
+     "A10",
+     "A9"
+    ],
+    "note": "The statements show $250,000 of proceeds via SAFE conversion. The issuer states zero additional securities are outstanding. SAFE cap and discount terms are not in the readable pages. The intermediary receives additional securities equal to 2% of Securities sold (A6), count not fixed."
+   }
+  ],
+  "note": "Price is stated to be arbitrary. Issued/outstanding Units (7,500,000) are distinct from authorized (10,000,000) and reserved Units. Values should not be computed from authorized or reserved shares. The intermediary's 2% securities compensation adds to outstanding Units after the Offering."
+ },
+ "financial_statements": {
+  "period_end": "2026-04-30",
+  "assurance": "reviewed",
+  "claim_ids": [
+   "A11",
+   "A12",
+   "A13",
+   "A16"
+  ]
+ }
+}

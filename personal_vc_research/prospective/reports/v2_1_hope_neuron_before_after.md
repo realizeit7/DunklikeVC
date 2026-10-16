@@ -91,7 +91,12 @@ Both runs use the **same frozen evidence pack**, `PACK-RCF-2114933-020-37299-893
 The summary is about 260 words, below the 300–500 target. The validator's hard floor is 250. Stage F needed two
 repairs: the first output listed 8 "missing" items against a maximum of 5.
 
-## 6. Defects found in this run, and their status
+## 6. Later classifier versions
+
+`reassess 10` under v2_1_2 (gaps always mean `extraction_incomplete`) changed nothing for Hope-Neuron, which has no
+pack gaps. Every assessment row is kept: v2_1 (budget `eligible`), v2_1_1 and v2_1_2.
+
+## 7. Defects found in this run, and their status
 
 1. **Korean validator** counted parenthesized English terms (fixed: validator 0_2). This caused 1 unneeded repair
    round (E).

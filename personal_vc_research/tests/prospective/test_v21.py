@@ -397,3 +397,11 @@ def test_no_per_share_equity_for_safes_or_mismatched_classes():
     assert len(k) == 1 and k[0]["result_kind"] == "withheld" and "purchase unit" in k[0]["withheld_reason"]
     k2 = calc.implied_equity(vi, claims, {"P", "S"}, "equity")
     assert k2[1]["result_kind"] == "withheld" and "not additive" in k2[1]["withheld_reason"]
+
+
+def test_supported_failure_with_unread_pages_is_still_extraction_incomplete():
+    res = {"assessment": "fails_current_screen", "evidence_completeness": "extraction_incomplete", "operational_readiness": "not_checked",
+           "budget_status": "incomplete_cost_information", "decisive": ["PC1_security_cash_path"], "criteria": [],
+           "extraction_gaps": ["x.pdf: pages 76-84 of 172 NOT processed"]}
+    acts = assess.next_actions(res, {"new_filings_since_cutoff": ""})
+    assert "읽지 못한 페이지" in acts[0] and "76-84" in acts[0]

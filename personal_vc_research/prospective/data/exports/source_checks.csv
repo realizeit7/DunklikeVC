@@ -1,0 +1,4 @@
+check_id,offering_id,source,checked_utc,success,covers_from_utc,covers_to_utc,detail
+1,RCF-2114933-020-37299,sec_edgar_submissions,2026-10-15T16:30:28+00:00,1,2026-07-30T00:00:00+00:00,2026-10-15T16:30:28+00:00,EDGAR submissions JSON listing 1 recent filings for CIK 0002114933
+2,RCF-2147043-020-37424,sec_edgar_submissions,2026-10-15T16:30:28+00:00,1,2026-09-28T00:00:00+00:00,2026-10-15T16:30:28+00:00,EDGAR submissions JSON listing 1 recent filings for CIK 0002147043
+3,RCF-2128340-020-37393,sec_edgar_submissions,2026-10-15T16:30:28+00:00,1,2026-09-16T00:00:00+00:00,2026-10-15T16:30:28+00:00,EDGAR submissions JSON listing 2 recent filings for CIK 0002128340

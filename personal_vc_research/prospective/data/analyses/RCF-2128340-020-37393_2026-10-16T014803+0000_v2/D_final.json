@@ -1,0 +1,265 @@
+{
+ "criteria": [
+  {
+   "criterion_id": "BT1_customer_and_revenue_model",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A17",
+    "A13",
+    "B1"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "회사는 트레이더 후보가 모의거래 평가 크레딧을 구매하는 구조로 매출을 낼 계획이라고 밝히지만(발행인 주장), 가격·구매 빈도·수량은 읽힌 페이지에 없고 매출은 0달러입니다. 사업 설명 페이지가 처리되지 않아 판단을 보류합니다.",
+   "what_would_change_ko": "평가 크레딧의 가격, 구매 주기, 고객 수, 첫 매출 자료와 사업 설명 섹션 전문이 확인되면 통과 또는 실패로 바뀔 수 있습니다."
+  },
+  {
+   "criterion_id": "BT2_demand_evidence",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A13",
+    "A17",
+    "A33"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "2026-04-30까지 매출 0달러, 정식 매출 활동 미개시라는 사실만 있고 고객·계약·이용 데이터는 팩에 없습니다. 이는 수요가 없다는 증거가 아니라 증거 부재이므로 판단 불가입니다.",
+   "what_would_change_ko": "유료 고객 수, 대기자 명단, 제휴 계약, 사용 지표 또는 이후 기간의 매출 자료가 제시되면 바뀝니다."
+  },
+  {
+   "criterion_id": "BT3_competition",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A28",
+    "B7"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "읽힌 페이지에는 경쟁사 이름도 차별화 설명도 없습니다. 경쟁 섹션이 처리되지 않은 것으로 보이므로 평가할 수 없습니다.",
+   "what_would_change_ko": "경쟁사 명시, 차별점 설명, 위협 분석이 담긴 Form C 사업·경쟁 섹션이 확인되면 바뀝니다."
+  },
+  {
+   "criterion_id": "BT4_financial_condition_and_funding",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A11",
+    "A12",
+    "A14",
+    "A15",
+    "A16",
+    "A19",
+    "C10",
+    "B5"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "검토(비감사) 재무제표는 2026-04-30 기준(약 5.5개월 경과)이고 6월 30일 현금 160,037.37달러와 24~36개월 런웨이는 검토받지 않은 발행인 주장입니다. XML 현금 0.00 오류 가능성, 부채 0 대 대출 언급, '충분한 자원' 대 '자금 필수' 문구가 정리되지 않아 판단을 보류합니다.",
+   "what_would_change_ko": "2026-04-30 이후 월별 손익과 현금 흐름 자료, 런웨이 산정 근거, 대출·신용 관련 문구의 해명, XML 수치 정정 여부가 확인되면 바뀝니다."
+  },
+  {
+   "criterion_id": "BT5_team_evidence",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A28",
+    "A33",
+    "B7"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "경영진의 이력·실행 기록이 읽힌 페이지에 없고, 확인된 것은 CTO에 대한 2023년 CFTC 동의명령 공시뿐입니다. 이는 불리한 규제 사실이지만 전체 이력을 대신하지 못하며 해당 섹션도 전부 읽히지 않았습니다.",
+   "what_would_change_ko": "경영진 약력, 과거 제품 출시·운영 실적, CFTC 동의명령 섹션 전문, 실제 업무 수행 인력(직원·계약자) 정보가 확인되면 바뀝니다."
+  },
+  {
+   "criterion_id": "PC1_security_cash_path",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A21",
+    "A20",
+    "A24",
+    "A25",
+    "A23"
+   ],
+   "counter_claim_ids": [
+    "C7",
+    "C12"
+   ],
+   "reason_ko": "배당은 매니저위원회의 절대적 재량이고, 양도에는 위원회의 동의(거부 재량)가 필요하며, 공개시장이 없고 발행인의 환매권도 없다고 계약·Form C에 명시되어 있습니다. 이 증권으로 현금을 회수하는 경로는 문서상 크게 제한됩니다.",
+   "what_would_change_ko": "배당 정책 확약, 양도 동의 기준 완화, 2차 거래나 환매 구조, 청산 이벤트(Liquidity Event) 정의와 구체적 출구 계획이 문서로 확인되면 바뀝니다."
+  },
+  {
+   "criterion_id": "PC2_price_vs_path_to_value",
+   "result": "unknown",
+   "failure_grounds": [],
+   "claim_ids": [
+    "A3",
+    "A34",
+    "K1",
+    "K2",
+    "K3",
+    "C5"
+   ],
+   "counter_claim_ids": [],
+   "reason_ko": "가격 0.35달러는 '임의'로 정해졌다고 공시되었을 뿐 고평가의 증거는 아니며, 산술상 내재 지분가치(K1~K3)는 매출 없는 상태에서 검증할 기준이 없습니다. 시드 투자자의 단가 약 0.25달러는 가정에 의존합니다.",
+   "what_would_change_ko": "매출·고객 확보 실적, 독립적 가치평가, 시드 SAFE 조건(상한·할인) 공개, 완전 희석 지분 수가 확인되면 바뀝니다."
+  },
+  {
+   "criterion_id": "PC3_investor_rights_and_dilution",
+   "result": "fail",
+   "failure_grounds": [
+    "documented_contract_term"
+   ],
+   "claim_ids": [
+    "A23",
+    "A26",
+    "A20",
+    "A27",
+    "B4",
+    "B6"
+   ],
+   "counter_claim_ids": [
+    "C8",
+    "C12",
+    "C9"
+   ],
+   "reason_ko": "투자자는 10년간 취소 불가 의결권 위임을 하고, 희석 방지 권리가 없으며, 위원회가 추가 Unit을 발행할 수 있고, 현금의 5%가 배당 전에 계열사로 먼저 배정되고, 정보·열람권도 법정 범위로 제한됩니다. 다만 추가 출자 의무가 없다는 보호 조항과 총괄 승인 요건은 있습니다.",
+   "what_would_change_ko": "발행 한도·희석 방지 조항, 위임 범위 축소, 5% 배정의 정의와 상한, 정보 제공권이 계약으로 개선되거나 확인되면 바뀝니다."
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "수용. B5의 '내부 불일치'는 과장이며, 미해소 긴장(unreconciled tension)으로 표현합니다. 런웨이는 검증 불가이고 BT4 판단에서도 근거로 쓰지 않았습니다."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "수용. C10에 따라 제로 부채 진술은 확정으로 보지 않으며, 대출 관련 문구 세 곳이 해명되지 않은 점을 BT4의 판단 보류 사유에 반영했습니다."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "수용. 보유자별 지분율(TraderSumo 17%/22.67% 대 15.0%, Bethlem 3% 대 5.0%)은 날짜가 다르고 조정되지 않았으므로 의존하지 않습니다. 결론에는 사용하지 않았습니다."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "수용. 5월 4일 지급분과 부채 0 사이의 분류 문제는 회계사·발행인에게 확인할 질문이며 오류 확정으로 보지 않습니다. BT4는 unknown으로 유지했습니다."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "수용. B8의 '서비스 종료 시에도 유지'는 과장입니다. 자발적 이탈이나 사유 있는 해임 시에는 몰취되고, 사망·장애·사유 없는 해임 시에만 유지됩니다(C9). 시간 기반 유인 부재만 인용하며 Liquidity Event 정의 미확인을 명시합니다."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "수용. 한도 초과 발행은 만장일치 매니저 승인 사항(C8)이지만 구성원 동의는 불필요하고 Exhibit A는 위원회가 갱신할 수 있습니다. 희석은 위원회가 통제하는 위험으로 표현하고 PC3에 반대 근거 C8을 넣었습니다."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "수용. Pre-Distribution Cash가 정의되지 않아 5% 배정의 규모를 산정할 수 없습니다. 이를 정량화하지 않고 계약 조건으로만 인용했습니다."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "수용. 세금 분배 조항(10.4)과 재량 배당의 관계는 미조정이며 A21은 그 한정이 빠졌습니다. 조항 적용 여부를 모르는 것으로 두고, PC1 반대 근거에 C7을 포함했습니다."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "수용. XML 현금 0.00은 열 배치 오류일 가능성이 높으나 추정입니다. 0 현금의 증거로 쓰지 않으며, 비일관 자체를 BT4 불확실성 사유로만 언급했습니다."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "수용. 운영계약은 부분적으로만 읽혀 '부분 판독 가능'이 맞고, 가용성은 확인 불가이지 비공개의 증거가 아닙니다. 결론은 읽힌 페이지에서 확인되는 조항에만 의존했습니다."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "수용. 자금 사용표의 주요 행(C13)은 읽을 수 있습니다. 거래 계정이 '영업 수익으로만' 조달된다는 문구는 미래 진술이므로 모순으로 쓰지 않고 조달원 질문으로만 남깁니다."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "수용. 투자자 측 수수료는 미확인입니다. BitGo ACH 수수료(C11)의 이 공모 적용 여부도 불확실하며 판단에 사용하지 않았습니다."
+  },
+  {
+   "issue_index": 12,
+   "accepted": true,
+   "response": "수용. K1~K3은 임의 가격에 기반한 산술일 뿐 가치 평가가 아니고 시드 단가(약 0.25달러, C5)는 가정입니다. PC2는 unknown이며 K를 근거로 실패 판정하지 않았습니다."
+  },
+  {
+   "issue_index": 13,
+   "accepted": true,
+   "response": "수용. 팀 섹션 미처리 상태에서 CFTC 명령 하나로 결론을 내리지 않고 BT5를 unknown으로 두었습니다. 직원 0명은 Form C 필드일 뿐 실제 수행 인력이 없다는 뜻이 아닙니다."
+  },
+  {
+   "issue_index": 14,
+   "accepted": true,
+   "response": "수용. 마감 연장·중간 종결(페이지 9, 23)과 BitGo 수탁(페이지 8)의 인용을 보완해야 합니다. 이 결론들은 해당 조항에 의존하지 않으며, 추가 출자 의무 부재(C12)는 PC3의 반대 근거로 반영했습니다."
+  }
+ ],
+ "forecasts": [
+  {
+   "event_kind": "business",
+   "target_type": "event_occurs",
+   "event": "TradeFunded LLC's Regulation CF offering reaches and closes on at least the $74,999.75 Target Offering Amount in accepted, fully paid commitments, with a first closing completed.",
+   "target_scope": "TradeFunded LLC, Form C accession 0002128340-26-000005, offering file no. 020-37393, US Reg CF offering via OpenDeal Portal LLC (Republic); at least $74,999.75 closed.",
+   "deadline_date": "2026-12-15",
+   "reporting_lag_days": 30,
+   "allowed_evidence": [
+    "Form C-U or Form C-AR filed on EDGAR reporting progress or results",
+    "Issuer or Republic Deal Page update showing a closing",
+    "Later SEC EDGAR filings by the issuer"
+   ],
+   "probability": 0.4,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The target is small relative to the maximum, but the pack contains no commitment data, no traction and no platform availability confirmation; the stated cancellation condition applies if the target is not met by the deadline. No base rate is in the pack, so this is a judgment under high uncertainty.",
+   "assumptions": [
+    "The offering is actually live on the platform",
+    "The deadline is not extended beyond 2026-12-15 before closing",
+    "No material change forces reconfirmation that cancels commitments"
+   ],
+   "unknown_treatment": "If no closing evidence is found by the deadline plus reporting lag, resolve as unknown rather than false; silence is not false.",
+   "cancellation_treatment": "A withdrawal (Form C-W), cancellation, failure to reach the target, or company dissolution before a closing means the event did not occur and resolves false once confirmed; an extension past the deadline without a closing is unresolved.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A2",
+    "A32"
+   ]
+  },
+  {
+   "event_kind": "disclosure",
+   "target_type": "issuer_announces",
+   "event": "TradeFunded LLC files a Form C-W withdrawing its Regulation CF offering.",
+   "target_scope": "TradeFunded LLC, offering file no. 020-37393, filing on SEC EDGAR, United States.",
+   "deadline_date": "2026-12-15",
+   "reporting_lag_days": 7,
+   "allowed_evidence": [
+    "Form C-W filed on SEC EDGAR",
+    "Issuer or Republic Deal Page notice of withdrawal or cancellation"
+   ],
+   "probability": 0.07,
+   "probability_label": "model_judgment_uncalibrated",
+   "rationale": "The issuer states it can end or withdraw the offering and will return funds if a Form C-W is filed. Nothing in the pack suggests a withdrawal is planned; the low estimate reflects only the absence of any such indication, not a base rate.",
+   "assumptions": [
+    "No material adverse development, such as IRS or regulatory action, forces withdrawal",
+    "The offering remains open through the deadline"
+   ],
+   "unknown_treatment": "If no Form C-W is found, resolve as not occurred only after the deadline plus lag; absence of evidence before then stays unknown.",
+   "cancellation_treatment": "This event is itself the withdrawal; an offering that lapses unfunded at the deadline without a Form C-W filing does not count as true.",
+   "early_resolution": "true_may_resolve_before_deadline",
+   "silence_treatment": "silence_is_not_false",
+   "basis_claim_ids": [
+    "A32"
+   ]
+  }
+ ]
+}

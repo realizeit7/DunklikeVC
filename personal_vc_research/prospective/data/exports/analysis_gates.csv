@@ -17,3 +17,17 @@ row_id,analysis_id,gate,result,source,criteria,supporting,counterevidence,uncert
 16,7,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2147043 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
 17,8,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2147043 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
 18,9,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2147043 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
+19,10,evidence_sufficiency,pass,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+20,10,business_thesis,fail,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+21,10,price_and_contract,fail,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+22,10,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2114933 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
+23,11,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2147043 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
+24,12,evidence_sufficiency,pass,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+25,12,business_thesis,fail,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+26,12,price_and_contract,fail,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+27,12,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2147043 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
+28,13,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2128340 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval
+29,14,evidence_sufficiency,unknown,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+30,14,business_thesis,unknown,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+31,14,price_and_contract,fail,derived_from_criteria_v2,see criterion_results,\N,\N,\N
+32,14,budget_eligibility,pass,software,"budget_policy_v1: annual remaining $12,000.00 (pre_start); issuer CIK2128340 remaining $1,200.00",\N,\N,computed at analysis time; re-checked at approval

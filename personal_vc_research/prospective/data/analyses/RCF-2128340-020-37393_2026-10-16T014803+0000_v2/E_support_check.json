@@ -1,0 +1,95 @@
+{
+ "judgment_label": "model_judgment_not_verification",
+ "checks": [
+  {
+   "claim_id": "A21",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The passage is a Form C risk factor that summarizes the Operating Agreement. It is not the Operating Agreement text itself. It cites 'Section 6.3' for distributions. The Operating Agreement page in the pack (doc 15 p85) puts distributions in Section 10.1, to be set 'by Majority Manager Approval'. The claim's period label ('Operating Agreement dated 2026-06-18') does not match the Form C source it cites.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "There is a minor tension in the section reference (6.3 vs 10.1). Page 85 says distributions are set by 'Majority Manager Approval', while page 24 says the Manager Committee's 'sole discretion'. The two are not necessarily contradictory.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "24쪽 위험요소가 분배금은 운영위원회의 '절대적·단독 재량'으로 결정되고 보장되지 않는다고 명시하므로 주장 자체는 뒷받침됩니다. 다만 이는 계약 원문이 아니라 Form C의 요약 설명이며, 조항 번호(6.3 vs 10.1)가 85쪽과 달라 계약 원문 대조가 필요합니다."
+  },
+  {
+   "claim_id": "A20",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The definition of 'Pre-Distribution Cash' is not in the cited pages, so what the 5% is calculated on is unclear. Page 85 also sets a later Seed Investor Accelerated Return (a distribution priority) that the claim does not mention. The 5% is a Step 1 allocation within 'available cash' distributions, which the Manager Committee decides on. Page 20 adds that the Committee may retain unpaid amounts as reserves.",
+   "evidence_type": "contract_text",
+   "conflicts": "The claim's contradiction note cites Section 11.6 on page 86. That page's text is not in the material checked here, so I could not confirm it. Nothing in pages 85 or 20 conflicts with the claim.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "85쪽(운영계약서 10.1(a))은 사전분배현금의 5%를 먼저 TradeFunded Capital LLC 또는 승인된 계열사에 배정한다고 하고, 20쪽은 시기·금액·수령자에 대한 단독 재량과 구성원의 감사·청구권 부재를 설명합니다. 다만 '사전분배현금'의 정의는 확인되지 않았고, 11.6조(86쪽)는 제공된 텍스트에서 검증하지 못했습니다."
+  },
+  {
+   "claim_id": "A24",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The 'sole and absolute discretion' wording attributed to the Subscription Agreement does not appear in the cited pages (25, 10). Page 11 says only that consent may be withheld 'in circumstances permitted by the Operating Agreement'. Page 25 says consent may be needed from 'the Managers, all other Members, and potentially one or more lenders', which is broader than the claim's Manager Committee written consent. Page 26 describes Section 12.1 as requiring 'Majority Manager Approval'. Page 10 lists transfers allowed during the one-year period (for example to accredited investors, subject to an opinion of counsel).",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Who must consent is described differently across pages. Page 25 says Managers, all other Members and possibly lenders. Page 26 says Majority Manager Approval. The claim says Manager Committee written consent. The 'lenders' reference also sits oddly with the pack's statement of zero debt outstanding (page 37).",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "25쪽과 10쪽은 운영계약서 12.1조의 서면 동의 요건, 1년 이후에도 양도가 어려울 수 있다는 점, 법적으로 양도 가능해도 매수자가 보장되지 않는다는 점을 뒷받침합니다. 그러나 청약계약서가 동의를 '단독·절대 재량'으로 보류할 수 있다고 한 문구는 인용된 쪽에서 확인되지 않았고, 동의 주체 설명도 쪽마다 달라 일부만 뒷받침됩니다."
+  },
+  {
+   "claim_id": "A25",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The two quotes support the no-public-market statement and the absence of an issuer repurchase right. The claim's final sentence says no IPO or exit plan is described in the readable pages. That is an absence statement and cannot be checked from these two pages. Page 26 does say registration 'is not currently contemplated'. Other pack pages refer to a 'Liquidity Event' (page 20), whose definition is not in the pages checked. The lock-up language says investors 'may be required' to agree to it, up to 180 days.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "No conflict found. The page 26 statement that registration is not contemplated is consistent with the claim.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "26쪽은 공개 시장이 현재 없고 앞으로도 없을 가능성이 크다고 하고, 11쪽은 발행사에 재매입 권리가 없다고 밝혀 핵심 주장은 뒷받침됩니다. 다만 'IPO나 출구 계획이 기술되지 않았다'는 부분은 부재에 관한 서술로 이 두 쪽만으로 확인할 수 없고, '유동성 이벤트'의 정의도 확인되지 않았습니다."
+  },
+  {
+   "claim_id": "A23",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The cited pages do not name the proxy holder, so 'the CEO or any Manager' is not shown by the cited text. Page 10 of the pack does name 'the Issuer's then-serving Chief Executive Officer or any Manager on the Manager Committee', but that page is not among the citations. The ten-year term is stated: the proxy is irrevocable until the tenth anniversary of acceptance. Pages 26 and 24 say investors hold only a beneficial interest through a custodian or nominee, and page 26 refers to voting rights 'if any'.",
+   "evidence_type": "contract_text",
+   "conflicts": "Page 10 describes the securities as having 'limited voting rights', while page 11 says investors have no direct voting rights. This is a mild wording tension. Voting rights otherwise exist only through the proxy holder.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "59쪽은 청약계약서 승계일로부터 10주년까지 취소 불가능한 의결권 위임이 유지된다고 명시하고, 26쪽·11쪽은 투자자가 직접 의결권이 없다고 설명합니다. 다만 위임 대상이 'CEO 또는 임의의 매니저'라는 점은 인용된 쪽에는 없고 인용되지 않은 10쪽에만 있어 일부만 뒷받침됩니다."
+  },
+  {
+   "claim_id": "A26",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Page 24 supports 'no limit' only as the risk-factor wording. Page 37 states an authorized total of 10,000,000 Units: 7.5M issued, 2M Regulation CF Reserve, 0.5M Company Reserve. Page 20 lists 'securities issuances in excess of authorized amounts' as a Reserved Matter needing Manager-level approval, and page 75 refers to Unanimous Manager Approval under Section 6.4. So issuance is subject to Manager-level approval, but not to member consent. The phrase 'except as stated in the Operating Agreement' is on page 10, not in the cited pages. Page 37 shows 'Anti-Dilution Rights None'.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "'No stated limit' conflicts with the 10,000,000 authorized Units on page 37 and the Reserved Matter in page 20. The claim's contradiction note already flags this, and the Operating Agreement sections that would resolve it were not readable.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "24쪽은 추가 단위 발행에 한도가 없고 구성원 동의가 필요 없다고 하며, 37쪽은 희석 방지권이 없다고 밝혀 이 부분은 뒷받침됩니다. 그러나 37쪽은 승인된 총 단위를 10,000,000개로 명시하고 20쪽은 승인 한도 초과 발행을 매니저 수준의 승인이 필요한 사항으로 열거하므로 '명시된 한도 없음'은 과장 소지가 있습니다."
+  },
+  {
+   "claim_id": "A27",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The 65% figure on page 75 is stated 'as of the date of this Agreement' (the Operating Agreement), whereas page 20 repeats it for the Form C date. The definition of 'Liquidity Event' is not in the cited pages. Vesting is all-or-nothing on a Liquidity Event and is forfeited only on voluntary departure or termination for Cause. Page 38 notes Oasis Holdings' Units are fully vested. The 65% is a fully diluted figure. Per page 37 the Founding Members' 6,500,000 Units are about 87% of the 7,500,000 issued Units, which the claim does not say.",
+   "evidence_type": "contract_text",
+   "conflicts": "No conflict found. The 40% for Oasis (3,000,000 of 7,500,000 issued Units) is consistent with page 37.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "75쪽(창립 구성원 완전희석 65%), 38쪽(Oasis 3,000,000 단위, 의결권 40%), 20쪽(창립 구성원 4명 중 3명의 단위가 유동성 이벤트 전까지 미확정이며 분배·의결권은 전부 보유)이 주장을 그대로 뒷받침합니다. 유동성 이벤트의 정의는 인용된 쪽에 없어 별도 확인이 필요합니다."
+  },
+  {
+   "claim_id": "B4",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Page 27 supports the no-inspection and no-information-rights statement 'other than as required by law', and the statement that the issuer can terminate annual report obligations. It also says other security holders may have such rights (quarterly financials, budgets, monthly updates), which the claim omits. 'Required by law' is not defined, and may include rights outside Regulation CF. Calling the annual report the 'main protection' is the analyst's characterization, not a stated fact. Other protections, such as antifraud rules, were not assessed. The proxy and sole-discretion points rest on A23 and A21.",
+   "evidence_type": "inference",
+   "conflicts": "No direct conflict found. The 'main protection' wording goes beyond page 27, which says only that Regulation CF requires an annual report on Form C.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "27쪽은 투자자에게 장부 열람권·정보 수령권이 법이 요구하는 범위를 넘어 없고 발행사가 연례보고 의무를 종료시킬 방법이 여럿 있다고 하여 핵심은 뒷받침됩니다. 다만 '주된 보호장치가 연례보고'라는 표현은 분석가의 판단이며, 다른 보유자는 더 많은 정보권을 가질 수 있다는 점과 '법이 요구하는' 범위가 불명확하다는 점이 빠져 있습니다."
+  },
+  {
+   "claim_id": "B6",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Page 24 supports 'no limit' only as the Form C risk-factor language, and page 57 supports 1,942,857 Units offered at $0.35. The 2,000,000 reserve figure comes from basis claim A8 (page 37), not from the cited pages. It does support the comparison: 2,000,000 minus 1,942,857 is 57,143, roughly 3% above. Page 37 states 10,000,000 authorized Units, and issuances beyond authorized amounts are a Reserved Matter (page 20). So 'open-ended' is overstated, even though member consent is not required. Page 11 says the intermediary receives Securities equal to 2% of those sold, and the claim does not address whether the reserve covers them.",
+   "evidence_type": "inference",
+   "conflicts": "'Open-ended dilution' conflicts with the authorized cap and the Reserved Matter approval requirement. The claim's contradiction note concedes that the relevant Operating Agreement provisions were not readable.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "24쪽(발행 한도 없음)과 57쪽(최대 1,942,857단위 공모)은 인용되나, 2,000,000단위 예비분은 인용된 쪽이 아니라 A8(37쪽)에 근거합니다. 총 승인 단위 10,000,000개와 한도 초과 발행에 필요한 매니저 승인 요건이 있어 '무제한 희석'은 다소 과장입니다. 중개업자가 받는 2% 증권이 예비분에 포함되는지도 다루지 않았습니다."
+  }
+ ]
+}

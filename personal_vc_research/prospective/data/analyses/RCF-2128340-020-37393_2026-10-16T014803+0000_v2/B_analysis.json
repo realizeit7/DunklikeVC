@@ -1,0 +1,315 @@
+{
+ "business_model": {
+  "assessment": "TradeFunded LLC describes itself as a Delaware fintech running a trader evaluation and onboarding platform for retail futures traders. It expects revenue mainly from selling simulated trading evaluation credits to candidates, who may then be offered a place in its trading program (A17, B1). The payer would therefore be the trader candidate, not the Units investor. Revenue is $0 and the notes say principal revenue-generating operations had not started at 2026-04-30 (A13). Pricing, volumes, repeat purchase and the economics of any funded-trader payouts are not in the readable pages. The 98%-owned subsidiary TRADEFUNDED Capital LLC and its trading activity are only mentioned, not described (B1). Operating Agreement terms send 5% of Pre-Distribution Cash to that subsidiary or another affiliate before Members receive Distributable Cash, at the Manager Committee's discretion (A20). The business description and competition sections of the Form C were not processed, so the model is only partly visible.",
+  "claim_ids": [
+   "A17",
+   "A13",
+   "A20",
+   "B1"
+  ]
+ },
+ "demand_evidence": {
+  "assessment": "No demand evidence appears in the readable pages. Revenue is $0 for the period 2026-02-10 to 2026-04-30 (A13). The Form C XML lists 0 current employees (A33). The pack has no customer counts, pilots, contracts, waitlists or usage data. The company says it has not commenced principal revenue-generating operations as of 2026-04-30, and there are no later statements. Demand is therefore supported only by the issuer's description of its plan (A17). This is a gap in the pack, not a finding that demand is absent.",
+  "claim_ids": [
+   "A13",
+   "A17",
+   "A33"
+  ]
+ },
+ "competition": {
+  "assessment": "The readable pages name no competitors and give no differentiation statements. The business description and most risk-factor pages were not processed (pages 1-2, 4-7, 12-19 and others). Threats can only be partly inferred from disclosed regulatory risk. The CTO is subject to a 2023 CFTC consent order, which the Form C says could affect counterparty relationships and any future registration (A28, B7). No competitive assessment is possible from this pack.",
+  "claim_ids": [
+   "A28",
+   "B7"
+  ]
+ },
+ "economics_and_funding": {
+  "assessment": "Reviewed, unaudited statements at 2026-04-30 show cash and total assets of $226,885, no liabilities, G&A of $23,388 and a net loss of $23,115 for the inception-to-April-30 period. The figures are about 5.5 months old at the cutoff (A12, A11). Funding came from $250,000 of SAFE-converted membership interests (A10). The issuer states $160,037.37 of cash at 2026-06-30 and a 24-36 month runway. This is unreviewed, and the monthly net-loss history behind the runway is not shown (A14). Stated cash fell by about $66,847.63 over the two months, with the composition undisclosed (A15). I do not compute a current runway because the periods and assurance levels differ. The Form C also says the company has sufficient resources for its near-term plan, yet that the Offering proceeds are essential to operations (A19). The Form C XML cash field of 0.00 conflicts with the balance sheet cash of $226,885 (A16). Debt is reported as zero (A9), but the Subscription Agreement refers to loan agreements and credit facilities, which needs clarification. The use-of-proceeds table lists intermediary fees of $15,000 at the target (A6, A18). More capital would likely be needed later, and the Manager Committee can issue Units without limit (A26, B6).",
+  "claim_ids": [
+   "A9",
+   "A10",
+   "A11",
+   "A12",
+   "A14",
+   "A15",
+   "A16",
+   "A18",
+   "A19",
+   "A26",
+   "B5",
+   "B6"
+  ]
+ },
+ "execution_risks": {
+  "assessment": "Key execution risks are documented. (1) The company is pre-revenue and the platform is unproven in the pack (A13). (2) It has 0 employees per the Form C XML, with management through three entity Managers (A33, A27). (3) Control is concentrated: Founding Members hold 65% of fully diluted Percentage Interests, Oasis Holdings holds 40% of voting power, and investors give an irrevocable proxy (A27, A23). (4) Three of four Founding Members' Units are wholly unvested until an undefined-in-pack Liquidity Event, yet carry full voting and distribution rights, so there is no time-based retention (A27). (5) The CTO's CFTC consent order remains in effect (A28). (6) The IRS acceptance of the corporate tax election is pending, and the reviewed statements describe partnership status, so restatement is possible (A29). (7) Related-party payments exist (A30). (8) The Manager Committee needs unanimous approval for Reserved Matters and has no deadlock mechanism, per the Form C risk factor (page 20-21).",
+  "claim_ids": [
+   "A13",
+   "A23",
+   "A27",
+   "A28",
+   "A29",
+   "A30",
+   "A33",
+   "B8"
+  ]
+ },
+ "team_evidence": {
+  "assessment": "No team biographies or execution history are in the readable pages. The pack identifies three Manager Representatives who signed the Form C XML, and Ryan Masten is described as Co-Founder and CTO (A28, B7). Relevant prior experience cannot be assessed from the pack. The only documented history is the 2023 CFTC consent order against the CTO and his company Barelt Media LLC for unregistered activity in connection with a 'SignalPush' service (A28). This is a disclosed adverse regulatory fact, not a measure of competence. The full section on the order was not processed. The Form C XML reports 0 current employees (A33).",
+  "claim_ids": [
+   "A28",
+   "A33",
+   "B7"
+  ]
+ },
+ "security_path_to_proceeds": {
+  "assessment": "The security is LLC Units held beneficially through a custodian and nominee (A7, A31). It is not a SAFE or note, so there is no conversion route. Each route to cash is a separate question. (1) Distributions: they depend on the Manager Committee's absolute and sole discretion, and 5% of Pre-Distribution Cash goes first to an affiliate (A21, A20). No distribution is guaranteed, and the company has no revenue. (2) Transfer: beyond the one-year Reg CF holding period, Manager Committee consent is required and may be withheld in its sole and absolute discretion (A24). A right of first refusal also applies (A7). Legal transferability does not mean a buyer exists. (3) Exit or listing: the Form C says there is not now and likely will not ever be a public market, and the issuer has no repurchase right. Only a possible IPO lock-up is mentioned, and no IPO or exit plan is described (A25). (4) Information: investors have no inspection or information rights beyond those required by law (B4). The offering also requires the target to be met by 2026-12-15, or funds are returned (A32). Availability is unverified.",
+  "claim_ids": [
+   "A7",
+   "A20",
+   "A21",
+   "A24",
+   "A25",
+   "A31",
+   "A32",
+   "B4"
+  ]
+ },
+ "price_and_terms": {
+  "assessment": "The price is $0.35 per Unit, with the method stated as arbitrary and no pre-Offering valuation ascribed by the intermediary (A3, A34). This is a disclosure, not proof of over- or undervaluation, and the pack has no comparables. Deterministic arithmetic gives an implied equity value of $2,625,000 on the 7,500,000 issued Units (K1, B2). It gives $2,699,999.75 after the minimum raise (K2) and $3,304,999.95 after the maximum (K3). These are arithmetic on the offering price, not valuations. They exclude the intermediary's 2% securities compensation, whose count is not fixed (A6). K4 (fully diluted value) is withheld because the SAFE conversion terms are undisclosed (A10). The target is $74,999.75 and the maximum is $679,999.95, with a $350 minimum purchase (A2, A5). With no revenue and no path to value shown in the pack, the price cannot be tested against traction.",
+  "claim_ids": [
+   "A2",
+   "A3",
+   "A5",
+   "A6",
+   "A10",
+   "A34",
+   "B2",
+   "K1",
+   "K2",
+   "K3",
+   "K4"
+  ]
+ },
+ "is_pre_revenue": true,
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "Based on the issuer's description, trader candidates would be the paying customers, buying simulated evaluation credits. Investors in the Units would be buying equity in the platform company, not the customers. No pricing or volume data is in the pack, and revenue is $0.",
+   "claim_type": "other",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "through the sale of simulated trading evaluation credits, through which candidates demonstrate trading skill,"
+    },
+    {
+     "doc_id": 15,
+     "page": 53,
+     "quote": "As of April 30, 2026, the Company has not yet commenced principal revenue-generating operations and"
+    }
+   ],
+   "financial_period": "As of 2026-04-30 notes",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A17",
+    "A13"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "At the $0.35 offering price, the implied equity value is $2,625,000 on 7,500,000 issued Units (K1), and $2,699,999.75 and $3,304,999.95 after the minimum and maximum raises (K2, K3). The price is arbitrary by the issuer's own statement, so these are arithmetic outputs, not valuation opinions.",
+   "claim_type": "financial",
+   "evidence_status": "calculation",
+   "citations": [
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "7,500,000 Units; provided, that such issued Units"
+    }
+   ],
+   "financial_period": "Issued Units as of Form C date (filed 2026-09-16)",
+   "calculation": {
+    "formula": "price_per_share * issued_shares",
+    "inputs": [
+     {
+      "name": "price_per_share",
+      "value": 0.35,
+      "claim_id": "A3"
+     },
+     {
+      "name": "issued_shares",
+      "value": 7500000,
+      "claim_id": "A7"
+     }
+    ],
+    "result": 2625000
+   },
+   "basis_claim_ids": [
+    "A3",
+    "A7",
+    "K1",
+    "K2",
+    "K3"
+   ],
+   "contradictions": "The intermediary's 2% securities compensation and the undisclosed SAFE terms mean the true post-offering unit count is not fixed. K4 was withheld."
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "The Regulation CF Reserve (2,000,000 Units) and Company Reserve (500,000 Units) are not issued, so they are excluded from value arithmetic. They are potential future dilution sources.",
+   "claim_type": "security_terms",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "(c) 2,000,000 Units are allocated to the Regulation CF Reserve (as defined in the"
+    },
+    {
+     "doc_id": 15,
+     "page": 37,
+     "quote": "Anti-Dilution Rights None"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A8",
+    "A26"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "Investors have no inspection or information rights beyond those required by law. Combined with the proxy over voting and the Manager Committee's sole discretion over distributions, the investor's rights are narrow, and the main protection is the Reg CF annual report obligation, which the Form C says the issuer can terminate.",
+   "claim_type": "contract_provision",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 27,
+     "quote": "Investors will not have the right to inspect the books and records of the Issuer or to receive financial or other"
+    },
+    {
+     "doc_id": 15,
+     "page": 24,
+     "quote": "determined by the Manager Committee in its absolute and sole discretion."
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A21",
+    "A23"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "The issuer's funding picture is internally inconsistent: it says it has sufficient resources for its near-term plan and 24-36 months of runway, yet also says the Offering proceeds are essential to operations. The runway is not verifiable from the pack, so no runway is calculated here.",
+   "claim_type": "financial",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 32,
+     "quote": "The Company believes it has sufficient resources to pursue its near-term business plan but is conducting this Offering"
+    },
+    {
+     "doc_id": 15,
+     "page": 39,
+     "quote": "The proceeds from the Offering are essential to our operations."
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16; cash as of 2026-06-30 (issuer-stated)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A14",
+    "A15",
+    "A19"
+   ],
+   "contradictions": "The wording differs between pages 32 and 39. It may reflect different framings of the Offering's purpose rather than a factual conflict."
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "The Manager Committee can issue additional Units without limit and without member consent, so dilution beyond the reserves is open-ended. The 2,000,000-Unit Regulation CF Reserve is slightly above the 1,942,857 Units offered at the maximum.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 24,
+     "quote": "no limit on the number of Units that the Company may issue or the number of Members that may be admitted."
+    },
+    {
+     "doc_id": 15,
+     "page": 57,
+     "quote": "accredited investors up to 1,942,857 of its Units"
+    }
+   ],
+   "financial_period": "Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A26",
+    "A8",
+    "A4"
+   ],
+   "contradictions": "Page 37 states an authorized total of 10,000,000 Units, whereas page 24 says no limit; the Operating Agreement provisions on this were not readable."
+  },
+  {
+   "claim_id": "B7",
+   "claim_text": "The pack has no biographies or execution history for the managers. The only documented history is the disclosed CFTC consent order against the CTO, which is an adverse regulatory fact that does not by itself speak to technical competence.",
+   "claim_type": "team",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 21,
+     "quote": "resolving CFTC claims that Barelt Media acted as an unregistered commodity trading advisor and that Mr. Masten"
+    },
+    {
+     "doc_id": 14,
+     "page": 1,
+     "quote": "<currentEmployees>0.00"
+    }
+   ],
+   "financial_period": "2023 order; Form C filed 2026-09-16",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A28",
+    "A33"
+   ],
+   "contradictions": ""
+  },
+  {
+   "claim_id": "B8",
+   "claim_text": "Founding Members' Units carry full distribution and voting rights even when unvested and even if the member stops providing services, and the structure provides no time-based retention incentive. Combined with 65% founder control, this aligns founder incentives to a Liquidity Event the pack does not define.",
+   "claim_type": "risk",
+   "evidence_status": "analyst_inference",
+   "citations": [
+    {
+     "doc_id": 15,
+     "page": 20,
+     "quote": "The Units held by three of the four Founding Members are wholly unvested until a Liquidity Event, and the vesting"
+    },
+    {
+     "doc_id": 15,
+     "page": 75,
+     "quote": "Founding Members hold, in the aggregate, Units representing sixty-five percent (65%) of the"
+    }
+   ],
+   "financial_period": "As of Form C date (filed 2026-09-16)",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27"
+   ],
+   "contradictions": "The Liquidity Event definition was not in the processed pages."
+  }
+ ]
+}
