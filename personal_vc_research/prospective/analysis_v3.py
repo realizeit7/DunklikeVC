@@ -33,7 +33,9 @@ from .llm.schemas_v3 import QUESTIONS, RULE_IDS, SCHEMA_VERSION, STAGE_ORDER, ST
 from .packs import load_pack
 
 PROMPT_VERSION = "analyst_prompt_v3"
-PIPELINE_VERSION = "analysis_v3_pipeline_0_2"
+PIPELINE_VERSION = "analysis_v3_pipeline_0_3"
+# 0_3 (2026-10-17, final-review prep): read-only plan_resume() (resume uses it) and explicit provenance of reused
+# stages (original run, prompt, schema, model). Validation and classification are unchanged.
 CITATION_RULE = "citation_rule_3_1_whitespace_insensitive"
 # 0_2 (2026-10-17, after run 15): citation rule 3_1 (whitespace-only differences accepted and recorded) and resume():
 # continue the SAME workflow from a run's validated stage outputs, with the run's repair budget carried over.
@@ -374,13 +376,20 @@ def migrate_cached_stage(stage: str, out: dict, calcs: dict) -> tuple[dict | Non
     return new, log
 
 
-def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "", version_id: str | None = None,
-           extra_repairs_authorized: int = 0, authorization_note: str = "") -> dict:
-    """Continue the SAME workflow as a NEW child run. Reuses the source's final stored stage outputs (migrated
-    explicitly to the target schema when it differs) and calls the model only for stages that never validated.
-    Repairs: every repair in the lineage stays counted. A new run may make at most `extra_repairs_authorized`
-    repairs, which is 0 unless the user explicitly authorized a bounded continuation. A new run id cannot reset the
-    counter. The source run is never modified."""
+def _origin_run(ctx: Ctx, analysis_id: int, stage: str) -> int:
+    """The earliest run in the lineage whose directory holds a model-generated (not reused) output for `stage`."""
+    origin = analysis_id
+    for aid in lineage(ctx, analysis_id):
+        row = ctx.con.execute("SELECT output_path FROM analysis_runs WHERE analysis_id=?", (aid,)).fetchone()
+        d = ctx.root / row[0]
+        if (d / f"{stage}.json").exists() or list(d.glob(f"{stage}_repair*.json")):
+            origin = aid
+    return origin
+
+
+def plan_resume(ctx: Ctx, source_analysis_id: int, version_id: str | None = None) -> dict:
+    """READ-ONLY: what a resume would reuse (after the logged migration and re-validation) and which stages would need
+    model calls. Makes no model call and writes nothing. resume() uses exactly this plan."""
     a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (source_analysis_id,)).fetchone()
     d = ctx.root / a["output_path"]
     target_v = version_id or a["version_id"]
@@ -421,12 +430,34 @@ def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "", version_i
         keep[st] = stored[st]
         if st == "A_extraction":
             ctxd["calcs"] = compute_calcs(pack, outs, _typed(ctxd))
+    remaining = [st for st in order if st not in keep]
+    return {"source": dict(a), "target_version": dict(tv), "keep": keep, "outs": outs, "ctxd": ctxd,
+            "migration_log": migration_log, "src_schema": src_schema, "remaining_stages": remaining,
+            "stored_candidates": {st: True for st in stored}}
+
+
+def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "", version_id: str | None = None,
+           extra_repairs_authorized: int = 0, authorization_note: str = "") -> dict:
+    """Continue the SAME workflow as a NEW child run. Reuses the source's final stored stage outputs (migrated
+    explicitly to the target schema when it differs) and calls the model only for stages that never validated.
+    Repairs: every repair in the lineage stays counted. A new run may make at most `extra_repairs_authorized`
+    repairs, which is 0 unless the user explicitly authorized a bounded continuation. A new run id cannot reset the
+    counter. The source run is never modified."""
+    plan = plan_resume(ctx, source_analysis_id, version_id)
+    a, tv, keep, migration_log, src_schema = plan["source"], plan["target_version"], plan["keep"], plan["migration_log"], plan["src_schema"]
+    target_v = tv["version_id"]
     used = lineage_repairs(ctx, source_analysis_id)
     return run_v3(ctx, a["offering_id"], a["pack_id"], adapter, target_v, stored_outputs=keep,
                   repair_allowance=extra_repairs_authorized,
                   lineage_info={"parent_analysis_id": source_analysis_id, "lineage": lineage(ctx, source_analysis_id),
                                 "lineage_repairs_before": used, "extra_repairs_authorized": extra_repairs_authorized,
                                 "authorization_note": authorization_note, "reused_stages": list(keep),
+                                "reused_stage_provenance": {st: {"generated_in_analysis": _origin_run(ctx, source_analysis_id, st),
+                                                                 "original_prompt_version": a["prompt_version"],
+                                                                 "original_schema_version": src_schema,
+                                                                 "original_model": a["model_reported"],
+                                                                 "note": "generated by the original version; conclusions in "
+                                                                         "this stage are NOT new-model outputs"} for st in keep},
                                 "schema_migration": {"from": src_schema, "to": tv["schema_version"], "log": migration_log}},
                   note=f"resume of analysis {source_analysis_id} ({len(keep)} validated stage(s) reused, {used} lineage repair(s)); {note}")
 
