@@ -162,6 +162,7 @@ def main(argv: list[str] | None = None) -> int:
     r3.add_argument("--description", required=True)
     r3.add_argument("--dev-offering", action="append", default=[])
     r3.add_argument("--repair-rounds", type=int, default=1)
+    r3.add_argument("--max-total-repairs", type=int)
     a3 = sub.add_parser("analyze-v3", help="v3 pipeline on a frozen pack (provisional unless the policy is user-activated)")
     a3.add_argument("offering")
     a3.add_argument("--version", required=True)
@@ -390,7 +391,8 @@ def dispatch(ctx: Ctx, a) -> dict:
         return {"recorded": a.claim_id}
     if a.cmd == "analyst-register-v3":
         from . import analysis_v3
-        analysis_v3.register_v3(ctx, a.version_id, a.description, a.dev_offering, a.repair_rounds)
+        analysis_v3.register_v3(ctx, a.version_id, a.description, a.dev_offering, a.repair_rounds,
+                                max_total_repairs=a.max_total_repairs)
         return {"registered": a.version_id}
     if a.cmd == "analyze-v3":
         from . import analysis, analysis_v3

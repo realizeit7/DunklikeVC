@@ -220,11 +220,11 @@ def compute_calcs(pack: dict, outputs: dict) -> dict:
 
 
 def register_v3(ctx: Ctx, version_id: str, description: str, development_offering_ids: list[str], repair_rounds: int = 1,
-                model_requested: str | None = None) -> None:
+                model_requested: str | None = None, max_total_repairs: int | None = None) -> None:
     ctx.con.execute("INSERT OR IGNORE INTO analyst_versions VALUES (?,?,?,?,?,?,?,?,?,?)",
                     (version_id, "challenger", PROMPT_VERSION, SCHEMA_VERSION, POLICY_VERSION, model_requested,
                      json.dumps({"tools": "disabled", "max_budget_usd_per_stage": 5.0, "repair_rounds": repair_rounds,
-                                 "pipeline": "analysis_v3", "classifier": assess_v3.CLASSIFIER_VERSION,
+                                 "max_total_repairs": max_total_repairs, "pipeline": "analysis_v3", "classifier": assess_v3.CLASSIFIER_VERSION,
                                  "calculator": calc.CALCULATOR_VERSION}),
                      description, ctx.now(), json.dumps(development_offering_ids)))
     ctx.con.commit()
@@ -235,7 +235,10 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
     v = ctx.con.execute("SELECT * FROM analyst_versions WHERE version_id=?", (version_id,)).fetchone()
     if v is None:
         raise ValueError(f"analyst version {version_id} is not registered")
-    cap = int(json.loads(v["settings"] or "{}").get("repair_rounds", 0)) if repair_override is None else repair_override
+    settings = json.loads(v["settings"] or "{}")
+    cap = int(settings.get("repair_rounds", 0)) if repair_override is None else repair_override
+    total_cap = settings.get("max_total_repairs")          # whole-run limit, e.g. 1 for a bounded live rerun
+    used = 0
     pack, pack_sha = load_pack(ctx, pack_id)
     if pack["offering"]["offering_id"] != offering_id:
         raise ValueError("pack belongs to another offering")
@@ -269,8 +272,9 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
         errs = validate_stage(stage, pack, outputs, ctxd)
         usage.append(_usage_row(stage, "original", meta, errs))
         rnd = 0
-        while errs and rnd < cap:
+        while errs and rnd < cap and (total_cap is None or used < total_cap):
             rnd += 1
+            used += 1
             rp = json.dumps({"task": "REPAIR: your previous output for this stage failed mechanical validation. Return the complete "
                                      "corrected output. Fix exactly the listed errors; do not change conclusions the errors do not concern.",
                              "validation_errors": errs[:40], "previous_output": outputs[stage], "original_request": json.loads(payload)},
