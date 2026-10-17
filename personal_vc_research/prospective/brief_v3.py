@@ -133,7 +133,11 @@ def build_brief_v3(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
     for r in rows:
         L += chain(r, asm["policy_version"], pstate, docs)
     L += ["## 부록 C. 결정적 계산 (코드 계산)", "", "내재 기업가치는 가격×주식 수의 산술이며 고평가 판단이 아닙니다. 회사 가치와 투자자 현금 회수는 다릅니다.", ""]
-    for k in _q(ctx, "SELECT * FROM calculations WHERE analysis_id=? ORDER BY calc_id", analysis_id):
+    allc = _q(ctx, "SELECT * FROM calculations WHERE analysis_id=? ORDER BY calc_id", analysis_id)
+    latest_cv = max((k["calculator_version"] for k in allc), default="")
+    if len({k["calculator_version"] for k in allc}) > 1:
+        L += [f"_계산은 최신 계산기 {latest_cv} 기준입니다. 이전 버전 행도 기록에 남아 있습니다._", ""]
+    for k in [k for k in allc if k["calculator_version"] == latest_cv]:
         L += [f"- **{k['calc_type']}** ({k['result_kind']}, {k['calculator_version']}): "
               + (f"{k['result_value']:,.1f} {k['units']}" if k["result_value"] is not None else "산출 보류")
               + (f" — 보류 사유: {k['withheld_reason']}" if k["withheld_reason"] else "")]

@@ -164,3 +164,17 @@ All v2.1 tables are append-only (UPDATE/DELETE triggers abort). They reference v
 `analysis_runs.status` for v2 runs is the policy-v1 mapping, which is still the policy of record. The four
 dimensions live in `assessments`. Packs built with targeted OCR have `pack_version` = `pack_v1_targeted_ocr` and list
 the unprocessed pages as gaps.
+
+## v2.2 tables (migration 4; see `V2_2_GUIDE.md`)
+
+All four tables are append-only.
+
+| Table | One row per | Key fields |
+|---|---|---|
+| `policy_activations` | user activation of a policy | `policy_version`, `policy_sha256`, `actor` (CHECK = 'user'), `statement`. A policy is **active** only if a row matches the version AND the file's current hash. **Personal: never exported.** |
+| `rule_findings` | analysis × policy rule | `rule_text`, `policy_version`/`policy_sha256`/`policy_state`, `model_result`, `final_result` (adverse_decisive / adverse_contributing / not_adverse / unknown / not_applicable), `scope`, `independently_decisive`, `facts` (JSON: claim, role, generic trigger, evidence kind, citations, date, attribution, support verdict), interpretation / counterevidence / unresolved / what would change (Korean), `validator_notes` |
+| `assessments_v3` | analysis × classifier | `screening` (provisional_* unless the policy is active), `evidence_status` + `evidence_scope`, `thesis_status`, `execution`, `budget` (remaining capacity, fee status, check time), `decisive` |
+| `thesis_answers` | analysis × question Q1–Q7 | `status`, `answer_ko`, `claim_ids` |
+
+For v3 runs, `analysis_runs.status` is a placeholder (`needs_information` / `analysis_failed`); v3 results never feed
+approvals.

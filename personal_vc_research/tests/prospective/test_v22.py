@@ -305,3 +305,53 @@ def test_old_records_and_budget_intact(ctx):
     for t in ("rule_findings", "assessments_v3", "thesis_answers"):
         with pytest.raises(sqlite3.IntegrityError):
             ctx.con.execute(f"DELETE FROM {t}")
+
+
+# citation rule 3_1 (v3 only): whitespace-only differences pass and are recorded; other differences fail; v1/v2 unchanged
+def test_whitespace_only_citation_rule_is_v3_only():
+    from prospective import analysis
+    pack = {"documents": [{"doc_id": 1, "source_type": "sec_attachment"}],
+            "pages": [{"doc_id": 1, "page": 1, "text": "CommonStock,$0.00parvalue;1shareauthorized; 1"}]}
+    cl = claim("A1", "1 share at year end", "Common Stock,$0.00parvalue;1shareauthorized; 1", "audited_financials", ["TERMS"])
+    cl["citations"][0]["doc_id"] = 1
+    outs = {"A_extraction": {"claims": [cl]}}
+    e2 = []
+    analysis.claims_checks(pack, outs, e2)
+    assert any("not found verbatim" in x for x in e2)                          # v1/v2 behaviour unchanged
+    e3 = []
+    analysis.claims_checks(pack, outs, e3, whitespace_insensitive=True)
+    assert e3 == [] and any("ignoring whitespace" in m for m in analysis.WS_MATCHES)
+    cl["citations"][0]["quote"] = "Common Stock,$0.00parvalue;2sharesauthorized"
+    e4 = []
+    analysis.claims_checks(pack, {"A_extraction": {"claims": [cl]}}, e4, whitespace_insensitive=True)
+    assert any("not found verbatim" in x for x in e4)                          # different characters still fail
+
+
+def test_resume_reuses_stored_stages_and_carries_the_repair_budget(ctx):
+    o = outputs(ctx.doc_id)
+    good_a = copy.deepcopy(o["A_extraction"])
+    o["A_extraction"]["claims"][0]["citations"][0]["quote"] = "a quote that is not on the page at all"
+    r1, ad1 = run(ctx, o)
+    assert r1["screening"] == "analysis_failed" and ad1.calls.count("A_extraction") == 2
+    d = Path(r1["output_dir"])
+    (d / "A_extraction_repair1.json").write_text(json.dumps(good_a))         # stands in for a repaired output on disk
+    ad2 = Ad(outputs(ctx.doc_id))
+    r2 = analysis_v3.resume(ctx, r1["analysis_id"], ad2)
+    assert "A_extraction" not in ad2.calls and r2["analysis_id"] != r1["analysis_id"]
+    assert r2["screening"] == "provisional_unresolved"
+    assert ctx.con.execute("SELECT status FROM analysis_runs WHERE analysis_id=?", (r1["analysis_id"],)).fetchone()[0] == "analysis_failed"
+
+
+def test_cap_table_total_beats_component_and_class_labels_normalise():
+    claims = {k: {"citations": [{"doc_id": 1, "page": 1}]} for k in ("P", "A", "B", "O")}
+    vi = {"price_per_share_usd": 1.0, "price_claim_id": "P", "convertible_instruments": [], "note": "", "share_counts": [
+        {"kind": "issued_outstanding", "share_class": "Common", "value": 1, "as_of": "2025-12-31", "basis": "audited_balance_sheet", "claim_id": "A"},
+        {"kind": "issued_outstanding", "share_class": "Common (ratified to founder)", "value": 75_000_000, "as_of": "2026-06-25",
+         "basis": "board_ratification_or_issuance", "claim_id": "B"},
+        {"kind": "issued_outstanding", "share_class": "Common (total)", "value": 75_000_001, "as_of": "2026-06-25",
+         "basis": "form_c_capitalization_table", "claim_id": "B"},
+        {"kind": "offered_maximum", "share_class": "Common", "value": 5_000_000, "as_of": "", "basis": "offering_terms", "claim_id": "O"}]}
+    k = calc.implied_equity(vi, claims, {"P", "A", "B", "O"}, "equity")
+    assert (k[0]["result_value"], k[0]["result_kind"]) == (75_000_001, "computed")
+    assert any("historical" in x for x in k[0]["assumptions"])
+    assert k[2]["result_value"] == 80_000_001

@@ -1,0 +1,740 @@
+{
+ "technical_and_efficacy": {
+  "assessment": "The only efficacy evidence is an issuer-reported mouse proof-of-concept study (B1). Sample size, design, protocol, endpoints and publication are absent, and the issuer's p-value reading is overstated (B2). The issuer itself says it does not know whether the results will translate to humans (B3). Nothing documents a technical failure, so R-TECH-1 is unknown rather than adverse. This is animal data only. It is not demand, regulatory or human evidence. The patents are issuer-listed, and nothing shows they cover SELtx (B19).",
+  "claim_ids": [
+   "B1",
+   "B2",
+   "B3",
+   "B19"
+  ]
+ },
+ "commercial_demand": {
+  "assessment": "The company has no revenue (B6). The $408M-$734M revenue figures are an issuer projection built on assumed pricing and penetration, with no payer, clinic or distributor commitment (B7). The product is not available for human use. Under R-DEM-1, missing demand evidence for a pre-commercial company is unknown / stage-appropriate, not adverse.",
+  "claim_ids": [
+   "B6",
+   "B7"
+  ]
+ },
+ "regulatory_progress": {
+  "assessment": "Milestone by milestone: (a) IRB review: only a planned step, with no submission or approval documented. (b) FDA interaction or authorization: none documented. (c) Trial initiation: none. (d) Human efficacy: none. The 2026 timing is conditional on funding and on equipment not yet delivered (B5). No regulatory action against the company is documented; the previous-offering rescission risk is an issuer hypothetical. Status is unknown / not adverse (B4).",
+  "claim_ids": [
+   "B4",
+   "B5"
+  ]
+ },
+ "team_execution": {
+  "assessment": "The documented team is a founder with a 1973 PhD in neurosciences, a business development VP, an interim CFO who is a consultant, and a CTO who was an IT consultant (B17). The table shows no prior clinical-trial, device-regulatory or commercialization record. The issuer states there are no bad-actor disqualifications. No sanction is documented, so R-TEAM-1 is not adverse. Documented relevant track record is thin.",
+  "claim_ids": [
+   "B17"
+  ]
+ },
+ "financing_and_runway": {
+  "assessment": "Audited cash was $19,213 at 2025-12-31, against FY2025 operating cash outflow of $50,743 and liabilities of $268,348 (B8). Unaudited issuer-stated cash is $160,487.20 at 2026-06-18 with a claimed ~6 months of runway (B9). K5 withheld a runway calculation because no spending figure is current, so the six-month figure is an issuer claim only. The Form C says substantial doubt exists, while the audit report and Note 4 do not (B11). The cost of the human trial and devices is not stated. The target raise allocates only $30,000 to clinical trials (B10). The adverse test for R-FIN-1 (cannot reach the next milestone even with the maximum raise) cannot be assessed: no cost of the next milestone is given, and the maximum raise allocates $2.18M to trials. Result: unknown.",
+  "claim_ids": [
+   "B8",
+   "B9",
+   "B10",
+   "B11"
+  ]
+ },
+ "terms_and_investor_proceeds": {
+  "assessment": "Common stock at an arbitrary $1.00, with no cap or conversion feature. K1 gives illustrative arithmetic of $75,000,001 on 75,000,001 shares held by the founder. K2 and K3 are withheld, and K4 is withheld because the note conversion terms are undisclosed (B12). Investors give a 10-year irrevocable proxy to the founder (G8), hold through a custodian, and have no anti-dilution or return preference (G4-G6) (B13). Dilution and priority sources are two existing notes ($60,000 and $150,000, described as senior debt, with an unexplained extra $50,000 and an undisclosed conversion price), a planned $50,000 MOU note, $199,875 owed to the founder, 2% intermediary securities, and a reserved right to issue senior stock (B14). The fees are issuer-paid and no investor-paid fee is stated; the issuer pays them from proceeds, as is ordinary (B15). The Charter and note instruments are not in the pack (B18). No priority allocation to insiders, no repurchase below price, and no uncapped nominal-price insider issuance is documented. Consideration for the 75,000,000 founder shares is not stated.",
+  "claim_ids": [
+   "B12",
+   "B13",
+   "B14",
+   "B15",
+   "B18",
+   "B20"
+  ]
+ },
+ "competition_and_advantage": {
+  "assessment": "The 'only later-stage non-pharma solution' and 'no peer or competitor' statements are unverified issuer assertions. They conflict with the preclinical-only data. The pack also cites 107 active ALS trials, 50+ drugs in development and three approved drugs, including generic riluzole at $276-$360 a year (B16). No third-party competitive analysis is in the pack. No substantiated advantage is shown beyond the unreplicated mouse data.",
+  "claim_ids": [
+   "B16",
+   "B19"
+  ]
+ },
+ "stage": "preclinical_or_prototype",
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "The only efficacy evidence is an issuer-reported proof-of-concept study in human-ALS gene-transfected mice at Indiana University; the treatment has only been given to mice. Sample size, design, protocol, endpoints and publication are not provided, and the passage on p.26 is broken mid-sentence.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "preclinical_efficacy",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.26",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 26,
+     "quote": "To test the effectiveness of SELtx™, HOPE-Neuron conducted a proof-of-concept study at the Indiana University"
+    },
+    {
+     "doc_id": 9,
+     "page": 26,
+     "quote": "To date, this treatment has only been administered in"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A29"
+   ],
+   "contradictions": "The video transcript (p.65) says 'reversal', which is stronger than the Form C wording.",
+   "claim_type": "science"
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "The issuer reads a p-value of 0.008 as a less than 1% probability that results occurred by chance. This is a misreading of a p-value, and the test, endpoint and sample are not given. The claim is overstated and not independent evidence.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "preclinical_efficacy",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.28-29",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "This indicates a low probability (less than 1%) that the observed results occurred by random chance."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A30"
+   ],
+   "contradictions": "The same passage says confirmation depends on human testing data.",
+   "claim_type": "science"
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "The issuer states it does not yet know whether the mouse results will translate to humans, and that the planned human trial may not meet endpoints for FDA approval.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "preclinical_efficacy",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.12",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "The Issuer does not yet know if its successful results treating ALS infected mice will translate into similar positive"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A31"
+   ],
+   "contradictions": "Elsewhere the Form C asserts an 'excellent safety profile' without human data (p.29).",
+   "claim_type": "science"
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "Regulatory milestones: the therapy is not yet available for human use; an IRB human ALS trial with Barrow Neurological Institute is a planned step, not shown as submitted or approved. No FDA interaction, authorization or classification, no trial initiation and no human efficacy are documented.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.27",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "HOPE-Neuron’s SELtx™ therapy is not yet available for human use."
+    },
+    {
+     "doc_id": 9,
+     "page": 27,
+     "quote": "3. Commencement of an Institutional Review Board (IRB) human ALS trial, in conjunction with the Barrow"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A32"
+   ],
+   "contradictions": "The issuer's belief that fast-track status is possible (p.28) is not an FDA interaction.",
+   "claim_type": "regulatory"
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "The 2026 human-use timeline (H2 2026, results in 3-6 months) is conditional on sufficient funding and on equipment not yet delivered. The offering deadline is 2026-11-27, so it is doubtful that human use can begin in H2 2026.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "REG",
+    "FIN"
+   ],
+   "dimension_rationale": "Timing of regulatory and trial milestones (REG) depends on funding arriving (FIN).",
+   "attribution": "issuer, Form C p.29",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "With sufficient funding and timely completion of our next-generation equipment, we believe that use in human"
+    },
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<deadlineDate>11-27-2026</deadlineDate>"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A33",
+    "A40"
+   ],
+   "contradictions": "No IRB approval or FDA contact is documented, so the timeline lacks a documented path.",
+   "claim_type": "other"
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "The company has zero revenue in FY2025 and FY2024 and calls itself pre-revenue. No signed customer, clinic, distributor or payer agreement is in the pack.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "audited_financials",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.12; audited income statement",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "We are a pre-revenue company with a limited operating history and have incurred losses since inception. As of"
+    },
+    {
+     "doc_id": 9,
+     "page": 46,
+     "quote": "Net Income (Loss) $ (56,126) $ (63,474)"
+    }
+   ],
+   "financial_period": "FY2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A27",
+    "A35"
+   ],
+   "contradictions": "",
+   "claim_type": "traction"
+  },
+  {
+   "claim_id": "B7",
+   "claim_text": "Issuer projects a $120,000 annual price and issuer revenue of $408M-$734M at 25-45% penetration of about 34,000 ALS patients. This is a projection only; no payer, reimbursement or pricing evidence supports it, and it is not demand evidence.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.28",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "With a projected initial annual therapy price of $120,000, HOPE-Neuron’s revenue share would be about $48,000 per"
+    },
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "To achieve this, the Company plans to partner with national"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A34",
+    "A35"
+   ],
+   "contradictions": "The '2/3 of approved drug prices' comparison ignores generic riluzole at $276-$360 per year (p.27).",
+   "claim_type": "market"
+  },
+  {
+   "claim_id": "B8",
+   "claim_text": "Audited cash was $19,213 at 2025-12-31. FY2025 operating cash outflow was $50,743, and total liabilities were $268,348 including $199,875 owed to the founder. Cash at the audited date was below one year of the same-period outflow, so this is an older statement (G2).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "audited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "audited financial statements",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Cashand cashequivalents $ 19,213 $ 19,252"
+    },
+    {
+     "doc_id": 9,
+     "page": 48,
+     "quote": "Net cash provided by (usedin) operating activities (50,743) 5,338"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "TotalLiabilities 268,348 212,261"
+    }
+   ],
+   "financial_period": "FY2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A20",
+    "A23",
+    "A42"
+   ],
+   "contradictions": "The FY2025 outflow was funded by $50,704 of note proceeds, which the statements classify under investing activities.",
+   "claim_type": "financial"
+  },
+  {
+   "claim_id": "B9",
+   "claim_text": "Issuer states $160,487.20 of cash at 2026-06-18 and about six months of runway. This is unaudited. The averaging period is not disclosed, and K5 withheld a runway calculation because no spending figure is current. The $150,000 note was dated 2026-06-12, six days before the cash date; this is a timing coincidence only, and the cash source is unstated.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.35",
+   "as_of": "2026-06-18",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "As of June 18, 2026, the Issuer had an aggregate of $160,487.20 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Runway is calculated by dividing cash-on-hand by average monthly net loss (if any)."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A24",
+    "A16"
+   ],
+   "contradictions": "FY2025 audited losses are about $56,126 a year (roughly $4,700 a month on average), which does not obviously square with $160,487 giving six months; the issuer's monthly-loss basis is undisclosed. K5 is withheld.",
+   "claim_type": "financial"
+  },
+  {
+   "claim_id": "B10",
+   "claim_text": "Milestones to be funded are further mouse work, device procurement and an IRB human ALS trial. The use-of-proceeds table allocates $30,000 to clinical trials and $7,000 to equipment at the $75,000 target, and $2,180,000 and $635,050 at the maximum. The cost of the human trial and of the devices is not stated, so the adequacy of any raise level cannot be tested. The issuer's own risk factor says the raise may not be enough.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "FIN",
+    "TERMS"
+   ],
+   "dimension_rationale": "Milestone funding (FIN) and allocation of investor proceeds (TERMS).",
+   "attribution": "issuer, Form C p.27, p.30",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Clinical Trials 40.0% $30,000 43.60% $2,180,000"
+    },
+    {
+     "doc_id": 9,
+     "page": 30,
+     "quote": "Equipment covers final engineering and the delivery of two SELtx™ devices."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A07",
+    "A28"
+   ],
+   "contradictions": "The issuer states all figures except intermediary fees are estimates subject to change.",
+   "claim_type": "use_of_proceeds"
+  },
+  {
+   "claim_id": "B11",
+   "claim_text": "Going-concern documents conflict. The Form C risk factor states substantial doubt (G3). The audit report has no going-concern paragraph, and audited Note 4 relies on founder intent to keep supporting the company (with no commitment shown) and on the crowdfunding.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "audited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.12; audited Note 4 (management statement)",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Our financial condition raises substantial doubt about our ability to continue as a going concern."
+    },
+    {
+     "doc_id": 9,
+     "page": 51,
+     "quote": "intends to continue supporting the Company’s funding needs as they arise. In addition, the Company plans to pursue"
+    }
+   ],
+   "financial_period": "FY2025",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A25",
+    "A26"
+   ],
+   "contradictions": "Form C substantial doubt versus no such conclusion in the audited notes and report.",
+   "claim_type": "risk"
+  },
+  {
+   "claim_id": "B12",
+   "claim_text": "The $1.00 price is set arbitrarily, with no valuation cap and no intermediary valuation. K1 gives an illustrative $75,000,001 (price times 75,000,001 shares held 100% by the founder as of 2026-06-25). This is arithmetic on the offering price, not a valuation opinion. K2 and K3 are withheld (unit mismatch) and K4 is withheld (undisclosed note conversion terms). The consideration and date of the 75,000,000 founder shares are not stated.",
+   "evidence_status": "calculation",
+   "evidence_kind": "calculation",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "calculator_v1_2 K1 on issuer price and share count (Form C p.8, p.36)",
+   "as_of": "2026-06-25",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 8,
+     "quote": "The price of the Securities was determined arbitrarily, does not necessarily bear any relationship to the Issuer’s asset"
+    },
+    {
+     "doc_id": 9,
+     "page": 36,
+     "quote": "outstanding, the Issuer has 75,000,001 shares of common stock issued and outstanding as of the date of this Form C."
+    }
+   ],
+   "financial_period": "",
+   "calculation": {
+    "formula": "K1: price_per_share * issued_shares",
+    "inputs": [
+     {
+      "name": "price_per_share",
+      "value": 1,
+      "claim_id": "A03"
+     },
+     {
+      "name": "issued_shares",
+      "value": 75000001,
+      "claim_id": "A13"
+     }
+    ],
+    "result": 75000001
+   },
+   "basis_claim_ids": [
+    "A03",
+    "A13",
+    "A14"
+   ],
+   "contradictions": "The audited balance sheet at 2025-12-31 shows 1 share; the gap is a later ratification (history, not a conflict).",
+   "claim_type": "financial"
+  },
+  {
+   "claim_id": "B13",
+   "claim_text": "Every investor irrevocably grants the Executive Chairman a ten-year proxy over all votes and written consents, including on charter amendments, financings and mergers. Securities are expected to be held through a custodian (BitGo), with no anti-dilution rights, dividends only at board discretion, and a Reg CF one-year transfer limit. These are the generic features G4-G6 and G8.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.9-11, p.24; Subscription Agreement Section 1(c)",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "the exercise of those voting rights to the Executive Chairman of the Issuer for a period of ten (10) years from the date"
+    },
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "Currently, Ronald Lane, our Executive Chairman, will have the authority with the irrevocable proxy to direct the vote"
+    },
+    {
+     "doc_id": 9,
+     "page": 9,
+     "quote": "documents. The Securities sold in this Offering are expected to be held of record by BitGo Bank & Trust, National"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A08",
+    "A09",
+    "A10"
+   ],
+   "contradictions": "",
+   "claim_type": "contract_provision"
+  },
+  {
+   "claim_id": "B14",
+   "claim_text": "Dilution and priority sources: two existing convertible notes ($60,000 and $150,000) described as senior debt obligations, with undisclosed conversion price and an unexplained extra $50,000 in the second note; a planned (not issued) $50,000 MOU note; a $199,875 payable to the founder with no repayment terms; 2% intermediary securities; and a reserved right to issue senior stock classes. Different-date balances are not added.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Claims ahead of or diluting this security (TERMS) and obligations on the balance sheet (FIN).",
+   "attribution": "issuer, Form C p.11, p.22, p.33-36; audited balance sheet",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 33,
+     "quote": "the Note represents a senior debt obligation of the"
+    },
+    {
+     "doc_id": 9,
+     "page": 34,
+     "quote": "$50,000, together with all accrued interest thereon at"
+    },
+    {
+     "doc_id": 9,
+     "page": 34,
+     "quote": "Additionally, on May 4, 2026, the Company entered into a memorandum of understanding (the “MOU”) with a"
+    },
+    {
+     "doc_id": 9,
+     "page": 36,
+     "quote": "interest rate or maturity date. As of December 31, 2025 and 2024, payable to related party amounted to $199,875 and"
+    },
+    {
+     "doc_id": 9,
+     "page": 22,
+     "quote": "ownershipthat may include priorities in dividends and liquidation over common stock, whereby such forms could be"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A06",
+    "A11",
+    "A15",
+    "A16",
+    "A17",
+    "A18"
+   ],
+   "contradictions": "The Form C says note conversion needs a Reg A or similar event; audited Note 5 lists change of control, private replacement financing or recapitalization as triggers. K4 is withheld.",
+   "claim_type": "security_terms"
+  },
+  {
+   "claim_id": "B15",
+   "claim_text": "The intermediary fee (greater of $15,000 or 6% above $100,000, plus a $7,500 onboarding fee already paid) is paid by the issuer out of proceeds, as is ordinary in a Reg CF offering. No investor-paid fee is stated. No insider priority allocation, issuer repurchase right or fee deducted from the investor's purchase amount is documented.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.2, p.11",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "The Issuer does not have the right to repurchase the Securities."
+    },
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A05",
+    "A06",
+    "A07",
+    "A10"
+   ],
+   "contradictions": "The text shows no investor-paid fee, but it does not rule out custodian or platform charges, which are unstated.",
+   "claim_type": "contract_provision"
+  },
+  {
+   "claim_id": "B16",
+   "claim_text": "The 'only later-stage non-pharma solution' and 'no peer or competitor' statements are unverified issuer assertions. The same Form C cites 107 active ALS trials, 50+ drugs in development and three approved drugs.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "TECH",
+    "DEMAND"
+   ],
+   "dimension_rationale": "The competitive position depends on technical stage and on market position.",
+   "attribution": "issuer, Form C p.12, p.28",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "HOPE-Neuron is in a unique position in the ALS space, because it is the only later-stage non-pharma solution in a"
+    },
+    {
+     "doc_id": 9,
+     "page": 12,
+     "quote": "Currently, the Issuer has no peer company or competitor with"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A36"
+   ],
+   "contradictions": "'Later-stage' conflicts with data consisting only of mouse results; no third-party competitor analysis is in the pack.",
+   "claim_type": "competition"
+  },
+  {
+   "claim_id": "B17",
+   "claim_text": "Documented team: the founder has a PhD in neurosciences (1973) and has been CEO since 2020; the CFO is interim and a consultant; the CTO is an IT consultant. No prior clinical-trial, device-regulatory or commercialization record is shown. The issuer states there are no bad-actor disqualifications.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.31, p.37",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "PhD, Neurosciences (1973)"
+    },
+    {
+     "doc_id": 9,
+     "page": 31,
+     "quote": "John Louf Officer - Chief Chief Technology Officer (November 2025- New Jersey Institute of"
+    },
+    {
+     "doc_id": 9,
+     "page": 37,
+     "quote": "The Issuer is not subject to any bad actor disqualifications under any relevant U.S. securities laws. The Issuer is not"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A38",
+    "A39"
+   ],
+   "contradictions": "",
+   "claim_type": "team"
+  },
+  {
+   "claim_id": "B18",
+   "claim_text": "The Subscription Agreement is present and readable. The Charter, bylaws and the note instruments are not in the pack, and the Form C says dividend and liquidation rights are as set out in the Charter. The latest audited statements (FY2025) are present, and interim statements after 2025-12-31 are absent.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "The Charter governs the security rights (TERMS) and the statement dates affect the cash picture (FIN).",
+   "attribution": "issuer, Form C p.10-11, p.53; pack contents",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 10,
+     "quote": "The Securities do not entitle Investors to any dividends other than as outlined in the Issuer’s Charter."
+    },
+    {
+     "doc_id": 9,
+     "page": 11,
+     "quote": "The Securities do not have a stated return or liquidation preference, except as set forth in the Issuer’s Charter."
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A02",
+    "A10",
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "security_terms"
+  },
+  {
+   "claim_id": "B19",
+   "claim_text": "The issuer lists two U.S. patents and a Japan patent titled 'gas treatment delivery systems and methods' as company-owned. Whether they cover SELtx and whether assignments exist are not shown. Risk factors speak of 'future' patents and possibly defective ownership.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.14, p.19, p.29",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 29,
+     "quote": "U.S. Patent No. 11471579 “GAS TREATMENT DELIVERY SYSTEMS AND METHODS” (expiration date: May"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A37"
+   ],
+   "contradictions": "The issuer asserts it controls critical IP, while the risk factors say IP may not be owned or sufficiently assigned.",
+   "claim_type": "other"
+  },
+  {
+   "claim_id": "B20",
+   "claim_text": "The offering deadline is 2026-11-27 and no closing is reported. Current availability is not verified in the pack, and a future deadline does not prove the offering is open. At closing, the issuer can withdraw only 70% of proceeds after an initial closing.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C XML and p.9; pack metadata",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 8,
+     "page": 1,
+     "quote": "<deadlineDate>11-27-2026</deadlineDate>"
+    },
+    {
+     "doc_id": 9,
+     "page": 9,
+     "quote": "If the Issuer conducts an initial closing (the “Initial Closing”), the Issuer agrees to only withdraw seventy percent"
+    }
+   ],
+   "financial_period": "",
+   "calculation": null,
+   "basis_claim_ids": [
+    "A40",
+    "A44"
+   ],
+   "contradictions": "",
+   "claim_type": "availability"
+  }
+ ]
+}

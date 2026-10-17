@@ -39,3 +39,7 @@ row_id,analysis_id,run_dir,stage,attempt,seconds,input_tokens,output_tokens,cach
 38,14,data/analyses/RCF-2128340-020-37393_2026-10-16T014803+0000_v2,F_brief_ko,original,22.7,2,3183,0,22492,0.12380519999999999,cli_estimated_list_price_equivalent_not_billed,invalid,1
 39,14,data/analyses/RCF-2128340-020-37393_2026-10-16T014803+0000_v2,F_brief_ko,repair1,16.4,2,3083,4500,21283,0.11869049999999999,cli_estimated_list_price_equivalent_not_billed,invalid,1
 40,14,data/analyses/RCF-2128340-020-37393_2026-10-16T014803+0000_v2,F_brief_ko,repair2,16.3,2,3098,4500,21155,0.118368,cli_estimated_list_price_equivalent_not_billed,valid,0
+41,15,data/analyses/RCF-2114933-020-37299_2026-10-17T045451+0000_v3,A_extraction,original,361.7,4,66436,100053,145734,1.2667399,cli_estimated_list_price_equivalent_not_billed,invalid,45
+42,15,data/analyses/RCF-2114933-020-37299_2026-10-17T045451+0000_v3,A_extraction,repair1,96.1,2,21055,5689,116789,0.7366529,cli_estimated_list_price_equivalent_not_billed,invalid,1
+43,16,data/analyses/RCF-2114933-020-37299_2026-10-17T050435+0000_v3,A_extraction,original,0.0,\N,\N,\N,\N,0.0,cli_estimated_list_price_equivalent_not_billed,valid,0
+44,16,data/analyses/RCF-2114933-020-37299_2026-10-17T050435+0000_v3,B_analysis,original,82.6,2,13597,0,123780,0.69067,cli_estimated_list_price_equivalent_not_billed,invalid,1

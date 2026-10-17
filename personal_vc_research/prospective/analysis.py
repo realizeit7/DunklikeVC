@@ -178,9 +178,16 @@ def all_claims(outputs: dict) -> list[dict]:
     return list(a.get("claims", [])) + list(b.get("additional_claims", [])) + list(c.get("additional_claims", []))
 
 
-def claims_checks(pack: dict, outputs: dict, errors: list[str]):
-    """Shared by v1 and v2 validation: claim ids, prefixes, citations (verbatim), evidence-status rules and
-    calculations. Appends to `errors`; returns (claims, by_id, valid_cited, check_refs)."""
+WS_MATCHES: list[str] = []      # v3 only: citations accepted by the whitespace-insensitive rule (for the run record)
+
+
+def claims_checks(pack: dict, outputs: dict, errors: list[str], whitespace_insensitive: bool = False):
+    """Shared by v1, v2 and v3 validation: claim ids, prefixes, citations (verbatim), evidence-status rules and
+    calculations. Appends to `errors`; returns (claims, by_id, valid_cited, check_refs).
+
+    whitespace_insensitive (v3 citation rule 3_1, default off, so v1/v2 are unchanged): a quote whose characters match
+    the page exactly but whose WHITESPACE differs is accepted and recorded. This covers PDF text layers that merge
+    words, e.g. 'CommonStock,$0.00parvalue'. Any other difference still fails."""
     pages = {(p["doc_id"], p["page"]): _norm(p["text"]) for p in pack["pages"]}
     docs = {d["doc_id"]: d for d in pack["documents"]}
     claims = all_claims(outputs)
@@ -207,7 +214,10 @@ def claims_checks(pack: dict, outputs: dict, errors: list[str]):
             if txt is None:
                 errors.append(f"{cid}: doc {cit['doc_id']} page {cit['page']} has no text in the pack")
                 continue
-            if _norm(cit["quote"]) not in txt:
+            if _norm(cit["quote"]) not in txt and whitespace_insensitive and \
+                    re.sub(r"\s", "", _norm(cit["quote"])) in re.sub(r"\s", "", txt):
+                WS_MATCHES.append(f"{cid}: doc {cit['doc_id']} p.{cit['page']} matched ignoring whitespace")
+            elif _norm(cit["quote"]) not in txt:
                 errors.append(f"{cid}: quote not found verbatim on doc {cit['doc_id']} page {cit['page']}: {cit['quote'][:80]!r}")
                 continue
             good += 1

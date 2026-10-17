@@ -20,14 +20,18 @@ import re
 from . import assess, ledger
 from .core import Ctx
 
-CLASSIFIER_VERSION = "assessment_classifier_v3_0"
+CLASSIFIER_VERSION = "assessment_classifier_v3_0_1"
+# v3_0_1 (2026-10-17): G4 also matches "no assurance" next to Reg A / IPO / listing / liquidity / conversion
+# (Hope-Neuron A32: a stated interest in a Reg A offering "with no assurance it will happen" is a missing liquidity
+# promise, i.e. generic).
 GENERIC_KEYWORDS = {
     "G1": r"pre-revenue|no revenue|revenue of \$?0\b|\$0(\.00)? revenue|has not generated revenue",
     "G3": r"going concern|going-concern|substantial doubt",
     # absence-type phrasing only: a documented repurchase BELOW the price paid is company-specific, not G4
     "G4": (r"no (promised |expected )?dividends?|not entitle\w* .{0,40}dividends?|dividends? (are|is) not (expected|promised|guaranteed)|"
            r"no (right to |obligation to )?(buyback|repurchase)|no (repurchase|buyback) right|no (public |trading )?market|"
-           r"no (plan\w* (for|to) )?(an )?IPO|no (assured |guaranteed )?(listing|liquidity event)"),
+           r"no (plan\w* (for|to) )?(an )?IPO|no (assured |guaranteed )?(listing|liquidity event)|"
+           r"(reg(ulation)? a\b|ipo|listing|liquidity)[^.]{0,160}no assurance|no assurance[^.]{0,160}(reg(ulation)? a\b|ipo|listing|liquidity|conversion)"),
     "G5": r"anti-dilution",
     "G6": r"transfer restrict|one-year|resale|custodian|nominee|illiquid|minority",
     "G7": r"arbitrar",

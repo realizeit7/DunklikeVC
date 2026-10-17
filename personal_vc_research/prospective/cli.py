@@ -170,6 +170,11 @@ def main(argv: list[str] | None = None) -> int:
     a3.add_argument("--model")
     a3.add_argument("--max-budget-usd", type=float, default=5.0)
     a3.add_argument("--note", default="")
+    rs3 = sub.add_parser("resume-v3", help="continue the same v3 workflow from a failed run's stored outputs")
+    rs3.add_argument("analysis_id", type=int)
+    rs3.add_argument("--note", default="")
+    rc3 = sub.add_parser("recalc-v3", help="recompute v3 calculations with the current calculator (new rows)")
+    rc3.add_argument("analysis_id", type=int)
     b3 = sub.add_parser("brief-v3", help="Korean brief, v2.2 layout")
     b3.add_argument("analysis_id", type=int)
     ps = sub.add_parser("policy-status", help="show screening policy versions, hashes and activation state")
@@ -398,6 +403,12 @@ def dispatch(ctx: Ctx, a) -> dict:
         from . import analysis, analysis_v3
         return analysis_v3.run_v3(ctx, a.offering, a.pack, analysis.ClaudeCLIAdapter(model=a.model, max_budget_usd=a.max_budget_usd),
                                   a.version, note=a.note)
+    if a.cmd == "resume-v3":
+        from . import analysis, analysis_v3
+        return analysis_v3.resume(ctx, a.analysis_id, analysis.ClaudeCLIAdapter(), a.note)
+    if a.cmd == "recalc-v3":
+        from . import analysis_v3
+        return [{k: x.get(k) for k in ("calc_id", "calc_type", "result_value", "result_kind")} for x in analysis_v3.recalc(ctx, a.analysis_id)]
     if a.cmd == "brief-v3":
         from . import brief_v3
         return {"brief": str(brief_v3.build_brief_v3(ctx, a.analysis_id))}

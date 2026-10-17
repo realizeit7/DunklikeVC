@@ -15,7 +15,10 @@ Rules
 """
 from __future__ import annotations
 
-CALCULATOR_VERSION = "calculator_v1_2"
+CALCULATOR_VERSION = "calculator_v1_3"
+# v1_3 (2026-10-17, Hope-Neuron run 15/16): (a) on one date, a Form C capitalization-table total is preferred over a
+# component count (75,000,000 ratified to the founder vs 75,000,001 total), so this is no longer called a conflict;
+# (b) share classes compare on the base class name, so 'Common (total incl. ...)' and 'Common' are the same class.
 # v1_2 (2026-10-17, v2.2): issued counts dated differently are history, not a conflict (e.g. 1 share on the audited
 # 2025-12-31 balance sheet vs 75,000,001 after a 2026 ratification). The latest-dated count is used and the earlier one
 # is shown. Only counts with the same date and different values are 'illustrative'. Planned (not yet issued)
@@ -26,6 +29,11 @@ CALCULATOR_VERSION = "calculator_v1_2"
 # Mightylicious). For such securities the valuation cap is a contract term and is not converted into an equity value.
 # Also withheld: offered units of a different class than the issued shares.
 NON_SHARE_SECURITIES = {"safe", "convertible_note"}
+
+
+def _base_class(cls: str) -> str:
+    import re
+    return re.sub(r"\(.*?\)", "", cls or "").replace("shares", "").replace("stock", "").strip().lower()
 
 
 def _cit(claims: dict, cid: str) -> list:
@@ -83,6 +91,10 @@ def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set, s
         return out
     latest = sorted(issued, key=lambda c: c.get("as_of") or "")[-1]
     same_date = [c for c in issued if (c.get("as_of") or "") == (latest.get("as_of") or "")]
+    cap_table = [c for c in same_date if c.get("basis") == "form_c_capitalization_table"]
+    if len({c["value"] for c in same_date}) > 1 and len({c["value"] for c in cap_table}) == 1:
+        latest = cap_table[0]                       # the capitalization-table total; the others are components
+        same_date = cap_table
     conflict = len({c["value"] for c in same_date}) > 1 or (not latest.get("as_of") and len({c["value"] for c in issued}) > 1)
     history = [c for c in issued if c is not latest and c not in same_date]
     kind = "illustrative" if conflict else "computed"
@@ -99,7 +111,7 @@ def implied_equity(valuation_inputs: dict, claims: dict, valid_claim_ids: set, s
     rec("implied_pre_money_equity", "price_per_share * issued_shares", [p_in, s_in], round(pre, 2), kind,
         assumptions=conflict_note + history_note, included=included)
     for label, o in (("minimum", omin), ("maximum", omax)):
-        if o is not None and o["share_class"].strip().lower() != latest["share_class"].strip().lower():
+        if o is not None and _base_class(o["share_class"]) != _base_class(latest["share_class"]):
             rec(f"implied_post_money_equity_at_offering_{label}", "price_per_share * (issued_shares + offered_shares)",
                 [p_in, s_in], None, "withheld", f"offered class '{o['share_class']}' differs from issued class "
                 f"'{latest['share_class']}'; units are not additive")

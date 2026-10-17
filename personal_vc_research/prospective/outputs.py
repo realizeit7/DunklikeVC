@@ -235,7 +235,9 @@ EXPORT_TABLES = ["runs", "gaps", "index_days", "discovery_ledger", "offerings", 
                  "citation_checks",
                  # v2.1 tables (public-safe: attempt metadata and hashes only, no captured content or cookies)
                  "access_attempts", "source_checks", "assessments", "criterion_results", "calculations", "support_checks",
-                 "forecast_definitions", "forecast_lineage", "stage_usage"]
+                 "forecast_definitions", "forecast_lineage", "stage_usage",
+                 # v2.2 (policy_activations is PERSONAL, like policy_acknowledgments, and is never exported)
+                 "rule_findings", "assessments_v3", "thesis_answers"]
 
 
 NULL = "\\N"   # explicit NULL marker: a missing value must not round-trip as an empty string or 0

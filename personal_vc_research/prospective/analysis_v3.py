@@ -24,7 +24,7 @@ import jsonschema
 
 from . import assess_v3, calc
 from . import policy as policy_mod
-from .analysis import claims_checks
+from .analysis import WS_MATCHES, claims_checks
 from .analysis_v2 import COST_LABEL, korean_errors, _usage_row
 from .core import Ctx
 from .llm.schemas_v1 import CRITICAL_ITEMS
@@ -32,7 +32,10 @@ from .llm.schemas_v3 import QUESTIONS, RULE_IDS, SCHEMA_VERSION, STAGE_ORDER, ST
 from .packs import load_pack
 
 PROMPT_VERSION = "analyst_prompt_v3"
-PIPELINE_VERSION = "analysis_v3_pipeline_0_1"
+PIPELINE_VERSION = "analysis_v3_pipeline_0_2"
+CITATION_RULE = "citation_rule_3_1_whitespace_insensitive"
+# 0_2 (2026-10-17, after run 15): citation rule 3_1 (whitespace-only differences accepted and recorded) and resume():
+# continue the SAME workflow from a run's validated stage outputs, with the run's repair budget carried over.
 POLICY_VERSION = "screening_policy_v1_2"
 PROMPTS = Path(__file__).parent / "llm" / "prompts"
 MAX_SUPPORT_CHECKS = 24
@@ -68,7 +71,7 @@ def validate_stage(stage: str, pack: dict, outputs: dict, ctxd: dict) -> list[st
         return errs
     pol = ctxd["policy"]
     if stage in ("A_extraction", "B_analysis", "C_critical_review"):
-        claims, by_id, valid, check_refs = claims_checks(pack, _partial(outputs), errs)
+        claims, by_id, valid, check_refs = claims_checks(pack, _partial(outputs), errs, whitespace_insensitive=True)
         new = outputs[stage]["claims" if stage == "A_extraction" else "additional_claims"]
         for c in new:
             if len(c["dimensions"]) > 1 and not c["dimension_rationale"].strip():
@@ -95,7 +98,7 @@ def validate_stage(stage: str, pack: dict, outputs: dict, ctxd: dict) -> list[st
                 if isinstance(sec, dict) and "claim_ids" in sec:
                     errs += [f"{stage}.{k}: unknown id {r}" for r in sec["claim_ids"] if r not in known]
         return errs
-    claims, by_id, valid, _ = claims_checks(pack, outputs, [])
+    claims, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
     known = set(by_id) | set(ctxd.get("calcs", {}))
     if stage == "D_final":
         d = outputs[stage]
@@ -188,7 +191,7 @@ def _payload(stage, pack, outputs, ctxd):
                      "deterministic_calculations": list(ctxd.get("calcs", {}).values()), "evidence_pack": pack,
                      "thesis_questions": QUESTIONS})
     elif stage == "E_support_check":
-        _, by_id, _, _ = claims_checks(pack, outputs, [])
+        _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
         texts = {(p["doc_id"], p["page"]): p["text"] for p in pack["pages"]}
         base.update({"claims_to_check": ctxd["claims_to_check"], "untrusted_content_notice": pack["untrusted_content_notice"],
                      "items": [{"claim": by_id[c], "cited_pages": [{"doc_id": x["doc_id"], "page": x["page"],
@@ -196,7 +199,7 @@ def _payload(stage, pack, outputs, ctxd):
                                                                    for x in by_id[c]["citations"]]} for c in ctxd["claims_to_check"]]})
     else:
         res = ctxd["assessment"]
-        _, by_id, _, _ = claims_checks(pack, outputs, [])
+        _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
         base.update({"computed_classification": {k: res[k] for k in ("screening", "evidence_status", "evidence_scope", "thesis_status",
                                                                      "decisive")},
                      "rule_findings": [{k: r[k] for k in ("rule_id", "final_result", "interpretation_ko", "unresolved_ko")} for r in res["findings"]],
@@ -207,7 +210,7 @@ def _payload(stage, pack, outputs, ctxd):
 
 
 def compute_calcs(pack: dict, outputs: dict) -> dict:
-    _, by_id, valid, _ = claims_checks(pack, outputs, [])
+    _, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
     a = outputs["A_extraction"]
     ks = calc.implied_equity(a["valuation_inputs"], by_id, valid, pack["offering"].get("security_class") or "")
     rw = calc.runway(a["cash_points"], a["spending_points"], valid)
@@ -217,6 +220,41 @@ def compute_calcs(pack: dict, outputs: dict) -> dict:
                  "included_instruments": [], "excluded_instruments": [], **extra}
         ks.append({**extra, "calc_id": f"K{len(ks) + 1}"})
     return {k["calc_id"]: k for k in ks}
+
+
+def recalc(ctx: Ctx, analysis_id: int) -> list[dict]:
+    """Recompute the deterministic calculations of a stored v3 run with the CURRENT calculator (new rows; old rows kept)."""
+    a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (analysis_id,)).fetchone()
+    comb = json.loads((ctx.root / a["output_path"] / "combined.json").read_text())
+    pack, _ = load_pack(ctx, a["pack_id"])
+    ks = list(compute_calcs(pack, comb["outputs"]).values())
+    for k in ks:
+        ctx.con.execute("INSERT INTO calculations(analysis_id, pack_id, calc_type, formula, inputs, assumptions, included_instruments, "
+                        "excluded_instruments, units, result_value, result_kind, withheld_reason, calculator_version, created_utc) "
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (analysis_id, a["pack_id"], f"{k['calc_id']}:{k['calc_type']}", k.get("formula", ""), json.dumps(k.get("inputs", [])),
+                         json.dumps(k.get("assumptions", [])), json.dumps(k.get("included_instruments", [])),
+                         json.dumps(k.get("excluded_instruments", [])), k.get("units", ""), k.get("result_value"), k["result_kind"],
+                         k.get("withheld_reason", ""), k["calculator_version"], ctx.now()))
+    ctx.con.commit()
+    return ks
+
+
+def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "") -> dict:
+    """Continue the SAME workflow from a failed v3 run: reuse its final stored stage outputs that now validate, call the
+    model only for the stages that never ran, and carry over the repairs already used (whole-run cap). A new
+    analysis row is created; the source run is never modified."""
+    a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (source_analysis_id,)).fetchone()
+    d = ctx.root / a["output_path"]
+    stored = {}
+    for st in STAGE_ORDER:
+        cands = sorted(d.glob(f"{st}_repair*.json")) or ([d / f"{st}.json"] if (d / f"{st}.json").exists() else [])
+        cands = [c for c in cands if not c.name.endswith(".meta.json")]
+        if cands:
+            stored[st] = json.loads(cands[-1].read_text())
+    used = ctx.con.execute("SELECT COUNT(*) FROM stage_usage WHERE analysis_id=? AND attempt != 'original'", (source_analysis_id,)).fetchone()[0]
+    return run_v3(ctx, a["offering_id"], a["pack_id"], adapter, a["version_id"], stored_outputs=stored, repairs_already_used=used,
+                  note=f"resume of analysis {source_analysis_id} ({len(stored)} stored stage(s) reused, {used} repair(s) carried over); {note}")
 
 
 def register_v3(ctx: Ctx, version_id: str, description: str, development_offering_ids: list[str], repair_rounds: int = 1,
@@ -231,14 +269,16 @@ def register_v3(ctx: Ctx, version_id: str, description: str, development_offerin
 
 
 def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, note: str = "",
-           repair_override: int | None = None, policy_override: dict | None = None) -> dict:
+           repair_override: int | None = None, policy_override: dict | None = None, stored_outputs: dict | None = None,
+           repairs_already_used: int = 0) -> dict:
     v = ctx.con.execute("SELECT * FROM analyst_versions WHERE version_id=?", (version_id,)).fetchone()
     if v is None:
         raise ValueError(f"analyst version {version_id} is not registered")
     settings = json.loads(v["settings"] or "{}")
     cap = int(settings.get("repair_rounds", 0)) if repair_override is None else repair_override
     total_cap = settings.get("max_total_repairs")          # whole-run limit, e.g. 1 for a bounded live rerun
-    used = 0
+    used = repairs_already_used
+    WS_MATCHES.clear()
     pack, pack_sha = load_pack(ctx, pack_id)
     if pack["offering"]["offering_id"] != offering_id:
         raise ValueError("pack belongs to another offering")
@@ -261,13 +301,17 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
     res = None
     for stage in STAGE_ORDER:
         if stage == "E_support_check":
-            _, by_id, _, _ = claims_checks(pack, outputs, [])
+            _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
             ctxd["claims_to_check"] = _claims_to_check(outputs, by_id, pol)
         if stage == "F_brief_ko":
             res = _assess(ctx, [], outputs, pack, pol, pstate, ctxd, o)
             ctxd["assessment"] = res
         payload = _payload(stage, pack, outputs, ctxd)
-        out, meta = attempt(stage, "", payload)
+        if stored_outputs and stage in stored_outputs:            # resumed: reuse the stored output, no model call
+            out, meta = stored_outputs[stage], {"model_reported": "(stored output reused)", "cost_usd": 0.0, "seconds": 0}
+            (out_dir / f"{stage}.reused.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
+        else:
+            out, meta = attempt(stage, "", payload)
         outputs[stage] = out
         errs = validate_stage(stage, pack, outputs, ctxd)
         usage.append(_usage_row(stage, "original", meta, errs))
@@ -301,7 +345,7 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
 def _assess(ctx, errors, outputs, pack, pol, pstate, ctxd, o):
     by_id, valid = {}, set()
     if not errors:
-        _, by_id, valid, _ = claims_checks(pack, outputs, [])
+        _, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
     return assess_v3.evaluate(ctx, errors, outputs, pack, pol, pstate, by_id, valid, ctxd.get("calcs", {}), o)
 
 
@@ -323,11 +367,13 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
          str(out_dir.relative_to(ctx.root)), hashlib.sha256(combined.encode()).hexdigest(), json.dumps(errors), cost,
          json.dumps({"pipeline": "analysis_v3", "pipeline_version": PIPELINE_VERSION, "policy_sha256": pol["_sha256"],
                      "policy_state": pstate, "status_column_note": "placeholder; v3 results live in assessments_v3 and never feed approvals",
-                     "presentation_errors": presentation, "note": note, "cost_label": COST_LABEL}, ensure_ascii=False)))
+                     "presentation_errors": presentation, "note": note, "cost_label": COST_LABEL,
+                     "citation_rule": CITATION_RULE, "whitespace_insensitive_matches": sorted(set(WS_MATCHES))},
+                    ensure_ascii=False)))
     aid = cur.lastrowid
     now = ctx.now()
     if not errors:
-        claims, _, _, _ = claims_checks(pack, outputs, [])
+        claims, _, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
         for c in claims:
             ctx.con.execute("""INSERT INTO analysis_claims(analysis_id, claim_id, stage, claim_text, claim_type, evidence_status, citations,
                 observed_cutoff_utc, financial_period, calculation_inputs, contradictions, missing) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",

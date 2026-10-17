@@ -1,0 +1,1 @@
+row_id,analysis_id,rule_id,rule_text,policy_version,policy_sha256,policy_state,model_result,final_result,scope,independently_decisive,facts,interpretation_ko,counterevidence,unresolved_ko,what_would_change_ko,validator_notes
