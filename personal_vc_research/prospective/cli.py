@@ -156,6 +156,27 @@ def main(argv: list[str] | None = None) -> int:
     hs.add_argument("--note", required=True)
     hs.add_argument("--checker", default="human:analyst")
     hs.add_argument("--label", default="human_spot_check_against_source_page")
+    # ---- v2.2 ---------------------------------------------------------------------------------------------------
+    r3 = sub.add_parser("analyst-register-v3", help="register an analyst-v3 version (screening_policy_v1_2) BEFORE using it")
+    r3.add_argument("version_id")
+    r3.add_argument("--description", required=True)
+    r3.add_argument("--dev-offering", action="append", default=[])
+    r3.add_argument("--repair-rounds", type=int, default=1)
+    a3 = sub.add_parser("analyze-v3", help="v3 pipeline on a frozen pack (provisional unless the policy is user-activated)")
+    a3.add_argument("offering")
+    a3.add_argument("--version", required=True)
+    a3.add_argument("--pack", required=True)
+    a3.add_argument("--model")
+    a3.add_argument("--max-budget-usd", type=float, default=5.0)
+    a3.add_argument("--note", default="")
+    b3 = sub.add_parser("brief-v3", help="Korean brief, v2.2 layout")
+    b3.add_argument("analysis_id", type=int)
+    ps = sub.add_parser("policy-status", help="show screening policy versions, hashes and activation state")
+    pa = sub.add_parser("policy-activate", help="USER ONLY: activate a specific screening policy version + hash")
+    pa.add_argument("version")
+    pa.add_argument("--sha256", required=True)
+    pa.add_argument("--statement", required=True)
+    pa.add_argument("--i-am-the-user", action="store_true", required=True)
     # ---- v2: approvals and ledger ------------------------------------------------------------------------------
     ap = sub.add_parser("approve", help="USER approval for manual investment (explicit amount; reserves budget if executable)")
     ap.add_argument("offering")
@@ -367,6 +388,23 @@ def dispatch(ctx: Ctx, a) -> dict:
                          "", a.overstatement, a.verdict, a.note, ctx.now()))
         ctx.con.commit()
         return {"recorded": a.claim_id}
+    if a.cmd == "analyst-register-v3":
+        from . import analysis_v3
+        analysis_v3.register_v3(ctx, a.version_id, a.description, a.dev_offering, a.repair_rounds)
+        return {"registered": a.version_id}
+    if a.cmd == "analyze-v3":
+        from . import analysis, analysis_v3
+        return analysis_v3.run_v3(ctx, a.offering, a.pack, analysis.ClaudeCLIAdapter(model=a.model, max_budget_usd=a.max_budget_usd),
+                                  a.version, note=a.note)
+    if a.cmd == "brief-v3":
+        from . import brief_v3
+        return {"brief": str(brief_v3.build_brief_v3(ctx, a.analysis_id))}
+    if a.cmd == "policy-status":
+        from . import policy as pol
+        return {v: {"sha256": pol.sha(v), "state": pol.state(ctx, v), "file": str(p.name)} for v, p in pol.FILES.items()}
+    if a.cmd == "policy-activate":
+        from . import policy as pol
+        return {"activation_id": pol.activate(ctx, a.version, a.sha256, a.statement, a.i_am_the_user)}
     if a.cmd == "brief":
         from . import brief
         return {"brief": str(brief.build_brief(ctx, a.analysis_id))}

@@ -248,7 +248,13 @@ def test_calculation_withheld_or_illustrative_when_inputs_missing_or_conflicting
     conflict = dict(only_auth, share_counts=[{"kind": "issued_outstanding", "share_class": "C", "value": 1, "as_of": "2029-12-31", "claim_id": "S1"},
                                              {"kind": "issued_outstanding", "share_class": "C", "value": 75_000_001, "as_of": "2030-06-18", "claim_id": "S2"}])
     k2 = calc.implied_equity(conflict, claims, {"P", "S1", "S2"})
-    assert k2[0]["result_kind"] == "illustrative" and k2[0]["result_value"] == 75_000_001 and "conflicting" in k2[0]["assumptions"][0]
+    # calculator v1_2: different dates are history (audited count, later issuance), not a conflict
+    assert k2[0]["result_kind"] == "computed" and k2[0]["result_value"] == 75_000_001
+    assert any("historical" in a for a in k2[0]["assumptions"])
+    same_day = dict(only_auth, share_counts=[{"kind": "issued_outstanding", "share_class": "C", "value": 1, "as_of": "2030-06-18", "claim_id": "S1"},
+                                             {"kind": "issued_outstanding", "share_class": "C", "value": 9, "as_of": "2030-06-18", "claim_id": "S2"}])
+    k3 = calc.implied_equity(same_day, claims, {"P", "S1", "S2"})
+    assert k3[0]["result_kind"] == "illustrative" and "conflicting" in k3[0]["assumptions"][0]
     assert calc.implied_equity(dict(only_auth, price_per_share_usd=None), claims, {"P"})[0]["result_kind"] == "withheld"
 
 

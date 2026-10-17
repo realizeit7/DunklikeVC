@@ -6,6 +6,8 @@
 * Migration 3 (v2.1) adds: access_attempts, source_checks, assessments, criterion_results, calculations,
   support_checks, forecast_definitions, forecast_lineage and stage_usage. Existing rows (v2 analyses, forecasts 1-5)
   are untouched; v2.1 records reference them instead of rewriting them.
+* Migration 4 (v2.2) adds: policy_activations (user-only activation of a specific policy version + hash),
+  rule_findings (the decision chain per rule), assessments_v3 and thesis_answers. Nothing earlier is rewritten.
 
 Migrations only CREATE tables, triggers and indexes; they never drop or rewrite existing rows. Before any pending
 migration is applied to a database that already holds data, the file is copied with SQLite's online backup API to
@@ -152,6 +154,37 @@ CREATE TABLE IF NOT EXISTS stage_usage (
 """
 
 
+V4_APPEND_ONLY = ["policy_activations", "rule_findings", "assessments_v3", "thesis_answers"]
+
+V4_SQL = """
+CREATE TABLE IF NOT EXISTS policy_activations (   -- a policy becomes ACTIVE only through a user-confirmed row here
+  activation_id INTEGER PRIMARY KEY AUTOINCREMENT, policy_kind TEXT NOT NULL, policy_version TEXT NOT NULL,
+  policy_sha256 TEXT NOT NULL, activated_utc TEXT NOT NULL, statement TEXT NOT NULL,
+  actor TEXT NOT NULL CHECK (actor = 'user'), user_confirmed INTEGER NOT NULL CHECK (user_confirmed = 1));
+
+CREATE TABLE IF NOT EXISTS rule_findings (
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, rule_id TEXT NOT NULL, rule_text TEXT NOT NULL,
+  policy_version TEXT NOT NULL, policy_sha256 TEXT NOT NULL, policy_state TEXT NOT NULL,
+  model_result TEXT NOT NULL, final_result TEXT NOT NULL
+  CHECK (final_result IN ('adverse_decisive','adverse_contributing','not_adverse','unknown','not_applicable')),
+  scope TEXT, independently_decisive INTEGER NOT NULL, facts TEXT NOT NULL, interpretation_ko TEXT, counterevidence TEXT,
+  unresolved_ko TEXT, what_would_change_ko TEXT, validator_notes TEXT);
+
+CREATE TABLE IF NOT EXISTS assessments_v3 (
+  assessment_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, classifier_version TEXT NOT NULL,
+  policy_version TEXT NOT NULL, policy_sha256 TEXT NOT NULL, policy_state TEXT NOT NULL CHECK (policy_state IN ('proposed','active')),
+  screening TEXT NOT NULL CHECK (screening IN ('provisional_reject','provisional_eligible_for_review','provisional_unresolved',
+                                               'reject','eligible_for_review','unresolved','analysis_failed')),
+  evidence_status TEXT NOT NULL CHECK (evidence_status IN ('sufficient_for_named_decision','insufficient','conflicting')),
+  evidence_scope TEXT NOT NULL, thesis_status TEXT NOT NULL CHECK (thesis_status IN ('supported','incomplete','contradicted')),
+  thesis_notes TEXT, execution TEXT NOT NULL, budget TEXT NOT NULL, decisive TEXT NOT NULL, created_utc TEXT NOT NULL, notes TEXT);
+
+CREATE TABLE IF NOT EXISTS thesis_answers (
+  row_id INTEGER PRIMARY KEY AUTOINCREMENT, analysis_id INTEGER NOT NULL, question_id TEXT NOT NULL, status TEXT NOT NULL,
+  answer_ko TEXT NOT NULL, claim_ids TEXT NOT NULL, validator_notes TEXT);
+"""
+
+
 def _append_only(tables: list[str]) -> str:
     return "\n".join(
         f"""CREATE TRIGGER IF NOT EXISTS {t}_no_update BEFORE UPDATE ON {t}
@@ -169,7 +202,9 @@ def migrations() -> list[tuple[int, str, str]]:
     return [(1, "v1 prospective pilot schema (baseline)", SCHEMA + TRIGGERS),
             (2, "v2 LLM analyst, screening, approvals, ledger, evaluation", V2_SQL + _v2_triggers()),
             (3, "v2.1 access log, assessments, calculations, support checks, forecast definitions, usage",
-             V3_SQL + _append_only(V3_APPEND_ONLY))]
+             V3_SQL + _append_only(V3_APPEND_ONLY)),
+            (4, "v2.2 policy activations, rule findings (decision chain), assessments_v3, thesis answers",
+             V4_SQL + _append_only(V4_APPEND_ONLY))]
 
 
 def migrate(con: sqlite3.Connection, db_path: str | Path, backup_dir: str | Path | None) -> dict:

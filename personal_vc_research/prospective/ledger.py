@@ -240,6 +240,11 @@ def approve(ctx: Ctx, *, offering_id: str, amount_usd: str, fee_usd: str | None,
     amount = cents(amount_usd)
     checks, blockers = {}, []
     # 1. screening policy acknowledged before any live approval
+    if screening_policy_version != "screening_policy_v1":
+        # v2.2: newer policies count only when ACTIVATED by the user (policy_activations, matching hash)
+        from . import policy as _policy
+        if _policy.state(ctx, screening_policy_version) != "active":
+            blockers.append(f"screening policy {screening_policy_version} is not active (proposed policies cannot be used for approval)")
     checks["screening_policy_acknowledged"] = policy_acknowledged(ctx, "screening", screening_policy_version, SCREENING_POLICY)
     if not checks["screening_policy_acknowledged"]:
         blockers.append("screening policy not acknowledged (run `ack-policy`)")
@@ -252,6 +257,13 @@ def approve(ctx: Ctx, *, offering_id: str, amount_usd: str, fee_usd: str | None,
     # 3. analysis exists; failed/incomplete screens need an explicit override rationale
     a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (analysis_id,)).fetchone() if analysis_id else None
     checks["ai_status"] = a["status"] if a else "no_analysis"
+    if a is not None and '"pipeline": "analysis_v3"' in (a["notes"] or ""):
+        # v2.2: a v3 analysis screened under a policy that is not active never enters the approval path as a screen result
+        from . import policy as _policy
+        pv = ctx.con.execute("SELECT policy_version FROM assessments_v3 WHERE analysis_id=? ORDER BY assessment_id DESC LIMIT 1",
+                             (analysis_id,)).fetchone()
+        if pv is None or _policy.state(ctx, pv[0]) != "active":
+            blockers.append("analysis was screened under a PROPOSED policy; its provisional result cannot support an approval")
     failed = []
     if a is None or a["status"] != "passes_research_screen":
         failed = [dict(r) for r in ctx.con.execute("SELECT gate, result FROM analysis_gates WHERE analysis_id=? AND result!='pass'",
