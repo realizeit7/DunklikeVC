@@ -1,0 +1,225 @@
+{
+ "classifier": "assessment_classifier_v3_1",
+ "policy": "screening_policy_v1_3",
+ "policy_sha256": "c150371d0990b86766ce097afd62ac1a982b294996f3de9ef5c09e8fac635e0c",
+ "screening": "provisional_unresolved",
+ "decisive": [],
+ "findings": [
+  {
+   "rule_id": "R-FIN-1",
+   "model_result": "adverse",
+   "final_result": "adverse_contributing",
+   "validator_notes": [
+    "A13: generic trigger(s) ['G1', 'G2'] added by keyword rule",
+    "A18: generic trigger(s) ['G1', 'G3'] added by keyword rule",
+    "fact checks passed",
+    "predicate unresolved (code): not decisive"
+   ],
+   "predicate_elements": [
+    {
+     "branch": "milestone_shortfall",
+     "element_id": "FIN1-A1",
+     "text": "The next milestone and its funding requirement (amount, timing) are stated in the documents",
+     "mode": "factual",
+     "assessment": "unknown",
+     "model_assessment": "not assessed",
+     "evidence_for": [],
+     "evidence_against": [],
+     "reasoning_ko": ""
+    },
+    {
+     "branch": "milestone_shortfall",
+     "element_id": "FIN1-A2",
+     "text": "Same-period cash and spending figures exist (period-aligned runway inputs; see calculator runway rule)",
+     "mode": "deterministic",
+     "assessment": "unknown",
+     "model_assessment": "not assessed",
+     "evidence_for": [],
+     "evidence_against": [],
+     "reasoning_ko": ""
+    },
+    {
+     "branch": "milestone_shortfall",
+     "element_id": "FIN1-A3",
+     "text": "Using those figures, cash plus the maximum raise (net of stated fees) does not cover the stated milestone requirement",
+     "mode": "model_judgment",
+     "assessment": "unknown",
+     "model_assessment": "not assessed",
+     "evidence_for": [],
+     "evidence_against": [],
+     "reasoning_ko": ""
+    },
+    {
+     "branch": "documented_distress",
+     "element_id": "FIN1-B1",
+     "text": "A document states an existing default, insolvency, or acceleration of an obligation (not merely the absence of a maturity date, and not a planned or contemplated instrument)",
+     "mode": "factual",
+     "assessment": "unknown",
+     "model_assessment": "not assessed",
+     "evidence_for": [],
+     "evidence_against": [],
+     "reasoning_ko": ""
+    }
+   ],
+   "facts": [
+    {
+     "claim_id": "A13",
+     "generic_effective": [
+      "G1",
+      "G2"
+     ],
+     "evidence_kind": "form_field",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A15",
+     "generic_effective": [],
+     "evidence_kind": "audited_financials",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A18",
+     "generic_effective": [
+      "G1",
+      "G3"
+     ],
+     "evidence_kind": "form_field",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A21",
+     "generic_effective": [],
+     "evidence_kind": "contract_term",
+     "support_check": "partially_supported"
+    },
+    {
+     "claim_id": "A22",
+     "generic_effective": [],
+     "evidence_kind": "contract_term",
+     "support_check": "supported"
+    }
+   ]
+  },
+  {
+   "rule_id": "R-TERMS-1",
+   "model_result": "adverse",
+   "final_result": "adverse_contributing",
+   "validator_notes": [
+    "A7: generic trigger(s) ['G8'] added by keyword rule",
+    "A9: generic trigger(s) ['G6'] added by keyword rule",
+    "A31: generic trigger(s) ['G6'] added by keyword rule",
+    "A32: generic trigger(s) ['G4'] added by keyword rule",
+    "A8: generic trigger(s) ['G5'] added by keyword rule",
+    "no company-specific fact passed the support check"
+   ],
+   "predicate_elements": [],
+   "facts": [
+    {
+     "claim_id": "A7",
+     "generic_effective": [
+      "G8"
+     ],
+     "evidence_kind": "contract_term",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A9",
+     "generic_effective": [
+      "G6"
+     ],
+     "evidence_kind": "contract_term",
+     "support_check": "partially_supported"
+    },
+    {
+     "claim_id": "A31",
+     "generic_effective": [
+      "G6"
+     ],
+     "evidence_kind": "form_field",
+     "support_check": "partially_supported"
+    },
+    {
+     "claim_id": "A32",
+     "generic_effective": [
+      "G4"
+     ],
+     "evidence_kind": "form_field",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A8",
+     "generic_effective": [
+      "G5"
+     ],
+     "evidence_kind": "contract_term",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A21",
+     "generic_effective": [],
+     "evidence_kind": "contract_term",
+     "support_check": "partially_supported"
+    }
+   ]
+  },
+  {
+   "rule_id": "R-TERMS-3",
+   "model_result": "adverse",
+   "final_result": "adverse_contributing",
+   "validator_notes": [
+    "A7: generic trigger(s) ['G8'] added by keyword rule",
+    "A8: generic trigger(s) ['G5'] added by keyword rule",
+    "A31: generic trigger(s) ['G6'] added by keyword rule",
+    "B2: generic trigger(s) ['G5'] added by keyword rule",
+    "rule cannot independently reject"
+   ],
+   "predicate_elements": [],
+   "facts": [
+    {
+     "claim_id": "A7",
+     "generic_effective": [
+      "G8"
+     ],
+     "evidence_kind": "contract_term",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A8",
+     "generic_effective": [
+      "G5"
+     ],
+     "evidence_kind": "contract_term",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "A19",
+     "generic_effective": [],
+     "evidence_kind": "contract_term",
+     "support_check": "partially_supported"
+    },
+    {
+     "claim_id": "A31",
+     "generic_effective": [
+      "G6"
+     ],
+     "evidence_kind": "form_field",
+     "support_check": "partially_supported"
+    },
+    {
+     "claim_id": "A11",
+     "generic_effective": [],
+     "evidence_kind": "form_field",
+     "support_check": "supported"
+    },
+    {
+     "claim_id": "B2",
+     "generic_effective": [
+      "G5"
+     ],
+     "evidence_kind": "analyst_inference",
+     "support_check": "partially_supported"
+    }
+   ]
+  }
+ ]
+}

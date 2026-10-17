@@ -181,13 +181,17 @@ def all_claims(outputs: dict) -> list[dict]:
 WS_MATCHES: list[str] = []      # v3 only: citations accepted by the whitespace-insensitive rule (for the run record)
 
 
-def claims_checks(pack: dict, outputs: dict, errors: list[str], whitespace_insensitive: bool = False):
+def claims_checks(pack: dict, outputs: dict, errors: list[str], whitespace_insensitive: bool = False,
+                  typed_calcs: bool = False):
     """Shared by v1, v2 and v3 validation: claim ids, prefixes, citations (verbatim), evidence-status rules and
     calculations. Appends to `errors`; returns (claims, by_id, valid_cited, check_refs).
 
     whitespace_insensitive (v3 citation rule 3_1, default off, so v1/v2 are unchanged): a quote whose characters match
     the page exactly but whose WHITESPACE differs is accepted and recorded. This covers PDF text layers that merge
-    words, e.g. 'CommonStock,$0.00parvalue'. Any other difference still fails."""
+    words, e.g. 'CommonStock,$0.00parvalue'. Any other difference still fails.
+
+    typed_calcs (schema v3_1): calculation claims carry `calc_request` (validated by typed_calc), never a formula. The
+    legacy formula evaluation is skipped and no model-written expression is evaluated."""
     pages = {(p["doc_id"], p["page"]): _norm(p["text"]) for p in pack["pages"]}
     docs = {d["doc_id"]: d for d in pack["documents"]}
     claims = all_claims(outputs)
@@ -229,7 +233,10 @@ def claims_checks(pack: dict, outputs: dict, errors: list[str], whitespace_insen
             errors.append(f"{cid}: 'independently_corroborated' needs a cited source not prepared by the issuer")
         if status == "analyst_inference" and not c["basis_claim_ids"]:
             errors.append(f"{cid}: analyst_inference requires basis_claim_ids")
-        if status == "calculation":
+        if status == "calculation" and typed_calcs:
+            if not c.get("calc_request"):
+                errors.append(f"{cid}: calculation status requires a calc_request (typed, allowlisted)")
+        elif status == "calculation":
             calc = c.get("calculation")
             if not calc:
                 errors.append(f"{cid}: calculation status requires a calculation")

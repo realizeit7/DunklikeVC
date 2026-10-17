@@ -1,0 +1,185 @@
+# Screening policy v1.3 — PROPOSED, NOT ACTIVE.
+# Rule TEXTS and adverse definitions are copied verbatim from screening_policy_v1_2 (sha 112318fa…fb32), which stays
+# immutable. v1_3 ADDS authored predicate elements for every independent-rejection rule (section `predicates`) and
+# the classifier versions whose results may later be approval-eligible under this policy.
+# Activation requires the USER to run `policy-activate screening_policy_v1_3 --sha256 <hash> --i-am-the-user ...`.
+# This file's own `declared_state` does not activate anything. An LLM or agent may not run that command.
+# This is an unvalidated research checklist. It is not a predictor of returns and not a claim of selection skill.
+version: screening_policy_v1_3
+declared_state: proposed
+supersedes_proposals: [screening_policy_v1_1, screening_policy_v1_2]   # neither was ever activated
+benchmark_alternative: "SCHG (Schwab U.S. Large-Cap Growth ETF): the user's stated opportunity-cost alternative"
+
+evidence_dimensions:
+  TECH: technical feasibility and efficacy (bench, animal, human data; technical validation)
+  DEMAND: commercial demand and willingness to pay (customers, clinics, payers, purchase commitments, reimbursement, revenue)
+  REG: regulatory progress (IRB review, FDA interactions/authorizations, trial initiation; never assumed from a product description)
+  TEAM: team execution evidence
+  FIN: financing and runway
+  TERMS: pricing, security rights, dilution, priority and investor proceeds
+
+evidence_kinds: [preclinical_efficacy, clinical_human_data, technical_validation, customer_commercial,
+                 payer_reimbursement, regulatory_status, team_record, audited_financials, unaudited_financials,
+                 issuer_projection, contract_term, form_field, third_party, calculation, analyst_inference]
+
+# Facts that may never on their own make a finding decisive. They stay relevant and are shown.
+generic_triggers:
+  G1: pre-revenue status
+  G2: low cash in an older financial statement
+  G3: a going-concern disclosure
+  G4: no promised dividend, buyback or IPO
+  G5: no anti-dilution protection
+  G6: a minority position or ordinary illiquidity (Reg CF resale restriction, transfer consent, custodian holding)
+  G7: an offering price described as arbitrary
+  G8: absence of voting rights or a voting proxy (carried over from the v1_1 proposal)
+
+rules:
+  - id: R-EV1
+    dimension: ALL
+    type: factual_check
+    independent_rejection: false
+    text: "The operative contract and the latest financial statements are present and readable in the frozen pack."
+    effect: "If not met, evidence is insufficient for any conclusion that depends on the unread material."
+  - id: R-TECH-1
+    dimension: TECH
+    type: economic_judgment
+    independent_rejection: true
+    applicability: all stages; stage-appropriate (preclinical evidence is acceptable at the preclinical stage)
+    text: "Technical or efficacy evidence is reported with its design, sample and attribution, and nothing in the pack documents a technical failure that defeats the stated product."
+    adverse_definition: "A documented negative result, a clinical hold, or a documented inability of the product to work as described. Missing study detail is unknown, not adverse."
+    allowed_support_kinds: [preclinical_efficacy, clinical_human_data, technical_validation, third_party]
+  - id: R-DEM-1
+    dimension: DEMAND
+    type: economic_judgment
+    independent_rejection: true
+    applicability: "commercial stage. For pre-commercial companies a lack of demand evidence is 'unknown / stage-appropriate', never adverse."
+    text: "Demand evidence concerns customers, clinics, payers, purchasing commitments, reimbursement or revenue."
+    adverse_definition: "Documented loss of key customers, documented collapsing revenue, or a documented payer refusal material to the plan."
+    allowed_support_kinds: [customer_commercial, payer_reimbursement, audited_financials, unaudited_financials, third_party]
+  - id: R-REG-1
+    dimension: REG
+    type: factual_check
+    independent_rejection: true
+    text: "Regulatory status is stated milestone by milestone (IRB review, FDA interaction or authorization, trial initiation, human efficacy). These milestones are never interchangeable, and no regulatory pathway is assumed from the product description."
+    adverse_definition: "A documented regulatory action against the company or product (clinical hold, refusal, warning letter, consent order) that is material to the plan."
+    allowed_support_kinds: [regulatory_status, form_field, third_party]
+  - id: R-TEAM-1
+    dimension: TEAM
+    type: economic_judgment
+    independent_rejection: true
+    text: "Team execution evidence is documented relevant experience and track record only; no demographic or personality judgments."
+    adverse_definition: "A documented sanction, bad-actor event or material misstatement by a key person, material to this investment."
+    allowed_support_kinds: [team_record, form_field, third_party]
+  - id: R-FIN-1
+    dimension: FIN
+    type: economic_judgment
+    independent_rejection: true
+    text: "Cash is judged against the next milestones, the spending rate for the same period, timing, committed financing and realistic financing dependencies."
+    adverse_definition: "Same-period figures show the company cannot reach its next milestone even with the maximum raise, or there is a documented default, insolvency or acceleration. Low cash in an older statement (G2) and going-concern language (G3) are not adverse on their own."
+    allowed_support_kinds: [audited_financials, unaudited_financials, contract_term, form_field, calculation]
+  - id: R-TERMS-1
+    dimension: TERMS
+    type: economic_judgment
+    independent_rejection: true
+    text: "Documented terms that transfer value away from THIS security holder beyond the ordinary Reg CF form, for example priority allocations to insiders or affiliates ahead of investors, issuer repurchase below the price paid, uncapped insider issuance at nominal prices, or fees taken from investor proceeds."
+    adverse_definition: "Such a term is documented in the contract or Form C and is material; the generic features G4–G8 do not qualify."
+    allowed_support_kinds: [contract_term, form_field, calculation]
+  - id: R-TERMS-2
+    dimension: TERMS
+    type: economic_judgment
+    independent_rejection: false
+    text: "Price or cap, and the computed implied equity value, are judged jointly with the stage, the evidence-supported milestones, the security structure and plausible dilution. No comparables are invented."
+  - id: R-TERMS-3
+    dimension: TERMS
+    type: factual_check
+    independent_rejection: false
+    text: "Dilution and priority sources are identified: convertibles (existing vs planned), insider debt, reserves and intermediary securities. Missing conversion terms are unknown, not adverse. No priority or waterfall beyond the documents is asserted."
+
+# Explicit personal constraints. A breach of an ENABLED preference independently gives a provisional rejection
+# labelled 'preference breach' (not a judgment about expected returns). All are disabled until you enable them.
+preferences:
+  - id: P-1
+    enabled: false
+    text: "I do not invest when implied pre-money equity at the offering price exceeds USD {max_implied_pre_money}."
+    parameters: {max_implied_pre_money: null}
+    check: deterministic   # uses the computed K value; a withheld calculation means 'unknown'
+  - id: P-2
+    enabled: false
+    text: "I do not invest where investors must grant an irrevocable voting proxy longer than {max_proxy_years} years."
+    parameters: {max_proxy_years: null}
+    check: model_finding_with_support_check
+
+execution_constraints:   # these block execution and approval, never the research classification
+  - {id: X-1, text: "Offering availability verified at decision time"}
+  - {id: X-2, text: "Investor-paid fees known; unknown fees mean total cost cannot be verified (not zero, not over budget)"}
+  - {id: X-3, text: "Budget capacity: annual USD 12,000 and USD 1,200 per issuer lifetime, including investor-paid fees (budget_policy_v1, unchanged)"}
+
+aggregation:   # implemented in assess_v3.py; the LLM never sets the status
+  provisional_reject: "at least one VALIDATED decisive finding (rule with independent_rejection true, adverse, support-checked, and at least one supporting fact that is not a generic trigger), OR a breach of an enabled preference"
+  provisional_eligible_for_review: "no decisive finding, every independent-rejection rule evaluated as not adverse with sufficient evidence, and R-EV1 met"
+  provisional_unresolved: "anything else"
+  analysis_failed: "outputs did not validate"
+
+# Only analyses classified by these versions can become approval-eligible under this policy once activated.
+compatible_classifiers: [assessment_classifier_v3_1]
+
+# Authored predicate elements. Each model run must assess THESE elements; it may not invent an easier predicate.
+# logic: all = every listed element must be established; any_branch = every element of at least one branch.
+# mode: deterministic = the code evaluates it from typed calculations; model_judgment = an explicit model judgment;
+#       factual = whether a document states it.
+# evidence_must_mention (factual elements): an 'established' element needs at least one evidence_for fact whose text or
+#       quote matches one of these patterns (case-insensitive). This is a floor, not proof: the fact must actually state
+#       the event (e.g. a default), not merely its absence or a related condition.
+predicates:
+  R-FIN-1:
+    source_text: "Same-period figures show the company cannot reach its next milestone even with the maximum raise, or there is a documented default, insolvency or acceleration."
+    logic: any_branch
+    branches:
+      milestone_shortfall:
+        - {id: FIN1-A1, mode: factual, text: "The next milestone and its funding requirement (amount, timing) are stated in the documents"}
+        - {id: FIN1-A2, mode: deterministic, text: "Same-period cash and spending figures exist (period-aligned runway inputs; see calculator runway rule)"}
+        - {id: FIN1-A3, mode: model_judgment, text: "Using those figures, cash plus the maximum raise (net of stated fees) does not cover the stated milestone requirement"}
+      documented_distress:
+        - {id: FIN1-B1, mode: factual, text: "A document states an existing default, insolvency, or acceleration of an obligation (not merely the absence of a maturity date, and not a planned or contemplated instrument)",
+           evidence_must_mention: ["\\bin default\\b", "event of default (has|had) occurred", "\\binsolven", "\\baccelerat", "\\bbankrupt", "receivership"]}
+    not_sufficient_alone: ["low cash in an older statement (G2)", "going-concern language (G3)", "an obligation without a stated maturity", "a planned or contemplated financing"]
+  R-TECH-1:
+    source_text: "A documented negative result, a clinical hold, or a documented inability of the product to work as described."
+    logic: all
+    elements:
+      - {id: TECH1-1, mode: factual, text: "A document reports a negative result, a clinical hold, or an inability of the product to work as described",
+         evidence_must_mention: ["clinical hold", "failed to (meet|show|demonstrate)", "did not (meet|show|demonstrate)", "negative result", "no (statistically )?significant", "does not work"]}
+      - {id: TECH1-2, mode: model_judgment, text: "That result concerns the product the investment depends on (not a discontinued or unrelated program)"}
+  R-DEM-1:
+    source_text: "Documented loss of key customers, documented collapsing revenue, or a documented payer refusal material to the plan."
+    applicability: "commercial stage only; otherwise not_applicable"
+    logic: all
+    elements:
+      - {id: DEM1-1, mode: factual, text: "The company is commercial-stage (documented revenue or customers)"}
+      - {id: DEM1-2, mode: factual, text: "A document reports loss of key customers, collapsing revenue, or a payer refusal",
+         evidence_must_mention: ["lost", "terminat", "cancel", "declin", "decreas", "refus", "denied"]}
+      - {id: DEM1-3, mode: model_judgment, text: "The reported event is material to the plan"}
+  R-REG-1:
+    source_text: "A documented regulatory action against the company or product (clinical hold, refusal, warning letter, consent order) that is material to the plan."
+    logic: all
+    elements:
+      - {id: REG1-1, mode: factual, text: "A document reports a regulatory action (clinical hold, refusal, warning letter, consent order)",
+         evidence_must_mention: ["clinical hold", "warning letter", "consent order", "refus", "complete response letter", "cease and desist"]}
+      - {id: REG1-2, mode: factual, text: "The action is against the company or its product"}
+      - {id: REG1-3, mode: model_judgment, text: "The action is material to the plan"}
+  R-TEAM-1:
+    source_text: "A documented sanction, bad-actor event or material misstatement by a key person, material to this investment."
+    logic: all
+    elements:
+      - {id: TEAM1-1, mode: factual, text: "A document reports a sanction, bad-actor event or misstatement",
+         evidence_must_mention: ["sanction", "consent order", "bar(red)?\\b", "disqualif", "convict", "misstat", "fraud", "injunction"]}
+      - {id: TEAM1-2, mode: factual, text: "It concerns a current key person"}
+      - {id: TEAM1-3, mode: model_judgment, text: "It is material to this investment"}
+  R-TERMS-1:
+    source_text: "Such a term is documented in the contract or Form C and is material; the generic features G4-G8 do not qualify."
+    logic: all
+    elements:
+      - {id: TERMS1-1, mode: factual, text: "The term is stated in the contract or Form C"}
+      - {id: TERMS1-2, mode: model_judgment, text: "It transfers value away from THIS security holder (e.g. priority allocation to insiders/affiliates, repurchase below price paid, uncapped nominal insider issuance, fees from investor proceeds)"}
+      - {id: TERMS1-3, mode: model_judgment, text: "It is worse than the ordinary Reg CF form and is not one of the generic features G4-G8"}
+      - {id: TERMS1-4, mode: model_judgment, text: "It is material to investor proceeds"}

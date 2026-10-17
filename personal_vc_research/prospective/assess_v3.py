@@ -20,7 +20,11 @@ import re
 from . import assess, ledger
 from .core import Ctx
 
-CLASSIFIER_VERSION = "assessment_classifier_v3_0_1"
+CLASSIFIER_VERSION = "assessment_classifier_v3_1"
+# v3_1 (2026-10-17, v2.2.1): a finding is decisive only if the rule's AUTHORED predicate (policy `predicates`) is met
+# as computed by code from the element assessments (deterministic elements evaluated by code), AND the stage-E
+# predicate review agrees with no material unresolved objection. Under a policy without authored predicates
+# (v1_2) nothing can be decisive. Earlier: a valid, specific, support-checked fact was enough (the flaw).
 # v3_0_1 (2026-10-17): G4 also matches "no assurance" next to Reg A / IPO / listing / liquidity / conversion
 # (Hope-Neuron A32: a stated interest in a Reg A offering "with no assurance it will happen" is a missing liquidity
 # promise, i.e. generic).
@@ -52,6 +56,61 @@ def _stale_cash(c: dict, cutoff: str) -> bool:
     return (dt.date.fromisoformat(cutoff[:10]) - dt.date.fromisoformat(c["as_of"])).days > 180
 
 
+DETERMINISTIC_ELEMENTS = {
+    # FIN1-A2: same-period cash and spending exist <=> the software runway calculation was NOT withheld
+    "FIN1-A2": lambda calcs: ("established" if any(k.get("calc_type") == "runway_months" and k.get("result_kind") in ("computed", "illustrative")
+                                                  for k in calcs.values()) else "unknown"),
+}
+
+
+def _mentions(el: dict, fact_ids: list[str], texts: dict) -> bool:
+    pats = el.get("evidence_must_mention")
+    if not pats:
+        return True
+    return any(re.search(p, texts.get(f, ""), re.I) for f in fact_ids for p in pats)
+
+
+def predicate_overall(pred_def: dict, model_pred: dict | None, valid: set, calcs: dict,
+                      texts: dict | None = None) -> tuple[str, list[dict], list[str]]:
+    """Code-computed predicate outcome. Elements not assessed by the model are 'unknown'. 'established' needs at least
+    one valid evidence_for fact; deterministic elements are evaluated by code (the model's view is recorded)."""
+    notes: list[str] = []
+    given = {e["element_id"]: e for e in (model_pred or {}).get("elements", [])}
+    if pred_def.get("applicability") and (model_pred or {}).get("overall") == "not_applicable":
+        return "not_applicable", [], ["model marked the rule not applicable (applicability: " + pred_def["applicability"] + ")"]
+    groups = pred_def["branches"] if pred_def.get("logic") == "any_branch" else {"all": pred_def["elements"]}
+    rows, outcome = [], {}
+    for g, els in groups.items():
+        res = []
+        for el in els:
+            m = given.get(el["id"], {})
+            a = m.get("assessment", "unknown")
+            if el["mode"] == "deterministic" and el["id"] in DETERMINISTIC_ELEMENTS:
+                d = DETERMINISTIC_ELEMENTS[el["id"]](calcs)
+                if d != a:
+                    notes.append(f"{el['id']}: model said {a}, code evaluated {d} (deterministic element)")
+                a = d
+            elif a == "established" and not any(f in valid or f in calcs for f in m.get("evidence_for", [])):
+                notes.append(f"{el['id']}: 'established' without a valid evidence_for fact -> unknown")
+                a = "unknown"
+            elif a == "established" and not _mentions(el, [f for f in m.get("evidence_for", []) if f in valid], texts or {}):
+                notes.append(f"{el['id']}: no evidence_for fact states the required event (evidence_must_mention) -> unknown")
+                a = "unknown"
+            res.append(a)
+            rows.append({"branch": g, "element_id": el["id"], "text": el["text"], "mode": el["mode"], "assessment": a,
+                         "model_assessment": m.get("assessment", "not assessed"), "evidence_for": m.get("evidence_for", []),
+                         "evidence_against": m.get("evidence_against", []), "reasoning_ko": m.get("reasoning_ko", "")})
+        outcome[g] = "met" if all(x == "established" for x in res) else ("not_met" if "contradicted" in res else "unresolved")
+    vals = list(outcome.values())
+    overall = "met" if "met" in vals else ("not_met" if all(v == "not_met" for v in vals) else "unresolved")
+    extra = set(given) - {e["id"] for els in groups.values() for e in els}
+    if extra:
+        notes.append(f"model assessed non-authored elements {sorted(extra)}: ignored")
+    if model_pred and model_pred.get("overall") and model_pred["overall"] != overall:
+        notes.append(f"model overall '{model_pred['overall']}' differs from code '{overall}': code wins")
+    return overall, rows, notes
+
+
 def evaluate_findings(policy: dict, outputs: dict, by_id: dict, valid: set, calcs: dict, checks: dict,
                       cutoff: str = "") -> list[dict]:
     rules = policy["_rules"]
@@ -60,6 +119,8 @@ def evaluate_findings(policy: dict, outputs: dict, by_id: dict, valid: set, calc
         rule = rules[f["rule_id"]]
         notes: list[str] = []
         facts = []
+        pred_rows: list[dict] = []
+        review = None
         for x in f["facts"]:
             c = by_id.get(x["claim_id"])
             k = calcs.get(x["claim_id"])
@@ -93,19 +154,48 @@ def evaluate_findings(policy: dict, outputs: dict, by_id: dict, valid: set, calc
             elif not checked:
                 final, why = "adverse_contributing", "no company-specific fact passed the support check"
             else:
-                final, why, decisive = "adverse_decisive", "decisive", True
+                final, why, decisive = "adverse_decisive", "fact checks passed", True
             notes.append(why)
+            if decisive:
+                texts = {cid: c["claim_text"] + " " + " ".join(z["quote"] for z in c.get("citations", [])) for cid, c in by_id.items()}
+                final, decisive, pnotes, pred_rows, review = _predicate_gate(policy, f, outputs, valid, calcs, texts)
+                notes += pnotes
         elif f["result"] == "not_adverse":
             if not any(x["valid"] for x in sup):
                 final = "unknown"
                 notes.append("not_adverse without a valid supporting fact: unknown")
-        rows.append({"rule_id": f["rule_id"], "rule_text": rule["text"], "rule_type": rule["type"],
+        rows.append({"rule_id": f["rule_id"], "rule_text": rule["text"], "adverse_definition": rule.get("adverse_definition", ""),
+                     "predicate_elements": pred_rows, "predicate_review": review, "rule_type": rule["type"],
                      "independent_rejection_allowed": rule["independent_rejection"], "model_result": f["result"],
                      "final_result": final, "independently_decisive": decisive, "model_claimed_decisive": f["claims_independently_decisive"],
                      "scope": f["scope"], "facts": facts, "interpretation_ko": f["interpretation_ko"],
                      "counterevidence_ko": f["counterevidence_ko"], "unresolved_ko": f["unresolved_ko"],
                      "what_would_change_ko": f["what_would_change_ko"], "validator_notes": notes})
     return rows
+
+
+def _predicate_gate(policy: dict, f: dict, outputs: dict, valid: set, calcs: dict, texts: dict | None = None):
+    """After the fact checks pass: predicate met (code) + review agreement without material unresolved objection."""
+    preds = policy.get("predicates") or {}
+    pd = preds.get(f["rule_id"])
+    if pd is None:
+        return ("adverse_contributing", False, [f"no authored predicate for {f['rule_id']} in {policy['version']}: cannot be decisive "
+                                                f"under {CLASSIFIER_VERSION}"], [], None)
+    overall, rows, notes = predicate_overall(pd, f.get("predicate"), valid, calcs, texts)
+    reviews = {r["rule_id"]: r for r in (outputs.get("E_support_check") or {}).get("predicate_reviews", [])}
+    rv = reviews.get(f["rule_id"])
+    if overall == "not_applicable":
+        return "not_applicable", False, notes + ["rule not applicable"], rows, rv
+    if overall != "met":
+        return "adverse_contributing", False, notes + [f"predicate {overall} (code): not decisive"], rows, rv
+    if rv is None:
+        return "adverse_contributing", False, notes + ["no critical review of this candidate: not decisive"], rows, rv
+    open_obj = [o for o in rv["objections"] if o["material"] and not o["resolved"]]
+    if open_obj:
+        return "adverse_contributing", False, notes + [f"{len(open_obj)} material unresolved review objection(s): not decisive"], rows, rv
+    if rv["review_overall"] != "met" or not rv["agrees_with_finding"]:
+        return "adverse_contributing", False, notes + [f"review disagrees (review: {rv['review_overall']}): not decisive"], rows, rv
+    return "adverse_decisive", True, notes + ["predicate met (code) and review agrees: decisive"], rows, rv
 
 
 def evaluate_preferences(policy: dict, outputs: dict, calcs: dict, checks: dict) -> list[dict]:

@@ -38,3 +38,29 @@ python -m prospective policy-activate screening_policy_v1_2 --sha256 <hash> --st
 
 **Known limitation.** The code cannot check that a valid, specific, support-checked fact actually meets a rule's
 adverse definition; that remains the model's interpretation. See `reports/v2_2_hope_neuron_before_after.md`.
+
+## v2.2.1: rule satisfaction and typed calculations
+
+**Policy and classifier**
+- Proposed policy `screening_policy_v1_3`: the same rule texts as v1_2, plus authored predicates and compatible
+  classifiers.
+- Classifier `assessment_classifier_v3_1`. A finding is decisive only if all of the following hold:
+  - the authored predicate is `met`, as computed by code from the element assessments, with deterministic elements
+    evaluated by code;
+  - the stage-E `predicate_reviews` agree;
+  - no material review objection is unresolved.
+- Under a policy without predicates (v1_2), nothing is decisive.
+
+**Pipeline**
+- Analyst `analyst_v3_1`: prompt v3_2, schema v3_1. Free-form formulas are replaced by typed `calc_request` (see
+  `typed_calc.py`); no model text is ever evaluated.
+- `resume-v3 <id> --version analyst_v3_1 --extra-repairs N --authorized-by-user "..."` creates a child run.
+  - Lineage repairs stay counted, and the child gets only the repairs that were explicitly authorized.
+  - Cached v3_0 stages are migrated explicitly by `migrate_cached_stage` (logged; numbers are never repaired) and
+    then re-validated.
+
+**Approvals**
+- `policy.approval_eligible`: the policy must be active, the analysis must be assessed under the same hash, and its
+  classifier must be compatible.
+- `policy-activate` needs an interactive terminal and a hash prefix typed by hand.
+- See `reports/v2_2_1_rule_satisfaction_report.md`.

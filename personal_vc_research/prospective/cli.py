@@ -163,6 +163,9 @@ def main(argv: list[str] | None = None) -> int:
     r3.add_argument("--dev-offering", action="append", default=[])
     r3.add_argument("--repair-rounds", type=int, default=1)
     r3.add_argument("--max-total-repairs", type=int)
+    r3.add_argument("--prompt-version", default="analyst_prompt_v3")
+    r3.add_argument("--schema-version", default="analysis_schema_v3_0")
+    r3.add_argument("--policy-version", default="screening_policy_v1_2")
     a3 = sub.add_parser("analyze-v3", help="v3 pipeline on a frozen pack (provisional unless the policy is user-activated)")
     a3.add_argument("offering")
     a3.add_argument("--version", required=True)
@@ -170,9 +173,12 @@ def main(argv: list[str] | None = None) -> int:
     a3.add_argument("--model")
     a3.add_argument("--max-budget-usd", type=float, default=5.0)
     a3.add_argument("--note", default="")
-    rs3 = sub.add_parser("resume-v3", help="continue the same v3 workflow from a failed run's stored outputs")
+    rs3 = sub.add_parser("resume-v3", help="continue the same v3 workflow as a new child run (lineage repairs stay counted)")
     rs3.add_argument("analysis_id", type=int)
     rs3.add_argument("--note", default="")
+    rs3.add_argument("--version", help="target analyst version (registered); default: the source run's version")
+    rs3.add_argument("--extra-repairs", type=int, default=0, help="repairs authorized for THIS continuation (user decision)")
+    rs3.add_argument("--authorized-by-user", default="", help="the user's authorization statement; required for any model call")
     rc3 = sub.add_parser("recalc-v3", help="recompute v3 calculations with the current calculator (new rows)")
     rc3.add_argument("analysis_id", type=int)
     b3 = sub.add_parser("brief-v3", help="Korean brief, v2.2 layout")
@@ -397,7 +403,8 @@ def dispatch(ctx: Ctx, a) -> dict:
     if a.cmd == "analyst-register-v3":
         from . import analysis_v3
         analysis_v3.register_v3(ctx, a.version_id, a.description, a.dev_offering, a.repair_rounds,
-                                max_total_repairs=a.max_total_repairs)
+                                max_total_repairs=a.max_total_repairs, prompt_version=a.prompt_version,
+                                schema_version=a.schema_version, policy_version=a.policy_version)
         return {"registered": a.version_id}
     if a.cmd == "analyze-v3":
         from . import analysis, analysis_v3
@@ -405,7 +412,10 @@ def dispatch(ctx: Ctx, a) -> dict:
                                   a.version, note=a.note)
     if a.cmd == "resume-v3":
         from . import analysis, analysis_v3
-        return analysis_v3.resume(ctx, a.analysis_id, analysis.ClaudeCLIAdapter(), a.note)
+        if len(a.authorized_by_user.strip()) < 20:
+            return {"refused": "a continuation makes model calls; pass --authorized-by-user with the user's own authorization statement"}
+        return analysis_v3.resume(ctx, a.analysis_id, analysis.ClaudeCLIAdapter(), a.note, version_id=a.version,
+                                  extra_repairs_authorized=a.extra_repairs, authorization_note=a.authorized_by_user)
     if a.cmd == "recalc-v3":
         from . import analysis_v3
         return [{k: x.get(k) for k in ("calc_id", "calc_type", "result_value", "result_kind")} for x in analysis_v3.recalc(ctx, a.analysis_id)]
@@ -417,6 +427,12 @@ def dispatch(ctx: Ctx, a) -> dict:
         return {v: {"sha256": pol.sha(v), "state": pol.state(ctx, v), "file": str(p.name)} for v, p in pol.FILES.items()}
     if a.cmd == "policy-activate":
         from . import policy as pol
+        # v2.2.1: activation needs an interactive terminal and the hash prefix typed by hand; flags alone are not enough
+        if not sys.stdin.isatty():
+            return {"refused": "policy activation requires an interactive terminal (a person typing); no automated activation"}
+        typed = input(f"Type the first 12 characters of the sha256 of {a.version} to confirm: ").strip()
+        if typed != a.sha256[:12]:
+            return {"refused": "typed hash prefix does not match"}
         return {"activation_id": pol.activate(ctx, a.version, a.sha256, a.statement, a.i_am_the_user)}
     if a.cmd == "brief":
         from . import brief

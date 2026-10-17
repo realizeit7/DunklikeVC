@@ -191,18 +191,18 @@ def test_missing_information_stays_unknown_and_unresolved(ctx):
     assert r["evidence_status"] == "insufficient" and r["thesis_status"] == "incomplete"
 
 
-# 5. a supported company-specific failure is not masked by unrelated missing information
-def test_supported_decisive_failure_not_masked(ctx):
+# 5. (updated in v2.2.1) under v1_2 there are no authored predicates, so classifier v3_1 never treats a fact-checked
+#    failure as decisive. The finding stays visible as a contributing concern. The "not masked" property is now tested
+#    under v1_3 in test_v221.py.
+def test_v1_2_failures_need_an_authored_predicate_to_be_decisive(ctx):
     o = outputs(ctx.doc_id)
     set_finding(o, "R-TERMS-1", "adverse", [("A12", "supporting", "none"), ("A10", "supporting", "G4")])
     r, _ = run(ctx, o)
-    assert r["screening"] == "provisional_reject" and r["decisive"] == ["R-TERMS-1"]
-    assert r["evidence_status"] == "sufficient_for_named_decision"
-    scope = ctx.con.execute("SELECT evidence_scope FROM assessments_v3 WHERE analysis_id=?", (r["analysis_id"],)).fetchone()[0]
-    assert "provisional_reject" in scope and "not a statement that diligence is complete" in scope
+    row = finding_row(ctx, r["analysis_id"], "R-TERMS-1")
+    assert row["final_result"] == "adverse_contributing" and "no authored predicate" in row["validator_notes"]
+    assert r["screening"] == "provisional_unresolved" and r["evidence_status"] == "insufficient"
     b = build_brief_v3(ctx, r["analysis_id"], out_dir=ctx.tmp / "b").read_text()
-    assert "제안된 정책에 따른 잠정 분류" in b and "R-TERMS-1" in b and "doc " in b and "규칙 문구" in b
-    assert b.count("제안된 정책에 따른 잠정 분류") == 1
+    assert b.count("제안된 정책에 따른 잠정 분류") == 1 and "R-TERMS-1" in b and "doc " in b and "규칙 문구" in b
 
 
 # 6. unsupported rule conclusions cannot produce a validated decisive rejection

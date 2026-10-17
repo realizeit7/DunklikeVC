@@ -260,10 +260,12 @@ def approve(ctx: Ctx, *, offering_id: str, amount_usd: str, fee_usd: str | None,
     if a is not None and '"pipeline": "analysis_v3"' in (a["notes"] or ""):
         # v2.2: a v3 analysis screened under a policy that is not active never enters the approval path as a screen result
         from . import policy as _policy
-        pv = ctx.con.execute("SELECT policy_version FROM assessments_v3 WHERE analysis_id=? ORDER BY assessment_id DESC LIMIT 1",
-                             (analysis_id,)).fetchone()
-        if pv is None or _policy.state(ctx, pv[0]) != "active":
-            blockers.append("analysis was screened under a PROPOSED policy; its provisional result cannot support an approval")
+        pv = ctx.con.execute("SELECT policy_version, policy_sha256, classifier_version FROM assessments_v3 WHERE analysis_id=? "
+                             "ORDER BY assessment_id DESC LIMIT 1", (analysis_id,)).fetchone()
+        ok, why = (_policy.approval_eligible(ctx, pv[0], pv[1], pv[2]) if pv else (False, "no v3 assessment"))
+        if not ok:
+            blockers.append(f"analysis was screened under a PROPOSED or incompatible policy; its provisional result cannot "
+                            f"support an approval ({why})")
     failed = []
     if a is None or a["status"] != "passes_research_screen":
         failed = [dict(r) for r in ctx.con.execute("SELECT gate, result FROM analysis_gates WHERE analysis_id=? AND result!='pass'",

@@ -56,6 +56,17 @@ def chain(r: dict, policy_version: str, policy_state: str, docs: dict) -> list[s
          + (f" (판정 근거: {'; '.join(r['validator_notes'])})" if r["validator_notes"] else ""),
          "- 근거 사실:"]
     L += [_fact_line(x, docs) for x in r["facts"]] or ["  - 없음"]
+    if r.get("adverse_definition"):
+        L.append(f"- 불리 정의(정확한 문구): \"{r['adverse_definition']}\"")
+    for e in r.get("predicate_elements") or []:
+        L.append(f"  - 요소 {e['element_id']} [{e['mode']}; {e.get('branch', '')}] {e['text']} → **{e['assessment']}** "
+                 f"(모델 판단: {e['model_assessment']}; 근거 {', '.join(e['evidence_for']) or '없음'}; 반대 {', '.join(e['evidence_against']) or '없음'}) "
+                 f"{e.get('reasoning_ko', '')}")
+    rv = r.get("predicate_review")
+    if rv:
+        L.append(f"- 2차 모델 검토(독립 검증 아님): {rv['review_overall']}, 동의 {'예' if rv['agrees_with_finding'] else '아니오'}"
+                 + "".join(f"; 이의 {o['element_id']}({'중대' if o['material'] else '경미'}, {'해결' if o['resolved'] else '미해결'}): {o['objection_ko']}"
+                           for o in rv["objections"]))
     L += [f"- 해석: {r['interpretation_ko']}", f"- 반대 근거: {r['counterevidence_ko'] or '없음'}",
           f"- 미해결 사실: {r['unresolved_ko'] or '없음'}", f"- 결론을 바꿀 수 있는 것: {r['what_would_change_ko']}", ""]
     return L
@@ -71,7 +82,9 @@ def build_brief_v3(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
     pack, _ = load_pack(ctx, a["pack_id"])
     docs = {d["doc_id"]: d for d in pack["documents"]}
     rows = _q(ctx, "SELECT * FROM rule_findings WHERE analysis_id=? ORDER BY row_id", analysis_id)
+    extra = {f["rule_id"]: f for f in ((comb.get("assessment") or {}).get("findings") or [])}
     for r in rows:
+        r.update({k: extra.get(r["rule_id"], {}).get(k) for k in ("adverse_definition", "predicate_elements", "predicate_review")})
         r["facts"] = json.loads(r["facts"])
         r["validator_notes"] = json.loads(r["validator_notes"] or "[]")
         r["independently_decisive"] = bool(r["independently_decisive"])

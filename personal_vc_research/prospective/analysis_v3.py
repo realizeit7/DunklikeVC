@@ -28,6 +28,7 @@ from .analysis import WS_MATCHES, claims_checks
 from .analysis_v2 import COST_LABEL, korean_errors, _usage_row
 from .core import Ctx
 from .llm.schemas_v1 import CRITICAL_ITEMS
+from .llm import schemas_v3, schemas_v3_1
 from .llm.schemas_v3 import QUESTIONS, RULE_IDS, SCHEMA_VERSION, STAGE_ORDER, STAGES
 from .packs import load_pack
 
@@ -39,6 +40,9 @@ CITATION_RULE = "citation_rule_3_1_whitespace_insensitive"
 POLICY_VERSION = "screening_policy_v1_2"
 PROMPTS = Path(__file__).parent / "llm" / "prompts"
 MAX_SUPPORT_CHECKS = 24
+AUDITOR_ATTR = re.compile(r"\bauditor|independent accountant|audit report|accountant'?s (review )?report|감사인|감사보고서|회계사", re.I)
+AUDIT_REPORT_PAGE = re.compile(r"independent auditor|auditor[’']s report|accountants?[’']? (review )?report|report of independent|"
+                               r"independent accountants?[’']? review", re.I)
 ATTRIBUTION_KO = re.compile(r"회사 설명에 따르면|회사에 따르면|발행사에 따르면|회사가 밝힌|발행사가 밝힌|회사는 .{0,30}(설명|주장|밝히)")
 
 TASK = {
@@ -53,11 +57,43 @@ TASK = {
 }
 
 
-def _schema(stage, out):
+SCHEMA_MODULES = {"analysis_schema_v3_0": schemas_v3, "analysis_schema_v3_1": schemas_v3_1}
+
+
+def _S(ctxd):
+    return ctxd.get("S", schemas_v3)
+
+
+def _typed(ctxd) -> bool:
+    return _S(ctxd) is schemas_v3_1
+
+
+def _cc(pack, outs, errs, ctxd):
+    return claims_checks(pack, outs, errs, whitespace_insensitive=True, typed_calcs=_typed(ctxd))
+
+
+def _schema(stage, out, ctxd=None):
     if out is None:
         return [f"{stage}: missing output"]
     return [f"{stage}: schema: {e.message[:160]} at {'/'.join(map(str, e.absolute_path))}"
-            for e in jsonschema.Draft202012Validator(STAGES[stage]).iter_errors(out)]
+            for e in jsonschema.Draft202012Validator(_S(ctxd or {}).STAGES[stage]).iter_errors(out)]
+
+
+def typed_calc_errors(new_claims: list[dict], by_id: dict, ctxd: dict) -> list[str]:
+    """v3_1: compute every calc_request with typed_calc; validation problems are stage errors."""
+    from . import typed_calc
+    a = (ctxd.get("outputs_ref") or {}).get("A_extraction") or {}
+    planned = {cid for cv in (a.get("valuation_inputs") or {}).get("convertible_instruments", [])
+               if cv.get("status") == "planned" for cid in cv.get("claim_ids", [])}
+    errs = []
+    for c in new_claims:
+        req = c.get("calc_request")
+        if not req:
+            continue
+        res = typed_calc.compute(req, by_id, ctxd.get("calcs", {}), planned)
+        errs += [f"{c['claim_id']}: {e}" for e in res["errors"]]
+        ctxd.setdefault("typed", {})[c["claim_id"]] = res
+    return errs
 
 
 def _partial(outputs):
@@ -66,16 +102,24 @@ def _partial(outputs):
 
 
 def validate_stage(stage: str, pack: dict, outputs: dict, ctxd: dict) -> list[str]:
-    errs = _schema(stage, outputs.get(stage))
+    ctxd["outputs_ref"] = outputs
+    errs = _schema(stage, outputs.get(stage), ctxd)
     if errs:
         return errs
     pol = ctxd["policy"]
     if stage in ("A_extraction", "B_analysis", "C_critical_review"):
-        claims, by_id, valid, check_refs = claims_checks(pack, _partial(outputs), errs, whitespace_insensitive=True)
+        claims, by_id, valid, check_refs = _cc(pack, _partial(outputs), errs, ctxd)
         new = outputs[stage]["claims" if stage == "A_extraction" else "additional_claims"]
+        if _typed(ctxd):
+            errs += typed_calc_errors(new, by_id, ctxd)
         for c in new:
             if len(c["dimensions"]) > 1 and not c["dimension_rationale"].strip():
                 errs.append(f"{c['claim_id']}: more than one dimension requires dimension_rationale")
+            if AUDITOR_ATTR.search(c.get("attribution", "")):
+                pg = {(p["doc_id"], p["page"]): p["text"] for p in pack["pages"]}
+                if not any(AUDIT_REPORT_PAGE.search(pg.get((x["doc_id"], x["page"]), "")) for x in c["citations"]):
+                    errs.append(f"{c['claim_id']}: attributed to an auditor/accountant, but no cited page is part of an "
+                                "auditor's or accountant's report (issuer statements are not auditor statements)")
             if c["evidence_kind"] == "preclinical_efficacy" and "DEMAND" in c["dimensions"]:
                 errs.append(f"{c['claim_id']}: preclinical efficacy evidence cannot be classified as commercial DEMAND evidence")
         known = set(by_id) | set(ctxd.get("calcs", {}))
@@ -98,8 +142,32 @@ def validate_stage(stage: str, pack: dict, outputs: dict, ctxd: dict) -> list[st
                 if isinstance(sec, dict) and "claim_ids" in sec:
                     errs += [f"{stage}.{k}: unknown id {r}" for r in sec["claim_ids"] if r not in known]
         return errs
-    claims, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+    claims, by_id, valid, _ = _cc(pack, outputs, [], ctxd)
     known = set(by_id) | set(ctxd.get("calcs", {}))
+    preds = pol.get("predicates") or {}
+    if stage == "D_final" and _typed(ctxd):
+        for f in outputs[stage]["rule_findings"]:
+            pd = preds.get(f["rule_id"])
+            if not pd:
+                continue
+            authored = {e["id"] for els in (pd.get("branches") or {"all": pd.get("elements", [])}).values() for e in els}
+            got = {e["element_id"] for e in f["predicate"]["elements"]}
+            if got - authored:
+                errs.append(f"finding {f['rule_id']}: predicate elements {sorted(got - authored)} are not authored by {pol['version']}")
+            if f["result"] == "adverse" and authored - got:
+                errs.append(f"finding {f['rule_id']}: an adverse finding must assess every authored element; missing {sorted(authored - got)}")
+            for e in f["predicate"]["elements"]:
+                errs += [f"finding {f['rule_id']}.{e['element_id']}: unknown id {x}" for x in e["evidence_for"] + e["evidence_against"]
+                         if x not in known]
+                errs += korean_errors(f"finding {f['rule_id']}.{e['element_id']}.reasoning_ko", e["reasoning_ko"])
+    if stage == "E_support_check" and _typed(ctxd):
+        cand = {f["rule_id"] for f in outputs["D_final"]["rule_findings"] if f["result"] == "adverse" and f["rule_id"] in preds}
+        got = {r["rule_id"] for r in outputs[stage]["predicate_reviews"]}
+        if cand - got:
+            errs.append(f"E_support_check: predicate_reviews must review every adverse candidate; missing {sorted(cand - got)}")
+        for r in outputs[stage]["predicate_reviews"]:
+            for o in r["objections"]:
+                errs += korean_errors(f"E.review {r['rule_id']}.{o['element_id']}", o["objection_ko"])
     if stage == "D_final":
         d = outputs[stage]
         ids = [f["rule_id"] for f in d["rule_findings"]]
@@ -168,8 +236,9 @@ def _claims_to_check(outputs: dict, by_id: dict, policy: dict) -> list[str]:
         for x in f["facts"]:
             if x["role"] == "supporting" and x["claim_id"] in by_id:
                 (adverse if f["result"] == "adverse" else other).append(x["claim_id"])
-        if f["result"] == "not_adverse" and policy["_rules"][f["rule_id"]]["independent_rejection"]:
-            pass
+        if f["result"] == "adverse":
+            for e in (f.get("predicate") or {}).get("elements", []):
+                adverse += [c for c in e["evidence_for"] if c in by_id]
     out = list(dict.fromkeys(adverse))
     for c in other:
         if len(out) >= MAX_SUPPORT_CHECKS:
@@ -184,22 +253,31 @@ def _payload(stage, pack, outputs, ctxd):
     pol_view = {"version": pol["version"], "state": ctxd["policy_state"], "rules": pol["rules"],
                 "generic_triggers": pol["generic_triggers"], "evidence_dimensions": pol["evidence_dimensions"],
                 "enabled_preferences": [p for p in pol.get("preferences", []) if p.get("enabled")],
-                "benchmark_alternative": pol["benchmark_alternative"]}
+                "benchmark_alternative": pol["benchmark_alternative"], "predicates": pol.get("predicates") or {}}
     base = {"task": TASK[stage], "screening_policy": pol_view}
     if stage in ("A_extraction", "B_analysis", "C_critical_review", "D_final"):
         base.update({"prior_stage_outputs": {k: outputs[k] for k in STAGE_ORDER[:STAGE_ORDER.index(stage)]},
                      "deterministic_calculations": list(ctxd.get("calcs", {}).values()), "evidence_pack": pack,
                      "thesis_questions": QUESTIONS})
     elif stage == "E_support_check":
-        _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+        _, by_id, _, _ = _cc(pack, outputs, [], ctxd)
         texts = {(p["doc_id"], p["page"]): p["text"] for p in pack["pages"]}
+        if _typed(ctxd):
+            preds = pol.get("predicates") or {}
+            base["adverse_candidates_to_review"] = [
+                {"rule_id": f["rule_id"], "rule_text": pol["_rules"][f["rule_id"]]["text"],
+                 "adverse_definition": pol["_rules"][f["rule_id"]].get("adverse_definition", ""),
+                 "authored_predicate": preds[f["rule_id"]], "finding": f}
+                for f in outputs["D_final"]["rule_findings"] if f["result"] == "adverse" and f["rule_id"] in preds]
+            base["review_instructions"] = ("For every adverse candidate: assess the INFERENCE from the original cited evidence to "
+                                           "each authored element. Record objections; do not resolve your own objections by narrative.")
         base.update({"claims_to_check": ctxd["claims_to_check"], "untrusted_content_notice": pack["untrusted_content_notice"],
                      "items": [{"claim": by_id[c], "cited_pages": [{"doc_id": x["doc_id"], "page": x["page"],
                                                                     "page_text": texts.get((x["doc_id"], x["page"]), "")[:12000]}
                                                                    for x in by_id[c]["citations"]]} for c in ctxd["claims_to_check"]]})
     else:
         res = ctxd["assessment"]
-        _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+        _, by_id, _, _ = _cc(pack, outputs, [], ctxd)
         base.update({"computed_classification": {k: res[k] for k in ("screening", "evidence_status", "evidence_scope", "thesis_status",
                                                                      "decisive")},
                      "rule_findings": [{k: r[k] for k in ("rule_id", "final_result", "interpretation_ko", "unresolved_ko")} for r in res["findings"]],
@@ -209,8 +287,8 @@ def _payload(stage, pack, outputs, ctxd):
     return json.dumps(base, ensure_ascii=False)
 
 
-def compute_calcs(pack: dict, outputs: dict) -> dict:
-    _, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+def compute_calcs(pack: dict, outputs: dict, typed: bool = False) -> dict:
+    _, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True, typed_calcs=typed)
     a = outputs["A_extraction"]
     ks = calc.implied_equity(a["valuation_inputs"], by_id, valid, pack["offering"].get("security_class") or "")
     rw = calc.runway(a["cash_points"], a["spending_points"], valid)
@@ -240,27 +318,126 @@ def recalc(ctx: Ctx, analysis_id: int) -> list[dict]:
     return ks
 
 
-def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "") -> dict:
-    """Continue the SAME workflow from a failed v3 run: reuse its final stored stage outputs that now validate, call the
-    model only for the stages that never ran, and carry over the repairs already used (whole-run cap). A new
-    analysis row is created; the source run is never modified."""
+def lineage(ctx: Ctx, analysis_id: int) -> list[int]:
+    """[analysis_id, parent, grandparent, ...] following notes.parent_analysis_id (or the older 'resume of analysis N')."""
+    chain, cur = [], analysis_id
+    while cur is not None and cur not in chain:
+        chain.append(cur)
+        row = ctx.con.execute("SELECT notes FROM analysis_runs WHERE analysis_id=?", (cur,)).fetchone()
+        n = json.loads(row[0] or "{}") if row else {}
+        par = n.get("parent_analysis_id")
+        if par is None:
+            m = re.search(r"resume of analysis (\d+)", n.get("note", ""))
+            par = int(m.group(1)) if m else None
+        cur = par
+    return chain
+
+
+def lineage_repairs(ctx: Ctx, analysis_id: int) -> int:
+    ids = lineage(ctx, analysis_id)
+    q = f"SELECT COUNT(*) FROM stage_usage WHERE attempt != 'original' AND analysis_id IN ({','.join('?' * len(ids))})"
+    return ctx.con.execute(q, ids).fetchone()[0]
+
+
+def migrate_cached_stage(stage: str, out: dict, calcs: dict) -> tuple[dict | None, list[dict]]:
+    """Explicit v3_0 -> v3_1 migration of a cached stage output (deterministic; no model call).
+    * claims without a calculation: `calculation: null` becomes `calc_request: null`;
+    * a legacy calculation is accepted only if its formula, after cosmetic normalisation (display label/whitespace),
+      matches a software calculation's formula, its inputs equal that calculation's inputs and its result equals the
+      calculation's result. It then becomes {kind: 'ref', k_ref: Kn};
+    * anything else is rejected (returns None): numbers, signs, operators and operands are never repaired.
+    Returns (migrated_output or None, log)."""
+    from .typed_calc import normalize_legacy_formula
+    import copy
+    key = "claims" if stage == "A_extraction" else "additional_claims"
+    if key not in (out or {}):
+        return copy.deepcopy(out), [{"stage": stage, "action": "no claims; copied unchanged"}]
+    new, log = copy.deepcopy(out), []
+    for c in new[key]:
+        calc_ = c.pop("calculation", None)
+        if calc_ is None:
+            c["calc_request"] = None
+            continue
+        nz = normalize_legacy_formula(calc_.get("formula", ""))
+        log.append({"stage": stage, "claim_id": c["claim_id"], "original": nz["original"], "normalized": nz["normalized"], "log": nz["log"]})
+        if not nz["ok"]:
+            log[-1]["action"] = "rejected: legacy formula does not parse"
+            return None, log
+        target = calcs.get(nz["label"]) if nz["label"] else None
+        names = {i["name"]: i["value"] for i in calc_.get("inputs", [])}
+        k_in = {i["name"]: i["value"] for i in (target or {}).get("inputs", [])}
+        if not target or nz["normalized"] != target.get("formula") or names != k_in or target.get("result_value") != calc_.get("result"):
+            log[-1]["action"] = "rejected: does not reproduce a software calculation exactly (no guessing)"
+            return None, log
+        c["calc_request"] = {"kind": "ref", "k_ref": nz["label"], "inputs": []}
+        log[-1]["action"] = f"mapped to software calculation {nz['label']} (formula, inputs and result identical)"
+    return new, log
+
+
+def resume(ctx: Ctx, source_analysis_id: int, adapter, note: str = "", version_id: str | None = None,
+           extra_repairs_authorized: int = 0, authorization_note: str = "") -> dict:
+    """Continue the SAME workflow as a NEW child run. Reuses the source's final stored stage outputs (migrated
+    explicitly to the target schema when it differs) and calls the model only for stages that never validated.
+    Repairs: every repair in the lineage stays counted. A new run may make at most `extra_repairs_authorized`
+    repairs, which is 0 unless the user explicitly authorized a bounded continuation. A new run id cannot reset the
+    counter. The source run is never modified."""
     a = ctx.con.execute("SELECT * FROM analysis_runs WHERE analysis_id=?", (source_analysis_id,)).fetchone()
     d = ctx.root / a["output_path"]
-    stored = {}
-    for st in STAGE_ORDER:
-        cands = sorted(d.glob(f"{st}_repair*.json")) or ([d / f"{st}.json"] if (d / f"{st}.json").exists() else [])
-        cands = [c for c in cands if not c.name.endswith(".meta.json")]
-        if cands:
-            stored[st] = json.loads(cands[-1].read_text())
-    used = ctx.con.execute("SELECT COUNT(*) FROM stage_usage WHERE analysis_id=? AND attempt != 'original'", (source_analysis_id,)).fetchone()[0]
-    return run_v3(ctx, a["offering_id"], a["pack_id"], adapter, a["version_id"], stored_outputs=stored, repairs_already_used=used,
-                  note=f"resume of analysis {source_analysis_id} ({len(stored)} stored stage(s) reused, {used} repair(s) carried over); {note}")
+    target_v = version_id or a["version_id"]
+    tv = ctx.con.execute("SELECT * FROM analyst_versions WHERE version_id=?", (target_v,)).fetchone()
+    if tv is None:
+        raise ValueError(f"target analyst version {target_v} is not registered (register before running)")
+    src_schema = a["schema_version"]
+    stored, migration_log = {}, []
+    order = SCHEMA_MODULES[tv["schema_version"]].STAGE_ORDER
+    comb = json.loads((d / "combined.json").read_text())
+    calcs = comb.get("calcs") or {}
+    for st in order:
+        cands = sorted(x for x in d.glob(f"{st}_repair*.json") if not x.name.endswith(".meta.json"))
+        reused = d / f"{st}.reused.json"
+        base = d / f"{st}.json"
+        f = cands[-1] if cands else (reused if reused.exists() else (base if base.exists() else None))
+        if f is None:
+            break
+        out = json.loads(f.read_text())
+        if src_schema != tv["schema_version"]:
+            out, lg = migrate_cached_stage(st, out, calcs)
+            migration_log += lg
+            if out is None:
+                break                                     # rejected: this stage is re-run by the model
+        stored[st] = out
+    # keep only the CONTIGUOUS prefix of stages that validate; later stages are recomputed
+    pack, _ = load_pack(ctx, a["pack_id"])
+    pol = policy_mod.load(tv["policy_version"] if tv["policy_version"] in policy_mod.FILES else POLICY_VERSION)
+    ctxd = {"calcs": {}, "policy": pol, "S": SCHEMA_MODULES[tv["schema_version"]]}
+    keep, outs = {}, {}
+    for st in order:
+        if st not in stored or st in ("E_support_check", "F_brief_ko"):
+            break
+        outs[st] = stored[st]
+        if validate_stage(st, pack, outs, ctxd):
+            del outs[st]
+            break
+        keep[st] = stored[st]
+        if st == "A_extraction":
+            ctxd["calcs"] = compute_calcs(pack, outs, _typed(ctxd))
+    used = lineage_repairs(ctx, source_analysis_id)
+    return run_v3(ctx, a["offering_id"], a["pack_id"], adapter, target_v, stored_outputs=keep,
+                  repair_allowance=extra_repairs_authorized,
+                  lineage_info={"parent_analysis_id": source_analysis_id, "lineage": lineage(ctx, source_analysis_id),
+                                "lineage_repairs_before": used, "extra_repairs_authorized": extra_repairs_authorized,
+                                "authorization_note": authorization_note, "reused_stages": list(keep),
+                                "schema_migration": {"from": src_schema, "to": tv["schema_version"], "log": migration_log}},
+                  note=f"resume of analysis {source_analysis_id} ({len(keep)} validated stage(s) reused, {used} lineage repair(s)); {note}")
 
 
 def register_v3(ctx: Ctx, version_id: str, description: str, development_offering_ids: list[str], repair_rounds: int = 1,
-                model_requested: str | None = None, max_total_repairs: int | None = None) -> None:
+                model_requested: str | None = None, max_total_repairs: int | None = None, prompt_version: str = PROMPT_VERSION,
+                schema_version: str = SCHEMA_VERSION, policy_version: str = POLICY_VERSION) -> None:
+    if schema_version not in SCHEMA_MODULES or policy_version not in policy_mod.FILES or not (PROMPTS / f"{prompt_version}.md").exists():
+        raise ValueError("unknown prompt, schema or policy version")
     ctx.con.execute("INSERT OR IGNORE INTO analyst_versions VALUES (?,?,?,?,?,?,?,?,?,?)",
-                    (version_id, "challenger", PROMPT_VERSION, SCHEMA_VERSION, POLICY_VERSION, model_requested,
+                    (version_id, "challenger", prompt_version, schema_version, policy_version, model_requested,
                      json.dumps({"tools": "disabled", "max_budget_usd_per_stage": 5.0, "repair_rounds": repair_rounds,
                                  "max_total_repairs": max_total_repairs, "pipeline": "analysis_v3", "classifier": assess_v3.CLASSIFIER_VERSION,
                                  "calculator": calc.CALCULATOR_VERSION}),
@@ -270,7 +447,7 @@ def register_v3(ctx: Ctx, version_id: str, description: str, development_offerin
 
 def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, note: str = "",
            repair_override: int | None = None, policy_override: dict | None = None, stored_outputs: dict | None = None,
-           repairs_already_used: int = 0) -> dict:
+           repairs_already_used: int = 0, repair_allowance: int | None = None, lineage_info: dict | None = None) -> dict:
     v = ctx.con.execute("SELECT * FROM analyst_versions WHERE version_id=?", (version_id,)).fetchone()
     if v is None:
         raise ValueError(f"analyst version {version_id} is not registered")
@@ -278,30 +455,34 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
     cap = int(settings.get("repair_rounds", 0)) if repair_override is None else repair_override
     total_cap = settings.get("max_total_repairs")          # whole-run limit, e.g. 1 for a bounded live rerun
     used = repairs_already_used
+    if repair_allowance is not None:                        # child of a lineage: only the explicitly authorized repairs
+        total_cap, used = repair_allowance, 0
     WS_MATCHES.clear()
     pack, pack_sha = load_pack(ctx, pack_id)
     if pack["offering"]["offering_id"] != offering_id:
         raise ValueError("pack belongs to another offering")
-    pol = policy_override or policy_mod.load(POLICY_VERSION)
-    pstate = "proposed" if policy_override else policy_mod.state(ctx, POLICY_VERSION)
+    pv = v["policy_version"] if v["policy_version"] in policy_mod.FILES else POLICY_VERSION
+    pol = policy_override or policy_mod.load(pv)
+    pstate = "proposed" if policy_override else policy_mod.state(ctx, pv)
+    S = SCHEMA_MODULES[v["schema_version"]]
     system_prompt = (PROMPTS / f"{v['prompt_version']}.md").read_text()
     started = ctx.now()
     out_dir = ctx.root / ctx.cfg.raw["paths"].get("analyses_dir", "data/analyses") / f"{offering_id}_{started.replace(':', '')}_v3"
     out_dir.mkdir(parents=True, exist_ok=True)
     outputs, usage, errors, presentation = {}, [], [], []
-    ctxd = {"calcs": {}, "policy": pol, "policy_state": pstate}
+    ctxd = {"calcs": {}, "policy": pol, "policy_state": pstate, "S": S}
     o = dict(ctx.con.execute("SELECT * FROM offerings WHERE offering_id=?", (offering_id,)).fetchone())
 
     def attempt(stage, label, payload):
-        out, meta = adapter.run(stage, system_prompt, payload, STAGES[stage])
+        out, meta = adapter.run(stage, system_prompt, payload, S.STAGES[stage])
         (out_dir / f"{stage}{label}.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
         (out_dir / f"{stage}{label}.meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1))
         return out, meta or {}
 
     res = None
-    for stage in STAGE_ORDER:
+    for stage in S.STAGE_ORDER:
         if stage == "E_support_check":
-            _, by_id, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+            _, by_id, _, _ = _cc(pack, outputs, [], ctxd)
             ctxd["claims_to_check"] = _claims_to_check(outputs, by_id, pol)
         if stage == "F_brief_ko":
             res = _assess(ctx, [], outputs, pack, pol, pstate, ctxd, o)
@@ -335,9 +516,10 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
             errors = errs
             break
         if stage == "A_extraction":
-            ctxd["calcs"] = compute_calcs(pack, outputs)
+            ctxd["calcs"] = compute_calcs(pack, outputs, _typed(ctxd))
     if errors:
         res = _assess(ctx, errors, outputs, pack, pol, pstate, ctxd, o)
+    ctxd["lineage_info"] = lineage_info or {}
     return _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, ctx.now(), outputs, usage, ctxd, errors,
                   presentation, res, out_dir, note, pol, pstate)
 
@@ -345,7 +527,7 @@ def run_v3(ctx: Ctx, offering_id: str, pack_id: str, adapter, version_id: str, n
 def _assess(ctx, errors, outputs, pack, pol, pstate, ctxd, o):
     by_id, valid = {}, set()
     if not errors:
-        _, by_id, valid, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+        _, by_id, valid, _ = _cc(pack, outputs, [], ctxd)
     return assess_v3.evaluate(ctx, errors, outputs, pack, pol, pstate, by_id, valid, ctxd.get("calcs", {}), o)
 
 
@@ -362,18 +544,18 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
         """INSERT INTO analysis_runs(offering_id, pack_id, pack_sha256, version_id, prompt_version, schema_version, policy_version,
            adapter, model_reported, provider_reported, settings, started_utc, finished_utc, status, split, output_path,
            output_sha256, validation_errors, cost_usd, notes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (offering_id, pack_id, pack_sha, v["version_id"], v["prompt_version"], SCHEMA_VERSION, pol["version"], adapter.name,
+        (offering_id, pack_id, pack_sha, v["version_id"], v["prompt_version"], v["schema_version"], pol["version"], adapter.name,
          ";".join(models) or None, None, v["settings"], started, finished, status, "development" if offering_id in dev else "evaluation",
          str(out_dir.relative_to(ctx.root)), hashlib.sha256(combined.encode()).hexdigest(), json.dumps(errors), cost,
          json.dumps({"pipeline": "analysis_v3", "pipeline_version": PIPELINE_VERSION, "policy_sha256": pol["_sha256"],
                      "policy_state": pstate, "status_column_note": "placeholder; v3 results live in assessments_v3 and never feed approvals",
                      "presentation_errors": presentation, "note": note, "cost_label": COST_LABEL,
-                     "citation_rule": CITATION_RULE, "whitespace_insensitive_matches": sorted(set(WS_MATCHES))},
+                     "citation_rule": CITATION_RULE, **(ctxd.get("lineage_info") or {}), "whitespace_insensitive_matches": sorted(set(WS_MATCHES))},
                     ensure_ascii=False)))
     aid = cur.lastrowid
     now = ctx.now()
     if not errors:
-        claims, _, _, _ = claims_checks(pack, outputs, [], whitespace_insensitive=True)
+        claims, _, _, _ = _cc(pack, outputs, [], ctxd)
         for c in claims:
             ctx.con.execute("""INSERT INTO analysis_claims(analysis_id, claim_id, stage, claim_text, claim_type, evidence_status, citations,
                 observed_cutoff_utc, financial_period, calculation_inputs, contradictions, missing) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
@@ -381,7 +563,8 @@ def _store(ctx, offering_id, pack_id, pack, pack_sha, v, adapter, started, finis
                              c["claim_text"], c["claim_type"], c["evidence_status"], json.dumps(c["citations"], ensure_ascii=False),
                              pack["cutoff_utc"], c["financial_period"],
                              json.dumps({"evidence_kind": c["evidence_kind"], "dimensions": c["dimensions"], "attribution": c["attribution"],
-                                         "as_of": c["as_of"], "calculation": c.get("calculation")}, ensure_ascii=False),
+                                         "as_of": c["as_of"], "calculation": c.get("calculation"), "calc_request": c.get("calc_request"),
+                                         "typed_result": (ctxd.get("typed") or {}).get(c["claim_id"])}, ensure_ascii=False, default=str),
                              c["contradictions"], ""))
     for k in ctxd.get("calcs", {}).values():
         ctx.con.execute("INSERT INTO calculations(analysis_id, pack_id, calc_type, formula, inputs, assumptions, included_instruments, "

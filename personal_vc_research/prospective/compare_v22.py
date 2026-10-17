@@ -28,8 +28,10 @@ EVIDENCE_KIND = {"A13": ("form_field", "2025-12-31"), "A15": ("audited_financial
                  "A19": ("contract_term", ""), "A11": ("form_field", "2026-06-25"), "B2": ("analyst_inference", "")}
 
 
-def compare_analysis(ctx: Ctx, analysis_id: int = 10) -> dict:
-    pol = policy_mod.load("screening_policy_v1_2")
+def compare_analysis(ctx: Ctx, analysis_id: int = 10, policy_version: str = "screening_policy_v1_2") -> dict:
+    """policy_version='screening_policy_v1_3' + classifier v3_1: analysis 10 has no predicate assessments, so every
+    authored element is 'unknown' and no finding can be decisive (v2.2.1 reclassification)."""
+    pol = policy_mod.load(policy_version)
     rows = [dict(r) for r in ctx.con.execute("SELECT * FROM criterion_results WHERE analysis_id=?", (analysis_id,))]
     claims = {r["claim_id"]: dict(r) for r in ctx.con.execute("SELECT * FROM analysis_claims WHERE analysis_id=?", (analysis_id,))}
     by_id = {}
@@ -57,6 +59,6 @@ def compare_analysis(ctx: Ctx, analysis_id: int = 10) -> dict:
     decisive = [r["rule_id"] for r in res if r["independently_decisive"]]
     return {"classifier": assess_v3.CLASSIFIER_VERSION, "policy": pol["version"], "policy_sha256": pol["_sha256"],
             "screening": ("provisional_reject" if decisive else "provisional_unresolved"), "decisive": decisive,
-            "findings": [{k: r[k] for k in ("rule_id", "model_result", "final_result", "validator_notes")} |
+            "findings": [{k: r[k] for k in ("rule_id", "model_result", "final_result", "validator_notes", "predicate_elements")} |
                          {"facts": [{k: x[k] for k in ("claim_id", "generic_effective", "evidence_kind", "support_check")} for x in r["facts"]]}
                          for r in res if r["model_result"] != "unknown"]}
