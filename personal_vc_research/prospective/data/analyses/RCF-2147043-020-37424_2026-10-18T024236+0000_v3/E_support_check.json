@@ -1,0 +1,246 @@
+{
+ "judgment_label": "model_judgment_not_verification",
+ "checks": [
+  {
+   "claim_id": "A20",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Review gives limited assurance; the report also contains a going-concern paragraph. Review report is addressed to a New York address while issuer is NJ (minor).",
+   "evidence_type": "third_party_source",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "검토보고서(p.42)와 위험요인(p.20)이 감사가 아닌 검토임을 명시하고, 내부통제 테스트 미실시도 p.20에 나온다. 'Unaudited' 라벨 자체는 인용문에 없으나 실질은 뒷받침된다."
+  },
+  {
+   "claim_id": "A13",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Investor consent is not mentioned; the claim already says the pack does not state it. The Lead is the CEO, an insider.",
+   "evidence_type": "contract_text",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "SAFE 8(c)는 CEO('Lead')의 지시에 의해서만 수정·포기·변경이 가능하다고 하고 신의성실 의무를 명시한다. 투자자 동의 요건 부재는 주장에 이미 한정되어 있다."
+  },
+  {
+   "claim_id": "A15",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Conversion Amount ranks on par with common in the SAFE s.1(d); Form C p.13 says there is no stated liquidation preference, which sits uneasily with the Cash-Out priority. Only 'intended to operate like' non-participating preferred.",
+   "evidence_type": "contract_text",
+   "conflicts": "Form C p.13 'no stated return or liquidation preference'; reviewed notes p.51 describe existing SAFEs as generally equal to common.",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "p.12와 SAFE 1(d)가 순위(채무보다 후순위, 다른 SAFE/우선주와 동순위, 보통주보다 선순위)와 '표준 비참가적 우선주처럼 작동하도록 의도됨'을 명시한다. 같은 Form C p.13의 '청산우선권 없음' 문구와의 충돌은 주장에 이미 기재되어 있다."
+  },
+  {
+   "claim_id": "C1",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Cited passage shows the recognition is stated in the issuer's press release; the sentence 'TECH is unknown' is not in the passage. Press release date 2026-09-24 not visible on the page. Classification as DEMAND evidence is a stretch: recognition is not customers, revenue or purchase commitments.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "인용문은 회사 보도자료 'About' 문단에서 업계 인정을 주장한다는 점만 보여준다. 이는 발행사 마케팅이며 독립 제3자 문서가 아니라는 점은 타당하나, 'TECH unknown'과 DEMAND 분류는 분석자 추론이다. 수요 증거로는 매우 약하다."
+  },
+  {
+   "claim_id": "A17",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Figures are accountant-reviewed, not audited. 'Revenue' is the Form C summary; the p.14 risk factor wording about 'lack of revenues from sales' is boilerplate that conflicts.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "Form C p.14 risk factor mentions 'lack of revenues from sales' (boilerplate).",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.3 표에 매출 $459,216/$347,602, 매출원가 $488,693/$464,671이 나오고 매출원가가 두 해 모두 매출을 초과한다(주장 내 비교는 단순 대조). 검토(비감사) 수치임이 표시되어 있다."
+  },
+  {
+   "claim_id": "B2",
+   "passage_supports": "yes",
+   "omitted_qualifications": "COGS may include items beyond direct production costs; gross margin is inferred and the statements' own gross profit line is not cited. Revenue growth is 32% implied but not claimed.",
+   "evidence_type": "calculation",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.3 수치상 매출원가가 매출보다 크므로 매출총이익이 음수라는 추론은 단순 비교로 성립하고 매출 증가도 확인된다. 검토 재무제표라는 한정이 명시되어 있다."
+  },
+  {
+   "claim_id": "A30",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The passage says products are regulated by the FDA, generally; it does not say which FDA regime applies. The claim's 'none applies to the product type in the documents' is an inference not found on the page. Absence of regulatory action is not stated explicitly beyond the litigation sentence.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "p.28은 제품이 FDA 규제를 받는다는 일반 문장과 소송 없음 문장만 담고 있다. '규제 조치·FDA 승인 절차·IRB 마일스톤이 없고 제품 유형에 해당하지 않는다'는 부분은 부재에 근거한 추론이다. 소송 부재와 규제 조치 부재는 별개 사실이다."
+  },
+  {
+   "claim_id": "A28",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Issuer self-description; no independent verification. 'Sole key person' is inferred from the key persons table listing one person. Launch in 2017 is stated; Whole Foods sales from 2018 omitted. Employee count is from the XML field.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.30은 약력(JP모건 6년, 헤지펀드, IBM 컨설팅, 예일 MBA, 2017년 창업), XML은 직원 2명, p.29는 CEO가 폭넓은 행정·운영을 맡는다고 밝힌다. 모두 발행사 진술이며 독립 검증은 없다."
+  },
+  {
+   "claim_id": "A29",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Statement covers 'the Issuer'; the passage does not separately address individual key persons or officers. Self-certification, not verified. Claim attribution says p.28 (body numbering) while the cite is PDF p.36.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "p.36은 '발행사는 어떠한 bad actor 결격사유에도 해당하지 않는다'고 밝힌다. 발행사 자체 진술이며 개별 임원에 대한 확인은 이 문장에 없다."
+  },
+  {
+   "claim_id": "A18",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Dates are fiscal year-ends inferred from the column headers; figures are reviewed not audited; going-concern disclosure applies.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.3 표가 현금 $116,414/$149,227과 순손실 $(896,217)/$(622,749)를 그대로 보여준다."
+  },
+  {
+   "claim_id": "A21",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Note 11 text is garbled ('which less than a year worth'); the wording 'normally raise substantial doubt' is the company's, and the accountant's paragraph says the Company has stated the conditions raise doubt. Management plans to raise capital are also stated. Not an auditor's going-concern opinion.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "Note 11(p.53)과 보고서(p.42)가 going concern 단락을 포함하며 보고서는 결론이 수정되지 않았다고 한다. 감사의견이 아닌 검토 맥락의 공시다."
+  },
+  {
+   "claim_id": "A22",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Operating loss ($933,836) differs from net loss ($896,217); both periods are FY2025. Reviewed, not audited.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "Note 11이 순영업손실 $933,836, 영업현금유출 $960,595를 그대로 명시한다."
+  },
+  {
+   "claim_id": "C4",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The 'roughly 5-month runway' as of 2026-06-30 and cash of $654,000 are on p.34 but the cited quotes do not include them; the quoted XML and Note 11 lines support the target and outflow only. Newer issuer-reported cash ($654,000 at 2026-06-30) differs sharply from reviewed year-end cash ($116,414) and is unexplained in the pack. The 'unknown' conclusion is analyst inference.",
+   "evidence_type": "inference",
+   "conflicts": "Reviewed year-end cash $116,414 vs issuer-stated $654,000 at 2026-06-30; the pack does not reconcile them (different dates, different assurance).",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "세 인용문은 목표금액 $75,000, FY2025 영업현금유출, '공모 수익금은 운영에 필수적'이라는 문장을 뒷받침한다. 다른 기간·보증수준의 수치를 병치한 분석자 추론이며, 마일스톤 자금 소요가 문서에 없어 'unknown'이라는 결론은 타당하다. 5개월 runway와 $654,000은 인용 구절 밖이다."
+  },
+  {
+   "claim_id": "A12",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Voting is 'unless otherwise provided for by the Issuer'. Proxy applies only to the extent converted securities carry votes. The Lead is defined confusingly as the CEO.",
+   "evidence_type": "contract_text",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.13이 의결권 없음, Lead가 투자자 대리인으로 행동하며 발행사 CEO의 지시에 따라 투표한다고 명시한다."
+  },
+  {
+   "claim_id": "A27",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Table lists 20%+ holders by voting power; the ability to influence issuances, repurchases and related-party transactions is not on the cited page (the claim cites risk factors generally). Existing SAFEs do not vote.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "p.33 소유표는 Carolyn Haeler가 보통주 1,000,000주, 의결권 100%임을 보여준다. 발행·환매·특수관계 거래에 영향력을 행사할 수 있다는 부분은 인용 페이지에 없고 위험요인 인용이 빠져 있다."
+  },
+  {
+   "claim_id": "A5",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Claim wording 'greater of the amounts under cap or lowest price' paraphrases a clause where the (b) limb applies only if pre-money is at or below the cap; no discount. The $1,000,000 threshold refers to the next equity financing. Conversion also depends on a share denominator that excludes SAFEs.",
+   "evidence_type": "contract_text",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "p.11이 $1,000,000 이상 지분 조달 시 전환, $15,000,000 상한, (b)항 조건을 명시하고 p.34가 상한 및 임의 가격 책정을 밝힌다. SAFE Exhibit B p.55는 인용하지 않았으나 Form C 요약과 일치한다."
+  },
+  {
+   "claim_id": "A7",
+   "passage_supports": "yes",
+   "omitted_qualifications": "None material; price $1.00 is in the XML, not in the quoted lines.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.9와 XML 모두 가격이 임의로 결정되었고 자산가치·순자산·매출과 필연적 관련이 없다고 밝힌다."
+  },
+  {
+   "claim_id": "A6",
+   "passage_supports": "yes",
+   "omitted_qualifications": "'No discount' is an absence in the cited passage only. Denominator includes outstanding options/warrants and convertible preferred. The exclusion of the existing SAFE conversion shares is stated.",
+   "evidence_type": "contract_text",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.11 (a)항이 계획 풀 미발행분, 전환사채, SAFE 전체(본 증권 포함), 그 전환 시 발행 증권을 분모에서 제외한다고 명시한다. 할인 미기재는 인용 구절 한정이라고 주장에 이미 제한되어 있다."
+  },
+  {
+   "claim_id": "A25",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Principal $5,096,791 includes $99,937 Crowd SAFEs issued to the Intermediary. The 25.36% is an issuer calculation. 'Common 74.64%' is not on the cited page and is a derived complement.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "p.32가 원금 $5,096,791, 상한 $15,000,000, 의결권 없음, 희석방지 없음, 완전희석 기준 25.36%를 보여준다. '보통주 74.64%'는 보완 수치 도출이며 페이지에 직접 나오지 않는다."
+  },
+  {
+   "claim_id": "B7",
+   "passage_supports": "partly",
+   "omitted_qualifications": "Claim says dilution is 'not capped by the headline valuation'; the passages show only exclusion from the denominator. The authorized-stock statement is on p.13 (cited in attribution, not in the quoted lines). Whether the exclusion makes the cap ineffective depends on conversion math the pack does not provide. The 'new SAFEs' exclusion is supported (the clause names the Securities themselves).",
+   "evidence_type": "inference",
+   "conflicts": "none",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "p.11은 SAFE와 전환사채를 분모에서 제외하고 p.32는 기존 SAFE 원금과 25.36%를 보여준다. '희석이 헤드라인 평가가치로 제한되지 않는다'는 결론은 분석자 추론이다. 정량화 불가라는 한정은 적절하다."
+  },
+  {
+   "claim_id": "A10",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Not stated whether the 1.5% securities are priced the same as investor securities. Cash fee ($12,000 or 6% over $100K plus $5,000 onboarding) is separate and paid by the issuer.",
+   "evidence_type": "contract_text",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.14가 중개인에게 판매 증권의 1.5%를 증권으로 지급하고 총 발행 수가 늘어난다고 하며, p.32가 기존 Crowd SAFE 중 $99,937이 중개인에게 발행되었다고 밝힌다."
+  },
+  {
+   "claim_id": "A34",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Statement is 'may also undertake' - not a commitment or plan with terms; planned instruments are not issued. The same page gives $654,000 cash at 2026-06-30 and a 5-month runway.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.34가 '공모 수익금은 운영에 필수적'이며 인가투자자 대상 추가 조달을 할 수 있다고 말한다. 금액·조건 미제시는 주장에 정확히 반영되어 있다."
+  },
+  {
+   "claim_id": "A37",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Authorized share count of 3,000,000 mentioned in the dimension rationale is not on the cited page. The stated reason is that conversion amounts depend on future events.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "none",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.13이 전환 시 발행할 수권주식이 충분한지 판단할 수 없다고 직접 밝힌다. 3,000,000주 수권 언급은 인용 페이지에 없다."
+  },
+  {
+   "claim_id": "C2",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Notes p.51 describe the Company's accounting summary of the 2022 Crowd SAFE terms, which may differ from the SAFE form for this offering; the 'on par whether this Series or otherwise' is the Form C wording. Whether the existing SAFEs carry the same Cash-Out priority is not shown. Notes also state a Liquidity Event cash election.",
+   "evidence_type": "contract_text",
+   "conflicts": "Form C p.13 (no stated liquidation preference) vs p.12/SAFE s.1(d); notes p.51 equal priority to common vs on par with other SAFEs/Preferred.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "네 인용문 모두 주장 문구와 일치하며 상충하는 문구를 병기했다. 우선순위가 해소되지 않았다는 결론은 신중하고 적절하다. 기존 SAFE의 조건이 이번 SAFE와 동일한지는 팩에서 확인되지 않는다."
+  }
+ ],
+ "predicate_reviews": []
+}
