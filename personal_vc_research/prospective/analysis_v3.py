@@ -376,6 +376,48 @@ def migrate_cached_stage(stage: str, out: dict, calcs: dict) -> tuple[dict | Non
     return new, log
 
 
+CLAIM_PREFIX = {"A_extraction": "A", "B_analysis": "B", "C_critical_review": "C"}
+
+
+def normalize_claim_prefix(stage: str, out: dict) -> tuple[dict | None, list[dict]]:
+    """Logged relabelling of a cached stage whose claims ALL use one wrong id letter (e.g. C1.. in stage A).
+    Only the letter changes; numbers, claim content and citations are untouched. Every field named *claim_id or
+    *claim_ids inside the stage output is rewritten with the same map. Mixed or colliding ids are rejected (None)."""
+    import copy
+    pfx = CLAIM_PREFIX.get(stage)
+    key = "claims" if stage == "A_extraction" else "additional_claims"
+    claims = (out or {}).get(key) or []
+    if not pfx or not claims:
+        return out, []
+    ids = [c["claim_id"] for c in claims]
+    if all(i.startswith(pfx) for i in ids):
+        return out, []
+    letters = {re.match(r"^([A-Z])\d+$", i).group(1) if re.match(r"^([A-Z])\d+$", i) else None for i in ids}
+    if len(letters) != 1 or None in letters:
+        return None, [{"stage": stage, "action": "rejected: claim ids are not a single wrong letter followed by digits"}]
+    old = letters.pop()
+    mapping = {i: pfx + i[1:] for i in ids}
+    if len(set(mapping.values())) != len(ids):
+        return None, [{"stage": stage, "action": "rejected: relabelled ids would collide"}]
+
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if k.endswith("claim_id") and isinstance(v, str):
+                    x[k] = mapping.get(v, v)
+                elif k.endswith("claim_ids") and isinstance(v, list):
+                    x[k] = [mapping.get(i, i) if isinstance(i, str) else i for i in v]
+                else:
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    new = copy.deepcopy(out)
+    walk(new)
+    return new, [{"stage": stage, "action": f"relabelled claim ids {old}n -> {pfx}n (letter only; logged, no content change)",
+                  "n_claims": len(ids)}]
+
+
 def _origin_run(ctx: Ctx, analysis_id: int, stage: str) -> int:
     """The earliest run in the lineage whose directory holds a model-generated (not reused) output for `stage`."""
     origin = analysis_id
@@ -409,6 +451,10 @@ def plan_resume(ctx: Ctx, source_analysis_id: int, version_id: str | None = None
         if f is None:
             break
         out = json.loads(f.read_text())
+        out, lg = normalize_claim_prefix(st, out)
+        migration_log += lg
+        if out is None:
+            break
         if src_schema != tv["schema_version"]:
             out, lg = migrate_cached_stage(st, out, calcs)
             migration_log += lg

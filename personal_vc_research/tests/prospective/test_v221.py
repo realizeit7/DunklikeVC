@@ -341,3 +341,18 @@ def test_korean_validator_allows_acronyms_but_not_english_prose():
     assert korean_errors("x", "SCHG 대비 구체적 이유 없음; Form C-AR 미제출") == []
     assert any("too much English" in e or "English passage" in e
                for e in korean_errors("x", "the company has not filed anything with regulators yet 회사"))
+
+
+def test_claim_prefix_relabel_is_letter_only_and_rejects_mixed():
+    from prospective.analysis_v3 import normalize_claim_prefix
+    out = {"claims": [{"claim_id": "C1", "claim_text": "x"}, {"claim_id": "C2", "claim_text": "y"}],
+           "fees": {"minimum_claim_id": "C2", "investor_fee_claim_ids": ["C1"]},
+           "document_conflicts": [{"claim_ids": ["C1", "C2"], "material": True}]}
+    new, log = normalize_claim_prefix("A_extraction", out)
+    assert [c["claim_id"] for c in new["claims"]] == ["A1", "A2"]
+    assert new["fees"] == {"minimum_claim_id": "A2", "investor_fee_claim_ids": ["A1"]}
+    assert new["document_conflicts"][0]["claim_ids"] == ["A1", "A2"]
+    assert new["claims"][0]["claim_text"] == "x" and out["claims"][0]["claim_id"] == "C1" and log
+    assert normalize_claim_prefix("A_extraction", new) == (new, [])
+    mixed = {"claims": [{"claim_id": "C1"}, {"claim_id": "B2"}]}
+    assert normalize_claim_prefix("A_extraction", mixed)[0] is None
