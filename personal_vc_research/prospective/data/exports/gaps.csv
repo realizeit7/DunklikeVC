@@ -2,3 +2,4 @@ gap_id,run_id,utc,offering_id,kind,url,detail
 1,capture-20261014T151707Z-883a2d,2026-10-14T15:23:20+00:00,RCF-2128340-020-37393,parse_failure,https://www.sec.gov/Archives/edgar/data/2128340/000212834026000005/tradef.pdf,"document above size limit; stored, not parsed"
 2,run-20261014T152503Z-5b8bf0,2026-10-14T15:25:05+00:00,,access_blocked,https://republic.com/companies,HTTP 403; platform pages treated as inaccessible (no bypass attempted)
 3,reassess-20261015T165414Z-c17dcd,2026-10-15T16:54:14+00:00,,run_failure,,"BrokenPipeError(32, 'Broken pipe')"
+4,discover-20261018T010934Z-b167ea,2026-10-18T01:09:34+00:00,,run_failure,,"MissingUserAgent(""Set $SEC_USER_AGENT to 'project-name contact@email' per SEC fair-access guidance before fetching from sec.gov."")"
