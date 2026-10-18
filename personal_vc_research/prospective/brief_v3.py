@@ -36,6 +36,16 @@ Q_KO = {"Q1_value_creation": "큰 가치를 만들려면 무엇이 맞아떨어�
         "Q7_vs_schg": "SCHG 대신 이 투자를 고를 구체적 이유"}
 
 
+def _scope_ko(scope: str) -> str:
+    if scope.startswith("not sufficient for any screening decision under "):
+        return f"{scope.split(' under ')[-1]} 기준으로 어떤 스크리닝 결론에도 충분하지 않음"
+    if scope.startswith("sufficient only for "):
+        return "명시된 결론에 한해 충분(실사 완료를 뜻하지 않음): " + scope
+    if scope.startswith("unread pack pages"):
+        return "팩의 읽지 못한 페이지에 반대 근거가 있을 수 있음: " + scope.split(": ", 1)[-1]
+    return scope
+
+
 def _q(ctx, sql, *a):
     return [dict(r) for r in ctx.con.execute(sql, a)]
 
@@ -107,10 +117,20 @@ def build_brief_v3(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
           f"| 투자 논리(경제성) | {THESIS_KO[asm['thesis_status']]} |",
           f"| 모집 진행 | {AVAIL_KO.get(execution['availability'], execution['availability'])} |",
           f"| 예산·수수료 | 연간 잔여 {budget['annual_remaining_usd']}, 발행사 잔여 {budget['issuer_remaining_usd']}; {fee} (확인 {budget['checked_utc']}) |",
-          "", f"_증거 범위: {asm['evidence_scope']}_", ""]
-    L += ["## 1. 회사가 하는 일", "", f.get("company_ko") or "(요약 단계가 검증을 통과하지 못했습니다. 부록의 주장 목록을 보세요.)", ""]
+          "", f"_증거 범위: {_scope_ko(asm['evidence_scope'])}_", ""]
+    L += ["## 1. 회사가 하는 일", "", f.get("company_ko") or ("(한국어 요약 단계 F가 검증을 통과하지 못해 회사 설명 문단을 생략했습니다. "
+                                                         "회사가 무엇을 하는지는 부록 F의 추출된 주장(출처 표시)을 보세요. "
+                                                         "회사 설명은 발행사 주장이며 검증된 과학·규제 분류가 아닙니다.)"), ""]
     th = {t["question_id"]: t for t in _q(ctx, "SELECT * FROM thesis_answers WHERE analysis_id=?", analysis_id)}
-    L += ["## 2. 이 투자가 성공할 수 있는 이유", "", f.get("why_could_work_ko") or "", ""]
+    L += ["## 2. 이 투자가 성공할 수 있는 이유", ""]
+    if f.get("why_could_work_ko"):
+        L += [f["why_could_work_ko"], ""]
+    else:
+        L += ["_F단계 요약이 없어, 검증된 D단계의 투자 논리 답변(모델 판단)을 그대로 옮깁니다._", ""]
+        for q in ("Q1_value_creation", "Q2_next_milestones", "Q3_advantage_evidence"):
+            if q in th:
+                L.append(f"- **{Q_KO[q]}** ({QSTAT_KO.get(th[q]['status'], th[q]['status'])}): {th[q]['answer_ko']}")
+        L.append("")
     if "Q7_vs_schg" in th:
         L += [f"**SCHG 대비:** {QSTAT_KO.get(th['Q7_vs_schg']['status'], th['Q7_vs_schg']['status'])} — {th['Q7_vs_schg']['answer_ko']}", ""]
     dec = [r for r in rows if r["independently_decisive"]]
@@ -131,7 +151,9 @@ def build_brief_v3(ctx: Ctx, analysis_id: int, out_dir: Path | None = None) -> P
     L += ["## 4. 중요한 미확인 사항", ""]
     L += [f"- {x}" for x in f.get("unknowns_ko", [])]
     L += [f"- {r['rule_id']}(알 수 없음): {r['unresolved_ko']}" for r in rows if r["final_result"] == "unknown" and r["unresolved_ko"]] + [""]
-    L += ["## 5. 결론을 바꿀 수 있는 것", ""] + [f"- {x}" for x in f.get("what_would_change_ko", [])] + [""]
+    wwc = f.get("what_would_change_ko") or [f"{r['rule_id']}: {r['what_would_change_ko']}" for r in rows
+                                            if r["final_result"] in ("unknown", "adverse_contributing") and r["what_would_change_ko"]]
+    L += ["## 5. 결론을 바꿀 수 있는 것", ""] + [f"- {x}" for x in wwc] + [""]
     res = {"screening": asm["screening"], "decisive": json.loads(asm["decisive"]),
            "findings": [{**r, "independent_rejection_allowed": True} for r in rows]}
     L += ["## 6. 다음 조치", ""] + [f"{i}. {x}" for i, x in enumerate(assess_v3.next_actions(res, pack), 1)] + [""]
