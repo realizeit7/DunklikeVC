@@ -1,0 +1,385 @@
+{
+ "technical_and_efficacy": {
+  "assessment": "This is a packaged-food company, so there is no efficacy or clinical question. The pack has no technical validation, product testing or third-party study. The only quality evidence is an issuer press-release claim of industry recognition (B1). It documents no technical failure either, so TECH is unknown, not adverse.",
+  "claim_ids": [
+   "B1"
+  ]
+ },
+ "commercial_demand": {
+  "assessment": "The company is commercial. Reviewed revenue was $459,216 in FY2025 and $347,602 in FY2024, but cost of goods sold exceeded revenue in both years (B2). The traction claims come from an undated testing-the-waters email: 1800 doors, named retail chains, a $100K run rate and Amazon growth. They have no supporting data, so they are unverified (B3). There is no documented loss of customers, collapsing revenue or payer refusal. Revenue grew, so R-DEM-1 is not adverse. Demand quality is unknown: there is no customer concentration data, no contracts, and no gross-margin path beyond the issuer's vertical-integration plan.",
+  "claim_ids": [
+   "B2",
+   "B3"
+  ]
+ },
+ "regulatory_progress": {
+  "assessment": "The issuer says its products are regulated by the FDA. The pack documents no IRB, FDA authorization or trial milestone, and none applies to a food product. It documents no regulatory action such as a warning letter, hold or consent order, and no litigation. The issuer discloses a possible testing-the-waters disclaimer gap, which is a disclosed risk, not a finding (B8). R-REG-1 is not adverse.",
+  "claim_ids": [
+   "B8"
+  ]
+ },
+ "team_execution": {
+  "assessment": "The sole key person is founder-CEO Carolyn Haeler. Her documented background is finance (J.P. Morgan, a hedge fund, IBM consulting). She has led the brand since 2017, and the issuer says the cookies were on sale at Whole Foods by January 2018. The company has 2 employees and the CEO handles a wide range of functions (B10). The pack has no independent verification. It documents no sanction or bad-actor event; only an issuer statement that there is none. Key-person concentration is a documented risk.",
+  "claim_ids": [
+   "B10"
+  ]
+ },
+ "financing_and_runway": {
+  "assessment": "Reviewed cash at 2025-12-31 was $116,414, with a separate $1,397,792 of marketable securities. The review report carries a going-concern paragraph (G3). The issuer states $654,000 of cash at 2026-06-30 and about 5 months of runway, which is unaudited. The calculator withheld a current runway (K2) because no spending figure is period-aligned with that cash date (B4). The next milestone, the Wakefern and Wegmans launches, has no stated cost or date (B5). The 2026 email says the higher run rate has accelerated cash burn. Because no funding requirement is stated, the FIN1-A3 shortfall test cannot be run. No default or acceleration is documented. R-FIN-1 is unknown, not adverse. The company depends on this raise ('essential to our operations') and on possible further financing.",
+  "claim_ids": [
+   "B4",
+   "B5",
+   "B11"
+  ]
+ },
+ "terms_and_investor_proceeds": {
+  "assessment": "The security is a SAFE (Simple Agreement for Future Equity) with a $15,000,000 pre-money cap. The price was set arbitrarily (G7), and K1 withheld an implied equity value. The holder gets no voting rights, no anti-dilution protection and no dividends, and holds only a beneficial interest through a custodian (G4–G8, generic). The cap denominator excludes all SAFEs, including the existing $5,096,791 of SAFEs that the Form C puts at 25.36% fully diluted, so dilution before this holder converts is larger than the headline cap suggests (B7). The Form C also says the issuer cannot determine whether its 3,000,000 authorized shares are enough. The CEO controls 100% of the voting power, acts as the Lead who votes the investors' proxy, and alone directs amendments to the SAFE (B6). Intermediary fees are issuer-paid and no investor-paid fee is stated. Investor proceeds in any scenario are unknown (K3 withheld). The conversion price, the payoff on a liquidity or dissolution event, and who ranks ahead cannot be quantified from the pack. I found no clear R-TERMS-1 term. The CEO's amendment control is the nearest concern but is not shown to transfer value, so TERMS1 is unknown.",
+  "claim_ids": [
+   "B6",
+   "B7"
+  ]
+ },
+ "competition_and_advantage": {
+  "assessment": "The Form C names Aliea's, Tate's Bake Shop, Dr. Schar and Udi's as competitors and says the market is highly competitive. Its trademarks are registered and the rest of its intellectual property is trade secrets. The pack contains no evidence of a durable advantage, such as margins, retention or independently verified distribution (B9). A substantiated advantage over SCHG is not identified.",
+  "claim_ids": [
+   "B9"
+  ]
+ },
+ "stage": "early_commercial",
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "No technical validation or study applies or is in the pack. The only product-quality evidence is the issuer's press-release statement of industry recognition (Food & Beverage Magazine 2024 Editor's Top Products, Good Housekeeping 2025/2026 lists); no third-party document is in the pack.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "third_party",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "Product quality claim; not demand evidence.",
+   "attribution": "issuer press release, Exhibit E (doc 6 p.130)",
+   "as_of": "2026-09-24",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "has earned industry recognition, including being named among Food & Beverage"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": "",
+   "claim_type": "other",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "Reviewed cost of goods sold exceeded revenue in both FY2025 ($488,693 vs $459,216) and FY2024 ($464,671 vs $347,602), so gross margin was negative both years, while revenue rose between the years. Accountant-reviewed, not audited.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "DEMAND",
+    "FIN"
+   ],
+   "dimension_rationale": "Revenue shows commercial demand; negative gross margin bears on the cash needed to fund growth.",
+   "attribution": "Form C p.3; reviewed statements",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Revenues/Sales $459,216 $347,602"
+    },
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Cost of Goods Sold $488,693 $464,671"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "The testing-the-waters email asserts new retail chains (Kroger, Giant, HEB, HyVee), 1800 doors, and a $100K month-over-month run rate. These are undated issuer marketing assertions; the pack has no contracts, sales data or customer documents to support them.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Customer/retail claims; unverified.",
+   "attribution": "issuer, Exhibit E email (doc 6 p.128)",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• Added major retail chains including Kroger, Giant, HEB, and HyVee"
+    },
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• $100K MoM Run Rate and growing"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A32"
+   ],
+   "contradictions": "Not reconcilable with FY2025 reviewed revenue without period-specific data.",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "The software did not compute a current runway (K2) because no spending figure is period-aligned with the 2026-06-30 cash date. The issuer's 5-month runway is therefore an issuer claim, not a calculation.",
+   "evidence_status": "calculation",
+   "evidence_kind": "calculation",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Runway.",
+   "attribution": "software calculation K2; issuer Form C p.34",
+   "as_of": "2026-06-30",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "approximately 5 months of runway. Runway is calculated by dividing cash-on-hand by average monthly net loss (if"
+    }
+   ],
+   "financial_period": "as of 2026-06-30",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": {
+    "kind": "ref",
+    "k_ref": "K2",
+    "inputs": []
+   }
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "The stated next milestone is the Q4 2026 launches at Wakefern and Wegmans and continued Amazon growth. The email says the new campaign will help fund them. No funding amount, cost or timeline appears in the Form C, so cash plus the maximum raise cannot be compared with a stated requirement.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "FIN",
+    "DEMAND"
+   ],
+   "dimension_rationale": "Milestone and its funding need.",
+   "attribution": "issuer, Exhibit E email (doc 6 p.128)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• 2026 Q4 launches include Wakefern and Wegmans"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A38"
+   ],
+   "contradictions": "Form C near-term priority wording (institution integrations) differs from the email.",
+   "claim_type": "use_of_proceeds",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "The CEO, who owns all issued voting stock, is also the 'Lead': she votes the investors' proxy at her own direction and alone directs any amendment, waiver or modification of the SAFE. The SAFE requires only good faith and fair dealing; the pack does not state that investor consent is needed. This is insider control over the security, but no value transfer to insiders is documented.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Governance and amendment power affects what the holder can rely on.",
+   "attribution": "Form C p.13; SAFE s.8(c)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 65,
+     "quote": "(c) Any provision of this SAFE may be amended, waived or modified only at the direction of"
+    },
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "proxy on behalf of Investors in respect to instructions related to the Securities. The Lead will vote at the direction of the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A12",
+    "A13",
+    "A27"
+   ],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B7",
+   "claim_text": "Existing SAFEs ($5,096,791 principal, $15,000,000 cap, 25.36% fully diluted per the Form C) and the new SAFEs are excluded from the share count used for this SAFE's cap, and the issuer cannot determine whether its authorized stock suffices for conversion. Dilution before this holder converts is therefore not capped by the headline valuation. Dilution cannot be quantified from the pack.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Dilution source identification.",
+   "attribution": "analyst reading of Form C pp.11, 13, 32",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "(ii) convertible promissory notes, (iii) any Simple Agreements for Future Equity, including the"
+    },
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Principal Amount Outstanding $5,096,791*"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A5",
+    "A6",
+    "A25",
+    "A37"
+   ],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B8",
+   "claim_text": "No regulatory milestone (IRB, FDA authorization, trial) is described and none applies to the product in the documents. No regulatory action against the company or product is documented, and the issuer states there is no current or threatened litigation.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Regulatory posture.",
+   "attribution": "issuer, Form C p.28",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 28,
+     "quote": "The Issuer is not subject to any current litigation or threatened litigation."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A30"
+   ],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B9",
+   "claim_text": "The Form C names four competitors and states that the market is highly competitive. Trademarks are registered; other intellectual property is trade secrets. The pack contains no evidence of a durable competitive advantage.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Competitive position bears on demand durability.",
+   "attribution": "issuer, Form C p.27-28",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "which is a company that manufactures handmade,"
+    },
+    {
+     "doc_id": 6,
+     "page": 28,
+     "quote": "All other intellectual property is in the form of trade secrets, business methods and know-how"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": "",
+   "claim_type": "competition",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B10",
+   "claim_text": "The business depends on one key person; the company has 2 employees and the CEO handles a wide range of administrative and operational functions. The issuer discloses key-person dependence and no key-person insurance.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "Documented team depth only.",
+   "attribution": "issuer, Form C pp.15, 29",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "Currently, our CEO handles"
+    },
+    {
+     "doc_id": 6,
+     "page": 15,
+     "quote": "We are dependent on our executive officers and key personnel. The loss of all or any of our executive officers and key"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B11",
+   "claim_text": "At 2025-12-31 reviewed cash ($116,414) was described as less than a year of reserves, against a FY2025 operating cash outflow of $960,595, and marketable securities of $1,397,792 were held outside cash. Withdrawals from them of about $758,853 funded 2025 operations. Whether the issuer's $654,000 figure for 2026-06-30 includes proceeds from those securities is not explained. No default or acceleration is stated.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Liquidity composition and same-period spending.",
+   "attribution": "reviewed statements Notes 4 and 11",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "less than a year worth of cash reserves as of December 31, 2025. These factors normally raise substantial doubt"
+    },
+    {
+     "doc_id": 6,
+     "page": 50,
+     "quote": "with aggregate fair values of $1,397,792 and $2,302,274, respectively. The investment portfolio consisted"
+    }
+   ],
+   "financial_period": "FY2025",
+   "basis_claim_ids": [
+    "A21",
+    "A22",
+    "A23"
+   ],
+   "contradictions": "Form C reports $654,000 cash at 2026-06-30 vs $116,414 reviewed cash at year-end.",
+   "claim_type": "financial",
+   "calc_request": null
+  }
+ ]
+}

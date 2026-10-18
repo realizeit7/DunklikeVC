@@ -1,0 +1,405 @@
+{
+ "issues": [
+  {
+   "issue_type": "dimension_misclassification",
+   "target": "B1 (technical_and_efficacy)",
+   "explanation": "B1 labels an issuer press-release claim of magazine recognition as evidence_kind third_party and puts it under TECH. The pack has no third-party document. The recognition is issuer marketing, so the attribution is wrong. It says nothing about technical performance, so TECH is wrong too. TECH should be stated as unknown, with no supporting evidence. The recognition is at most weak, unverified brand evidence for DEMAND.",
+   "claim_ids": [
+    "B1",
+    "C1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B6/B7 and Q5/Q6: priority of this SAFE",
+   "explanation": "Stage B did not resolve the conflict between A15 and A36. Form C p.13 says there is no stated liquidation preference. Form C p.12 and the SAFE give a Cash-Out Amount that is on par with all other SAFEs (this series or otherwise). The reviewed notes describe the existing 2022 Crowd SAFEs ($5,096,791) differently. They say dissolution proceeds go 'generally with equal priority' to common equity, and that the company may elect not to convert them. How this SAFE ranks against the existing SAFEs, and their real terms, are therefore unknown. This affects holder-value Q5 and Q6.",
+   "claim_ids": [
+    "A15",
+    "A36",
+    "A25",
+    "C2"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B financing_and_runway",
+   "explanation": "The analysis does not say that the $75,000 target is far below the reviewed FY2025 operating cash outflow of $960,595. The offering can close at the target, so the offering alone may not fund the milestones. The issuer also says it may raise more capital outside the offering. The 'approximately 5 months of runway' statement is dated 2026-06-30, and its timing relative to the 2026-12-18 deadline is not addressed. R-FIN-1 'unknown' is correct, but funding dependence is understated. The software withheld K2, so B4 should not be classed as a 'calculation' when no value was computed.",
+   "claim_ids": [
+    "B4",
+    "B5",
+    "A19",
+    "A34",
+    "C4"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "B financing_and_runway / debt",
+   "explanation": "Stage B missed the Wayflyer inconsistency. Form C gives $51,000 outstanding with maturity 2027-02-28. The reviewed statements show $31,795 at 2025-12-31 and maturity 02/28/2026, which is before the cutoff. The pack has no loan agreement and no statement on repayment or extension. No default or acceleration is documented, so FIN1-B1 stays 'unknown', not established. The gap should be listed as a diligence item.",
+   "claim_ids": [
+    "A24",
+    "C3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B terms_and_investor_proceeds / use of proceeds",
+   "explanation": "The press release calls vertical integration 'a core use of proceeds' and mentions hiring executives. The Form C use-of-proceeds table has no such category, and the issuer may alter the use. B5 and Q2/Q4 rely on the email's milestone, but the Form C ties no spending or timing to any milestone. The use of proceeds cannot be tied to a milestone.",
+   "claim_ids": [
+    "A11",
+    "B5",
+    "C5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Reliability of reviewed financial statements",
+   "explanation": "The reviewed notes describe customers who 'prepay for services at the time of booking' through a mobile application. They also give a New York headquarters. This does not fit a packaged-cookie business. The mismatch suggests untailored boilerplate. The accountant's review gives only limited assurance and tested no internal controls. Revenue, cost of goods sold and cash figures are therefore reviewed, not audited, and should not be over-trusted. Stage B notes the conflict but gives it no weight.",
+   "claim_ids": [
+    "A2",
+    "A20",
+    "C6"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "generic_trigger_used_as_decisive",
+   "target": "R-TERMS-1 and R-FIN-1 handling",
+   "explanation": "Stage B correctly leaves R-TERMS-1 and R-FIN-1 unknown rather than adverse. The generic features G3 (going concern), G2, G4, G5, G6, G7 and G8 stay non-decisive. Two risks remain. First, the CEO controlling amendment, waiver and the proxy vote (B6) is not a G8 feature alone, and the pack does not show it transfers value. It should not be turned into an adverse TERMS finding. Second, it should not be dismissed as generic either, because no investor-consent requirement is stated. The correct status is 'unknown, unresolved'.",
+   "claim_ids": [
+    "B6",
+    "A12",
+    "A13",
+    "A21",
+    "C7"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B8 / regulatory_progress",
+   "explanation": "B8 says no IRB, FDA authorization or trial milestone 'applies to the product'. The pack does not say that. It says only that the products are regulated by the FDA. The statement relies on outside knowledge. The correct position is that no regulatory milestone is described and the pack gives no pathway. The testing-the-waters disclaimer gap cannot be assessed because the Exhibit E image pages are blank. Only one email and one press release are readable.",
+   "claim_ids": [
+    "B8",
+    "A30",
+    "A31",
+    "C8"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "overstatement",
+   "target": "B9 and B10 citations",
+   "explanation": "B9 says the Form C 'states the market is highly competitive'. Its cited quotes (a competitor description fragment and the trade-secret sentence) do not show that. B10 says there is 'no key-person insurance'. Its quote is on p.15, but the insurance statement is on p.16. The claims are probably true, but the citations do not match them as written.",
+   "claim_ids": [
+    "B9",
+    "B10"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "overstatement",
+   "target": "B7 (analyst inference)",
+   "explanation": "B7 says dilution is 'not capped by the headline valuation'. This follows from the cap's exclusion of SAFEs and notes. Its size cannot be known, since the existing SAFEs' conversion terms are not in the pack. The 25.36% figure is the issuer's own fully diluted percentage and is not independently supported. The text should stay qualitative.",
+   "claim_ids": [
+    "B7",
+    "A25",
+    "A6"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "overstatement",
+   "target": "B3 / B5 traction and milestone",
+   "explanation": "B5 gives as_of 2026-09-28, but the email is undated. B3 correctly calls the traction claims unverified. The email is addressed to prior investors and talks of 'cash burn' accelerating, which also bears on FIN. The press-release claims (e.g. 'award-winning') are marketing and not evidence of demand.",
+   "claim_ids": [
+    "B3",
+    "B5",
+    "A32"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The 'industry recognition' (Food & Beverage Magazine 2024 Editor's Top Products; Good Housekeeping 2025/2026) is stated only in the issuer's own press release. It is issuer marketing, not a third-party document, and it is not technical or efficacy evidence. TECH is unknown: the pack has no product testing or validation.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Brand recognition is at most weak, unverified demand/brand evidence. It is not TECH evidence and not independent third-party evidence.",
+   "attribution": "issuer press release, Exhibit E (doc 6 p.130)",
+   "as_of": "2026-09-24",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "has earned industry recognition, including being named among Food & Beverage"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "B1"
+   ],
+   "contradictions": "B1 classed this as third_party/TECH; the pack has no third-party source.",
+   "claim_type": "other",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "This SAFE's Cash-Out Amount is 'on par' with other SAFEs 'whether this Series or otherwise', which include the existing $5,096,791 2022 Crowd SAFEs. The reviewed notes say the existing SAFEs share in dissolution proceeds 'generally with equal priority' to common equity, and that the company may elect to continue them without conversion. The pack does not show how the two instruments' priorities fit together. Form C p.13 also says there is no stated liquidation preference. Holder priority and payout are therefore unresolved.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Priority and dilution sources affecting holder proceeds.",
+   "attribution": "issuer, Form C p.12 and p.13; reviewed statement notes p.51",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 12,
+     "quote": "(ii) on par with payments for other SAFEs, whether this Series or otherwise, and/or Preferred Stock, and if the applicable proceeds"
+    },
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "The Securities do not have a stated return or liquidation preference."
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "Dissolution Event before the termination of the Crowd SAFE, the Investor is entitled to"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "the Company may elect either to continue"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A15",
+    "A36",
+    "A25"
+   ],
+   "contradictions": "Form C p.13 (no liquidation preference) versus Form C p.12 and SAFE s.1(d) (Cash-Out Amount, on par with other SAFEs); notes p.51 describe the 2022 Crowd SAFEs differently.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "Wayflyer loan: Form C p.33 shows $51,000 outstanding with maturity February 28, 2027. The reviewed debt table shows $31,795 total indebtedness at 2025-12-31 and, per the reviewed table, maturity 02/28/2026, which is before the cutoff. The pack has no loan agreement and no statement that it was repaid or extended. No default or acceleration is documented.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Debt obligation relevant to the documented-distress branch of R-FIN-1. No default is documented, so it stays unknown.",
+   "attribution": "issuer, Form C p.33; reviewed statements Note 6 p.51",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Amount Outstanding $51,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Maturity Date February 28, 2027"
+    },
+    {
+     "doc_id": 6,
+     "page": 51,
+     "quote": "$ 31,795 $ - $ 31,795"
+    }
+   ],
+   "financial_period": "as of 2025-12-31 vs 2026-09-28",
+   "basis_claim_ids": [
+    "A24"
+   ],
+   "contradictions": "Principal and maturity differ between Form C and reviewed statements.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "The offering can close at the $75,000 target, while the reviewed FY2025 operating cash outflow was $960,595. The issuer says offering proceeds 'are essential to our operations' and that it may raise more outside capital. The pack states no funding requirement for the stated milestone. Whether the target or maximum raise covers it cannot be tested, and this stays 'unknown'. The issuer's roughly 5-month runway is as of 2026-06-30 and is not tied to the offering deadline.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Compares offering size with reviewed same-period spending; it does not use a calculated value.",
+   "attribution": "analyst reading of Form C XML, p.34, and reviewed Note 11",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<offeringAmount>75000.00</offeringAmount>"
+    },
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "an operating cash outflow of $960,595 and liquid assets in cash of $116,414"
+    },
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "The proceeds from the Offering are essential to our operations."
+    }
+   ],
+   "financial_period": "FY2025 and offering terms",
+   "basis_claim_ids": [
+    "A4",
+    "A22",
+    "A34",
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The issuer's press release names completing vertical integration as 'a core use of proceeds' and mentions onboarding key executives. The Form C use-of-proceeds table has no such categories. It lists intermediary fees, retail launches/consumer trials/inventory, promotion/brand building and operations, and states that the issuer may alter the use.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Use of proceeds shapes what milestone the money funds (FIN) and what the holder's money is spent on (TERMS).",
+   "attribution": "issuer press release Exhibit E p.130; issuer Form C p.29",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "A core use of proceeds will go toward completing the vertical integration of"
+    },
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "The Issuer has discretion to alter the use of proceeds set forth above to adhere to the Issuer’s business plan and liquidity"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A11",
+    "B5"
+   ],
+   "contradictions": "Press release use of proceeds differs from the Form C table.",
+   "claim_type": "use_of_proceeds",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The reviewed notes describe customers who 'prepay for services at the time of booking' through a mobile application, which does not match a cookie and baking-mix business. This suggests untailored boilerplate. The statements are accountant-reviewed only (limited assurance, no internal-control testing). Their figures should be given reviewed-level weight, not audited-level weight.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Concerns the reliability of the accounts, not the product.",
+   "attribution": "reviewed statements Note 2 p.47; Form C risk factor p.20",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 47,
+     "quote": "customers are primarily individual consumers who prepay for services at the time of"
+    },
+    {
+     "doc_id": 6,
+     "page": 20,
+     "quote": "We have not prepared any audited financial statements."
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "basis_claim_ids": [
+    "A2",
+    "A20"
+   ],
+   "contradictions": "Note wording versus the business described in Form C p.27.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The SAFE can be amended, waived or modified only at the direction of the CEO as 'Lead', who also votes the investors' proxy at the CEO's own direction. The text requires only good faith and fair dealing. The pack does not state whether investor consent is needed. No value transfer is documented, so the status is unknown and unresolved. It is not adverse and not cleared. The related features (no voting, no anti-dilution) are generic G5/G8 and are not decisive.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Insider control over amendment of the security; relevant to R-TERMS-1 element TERMS1-2 and not shown to transfer value.",
+   "attribution": "SAFE s.8(c) p.65; Form C p.13",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 65,
+     "quote": "(c) Any provision of this SAFE may be amended, waived or modified only at the direction of"
+    },
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "proxy on behalf of Investors in respect to instructions related to the Securities. The Lead will vote at the direction of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A13",
+    "A12",
+    "B6"
+   ],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C8",
+   "claim_text": "The pack says only that the issuer's products 'are regulated by the Food and Drug Administration'. It describes no FDA authorization, IRB or trial milestone. The statement in B8 that none 'applies to the product' goes beyond the pack. The issuer also discloses that some testing-the-waters communications may lack proper disclaimers. Most Exhibit E pages are blank in the pack, so this cannot be checked. No regulatory action is documented.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Regulatory posture and disclosed securities-law compliance risk.",
+   "attribution": "issuer, Form C pp.22, 28",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 28,
+     "quote": "particular, our products are regulated by the Food and Drug Administration. These laws and regulations"
+    },
+    {
+     "doc_id": 6,
+     "page": 22,
+     "quote": "these communications may not have included proper disclaimers required for a Reservation Campaign."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A30",
+    "A31",
+    "B8"
+   ],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  }
+ ]
+}

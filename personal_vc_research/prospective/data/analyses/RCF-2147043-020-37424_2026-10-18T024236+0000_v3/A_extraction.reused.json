@@ -1,0 +1,1398 @@
+{
+ "claims": [
+  {
+   "claim_id": "A1",
+   "claim_text": "Issuer is Mightylicious, Inc. (Mightylicious Inc), a Delaware corporation incorporated April 24, 2017 (formerly Hungry Monkey, LLC / Mighty Monkey, LLC, converted to a corporation June 15, 2022), offering through OpenDeal Portal LLC dba Republic.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Identity/offering identification only.",
+   "attribution": "issuer, Form C cover and XML",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 1,
+     "quote": "Mightylicious, Inc."
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<nameOfIssuer>Mightylicious Inc</nameOfIssuer>"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<dateIncorporation>04-24-2017</dateIncorporation>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "identity",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A2",
+   "claim_text": "Per the issuer, the company makes and sells ready-to-eat gluten-free cookies (with vegan options), plus flour blends and brownie mix, via supermarkets, other stores and its website.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Describes a commercial consumer-goods business with sales channels; description only, not verified demand.",
+   "attribution": "issuer, Form C p.27 (doc 6 PDF p27)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "Mightylicious, Inc. is a company that makes and sells homemade cookies with fresh ingredients that are ready-to-eat,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Financial statement notes (p48) describe customers prepaying at booking via a mobile application, which does not fit a cookie business; likely boilerplate.",
+   "claim_type": "other",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A3",
+   "claim_text": "The security offered is a SAFE (Simple Agreement for Future Equity), which is not currently an equity interest and only provides a right to receive equity in the future on certain events.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Security type.",
+   "attribution": "issuer, Form C p.2 and p.10 (PDF)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 2,
+     "quote": "SAFE (Simple Agreement for Future Equity)"
+    },
+    {
+     "doc_id": 6,
+     "page": 10,
+     "quote": "The Securities are not currently equity interests in the Issuer and merely provide a right to receive equity at some point"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A4",
+   "claim_text": "Offering terms per Form C XML: target $75,000 (75,000 securities at $1.00), maximum $1,000,000, oversubscriptions accepted first-come first-served, deadline December 18, 2026.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Target/maximum amounts are offering terms and also bound the financing available.",
+   "attribution": "issuer, Form C XML (doc 5)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<offeringAmount>75000.00</offeringAmount>"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>1000000.00</maximumOfferingAmount>"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<deadlineDate>12-18-2026</deadlineDate>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A5",
+   "claim_text": "Conversion: on an Equity Financing (next sale of Capital Stock raising at least $1,000,000 gross), the SAFE converts at the greater of the amounts under a $15,000,000 pre-money valuation cap or the lowest price in the financing if pre-money is at or below the cap. The Form C states the cap but also that the Intermediary ascribed no pre-Offering valuation and the securities are priced arbitrarily.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Price/cap and conversion mechanics.",
+   "attribution": "issuer, Form C p.11 and p.34 (PDF); SAFE Exhibit B p.55",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "The terms of this Offering are based on a pre-money valuation cap of $15,000,000. Although the Securities provide a"
+    },
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "Upon the next sale (or series of related sales) by the Issuer of its Capital Stock to one or more third parties resulting"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A6",
+   "claim_text": "The cap's share denominator excludes reserved/available equity plan shares, convertible promissory notes, and all SAFEs including this one, and securities issuable on conversion of notes or SAFEs; no discount is stated in the cited passages.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Dilution/priority source identification.",
+   "attribution": "issuer, Form C p.11 (PDF)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "warrants to purchase capital stock, but excluding (i) shares of capital stock reserved and available for future issuance"
+    },
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "(ii) convertible promissory notes, (iii) any Simple Agreements for Future Equity, including the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A7",
+   "claim_text": "Price of $1.00 per security was determined arbitrarily and does not necessarily relate to asset value, net worth, revenues or other objective criteria.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Price determination (generic G7).",
+   "attribution": "issuer, Form C p.9 and XML",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 9,
+     "quote": "The price of the Securities was determined arbitrarily, does not necessarily bear any relationship to the Issuer"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A8",
+   "claim_text": "Minimum individual purchase is $100 and maximum $124,000; the issuer may amend these in its sole discretion.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Minimum investment.",
+   "attribution": "issuer, Form C p.9 (PDF)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 9,
+     "quote": "Amount is $100 and the Maximum Individual Purchase Amount is $124,000. The Issuer reserves the right to amend"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A9",
+   "claim_text": "Issuer-paid intermediary fees: cash fee equal to the greater of $12,000 or 0% up to $100,000 and 6% above that up to $5,000,000, plus a non-refundable $5,000 onboarding fee. No investor-paid fee is stated in the passages.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Fees paid by the issuer to the intermediary.",
+   "attribution": "issuer, Form C p.14 and XML",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 14,
+     "quote": "At the conclusion of the Offering, the Issuer shall pay the Intermediary a cash fee equal to the greater of (A) twelve"
+    },
+    {
+     "doc_id": 6,
+     "page": 14,
+     "quote": "Additionally, the Issuer shall pay to the Intermediary a non-"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A10",
+   "claim_text": "Intermediary also receives securities equal to 1.5% of the securities sold; total outstanding after the Offering increases accordingly. Existing Crowd SAFEs include $99,937 issued to the Intermediary.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Intermediary securities are a dilution source and issuer-paid compensation.",
+   "attribution": "issuer, Form C p.14 and p.32",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 14,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to one and one-half percent (1.5%)"
+    },
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "*Includes $99,937 in Crowd SAFEs issued to the Intermediary."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A11",
+   "claim_text": "Use of proceeds table: intermediary fees $12,000 (16%) at target and $54,000 (5.4%) at maximum; remainder to retail launches/consumer trials/inventory, promotion/brand building and operations. Table excludes $5,000 onboarding and advisor/legal fees. Issuer may alter the use.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Use of proceeds and fees paid from raised funds.",
+   "attribution": "issuer, Form C p.29 (PDF)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "Intermediary Fees* 16% $12,000 5.4%** $54,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "Operations (3) 10% $7,500 12.5% $125,000"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A9"
+   ],
+   "contradictions": "Press release (Exhibit E) lists vertical integration and key executive hires as uses, not shown as categories in the Form C table.",
+   "claim_type": "use_of_proceeds",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A12",
+   "claim_text": "Securities carry no voting rights, even after conversion unless the issuer provides otherwise; the 'Lead' acts as proxy for investors and votes at the direction of the issuer's CEO.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Voting/proxy (generic G8).",
+   "attribution": "issuer, Form C p.13 (PDF)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "Neither the Securities nor the securities issuable upon the conversion of the Securities have voting rights unless"
+    },
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "proxy on behalf of Investors in respect to instructions related to the Securities. The Lead will vote at the direction of the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A13",
+   "claim_text": "The SAFE provides that any provision may be amended, waived or modified only at the direction of the issuer's CEO (the 'Lead'), who must act in good faith and fair dealing. The pack does not state whether investor consent is required for amendments.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Amendment control over the security by an insider.",
+   "attribution": "SAFE form, Exhibit B s.8(c) (PDF p.65)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 65,
+     "quote": "(c) Any provision of this SAFE may be amended, waived or modified only at the direction of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A14",
+   "claim_text": "The securities have no anti-dilution rights and no entitlement to dividends or distributions.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Generic G4/G5 features.",
+   "attribution": "issuer, Form C p.11 and p.13",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "The Securities do not have anti-dilution rights, which means that future equity issuances and other events will dilute"
+    },
+    {
+     "doc_id": 6,
+     "page": 11,
+     "quote": "The Securities do not entitle Investors to any dividends and/or distributions."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A15",
+   "claim_text": "On dissolution or liquidity event, the SAFE is junior to indebtedness and creditor claims, on par with other SAFEs and/or Preferred Stock, and senior to Common Stock; the SAFE states it is intended to operate like standard non-participating Preferred Stock.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Priority as stated in documents; no waterfall beyond these terms asserted.",
+   "attribution": "issuer, Form C p.12; SAFE s.1(d) p.56",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 12,
+     "quote": "distribute all proceeds legally available for distribution with the following priority: (i) junior to payment of outstanding"
+    },
+    {
+     "doc_id": 6,
+     "page": 56,
+     "quote": "(d) Liquidation Priority. In a Liquidity Event or Dissolution Event, this SAFE is intended to"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Form C p.13 says no stated return or liquidation preference (see C36).",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A16",
+   "claim_text": "Reg CF one-year transfer restrictions apply, additional issuer-imposed restrictions (no transfer to competitors, opinion of counsel), and the investor holds only a beneficial interest through a custodian/nominee.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Illiquidity/custody (generic G6).",
+   "attribution": "issuer, Form C p.13 and p.24",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "Any Securities sold pursuant to Regulation CF being offered may not be transferred by any Investor of such Securities"
+    },
+    {
+     "doc_id": 6,
+     "page": 24,
+     "quote": "The Custodian shall serve as the legal title holder of the Securities. Investors will only obtain a beneficial ownership"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Custodian named as BitGo Bank & Trust, N.A. in Form C but BitGo Trust Company, Inc. in Exhibits C/D.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A17",
+   "claim_text": "Reviewed FY2025 revenue $459,216 (FY2024 $347,602) with cost of goods sold $488,693 (FY2024 $464,671), i.e. cost of goods sold exceeded revenue in both years.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Revenue is the commercial-stage demand evidence; assurance is accountant review, not audit.",
+   "attribution": "issuer Form C p.3; reviewed financial statements Exhibit A",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Revenues/Sales $459,216 $347,602"
+    },
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Cost of Goods Sold $488,693 $464,671"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "basis_claim_ids": [],
+   "contradictions": "Risk factor on p.14 refers to 'our lack of revenues from sales', inconsistent with reported revenue (boilerplate).",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A18",
+   "claim_text": "Reviewed cash and cash equivalents were $116,414 at 2025-12-31 and $149,227 at 2024-12-31; net loss FY2025 $(896,217), FY2024 $(622,749).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Cash and losses.",
+   "attribution": "issuer Form C p.3; accountant-reviewed statements",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Cash & Cash Equivalents $116,414 $149,227"
+    },
+    {
+     "doc_id": 6,
+     "page": 3,
+     "quote": "Net Income/(Loss) $(896,217) $(622,749)"
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A19",
+   "claim_text": "Issuer states that as of June 30, 2026 it had $654,000 in cash and cash equivalents, approximately 5 months of runway (cash divided by average monthly net loss). No statements or average monthly net loss figure for 2026 are in the pack.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Newer issuer-reported cash and runway statement.",
+   "attribution": "issuer, Form C p.34 (PDF); unaudited, no assurance",
+   "as_of": "2026-06-30",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "As of June 30, 2026, the Issuer had an aggregate of $654,000 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "approximately 5 months of runway. Runway is calculated by dividing cash-on-hand by average monthly net loss (if"
+    }
+   ],
+   "financial_period": "as of 2026-06-30",
+   "basis_claim_ids": [],
+   "contradictions": "Dec 2025 cash was $116,414 with separate marketable securities of $1,397,792; unclear whether the June 2026 figure includes liquidated securities.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A20",
+   "claim_text": "Financial statements for FY2025/FY2024 are accountant-reviewed (report dated July 23, 2026), not audited; labelled Unaudited; internal controls not tested.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Assurance level of the accounts (concerns accounts, not product).",
+   "attribution": "independent accountants' review report, Exhibit A p.42; issuer risk factor p.20",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 42,
+     "quote": "Based on our reviews, we are not aware of any material modifications that should be made to the accompanying"
+    },
+    {
+     "doc_id": 6,
+     "page": 20,
+     "quote": "We have not prepared any audited financial statements."
+    }
+   ],
+   "financial_period": "FY2025 and FY2024",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A21",
+   "claim_text": "The review report includes a going-concern paragraph and Note 11 states cash was less than a year of reserves and these factors normally raise substantial doubt about continuing as a going concern; the accountant's conclusion is stated not modified.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Going-concern disclosure (generic G3).",
+   "attribution": "reviewed financial statements Note 11 p.53; accountants' report p.42",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "less than a year worth of cash reserves as of December 31, 2025. These factors normally raise substantial doubt"
+    },
+    {
+     "doc_id": 6,
+     "page": 42,
+     "quote": "The accompanying financial statements have been prepared assuming that the Company will continue as a going"
+    }
+   ],
+   "financial_period": "FY2025",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A22",
+   "claim_text": "FY2025 net operating loss $933,836 and operating cash outflow $960,595 per Note 11 of the reviewed statements.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Same-period spending.",
+   "attribution": "reviewed financial statements Note 11 p.53",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 53,
+     "quote": "The Company has a net operating loss of $933,836, an operating cash outflow of $960,595 and liquid assets in cash of $116,414, which"
+    }
+   ],
+   "financial_period": "FY2025",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A23",
+   "claim_text": "At 2025-12-31 the company also held marketable securities (Edward Jones brokerage account) with fair value $1,397,792 (2024: $2,302,274), mainly municipal bonds, equities and treasury money market funds; withdrawals of ~$758,853 in 2025 funded operations. These are not classified as cash.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Liquid resources outside cash that bear on runway.",
+   "attribution": "reviewed financial statements Note 4 p.50",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 50,
+     "quote": "with aggregate fair values of $1,397,792 and $2,302,274, respectively. The investment portfolio consisted"
+    }
+   ],
+   "financial_period": "as of 2025-12-31",
+   "basis_claim_ids": [],
+   "contradictions": "Form C cover 'Cash & Cash Equivalents' ($116,414) excludes these securities; the 5-month runway statement basis is unclear.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A24",
+   "claim_text": "Outstanding debt per Form C: SBA EIDL loan $80,000 (maturity July 6, 2051), Wayflyer loan $51,000 (maturity Feb 28, 2027, unsecured), CEO loans $8,475 (0%, no maturity). No default or acceleration is stated in the passages.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "FIN",
+    "TERMS"
+   ],
+   "dimension_rationale": "Debt is a financing obligation and ranks ahead of the SAFE in liquidation.",
+   "attribution": "issuer, Form C pp.32-33",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Type SBA EIDL Loan"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Type Wayflyer Loan"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Amount Outstanding $51,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Type Unsecured Loans from Company CEO"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Financial statements show Wayflyer maturity 02/28/2026 and principal $31,795 at 2025-12-31.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A25",
+   "claim_text": "Existing SAFEs outstanding: principal $5,096,791 with $15,000,000 valuation cap, no voting, no anti-dilution; the Form C gives their percentage ownership on a fully diluted basis assuming conversion before this Offering as 25.36% (common 74.64%).",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Existing convertible instruments as dilution source.",
+   "attribution": "issuer, Form C pp.31-32",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Principal Amount Outstanding $5,096,791*"
+    },
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Valuation cap of $15,000,000"
+    },
+    {
+     "doc_id": 6,
+     "page": 32,
+     "quote": "Percentage ownership of the Issuer by the holders of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Same principal of $5,096,791 shown in reviewed statements at 2025-12-31 (carrying value $5,007,597 as liability).",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A26",
+   "claim_text": "Share counts: 1,000,000 common shares issued and outstanding (Form C date and 2025-12-31 and 2024-12-31 in reviewed statements); authorized 3,000,000 common shares, par $0.00001. No options or reserved pool disclosed.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Capitalization.",
+   "attribution": "issuer, Form C p.31; reviewed statements Note 7 p.52",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 31,
+     "quote": "As of the date of this Form C, 1,000,000 shares of Common Stock are issued and outstanding."
+    },
+    {
+     "doc_id": 6,
+     "page": 31,
+     "quote": "authorized capital stock consists of 3,000,000 shares of common stock, par value $0.00001 per share (the"
+    },
+    {
+     "doc_id": 6,
+     "page": 52,
+     "quote": "December 31, 2025, and 2024, 1,000,000 shares and 1,000,000 shares of common stock, respectively, have"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A27",
+   "claim_text": "CEO/founder Carolyn Haeler holds 100% of voting power (1,000,000 common shares) and can influence issuance of additional securities, repurchases and related-party transactions.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "TEAM"
+   ],
+   "dimension_rationale": "Control concentration affects dilution/governance; also identifies key person.",
+   "attribution": "issuer, Form C p.25 (PDF p33) and risk factors",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 33,
+     "quote": "Carolyn Haeler 1,000,000 shares of Common Stock 100%"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "identity",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A28",
+   "claim_text": "Issuer-stated team record: sole key person is founder-CEO Carolyn Haeler (finance background at J.P. Morgan, hedge fund, IBM consulting; Yale MBA), who launched the brand in 2017; the company has 2 employees and the CEO handles a wide range of administrative and operational functions.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "Documented experience only.",
+   "attribution": "issuer, Form C p.30 and p.29; XML",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 30,
+     "quote": "Carolyn previously worked at Forester Capital, a long-short equity hedge fund, where she was responsible"
+    },
+    {
+     "doc_id": 5,
+     "page": 1,
+     "quote": "<currentEmployees>2.00</currentEmployees>"
+    },
+    {
+     "doc_id": 6,
+     "page": 29,
+     "quote": "Currently, our CEO handles"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "No prior food-industry operating experience is described beyond the company's own history; no independent verification in pack.",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A29",
+   "claim_text": "Issuer states it is not subject to any bad actor disqualifications.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "Bad-actor status of the issuer/key persons.",
+   "attribution": "issuer, Form C p.28",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 36,
+     "quote": "The Issuer is not subject to any bad actor disqualifications under any relevant U.S. securities laws."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A30",
+   "claim_text": "Regulatory status: the issuer states its products are regulated by the FDA and it is not subject to current or threatened litigation. No regulatory action, FDA authorization process or IRB/trial milestone is described; none applies to the product type in the documents.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Regulatory posture; no regulatory action documented.",
+   "attribution": "issuer, Form C p.28 (PDF p27 of body)",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 28,
+     "quote": "particular, our products are regulated by the Food and Drug Administration. These laws and regulations"
+    },
+    {
+     "doc_id": 6,
+     "page": 28,
+     "quote": "The Issuer is not subject to any current litigation or threatened litigation."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A31",
+   "claim_text": "Risk disclosure: the issuer may not have complied with securities law in its testing-the-waters campaign; some communications may lack proper disclaimers. This is a disclosed possibility, not a finding of violation.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Securities-law compliance risk for this offering.",
+   "attribution": "issuer, Form C p.22",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 22,
+     "quote": "these communications may not have included proper disclaimers required for a Reservation Campaign."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A32",
+   "claim_text": "Issuer's testing-the-waters email claims placement in 1800 doors in over 49 states, a $100K month-over-month run rate, and Amazon growth of +355% YoY; these are undated marketing assertions with no supporting data in the Form C.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Customer/retail traction claims.",
+   "attribution": "issuer, Exhibit E testing-the-waters email (PDF p.128)",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• Placement in 1800 doors in over 49 states"
+    },
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• $100K MoM Run Rate and growing"
+    },
+    {
+     "doc_id": 6,
+     "page": 128,
+     "quote": "• Amazon: +355% YoY growth and on pace for $100K +, with $1M + forecasted in 2027"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Not reconcilable with reviewed FY2025 revenue of $459,216 without period-specific data; 'MoM run rate' undefined. Email also says cash burn has accelerated.",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A33",
+   "claim_text": "Issuer press release says the company raised $5,000,000 from 4,365 investors on Republic in 2022, consistent in scale with the $5,096,791 existing SAFE principal.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "History of financing source for existing SAFEs.",
+   "attribution": "issuer press release, Exhibit E (PDF p.130)",
+   "as_of": "2022-12-31",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 130,
+     "quote": "MIGHTYLICIOUS), they raised $5,000,000 from 4,365 investors on the Republic"
+    }
+   ],
+   "financial_period": "2022",
+   "basis_claim_ids": [
+    "A25"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A34",
+   "claim_text": "Issuer says offering proceeds are essential to operations and that it may raise additional capital (common/preferred stock, SAFEs or convertible notes) from accredited investors outside this Offering; no amounts or terms given.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Financing dependence and possible planned convertibles.",
+   "attribution": "issuer, Form C p.34",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "The proceeds from the Offering are essential to our operations."
+    },
+    {
+     "doc_id": 6,
+     "page": 34,
+     "quote": "including but not limited to common or preferred stock, SAFEs (Simple Agreement for Future Equity) or Convertible"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "use_of_proceeds",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A35",
+   "claim_text": "The company may extend the deadline and/or increase the Maximum Offering Amount beyond what is stated, which would increase securities outstanding.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Maximum raise and dilution can change.",
+   "attribution": "issuer, Form C p.23",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 23,
+     "quote": "The Company may extend the Offering Deadline and/or increase the Maximum Offering Amount beyond what is"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A36",
+   "claim_text": "Form C summary states the securities have no stated return or liquidation preference.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Priority statement.",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "The Securities do not have a stated return or liquidation preference."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "SAFE s.1(b)/(d) gives a Cash-Out Amount equal to the greater of purchase amount or as-converted amount and says it operates like non-participating Preferred Stock.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A37",
+   "claim_text": "Issuer states it cannot determine whether it has enough authorized Capital Stock for conversion of the securities.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Dilution capacity versus authorized shares (3,000,000).",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 13,
+     "quote": "The Issuer cannot determine if it currently has enough Capital Stock authorized to issue upon the conversion of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A26"
+   ],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A38",
+   "claim_text": "Issuer's stated near-term priority is to complete initial institution integrations and scale infrastructure for retail growth; no funding amount, timing or milestone dates are given in the Form C.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "DEMAND",
+    "FIN"
+   ],
+   "dimension_rationale": "Stated next milestone relates to commercial growth and its funding need.",
+   "attribution": "issuer, Form C p.27",
+   "as_of": "2026-09-28",
+   "citations": [
+    {
+     "doc_id": 6,
+     "page": 27,
+     "quote": "near-term strategic priority is to complete initial institution integrations and scale its infrastructure to"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "'Institution integrations' and 'white-label customer integration' do not match the cookie-business description; possibly boilerplate.",
+   "claim_type": "other",
+   "calc_request": null
+  }
+ ],
+ "critical_items": [
+  {
+   "item": "issuer_and_offering_identity",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A1",
+    "A4"
+   ],
+   "note": "Issuer, intermediary and offering identified in Form C and XML."
+  },
+  {
+   "item": "security_type",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A3"
+   ],
+   "note": "SAFE (Simple Agreement for Future Equity), Series 2026."
+  },
+  {
+   "item": "operative_contract",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A13",
+    "A15"
+   ],
+   "note": "Form of SAFE (Exhibit B) is readable in doc 6 pp.55-66; it is an unsigned form with blank investor fields. Exhibit E image pages (111-127, 132-150) are blank in the text layer."
+  },
+  {
+   "item": "price_cap_and_conversion_terms",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "note": "$1.00 price (arbitrary), $15,000,000 pre-money cap; cap denominator excludes SAFEs and notes."
+  },
+  {
+   "item": "minimum_investment_and_fees",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A8",
+    "A9",
+    "A10"
+   ],
+   "note": "Minimum $100; issuer-paid intermediary fees stated; investor-paid fee not stated in the pack."
+  },
+  {
+   "item": "financial_statements_and_dates",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A18",
+    "A20"
+   ],
+   "note": "Reviewed (not audited) statements for years ended 2025-12-31 and 2024-12-31; report dated 2026-07-23. No 2026 statements."
+  },
+  {
+   "item": "closing_or_availability_evidence",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A4"
+   ],
+   "note": "Deadline 2026-12-18 stated, but no platform page or closing evidence in the pack; a future deadline is not proof of availability."
+  }
+ ],
+ "missing_information": [
+  "Investor-paid fees (if any) are not stated in the Form C or SAFE.",
+  "Platform availability/live status of the Republic offering and any closings are not evidenced.",
+  "No financial statements after 2025-12-31; basis of the $654,000 June 30, 2026 cash figure (cash vs marketable securities) and the average monthly net loss behind the 5-month runway are not provided.",
+  "No stated amount, timing or cost of the next milestone (e.g. Wakefern/Wegmans launches, vertical integration); use of proceeds does not tie to a specific milestone.",
+  "Terms of the existing 2022 SAFEs (discount, MFN, other terms) are not in the pack beyond the $15,000,000 cap; no breakdown of holders.",
+  "No options, reserved equity plan pool or warrants disclosed; adequacy of 3,000,000 authorized shares for conversion is unknown.",
+  "Wayflyer loan details are inconsistent (maturity and payment terms); loan agreements not provided.",
+  "Traction claims (1800 doors, run rate, Amazon growth, named retailers) have no supporting data, dates or customer contracts.",
+  "Customer concentration, retailer contracts and gross margin trajectory are not disclosed (cost of goods sold exceeded revenue in FY2025 and FY2024).",
+  "Exhibit E testing-the-waters image pages are blank in the text layer; their content is not readable.",
+  "Whether the CEO-as-Lead can amend SAFE provisions without investor consent, and the Lead's conflict-management, is not detailed beyond the cited text.",
+  "No independent corroboration (third-party) of any business, team or regulatory statement."
+ ],
+ "valuation_inputs": {
+  "price_per_share_usd": 1,
+  "price_claim_id": "A7",
+  "share_counts": [
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Common Stock",
+    "value": 1000000,
+    "as_of": "2025-12-31",
+    "basis": "reviewed_balance_sheet",
+    "claim_id": "A26"
+   },
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Common Stock",
+    "value": 1000000,
+    "as_of": "2026-09-28",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A26"
+   },
+   {
+    "kind": "authorized",
+    "share_class": "Common Stock",
+    "value": 3000000,
+    "as_of": "2026-09-28",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A26"
+   },
+   {
+    "kind": "offered_minimum",
+    "share_class": "SAFE units at $1.00",
+    "value": 75000,
+    "as_of": "2026-09-28",
+    "basis": "offering_terms",
+    "claim_id": "A4"
+   },
+   {
+    "kind": "offered_maximum",
+    "share_class": "SAFE units at $1.00 (maximum $1,000,000)",
+    "value": 1000000,
+    "as_of": "2026-09-28",
+    "basis": "offering_terms",
+    "claim_id": "A4"
+   }
+  ],
+  "convertible_instruments": [
+   {
+    "instrument": "Existing SAFEs (2022 Crowd SAFEs, includes $99,937 issued to Intermediary)",
+    "status": "existing",
+    "principal_usd": 5096791,
+    "as_of": "2026-09-28",
+    "conversion_terms_disclosed": false,
+    "claim_ids": [
+     "A25",
+     "A33"
+    ],
+    "note": "Same principal $5,096,791 shown at 2025-12-31 in reviewed statements. Only the $15,000,000 cap is disclosed; other terms of the 2022 instrument are not in the pack."
+   },
+   {
+    "instrument": "This Offering: Series 2026 SAFE (up to $1,000,000)",
+    "status": "planned",
+    "principal_usd": 1000000,
+    "as_of": "2026-09-28",
+    "conversion_terms_disclosed": true,
+    "claim_ids": [
+     "A4",
+     "A5",
+     "A6"
+    ],
+    "note": "Not yet issued; maximum amount shown. Target $75,000. Maximum may be increased by the issuer (C35)."
+   },
+   {
+    "instrument": "Intermediary compensation securities (1.5% of securities sold)",
+    "status": "planned",
+    "principal_usd": null,
+    "as_of": "2026-09-28",
+    "conversion_terms_disclosed": false,
+    "claim_ids": [
+     "A10"
+    ],
+    "note": "Issued only on sales in this Offering; separate terms not detailed."
+   },
+   {
+    "instrument": "Possible additional SAFEs/convertible notes to accredited investors outside this Offering",
+    "status": "planned",
+    "principal_usd": null,
+    "as_of": "2026-09-28",
+    "conversion_terms_disclosed": false,
+    "claim_ids": [
+     "A34"
+    ],
+    "note": "Contemplated only; no amount or terms."
+   }
+  ],
+  "note": "Cap is a pre-money cap whose share denominator excludes SAFEs and convertible notes (C6), so existing and new SAFEs are not counted in it. The software computes any implied value; none is stated here."
+ },
+ "cash_points": [
+  {
+   "amount_usd": 116414,
+   "as_of": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A18"
+  },
+  {
+   "amount_usd": 149227,
+   "as_of": "2024-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A18"
+  },
+  {
+   "amount_usd": 654000,
+   "as_of": "2026-06-30",
+   "assurance": "unaudited_issuer_statement",
+   "claim_id": "A19"
+  }
+ ],
+ "spending_points": [
+  {
+   "kind": "net_loss",
+   "amount_usd": 896217,
+   "period_start": "2025-01-01",
+   "period_end": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A18"
+  },
+  {
+   "kind": "net_loss",
+   "amount_usd": 622749,
+   "period_start": "2024-01-01",
+   "period_end": "2024-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A18"
+  },
+  {
+   "kind": "operating_cash_outflow",
+   "amount_usd": 960595,
+   "period_start": "2025-01-01",
+   "period_end": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A22"
+  }
+ ],
+ "financial_statements": {
+  "period_end": "2025-12-31",
+  "assurance": "reviewed",
+  "claim_ids": [
+   "A17",
+   "A18",
+   "A20",
+   "A21",
+   "A22"
+  ]
+ },
+ "fees": {
+  "investor_paid_fee_stated": false,
+  "investor_fee_claim_ids": [],
+  "issuer_paid_fee_claim_ids": [
+   "A9",
+   "A10",
+   "A11"
+  ],
+  "minimum_investment_usd": 100,
+  "minimum_claim_id": "A8"
+ },
+ "document_conflicts": [
+  {
+   "topic": "Cash position: June 2026 vs December 2025",
+   "claim_ids": [
+    "A18",
+    "A19",
+    "A23"
+   ],
+   "material": true,
+   "explanation": "Reviewed cash was $116,414 at 2025-12-31 alongside $1,397,792 of separate marketable securities, while the Form C states $654,000 in cash and equivalents at 2026-06-30. The composition (and whether securities were liquidated) is not explained; these are different dates and assurance levels, not necessarily a contradiction."
+  },
+  {
+   "topic": "Custodian entity name",
+   "claim_ids": [
+    "A16"
+   ],
+   "material": true,
+   "explanation": "Form C and SAFE name BitGo Bank & Trust, National Association, while Exhibits C and D name BitGo Trust Company, Inc. (South Dakota) as custodian/nominee."
+  },
+  {
+   "topic": "Liquidation preference description",
+   "claim_ids": [
+    "A15",
+    "A36"
+   ],
+   "material": true,
+   "explanation": "Form C p.13 says no stated return or liquidation preference; the SAFE and Form C p.11/12 give a Cash-Out Amount with priority and say it operates like non-participating Preferred Stock."
+  },
+  {
+   "topic": "Use of proceeds vs press release",
+   "claim_ids": [
+    "A11"
+   ],
+   "material": true,
+   "explanation": "Press release says a core use is vertical integration and executive hires; the Form C table lists retail launches/inventory, promotion, operations and fees only."
+  },
+  {
+   "topic": "Wayflyer loan terms",
+   "claim_ids": [
+    "A24"
+   ],
+   "material": false,
+   "explanation": "Form C: maturity Feb 28, 2027, balance $51,000, '1% per month' and 'monthly payment of $1,989 per week'; financial statements: maturity 02/28/2026, balance $31,795 at 2025-12-31 (different dates, maturity and payment wording inconsistent)."
+  },
+  {
+   "topic": "Traction claims vs reviewed financials",
+   "claim_ids": [
+    "A32",
+    "A17"
+   ],
+   "material": false,
+   "explanation": "Testing-the-waters email cites a $100K MoM run rate and 1800 doors; no period-aligned data in the pack, and FY2025 reviewed revenue was $459,216. Not reconcilable from the pack."
+  },
+  {
+   "topic": "Boilerplate inconsistent with the business",
+   "claim_ids": [
+    "A2",
+    "A17",
+    "A38"
+   ],
+   "material": false,
+   "explanation": "Risk factor cites 'lack of revenues from sales' despite reported revenue; financial notes refer to prepaying at booking via a mobile app; business plan refers to institution integrations. HQ is given as New Jersey (Form C) and New York (financial statement notes)."
+  }
+ ]
+}
