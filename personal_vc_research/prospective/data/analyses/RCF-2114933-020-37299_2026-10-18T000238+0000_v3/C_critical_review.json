@@ -1,0 +1,418 @@
+{
+ "issues": [
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "Stage A/B treatment of debt and the Form C cover financial fields",
+   "explanation": "The Form C cover table and XML report short-term and long-term debt of 0 for FY2025. The audited balance sheet at the same date shows convertible notes of $50,704 and a $199,875 related-party payable. This inconsistency is missing from document_conflicts. The cover-form definition of 'debt' may explain it (e.g. related-party payable not counted as debt), so it is not established as a misstatement. It must not feed R-TEAM-1 (misstatement by a key person) or R-FIN-1 (default) without further evidence. It should be recorded as an unresolved conflict.",
+   "claim_ids": [
+    "C1",
+    "A18",
+    "A15",
+    "B8",
+    "B14"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "generic_trigger_used_as_decisive",
+   "target": "B13 (G4-G6, G8 bundled) and its use under R-TERMS-1",
+   "explanation": "B13 bundles four generic triggers into one claim, which blurs per-trigger tagging. The irrevocable 10-year proxy (G8), custodian holding (G6), no anti-dilution (G5) and no dividend promise (G4) are excluded from R-TERMS-1 by its own text. None can support an adverse R-TERMS-1 finding. The proxy is economically notable, but Lane already holds 100% of the voting power before the offering, so the incremental effect is limited. It stays a counter-fact to be disclosed, not a decisive one.",
+   "claim_ids": [
+    "B13",
+    "A08",
+    "A09",
+    "A10"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "generic_trigger_used_as_decisive",
+   "target": "B8, B11 and B9: G2/G3 in R-FIN-1",
+   "explanation": "Audited cash of $19,213 (G2) and the Form C going-concern risk factor (G3) cannot make R-FIN-1 adverse on their own. The Form C risk-factor wording is the issuer's, not the auditor's. The audit report and Note 4 contain no substantial-doubt conclusion. The newer unaudited $160,487 cash figure (2026-06-18) is a different fact with lower assurance. B11 labels the conflict a 'document_supported_fact', but what the documents support is that the two statements differ. Neither should be resolved in either direction.",
+   "claim_ids": [
+    "B8",
+    "B11",
+    "A25",
+    "A26",
+    "B9"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "R-FIN-1 predicate FIN1-A1 and FIN1-A3",
+   "explanation": "The next milestone (IRB human ALS trial, devices, mouse work) is named, but no cost or funding requirement is given for it. Without that amount, FIN1-A1 is only partly established and FIN1-A3 is unknown. Branch B has no document stating an existing default, insolvency or acceleration. The related-party payable has no maturity, and the MOU note is planned, not issued. The correct result is unknown. A shortfall cannot be inferred from the small FY2025 cash or the $30,000 target allocation.",
+   "claim_ids": [
+    "B10",
+    "A28",
+    "A07",
+    "C5"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "optimistic_assumption",
+   "target": "B_analysis financing_and_runway reasoning on the maximum raise",
+   "explanation": "The analysis points to the $2.18M clinical-trial allocation at the $5M maximum. The offering can close at the $75,000 target, with only $30,000 allocated to clinical trials. The issuer says the raise may not be enough. A maximum-raise ceiling says nothing about the likely raise. The statement that the trial is fundable at the maximum is a hypothetical, not support for adequacy. The issuer-stated six-month runway is unsupported and not period-aligned (K5 withheld).",
+   "claim_ids": [
+    "B10",
+    "A24",
+    "B9",
+    "C5"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B9 contradiction comment and B5 'doubtful' timing",
+   "explanation": "B9 says the six-month runway does not square with an FY2025 loss of about $4,700 a month. That is an analyst comparison across different periods, not a documented contradiction. 2026 spending is undisclosed and may have risen. B5 calls H2-2026 human use 'doubtful' by comparing it with the 2026-11-27 deadline. That is analyst_inference. The Form C allows early closing and a deadline extension (p.23). Neither claim is document-supported as stated. Both should be marked analyst_inference with the caveats.",
+   "claim_ids": [
+    "B9",
+    "B5",
+    "A33",
+    "A24"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "dimension_misclassification",
+   "target": "A36/B16 and A34/B7/A35 DEMAND tags; evidence_kind labels",
+   "explanation": "The competition claim ('only later-stage non-pharma', 'no competitor') is tagged DEMAND and labeled issuer_projection. It is neither demand evidence nor a projection. It is an unverified issuer positioning assertion (TECH/competition). The revenue-share projection ($408M-$734M) and the planned partnerships carry a DEMAND tag, although issuer_projection is not in the R-DEM-1 allowed support kinds. This risks their being read as demand evidence. The patent list (A37/B19) is also labeled issuer_projection, but it is an issuer claim about IP ownership.",
+   "claim_ids": [
+    "A36",
+    "B16",
+    "A34",
+    "B7",
+    "A35",
+    "A37",
+    "B19"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "dimension_misclassification",
+   "target": "A41 and A39 REG tags",
+   "explanation": "A41 (possible non-compliance in the earlier convertible offering, with rescission risk) and A39 (bad-actor and litigation statements) are tagged REG. R-REG-1 concerns FDA/IRB-type regulatory milestones and actions against the company or product. A41 concerns securities-law compliance and potential rescission liability, i.e. TERMS/FIN. A39 concerns TEAM/legal status. No regulatory action is documented, and A41 is an issuer hypothetical. Neither should be used under R-REG-1.",
+   "claim_ids": [
+    "A41",
+    "A39"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "R-TERMS-1/R-TERMS-3: second convertible note and founder shares",
+   "explanation": "The $150,000 note converts principal, interest and an additional $50,000 plus interest. The meaning of the extra $50,000, the conversion price, and the creditor's relationship to insiders are all undisclosed. This could transfer value away from equity holders, but nothing documents an insider or affiliate benefit. The 75,000,000 founder shares were ratified after the audit date, with undisclosed issuance date and consideration. The audited Note 6 says the founder contributed $1. Authorized-but-unissued shares are 175M, and no document either restricts or plans their issuance. 'Uncapped insider issuance at nominal prices' is therefore neither shown nor excluded. TERMS1-2 and TERMS1-3 are unknown, not adverse.",
+   "claim_ids": [
+    "A16",
+    "A13",
+    "A14",
+    "C4",
+    "B14"
+   ],
+   "severity": "high"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Investor conversion and contract-amendment mechanics",
+   "explanation": "Form C p.24 says investors would be 'converted into' unrestricted stock in a possible later Reg A offering. The notes also convert only on a Reg A or similar event. No document gives the investor-conversion mechanics, price or consent. Subscription Agreement section 14 allows amendment on a majority of the voting power of the Securities, while section 1(c) puts the votes and consents of those Securities under Lane's proxy. By the text, Lane may control amendments or waivers, but this is an inference and the definition of 'Securities' is not tested. This is unresolved. It is not a documented value transfer under R-TERMS-1.",
+   "claim_ids": [
+    "C2",
+    "C3",
+    "A08",
+    "A43"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B15 'as is ordinary' and negative statements",
+   "explanation": "B15 calls the issuer-paid fees 'ordinary in a Reg CF offering', but the pack contains no benchmark for that. The characterization is analyst inference. The claim also asserts the absence of priority allocation, repurchase right and investor-deducted fees. Its cited quotes support only the no-repurchase and 2% securities statements. Absences belong in missing_information. The fee structure itself (issuer-paid, 20% of target proceeds, plus excluded other offering costs of undisclosed amount) is documented and stays relevant to R-TERMS-2, but it is not shown to be worse than the ordinary form.",
+   "claim_ids": [
+    "B15",
+    "A05",
+    "A06",
+    "A07"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "overstatement",
+   "target": "Issuer efficacy and uniqueness language carried into A/B claims",
+   "explanation": "The Form C says the company has 'conducted extensive testing', is the 'only later-stage' solution, and has a p-value showing a '<1% chance of random chance'. The pack discloses only one proof-of-concept mouse study with no sample, design or endpoint. The p.26 description is broken mid-sentence. The deal-page video transcript (Exhibit C) says 'reversal', stronger than the Form C. It is issuer-hosted marketing content, not independent corroboration, and must not be weighted as third_party. All of this is preclinical TECH evidence only, never demand or regulatory evidence.",
+   "claim_ids": [
+    "A29",
+    "A30",
+    "A36",
+    "B1",
+    "B2",
+    "C6"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B6/A35 absence claims and B10 citation gap",
+   "explanation": "B6 and A35 state 'no signed customer, clinic, distributor or payer agreement is in the pack'. That is an absence and belongs in missing_information, not in a claim. B6 mixes it with the documented zero revenue. B10 asserts that the issuer's own risk factor says the raise may not be enough, but its citations do not contain that passage. C5 now supplies the quote. Under R-DEM-1 the company is pre-commercial, so missing demand evidence is unknown / stage-appropriate and not adverse.",
+   "claim_ids": [
+    "B6",
+    "A35",
+    "B10",
+    "C5"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "R-TEAM-1 clean-record reasoning and team characterization",
+   "explanation": "The bad-actor statement (p.37) speaks of 'the Issuer'. It does not name officers or 20% holders, and it is an issuer certification, not an independent check. It supports 'no sanction documented' (TEAM1-1 unknown / not shown), not a verified clean record. B17 lists the founder's 1973 PhD date. The year must not be read as a signal about the person. Only documented relevant background counts: a neurosciences PhD, the CEO role since 2020, and the interim, consultant-based CFO and CTO roles. No prior clinical or regulatory record is shown, which is missing information, not an adverse fact.",
+   "claim_ids": [
+    "A39",
+    "B17",
+    "A38"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "B12 'no valuation cap' and K1 interpretation",
+   "explanation": "The Form C Valuation section (p.35) says the Securities 'may include a valuation cap', which is boilerplate inconsistent with plain common stock. No cap appears in the Subscription Agreement. 'No cap' is therefore a reading of the documents, not a stated fact, and the Charter is not in the pack. K1 ($75,000,001) is price times the post-ratification count of founder-held shares. It excludes note conversion shares and the 2% intermediary securities. The founder's consideration is undisclosed. It is not a valuation opinion, and no comparables exist in the pack. R-TERMS-2 should say the price has no documented basis (issuer: arbitrary) against the audited stockholders' deficit of $(249,135) and mouse-only evidence. This is not evidence that the price is wrong.",
+   "claim_ids": [
+    "B12",
+    "C7",
+    "A03",
+    "A13",
+    "A42"
+   ],
+   "severity": "medium"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C cover table reports short-term debt of 0 and long-term debt of 0 for the most recent fiscal year (2025). The audited balance sheet at 2025-12-31 shows convertible notes payable, net of discount, of $50,704 and a payable to a related party of $199,875. The Form C does not define how it classified these items in the cover fields.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.3 cover table; audited balance sheet p.45",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 3,
+     "quote": "Short-term Debt 0 0"
+    },
+    {
+     "doc_id": 9,
+     "page": 3,
+     "quote": "Long-term Debt 0 0"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Convertiblenotespayable, netof discount 50,704 -"
+    },
+    {
+     "doc_id": 9,
+     "page": 45,
+     "quote": "Payabletorelatedparty 199,875 212,261"
+    }
+   ],
+   "financial_period": "FY2025",
+   "basis_claim_ids": [
+    "A15",
+    "A18"
+   ],
+   "contradictions": "The cover-form debt definition may exclude related-party payables and discounted notes, so this may be a classification difference rather than a misstatement. The pack does not say which.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "Subscription Agreement section 14 allows amendment or waiver only on written consent of the majority of the voting power of the Securities, while section 1(c) gives Ronald Lane the proxy to vote and act by written consent for all of an investor's shares. Read together, Lane appears able to control any amendment or waiver vote. The agreement does not say this expressly, and whether 'Securities' covers only the offered shares is not tested.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "analyst reading of Subscription Agreement (Exhibit B) section 14 and section 1(c)",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 61,
+     "quote": "modified only upon the written consent of the majority of the voting power of the Securities."
+    },
+    {
+     "doc_id": 9,
+     "page": 54,
+     "quote": "to vote, act by written consent or otherwise take action with respect to all shares of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A08",
+    "A43"
+   ],
+   "contradictions": "No document states that the proxy extends to amendments of the Subscription Agreement itself. The proxy is generic feature G8 and is not itself an R-TERMS-1 trigger.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The Form C states an interest in a subsequent Regulation A offering 'in which the Investor would be converted into' unrestricted stock, and says there is no assurance it will happen. The two existing convertible notes cannot convert before a Reg A or similar follow-on event. The pack gives no mechanism, price, or investor consent for the investors' conversion.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.24 and p.33",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 24,
+     "quote": "While the Company has a stated interest in conducting a subsequent Regulation A"
+    },
+    {
+     "doc_id": 9,
+     "page": 33,
+     "quote": "Conversion cannot take place before a Reg A or similar"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A15",
+    "A16"
+   ],
+   "contradictions": "Audited Note 5 lists change of control, private replacement financing or recapitalization as conversion triggers, which differs from the Form C's Reg A condition.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "Authorized common stock is 250,000,000 shares, of which 75,000,001 are outstanding. The Board ratified a 'prior issuance' of 75,000,000 shares to Ronald Lane on 2026-06-25. The audited Note 6 says the sole member contributed $1 in 2023. The issuance date and consideration for the 75,000,000 shares are not stated. No document states a plan, cap or restriction on issuing the remaining authorized shares, including to insiders.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.36; audited Note 6 p.52",
+   "as_of": "2026-06-25",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 36,
+     "quote": "In connection with the foregoing, on June 25, 2026, the Issuer’s Board of Directors also ratified the prior issuance of"
+    },
+    {
+     "doc_id": 9,
+     "page": 52,
+     "quote": "In 2023, the Company received contribution amounting to $1 from its sole member, the founder and CEO of the Company"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A12",
+    "A13",
+    "A14"
+   ],
+   "contradictions": "Audited statements at 2025-12-31 show 1 share authorized and issued. The gap is explained only by the post-year-end ratification.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The issuer's own risk factor says the amount of capital it is attempting to raise may not be enough to sustain its current business plan. The offering can close at the $75,000 target, and the cost of the human trial and devices is not stated, so adequacy of any raise level cannot be tested from the pack.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 13,
+     "quote": "The amount of capital the Issuer is attempting to raise in this Offering may not be enough to sustain the Issuer’s"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A07",
+    "A28",
+    "B10"
+   ],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "The Exhibit C deal-page video transcript says the company 'actually saw a reversal' in animal studies. The Form C itself says the company does not yet know to what degree the technology will slow, halt or reverse ALS in humans. The transcript is issuer-hosted marketing content, not independent corroboration, and concerns mouse data only.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "preclinical_efficacy",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Exhibit C video transcript p.65; Form C p.28",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 65,
+     "quote": "they actually saw a reversal."
+    },
+    {
+     "doc_id": 9,
+     "page": 28,
+     "quote": "Pending additional trials, HOPE-Neuron does not yet know to what degree its technology will have in terms of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A29",
+    "A30"
+   ],
+   "contradictions": "The Form C wording is weaker than the transcript's 'reversal'. No sample, design or protocol is provided in either.",
+   "claim_type": "science",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C7",
+   "claim_text": "The Form C Valuation section says the Securities 'may include a valuation cap' and that the Intermediary ascribed no pre-Offering valuation. The offered security is plain common stock, and no cap appears in the Subscription Agreement. The cap wording looks like template text. The Charter is not in the pack.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.35",
+   "as_of": "2026-07-30",
+   "citations": [
+    {
+     "doc_id": 9,
+     "page": 35,
+     "quote": "Although the Securities provide certain terms, which may include a valuation cap, the Intermediary has ascribed no"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A02",
+    "A03"
+   ],
+   "contradictions": "Conflicts with the common-stock description at p.9 and p.53, where no cap is stated.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  }
+ ]
+}

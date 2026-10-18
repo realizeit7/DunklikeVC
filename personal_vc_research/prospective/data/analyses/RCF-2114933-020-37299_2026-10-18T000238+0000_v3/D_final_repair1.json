@@ -1,0 +1,654 @@
+{
+ "rule_findings": [
+  {
+   "rule_id": "R-EV1",
+   "result": "not_adverse",
+   "scope": "factual_gap",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "B18",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A19",
+     "role": "supporting",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "구독계약서(Exhibit B)와 FY2025 감사 재무제표가 팩에 있고 읽을 수 있다. 다만 정관, 전환사채 원문, 2025-12-31 이후 중간 재무제표는 팩에 없다.",
+   "counterevidence_ko": "정관과 전환사채 원문이 없어 배당·청산·전환가격에 의존하는 결론은 제한된다. 47쪽(자본변동표) 텍스트는 뒤집혀 있다.",
+   "unresolved_ko": "정관의 배당·청산 조건, 전환사채 전환가격.",
+   "what_would_change_ko": "정관, 전환사채 원문, 중간 재무제표가 제공되면 해당 판단이 보완된다.",
+   "predicate": {
+    "branch": "",
+    "elements": [],
+    "overall": "not_applicable",
+    "missing_facts_ko": "정관, 전환사채 원문, 중간 재무제표",
+    "temporal_conflicts_ko": "없음"
+   }
+  },
+  {
+   "rule_id": "R-TECH-1",
+   "result": "unknown",
+   "scope": "factual_gap",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "A29",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A30",
+     "role": "counter",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A31",
+     "role": "counter",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "기술 근거는 회사가 보고한 마우스 개념증명 연구뿐이며 표본, 설계, 프로토콜이 없다. 부정적 결과, 임상 보류, 작동 불능에 대한 기록은 팩에 없으므로 adverse가 아니라 unknown이다.",
+   "counterevidence_ko": "회사 스스로 인간 적용 여부를 아직 모른다고 밝힌다. p값 해석은 과장이다.",
+   "unresolved_ko": "연구 설계, 표본 크기, 평가지표, 출판 여부.",
+   "what_would_change_ko": "연구 상세나 인체 데이터가 나오면 평가가 달라진다. 부정적 결과가 문서화되면 adverse가 될 수 있다.",
+   "predicate": {
+    "branch": "",
+    "elements": [
+     {
+      "element_id": "TECH1-1",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "A29"
+      ],
+      "reasoning_ko": "부정적 결과, 임상 보류, 작동 불능을 보고한 문서가 없다. 연구 세부 정보 부재는 unknown이다."
+     },
+     {
+      "element_id": "TECH1-2",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "부정적 결과 자체가 없어 제품 관련성을 판단할 대상이 없다."
+     }
+    ],
+    "overall": "not_met",
+    "missing_facts_ko": "마우스 연구 설계와 표본",
+    "temporal_conflicts_ko": "없음"
+   }
+  },
+  {
+   "rule_id": "R-DEM-1",
+   "result": "not_applicable",
+   "scope": "none",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "A27",
+     "role": "supporting",
+     "generic_trigger": "G1"
+    },
+    {
+     "claim_id": "A34",
+     "role": "counter",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "매출 0이고 인체 사용 전 단계인 상업화 이전 기업이다. 수요 증거 부재는 단계상 unknown이며 adverse가 아니다. 매출 추정치는 회사 전망일 뿐 수요 증거가 아니다.",
+   "counterevidence_ko": "고객 상실이나 지불자 거부 기록은 없다.",
+   "unresolved_ko": "고객, 병원, 지불자 계약 부재.",
+   "what_would_change_ko": "매출 발생 후 고객 상실이나 매출 급감이 문서화되면 적용 대상이 된다.",
+   "predicate": {
+    "branch": "",
+    "elements": [
+     {
+      "element_id": "DEM1-1",
+      "assessment": "contradicted",
+      "evidence_for": [],
+      "evidence_against": [
+       "A27"
+      ],
+      "reasoning_ko": "매출이 없어 상업화 단계가 아니다."
+     },
+     {
+      "element_id": "DEM1-2",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "A27"
+      ],
+      "reasoning_ko": "고객 상실, 매출 붕괴, 지불자 거부를 보고한 문서가 없다."
+     },
+     {
+      "element_id": "DEM1-3",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "보고된 사건이 없어 중요성 판단 대상이 없다."
+     }
+    ],
+    "overall": "not_applicable",
+    "missing_facts_ko": "상업 계약 일체",
+    "temporal_conflicts_ko": "없음"
+   }
+  },
+  {
+   "rule_id": "R-REG-1",
+   "result": "not_adverse",
+   "scope": "none",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "A32",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A39",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A41",
+     "role": "counter",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "마일스톤별로 IRB 검토, FDA 접촉·승인, 시험 개시, 인체 효능 모두 문서화된 바 없고 IRB 시험은 계획 단계다. 규제 조치(임상 보류, 경고서한 등)는 문서에 없다. 이전 전환증권 발행의 증권법 준수 위험은 회사의 가정적 위험요인이며 규제 조치가 아니다.",
+   "counterevidence_ko": "규제 진전이 없다는 점은 REG 규칙의 adverse 요건이 아니다.",
+   "unresolved_ko": "IRB 제출, FDA 상호작용, 기기 분류.",
+   "what_would_change_ko": "임상 보류나 경고서한 등 규제 조치가 문서화되면 adverse가 된다.",
+   "predicate": {
+    "branch": "",
+    "elements": [
+     {
+      "element_id": "REG1-1",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "A32",
+       "A39"
+      ],
+      "reasoning_ko": "규제 조치를 보고한 문서가 없다."
+     },
+     {
+      "element_id": "REG1-2",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "조치가 없어 대상 판단 불가."
+     },
+     {
+      "element_id": "REG1-3",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "조치가 없어 중요성 판단 불가."
+     }
+    ],
+    "overall": "not_met",
+    "missing_facts_ko": "IRB·FDA 관련 서류",
+    "temporal_conflicts_ko": "영상 대본의 2025/2026 일정이 오래됨"
+   }
+  },
+  {
+   "rule_id": "R-TEAM-1",
+   "result": "not_adverse",
+   "scope": "none",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "A38",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A39",
+     "role": "supporting",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "핵심 인물의 제재, 부적격 사유, 허위진술은 문서화되지 않았다. 회사의 부적격 부재 선언은 회사 인증이며 독립 확인이 아니다. 임상·기기규제·상업화 이력은 표에 없어 기록이 얇다(정보 부족이지 adverse 아님).",
+   "counterevidence_ko": "임원 개인에 대한 별도 확인은 없다. Form C 표지의 부채 0과 감사 재무제표 간 차이(C1)는 분류 차이일 수 있어 허위진술로 보지 않는다.",
+   "unresolved_ko": "임원 개인 부적격 여부, 임원 보수.",
+   "what_would_change_ko": "핵심 인물의 제재나 부적격 사유가 문서화되면 adverse가 된다.",
+   "predicate": {
+    "branch": "",
+    "elements": [
+     {
+      "element_id": "TEAM1-1",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "A39"
+      ],
+      "reasoning_ko": "제재·허위진술을 보고한 문서가 없다. 표지 부채 0 대 감사 부채는 미해결 차이일 뿐이다."
+     },
+     {
+      "element_id": "TEAM1-2",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "사건이 없다."
+     },
+     {
+      "element_id": "TEAM1-3",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "사건이 없다."
+     }
+    ],
+    "overall": "not_met",
+    "missing_facts_ko": "임원 개별 배경 확인",
+    "temporal_conflicts_ko": "없음"
+   }
+  },
+  {
+   "rule_id": "R-FIN-1",
+   "result": "unknown",
+   "scope": "economic_concern",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "B8",
+     "role": "supporting",
+     "generic_trigger": "G2"
+    },
+    {
+     "claim_id": "B11",
+     "role": "supporting",
+     "generic_trigger": "G3"
+    },
+    {
+     "claim_id": "B9",
+     "role": "counter",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "B10",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "C5",
+     "role": "supporting",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "다음 마일스톤(마우스 추가 연구, 장비, IRB 인체시험)은 명시되나 비용이 없다. 감사 현금 $19,213(G2)은 오래된 수치이고 going-concern 위험요인(G3)은 회사 문구다. 회사 주장 현금 $160,487.20(2026-06-18, 비감사)과 기간 정렬된 지출은 없어 런웨이 계산이 보류(K5)되었다. 기존 채무 불이행·지급불능·기한이익상실 문서는 없다. 목표 모금액 $75,000일 때 임상시험 배정은 $30,000뿐이라는 점은 우려이나 부족을 단정할 수 없다.",
+   "counterevidence_ko": "최대 모금 시 임상시험 $2.18M 배정. 관계자 채무에 만기가 없고 MOU 전환사채는 계획 단계라 불이행이 아니다.",
+   "unresolved_ko": "인체시험·장비 비용, 현재 지출률, 6개월 런웨이 근거, 창업자 지원 약속.",
+   "what_would_change_ko": "마일스톤 비용과 현재 지출이 문서화되고 현금+최대모금이 비용에 못 미치면 adverse. 불이행·기한이익상실이 문서화되어도 adverse.",
+   "predicate": {
+    "branch": "milestone_shortfall",
+    "elements": [
+     {
+      "element_id": "FIN1-A1",
+      "assessment": "unknown",
+      "evidence_for": [
+       "B10"
+      ],
+      "evidence_against": [],
+      "reasoning_ko": "마일스톤은 명시되나 필요 금액은 명시되지 않아 부분적으로만 충족된다."
+     },
+     {
+      "element_id": "FIN1-A2",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "B9"
+      ],
+      "reasoning_ko": "최신 현금 시점과 맞는 지출이 없어 K5가 보류되었다."
+     },
+     {
+      "element_id": "FIN1-A3",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [
+       "B10"
+      ],
+      "reasoning_ko": "마일스톤 비용이 없어 현금+최대모금과 비교할 수 없다."
+     }
+    ],
+    "overall": "unresolved",
+    "missing_facts_ko": "마일스톤 비용, 2026년 지출, 불이행 여부(분기 B 증거 없음)",
+    "temporal_conflicts_ko": "감사 현금(2025-12-31)과 비감사 현금(2026-06-18)은 다른 사실이며 합산하지 않는다."
+   }
+  },
+  {
+   "rule_id": "R-TERMS-1",
+   "result": "unknown",
+   "scope": "economic_concern",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "B13",
+     "role": "counter",
+     "generic_trigger": "G8"
+    },
+    {
+     "claim_id": "A09",
+     "role": "counter",
+     "generic_trigger": "G6"
+    },
+    {
+     "claim_id": "A10",
+     "role": "counter",
+     "generic_trigger": "G5"
+    },
+    {
+     "claim_id": "B15",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "C4",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A16",
+     "role": "supporting",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "의결권 위임(G8), 수탁(G6), 희석방지 없음(G5), 배당 약속 없음(G4)은 일반 특성이라 이 규칙에서 제외된다. 내부자 우선배정, 액면 이하 환매, 투자금에서 공제되는 수수료는 문서화되지 않았다(발행사 환매권 없음, 수수료는 발행사 부담). 다만 창업자 75,000,000주 승인(대가·일자 미공개), 미발행 수권주식 175M, 두 번째 전환사채의 추가 $50,000 의미가 불명이라 '액면가 수준의 무제한 내부자 발행'은 확인도 배제도 안 된다. 따라서 unknown이다.",
+   "counterevidence_ko": "창업자는 이미 의결권 100%를 보유해 위임의 증분 효과가 제한적이다. 중개인 2% 증권은 일반적 발행사 부담 보상이다.",
+   "unresolved_ko": "창업자 주식 대가, 수권주식 발행 제한 여부, 전환사채 전환가격과 추가 $50,000.",
+   "what_would_change_ko": "내부자 대상 저가 발행이나 우선배정, 투자금 공제 수수료가 문서화되면 adverse가 될 수 있다.",
+   "predicate": {
+    "branch": "",
+    "elements": [
+     {
+      "element_id": "TERMS1-1",
+      "assessment": "unknown",
+      "evidence_for": [
+       "C4",
+       "A16"
+      ],
+      "evidence_against": [
+       "B15"
+      ],
+      "reasoning_ko": "Form C에 일반 특성은 있으나 가치 이전 조항은 명시되지 않았다."
+     },
+     {
+      "element_id": "TERMS1-2",
+      "assessment": "unknown",
+      "evidence_for": [
+       "C4"
+      ],
+      "evidence_against": [
+       "B15"
+      ],
+      "reasoning_ko": "가치 이전이 문서화되지 않았고 일부 항목은 정보가 없다."
+     },
+     {
+      "element_id": "TERMS1-3",
+      "assessment": "contradicted",
+      "evidence_for": [],
+      "evidence_against": [
+       "B13"
+      ],
+      "reasoning_ko": "확인된 특성은 G4-G8 일반 특성이라 제외된다."
+     },
+     {
+      "element_id": "TERMS1-4",
+      "assessment": "unknown",
+      "evidence_for": [],
+      "evidence_against": [],
+      "reasoning_ko": "가치 이전 조항이 없어 중요성 판단 불가."
+     }
+    ],
+    "overall": "not_met",
+    "missing_facts_ko": "정관, 창업자 주식 대가, 전환사채 원문",
+    "temporal_conflicts_ko": "2025-12-31 감사 주식수 1주 대 2026-06-25 75,000,001주는 이력이다."
+   }
+  },
+  {
+   "rule_id": "R-TERMS-2",
+   "result": "unknown",
+   "scope": "economic_concern",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "A03",
+     "role": "supporting",
+     "generic_trigger": "G7"
+    },
+    {
+     "claim_id": "B12",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A42",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "C7",
+     "role": "counter",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "가격 $1.00은 회사가 임의로 정했고 근거가 없다(G7). K1은 가격×75,000,001주=$75,000,001이라는 산술일 뿐 가치평가 의견이 아니며 전환사채·중개인 증권은 제외된다. 이는 감사된 주주결손 $(249,135), 마우스 전용 증거, 비교대상 없음과 함께 봐야 하며, 가격이 틀렸다는 증거도 맞다는 증거도 아니다. 'valuation cap' 문구는 템플릿으로 보이며 보통주에 캡은 문서화되지 않는다.",
+   "counterevidence_ko": "비교 사례는 팩에 없다.",
+   "unresolved_ko": "전환사채 희석, 창업자 주식 대가.",
+   "what_would_change_ko": "전환가격과 정관, 비교 가능한 근거가 제공되면 판단이 가능하다.",
+   "predicate": {
+    "branch": "",
+    "elements": [],
+    "overall": "not_applicable",
+    "missing_facts_ko": "전환조건, 정관",
+    "temporal_conflicts_ko": "없음"
+   }
+  },
+  {
+   "rule_id": "R-TERMS-3",
+   "result": "unknown",
+   "scope": "factual_gap",
+   "claims_independently_decisive": false,
+   "facts": [
+    {
+     "claim_id": "B14",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A17",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A18",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A06",
+     "role": "supporting",
+     "generic_trigger": "none"
+    },
+    {
+     "claim_id": "A11",
+     "role": "supporting",
+     "generic_trigger": "none"
+    }
+   ],
+   "interpretation_ko": "희석·우선순위 원천은 식별되었다: 기존 전환사채 2건($60,000, $150,000; 선순위 채무로 기술, 전환가격 미공개), 계획된 $50,000 MOU(미발행), 창업자 채무 $199,875(만기 없음, 2025-12-31), 중개인 2% 증권, 선순위 주식 발행 유보. 전환조건 미공개는 unknown이며 adverse가 아니다. 계획 증권은 기존 증권이 아니며 시점이 다른 잔액은 합산하지 않는다. 문서 이상의 우선순위는 주장하지 않는다.",
+   "counterevidence_ko": "우선주는 현재 수권되지 않았다.",
+   "unresolved_ko": "전환가격, 전환 트리거 차이(Form C와 감사 주석 5), 추가 $50,000의 의미.",
+   "what_would_change_ko": "전환사채 원문이 제공되면 희석 규모를 파악할 수 있다.",
+   "predicate": {
+    "branch": "",
+    "elements": [],
+    "overall": "not_applicable",
+    "missing_facts_ko": "전환사채 원문",
+    "temporal_conflicts_ko": "전환 트리거가 문서마다 다르다."
+   }
+  }
+ ],
+ "preference_findings": [],
+ "thesis": [
+  {
+   "question_id": "Q1_value_creation",
+   "status": "unknown",
+   "answer_ko": "인체 안전성·효능이 입증되고, IRB와 FDA 절차를 거치며, 기기·파트너·지불자 체계가 갖춰져야 가치가 생긴다. 현재는 회사 보고 마우스 연구뿐이며 인체 전환은 회사도 모른다고 밝힌다.",
+   "claim_ids": [
+    "A29",
+    "A31",
+    "B3",
+    "A32"
+   ]
+  },
+  {
+   "question_id": "Q2_next_milestones",
+   "status": "supported",
+   "answer_ko": "회사가 제시한 다음 단계는 추가 마우스 연구, 차세대 기기 조달, IRB 인체 ALS 시험 개시다. 2026년 시작 가능은 자금 조건부 회사 기대이며 IRB·FDA 진행은 문서화되지 않았다.",
+   "claim_ids": [
+    "A33",
+    "B4",
+    "B5"
+   ]
+  },
+  {
+   "question_id": "Q3_advantage_evidence",
+   "status": "unknown",
+   "answer_ko": "근거는 회사 보고 마우스 연구뿐이며 표본·설계 없음, p값 해석은 과장이다. '유일한 후기 단계 비의약품 해법' 주장은 검증되지 않았고 예비임상 데이터와 충돌한다. 특허는 회사 목록이며 SELtx 적용 범위가 불명이다.",
+   "claim_ids": [
+    "B1",
+    "B2",
+    "B16",
+    "B19",
+    "C6"
+   ]
+  },
+  {
+   "question_id": "Q4_financing_needed",
+   "status": "unknown",
+   "answer_ko": "인체시험·장비 비용이 없어 필요 금액을 알 수 없다. 회사는 모금액이 부족할 수 있다고 밝혔고 목표액에서는 임상시험에 $30,000만 배정된다. 회사 주장 현금은 $160,487.20(2026-06-18, 비감사)이며 런웨이 계산은 보류되었다.",
+   "claim_ids": [
+    "B10",
+    "C5",
+    "B9",
+    "B8"
+   ]
+  },
+  {
+   "question_id": "Q5_holder_value_path",
+   "status": "unknown",
+   "answer_ko": "배당 보장이 없고 환매권·IPO 약속도 없으며 Reg CF 양도 제한과 수탁 보유 구조다. 회사 가치가 커지고 Reg A 등 유동성 이벤트나 매각이 있어야 하며 그때 전환사채, 창업자 채무 등 선순위 청구가 먼저다. 투자자는 10년간 의결권을 위임한다. 수익 시나리오는 계산되지 않았다(K6 보류).",
+   "claim_ids": [
+    "B13",
+    "B14",
+    "A10",
+    "A09"
+   ]
+  },
+  {
+   "question_id": "Q6_terms_affecting_proceeds",
+   "status": "supported",
+   "answer_ko": "임의 가격 $1.00, 희석방지 없음, 중개인 2% 증권, 두 전환사채(전환가격 미공개, 선순위 채무로 기술), 계획 MOU 노트, 창업자 채무 $199,875, 선순위 주식 발행 유보, 양도·락업(Form C 180일 대 계약서 270일), 70% 인출 조건이 영향을 준다. 수수료는 발행사 부담이며 투자자 부담 수수료는 명시되지 않았다. K4는 보류되었다.",
+   "claim_ids": [
+    "A03",
+    "B12",
+    "B14",
+    "B15",
+    "A43",
+    "A44"
+   ]
+  },
+  {
+   "question_id": "Q7_vs_schg",
+   "status": "no_substantiated_advantage_identified",
+   "answer_ko": "SCHG 대비 이 투자를 선택할 입증된 이유는 확인되지 않았다. 이는 SCHG보다 열등함이 입증되었다는 뜻이 아니다. 증거는 미검증 마우스 데이터뿐이고 유동성, 의결권, 희석 측면의 제약이 크다.",
+   "claim_ids": [
+    "B1",
+    "B13",
+    "B16",
+    "B14"
+   ]
+  }
+ ],
+ "critique_responses": [
+  {
+   "issue_index": 0,
+   "accepted": true,
+   "response": "표지의 부채 0과 감사 부채 간 차이는 분류 차이일 수 있어 미해결로 두며 R-TEAM-1이나 R-FIN-1에 쓰지 않았다."
+  },
+  {
+   "issue_index": 1,
+   "accepted": true,
+   "response": "G4-G8은 R-TERMS-1에서 제외했고 결정적 근거로 쓰지 않았다."
+  },
+  {
+   "issue_index": 2,
+   "accepted": true,
+   "response": "G2·G3은 단독으로 adverse가 아니며 R-FIN-1을 unknown으로 두었다."
+  },
+  {
+   "issue_index": 3,
+   "accepted": true,
+   "response": "마일스톤 비용이 없어 FIN1-A1·A3을 unknown으로 평가했다."
+  },
+  {
+   "issue_index": 4,
+   "accepted": true,
+   "response": "최대 모금 배정은 가정일 뿐 적정성의 근거가 아니다."
+  },
+  {
+   "issue_index": 5,
+   "accepted": true,
+   "response": "런웨이와 2026년 일정 판단은 분석가 추론으로 보고 결론에 사용하지 않았다."
+  },
+  {
+   "issue_index": 6,
+   "accepted": true,
+   "response": "경쟁 주장과 매출 전망은 수요 증거로 쓰지 않았다."
+  },
+  {
+   "issue_index": 7,
+   "accepted": true,
+   "response": "A41과 A39는 R-REG-1의 규제 조치로 쓰지 않았다."
+  },
+  {
+   "issue_index": 8,
+   "accepted": true,
+   "response": "창업자 주식과 추가 $50,000는 TERMS1-2에서 unknown으로 처리했다."
+  },
+  {
+   "issue_index": 9,
+   "accepted": true,
+   "response": "위임과 수정 동의의 관계는 추론이며 R-TERMS-1의 가치 이전으로 보지 않았다."
+  },
+  {
+   "issue_index": 10,
+   "accepted": true,
+   "response": "'일반적'이라는 표현에는 벤치마크가 없어 근거로 쓰지 않았다."
+  },
+  {
+   "issue_index": 11,
+   "accepted": true,
+   "response": "효능 표현의 과장은 TECH 증거로만 다루고 수요·규제 증거로 쓰지 않았다."
+  },
+  {
+   "issue_index": 12,
+   "accepted": true,
+   "response": "부재 진술은 missing_information으로 취급하고 R-DEM-1은 not_applicable로 두었다."
+  },
+  {
+   "issue_index": 13,
+   "accepted": true,
+   "response": "회사의 부적격 부재 진술은 독립 확인이 아니므로 TEAM1-1을 unknown으로 두었다."
+  },
+  {
+   "issue_index": 14,
+   "accepted": true,
+   "response": "캡 문구는 템플릿으로 보고 K1은 가치평가 의견이 아닌 산술로만 다루었다."
+  }
+ ]
+}

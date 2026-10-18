@@ -1,0 +1,96 @@
+{
+ "screening": "provisional_unresolved",
+ "evidence_status": "insufficient",
+ "evidence_scope": "not sufficient for any screening decision under screening_policy_v1_3",
+ "thesis_status": "incomplete",
+ "thesis_notes": [
+  "Q1_value_creation: unknown",
+  "Q3_advantage_evidence: unknown",
+  "Q4_financing_needed: unknown",
+  "Q5_holder_value_path: unknown",
+  "Q7_vs_schg: no_substantiated_advantage_identified"
+ ],
+ "decisive": [],
+ "execution": {
+  "availability": "availability_unknown",
+  "required_before_any_investment": [
+   "offering availability at decision time",
+   "investor-paid fee confirmation",
+   "the operative contract as signed at checkout"
+  ]
+ },
+ "budget": {
+  "checked_utc": "2026-10-18T00:13:52+00:00",
+  "period": "pre_start",
+  "annual_remaining_usd": "$12,000.00",
+  "issuer_remaining_usd": "$1,200.00",
+  "issuer_key": "CIK2114933",
+  "minimum_investment_usd": 500,
+  "investor_fee_status": "not_stated",
+  "total_cost_verifiable": false,
+  "note": "investor-paid fees are not verified: total cost cannot yet be verified (fees are not assumed zero and the budget is not reported as exceeded)"
+ },
+ "findings": [
+  {
+   "rule_id": "R-EV1",
+   "model_result": "not_adverse",
+   "final_result": "not_adverse",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-TECH-1",
+   "model_result": "unknown",
+   "final_result": "unknown",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-DEM-1",
+   "model_result": "not_applicable",
+   "final_result": "not_applicable",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-REG-1",
+   "model_result": "not_adverse",
+   "final_result": "not_adverse",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-TEAM-1",
+   "model_result": "not_adverse",
+   "final_result": "not_adverse",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-FIN-1",
+   "model_result": "unknown",
+   "final_result": "unknown",
+   "validator_notes": []
+  },
+  {
+   "rule_id": "R-TERMS-1",
+   "model_result": "unknown",
+   "final_result": "unknown",
+   "validator_notes": [
+    "B13: generic trigger(s) ['G5', 'G6'] added by keyword rule",
+    "A09: generic trigger(s) ['G4'] added by keyword rule",
+    "A10: generic trigger(s) ['G4'] added by keyword rule"
+   ]
+  },
+  {
+   "rule_id": "R-TERMS-2",
+   "model_result": "unknown",
+   "final_result": "unknown",
+   "validator_notes": [
+    "B12: generic trigger(s) ['G7'] added by keyword rule"
+   ]
+  },
+  {
+   "rule_id": "R-TERMS-3",
+   "model_result": "unknown",
+   "final_result": "unknown",
+   "validator_notes": []
+  }
+ ],
+ "basis": "deterministic classification of stored, validated stages A (run 15), B (run 16, migrated), C and D-repair1 (analysis 17; D accepted under v2_validator_0_3 after the run). Stages E and F were not run. NOT a completed workflow."
+}

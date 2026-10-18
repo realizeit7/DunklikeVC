@@ -58,7 +58,11 @@ THRESHOLD_OR = re.compile(r"\b(at or above|at or below|or more|or greater|or les
 ENGLISH_RUN = re.compile(r"(?:\b[A-Za-z][A-Za-z'’-]+\b[\s,;:]+){8,}")
 
 
-VALIDATOR_VERSION = "v2_validator_0_2"
+VALIDATOR_VERSION = "v2_validator_0_3"
+# 0_3 (2026-10-18, after analysis 17): all-caps acronyms of 2-6 letters (IRB, FDA, IND, SAFE, SCHG; digits allowed,
+# e.g. 'C-AR') no longer count toward the Latin-character ratio. 0_2 rejected 'IRB 제출, FDA 상호작용, 기기 분류.'
+# (6 Latin vs 10 Hangul) as English. Acronyms are standard terms, not English prose. The English-passage rule
+# (8+ consecutive English words) is unchanged.
 PIPELINE_VERSION = "analysis_v2_pipeline_0_2"
 # 0_2 (2026-10-15, after analysis 11): a stage-F (Korean summary) failure after the repair cap no longer marks the
 # whole run analysis_failed. The F output is still rejected, so the brief shows no summary. 0_1 discarded a valid
@@ -72,7 +76,7 @@ def korean_errors(where: str, txt: str, min_words: int | None = None, max_words:
     errs = []
     bare = re.sub(r"\([^)]*\)", " ", txt)
     hangul = len(re.findall(r"[가-힣]", txt))
-    latin = len(re.findall(r"[A-Za-z]", bare))
+    latin = len(re.findall(r"[A-Za-z]", re.sub(r"\b[A-Z][A-Z0-9]{1,5}(?:-[A-Z0-9]{1,4})?\b", " ", bare)))
     if txt.strip() and hangul == 0:
         errs.append(f"{where}: must be written in Korean")
     elif latin > 0.35 * (hangul + latin):

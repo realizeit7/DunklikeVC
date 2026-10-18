@@ -43,3 +43,8 @@ row_id,analysis_id,run_dir,stage,attempt,seconds,input_tokens,output_tokens,cach
 42,15,data/analyses/RCF-2114933-020-37299_2026-10-17T045451+0000_v3,A_extraction,repair1,96.1,2,21055,5689,116789,0.7366529,cli_estimated_list_price_equivalent_not_billed,invalid,1
 43,16,data/analyses/RCF-2114933-020-37299_2026-10-17T050435+0000_v3,A_extraction,original,0.0,\N,\N,\N,\N,0.0,cli_estimated_list_price_equivalent_not_billed,valid,0
 44,16,data/analyses/RCF-2114933-020-37299_2026-10-17T050435+0000_v3,B_analysis,original,82.6,2,13597,0,123780,0.69067,cli_estimated_list_price_equivalent_not_billed,invalid,1
+45,17,data/analyses/RCF-2114933-020-37299_2026-10-18T000238+0000_v3,A_extraction,original,0.0,\N,\N,\N,\N,0.0,cli_estimated_list_price_equivalent_not_billed,valid,0
+46,17,data/analyses/RCF-2114933-020-37299_2026-10-18T000238+0000_v3,B_analysis,original,0.0,\N,\N,\N,\N,0.0,cli_estimated_list_price_equivalent_not_billed,valid,0
+47,17,data/analyses/RCF-2114933-020-37299_2026-10-18T000238+0000_v3,C_critical_review,original,152.9,2,20535,0,136475,0.816961,cli_estimated_list_price_equivalent_not_billed,valid,0
+48,17,data/analyses/RCF-2114933-020-37299_2026-10-18T000238+0000_v3,D_final,original,251.7,8,34289,441581,153924,1.0720886,cli_estimated_list_price_equivalent_not_billed,invalid,1
+49,17,data/analyses/RCF-2114933-020-37299_2026-10-18T000238+0000_v3,D_final,repair1,159.5,6,24956,296487,145949,0.9323916999999999,cli_estimated_list_price_equivalent_not_billed,invalid,1

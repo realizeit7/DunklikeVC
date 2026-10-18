@@ -333,3 +333,11 @@ def test_brief_shows_predicate_elements_and_review(ctx):
     b = build_brief_v3(ctx, r["analysis_id"], out_dir=ctx.tmp / "b").read_text()
     assert "요소 FIN1-B1" in b and "불리 정의(정확한 문구)" in b and "2차 모델 검토(독립 검증 아님)" in b and "미해결" in b
     assert "제안된 정책에 따른 잠정 분류" in b and "SCHG" in b
+
+
+def test_korean_validator_allows_acronyms_but_not_english_prose():
+    from prospective.analysis_v2 import korean_errors
+    assert korean_errors("x", "IRB 제출, FDA 상호작용, 기기 분류.") == []
+    assert korean_errors("x", "SCHG 대비 구체적 이유 없음; Form C-AR 미제출") == []
+    assert any("too much English" in e or "English passage" in e
+               for e in korean_errors("x", "the company has not filed anything with regulators yet 회사"))
