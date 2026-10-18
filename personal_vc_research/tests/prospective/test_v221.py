@@ -356,3 +356,10 @@ def test_claim_prefix_relabel_is_letter_only_and_rejects_mixed():
     assert normalize_claim_prefix("A_extraction", new) == (new, [])
     mixed = {"claims": [{"claim_id": "C1"}, {"claim_id": "B2"}]}
     assert normalize_claim_prefix("A_extraction", mixed)[0] is None
+
+
+def test_validator_0_4_ignores_code_identifiers_and_particle_attached_acronyms():
+    from prospective.analysis_v2 import korean_errors
+    assert korean_errors("x", "p.9와 XML의 priceDeterminationMethod가 임의 결정을 확인한다. 가격 1.00달러도 XML에 있다.") == []
+    assert korean_errors("x", "회사는 revenue growth를 보였다")
+    assert korean_errors("x", "This sentence is plainly written in English words 한국")
