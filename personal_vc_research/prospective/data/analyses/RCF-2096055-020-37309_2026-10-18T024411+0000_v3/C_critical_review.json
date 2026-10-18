@@ -1,0 +1,320 @@
+{
+ "issues": [
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "B7 / R-TERMS-1 (CEO note repayment from offering proceeds)",
+   "explanation": "Stage B says it does 'not find it clearly worse than ordinary form or material' but gives no reasoning. The Form C shows a $28,000 payment to the CEO, a director and controlling holder, from gross offering proceeds. It is triggered at $300,000 gross raised and is absent from the use-of-proceeds table. That is the kind of insider payment from investor proceeds that TERMS1-2 asks about. The facts also do not establish adversity. The payment is conditional, small and disclosed in the debt section, and the rest of the note is repayable from revenue. TERMS1-2, TERMS1-3 and TERMS1-4 should be recorded as unknown, not as contradicted. The 'not material' judgement should not be used as counterevidence.",
+   "claim_ids": [
+    "B7",
+    "A17",
+    "A16",
+    "C3"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A17/B7 note vs A18 related-party loans (identity of lender)",
+   "explanation": "Form C p.33 says the $171,000 note 'memorializes cash advances made by Mr. Adams ... from his personal funds'. The reviewed accounts at 2025-12-31 show $167,584 of the $179,334 owed to CHUR Networks, an entity Adams controls, and only $11,750 to Adams personally. The pack does not reconcile the two. It is therefore unclear which party is owed what, and whether the 2025 loans were assigned, repaid or replaced. Stage B notes only a general 'not reconciled'. This affects the size of insider claims ranking ahead of SAFE holders.",
+   "claim_ids": [
+    "A17",
+    "A18",
+    "B7",
+    "C2"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "contradictory_evidence",
+   "target": "A30 (control percentages) – stated 'voting power' does not match 10x Class A structure",
+   "explanation": "The ownership table labels 37.75% per founder as voting power and says it reflects the 10x multiple. 37.75% is exactly half of the 75.51% Class A economic ownership shown on p.30, which suggests a one-vote-per-share economic basis. A 10x Class A multiple would imply a different voting percentage. Stage A recorded the figure as 'stated' without flagging the inconsistency. Control by two founders is likely larger than reported. This matters to governance and to the Lead/proxy structure. It is not a rule-level adverse finding.",
+   "claim_ids": [
+    "A30",
+    "C1"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "dimension_misclassification",
+   "target": "A37, A45, B11 classified DEMAND",
+   "explanation": "Management subscriber/valuation projections, a competitor list and an 'ecosystem lock-in' moat are issuer_projection claims. R-DEM-1 allowed support kinds are customer_commercial, payer_reimbursement, financials and third_party, so these do not count as demand evidence. They should be classed as competition/market or projection and not weighed on the DEMAND dimension. The 5,000+ waitlist (A34) is tagged customer_commercial but is interest, not purchase or commitment, so it is weak demand evidence only.",
+   "claim_ids": [
+    "A37",
+    "A45",
+    "B11",
+    "A34"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "dimension_misclassification",
+   "target": "A41/B4 testing-the-waters disclaimer filed under REG",
+   "explanation": "R-REG-1 concerns product/regulatory milestones and actions (IRB, FDA, clinical hold, warning letter and so on). A possible missing disclaimer in pre-offering communications is a securities-offering compliance risk that the issuer itself discloses. It belongs under TERMS or an offering-process risk, not REG. B4 correctly says it is not a regulatory action, but listing it in the REG block invites it to be weighed in the wrong rule. No regulatory milestone of any kind is documented, so REG evidence is simply absent.",
+   "claim_ids": [
+    "A41",
+    "B4"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "generic_trigger_used_as_decisive",
+   "target": "G1/G2/G3/G7 handling across FIN and TERMS",
+   "explanation": "Stage B handles these correctly as non-decisive. The reviewed cash of $6,143, the going-concern language, pre-revenue/low revenue and the 'arbitrary' price are all generic or older-statement facts. Downstream they must not be used to support an adverse R-FIN-1 or R-TERMS-1 finding. G4, G5, G6 and G8 (no dividends, no anti-dilution, custodian and transfer limits, no voting or proxy) are likewise excluded from R-TERMS-1. The Lead proxy and issuer-designee voting text should be recorded as G8 plus an unresolved document conflict, not as a company-specific value transfer.",
+   "claim_ids": [
+    "A4",
+    "A8",
+    "A9",
+    "A10",
+    "A12",
+    "A24",
+    "A21",
+    "C4"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "B6 / R-FIN-1 – staleness and basis of the 6-month runway",
+   "explanation": "The only recent cash figure is an unassured issuer statement as of 2026-06-30, more than three months before the 2026-10-18 cutoff. The company has since had unknown spending. The pack has no 2026 spending statement, no monthly net loss and no stated milestone with a dollar requirement. The issuer's own '6 months' implies exhaustion around the end of 2026, shortly after the 2026-10-30 deadline. This is an inference from an unverified claim and no runway is computed. FIN1-A1 and FIN1-A3 remain unknown. It cannot be turned into either adverse or comfortable. The deck's $2.5M credit and 'cash-flow positive from Month 2' claims are unsupported and must not be treated as committed financing.",
+   "claim_ids": [
+    "B6",
+    "B10",
+    "A25",
+    "A38",
+    "A39"
+   ],
+   "severity": "medium"
+  },
+  {
+   "issue_type": "overstatement",
+   "target": "B analysis stage label 'early_commercial'",
+   "explanation": "The documented revenue is $1,873 for the first 3 months to 2025-12-31, with 0 employees and a risk factor saying the business generates no sales. The deck says 'Early sales are in' and that deliveries begin in August 2026, but there is no post-2025 revenue evidence. 'Early_commercial' leans on issuer wording. A more conservative label is launch-stage with unverified commercial traction. This does not change the R-DEM-1 outcome: there is no documented loss of customers or collapse in revenue, so it is not adverse.",
+   "claim_ids": [
+    "B3",
+    "A20",
+    "A33",
+    "A47",
+    "C5"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "unsupported_conclusion",
+   "target": "A47 contradiction note 'likely boilerplate'",
+   "explanation": "Calling the 'no sales' risk factor 'likely boilerplate' is speculation. The pack only shows an inconsistency between p.14 and the accounts. It should be recorded as an unresolved document conflict.",
+   "claim_ids": [
+    "A47"
+   ],
+   "severity": "low"
+  },
+  {
+   "issue_type": "missing_fact",
+   "target": "Capital expenditure statement vs use of proceeds and capitalized software",
+   "explanation": "Form C p.32 says the issuer does not intend material capital expenditures in the near future. The same Form C allocates 30% of proceeds to manufacturing and inventory and 25% to software and platform development, and the accounts show $203,738 of capitalized software. The statement is internally inconsistent or uses an unexplained narrow definition. It is a low-severity clarity issue and does not itself support a rule finding.",
+   "claim_ids": [
+    "A16",
+    "A22",
+    "C6"
+   ],
+   "severity": "low"
+  }
+ ],
+ "additional_claims": [
+  {
+   "claim_id": "C1",
+   "claim_text": "The Form C ownership table gives Adams and Bossi 37.75% each as 'voting power' and says this reflects the 10x Class A vote. The same figure equals half of the 75.51% Class A economic ownership on p.30, so the stated voting percentage is not clearly consistent with the 10x multiple. The correct voting power is unclear from the pack.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Control structure and governance affect the holder's influence and the Lead proxy structure. This is a governance disclosure inconsistency, not a team record.",
+   "attribution": "analyst reading of issuer Form C p.30-31",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 31,
+     "quote": "Class A Common Stock carries 10x voting rights, and the percentages reflect that multiple."
+    },
+    {
+     "doc_id": 3,
+     "page": 30,
+     "quote": "such security (assuming conversion prior to the 75.51%"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A30",
+    "A29"
+   ],
+   "contradictions": "Stated 37.75% voting power vs the 10x multiple stated in the same table.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C2",
+   "claim_text": "Lender identity is inconsistent. Form C p.33 says the $171,000 June 2026 note memorializes advances from Mr. Adams's personal funds. The reviewed 2025-12-31 accounts show most related-party debt ($167,584 of $179,334) owed to CHUR Networks, an entity Adams controls. The pack does not reconcile these.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "FIN",
+    "TERMS"
+   ],
+   "dimension_rationale": "Insider debt is a liability (FIN) and its repayment triggers affect investor proceeds (TERMS).",
+   "attribution": "analyst comparison of issuer Form C p.33 with reviewed financial statements Note 10 p.50",
+   "as_of": "2026-06-26",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 33,
+     "quote": "The Note memorializes cash advances made by Mr. Adams to the Issuer from his personal funds."
+    },
+    {
+     "doc_id": 3,
+     "page": 50,
+     "quote": "CHUR Networks, an entity principally owned and controlled by Stewart Adams – $167,584"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A17",
+    "A18"
+   ],
+   "contradictions": "Lender is stated as Adams personally (p.33) vs mostly CHUR Networks (p.50). Dec-2025 loans were 0% with no maturity; the 2026 note is 4.13% with repayment triggers.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C3",
+   "claim_text": "The $28,000 CEO-note repayment is due within ten business days after the issuer receives $300,000 of gross offering proceeds. The use-of-proceeds table, which is described as showing how net proceeds will be used, does not list it. Whether this is a term worse than the ordinary Reg CF form is not established: it is conditional, disclosed in the debt and related-party sections, and the rest of the note depends on revenue. TERMS1-2 to TERMS1-4 are unknown.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "A payment to an insider from offering proceeds is a TERMS question for R-TERMS-1. It is also a liability affecting FIN.",
+   "attribution": "analyst reading of issuer Form C p.26, p.31, p.33",
+   "as_of": "2026-06-26",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 33,
+     "quote": "of principal is due and payable within ten (10) business days following the date on which the Issuer receives aggregate"
+    },
+    {
+     "doc_id": 3,
+     "page": 26,
+     "quote": "The following table illustrates how we intend to use the net proceeds received from this Offering."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A17",
+    "A16",
+    "B7"
+   ],
+   "contradictions": "The use-of-proceeds table omits the repayment.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C4",
+   "claim_text": "Voting and amendment control is unclear. The Form C risk factor says a third party designated by the issuer exercises voting control. The SAFE form defines the Lead as the largest holder of the Securities and gives it the power to amend or waive any provision. The identity and independence of the Lead are not in the pack. This is a generic G8 feature plus an unresolved conflict, not a documented value transfer.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Governance and amendment rights bear on how the security can change after purchase.",
+   "attribution": "analyst reading of Form C p.20 and SAFE form p.63",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 20,
+     "quote": "Under the terms of the Securities, a third-party designated by the Issuer"
+    },
+    {
+     "doc_id": 3,
+     "page": 63,
+     "quote": "consent of at the direction of the largest holder of the Securities and subsequently, the largest holder of any"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A8",
+    "A48"
+   ],
+   "contradictions": "Issuer-designated third party (p.20) vs largest holder as Lead (p.63).",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C5",
+   "claim_text": "The deck says 'Early sales are in', but the only documented revenue is $1,873 for 2025-09-30 to 2025-12-31 (reviewed). The pack has no later revenue figure. A Form C risk factor says the business does not generate sales. The claim is unverified and does not establish demand.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "A revenue/traction statement; evidence is issuer deck wording against a small reviewed figure.",
+   "attribution": "issuer deal page content p.132; Form C p.14",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 132,
+     "quote": "Five thousand people are already on the waitlist. Early sales are in."
+    },
+    {
+     "doc_id": 3,
+     "page": 14,
+     "quote": "Our business currently does not generate any sales and future sources of revenue may not be sufficient to meet our"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A20",
+    "A47",
+    "B3"
+   ],
+   "contradictions": "'No sales' risk factor vs 'early sales are in' vs $1,873 reviewed revenue.",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "C6",
+   "claim_text": "Form C p.32 says the issuer does not intend to make material capital expenditures in the near future. The same document allocates 30% of proceeds to manufacturing/inventory and 25% to software/platform development, and the accounts show $203,738 of capitalized software. The statement does not reconcile with the stated spending plan.",
+   "evidence_status": "analyst_inference",
+   "evidence_kind": "analyst_inference",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Bears on the spending plan against which cash would be judged.",
+   "attribution": "analyst reading of issuer Form C p.26 and p.32; reviewed statements p.45",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 32,
+     "quote": "The Issuer does not intend to make any material capital expenditures in the near future."
+    },
+    {
+     "doc_id": 3,
+     "page": 45,
+     "quote": "Purchases of Intangible Assets ( 203,738)"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A16",
+    "A22"
+   ],
+   "contradictions": "Capex statement vs use-of-proceeds allocation to software and manufacturing.",
+   "claim_type": "financial",
+   "calc_request": null
+  }
+ ]
+}

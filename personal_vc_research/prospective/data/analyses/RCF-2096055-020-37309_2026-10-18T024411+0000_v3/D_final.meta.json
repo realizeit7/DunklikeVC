@@ -1,0 +1,23 @@
+{
+ "returncode": 0,
+ "seconds": 135.5,
+ "stderr": "",
+ "usage": {
+  "input_tokens": 6,
+  "output_tokens": 21307,
+  "cache_read_tokens": 453365,
+  "cache_creation_tokens": 223320,
+  "duration_ms": 134048
+ },
+ "is_error": false,
+ "model_reported": "claude-sonnet-5-5",
+ "models_used": [
+  "claude-haiku-5-5",
+  "claude-sonnet-5-5"
+ ],
+ "provider_reported": "firstParty",
+ "cost_usd": 1.2603105000000001,
+ "num_turns": 4,
+ "permission_denials": [],
+ "subtype": "success"
+}

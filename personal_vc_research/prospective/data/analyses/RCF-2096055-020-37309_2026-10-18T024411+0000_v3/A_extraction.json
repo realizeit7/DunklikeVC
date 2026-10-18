@@ -1,0 +1,1706 @@
+{
+ "claims": [
+  {
+   "claim_id": "A1",
+   "claim_text": "Yakuru Inc. is a Delaware corporation formed September 30, 2025, offering supplements and a biometrics platform; the offering is run through OpenDeal Portal LLC dba Republic.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Issuer and offering identity; no better-fitting dimension.",
+   "attribution": "issuer, Form C p.22",
+   "as_of": "2025-09-30",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 22,
+     "quote": "Yakuru Inc.is a Delaware corporation formed on September 30, 2025, that offers high-performance supplements and"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Form C p.27 gives the CEO's tenure as April 2020 and the CBO's as October 2020, before the Sept 2025 formation; predecessor not explained.",
+   "claim_type": "identity",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A2",
+   "claim_text": "Offering: SAFE (Simple Agreement for Future Equity), $1.00 per unit, target $75,000, maximum $1,235,000, best-efforts, deadline 2026-10-30; oversubscription first-come first-served (Form C XML).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Offering size and security.",
+   "attribution": "issuer, Form C XML and Form C p.13",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "At the Target Offering Amount of $75,000, no cash commission"
+    },
+    {
+     "doc_id": 2,
+     "page": 1,
+     "quote": "<maximumOfferingAmount>1235000.00</maximumOfferingAmount>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A3",
+   "claim_text": "Minimum individual purchase is $150.00 and maximum $75,000; the issuer may amend these in its sole discretion.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Minimum investment.",
+   "attribution": "issuer, Form C p.8",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 8,
+     "quote": "Amount is $150.00 and the Maximum Individual Purchase Amount is $75,000."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A4",
+   "claim_text": "The offering price was determined arbitrarily and bears no stated relationship to asset value, revenue or other objective criteria (generic trigger G7).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Price basis.",
+   "attribution": "issuer, Form C p.8 and Form C XML",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 8,
+     "quote": "The price of the Securities was determined arbitrarily, does not necessarily bear any relationship to the Issuer’s asset"
+    },
+    {
+     "doc_id": 2,
+     "page": 1,
+     "quote": "<priceDeterminationMethod>Arbitrary</priceDeterminationMethod>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A5",
+   "claim_text": "Pre-money valuation cap is $7,500,000 for Early Investors (first 30 days after launch) and $15,000,000 for Standard Investors (day 31 to deadline); 20% discount for all. The launch date is not stated in the pack.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Cap and discount.",
+   "attribution": "issuer, Form C p.32 and SAFE form p.53",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 32,
+     "quote": "The terms of this Offering are based on a pre-money valuation cap of $7,500,000 for Early Investors and $15,000,000"
+    },
+    {
+     "doc_id": 3,
+     "page": 53,
+     "quote": "The “Discount” is 20%."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Form C p.30 describes the outstanding Reg D SAFEs as converting 'at the $15,000,000 pre-money valuation cap' while stating their cap is $6,000,000 (see A27).",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A6",
+   "claim_text": "On a qualifying Equity Financing the SAFE converts at the Conversion Price: the SAFE Price (cap divided by Fully Diluted Capitalization, which excludes SAFEs and convertible notes) or the Discount Price, whichever gives more shares.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Conversion mechanics.",
+   "attribution": "SAFE form (Exhibit B) p.55-56",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 55,
+     "quote": "“Conversion Price” means either: (i) the SAFE Price or (ii) the Discount Price, whichever"
+    },
+    {
+     "doc_id": 3,
+     "page": 56,
+     "quote": "“Fully Diluted Capitalization” shall mean the aggregate number, as of immediately prior to the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A5"
+   ],
+   "contradictions": "See A48 on whether conversion is mandatory.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A7",
+   "claim_text": "In a Liquidity or Dissolution Event the SAFE cash-out right is junior to indebtedness and creditor claims, on par with other SAFEs and Preferred Stock, and senior to Common Stock. Nothing beyond this is asserted.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Priority as stated.",
+   "attribution": "SAFE form p.54; Form C p.12",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 54,
+     "quote": "(i) Junior to payment of outstanding indebtedness and creditor claims, including"
+    },
+    {
+     "doc_id": 3,
+     "page": 54,
+     "quote": "(ii) On par with payments for other SAFEs, whether this Series or otherwise, and/or"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A8",
+   "claim_text": "The SAFE and securities issued on conversion carry no voting rights unless the issuer provides otherwise; a 'Lead' acts as proxy. Generic trigger G8.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Voting rights.",
+   "attribution": "issuer, Form C p.12 and SAFE form p.63",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 12,
+     "quote": "Neither the Securities nor the securities issuable upon the conversion of the Securities have voting rights unless"
+    },
+    {
+     "doc_id": 3,
+     "page": 63,
+     "quote": "consent of at the direction of the largest holder of the Securities and subsequently, the largest holder of any"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Form C p.20 says voting is exercised by 'a third-party designated by the Issuer', while the SAFE form defines the Lead as the largest holder.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A9",
+   "claim_text": "The Securities have no anti-dilution rights (G5).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Dilution protection.",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "The Securities do not have anti-dilution rights, which means that future equity issuances and other events will dilute"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A10",
+   "claim_text": "The Securities do not entitle investors to dividends (G4).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Distributions.",
+   "attribution": "issuer, Form C p.10",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 10,
+     "quote": "The Securities do not entitle Investors to any dividends."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A11",
+   "claim_text": "The issuer has no right to repurchase the Securities.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Repurchase term.",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "The Issuer does not have the right to repurchase the Securities."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A12",
+   "claim_text": "Securities are held by a custodian/nominee (legal record holder); investors hold a beneficial interest, must open a custody account, and are subject to Reg CF one-year transfer limits and further issuer transfer restrictions (G6).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Custody and illiquidity.",
+   "attribution": "issuer, Form C p.8, p.13",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 8,
+     "quote": "into a custodial account (“Custodial Account”) with BitGo Bank and Trust, National Association, who will serve as"
+    },
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "Any Securities sold pursuant to Regulation CF being offered may not be transferred by any Investor of such Securities"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Form C names BitGo Bank and Trust, National Association; Exhibit C custody agreement names BitGo Trust Company, Inc. (p.66).",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A13",
+   "claim_text": "Issuer-paid intermediary fees: tiered cash commission (0% to $100k, 6% to $2M, etc.), about $68,100 at the maximum raise; a $15,000 non-refundable onboarding fee already paid; payment processing fees reimbursed by the issuer.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Fees paid by the issuer.",
+   "attribution": "issuer, Form C p.13-14",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "Amount of $1,235,000, the aggregate cash commission payable to the Intermediary will be approximately $68,100,"
+    },
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "The Issuer has paid the Intermediary a non-refundable onboarding fee of $15,000 in connection with the Offering."
+    },
+    {
+     "doc_id": 3,
+     "page": 14,
+     "quote": "The Issuer is responsible for all payment processing fees incurred in connection with the Offering, including,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A14",
+   "claim_text": "The intermediary also receives securities equal to 2% of the Securities sold, increasing the number outstanding.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Intermediary dilution.",
+   "attribution": "issuer, Form C p.14",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 14,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A15",
+   "claim_text": "Republic FAQ (deal page content in the pack) says investors currently pay no cost to open the custodial account, and any annual maintenance cost is covered for investors 'at this time'. No investor-paid fee amount is stated in the Form C.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "third_party",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Investor-paid costs.",
+   "attribution": "intermediary FAQ page in pack (p.133)",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 133,
+     "quote": "Right now, there are no costs for investors to open a custodial account."
+    },
+    {
+     "doc_id": 3,
+     "page": 133,
+     "quote": "Custodial accounts do sometimes have a low annual cost to maintain; however, such costs are covered for the investor in this offering at this time."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "availability",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A16",
+   "claim_text": "Use of proceeds table allocates manufacturing/inventory 30%, software 25%, sales and marketing, working capital 13% and regulatory/compliance 10%, with intermediary fees of $68,100 at the maximum. No dated milestone or funding requirement is stated; the table does not list the repayment of the CEO note.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Use of proceeds is a TERMS item and bears on funding needs.",
+   "attribution": "issuer, Form C p.26",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 26,
+     "quote": "Product Manufacturing & Inventory (30%): Proceeds will be used to manufacture and procure"
+    },
+    {
+     "doc_id": 3,
+     "page": 26,
+     "quote": "Working Capital & Operations (13%): Proceeds will be used for general corporate purposes including payroll,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A17"
+   ],
+   "contradictions": "The $28,000 contingent repayment to the CEO (A17) is not shown in the table.",
+   "claim_type": "use_of_proceeds",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A17",
+   "claim_text": "Related-party unsecured promissory note to CEO Stewart Adams, $171,000, 4.13%, dated 2026-06-26, maturing 2031-06-26. $28,000 of principal is due within 10 business days after the issuer receives $300,000 gross proceeds from this offering; the remaining $143,000 is payable in 24 instalments after the issuer reaches $100,000 in revenue.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Insider debt with a repayment trigger tied to offering proceeds (TERMS) and a liability (FIN).",
+   "attribution": "issuer, Form C p.31, p.33",
+   "as_of": "2026-06-26",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 33,
+     "quote": "Promissory Note – Stewart Adams. On June 26, 2026, the Issuer entered into an unsecured promissory note (the"
+    },
+    {
+     "doc_id": 3,
+     "page": 33,
+     "quote": "Note bears interest at a rate of 4.13% per annum and matures on June 26, 2031. Pursuant to the Note, $28,000"
+    },
+    {
+     "doc_id": 3,
+     "page": 33,
+     "quote": "of principal is due and payable within ten (10) business days following the date on which the Issuer receives aggregate"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Dec 31, 2025 related-party loans of $179,334 were 0% with no maturity (A18); the pack does not reconcile them with this note. The note has a stated maturity and is not a default.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A18",
+   "claim_text": "At 2025-12-31 related-party loans were $179,334: CHUR Networks (owned and controlled by Stewart Adams) $167,584 and Stewart Adams $11,750, non-interest-bearing with no stated maturity, classed as current.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Liability.",
+   "attribution": "accountant-reviewed financial statements, Note 10",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 50,
+     "quote": "CHUR Networks, an entity principally owned and controlled by Stewart Adams – $167,584"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A19",
+   "claim_text": "Financial statements as of 2025-12-31 and for inception (2025-09-30) to 2025-12-31 were reviewed (not audited) by an independent accountant; report dated 2026-05-29. A review gives limited assurance.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Assurance level of accounts.",
+   "attribution": "independent accountant's review report p.41",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 41,
+     "quote": "Based on our reviews, we are not aware of any material modifications that should be made to the accompanying"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [],
+   "contradictions": "The review concerns the accounts, not the product.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A20",
+   "claim_text": "Cover-page figures for the period to 2025-12-31: revenue $1,873, net loss $27,700, total assets $471,634, short-term debt $179,334, 0 employees. This is the first period; there is no prior year.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN",
+    "DEMAND"
+   ],
+   "dimension_rationale": "Revenue is a demand datum; loss and debt are FIN.",
+   "attribution": "issuer, Form C p.3; reviewed statements",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 3,
+     "quote": "Revenues/Sales $1,873 N/A"
+    },
+    {
+     "doc_id": 3,
+     "page": 3,
+     "quote": "Net Income/(Loss) ($27,700)"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "Risk factor p.14 says the business generates no sales (A47).",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A21",
+   "claim_text": "Cash at 2025-12-31 was $6,143.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Cash point.",
+   "attribution": "reviewed financial statements; Form C p.3",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 3,
+     "quote": "Cash & Cash Equivalents $6,143 N/A"
+    }
+   ],
+   "financial_period": "2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A22",
+   "claim_text": "Net cash used in operating activities for 2025-09-30 to 2025-12-31 was $289,453 (driven by prepaid inventory $231,000 and inventory $30,753); $203,738 of software costs were capitalized under investing activities.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Spending figure.",
+   "attribution": "reviewed financial statements p.45",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 45,
+     "quote": "Net Cash Used In Operating Activities (289,453)"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A23",
+   "claim_text": "Total operating expenses for 2025-09-30 to 2025-12-31 were $28,807 (net loss $27,700).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Spending figure.",
+   "attribution": "reviewed financial statements p.43",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 43,
+     "quote": "Total Operating Expenses 28,807"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A24",
+   "claim_text": "The accountant's report and Note 11 disclose conditions indicating the company may be unable to continue as a going concern (G3).",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Going concern.",
+   "attribution": "independent accountant p.41; Note 11 p.50",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 41,
+     "quote": "As discussed in Note 11, certain conditions indicate that the Company may be unable to continue as a going"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A25",
+   "claim_text": "Issuer states cash and equivalents were $247,150 at 2026-06-30, 'approximately 6 months of runway', calculated as cash divided by average monthly net loss. No monthly net loss figure and no 2026 spending statement are in the pack.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Newer cash and runway.",
+   "attribution": "issuer, Form C p.32 (no assurance)",
+   "as_of": "2026-06-30",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 32,
+     "quote": "As of June 30, 2026 the Issuer had an aggregate of $247,150 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 3,
+     "page": 32,
+     "quote": "approximately 6 months of runway. Runway is calculated by dividing cash-on-hand by average monthly net loss (if"
+    }
+   ],
+   "financial_period": "2026-06-30",
+   "basis_claim_ids": [],
+   "contradictions": "The deck cites a $72,000/month operating cost base (A38); the period and basis of the Form C runway are not given.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A26",
+   "claim_text": "Subsequent event in the reviewed statements: SAFEs with about $225,000 gross proceeds, $6,000,000 cap and 20% discount, entered into after the balance sheet date and before the 2026-05-29 report.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN",
+    "TERMS"
+   ],
+   "dimension_rationale": "Financing (FIN) and dilution source (TERMS).",
+   "attribution": "reviewed financial statements Note 12, p.51",
+   "as_of": "2026-05-29",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 51,
+     "quote": "for aggregate gross proceeds of approximately $225,000. The SAFE instruments include a valuation cap of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "Earlier in time than the $500,000 total in A27; history, not a conflict.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A27",
+   "claim_text": "Existing SAFEs: $500,000 outstanding (Reg D 506(b), sold 2026-03-26 to 2026-06-03), $6,000,000 pre-money cap, 20% discount, no voting or anti-dilution rights; stated as converting into 1,158,800 preferred shares.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "FIN"
+   ],
+   "dimension_rationale": "Existing convertible (dilution) and financing raised.",
+   "attribution": "issuer, Form C p.30, p.32",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 30,
+     "quote": "Amount Outstanding $500,000"
+    },
+    {
+     "doc_id": 3,
+     "page": 30,
+     "quote": "Material Terms Pre-Money Valuation Cap: $6,000,000; Discount: 20%"
+    },
+    {
+     "doc_id": 3,
+     "page": 30,
+     "quote": "in outstanding SAFEs into 1,158,800 shares of the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "The same cell says conversion is 'at the $15,000,000 pre-money valuation cap'; the 3.88% figure and 'preferred stock' are not reconciled with the authorized common-only capital.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A28",
+   "claim_text": "Reviewed balance sheet count at 2025-12-31: 10,500,000 Class A and 3,069,231 Class B common shares issued and outstanding.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Share count basis.",
+   "attribution": "reviewed financial statements Note 6, p.49",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 49,
+     "quote": "As of December 31, 2025, the Company had 10,500,000 shares of Class A Common Stock and 3,069,231"
+    }
+   ],
+   "financial_period": "2025-12-31",
+   "basis_claim_ids": [
+    "A19"
+   ],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A29",
+   "claim_text": "Form C capitalization: authorized 25,500,000 common (10,500,000 Class A; 15,000,000 Class B); issued 10,500,000 Class A and 3,405,605 Class B as of the Form C date.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Share count and authorization.",
+   "attribution": "issuer, Form C p.29",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 29,
+     "quote": "of Class A Common Stock and 15,000,000 shares of Class B Common Stock of which 10,500,000 Class A Common"
+    },
+    {
+     "doc_id": 3,
+     "page": 29,
+     "quote": "Stock and 3,405,605 Class B Common Stock are issued and outstanding, par value $0.000001 per share (the"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "Class B differs from 2025-12-31 (3,069,231); a later issuance is implied but not documented. No options, warrants or option pool are listed, yet p.21 says equity grants and convertible securities are outstanding.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A30",
+   "claim_text": "Class A carries 10 votes per share and Class B one; CEO Adams and CBO Bossi each hold 5,250,000 Class A shares (stated 37.75% voting power each).",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS",
+    "TEAM"
+   ],
+   "dimension_rationale": "Control structure (TERMS) and insider holdings (TEAM).",
+   "attribution": "issuer, Form C p.29, p.31",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 29,
+     "quote": "Voting Rights 10 votes per share"
+    },
+    {
+     "doc_id": 3,
+     "page": 31,
+     "quote": "Stewart Adams 5,250,000 Class A Common Stock 37.75%"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A29"
+   ],
+   "contradictions": "",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A31",
+   "claim_text": "The issuer states it cannot determine whether it has enough authorized capital stock to issue on conversion of the Securities.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Conversion capacity.",
+   "attribution": "issuer, Form C p.13",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "The Issuer cannot determine if it currently has enough capital stock authorized to issue upon the conversion of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A29"
+   ],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A32",
+   "claim_text": "Per the issuer, it is building an integrated platform of supplements, a wearable ring and AI-powered recommendations sold by subscription.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "Product description.",
+   "attribution": "issuer, Form C p.22",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 22,
+     "quote": "The Issuer is building an integrated health optimization platform that combines premium nutritional supplements,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "other",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A33",
+   "claim_text": "Issuer says it is in its commercial launch phase, with formulations completed, manufacturing partnerships established and the ring 'validated for launch'. No validation protocol or results are given.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "technical_validation",
+   "dimensions": [
+    "TECH",
+    "DEMAND"
+   ],
+   "dimension_rationale": "Product readiness (TECH) and launch stage (DEMAND).",
+   "attribution": "issuer, Form C p.23",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 23,
+     "quote": "The Issuer is currently in its commercial launch phase. Product formulations have been completed, manufacturing"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Only $1,873 of revenue to 2025-12-31 is documented (A20).",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A34",
+   "claim_text": "Issuer reports more than 5,000 individuals on its waitlist; waitlist members are prospective customers, not purchases.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Prospective demand.",
+   "attribution": "issuer, Form C p.23",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 23,
+     "quote": "developed a growing audience of prospective customers, including more than 5,000 individuals who have joined its"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A35",
+   "claim_text": "The financial-statement notes call the supplements 'clinically proven'; no study, sample, design or protocol is in the pack.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "technical_validation",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "Efficacy claim.",
+   "attribution": "issuer, financial statement Note 1 p.46",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 46,
+     "quote": "Yakuru Health is a wellness technology company integrating clinically proven nutritional supplements, biometric"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "The reviewed accounts do not cover the product claim (A19).",
+   "claim_type": "science",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A36",
+   "claim_text": "Deal-page summary says hotel and airport partnerships are 'already secured'; the same deck says distribution discussions are only underway.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "customer_commercial",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Partnership and distribution claim.",
+   "attribution": "issuer deal page content in pack, p.140 and p.145",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 140,
+     "quote": "Athlete, sports team hotel and airport partnerships already secured"
+    },
+    {
+     "doc_id": 3,
+     "page": 145,
+     "quote": "Distribution discussions are underway with premium hotel and airport networks for the Jet Lag Pack"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "'Already secured' is inconsistent with 'discussions are underway'; no contracts are in the pack.",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A37",
+   "claim_text": "Deck projections: 5,000 subscribers at $229/month in 18 months and a $82M–$137M valuation range at 6–10× ARR; stated as management projections, not guaranteed.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "DEMAND",
+    "TERMS"
+   ],
+   "dimension_rationale": "Projected demand and exit valuation.",
+   "attribution": "issuer deal page content, p.121, p.127",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 121,
+     "quote": "At 5,000 subscribers — our 18-month target — this channel alone generates $1.145M MRR and $13.74M ARR."
+    },
+    {
+     "doc_id": 3,
+     "page": 127,
+     "quote": "point to a valuation range of $82M–$137M at 18-month targets"
+    },
+    {
+     "doc_id": 3,
+     "page": 127,
+     "quote": "These are forward-looking projections based on management assumptions and are not guaranteed"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A38",
+   "claim_text": "Deck says the business becomes cash-flow positive from Month 2 on a $72,000/month operating cost base (projection, unaudited).",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Projected burn.",
+   "attribution": "issuer deal page content, p.122",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 122,
+     "quote": "The business reaches cash flow positive from Month 2 on a lean $72,000/month"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Conflicts with the going-concern disclosure (A24) and with the revenue base (A20).",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A39",
+   "claim_text": "Deck says a '$2.5M manufacturing credit' exists and production begins in August; no credit agreement, lender or terms are in the pack and no such facility appears in the reviewed balance sheet.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Possible committed financing.",
+   "attribution": "issuer deal page content, p.118",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 118,
+     "quote": "$2.5M manufacturing credit. Production begins in August."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Not reflected in the Form C debt section (p.31).",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A40",
+   "claim_text": "The Form C gives only a generic regulatory statement; no regulatory milestone (IRB, FDA interaction or authorization, trial) or regulatory action is stated.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Regulatory status.",
+   "attribution": "issuer, Form C p.25",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 25,
+     "quote": "The Issuer is subject to and affected by the laws and regulations of U.S. federal, state and local governmental"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A41",
+   "claim_text": "Issuer discloses that some pre-offering testing-the-waters communications may not have included required disclaimers.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "Securities-law compliance risk disclosed by the issuer.",
+   "attribution": "issuer, Form C p.18",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 18,
+     "quote": "these communications may not have included proper disclaimers required for a Reservation Campaign."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A42",
+   "claim_text": "Founders: CEO Stewart Adams (former pro rugby player; founder of BoxHQ and CHUR Networks) and CMO David Allen Cook (media; co-owner of Aspen Daily News). The Form C documents no prior supplement or wearable operating record for the officers.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "Team record.",
+   "attribution": "issuer, Form C p.28",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 28,
+     "quote": "Stewart Adams: Stewart serves as the Chief Executive Officer of the Issuer. He has spent his career at the intersection of"
+    },
+    {
+     "doc_id": 3,
+     "page": 28,
+     "quote": "David Allen Cook: David serves as the Chief Marketing Officer of the Issuer. In this role, he is responsible for leading"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "CEO and CBO tenure dates (2020) predate formation of the issuer (2025).",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A43",
+   "claim_text": "Formulation is led by Andrea Strauss, listed as Advisor and Chief Formulator (not an officer); other consumer-brand experience sits with advisors, not officers.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "Advisor roles.",
+   "attribution": "issuer, Form C p.27",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 27,
+     "quote": "Andrea Strauss Advisor and Chief Formulator Senior Innovation Analyst of RTI The Friedman"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A44",
+   "claim_text": "Issuer certifies no bad-actor disqualification and states no current or threatened litigation.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TEAM",
+    "REG"
+   ],
+   "dimension_rationale": "Bad-actor (TEAM) and legal status (REG).",
+   "attribution": "issuer, Form C p.34, p.25",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 34,
+     "quote": "The Issuer is not subject to any bad actor disqualifications under any relevant U.S. securities laws."
+    },
+    {
+     "doc_id": 3,
+     "page": 25,
+     "quote": "The Issuer is not subject to any current litigation or threatened litigation."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A45",
+   "claim_text": "Issuer names AG1, Oura, WHOOP and Garmin as established competitors and claims differentiation by integrating supplements, wearable and AI; no independent evidence of the advantage.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Competitive position.",
+   "attribution": "issuer, Form C p.24",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 24,
+     "quote": "technology providers, and digital health platforms. The Issuer competes with established brands such as AG1, Oura,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "",
+   "claim_type": "competition",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A46",
+   "claim_text": "Deck claims roughly $1M invested over five years and $250K in tech and R&D; the reviewed statements for the company formed in Sept 2025 show $320,000 stock proceeds, $179,334 related-party loans and $203,738 capitalized software.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "Capital invested.",
+   "attribution": "issuer deal page content, p.118, p.128",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 118,
+     "quote": "$1M+ already invested. Five years of work, including $250K in tech and R&D."
+    },
+    {
+     "doc_id": 3,
+     "page": 128,
+     "quote": "Yakuru has been built over five years on roughly $1M USD in founder capital and early external investment."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A28"
+   ],
+   "contradictions": "Issuer formed 2025-09-30; pre-formation funding is not reconciled to the accounts.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A47",
+   "claim_text": "A Form C risk factor states the business currently generates no sales.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "Revenue status statement.",
+   "attribution": "issuer, Form C p.14",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 14,
+     "quote": "Our business currently does not generate any sales and future sources of revenue may not be sufficient to meet our"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [],
+   "contradictions": "Conflicts with revenue of $1,873 (A20) and 'commercial launch phase' (A33); likely boilerplate.",
+   "claim_type": "risk",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A48",
+   "claim_text": "The SAFE form says the issuer 'shall' issue shares on an Equity Financing, but a Form C risk factor says the issuer elects whether to convert and is under no obligation to convert.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Conversion obligation.",
+   "attribution": "SAFE form p.53; Form C p.20",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 53,
+     "quote": "the closing, or anticipated closing, of the Equity Financing and issue to the Investor a number of shares of"
+    },
+    {
+     "doc_id": 3,
+     "page": 20,
+     "quote": "great enough to trigger a conversion and the Issuer elects to convert the Securities. The Issuer is under no obligation to"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A6"
+   ],
+   "contradictions": "The two texts differ; the executed instrument (blank form only in pack) would govern.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "A49",
+   "claim_text": "Offering deadline is 2026-10-30; no closing has been reported and no evidence of current availability or launch date is in the pack.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "Offering timing.",
+   "attribution": "issuer, Form C XML",
+   "as_of": "2026-10-30",
+   "citations": [
+    {
+     "doc_id": 2,
+     "page": 1,
+     "quote": "<deadlineDate>10-30-2026</deadlineDate>"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A2"
+   ],
+   "contradictions": "",
+   "claim_type": "availability",
+   "calc_request": null
+  }
+ ],
+ "critical_items": [
+  {
+   "item": "issuer_and_offering_identity",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A1",
+    "A2"
+   ],
+   "note": "Yakuru Inc, Delaware, offering via OpenDeal Portal LLC dba Republic, file number 020-37309."
+  },
+  {
+   "item": "security_type",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A2"
+   ],
+   "note": "SAFE (Simple Agreement for Future Equity), Series CF-2026."
+  },
+  {
+   "item": "operative_contract",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A5",
+    "A6",
+    "A7",
+    "A48"
+   ],
+   "note": "Unsigned form of SAFE (Exhibit B, pp.53-64) is readable; Exhibit C and D are form templates. Form C and instrument differ on conversion obligation and on the Lead."
+  },
+  {
+   "item": "price_cap_and_conversion_terms",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "note": "Caps $7.5M (first 30 days) and $15M, 20% discount, price described as arbitrary. The launch date that sets the tranche is not stated."
+  },
+  {
+   "item": "minimum_investment_and_fees",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A3",
+    "A13",
+    "A14",
+    "A15"
+   ],
+   "note": "Minimum $150. Fees are issuer-paid; no investor-paid fee amount is stated in the Form C (custody cost is described as covered 'at this time')."
+  },
+  {
+   "item": "financial_statements_and_dates",
+   "status": "confirmed_with_citation",
+   "claim_ids": [
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25"
+   ],
+   "note": "Reviewed (not audited) statements to 2025-12-31 only; later cash ($247,150 at 2026-06-30) is an unassured issuer statement. Going-concern language present."
+  },
+  {
+   "item": "closing_or_availability_evidence",
+   "status": "not_found_in_pack",
+   "claim_ids": [
+    "A49"
+   ],
+   "note": "Deadline 2026-10-30 appears, but no closing report, launch date or platform evidence of availability is in the pack."
+  }
+ ],
+ "missing_information": [
+  "Offering launch date (sets Early vs Standard tranche and the 30-day window) and current amount raised/availability on Republic.",
+  "Statements after 2025-12-31 (no 2026 income statement, balance sheet or cash flow); monthly net loss or burn for the period behind the June 30, 2026 cash figure.",
+  "Basis for the 'approximately 6 months of runway' statement and a reconciliation to the deck's $72,000/month cost base.",
+  "Documented next milestones with dollar funding requirements and dates; the use of proceeds table has none.",
+  "Executed Exhibit B form (only a blank form is present); executed Reg D SAFEs and the promissory note to Mr. Adams.",
+  "Option pool, equity grants and warrants (p.21 says grants exist but the cap table lists none); authorized preferred stock; support for the 3.88% and 1,158,800-share figures.",
+  "Issuance record for the 336,374 Class B shares added after 2025-12-31 and the basis of that count.",
+  "Maximum number of Securities offered (only the dollar maximum and the 75,000 target are stated).",
+  "Terms and counterparty of the claimed $2.5M manufacturing credit; contracts for hotel/airport/creator partnerships.",
+  "Study design, sample size and protocol behind 'clinically proven/tested'; any third-party lab or ring validation report.",
+  "Any FDA, FTC or other regulatory correspondence or product-claim review; none is stated.",
+  "Terms of investor perks (e.g. $500 to $25,000 tiers) in the deal page and how they relate to the SAFE.",
+  "Relationship between the 2025 CHUR Networks/Adams loans ($179,334) and the 2026 $171,000 note.",
+  "Platform (Republic) pages were unreachable; the investor-paid fee position should be confirmed by the user."
+ ],
+ "valuation_inputs": {
+  "price_per_share_usd": null,
+  "price_claim_id": "A2",
+  "share_counts": [
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Class A Common",
+    "value": 10500000,
+    "as_of": "2025-12-31",
+    "basis": "reviewed_balance_sheet",
+    "claim_id": "A28"
+   },
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Class B Common",
+    "value": 3069231,
+    "as_of": "2025-12-31",
+    "basis": "reviewed_balance_sheet",
+    "claim_id": "A28"
+   },
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Class A Common",
+    "value": 10500000,
+    "as_of": "2026-08-05",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A29"
+   },
+   {
+    "kind": "issued_outstanding",
+    "share_class": "Class B Common",
+    "value": 3405605,
+    "as_of": "2026-08-05",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A29"
+   },
+   {
+    "kind": "authorized",
+    "share_class": "Class A Common",
+    "value": 10500000,
+    "as_of": "2026-08-05",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A29"
+   },
+   {
+    "kind": "authorized",
+    "share_class": "Class B Common",
+    "value": 15000000,
+    "as_of": "2026-08-05",
+    "basis": "form_c_capitalization_table",
+    "claim_id": "A29"
+   },
+   {
+    "kind": "offered_minimum",
+    "share_class": "SAFE units ($1.00 each)",
+    "value": 75000,
+    "as_of": "2026-08-05",
+    "basis": "offering_terms",
+    "claim_id": "A2"
+   }
+  ],
+  "convertible_instruments": [
+   {
+    "instrument": "Reg D 506(b) SAFEs, $6,000,000 pre-money cap, 20% discount",
+    "status": "existing",
+    "principal_usd": 500000,
+    "as_of": "2026-08-05",
+    "conversion_terms_disclosed": true,
+    "claim_ids": [
+     "A27",
+     "A26"
+    ],
+    "note": "Sold 2026-03-26 to 2026-06-03; about $225,000 of this was signed by the 2026-05-29 review date. Form C text on the conversion cap is internally inconsistent ($6M vs $15M); preferred stock conversion cited but no preferred authorized in the stated capital."
+   },
+   {
+    "instrument": "This offering: Series CF-2026 SAFEs (caps $7.5M / $15M, 20% discount)",
+    "status": "planned",
+    "principal_usd": null,
+    "as_of": "2026-08-05",
+    "conversion_terms_disclosed": true,
+    "claim_ids": [
+     "A2",
+     "A5",
+     "A6"
+    ],
+    "note": "Target $75,000, maximum $1,235,000; not yet issued or confirmed as closed."
+   },
+   {
+    "instrument": "Intermediary compensation: Securities equal to 2% of Securities sold",
+    "status": "planned",
+    "principal_usd": null,
+    "as_of": "2026-08-05",
+    "conversion_terms_disclosed": true,
+    "claim_ids": [
+     "A14"
+    ],
+    "note": "Issued only if Securities are sold; described as the same Securities."
+   }
+  ],
+  "note": "SAFE has no per-share price. Not convertible: the $171,000 note to the CEO (A17) is debt with a stated maturity, and the 2025 related-party loans (A18) have no maturity. Cap-table options or grants are not itemized. The 2025-12-31 and Form C share counts are history on different bases, not a conflict."
+ },
+ "cash_points": [
+  {
+   "amount_usd": 6143,
+   "as_of": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A21"
+  },
+  {
+   "amount_usd": 247150,
+   "as_of": "2026-06-30",
+   "assurance": "unaudited_issuer_statement",
+   "claim_id": "A25"
+  }
+ ],
+ "spending_points": [
+  {
+   "kind": "net_loss",
+   "amount_usd": 27700,
+   "period_start": "2025-09-30",
+   "period_end": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A20"
+  },
+  {
+   "kind": "operating_expenses",
+   "amount_usd": 28807,
+   "period_start": "2025-09-30",
+   "period_end": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A23"
+  },
+  {
+   "kind": "operating_cash_outflow",
+   "amount_usd": 289453,
+   "period_start": "2025-09-30",
+   "period_end": "2025-12-31",
+   "assurance": "reviewed",
+   "claim_id": "A22"
+  }
+ ],
+ "financial_statements": {
+  "period_end": "2025-12-31",
+  "assurance": "reviewed",
+  "claim_ids": [
+   "A19",
+   "A20",
+   "A21",
+   "A22",
+   "A23",
+   "A24"
+  ]
+ },
+ "fees": {
+  "investor_paid_fee_stated": false,
+  "investor_fee_claim_ids": [
+   "A15"
+  ],
+  "issuer_paid_fee_claim_ids": [
+   "A13",
+   "A14"
+  ],
+  "minimum_investment_usd": 150,
+  "minimum_claim_id": "A3"
+ },
+ "document_conflicts": [
+  {
+   "topic": "Existing SAFE cap: $6,000,000 vs $15,000,000",
+   "claim_ids": [
+    "A27",
+    "A5"
+   ],
+   "material": true,
+   "explanation": "Form C p.30 gives the outstanding SAFEs a $6,000,000 cap, but the conversion description in the same cell refers to a $15,000,000 pre-money cap and preferred shares, while authorized capital is common stock only. The dilution from the existing $500,000 depends on which is right."
+  },
+  {
+   "topic": "Conversion mandatory or at issuer election",
+   "claim_ids": [
+    "A48",
+    "A6"
+   ],
+   "material": true,
+   "explanation": "The SAFE form says the issuer shall issue shares on an Equity Financing; a Form C risk factor says the issuer elects to convert and has no obligation to."
+  },
+  {
+   "topic": "CEO note repayment from offering proceeds not in use of proceeds",
+   "claim_ids": [
+    "A17",
+    "A16",
+    "A18"
+   ],
+   "material": true,
+   "explanation": "$28,000 of the CEO note is repayable within 10 business days after $300,000 gross offering proceeds; the use of proceeds table does not list it. The note ($171,000, 4.13%, June 2026) is also not reconciled with the 0% no-maturity loans of $179,334 at 2025-12-31."
+  },
+  {
+   "topic": "Partnerships 'already secured' vs 'discussions underway'",
+   "claim_ids": [
+    "A36"
+   ],
+   "material": true,
+   "explanation": "The deck summary (p.140) says hotel and airport partnerships are secured; the deck body (p.145) says distribution discussions are underway. No contracts are in the pack."
+  },
+  {
+   "topic": "Runway and burn",
+   "claim_ids": [
+    "A25",
+    "A38",
+    "A22"
+   ],
+   "material": true,
+   "explanation": "The Form C states about 6 months of runway on $247,150 cash at 2026-06-30 without a monthly loss figure; the deck cites a $72,000/month operating cost base and cash-flow-positive from Month 2; the only reviewed period shows $289,453 operating cash outflow over three months. The pack does not reconcile these."
+  },
+  {
+   "topic": "Custodian entity name",
+   "claim_ids": [
+    "A12"
+   ],
+   "material": false,
+   "explanation": "Form C and SAFE form name BitGo Bank and Trust, National Association; Exhibit C and the nominee agreement name BitGo Trust Company, Inc."
+  },
+  {
+   "topic": "Who the Lead / voting proxy is",
+   "claim_ids": [
+    "A8"
+   ],
+   "material": false,
+   "explanation": "Form C p.20 says a third-party designated by the issuer exercises voting control; the SAFE form (p.63) defines the Lead as the largest holder of the Securities."
+  },
+  {
+   "topic": "No sales vs revenue and commercial launch",
+   "claim_ids": [
+    "A47",
+    "A20",
+    "A33"
+   ],
+   "material": false,
+   "explanation": "A risk factor says no sales; the reviewed statements show $1,873 revenue and the business section says commercial launch phase."
+  },
+  {
+   "topic": "Capital invested vs reviewed accounts",
+   "claim_ids": [
+    "A46",
+    "A28"
+   ],
+   "material": false,
+   "explanation": "Deck claims about $1M over five years; the issuer was formed 2025-09-30 and the reviewed accounts show $320,000 stock proceeds and $179,334 loans. Pre-formation funding is unexplained."
+  },
+  {
+   "topic": "Officer tenure dates vs formation date",
+   "claim_ids": [
+    "A1",
+    "A42"
+   ],
+   "material": false,
+   "explanation": "CEO tenure begins April 2020 and CBO October 2020, but the issuer was incorporated 2025-09-30; no predecessor is described."
+  },
+  {
+   "topic": "Product readiness: app 'live' vs under development",
+   "claim_ids": [
+    "A32",
+    "A33"
+   ],
+   "material": false,
+   "explanation": "The deck says the app is live; Form C p.23 says Yakuru IQ is being developed and the Dec 2025 notes say software had not been placed into service."
+  }
+ ]
+}

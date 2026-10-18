@@ -1,0 +1,146 @@
+{
+ "judgment_label": "model_judgment_not_verification",
+ "checks": [
+  {
+   "claim_id": "A19",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Report also includes a going-concern paragraph; review covers accounts, not the product.",
+   "evidence_type": "third_party_source",
+   "conflicts": "Notes p.48 header labels statements '(UNAUDITED)', consistent with a review.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "검토보고서(p.41)가 감사가 아닌 검토이며 제한적 보증임을 명시하고 날짜는 2026-05-29입니다. 주장과 일치합니다."
+  },
+  {
+   "claim_id": "B2",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Dates differ: the deck is undated; the accounts are as of 2025-12-31; the Form C is dated 2026-08-05. 'Developing Yakuru IQ' is described as the next phase, so it may not conflict with an existing app. The 'not in service' note concerns capitalized software at year-end only.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Form C p.23 also says the Ultra Ring hardware was 'validated for launch' and the company is in a 'commercial launch phase'.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "세 인용문은 정확합니다. 다만 '불일치'는 시점과 대상이 달라 해석에 가깝습니다. 앱(소비자 앱)과 Yakuru IQ(AI 플랫폼)가 같은 제품이라는 근거는 없고, 2025-12-31 시점 자산 상태와 이후 상태는 다를 수 있습니다. 상충 가능성은 있으나 확정적 모순은 아닙니다."
+  },
+  {
+   "claim_id": "B3",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Revenue is for a ~3-month period after inception and is tiny. The waitlist is described as a 'growing audience'. The claim's own text says the waitlist is an issuer claim.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "Form C p.14 says 'Our business currently does not generate any sales', which conflicts with revenue of $1,873. The deck's 'early sales are in' is also not reconciled.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.43의 순매출 $1,873과 p.23의 5,000명 이상 대기자 문구는 정확합니다. 대기자는 구매나 약정이 아니라는 단서가 주장에 이미 포함되어 있습니다. 사업이 매출이 없다는 p.14 문구와의 충돌도 적절히 표시되었습니다."
+  },
+  {
+   "claim_id": "A40",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The cited passage supports only the generic statement. Whether any milestone or action is absent elsewhere in the Form C is not shown by this page. The absence is an absence, not a claim.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "None seen.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "p.25는 일반적 규제 문구만 제시하며 인용은 정확합니다. 다른 곳에 규제 이정표가 없다는 부분은 이 페이지만으로 입증되지 않으므로 '정보 없음'(missing information)으로 다루는 것이 적절합니다."
+  },
+  {
+   "claim_id": "A44",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Both are issuer self-certifications, not independently verified. The bad-actor statement refers to the issuer, not expressly to each director or officer. The no-litigation statement is as of the Form C date.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "None seen.",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "두 인용문은 정확하며 주장은 발행사 진술임을 명시합니다. 다만 개인 임원 각각에 대한 bad actor 확인으로 확대 해석해서는 안 되고, 독립 검증은 없습니다."
+  },
+  {
+   "claim_id": "A21",
+   "passage_supports": "yes",
+   "omitted_qualifications": "Figure comes from the Form C summary table; cited page is the issuer's form, not the financial statements themselves. Short-term debt of $179,334 and total assets of $471,634 are on the same page. The statements were reviewed, not audited.",
+   "evidence_type": "unaudited_financial_figure",
+   "conflicts": "Form C p.32 states $247,150 cash at 2026-06-30, a different date, not a conflict.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.3에 2025-12-31 현금 $6,143이 기재되어 있습니다. 검토(비감사) 재무제표 기준이며, 이후 시점의 현금과는 별개입니다."
+  },
+  {
+   "claim_id": "A24",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The passage is the accountant's emphasis paragraph. Note 11 on p.50 is cited in attribution but not among the cited pages, so its content is not checked. 'May be unable' is conditional. This is a generic trigger (G3) and not adverse on its own.",
+   "evidence_type": "third_party_source",
+   "conflicts": "None seen.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.41의 계속기업 문단이 주장을 뒷받침합니다. Note 11 자체는 제시된 페이지에 없어 확인하지 못했습니다. 이 문구만으로는 불리(adverse) 판단 근거가 되지 않습니다."
+  },
+  {
+   "claim_id": "B10",
+   "passage_supports": "partly",
+   "omitted_qualifications": "No citation is given. It is a software calculation that cannot be checked from the pack. The p.32 text supports only the issuer's 6-month runway, and it says runway is cash divided by average monthly net loss.",
+   "evidence_type": "calculation",
+   "conflicts": "None seen; the K2 withholding cannot be verified here.",
+   "overstatement": "none",
+   "verdict": "partially_supported",
+   "note_ko": "인용이 없고 계산 요청(ref K2)만 있어 이 팩에서는 검증할 수 없습니다. 발행사의 6개월 runway는 p.32에 있으나, 동일 기간 지출 수치가 없어 계산이 보류되었다는 서술은 합리적입니다."
+  },
+  {
+   "claim_id": "C3",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The claim already notes it is conditional and that TERMS1-2 to TERMS1-4 are unknown. The use-of-proceeds table on p.26 says the values exclude certain fees, but does not mention the note repayment. The note is dated 2026-06-26, and the pack does not show whether the use-of-proceeds table was meant to list debt repayment. It notes the $171,000 principal, 4.13% interest and 2031 maturity.",
+   "evidence_type": "inference",
+   "conflicts": "No conflict. The pages do not mention the repayment in the use of proceeds, which is consistent with the claim.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.33은 $300,000 총 조달금 수령 후 10영업일 내 $28,000 상환을 명시하고, p.26 표에는 해당 항목이 없습니다. 주장은 TERMS 판단을 보류(unknown)로 두어 신중합니다. 이는 분석가 추론으로 분류됩니다."
+  },
+  {
+   "claim_id": "A5",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The launch date is not stated, as the claim notes. p.32 also says the Intermediary ascribed no pre-offering valuation and that the securities are priced arbitrarily. The cap is pre-money and is not the same as a priced valuation.",
+   "evidence_type": "contract_text",
+   "conflicts": "The SAFE form p.53 and Form C p.32 agree on $7.5M/$15M and 20%. The inconsistency with the existing SAFE conversion description on p.30 is noted in the claim.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.32와 SAFE 서식 p.53이 캡 $7.5M(첫 30일)/$15M, 할인 20%를 확인합니다. 출시일이 없다는 단서도 포함되어 있습니다."
+  },
+  {
+   "claim_id": "A4",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The text says 'does not necessarily bear any relationship', so 'bears no stated relationship' is slightly stronger than the wording. The XML field is the Form C filing's price determination method. This is a generic trigger (G7).",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "None seen.",
+   "overstatement": "minor",
+   "verdict": "supported",
+   "note_ko": "p.8과 Form C XML(priceDeterminationMethod: Arbitrary)이 이를 뒷받침합니다. 원문은 '반드시 관련이 있는 것은 아니다'이므로 '관련 없음'은 약간 강한 표현입니다. G7 일반 트리거입니다."
+  },
+  {
+   "claim_id": "A27",
+   "passage_supports": "partly",
+   "omitted_qualifications": "The 1,158,800 shares and 3.88% figures are given at the $15,000,000 cap on p.30, which conflicts with the stated $6,000,000 cap in the same cell. The dates of sale (2026-03-26 to 2026-06-03) come from p.32, not from p.30. The 'no voting rights' applies prior to conversion. The preferred stock conversion is unreconciled with the capitalization shown.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "Internal contradiction in p.30: cap $6M vs conversion 'at the $15,000,000 pre-money valuation cap'. The 1,158,800 share count and 3.88% basis were not recomputed.",
+   "overstatement": "minor",
+   "verdict": "partially_supported",
+   "note_ko": "인용문은 정확하며 $500,000, 캡 $6M, 할인 20%, 1,158,800주를 확인합니다. 그러나 같은 셀이 $15M 캡을 언급해 내부 모순이 있고, 판매 기간은 p.32에서 나옵니다. '1,158,800주로 전환'은 발행사 진술이며 확정된 전환 조건이 아닙니다."
+  },
+  {
+   "claim_id": "A14",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The text says the total number of Securities outstanding is subject to increase by the 2% fee. The size of the increase depends on the amount raised. It does not state how the 2% is treated relative to the cash fee.",
+   "evidence_type": "regulatory_form_field",
+   "conflicts": "None seen. The Form C XML also lists a 2% securities compensation.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.14가 판매 증권의 2%를 중개인 보상으로 지급하고 발행 증권 수가 늘어난다고 명시합니다. 주장과 일치합니다."
+  },
+  {
+   "claim_id": "A31",
+   "passage_supports": "yes",
+   "omitted_qualifications": "The passage gives the reason: the amount of stock to be issued depends on future events. It is a disclosed limitation and not a statement that authorized shares are insufficient.",
+   "evidence_type": "issuer_statement",
+   "conflicts": "p.30 refers to conversion into preferred stock, while the claim A27 notes authorized capital as common-only; this is not resolved here.",
+   "overstatement": "none",
+   "verdict": "supported",
+   "note_ko": "p.13이 발행사가 전환에 충분한 수권 주식이 있는지 판단할 수 없다고 명시합니다. 이는 부족을 뜻하는 것이 아니라 미래 사건에 따른 불확실성이라는 이유가 붙어 있습니다."
+  }
+ ],
+ "predicate_reviews": []
+}

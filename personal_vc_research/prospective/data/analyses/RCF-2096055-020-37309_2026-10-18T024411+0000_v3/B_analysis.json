@@ -1,0 +1,410 @@
+{
+ "stage": "early_commercial",
+ "technical_and_efficacy": {
+  "assessment": "No study design, sample, protocol or third-party validation report is in the pack. The 'clinically proven' and 'clinically tested' wording is issuer assertion only (B1). The reviewed accounts cover the accounts, not the product. The app is described as 'live' in the deck but as under development in the Form C, and the Dec-2025 software assets were not yet in service (B2). Nothing documents a technical failure, so R-TECH-1 is unknown, not adverse.",
+  "claim_ids": [
+   "B1",
+   "B2"
+  ]
+ },
+ "commercial_demand": {
+  "assessment": "Documented demand is minimal: $1,873 revenue for 2025-09-30 to 2025-12-31 (reviewed, limited assurance). The 5,000+ waitlist is prospective interest, not purchases. The 5,000-subscriber / $229-per-month figures are management projections. No customer contracts or partnership agreements are in the pack, and 'already secured' conflicts with 'discussions underway' (B3). There is no later revenue statement. Demand is stage-appropriate unknown, with no documented loss of customers or collapse in revenue.",
+  "claim_ids": [
+   "B3"
+  ]
+ },
+ "regulatory_progress": {
+  "assessment": "No regulatory milestone is stated: no IRB review, FDA interaction or authorization, trial, or regulatory action. The Form C gives only a generic statement that laws apply, and the video carries a not-intended-to-diagnose disclaimer. No pathway is assumed. The issuer discloses that some testing-the-waters communications may lack required disclaimers, which is a securities-law compliance risk, not a regulatory action (B4). Nothing documents an adverse regulatory action.",
+  "claim_ids": [
+   "B4"
+  ]
+ },
+ "team_execution": {
+  "assessment": "Documented record: the CEO founded BoxHQ and CHUR Networks (issuer bio). The CMO co-owned a newspaper. Formulation is led by an advisor, not an officer. No prior supplement or wearable operating record is documented for the officers. The Form C lists CEO and CBO tenure from 2020, which predates the 2025 formation, and no predecessor is explained. The issuer certifies no bad-actor disqualification, and no sanction is documented (B5).",
+  "claim_ids": [
+   "B5"
+  ]
+ },
+ "financing_and_runway": {
+  "assessment": "Reviewed cash was $6,143 at 2025-12-31, against $289,453 operating cash outflow for the first three months, with going-concern language. That is an older statement (G2/G3), which is not adverse on its own. The issuer states $247,150 cash at 2026-06-30 and 'approximately 6 months of runway', with no basis and no assurance. The software runway K2 is withheld because no same-period spending figure exists (B6, B10). No stated milestone has a dollar requirement or date, and the use-of-proceeds table has none. FIN1-A1 is therefore unknown, so a shortfall against the maximum raise cannot be established. The $2.5M credit is an unsupported deck assertion. The CEO note has a stated 2031 maturity and no default is documented (B7). R-FIN-1 is unknown.",
+  "claim_ids": [
+   "B6",
+   "B7",
+   "B10"
+  ]
+ },
+ "terms_and_investor_proceeds": {
+  "assessment": "The security is a SAFE with a $7.5M cap in the first 30 days and $15M after, and a 20% discount. The offering price is described as arbitrary (G7). There is no voting, dividend or anti-dilution protection (G4, G5, G8). Custody and transfer limits apply (G6). The cash-out right is junior to creditors and pari passu with other SAFEs and preferred. The SAFE form says shares 'shall' be issued, but a Form C risk factor says the issuer elects whether to convert (B8). Dilution sources: $500,000 of existing SAFEs with a stated $6M cap (the text is internally inconsistent), a planned 2% intermediary securities grant, unlisted equity grants, and no authorized preferred stock. The issuer says it cannot determine whether authorized capital is sufficient (B9). The $28,000 CEO-note repayment is triggered by offering proceeds and is absent from the use-of-proceeds table. This is a concern, but I do not find it clearly worse than ordinary form or material, so R-TERMS-1 is unknown, not adverse (B7). Fees are issuer-paid, and no investor-paid fee is stated. K1 and K3 are withheld, so no implied equity value or proceeds scenario exists.",
+  "claim_ids": [
+   "B7",
+   "B8",
+   "B9"
+  ]
+ },
+ "competition_and_advantage": {
+  "assessment": "The issuer names AG1, Oura, WHOOP and Garmin as established competitors and claims an 'ecosystem lock-in' moat from integration. There is no independent evidence of switching costs, retention or the advantage, and the claim is untested at the present revenue level (B11).",
+  "claim_ids": [
+   "B11"
+  ]
+ },
+ "additional_claims": [
+  {
+   "claim_id": "B1",
+   "claim_text": "Efficacy of the supplements is asserted ('clinically proven', 'clinically tested') without any study design, sample size, protocol or third-party report in the pack.",
+   "evidence_status": "unverified_assertion",
+   "evidence_kind": "technical_validation",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, financial statement Note 1 p.46 and deal page p.122",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 46,
+     "quote": "Yakuru Health is a wellness technology company integrating clinically proven nutritional supplements, biometric"
+    },
+    {
+     "doc_id": 3,
+     "page": 122,
+     "quote": "The supplement line is fully formulated, clinically tested, and ready for production."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A35"
+   ],
+   "contradictions": "The accountant's review concerns the accounts, not product efficacy.",
+   "claim_type": "science",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B2",
+   "claim_text": "Software readiness is inconsistent: the deck says the app is live, while the Form C says Yakuru IQ is being developed and the Dec-2025 notes say the software assets were not yet in service.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "technical_validation",
+   "dimensions": [
+    "TECH"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, deal page p.153; Form C p.23; reviewed statements p.48",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 153,
+     "quote": "The formula is done, the ring is ready, and the app is live."
+    },
+    {
+     "doc_id": 3,
+     "page": 23,
+     "quote": "the Issuer is developing Yakuru IQ, an AI-powered health intelligence platform"
+    },
+    {
+     "doc_id": 3,
+     "page": 48,
+     "quote": "The related software and technology assets had not yet been placed into service and, accordingly, no amortization"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A32",
+    "A33"
+   ],
+   "contradictions": "Deck 'app is live' vs Form C 'developing' vs accounts 'not yet placed into service' (dates differ).",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B3",
+   "claim_text": "Documented revenue is $1,873 for 2025-09-30 to 2025-12-31 (reviewed, limited assurance). The 5,000+ waitlist and the projected subscription revenue are issuer claims and projections, not purchases or commitments.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "",
+   "attribution": "reviewed financial statements p.43; issuer p.23",
+   "as_of": "2025-12-31",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 43,
+     "quote": "Net Revenue $ 1,873"
+    },
+    {
+     "doc_id": 3,
+     "page": 23,
+     "quote": "developed a growing audience of prospective customers, including more than 5,000 individuals who have joined its"
+    }
+   ],
+   "financial_period": "2025-09-30 to 2025-12-31",
+   "basis_claim_ids": [
+    "A20",
+    "A34"
+   ],
+   "contradictions": "Form C p.14 says the business generates no sales.",
+   "claim_type": "traction",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B4",
+   "claim_text": "No IRB, FDA, trial or regulatory-action milestone is stated. The Form C regulatory section is generic and the issuer video disclaims diagnostic or treatment intent. The issuer separately discloses that some testing-the-waters communications may lack required disclaimers.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "regulatory_status",
+   "dimensions": [
+    "REG"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.25, p.18; video script p.109",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 25,
+     "quote": "The Issuer is subject to and affected by the laws and regulations of U.S. federal, state and local governmental"
+    },
+    {
+     "doc_id": 3,
+     "page": 109,
+     "quote": "Designed to support wellness insights. Not intended to diagnose, treat, cure, or prevent disease."
+    },
+    {
+     "doc_id": 3,
+     "page": 18,
+     "quote": "these communications may not have included proper disclaimers required for a Reservation Campaign."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A40",
+    "A41"
+   ],
+   "contradictions": "",
+   "claim_type": "regulatory",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B5",
+   "claim_text": "Documented team record: the CEO founded BoxHQ and CHUR Networks per the issuer bio. No supplement or wearable operating record is documented for the officers. No sanction or bad-actor event is reported, and the issuer certifies none.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "team_record",
+   "dimensions": [
+    "TEAM"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.28, p.34",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 28,
+     "quote": "including BoxHQ, one of Australia's early high-performance training platforms, and CHUR"
+    },
+    {
+     "doc_id": 3,
+     "page": 34,
+     "quote": "The Issuer is not subject to any bad actor disqualifications under any relevant U.S. securities laws."
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A42",
+    "A44"
+   ],
+   "contradictions": "Officer tenure dates from 2020 predate the 2025 formation; the pack gives no predecessor.",
+   "claim_type": "team",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B6",
+   "claim_text": "The issuer states $247,150 cash at 2026-06-30 and about 6 months of runway. This is unassured, with no monthly loss figure. The only reviewed cash ($6,143) is at 2025-12-31 and is stale. No next milestone with a dollar requirement or date is stated.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "unaudited_financials",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.32 (no assurance)",
+   "as_of": "2026-06-30",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 32,
+     "quote": "As of June 30, 2026 the Issuer had an aggregate of $247,150 in cash and cash equivalents, leaving the Issuer with"
+    },
+    {
+     "doc_id": 3,
+     "page": 3,
+     "quote": "Cash & Cash Equivalents $6,143 N/A"
+    }
+   ],
+   "financial_period": "2026-06-30",
+   "basis_claim_ids": [
+    "A25",
+    "A21"
+   ],
+   "contradictions": "The deck's $72,000/month cost base and cash-flow-positive-from-Month-2 claim are unreconciled with the Form C.",
+   "claim_type": "financial",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B7",
+   "claim_text": "The $171,000 CEO note (4.13%, maturing 2031-06-26) requires $28,000 repayment within 10 business days after $300,000 gross offering proceeds, which the use-of-proceeds table does not list. No default is documented; the note has a stated maturity.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "FIN",
+    "TERMS"
+   ],
+   "dimension_rationale": "A liability (FIN) with a repayment trigger tied to investor proceeds (TERMS).",
+   "attribution": "issuer, Form C p.31, p.33",
+   "as_of": "2026-06-26",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 31,
+     "quote": "Repayment terms: (i) $28,000 of principal is due and"
+    },
+    {
+     "doc_id": 3,
+     "page": 26,
+     "quote": "Working Capital & Operations (13%): Proceeds will be used for general corporate purposes including payroll,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A17",
+    "A16"
+   ],
+   "contradictions": "The use-of-proceeds table omits the repayment; the note is not reconciled with the 2025 0% no-maturity related-party loans.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B8",
+   "claim_text": "Conversion is not clearly mandatory: the SAFE form says the issuer shall issue shares on an Equity Financing, while a Form C risk factor says the issuer elects to convert and has no obligation to. The executed instrument would govern, and only the blank form is in the pack.",
+   "evidence_status": "document_supported_fact",
+   "evidence_kind": "contract_term",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "SAFE form p.53; Form C p.20",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 53,
+     "quote": "the closing, or anticipated closing, of the Equity Financing and issue to the Investor a number of shares of"
+    },
+    {
+     "doc_id": 3,
+     "page": 20,
+     "quote": "great enough to trigger a conversion and the Issuer elects to convert the Securities. The Issuer is under no obligation to"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A48"
+   ],
+   "contradictions": "The two texts differ.",
+   "claim_type": "contract_provision",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B9",
+   "claim_text": "Dilution sources: $500,000 of existing SAFEs with a stated $6M cap (text refers to a $15M cap and preferred shares), a planned 2% intermediary securities grant, unlisted equity grants and convertibles, and no authorized preferred. The issuer says it cannot determine whether authorized capital is sufficient.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "form_field",
+   "dimensions": [
+    "TERMS"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer, Form C p.30, p.13, p.14, p.21",
+   "as_of": "2026-08-05",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 30,
+     "quote": "Material Terms Pre-Money Valuation Cap: $6,000,000; Discount: 20%"
+    },
+    {
+     "doc_id": 3,
+     "page": 14,
+     "quote": "The Intermediary will also receive compensation in the form of the Securities equal to two percent (2%) of the total"
+    },
+    {
+     "doc_id": 3,
+     "page": 13,
+     "quote": "The Issuer cannot determine if it currently has enough capital stock authorized to issue upon the conversion of"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A27",
+    "A14",
+    "A31"
+   ],
+   "contradictions": "Form C p.21 says equity grants and convertibles are outstanding, but the cap table lists none. The existing-SAFE cap is shown as both $6M and $15M.",
+   "claim_type": "security_terms",
+   "calc_request": null
+  },
+  {
+   "claim_id": "B10",
+   "claim_text": "Software runway calculation K2 is withheld: there is no spending figure for a period ending within 92 days before the 2026-06-30 cash date. Only the issuer-stated 6-month runway exists, and that is a claim, not a calculation.",
+   "evidence_status": "calculation",
+   "evidence_kind": "calculation",
+   "dimensions": [
+    "FIN"
+   ],
+   "dimension_rationale": "",
+   "attribution": "software calculation K2",
+   "as_of": "2026-06-30",
+   "citations": [],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "B6"
+   ],
+   "contradictions": "",
+   "claim_type": "financial",
+   "calc_request": {
+    "kind": "ref",
+    "k_ref": "K2",
+    "inputs": []
+   }
+  },
+  {
+   "claim_id": "B11",
+   "claim_text": "The issuer claims 'ecosystem lock-in' as its core moat and names AG1, Oura, WHOOP and Garmin as established competitors. There is no independent evidence of switching costs, retention or differentiation.",
+   "evidence_status": "issuer_claim",
+   "evidence_kind": "issuer_projection",
+   "dimensions": [
+    "DEMAND"
+   ],
+   "dimension_rationale": "",
+   "attribution": "issuer deal page p.148; Form C p.24",
+   "as_of": "",
+   "citations": [
+    {
+     "doc_id": 3,
+     "page": 148,
+     "quote": "The core moat is ecosystem lock-in."
+    },
+    {
+     "doc_id": 3,
+     "page": 24,
+     "quote": "technology providers, and digital health platforms. The Issuer competes with established brands such as AG1, Oura,"
+    }
+   ],
+   "financial_period": "",
+   "basis_claim_ids": [
+    "A45"
+   ],
+   "contradictions": "",
+   "claim_type": "competition",
+   "calc_request": null
+  }
+ ]
+}
